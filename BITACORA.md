@@ -36,3 +36,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (`matematicas-3/tema-01-....html` … `tema-10-....html`).
 - Cada página de tema tiene espacios listos para llenar contenido, materiales y tarea
   por subtema (pendiente).
+
+## 2026-09-09 (contenido Tema 1)
+- Carmen compartió "Clase 1. Sistemas de ecuaciones.pdf" con el contenido de la primera
+  clase. Se llenó `matematicas-3/tema-01-sistemas-de-ecuaciones-simultaneas.html` con:
+  introducción, definición, el ejemplo del conejo y la palmera, la lista de métodos de
+  solución, y las explicaciones de los subtemas Gráfico y Cramer.
+- Materiales y tarea del Tema 1 siguen pendientes.

@@ -227,6 +227,58 @@ footer.site-footer {
 .block h2 { font-size: 1rem; margin-bottom: 0.5rem; }
 .block p { font-size: 0.85rem; color: var(--ink-soft); margin: 0; }
 
+/* ---- Contenido de un tema (prosa, ejemplos, métodos) ---- */
+.prose {
+  max-width: 68ch;
+  margin: 0 1.5rem 2.2rem;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--ink);
+}
+.prose p { margin: 0 0 1rem; }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { color: var(--forest); }
+
+.example-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.4rem 1.5rem 1.6rem;
+  margin: 0 1.5rem 2.5rem;
+}
+.example-box h2 {
+  font-size: 1.02rem;
+  margin: 0 0 0.6rem;
+}
+.example-box p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+.example-box .eq {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 1.05rem;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  display: inline-block;
+  margin: 0 0.6rem 0.5rem 0;
+}
+
+.method-list {
+  margin: 0 1.5rem 2.5rem;
+  padding-left: 1.3rem;
+  max-width: 60ch;
+}
+.method-list li {
+  margin-bottom: 0.45rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+.method-list strong { color: var(--ink); }
+
 /* ---- Temario (lista de temas de una materia) ---- */
 .tema-list {
   display: flex;
