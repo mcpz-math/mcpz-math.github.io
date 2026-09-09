@@ -25,3 +25,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
   principal en `index.html` (por ejemplo `matematicas-1/index.html`), en lugar de un
   archivo suelto por curso. Así cada materia puede crecer con varios temas y materiales
   dentro de su propia carpeta.
+
+## 2026-09-09 (temario de Matemáticas 3)
+- Carmen compartió la "Hoja de registro_MateIII_2026_2027A.pdf" con el temario oficial
+  del curso. Se extrajeron 10 temas: Sistemas de ecuaciones simultáneas, Inecuaciones,
+  Valor absoluto, Funciones, Funciones cuadráticas, Productos notables y factorización,
+  Circunferencia, Parábola, Elipse e Hipérbola.
+- `matematicas-3/index.html` ahora es el temario: lista los 10 temas con sus subtemas,
+  cada uno enlazado a su propia página independiente
+  (`matematicas-3/tema-01-....html` … `tema-10-....html`).
+- Cada página de tema tiene espacios listos para llenar contenido, materiales y tarea
+  por subtema (pendiente).

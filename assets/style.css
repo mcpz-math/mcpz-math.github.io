@@ -227,7 +227,62 @@ footer.site-footer {
 .block h2 { font-size: 1rem; margin-bottom: 0.5rem; }
 .block p { font-size: 0.85rem; color: var(--ink-soft); margin: 0; }
 
+/* ---- Temario (lista de temas de una materia) ---- */
+.tema-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 0 1.5rem 3rem;
+}
+.tema-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px 6px 16px 6px;
+  padding: 1.1rem 1.3rem;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.tema-row:hover {
+  transform: translateY(-2px);
+  border-color: var(--moss);
+}
+.tema-row .tnum {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.85rem;
+  color: var(--moss);
+  min-width: 2.2rem;
+  padding-top: 0.15rem;
+}
+.tema-row .tbody { flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
+.tema-row h3 { font-size: 1.05rem; }
+.tema-row .subtemas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.tema-row .subtemas span {
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+.tema-row .go {
+  align-self: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--forest);
+  white-space: nowrap;
+}
+
 @media (max-width: 640px) {
   .hero { padding: 2.2rem 1.4rem; }
   .site-nav { padding: 1rem; }
+  .tema-row { flex-wrap: wrap; }
+  .tema-row .go { align-self: flex-start; }
 }
