@@ -279,6 +279,86 @@ footer.site-footer {
 }
 .method-list strong { color: var(--ink); }
 
+/* ---- Bloques adicionales para páginas de subtema (objetivo, casos, pasos, gráficas) ---- */
+.callout {
+  margin: 0 1.5rem 2.2rem;
+  padding: 1.2rem 1.4rem;
+  background: var(--forest);
+  color: var(--cream);
+  border-radius: 14px;
+}
+.callout .k {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+.callout p { margin: 0.4rem 0 0; font-size: 0.92rem; line-height: 1.6; opacity: 0.95; }
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 0 1.5rem 2.5rem;
+}
+.case-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem 1rem 1.2rem;
+  text-align: center;
+}
+.case-card svg { display: block; margin: 0 auto 0.6rem; }
+.case-card h3 { font-size: 0.9rem; margin-bottom: 0.3rem; }
+.case-card p { font-size: 0.78rem; color: var(--ink-soft); margin: 0; }
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  margin: 0 1.5rem 2.2rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.steps li {
+  counter-increment: step;
+  display: flex;
+  gap: 0.9rem;
+  align-items: baseline;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.steps li::before {
+  content: counter(step);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: var(--cream);
+  background: var(--moss);
+  border-radius: 50%;
+  width: 1.5rem; height: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.steps strong { color: var(--ink); }
+
+.graph-figure {
+  margin: 0 1.5rem 2.2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.graph-figure svg { max-width: 100%; height: auto; }
+.graph-figure figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
 /* ---- Temario (lista de temas de una materia) ---- */
 .tema-list {
   display: flex;

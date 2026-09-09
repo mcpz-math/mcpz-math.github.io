@@ -43,3 +43,16 @@ Registro de lo que vamos haciendo, en orden cronológico.
   introducción, definición, el ejemplo del conejo y la palmera, la lista de métodos de
   solución, y las explicaciones de los subtemas Gráfico y Cramer.
 - Materiales y tarea del Tema 1 siguen pendientes.
+
+## 2026-09-09 (subtema Gráfico)
+- Carmen compartió "Clase 2. Método gráfico.doc.pdf". Se creó una página propia para el
+  subtema `matematicas-3/tema-01-grafico.html` (siguiendo el mismo patrón de página
+  independiente que los temas), con: objetivo general, antecedentes, los 3 casos posibles
+  (solución única / infinito de soluciones / sin solución, con diagramas en SVG), el
+  procedimiento de 5 pasos, y el ejemplo resuelto con una gráfica real de las dos rectas
+  y su punto de intersección (2, −1), más la comprobación.
+- El bloque "Gráfico" dentro de `tema-01-sistemas-de-ecuaciones-simultaneas.html` ahora
+  enlaza a esa página ("Ver contenido completo →").
+- Criterio para futuras clases: cuando el material de un subtema sea extenso (como en
+  este caso), se le da su propia página `tema-XX-nombre-subtema.html` en vez de meterlo
+  en el bloque del temario del tema.

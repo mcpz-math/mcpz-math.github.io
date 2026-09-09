@@ -30,8 +30,12 @@ y Karla (texto). Estilos compartidos en `assets/style.css`.
   `matematicas-1/`, `matematicas-2/`, `matematicas-3/`, `matematicas-4/`,
   `matematicas-5/`, `probabilidad-estadistica/` (optativa).
 - Dentro de cada carpeta de materia se irán agregando páginas de temas conforme
-  se trabajen con Carmen (por ejemplo `matematicas-3/tema-1-....html`) y una
+  se trabajen con Carmen (por ejemplo `matematicas-3/tema-01-....html`) y una
   subcarpeta `materiales/` para PDFs o imágenes cuando se necesite.
+- Cuando el contenido de un subtema es extenso, se le da su propia página
+  (`tema-XX-nombre-subtema.html`, ej. `tema-01-grafico.html`) enlazada desde el
+  bloque de ese subtema en la página del tema, en vez de meter todo el contenido
+  ahí mismo.
 - Todos los cursos muestran la etiqueta "Próximamente" excepto el que ya tiene
   contenido activo (actualmente Matemáticas 3).
 

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Método gráfico — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> Prof. Carmen Pérez</a>
+    <a class="back" href="tema-01-sistemas-de-ecuaciones-simultaneas.html">← Tema 1</a>
+  </nav>
+
+  <div class="course-header wrap" style="margin-left:0; margin-right:0;">
+    <div class="k">Matemáticas 3 · Tema 1 · Subtema</div>
+    <h1>Método gráfico</h1>
+  </div>
+
+  <div class="prose">
+    <p>La resolución gráfica de una ecuación lineal depende de las variables. En este curso,
+       si se trata de un sistema de ecuaciones lineales con dos variables, cada ecuación se
+       representa por medio de una recta. La solución del sistema varía según la posición de
+       las rectas.</p>
+  </div>
+
+  <div class="callout">
+    <div class="k">Objetivo general</div>
+    <p>Resolver sistemas de ecuaciones lineales simultáneas mediante el método gráfico,
+       desarrollando la capacidad para representar cada ecuación en el plano cartesiano,
+       identificar el punto de intersección de las rectas y comprender su relación con la
+       solución del sistema.</p>
+  </div>
+
+  <div class="prose">
+    <p><strong>Antecedentes.</strong> Revisa en tus apuntes del curso de Matemáticas II lo siguiente:</p>
+  </div>
+  <ul class="method-list">
+    <li>Cómo se grafican las rectas a partir de su ecuación normal y = mx + b.</li>
+    <li>Cómo se transforma una ecuación general de la recta a una ecuación normal.</li>
+    <li>Cómo se determina una escala para graficar rectas con ordenada racional.</li>
+  </ul>
+
+  <div class="prose">
+    <p>Este método es importante pues, de manera gráfica, podemos determinar si un sistema
+       de ecuaciones 2×2 tiene:</p>
+  </div>
+
+  <div class="case-grid">
+    <div class="case-card">
+      <svg viewBox="0 0 120 100" width="120" height="100">
+        <line x1="10" y1="50" x2="110" y2="50" stroke="#cbd5c0" stroke-width="1"/>
+        <line x1="60" y1="10" x2="60" y2="90" stroke="#cbd5c0" stroke-width="1"/>
+        <line x1="15" y1="80" x2="105" y2="20" stroke="#14301f" stroke-width="2.2"/>
+        <line x1="15" y1="20" x2="105" y2="80" stroke="#3f6b4a" stroke-width="2.2"/>
+        <circle cx="60" cy="50" r="4" fill="#c4e86b" stroke="#14301f" stroke-width="1.5"/>
+      </svg>
+      <h3>Solución única</h3>
+      <p>Las rectas se cruzan en un solo punto.</p>
+    </div>
+    <div class="case-card">
+      <svg viewBox="0 0 120 100" width="120" height="100">
+        <line x1="10" y1="50" x2="110" y2="50" stroke="#cbd5c0" stroke-width="1"/>
+        <line x1="60" y1="10" x2="60" y2="90" stroke="#cbd5c0" stroke-width="1"/>
+        <line x1="15" y1="80" x2="105" y2="20" stroke="#14301f" stroke-width="2.2"/>
+        <line x1="15" y1="80" x2="105" y2="20" stroke="#c4e86b" stroke-width="2.2" stroke-dasharray="5 4"/>
+      </svg>
+      <h3>Infinito de soluciones</h3>
+      <p>Las rectas son coincidentes (la misma recta).</p>
+    </div>
+    <div class="case-card">
+      <svg viewBox="0 0 120 100" width="120" height="100">
+        <line x1="10" y1="50" x2="110" y2="50" stroke="#cbd5c0" stroke-width="1"/>
+        <line x1="60" y1="10" x2="60" y2="90" stroke="#cbd5c0" stroke-width="1"/>
+        <line x1="15" y1="75" x2="105" y2="35" stroke="#14301f" stroke-width="2.2"/>
+        <line x1="15" y1="55" x2="105" y2="15" stroke="#3f6b4a" stroke-width="2.2"/>
+      </svg>
+      <h3>No tiene solución</h3>
+      <p>Las rectas son paralelas y nunca se cruzan.</p>
+    </div>
+  </div>
+
+  <p class="section-label">Procedimiento</p>
+  <ol class="steps">
+    <li><span><strong>Observa las ecuaciones:</strong> deberán tener la forma y = mx + b; si no, transfórmalas.</span></li>
+    <li><span><strong>Grafica cada recta</strong> usando la pendiente m y la ordenada b. De ser necesario, encuentra una escala.</span></li>
+    <li><span><strong>Determina, a partir de la gráfica,</strong> si el sistema tiene solución única, no tiene solución o tiene un infinito de soluciones.</span></li>
+    <li><span><strong>Si hay solución única,</strong> encuentra la coordenada de intersección y determina el valor de x y de y.</span></li>
+    <li><span><strong>Comprueba</strong> si hemos llegado a la solución, sustituyendo los valores en ambas ecuaciones.</span></li>
+  </ol>
+
+  <p class="section-label">Ejemplo resuelto</p>
+  <div class="example-box">
+    <h2>Resolver el siguiente sistema por el método gráfico</h2>
+    <span class="eq">2x − y = 5</span>
+    <span class="eq">3x + 2y = 4</span>
+
+    <p style="margin-top:1.2rem;"><strong>Paso 1.</strong> Despejamos y en ambas ecuaciones:</p>
+    <span class="eq">y = 2x − 5  →  m = 2, b = −5</span>
+    <span class="eq">y = −(3/2)x + 2  →  m = −3/2, b = 2</span>
+    <p>Como las ordenadas son enteras, no se requiere una escala especial.</p>
+  </div>
+
+  <figure class="graph-figure">
+    <svg viewBox="0 0 260 332" width="260" height="332">
+      <!-- cuadrícula -->
+      <g stroke="#dde2dc" stroke-width="1">
+        <line x1="38" y1="16" x2="38" y2="302"/>
+        <line x1="82" y1="16" x2="82" y2="302"/>
+        <line x1="104" y1="16" x2="104" y2="302"/>
+        <line x1="126" y1="16" x2="126" y2="302"/>
+        <line x1="148" y1="16" x2="148" y2="302"/>
+        <line x1="170" y1="16" x2="170" y2="302"/>
+        <line x1="192" y1="16" x2="192" y2="302"/>
+        <line x1="214" y1="16" x2="214" y2="302"/>
+        <line x1="38" y1="16" x2="214" y2="16"/>
+        <line x1="38" y1="60" x2="214" y2="60"/>
+        <line x1="38" y1="104" x2="214" y2="104"/>
+        <line x1="38" y1="148" x2="214" y2="148"/>
+        <line x1="38" y1="192" x2="214" y2="192"/>
+        <line x1="38" y1="236" x2="214" y2="236"/>
+        <line x1="38" y1="280" x2="214" y2="280"/>
+      </g>
+      <!-- ejes -->
+      <line x1="38" y1="170" x2="214" y2="170" stroke="#22301f" stroke-width="1.5"/>
+      <line x1="60" y1="16" x2="60" y2="302" stroke="#22301f" stroke-width="1.5"/>
+      <text x="216" y="174" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56604f">x</text>
+      <text x="64" y="24" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56604f">y</text>
+
+      <!-- recta 1: y = 2x - 5, de (-1,-7) a (6,7) -->
+      <line x1="38" y1="324" x2="192" y2="16" stroke="#14301f" stroke-width="2.2"/>
+      <!-- recta 2: y = -1.5x + 2, de (-1,3.5) a (6,-7) -->
+      <line x1="38" y1="93" x2="192" y2="324" stroke="#3f6b4a" stroke-width="2.2"/>
+
+      <!-- punto de intersección (2,-1) -->
+      <circle cx="104" cy="192" r="5" fill="#c4e86b" stroke="#14301f" stroke-width="1.5"/>
+      <text x="112" y="190" font-family="IBM Plex Mono, monospace" font-size="12" fill="#14301f">(2, −1)</text>
+    </svg>
+    <figcaption>Las rectas se intersecan en un solo punto: solución única.</figcaption>
+  </figure>
+
+  <div class="example-box">
+    <p><strong>Paso 3.</strong> El sistema tiene solución única, pues las rectas se intersecan en un solo punto.</p>
+    <p><strong>Paso 4.</strong> La coordenada de solución es (2, −1), por lo que x = 2 y y = −1.</p>
+    <p><strong>Paso 5. Comprobación.</strong> Sustituimos los valores encontrados en ambas ecuaciones:</p>
+  </div>
+
+  <div class="blocks">
+    <div class="block">
+      <h2>Ecuación 1</h2>
+      <p>
+        2x − y = 5<br>
+        2(2) − (−1) = 5<br>
+        4 + 1 = 5<br>
+        <strong>5 = 5 ✓</strong>
+      </p>
+    </div>
+    <div class="block">
+      <h2>Ecuación 2</h2>
+      <p>
+        3x + 2y = 4<br>
+        3(2) + 2(−1) = 4<br>
+        6 − 2 = 4<br>
+        <strong>4 = 4 ✓</strong>
+      </p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    Prof. Carmen Pérez · Matemáticas · Bachillerato
+  </footer>
+
+</body>
+</html>
