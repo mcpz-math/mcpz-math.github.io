@@ -15,3 +15,13 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Se rediseñó la página de inicio con enlaces a los 6 cursos: Matemáticas 1 a 5 y la optativa Probabilidad y Estadística.
 - Se creó una página individual para cada curso (`matematicas-1.html` … `matematicas-5.html`, `probabilidad-estadistica.html`), cada una con espacios listos para Temario, Materiales y Tareas (pendientes de llenar).
 - Los estilos compartidos quedaron en `assets/style.css`.
+- Se agregó la etiqueta "Próximamente" a todos los cursos excepto Matemáticas 3.
+
+## 2026-09-09 (reorganización por materia)
+- Se definió el flujo de trabajo para ir agregando temas: Carmen comparte el contenido
+  (texto, PDF, Word o imagen) de un tema, se arma la página dentro de la carpeta de esa
+  materia, se sincroniza con GitHub y se anota aquí.
+- Se reorganizó el sitio: cada materia ahora tiene su propia carpeta con su página
+  principal en `index.html` (por ejemplo `matematicas-1/index.html`), en lugar de un
+  archivo suelto por curso. Así cada materia puede crecer con varios temas y materiales
+  dentro de su propia carpeta.

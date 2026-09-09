@@ -19,6 +19,26 @@ Publicado gratis con GitHub Pages en: https://mcpz-math.github.io
 - Llevar un registro de avance en [BITACORA.md](BITACORA.md) — actualizarlo cada vez
   que se agregue o cambie algo importante.
 
-## Contenido del sitio (pendiente de definir)
-Aún no se ha decidido la estructura final de secciones (temario, materiales, tareas,
-calendario, recursos, contacto, etc.). Retomar esto con Carmen.
+## Estilo visual
+"Compás": verde bosque (#14301f) + crema (#f6f3ea) + acento verde-lima (#c4e86b),
+formas geométricas (círculo, triángulo) como decoración. Tipografías: Outfit (títulos)
+y Karla (texto). Estilos compartidos en `assets/style.css`.
+
+## Estructura del sitio
+- `index.html` — página de inicio con tarjetas a cada materia.
+- Una carpeta por materia, cada una con su propio `index.html`:
+  `matematicas-1/`, `matematicas-2/`, `matematicas-3/`, `matematicas-4/`,
+  `matematicas-5/`, `probabilidad-estadistica/` (optativa).
+- Dentro de cada carpeta de materia se irán agregando páginas de temas conforme
+  se trabajen con Carmen (por ejemplo `matematicas-3/tema-1-....html`) y una
+  subcarpeta `materiales/` para PDFs o imágenes cuando se necesite.
+- Todos los cursos muestran la etiqueta "Próximamente" excepto el que ya tiene
+  contenido activo (actualmente Matemáticas 3).
+
+## Flujo de trabajo para agregar temas
+1. Elegir la materia y el tema a trabajar.
+2. Carmen comparte el contenido (texto en el chat, PDF, Word o imagen).
+3. Se arma la página del tema dentro de la carpeta de esa materia, siguiendo el
+   estilo "Compás".
+4. Se sincroniza automáticamente con GitHub (commit + push).
+5. Se anota el avance en [BITACORA.md](BITACORA.md).
