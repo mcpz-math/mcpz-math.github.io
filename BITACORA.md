@@ -56,3 +56,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Criterio para futuras clases: cuando el material de un subtema sea extenso (como en
   este caso), se le da su propia página `tema-XX-nombre-subtema.html` en vez de meterlo
   en el bloque del temario del tema.
+
+## 2026-09-09 (ejercicios del subtema Gráfico)
+- Carmen compartió "Serie1_grafico.pdf" con 10 ejercicios de sistemas de ecuaciones para
+  resolver por método gráfico, más una rúbrica de evaluación con 5 competencias.
+- Se agregó la sección "Ejercicios — Serie 1" a `matematicas-3/tema-01-grafico.html`,
+  con el propósito, las instrucciones, los 10 ejercicios en tarjetas numeradas, y la
+  rúbrica completa en una tabla (con desplazamiento horizontal en pantallas pequeñas).

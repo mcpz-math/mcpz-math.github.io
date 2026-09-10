@@ -359,6 +359,68 @@ footer.site-footer {
   color: var(--ink-soft);
 }
 
+/* ---- Ejercicios ---- */
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.9rem;
+  margin: 0 1.5rem 2.5rem;
+}
+.exercise-card {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+}
+.exercise-card .enum {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: var(--cream);
+  background: var(--moss);
+  border-radius: 50%;
+  width: 1.7rem; height: 1.7rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.exercise-card .eqs {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.82rem;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* ---- Tabla ancha (rúbrica) ---- */
+.table-scroll {
+  overflow-x: auto;
+  margin: 0 1.5rem 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.table-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  min-width: 720px;
+}
+.table-scroll th, .table-scroll td {
+  border: 1px solid var(--line);
+  padding: 0.65rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.5;
+}
+.table-scroll th {
+  background: var(--forest);
+  color: var(--cream);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+}
+.table-scroll td:first-child { font-weight: 700; background: var(--cream); }
+
 /* ---- Temario (lista de temas de una materia) ---- */
 .tema-list {
   display: flex;
