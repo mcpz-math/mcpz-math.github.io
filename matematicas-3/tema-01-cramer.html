@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Método de Cramer — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> Prof. Carmen Pérez</a>
+    <a class="back" href="tema-01-sistemas-de-ecuaciones-simultaneas.html">← Tema 1</a>
+  </nav>
+
+  <div class="course-header wrap" style="margin-left:0; margin-right:0;">
+    <div class="k">Matemáticas 3 · Tema 1 · Subtema</div>
+    <h1>Método de Cramer</h1>
+  </div>
+
+  <div class="prose">
+    <p>El <strong>método de Cramer</strong> es una técnica de álgebra lineal que permite
+       resolver sistemas de ecuaciones lineales mediante el cálculo de determinantes.
+       Funciona únicamente cuando el sistema tiene el mismo número de ecuaciones que de
+       incógnitas y el determinante principal es distinto de cero.</p>
+  </div>
+
+  <div class="callout">
+    <div class="k">Objetivo general</div>
+    <p>Desarrollar en el estudiante la capacidad para resolver sistemas de ecuaciones
+       lineales mediante el método de Cramer, utilizando de manera correcta los
+       determinantes y procedimientos algebraicos para obtener los valores de las
+       incógnitas, así como interpretar y verificar los resultados, fortaleciendo el
+       razonamiento lógico, la resolución de problemas y el pensamiento matemático.</p>
+  </div>
+
+  <div class="prose">
+    <p><strong>Antecedentes.</strong> Revisa en tus apuntes del curso de Matemáticas I y
+       Matemáticas II lo siguiente:</p>
+  </div>
+  <ul class="method-list">
+    <li>Operaciones básicas de los números enteros (suma, resta, multiplicación y división).</li>
+    <li>Operaciones básicas de los números racionales (suma, resta, multiplicación y división).</li>
+    <li>Leyes de los signos para esas operaciones básicas.</li>
+  </ul>
+
+  <div class="prose">
+    <p>Empecemos definiendo qué es un determinante. Un <strong>determinante</strong> es un
+       número que se obtiene a partir de una matriz cuadrada y que proporciona información
+       importante sobre ella. En el tema de sistemas de ecuaciones, el determinante permite
+       saber, entre otras cosas, si un sistema tiene una solución única y es fundamental
+       para aplicar el método de Cramer.</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Determinante</h2>
+    <p style="display:flex; align-items:center; flex-wrap:wrap; gap:0.4rem;">
+      <span class="eq" style="display:inline-flex; align-items:center;">Δ =</span>
+      <span class="det">
+        <span class="det-bar"></span>
+        <span class="det-grid"><span>a</span><span>b</span><span>c</span><span>d</span></span>
+        <span class="det-bar"></span>
+      </span>
+      <span class="eq">= ad − bc</span>
+    </p>
+  </div>
+
+  <div class="callout">
+    <div class="k">Observación</div>
+    <p>Cuando el determinante principal es cero decimos que el sistema no tiene solución
+       o tiene un infinito de soluciones.</p>
+  </div>
+
+  <p class="section-label">Procedimiento</p>
+  <ol class="steps">
+    <li><span><strong>Observa</strong> que las ecuaciones estén ordenadas de acuerdo a la variable.</span></li>
+    <li><span><strong>Establece el determinante principal</strong> y resuélvelo.</span></li>
+    <li><span><strong>Si el determinante es distinto de cero,</strong> encuentra el determinante para la primera incógnita, divide entre el valor obtenido del determinante principal y resuelve.</span></li>
+    <li><span><strong>Repite el paso anterior</strong> para todas las incógnitas.</span></li>
+    <li><span><strong>Comprueba</strong> si hemos llegado a la solución.</span></li>
+  </ol>
+
+  <p class="section-label">Ejemplo resuelto</p>
+  <div class="example-box">
+    <h2>Resolver el siguiente sistema de ecuaciones por el método de Cramer</h2>
+    <span class="eq">4x − y = 5</span>
+    <span class="eq">2x + 5y = −1</span>
+
+    <p style="margin-top:1.2rem;"><strong>Paso 1.</strong> Observamos que en el sistema
+       primero están las x's y después las y's.</p>
+
+    <p><strong>Paso 2.</strong> Determinante principal:</p>
+    <p style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+      <span class="eq">Δ =</span>
+      <span class="det">
+        <span class="det-bar"></span>
+        <span class="det-grid"><span>4</span><span>−1</span><span>2</span><span>5</span></span>
+        <span class="det-bar"></span>
+      </span>
+      <span class="eq">= 20 + 2 = 22</span>
+    </p>
+
+    <p><strong>Paso 3.</strong> Para la incógnita x:</p>
+    <p style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+      <span class="eq">x = Δx / Δ =</span>
+      <span class="det-frac">
+        <span class="num">
+          <span class="det">
+            <span class="det-bar"></span>
+            <span class="det-grid"><span>5</span><span>−1</span><span>−1</span><span>5</span></span>
+            <span class="det-bar"></span>
+          </span>
+        </span>
+        <span class="den">22</span>
+      </span>
+      <span class="eq">= (25 − 1) / 22 = 24/22 = 12/11</span>
+    </p>
+
+    <p><strong>Paso 4.</strong> Para la incógnita y:</p>
+    <p style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+      <span class="eq">y = Δy / Δ =</span>
+      <span class="det-frac">
+        <span class="num">
+          <span class="det">
+            <span class="det-bar"></span>
+            <span class="det-grid"><span>4</span><span>5</span><span>2</span><span>−1</span></span>
+            <span class="det-bar"></span>
+          </span>
+        </span>
+        <span class="den">22</span>
+      </span>
+      <span class="eq">= (−4 − 10) / 22 = −14/22 = −7/11</span>
+    </p>
+
+    <p>Por lo que la solución es: <strong>x = 12/11</strong> y <strong>y = −7/11</strong>.</p>
+
+    <p><strong>Paso 5. Comprobación.</strong> Sustituimos los valores encontrados en ambas
+       ecuaciones. Si en ambas nos queda la igualdad, hemos encontrado la solución del sistema.</p>
+  </div>
+
+  <div class="blocks">
+    <div class="block">
+      <h2>Ecuación 1</h2>
+      <p>
+        4x − y = 5<br>
+        4(12/11) − (−7/11) = 5<br>
+        48/11 + 7/11 = 5<br>
+        <strong>55/11 = 5 ✓</strong>
+      </p>
+    </div>
+    <div class="block">
+      <h2>Ecuación 2</h2>
+      <p>
+        2x + 5y = −1<br>
+        2(12/11) + 5(−7/11) = −1<br>
+        24/11 − 35/11 = −1<br>
+        <strong>−11/11 = −1 ✓</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="k">Observación</div>
+    <p>Este método puede generalizarse para sistemas de ecuaciones de 3×3, 4×4, 5×5, etc.</p>
+  </div>
+
+  <footer class="site-footer">
+    Prof. Carmen Pérez · Matemáticas · Bachillerato
+  </footer>
+
+</body>
+</html>

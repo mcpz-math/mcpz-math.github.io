@@ -63,3 +63,17 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Se agregó la sección "Ejercicios — Serie 1" a `matematicas-3/tema-01-grafico.html`,
   con el propósito, las instrucciones, los 10 ejercicios en tarjetas numeradas, y la
   rúbrica completa en una tabla (con desplazamiento horizontal en pantallas pequeñas).
+
+## 2026-09-11 (subtema Cramer)
+- Carmen compartió "Clase 3. Método de Cramer.pdf". Se creó la página propia del subtema
+  `matematicas-3/tema-01-cramer.html` con: objetivo general, antecedentes, definición de
+  determinante, observación (determinante = 0), el procedimiento de 5 pasos, y el ejemplo
+  resuelto completo (sistema 4x−y=5, 2x+5y=−1) con los determinantes principal, de x y de
+  y, la solución (x=12/11, y=−7/11) y la comprobación en ambas ecuaciones.
+- Se agregó un estilo nuevo en `assets/style.css` para mostrar determinantes con barras
+  verticales (clases `.det`, `.det-grid`, `.det-frac`), reutilizable en futuros temas.
+- El bloque "Cramer" dentro de `tema-01-sistemas-de-ecuaciones-simultaneas.html` ahora
+  enlaza a esa página ("Ver contenido completo →"), igual que el bloque de Gráfico.
+- Nota: el PDF original tenía dos pequeñas erratas (decía "método gráfico" en vez de
+  "método de Cramer" en el ejemplo, y "y = 3/11" en vez de "y = −7/11"); se corrigieron
+  en la página para que coincidan con el procedimiento mostrado.
