@@ -109,3 +109,19 @@ Registro de lo que vamos haciendo, en orden cronológico.
     gráfica en la recta numérica (círculo relleno o vacío según el signo) y su intervalo.
 - Se reutilizaron los estilos existentes (`callout`, `steps`, `example-box`, `blocks`,
   `exercise-grid`, `table-scroll`, `graph-figure`) sin necesidad de agregar CSS nuevo.
+
+## 2026-09-11 (un solo cuadro por ejemplo, Tema 2)
+- En `tema-02-inecuaciones-lineales.html`, se unieron los pasos, la gráfica en la recta
+  numérica y el intervalo de cada ejemplo en un solo cuadro (antes eran tres cuadros
+  separados por ejemplo).
+
+## 2026-09-11 (fracciones sin diagonal)
+- Carmen pidió que, de ahora en adelante, las fracciones se escriban apiladas
+  (numerador sobre denominador) en vez de con diagonal "/". Se agregó la clase
+  reutilizable `.frac` (con `.num`/`.den`, y el modificador `.frac-inline` para texto
+  corrido o tarjetas pequeñas) en `assets/style.css`.
+- Se corrigieron todas las fracciones existentes en `matematicas-3/tema-01-cramer.html`,
+  `matematicas-3/tema-01-grafico.html`, `matematicas-3/tema-02-inecuaciones-lineales.html`
+  y `matematicas-3/tema-02-intervalos-y-desigualdades.html`, incluyendo las etiquetas de
+  valores dentro de las gráficas SVG de recta numérica.
+- Este formato debe usarse en todo el contenido nuevo de aquí en adelante.
