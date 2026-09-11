@@ -86,3 +86,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Se agregó la sección "Ejercicios — Serie 1" a `matematicas-3/tema-01-cramer.html`, con
   el propósito, las instrucciones, los 10 ejercicios en tarjetas numeradas, y la rúbrica
   completa en una tabla.
+
+## 2026-09-11 (cambio de nombre en el sitio)
+- Se reemplazó "Prof. Carmen Pérez" por "DTI. Maria del Carmen Pérez Zarate" en las 19
+  páginas del sitio (título de pestaña, menú superior y pie de página de cada página).
