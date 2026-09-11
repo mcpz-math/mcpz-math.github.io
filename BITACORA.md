@@ -77,3 +77,12 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Nota: el PDF original tenía dos pequeñas erratas (decía "método gráfico" en vez de
   "método de Cramer" en el ejemplo, y "y = 3/11" en vez de "y = −7/11"); se corrigieron
   en la página para que coincidan con el procedimiento mostrado.
+
+## 2026-09-11 (ejercicios del subtema Cramer)
+- Carmen compartió "Serie 1_Cramer.pdf" con 10 ejercicios de sistemas de ecuaciones para
+  resolver por el método de Cramer, más una rúbrica de evaluación con 5 competencias
+  específicas del método (organización en determinantes, cálculo del determinante
+  principal, aplicación del método, argumentación y verificación).
+- Se agregó la sección "Ejercicios — Serie 1" a `matematicas-3/tema-01-cramer.html`, con
+  el propósito, las instrucciones, los 10 ejercicios en tarjetas numeradas, y la rúbrica
+  completa en una tabla.
