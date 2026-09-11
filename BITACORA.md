@@ -90,3 +90,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
 ## 2026-09-11 (cambio de nombre en el sitio)
 - Se reemplazó "Prof. Carmen Pérez" por "DTI. Maria del Carmen Pérez Zarate" en las 19
   páginas del sitio (título de pestaña, menú superior y pie de página de cada página).
+
+## 2026-09-11 (IEMS en vez de Bachillerato)
+- Se reemplazó "Bachillerato" por "IEMS" en el pie de página de las 19 páginas del sitio
+  y en el eyebrow de la página de inicio ("Matemáticas · IEMS").
