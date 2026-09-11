@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inecuaciones — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-02-inecuaciones.html">← Tema 2</a>
+  </nav>
+
+  <div class="course-header wrap" style="margin-left:0; margin-right:0;">
+    <div class="k">Matemáticas 3 · Tema 2 · Subtema</div>
+    <h1>Inecuaciones</h1>
+  </div>
+
+  <div class="prose">
+    <p>Una <strong>inecuación</strong> es una desigualdad algebraica entre dos expresiones
+       que contiene una o más incógnitas. A diferencia de las ecuaciones (que usan el
+       signo =), las inecuaciones utilizan los símbolos &lt;, &gt;, ≤ o ≥. Resolverlas
+       implica encontrar un rango de valores (intervalos) que hacen que la desigualdad
+       sea cierta.</p>
+  </div>
+
+  <p class="section-label">Pasos para resolver una inecuación lineal</p>
+  <div class="prose">
+    <p>La resolución es muy similar a la de las ecuaciones de primer grado:</p>
+  </div>
+  <ol class="steps">
+    <li><span><strong>Despejar la incógnita:</strong> agrupa todos los términos con x de un lado de la desigualdad y los números del otro lado.</span></li>
+    <li><span><strong>Cuidado con los signos negativos:</strong> si en algún momento multiplicas o divides ambos lados de la inecuación por un número negativo, debes invertir el sentido del signo de desigualdad (por ejemplo, de &lt; a &gt;).</span></li>
+    <li><span><strong>Expresar la solución:</strong> la solución no suele ser un número único, sino un intervalo.</span></li>
+  </ol>
+
+  <p class="section-label">Ejemplo 1</p>
+  <div class="example-box">
+    <h2>Resolver la siguiente inecuación</h2>
+    <span class="eq">(3/4)(x − 1) + 1/2 ≥ 2(x + 1/4) − 1</span>
+
+    <p style="margin-top:1.2rem;"><strong>Quitamos los paréntesis</strong> usando la propiedad distributiva:</p>
+    <span class="eq">(3/4)x − 3/4 + 1/2 ≥ 2x + 2/4 − 1</span>
+
+    <p><strong>Multiplicamos todo por 4</strong> (mcm(2,4)):</p>
+    <span class="eq">3x − 3 + 2 ≥ 8x + 2 − 4</span>
+
+    <p><strong>Sumamos/restamos términos semejantes:</strong></p>
+    <span class="eq">3x − 1 ≥ 8x − 2</span>
+
+    <p><strong>Agrupamos las x de un lado de la desigualdad:</strong></p>
+    <span class="eq">3x − 8x ≥ −2 + 1</span>
+
+    <p><strong>Sumamos/restamos términos semejantes:</strong></p>
+    <span class="eq">−5x ≥ −1</span>
+
+    <p><strong>Dividiendo entre −5</strong> (invertimos el signo de la desigualdad):</p>
+    <span class="eq">x ≤ −1/−5</span>
+
+    <p style="margin-top:1rem;">La solución es:</p>
+    <span class="eq" style="font-size:1.15rem;">x ≤ 1/5</span>
+  </div>
+
+  <figure class="graph-figure">
+    <svg viewBox="0 0 340 80" width="340" height="80">
+      <line x1="20" y1="40" x2="320" y2="40" stroke="#cbd5c0" stroke-width="1.5"/>
+      <polygon points="20,40 29,35 29,45" fill="#cbd5c0"/>
+      <polygon points="320,40 311,35 311,45" fill="#cbd5c0"/>
+      <line x1="29" y1="40" x2="170" y2="40" stroke="#14301f" stroke-width="3"/>
+      <circle cx="170" cy="40" r="6" fill="#14301f" stroke="#14301f" stroke-width="2"/>
+      <text x="20" y="63" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56604f">−∞</text>
+      <text x="170" y="63" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#14301f">1/5</text>
+      <text x="320" y="63" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56604f">+∞</text>
+    </svg>
+    <figcaption>El círculo relleno indica que 1/5 sí forma parte de la solución (≤).</figcaption>
+  </figure>
+
+  <div class="example-box">
+    <p><strong>Intervalo:</strong></p>
+    <span class="eq">x ∈ (−∞, 1/5]</span>
+  </div>
+
+  <p class="section-label">Ejemplo 2</p>
+  <div class="example-box">
+    <h2>Resolver la siguiente inecuación</h2>
+    <span class="eq">3(x/2 + 1/4) + 5/2 &lt; (2/3)(x + 1/2) − 3/2</span>
+
+    <p style="margin-top:1.2rem;"><strong>Quitamos los paréntesis</strong> usando la propiedad distributiva:</p>
+    <span class="eq">(3/2)x + 3/4 + 5/2 &lt; (2/3)x + 2/6 − 3/2</span>
+
+    <p><strong>Multiplicamos todo por 12</strong> (mcm(2,4,3,6)):</p>
+    <span class="eq">18x + 9 + 30 &lt; 8x + 4 − 18</span>
+
+    <p><strong>Sumamos/restamos términos semejantes:</strong></p>
+    <span class="eq">18x + 39 &lt; 8x − 14</span>
+
+    <p><strong>Agrupamos las x de un lado de la desigualdad:</strong></p>
+    <span class="eq">18x − 8x &lt; −14 − 39</span>
+
+    <p><strong>Sumamos/restamos términos semejantes:</strong></p>
+    <span class="eq">10x &lt; −53</span>
+
+    <p><strong>Dividiendo entre 10</strong> (positivo, el signo no cambia):</p>
+    <span class="eq">x &lt; −53/10</span>
+
+    <p style="margin-top:1rem;">La solución es:</p>
+    <span class="eq" style="font-size:1.15rem;">x &lt; −53/10</span>
+  </div>
+
+  <figure class="graph-figure">
+    <svg viewBox="0 0 340 80" width="340" height="80">
+      <line x1="20" y1="40" x2="320" y2="40" stroke="#cbd5c0" stroke-width="1.5"/>
+      <polygon points="20,40 29,35 29,45" fill="#cbd5c0"/>
+      <polygon points="320,40 311,35 311,45" fill="#cbd5c0"/>
+      <line x1="29" y1="40" x2="120" y2="40" stroke="#14301f" stroke-width="3"/>
+      <circle cx="120" cy="40" r="6" fill="#ffffff" stroke="#14301f" stroke-width="2"/>
+      <text x="20" y="63" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56604f">−∞</text>
+      <text x="120" y="63" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#14301f">−53/10</text>
+      <text x="320" y="63" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56604f">+∞</text>
+    </svg>
+    <figcaption>El círculo vacío indica que −53/10 no forma parte de la solución (&lt;).</figcaption>
+  </figure>
+
+  <div class="example-box">
+    <p><strong>Intervalo:</strong></p>
+    <span class="eq">x ∈ (−∞, −53/10)</span>
+  </div>
+
+  <div class="callout">
+    <div class="k">Observación</div>
+    <p>En el extremo de −∞ o ∞, siempre va abierto, es decir, paréntesis redondo.</p>
+  </div>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>

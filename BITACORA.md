@@ -94,3 +94,18 @@ Registro de lo que vamos haciendo, en orden cronológico.
 ## 2026-09-11 (IEMS en vez de Bachillerato)
 - Se reemplazó "Bachillerato" por "IEMS" en el pie de página de las 19 páginas del sitio
   y en el eyebrow de la página de inicio ("Matemáticas · IEMS").
+
+## 2026-09-11 (contenido del Tema 2: Inecuaciones)
+- Carmen compartió "Clase 4. Inecuaciones.pdf". Se llenó `matematicas-3/tema-02-inecuaciones.html`
+  con propósito, aprendizajes esperados y antecedentes de la clase, y se enlazaron sus dos
+  subtemas a páginas propias:
+  - `tema-02-intervalos-y-desigualdades.html`: qué es una desigualdad, tabla de símbolos
+    (<, >, ≤, ≥), Actividad 1 (tabla para llenar: expresión verbal → desigualdad →
+    intervalo), clasificación de intervalos (cerrado/abierto/semiabierto), enlace al
+    recurso de Khan Academy, y el ejercicio de clase con 15 desigualdades para representar
+    como intervalo y gráfica.
+  - `tema-02-inecuaciones-lineales.html`: qué es una inecuación, los 3 pasos para
+    resolverla, y los dos ejemplos resueltos completos paso a paso, cada uno con su
+    gráfica en la recta numérica (círculo relleno o vacío según el signo) y su intervalo.
+- Se reutilizaron los estilos existentes (`callout`, `steps`, `example-box`, `blocks`,
+  `exercise-grid`, `table-scroll`, `graph-figure`) sin necesidad de agregar CSS nuevo.
