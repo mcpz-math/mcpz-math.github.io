@@ -125,3 +125,21 @@ Registro de lo que vamos haciendo, en orden cronológico.
   y `matematicas-3/tema-02-intervalos-y-desigualdades.html`, incluyendo las etiquetas de
   valores dentro de las gráficas SVG de recta numérica.
 - Este formato debe usarse en todo el contenido nuevo de aquí en adelante.
+
+## 2026-09-11 (corrección: el sitio se veía vacío en pantallas grandes)
+- Carmen reportó que el sitio se veía bien en el celular pero muy vacío en la
+  computadora. Se encontró la causa: un estilo en línea
+  (`margin-left:0; margin-right:0;`) en el encabezado de cada una de las 21 páginas
+  dejaba el contenido pegado a la izquierda en vez de centrarlo, y la mayoría de las
+  secciones (textos, cuadros, tablas, cuadrículas) no tenían un ancho máximo, así que
+  en monitores anchos se estiraban o dejaban un enorme espacio vacío a la derecha.
+- Se corrigió en `assets/style.css`: cada tipo de sección ahora tiene su propio ancho
+  máximo centrado (encabezados y cuadrícula de cursos a 1040px, texto/cuadros/tablas a
+  760px, párrafos a 68ch), usando `width: min(100% - 3rem, Npx); margin: 0 auto;` — esto
+  se ve igual que antes en el celular (mismo margen de 1.5rem) y centrado en pantallas
+  grandes.
+- También se aseguró que la cuadrícula de cursos de la portada muestre siempre 1, 2 o 3
+  columnas según el ancho de pantalla (antes podía dejar una columna vacía a la derecha).
+- Se quitó el estilo en línea roto de las 21 páginas (`class="course-header wrap"
+  style="margin-left:0; margin-right:0;"` → `class="course-header"`, y lo mismo para
+  `.hero` en la portada).
