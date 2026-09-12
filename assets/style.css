@@ -281,6 +281,14 @@ footer.site-footer {
   display: inline-block;
   margin: 0 0.6rem 0.5rem 0;
 }
+/* Fragmento de una fórmula compuesta (texto + determinante/fracción + texto):
+   mismo estilo tipográfico que .eq, pero sin la "pastilla" con borde, para que
+   toda la fórmula se lea como una sola pieza en vez de varios cuadros sueltos. */
+.example-box .eq-plain {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
 
 .method-list {
   width: min(100% - 3rem, 60ch);

@@ -143,3 +143,13 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Se quitó el estilo en línea roto de las 21 páginas (`class="course-header wrap"
   style="margin-left:0; margin-right:0;"` → `class="course-header"`, y lo mismo para
   `.hero` en la portada).
+
+## 2026-09-11 (fórmulas de Cramer como una sola pieza, no cuadros sueltos)
+- Carmen notó que en la fórmula del determinante (y en los pasos 2, 3 y 4 del ejemplo
+  resuelto) cada pedazo de texto ("Δ =", "= ad − bc", etc.) se veía en su propia
+  pastilla con borde, separado del diagrama del determinante, en vez de leerse como una
+  sola fórmula.
+- Se agregó la clase `.eq-plain` en `assets/style.css` (mismo estilo tipográfico que
+  `.eq`, pero sin fondo ni borde) y se usó en esos fragmentos de `tema-01-cramer.html`,
+  dejando intactas las ecuaciones que sí van solas en su propia línea (como
+  "4x − y = 5"), que conservan su pastilla.
