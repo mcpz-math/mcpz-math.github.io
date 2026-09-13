@@ -153,3 +153,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   `.eq`, pero sin fondo ni borde) y se usó en esos fragmentos de `tema-01-cramer.html`,
   dejando intactas las ecuaciones que sí van solas en su propia línea (como
   "4x − y = 5"), que conservan su pastilla.
+
+## 2026-09-13 (video recomendado en Cramer)
+- Carmen pidió sugerencias de video sobre el método de Cramer para complementar el
+  ejemplo resuelto de la clase. Se buscó y se agregó la sección "Video recomendado" en
+  `matematicas-3/tema-01-cramer.html`, con un enlace a "Sistemas de ecuaciones lineales
+  2x2 | Determinantes - Método de Cramer | Ejemplo 1" (canal julioprofe en YouTube), que
+  sigue el mismo procedimiento (Δ, Δx, Δy) que la página.
