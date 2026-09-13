@@ -160,3 +160,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   `matematicas-3/tema-01-cramer.html`, con un enlace a "Sistemas de ecuaciones lineales
   2x2 | Determinantes - Método de Cramer | Ejemplo 1" (canal julioprofe en YouTube), que
   sigue el mismo procedimiento (Δ, Δx, Δy) que la página.
+
+## 2026-09-13 (color de los cuadros de observación)
+- Carmen pidió cambiar el color de los cuadros de observación (los que antes eran verde
+  bosque con texto crema, usados para "Objetivo general", "Propósito" y "Observación") a
+  un verde más claro. Se agregaron las variables `--callout-bg` (#e4f1d3) y
+  `--callout-border` (#c3dba3) en `assets/style.css`, con texto en verde bosque y la
+  etiqueta en verde musgo, aplicado automáticamente en todas las páginas del sitio.
