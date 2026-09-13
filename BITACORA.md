@@ -167,3 +167,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   un verde más claro. Se agregaron las variables `--callout-bg` (#e4f1d3) y
   `--callout-border` (#c3dba3) en `assets/style.css`, con texto en verde bosque y la
   etiqueta en verde musgo, aplicado automáticamente en todas las páginas del sitio.
+
+## 2026-09-13 (videos recomendados en Método gráfico)
+- Carmen pidió videos sobre cómo transformar la ecuación general de la recta a su forma
+  normal y graficar usando pendiente y ordenada al origen. Se agregó la sección "Videos
+  recomendados" en `matematicas-3/tema-01-grafico.html`, con dos enlaces: "Pasar de la
+  ecuación General (Fundamental) a la Ordinaria (pendiente-ordenada)" y "La gráfica de
+  una ecuación en la forma pendiente-ordenada al origen" (Khan Academy).
