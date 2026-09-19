@@ -174,3 +174,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
   recomendados" en `matematicas-3/tema-01-grafico.html`, con dos enlaces: "Pasar de la
   ecuación General (Fundamental) a la Ordinaria (pendiente-ordenada)" y "La gráfica de
   una ecuación en la forma pendiente-ordenada al origen" (Khan Academy).
+
+## 2026-09-19 (videos incrustados, se reproducen directo en la página)
+- Carmen pidió que los videos de Matemáticas 3 se vean desde que se abre la página, sin
+  tener que dar clic para abrir YouTube en otra pestaña. Se agregó el estilo
+  `.video-embed` en `assets/style.css` (marco con esquinas redondeadas, proporción 16:9,
+  responsivo) y se incrustó el reproductor directo de YouTube en:
+  - `matematicas-3/tema-01-grafico.html` (video "Pasar de la ecuación General...").
+  - `matematicas-3/tema-01-cramer.html` (video del método de Cramer).
+  El enlace a Khan Academy en esas mismas páginas y en
+  `matematicas-3/tema-02-intervalos-y-desigualdades.html` se dejó como enlace (Khan
+  Academy no permite incrustar sus páginas directamente en otros sitios).
