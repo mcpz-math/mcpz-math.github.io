@@ -211,3 +211,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   simplifican automáticamente (por ejemplo 4/2 se muestra como 2). El ejemplo inicial
   ahora usa b = −3/2, el mismo valor del ejemplo resuelto en la página de Método
   gráfico.
+
+## 2026-09-19 (un solo control para la ordenada b)
+- Carmen avisó que, al mover el control de la ordenada, sólo podía usar valores
+  enteros. El motivo era que se había dividido en dos controles (numerador y
+  denominador) y cada uno, por separado, sólo se mueve en enteros. Se simplificó a un
+  solo control "Ordenada b" que se mueve en cuartos, así que al arrastrarlo ya se
+  obtienen enteros, medios y cuartos (por ejemplo −3/2 o 5/4), y el valor se muestra ya
+  simplificado debajo del control.
