@@ -228,3 +228,12 @@ Registro de lo que vamos haciendo, en orden cronológico.
   escribir una fracción directamente (por ejemplo "-3/2" o "7/3"), no solo enteros o
   decimales. Si lo que se escribe no es válido, la casilla se marca en rojo y, al salir
   de ella, regresa al último valor válido.
+
+## 2026-09-19 (escala de la cuadrícula según el denominador de b)
+- Carmen pidió ver la escala en el plano cartesiano: por ejemplo, si la ordenada es
+  3/4, que se vea que cada 4 cuadros equivale a una unidad. Se agregó una cuadrícula
+  que se subdivide automáticamente según el denominador de b (ya simplificado): si
+  b = 3/4 se dibujan 4 cuadros por unidad, si b = 5/3 se dibujan 3, etc. Debajo de la
+  gráfica aparece una nota ("Escala de esta cuadrícula: cada N cuadros = 1 unidad")
+  que se actualiza junto con los controles; cuando b es un número entero no se
+  muestra ninguna nota y la cuadrícula vuelve a su forma normal.
