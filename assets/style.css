@@ -576,6 +576,82 @@ footer.site-footer {
   white-space: nowrap;
 }
 
+/* ---- Gráfica interactiva (pendiente y ordenada) ---- */
+.pg-equation {
+  text-align: center;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 1.15rem;
+  color: var(--forest);
+  margin: 0 0 1rem;
+}
+.pg-label {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
+  fill: var(--forest);
+  font-weight: 600;
+}
+.pg-label.small { font-size: 9.5px; fill: var(--moss); font-weight: 500; }
+.pg-point { fill: var(--lime); stroke: var(--forest); stroke-width: 1.5; }
+.pg-guide { stroke: var(--moss); stroke-width: 2; fill: none; }
+.pg-final-line { stroke: var(--forest); stroke-width: 2.6; fill: none; }
+
+.pg-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  justify-content: center;
+  margin: 1rem 0 1.2rem;
+}
+.pg-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--moss);
+}
+.pg-field input[type="range"] { width: 130px; accent-color: var(--moss); }
+.pg-field .val {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.95rem;
+  color: var(--forest);
+  font-weight: 700;
+  text-transform: none;
+}
+.pg-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+.pg-btn {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--cream);
+  background: var(--forest);
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.3rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.pg-btn:hover { background: var(--forest-soft); }
+.pg-btn:disabled { opacity: 0.6; cursor: default; }
+.pg-btn.secondary {
+  background: var(--cream);
+  color: var(--forest);
+  border: 1px solid var(--line);
+}
+.pg-btn.secondary:hover { border-color: var(--moss); }
+
+.steps li.active { color: var(--forest); font-weight: 600; }
+.steps li.active::before { background: var(--lime); color: var(--forest); }
+
 @media (max-width: 640px) {
   .hero { padding: 2.2rem 1.4rem; }
   .site-nav { padding: 1rem; }

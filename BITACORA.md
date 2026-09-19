@@ -185,3 +185,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
   El enlace a Khan Academy en esas mismas páginas y en
   `matematicas-3/tema-02-intervalos-y-desigualdades.html` se dejó como enlace (Khan
   Academy no permite incrustar sus páginas directamente en otros sitios).
+
+## 2026-09-19 (animación interactiva de pendiente y ordenada al origen)
+- Carmen pidió un video que explicara cómo graficar una recta usando la pendiente y la
+  ordenada al origen. Como no se puede generar un video real, en su lugar se creó una
+  página nueva con una animación interactiva: `matematicas-3/tema-01-pendiente-ordenada.html`.
+  Permite mover controles (sube, corre y ordenada b) y ver la ecuación, el punto (0, b),
+  el segundo punto y la recta actualizarse en vivo, además de un botón "Reproducir
+  animación" que muestra el procedimiento paso a paso y un botón "Otro ejemplo" para
+  practicar con valores aleatorios. Se agregaron los estilos correspondientes
+  (`.pg-*` y el estado `.steps li.active`) en `assets/style.css`, y se enlazó esta
+  página desde los antecedentes de `matematicas-3/tema-01-grafico.html`.
