@@ -59,6 +59,7 @@
       <text id="label-run" class="pg-label small" opacity="0"></text>
       <text id="label-rise" class="pg-label small" opacity="0"></text>
     </svg>
+    <p class="pg-scale-note" id="pg-scale-note"></p>
 
     <div class="pg-controls">
       <div class="pg-field">
@@ -128,19 +129,37 @@
     }
 
     var gridGroup = document.getElementById('pg-grid');
+    var scaleNote = document.getElementById('pg-scale-note');
+    var MAX_DRAWN_SCALE = 8; // más allá de esto ya no se ven líneas útiles a este tamaño
 
-    for (var i = -LIM; i <= LIM; i++) {
-      if (i === 0) continue;
-      gridGroup.appendChild(el('line', { x1: toX(i), y1: toY(-LIM), x2: toX(i), y2: toY(LIM), stroke: '#dde2dc', 'stroke-width': 1 }));
-      gridGroup.appendChild(el('line', { x1: toX(-LIM), y1: toY(i), x2: toX(LIM), y2: toY(i), stroke: '#dde2dc', 'stroke-width': 1 }));
-    }
-    gridGroup.appendChild(el('line', { x1: toX(-LIM), y1: toY(0), x2: toX(LIM), y2: toY(0), stroke: '#22301f', 'stroke-width': 1.5 }));
-    gridGroup.appendChild(el('line', { x1: toX(0), y1: toY(-LIM), x2: toX(0), y2: toY(LIM), stroke: '#22301f', 'stroke-width': 1.5 }));
+    // Dibuja la cuadrícula. `scale` = en cuántos cuadros se divide cada unidad
+    // (por ejemplo, scale = 4 dibuja 4 cuadros por cada unidad en ambos ejes).
+    function buildGrid(scale) {
+      while (gridGroup.firstChild) gridGroup.removeChild(gridGroup.firstChild);
 
-    for (var t = -LIM; t <= LIM; t += 2) {
-      if (t === 0) continue;
-      gridGroup.appendChild(el('text', { x: toX(t) + 3, y: toY(0) + 13, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 9, fill: '#56604f' })).textContent = t;
-      gridGroup.appendChild(el('text', { x: toX(0) + 5, y: toY(t) + 3, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 9, fill: '#56604f' })).textContent = t;
+      if (scale > 1) {
+        var step = 1 / scale;
+        for (var s = -LIM * scale; s <= LIM * scale; s++) {
+          var pos = s * step;
+          if (Math.abs(pos - Math.round(pos)) < 1e-9) continue; // los enteros se dibujan abajo, más marcados
+          gridGroup.appendChild(el('line', { x1: toX(pos), y1: toY(-LIM), x2: toX(pos), y2: toY(LIM), stroke: '#eceee5', 'stroke-width': 0.6 }));
+          gridGroup.appendChild(el('line', { x1: toX(-LIM), y1: toY(pos), x2: toX(LIM), y2: toY(pos), stroke: '#eceee5', 'stroke-width': 0.6 }));
+        }
+      }
+
+      for (var i = -LIM; i <= LIM; i++) {
+        if (i === 0) continue;
+        gridGroup.appendChild(el('line', { x1: toX(i), y1: toY(-LIM), x2: toX(i), y2: toY(LIM), stroke: '#dde2dc', 'stroke-width': 1 }));
+        gridGroup.appendChild(el('line', { x1: toX(-LIM), y1: toY(i), x2: toX(LIM), y2: toY(i), stroke: '#dde2dc', 'stroke-width': 1 }));
+      }
+      gridGroup.appendChild(el('line', { x1: toX(-LIM), y1: toY(0), x2: toX(LIM), y2: toY(0), stroke: '#22301f', 'stroke-width': 1.5 }));
+      gridGroup.appendChild(el('line', { x1: toX(0), y1: toY(-LIM), x2: toX(0), y2: toY(LIM), stroke: '#22301f', 'stroke-width': 1.5 }));
+
+      for (var t = -LIM; t <= LIM; t += 2) {
+        if (t === 0) continue;
+        gridGroup.appendChild(el('text', { x: toX(t) + 3, y: toY(0) + 13, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 9, fill: '#56604f' })).textContent = t;
+        gridGroup.appendChild(el('text', { x: toX(0) + 5, y: toY(t) + 3, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 9, fill: '#56604f' })).textContent = t;
+      }
     }
 
     var ptB = document.getElementById('pt-b');
@@ -376,6 +395,19 @@
     function updateAll(sourceBox) {
       var v = currentValues();
       updateEquation(v);
+
+      var reduced = reduceFraction(v.bNum, v.bDen);
+      if (reduced.den === 1) {
+        buildGrid(1);
+        scaleNote.textContent = '';
+      } else if (reduced.den <= MAX_DRAWN_SCALE) {
+        buildGrid(reduced.den);
+        scaleNote.textContent = 'Escala de esta cuadrícula: cada ' + reduced.den + ' cuadros = 1 unidad.';
+      } else {
+        buildGrid(1);
+        scaleNote.textContent = 'b tiene denominador ' + reduced.den + ': el punto se ubica de forma continua entre las líneas.';
+      }
+
       showStatic();
 
       riseInput.value = clampInt(state.rise, -6, 6);
