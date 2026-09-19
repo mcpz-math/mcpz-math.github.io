@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendiente y ordenada al origen — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-01-grafico.html">← Método gráfico</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 3 · Tema 1 · Repaso</div>
+    <h1>Cómo graficar una recta con la pendiente y la ordenada al origen</h1>
+  </div>
+
+  <div class="prose">
+    <p>Antes de resolver sistemas de ecuaciones por el método gráfico, es indispensable
+       saber graficar una sola recta a partir de su ecuación <strong>normal (u ordinaria)</strong>:</p>
+  </div>
+
+  <div class="example-box">
+    <span class="eq">y = mx + b</span>
+  </div>
+
+  <div class="callout">
+    <div class="k">Recuerda</div>
+    <p><strong>m</strong> es la <strong>pendiente</strong>: indica cuánto sube o baja la
+       recta ("sube", el numerador) por cada unidad que avanza hacia la derecha ("corre",
+       el denominador). <strong>b</strong> es la <strong>ordenada al origen</strong>: el
+       punto donde la recta cruza el eje y, es decir, el punto (0, b).</p>
+  </div>
+
+  <p class="section-label">Animación interactiva — pruébalo tú</p>
+  <div class="graph-figure">
+    <div class="pg-equation" id="pg-equation">y = mx + b</div>
+
+    <svg viewBox="0 0 336 336" width="336" height="336" id="pg-svg">
+      <defs>
+        <clipPath id="pg-clip"><rect x="24" y="24" width="288" height="288"/></clipPath>
+      </defs>
+      <g id="pg-grid"></g>
+
+      <line id="line-full" class="pg-final-line" clip-path="url(#pg-clip)" opacity="0"></line>
+      <line id="line-run" class="pg-guide" opacity="0"></line>
+      <line id="line-rise" class="pg-guide" opacity="0"></line>
+      <circle id="pt-b" class="pg-point" r="5" opacity="0"></circle>
+      <circle id="pt-2" class="pg-point" r="5" opacity="0"></circle>
+      <text id="label-b" class="pg-label" opacity="0"></text>
+      <text id="label-2" class="pg-label" opacity="0"></text>
+      <text id="label-run" class="pg-label small" opacity="0"></text>
+      <text id="label-rise" class="pg-label small" opacity="0"></text>
+    </svg>
+
+    <div class="pg-controls">
+      <label class="pg-field">Sube (numerador)
+        <input type="range" id="ctrl-rise" min="-6" max="6" step="1" value="2">
+        <span class="val" id="val-rise">2</span>
+      </label>
+      <label class="pg-field">Corre (denominador)
+        <input type="range" id="ctrl-run" min="1" max="6" step="1" value="3">
+        <span class="val" id="val-run">3</span>
+      </label>
+      <label class="pg-field">Ordenada b
+        <input type="range" id="ctrl-b" min="-6" max="6" step="1" value="-2">
+        <span class="val" id="val-b">−2</span>
+      </label>
+    </div>
+
+    <div class="pg-actions">
+      <button class="pg-btn" id="btn-play" type="button">▶ Reproducir animación</button>
+      <button class="pg-btn secondary" id="btn-random" type="button">🎲 Otro ejemplo</button>
+    </div>
+  </div>
+
+  <p class="section-label">Pasos</p>
+  <ol class="steps" id="pg-steps">
+    <li data-step="1"><span><strong>Identifica m y b</strong> en la ecuación y = mx + b. m es la pendiente (sube/corre) y b es la ordenada al origen.</span></li>
+    <li data-step="2"><span><strong>Ubica el punto (0, b)</strong> sobre el eje y: ahí es donde la recta cruza ese eje.</span></li>
+    <li data-step="3"><span><strong>Usa la pendiente</strong> desde ese punto: sube (o baja) las unidades del numerador y corre las del denominador para hallar un segundo punto.</span></li>
+    <li data-step="4"><span><strong>Traza la recta</strong> que pasa por ambos puntos, extendiéndola en ambas direcciones.</span></li>
+  </ol>
+
+  <div class="prose">
+    <p style="text-align:center;">
+      <a href="tema-01-grafico.html" style="color:var(--forest); font-weight:700;">
+        ← Volver a Método gráfico
+      </a>
+    </p>
+  </div>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+  <script>
+  (function () {
+    var UNIT = 24, LIM = 6, ORIGIN = 168;
+    var NS = 'http://www.w3.org/2000/svg';
+    function toX(x) { return ORIGIN + x * UNIT; }
+    function toY(y) { return ORIGIN - y * UNIT; }
+
+    function el(tag, attrs) {
+      var e = document.createElementNS(NS, tag);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }
+
+    var gridGroup = document.getElementById('pg-grid');
+
+    for (var i = -LIM; i <= LIM; i++) {
+      if (i === 0) continue;
+      gridGroup.appendChild(el('line', { x1: toX(i), y1: toY(-LIM), x2: toX(i), y2: toY(LIM), stroke: '#dde2dc', 'stroke-width': 1 }));
+      gridGroup.appendChild(el('line', { x1: toX(-LIM), y1: toY(i), x2: toX(LIM), y2: toY(i), stroke: '#dde2dc', 'stroke-width': 1 }));
+    }
+    gridGroup.appendChild(el('line', { x1: toX(-LIM), y1: toY(0), x2: toX(LIM), y2: toY(0), stroke: '#22301f', 'stroke-width': 1.5 }));
+    gridGroup.appendChild(el('line', { x1: toX(0), y1: toY(-LIM), x2: toX(0), y2: toY(LIM), stroke: '#22301f', 'stroke-width': 1.5 }));
+
+    for (var t = -LIM; t <= LIM; t += 2) {
+      if (t === 0) continue;
+      gridGroup.appendChild(el('text', { x: toX(t) + 3, y: toY(0) + 13, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 9, fill: '#56604f' })).textContent = t;
+      gridGroup.appendChild(el('text', { x: toX(0) + 5, y: toY(t) + 3, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 9, fill: '#56604f' })).textContent = t;
+    }
+
+    var ptB = document.getElementById('pt-b');
+    var pt2 = document.getElementById('pt-2');
+    var lineRun = document.getElementById('line-run');
+    var lineRise = document.getElementById('line-rise');
+    var lineFull = document.getElementById('line-full');
+    var labelB = document.getElementById('label-b');
+    var label2 = document.getElementById('label-2');
+    var labelRun = document.getElementById('label-run');
+    var labelRise = document.getElementById('label-rise');
+    var eqEl = document.getElementById('pg-equation');
+    var stepsEls = Array.prototype.slice.call(document.querySelectorAll('#pg-steps li'));
+
+    var riseInput = document.getElementById('ctrl-rise');
+    var runInput = document.getElementById('ctrl-run');
+    var bInput = document.getElementById('ctrl-b');
+    var riseVal = document.getElementById('val-rise');
+    var runVal = document.getElementById('val-run');
+    var bVal = document.getElementById('val-b');
+    var playBtn = document.getElementById('btn-play');
+    var randomBtn = document.getElementById('btn-random');
+
+    function fmtSigned(n) { return (n < 0 ? '−' : '') + Math.abs(n); }
+
+    function currentValues() {
+      return {
+        rise: parseInt(riseInput.value, 10),
+        run: parseInt(runInput.value, 10),
+        b: parseInt(bInput.value, 10)
+      };
+    }
+
+    function updateEquation(v) {
+      var mText = v.rise === 0
+        ? '0'
+        : '<span class="frac frac-inline"><span class="num">' + fmtSigned(v.rise) + '</span><span class="den">' + v.run + '</span></span>';
+      eqEl.innerHTML = 'y = ' + mText + 'x ' + (v.b < 0 ? '−' : '+') + ' ' + Math.abs(v.b);
+    }
+
+    function setGeometry(v) {
+      var x1 = 0, y1 = v.b;
+      var x2 = v.run, y2 = v.b + v.rise;
+
+      ptB.setAttribute('cx', toX(x1)); ptB.setAttribute('cy', toY(y1));
+      pt2.setAttribute('cx', toX(x2)); pt2.setAttribute('cy', toY(y2));
+
+      lineRun.setAttribute('x1', toX(x1)); lineRun.setAttribute('y1', toY(y1));
+      lineRun.setAttribute('x2', toX(x2)); lineRun.setAttribute('y2', toY(y1));
+
+      lineRise.setAttribute('x1', toX(x2)); lineRise.setAttribute('y1', toY(y1));
+      lineRise.setAttribute('x2', toX(x2)); lineRise.setAttribute('y2', toY(y2));
+
+      var k = 40;
+      var fx1 = x1 - v.run * k, fy1 = y1 - v.rise * k;
+      var fx2 = x1 + v.run * k, fy2 = y1 + v.rise * k;
+      lineFull.setAttribute('x1', toX(fx1)); lineFull.setAttribute('y1', toY(fy1));
+      lineFull.setAttribute('x2', toX(fx2)); lineFull.setAttribute('y2', toY(fy2));
+
+      labelB.setAttribute('x', toX(x1) + 8); labelB.setAttribute('y', toY(y1) - 8);
+      labelB.textContent = '(0, ' + v.b + ')';
+
+      label2.setAttribute('x', toX(x2) + 8); label2.setAttribute('y', toY(y2) - 8);
+      label2.textContent = '(' + v.run + ', ' + y2 + ')';
+
+      labelRun.setAttribute('x', (toX(x1) + toX(x2)) / 2 - 6);
+      labelRun.setAttribute('y', toY(y1) + 16);
+      labelRun.textContent = 'corre ' + v.run;
+
+      labelRise.setAttribute('x', toX(x2) + 6);
+      labelRise.setAttribute('y', (toY(y1) + toY(y2)) / 2);
+      labelRise.textContent = (v.rise >= 0 ? 'sube ' : 'baja ') + Math.abs(v.rise);
+    }
+
+    function delay(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+    function resetVisual() {
+      [ptB, pt2, labelB, label2, labelRun, labelRise].forEach(function (e) {
+        e.style.transition = 'none';
+        e.setAttribute('opacity', 0);
+      });
+      [lineRun, lineRise, lineFull].forEach(function (lineEl) {
+        lineEl.style.transition = 'none';
+        lineEl.setAttribute('opacity', 0);
+        var len = lineEl.getTotalLength();
+        lineEl.setAttribute('stroke-dasharray', len);
+        lineEl.setAttribute('stroke-dashoffset', len);
+      });
+      stepsEls.forEach(function (li) { li.classList.remove('active'); });
+    }
+
+    function revealPoint(e) {
+      e.style.transition = 'none';
+      e.setAttribute('opacity', 0);
+      e.getBoundingClientRect();
+      e.style.transition = 'opacity 0.4s ease';
+      requestAnimationFrame(function () { e.setAttribute('opacity', 1); });
+    }
+
+    function drawLine(lineEl, duration) {
+      lineEl.style.transition = 'none';
+      var len = lineEl.getTotalLength();
+      lineEl.setAttribute('stroke-dasharray', len);
+      lineEl.setAttribute('stroke-dashoffset', len);
+      lineEl.setAttribute('opacity', 1);
+      lineEl.getBoundingClientRect();
+      lineEl.style.transition = 'stroke-dashoffset ' + duration + 'ms ease';
+      requestAnimationFrame(function () { lineEl.setAttribute('stroke-dashoffset', 0); });
+    }
+
+    function setActiveStep(n) {
+      stepsEls.forEach(function (li) {
+        li.classList.toggle('active', Number(li.dataset.step) === n);
+      });
+    }
+
+    function showStatic() {
+      var v = currentValues();
+      setGeometry(v);
+      [ptB, pt2, labelB, label2, labelRun, labelRise].forEach(function (e) {
+        e.style.transition = 'none';
+        e.setAttribute('opacity', 1);
+      });
+      [lineRun, lineRise, lineFull].forEach(function (lineEl) {
+        lineEl.style.transition = 'none';
+        lineEl.removeAttribute('stroke-dasharray');
+        lineEl.removeAttribute('stroke-dashoffset');
+        lineEl.setAttribute('opacity', 1);
+      });
+    }
+
+    var playing = false;
+
+    function playAnimation() {
+      if (playing) return;
+      playing = true;
+      playBtn.disabled = true;
+
+      var v = currentValues();
+      setGeometry(v);
+      resetVisual();
+
+      delay(250)
+        .then(function () { setActiveStep(1); return delay(1300); })
+        .then(function () {
+          setActiveStep(2);
+          revealPoint(ptB);
+          revealPoint(labelB);
+          return delay(1200);
+        })
+        .then(function () {
+          setActiveStep(3);
+          drawLine(lineRun, 550);
+          revealPoint(labelRun);
+          return delay(650);
+        })
+        .then(function () {
+          drawLine(lineRise, 550);
+          revealPoint(labelRise);
+          return delay(650);
+        })
+        .then(function () {
+          revealPoint(pt2);
+          revealPoint(label2);
+          return delay(900);
+        })
+        .then(function () {
+          setActiveStep(4);
+          drawLine(lineFull, 700);
+          return delay(900);
+        })
+        .then(function () {
+          stepsEls.forEach(function (li) { li.classList.remove('active'); });
+          playBtn.disabled = false;
+          playing = false;
+        });
+    }
+
+    function syncLabels() {
+      var v = currentValues();
+      riseVal.textContent = fmtSigned(v.rise);
+      runVal.textContent = v.run;
+      bVal.textContent = fmtSigned(v.b);
+      updateEquation(v);
+    }
+
+    [riseInput, runInput, bInput].forEach(function (input) {
+      input.addEventListener('input', function () {
+        syncLabels();
+        showStatic();
+      });
+    });
+
+    playBtn.addEventListener('click', playAnimation);
+    randomBtn.addEventListener('click', function () {
+      riseInput.value = Math.floor(Math.random() * 9) - 4;
+      runInput.value = Math.floor(Math.random() * 4) + 1;
+      bInput.value = Math.floor(Math.random() * 9) - 4;
+      syncLabels();
+      showStatic();
+    });
+
+    syncLabels();
+    showStatic();
+  })();
+  </script>
+
+</body>
+</html>
