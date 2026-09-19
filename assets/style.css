@@ -613,7 +613,7 @@ footer.site-footer {
   text-transform: uppercase;
   color: var(--moss);
 }
-.pg-field input[type="range"] { width: 130px; accent-color: var(--moss); }
+.pg-field input[type="range"] { width: 110px; accent-color: var(--moss); }
 .pg-field .val {
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
   font-size: 0.95rem;
@@ -621,6 +621,29 @@ footer.site-footer {
   font-weight: 700;
   text-transform: none;
 }
+.pg-field-label {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--moss);
+}
+.pg-field-row { display: flex; align-items: center; gap: 0.5rem; }
+.pg-box {
+  width: 52px;
+  text-align: center;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--forest);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.3rem 0.35rem;
+}
+.pg-box.wide { width: 68px; }
+.pg-box:focus { outline: 2px solid var(--moss); outline-offset: 1px; }
+.pg-box.invalid { border-color: #c0392b; }
 .pg-actions {
   display: flex;
   gap: 0.8rem;

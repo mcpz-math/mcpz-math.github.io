@@ -61,21 +61,31 @@
     </svg>
 
     <div class="pg-controls">
-      <label class="pg-field">Sube (numerador)
-        <input type="range" id="ctrl-rise" min="-6" max="6" step="1" value="2">
-        <span class="val" id="val-rise">2</span>
-      </label>
-      <label class="pg-field">Corre (denominador)
-        <input type="range" id="ctrl-run" min="1" max="6" step="1" value="3">
-        <span class="val" id="val-run">3</span>
-      </label>
-      <label class="pg-field">Ordenada b
-        <input type="range" id="ctrl-b" min="-24" max="24" step="1" value="-6">
-        <span class="val" id="val-b">−3/2</span>
-      </label>
+      <div class="pg-field">
+        <span class="pg-field-label">Sube (numerador)</span>
+        <div class="pg-field-row">
+          <input type="range" id="ctrl-rise" min="-6" max="6" step="1" value="2">
+          <input type="number" id="ctrl-rise-box" class="pg-box" value="2" step="1">
+        </div>
+      </div>
+      <div class="pg-field">
+        <span class="pg-field-label">Corre (denominador)</span>
+        <div class="pg-field-row">
+          <input type="range" id="ctrl-run" min="1" max="6" step="1" value="3">
+          <input type="number" id="ctrl-run-box" class="pg-box" value="3" step="1" min="1">
+        </div>
+      </div>
+      <div class="pg-field">
+        <span class="pg-field-label">Ordenada b</span>
+        <div class="pg-field-row">
+          <input type="range" id="ctrl-b" min="-24" max="24" step="1" value="-6">
+          <input type="text" id="ctrl-b-box" class="pg-box wide" value="-3/2" inputmode="text">
+        </div>
+      </div>
     </div>
     <p style="width:min(100% - 3rem, 640px); margin:-0.6rem auto 0; text-align:center; font-size:0.72rem; color:var(--ink-soft);">
-      El control de b se mueve en cuartos, así que también puedes obtener enteros, medios y cuartos (por ejemplo −3/2 o 5/4).
+      Puedes arrastrar los deslizadores o escribir el valor directamente en la casilla
+      (para b también puedes escribir una fracción, por ejemplo -3/2 o 5/4).
     </p>
 
     <div class="pg-actions">
@@ -148,14 +158,18 @@
     var riseInput = document.getElementById('ctrl-rise');
     var runInput = document.getElementById('ctrl-run');
     var bInput = document.getElementById('ctrl-b');
-    var B_DEN = 4; // el control de b se mueve en cuartos; se reduce al mostrarlo
-    var riseVal = document.getElementById('val-rise');
-    var runVal = document.getElementById('val-run');
-    var bVal = document.getElementById('val-b');
+    var riseBox = document.getElementById('ctrl-rise-box');
+    var runBox = document.getElementById('ctrl-run-box');
+    var bBox = document.getElementById('ctrl-b-box');
     var playBtn = document.getElementById('btn-play');
     var randomBtn = document.getElementById('btn-random');
 
+    // Estado con los valores actuales (los deslizadores y las casillas de texto
+    // sólo lo leen y lo escriben; los cálculos y el dibujo siempre parten de aquí).
+    var state = { rise: 2, run: 3, bNum: -6, bDen: 4 };
+
     function fmtSigned(n) { return (n < 0 ? '−' : '') + Math.abs(n); }
+    function clampInt(n, lo, hi) { return Math.max(lo, Math.min(hi, Math.round(n))); }
 
     function gcd(a, b) {
       a = Math.abs(a); b = Math.abs(b);
@@ -182,11 +196,31 @@
         : '<span class="frac frac-inline"><span class="num">' + r.num + '</span><span class="den">' + r.den + '</span></span>';
     }
 
+    // Interpreta lo que se escribió en la casilla de b: entero ("-2"), decimal
+    // ("-1.5" o "-1,5") o fracción ("-3/2"). Devuelve null si no es válido.
+    function parseFraction(str) {
+      if (typeof str !== 'string') return null;
+      str = str.trim().replace(',', '.');
+      if (str === '') return null;
+      var m = str.match(/^(-?\d+)\s*\/\s*(-?\d+)$/);
+      if (m) {
+        var num = parseInt(m[1], 10);
+        var den = parseInt(m[2], 10);
+        if (den === 0) return null;
+        if (den < 0) { num = -num; den = -den; }
+        return { num: num, den: den };
+      }
+      if (/^-?\d+$/.test(str)) return { num: parseInt(str, 10), den: 1 };
+      if (/^-?\d*\.\d+$/.test(str)) {
+        var decimals = str.split('.')[1].length;
+        var den2 = Math.pow(10, decimals);
+        return { num: Math.round(parseFloat(str) * den2), den: den2 };
+      }
+      return null;
+    }
+
     function currentValues() {
-      var rise = parseInt(riseInput.value, 10);
-      var run = parseInt(runInput.value, 10);
-      var bNum = parseInt(bInput.value, 10);
-      return { rise: rise, run: run, bNum: bNum, bDen: B_DEN, b: bNum / B_DEN };
+      return { rise: state.rise, run: state.run, bNum: state.bNum, bDen: state.bDen, b: state.bNum / state.bDen };
     }
 
     function updateEquation(v) {
@@ -336,32 +370,84 @@
         });
     }
 
-    function syncLabels() {
+    // Actualiza la ecuación, la gráfica y todos los controles a partir de `state`.
+    // `sourceBox` es la casilla de texto que el usuario está escribiendo ahora mismo
+    // (si la hay): a esa no le tocamos el texto, para no interrumpirlo mientras teclea.
+    function updateAll(sourceBox) {
       var v = currentValues();
-      riseVal.textContent = fmtSigned(v.rise);
-      runVal.textContent = v.run;
-      bVal.textContent = fractionText(v.bNum, v.bDen);
       updateEquation(v);
+      showStatic();
+
+      riseInput.value = clampInt(state.rise, -6, 6);
+      runInput.value = clampInt(state.run, 1, 6);
+      bInput.value = clampInt(v.b * 4, -24, 24);
+
+      if (sourceBox !== 'rise') riseBox.value = state.rise;
+      if (sourceBox !== 'run') runBox.value = state.run;
+      if (sourceBox !== 'b') bBox.value = fractionText(state.bNum, state.bDen);
     }
 
-    [riseInput, runInput, bInput].forEach(function (input) {
-      input.addEventListener('input', function () {
-        syncLabels();
-        showStatic();
-      });
+    riseInput.addEventListener('input', function () {
+      state.rise = parseInt(riseInput.value, 10);
+      updateAll(null);
+    });
+    runInput.addEventListener('input', function () {
+      state.run = parseInt(runInput.value, 10);
+      updateAll(null);
+    });
+    bInput.addEventListener('input', function () {
+      state.bNum = parseInt(bInput.value, 10);
+      state.bDen = 4;
+      updateAll(null);
+    });
+
+    riseBox.addEventListener('input', function () {
+      var n = parseInt(riseBox.value, 10);
+      if (isNaN(n)) { riseBox.classList.add('invalid'); return; }
+      riseBox.classList.remove('invalid');
+      state.rise = n;
+      updateAll('rise');
+    });
+    riseBox.addEventListener('blur', function () {
+      riseBox.classList.remove('invalid');
+      riseBox.value = state.rise;
+    });
+
+    runBox.addEventListener('input', function () {
+      var n = parseInt(runBox.value, 10);
+      if (isNaN(n) || n === 0) { runBox.classList.add('invalid'); return; }
+      runBox.classList.remove('invalid');
+      state.run = n;
+      updateAll('run');
+    });
+    runBox.addEventListener('blur', function () {
+      runBox.classList.remove('invalid');
+      runBox.value = state.run;
+    });
+
+    bBox.addEventListener('input', function () {
+      var f = parseFraction(bBox.value);
+      if (!f) { bBox.classList.add('invalid'); return; }
+      bBox.classList.remove('invalid');
+      state.bNum = f.num;
+      state.bDen = f.den;
+      updateAll('b');
+    });
+    bBox.addEventListener('blur', function () {
+      bBox.classList.remove('invalid');
+      bBox.value = fractionText(state.bNum, state.bDen);
     });
 
     playBtn.addEventListener('click', playAnimation);
     randomBtn.addEventListener('click', function () {
-      riseInput.value = Math.floor(Math.random() * 9) - 4;
-      runInput.value = Math.floor(Math.random() * 4) + 1;
-      bInput.value = Math.floor(Math.random() * 49) - 24;
-      syncLabels();
-      showStatic();
+      state.rise = Math.floor(Math.random() * 9) - 4;
+      state.run = Math.floor(Math.random() * 4) + 1;
+      state.bNum = Math.floor(Math.random() * 49) - 24;
+      state.bDen = 4;
+      updateAll(null);
     });
 
-    syncLabels();
-    showStatic();
+    updateAll(null);
   })();
   </script>
 

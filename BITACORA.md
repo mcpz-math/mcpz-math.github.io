@@ -219,3 +219,12 @@ Registro de lo que vamos haciendo, en orden cronológico.
   solo control "Ordenada b" que se mueve en cuartos, así que al arrastrarlo ya se
   obtienen enteros, medios y cuartos (por ejemplo −3/2 o 5/4), y el valor se muestra ya
   simplificado debajo del control.
+
+## 2026-09-19 (casillas para escribir los valores)
+- Carmen pidió poder escribir directamente los valores de la pendiente y la ordenada,
+  en lugar de solo usar deslizadores. Se agregó una casilla de texto junto a cada
+  deslizador (sube, corre y ordenada b), sincronizada en ambos sentidos: se puede
+  arrastrar el deslizador o escribir el número. En la casilla de b también se puede
+  escribir una fracción directamente (por ejemplo "-3/2" o "7/3"), no solo enteros o
+  decimales. Si lo que se escribe no es válido, la casilla se marca en rojo y, al salir
+  de ella, regresa al último valor válido.
