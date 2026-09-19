@@ -196,3 +196,18 @@ Registro de lo que vamos haciendo, en orden cronológico.
   practicar con valores aleatorios. Se agregaron los estilos correspondientes
   (`.pg-*` y el estado `.steps li.active`) en `assets/style.css`, y se enlazó esta
   página desde los antecedentes de `matematicas-3/tema-01-grafico.html`.
+
+## 2026-09-19 (el enlace a la animación no se veía)
+- Carmen avisó que no encontraba cómo llegar a la animación interactiva desde la página
+  de Método gráfico (el enlace anterior era texto chico dentro de un paréntesis). Se
+  reemplazó por un bloque destacado con un botón claro: "Practicar con la animación
+  interactiva →", justo después de los antecedentes.
+
+## 2026-09-19 (ordenada b con fracciones)
+- Carmen pidió que la animación de pendiente y ordenada también contemplara valores de
+  b con fracciones (ordenada racional), no solo enteros. Se cambió el control de
+  "Ordenada b" por dos controles (numerador y denominador), igual que ya existían para
+  la pendiente. La ecuación, las coordenadas de los puntos y las fracciones se
+  simplifican automáticamente (por ejemplo 4/2 se muestra como 2). El ejemplo inicial
+  ahora usa b = −3/2, el mismo valor del ejemplo resuelto en la página de Método
+  gráfico.
