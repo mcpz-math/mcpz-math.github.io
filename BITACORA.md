@@ -292,3 +292,19 @@ Registro de lo que vamos haciendo, en orden cronológico.
   ahora tienen música de fondo: el **Preludio en Do mayor, BWV 846, de J. S. Bach**
   (obra de dominio público), generado como piano suave, a volumen bajo, con entrada y
   salida graduales. Los videos siguen sin voz.
+
+## 2026-09-27 (Tema 4: Funciones — Definición y prueba de la recta vertical)
+- Carmen compartió el PDF "Clase 6. Funciones" para el subtema "Definición y prueba de
+  la recta vertical". Se creó la página `matematicas-3/tema-04-definicion.html`, enlazada
+  desde el bloque de ese subtema en `tema-04-funciones.html`.
+- Contenido: objetivo, definición de función y de relación, Actividad 1 (tabla para
+  llenar), formas de representación, Actividad 2 (diagramas sagitales a–d), Actividad 3
+  (conjuntos de pares A–E), representación geométrica y prueba de la recta vertical,
+  Actividad 4 (9 gráficas), representación analítica y =  f(x), clasificación de funciones
+  (con las tres que se ven en el curso resaltadas).
+- Los diagramas sagitales, las gráficas y la clasificación se redibujaron con el estilo
+  del sitio (la imagen original de la clasificación traía marca de agua de otro sitio).
+- Correcciones al texto: "y: variable **dependiente**" (el PDF decía independiente) y en
+  el conjunto C el primer par se escribió (1, 1) (el PDF decía (1.1)).
+- El PDF se agregó a `matematicas-3/materiales/clase-06-funciones.pdf` y se puede
+  descargar desde la página del subtema y desde "Materiales" del Tema 4.
