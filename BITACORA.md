@@ -250,3 +250,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   original de la hoja cuadriculada.
 - Nueva carpeta `matematicas-3/materiales/` con el PDF de la clase (descargable desde
   la página) y las fotos de los ejemplos.
+- Carmen pidió marcar en las gráficas la parte del valor absoluto que da la solución.
+  En los dos ejemplos se resalta en rojo el tramo de la "V" que cumple la desigualdad
+  (debajo de y = 4 en el ejemplo 1; arriba de y = 2 en el ejemplo 2), igual que en las
+  fotos del cuaderno, y se actualizó el texto debajo de cada gráfica.
