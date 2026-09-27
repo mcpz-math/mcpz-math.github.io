@@ -331,3 +331,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
   grandes quedan como "Método gráfico — Ejercicios" y "Método de Cramer — Ejercicios";
   debajo va el Propósito, luego el subtítulo "Serie 1" y después las instrucciones y los
   ejercicios. Estilo `.task-subtitle` en `assets/style.css`.
+- A pedido de Carmen, el **Propósito** de cada método (gráfico y Cramer) en la página de
+  tareas ahora va dentro de un cuadro verde (el mismo estilo `callout` que se usa para
+  "Objetivo" y "Observación" en otras páginas).
