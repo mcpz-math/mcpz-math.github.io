@@ -334,3 +334,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, el **Propósito** de cada método (gráfico y Cramer) en la página de
   tareas ahora va dentro de un cuadro verde (el mismo estilo `callout` que se usa para
   "Objetivo" y "Observación" en otras páginas).
+- Respuestas de la Serie 1 del método gráfico: a pedido de Carmen, cada ejercicio tiene
+  un botón desplegable **"Ver respuesta"** con el resultado (solución única con x y y,
+  infinitas soluciones o sin solución), las dos rectas en forma y = mx + b y una gráfica
+  pequeña con el punto de intersección. Arriba de los ejercicios se agregó la indicación
+  "Resuélvelo primero en tu cuaderno y después revisa". La idea es que la Serie 1 sea de
+  práctica (con respuestas) y la Serie 2 de evaluación (sin respuestas; pendiente de que
+  Carmen revise la propuesta).
