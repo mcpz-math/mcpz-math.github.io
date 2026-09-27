@@ -794,3 +794,9 @@ details.rubric .table-scroll { width: 100%; margin: 0; }
 details.rubric .interval-answer { width: 100%; margin: 0 0 0.8rem; padding: 1rem 1.2rem; }
 details.rubric .interval-answer p { margin: 0 0 0.5rem; }
 details.rubric .interval-answer svg { display: block; max-width: 100%; height: auto; margin-top: 0.6rem; }
+details.rubric .interval-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.8rem; margin-bottom: 0.8rem; }
+details.rubric .interval-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 0.8rem 0.9rem; }
+details.rubric .interval-card p { margin: 0 0 0.5rem; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.82rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+details.rubric .interval-card .enum { font-size: 0.72rem; color: var(--cream); background: var(--moss); border-radius: 50%; width: 1.5rem; height: 1.5rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+details.rubric .interval-card .eq { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.95rem; background: var(--cream); border: 1px solid var(--line); border-radius: 8px; padding: 0.3rem 0.8rem; display: inline-block; }
+details.rubric .interval-card svg { display: block; width: 100%; max-width: 260px; height: auto; margin-top: 0.4rem; }

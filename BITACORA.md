@@ -376,3 +376,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   Carmen, se agregó un botón desplegable "Ver respuestas" con cada expresión, su intervalo
   y su representación en la recta numérica (círculo relleno = extremo incluido, círculo
   vacío = extremo no incluido).
+- A pedido de Carmen, el "Ejercicio de clase" de esa página ahora se llama **Actividad 3**
+  y, como las otras actividades, tiene un botón desplegable "Ver respuestas" con las 15
+  desigualdades: su intervalo y su recta numérica (no a escala), más el recordatorio de
+  cuándo va corchete o paréntesis.
