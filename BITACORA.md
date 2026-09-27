@@ -360,3 +360,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
   respuesta ahora dice solo: "Δ = 0 — Conclusión: el sistema tiene un infinito de
   soluciones o no tiene solución", igual que la Observación de la página de Cramer (ya no
   se especifica cuál de los dos casos es).
+- Carmen pidió regresar a la versión anterior: en Cramer, cuando Δ = 0, la respuesta
+  vuelve a decir "Δ = 0: no se puede aplicar Cramer" y a especificar el caso (infinitas
+  soluciones porque es la misma recta, o sin solución porque son rectas paralelas).
