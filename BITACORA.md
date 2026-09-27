@@ -308,3 +308,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   el conjunto C el primer par se escribió (1, 1) (el PDF decía (1.1)).
 - El PDF se agregó a `matematicas-3/materiales/clase-06-funciones.pdf` y se puede
   descargar desde la página del subtema y desde "Materiales" del Tema 4.
+
+## 2026-09-27 (Tema 1: ejercicios y rúbrica del método gráfico pasan a Tareas)
+- A pedido de Carmen, los "Ejercicios — Serie 1" y la "Rúbrica" del método gráfico se
+  movieron de `tema-01-grafico.html` a una nueva página de tareas:
+  `matematicas-3/tema-01-tarea.html` ("Tarea: método gráfico"), sin cambiar su contenido.
+- El bloque "Tarea" de `tema-01-sistemas-de-ecuaciones-simultaneas.html` ahora enlaza a
+  esa página, y al final de la página del método gráfico queda un aviso con el enlace.
