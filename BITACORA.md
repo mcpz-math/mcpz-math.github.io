@@ -286,3 +286,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
   escrito de los Ejemplos 1 y 2 (pasos, recta numérica e intervalo). Ahora cada ejemplo
   muestra solo su video paso a paso. Se conservan la explicación inicial, los pasos para
   resolver una inecuación lineal y la observación final.
+
+## 2026-09-27 (música clásica en los videos)
+- A pedido de Carmen, los 4 videos (Inecuaciones y Valor absoluto, ejemplos 1 y 2)
+  ahora tienen música de fondo: el **Preludio en Do mayor, BWV 846, de J. S. Bach**
+  (obra de dominio público), generado como piano suave, a volumen bajo, con entrada y
+  salida graduales. Los videos siguen sin voz.
