@@ -269,3 +269,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
   vean completos en pantalla** al mismo tiempo (antes los primeros pasos se subían y
   desaparecían). Ahora cada paso ocupa una fila: explicación a la izquierda y ecuación a
   la derecha. La portada del video muestra todos los pasos.
+
+## 2026-09-27 (videos paso a paso de Valor absoluto)
+- Carmen pidió videos también para los ejemplos de Valor absoluto. Se crearon dos
+  videos (55 segundos cada uno, sin audio, estilo "Compás"): del lado izquierdo aparecen
+  los 5 pasos del método y del lado derecho se dibuja la gráfica al mismo tiempo: se
+  traza la recta con su escala, la parte negativa se "dobla" hacia arriba, se traza la
+  horizontal, se resalta en rojo la parte de la "V" que cumple la desigualdad y se marca
+  la solución sobre el eje x junto con el intervalo.
+- Archivos en `matematicas-3/materiales/` (`tema-03-valor-absoluto-ejemplo-1.mp4` y
+  `-2.mp4`, con su portada); se muestran en `tema-03-valor-absoluto.html` debajo de la
+  solución de cada ejemplo.
