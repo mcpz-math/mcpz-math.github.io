@@ -353,3 +353,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
   10 sistemas con 8 de solución única (algunas con fracciones), 1 sin solución y 1 con
   infinitas soluciones, todas las respuestas distintas. Las respuestas de la Serie 2 se
   le dieron a Carmen en el chat; no se guardan en el repositorio porque es público.
+- A pedido de Carmen, en las respuestas de la Serie 1 de Cramer ahora se justifica cada
+  valor con la fórmula: x = Δx/Δ = (valores) = resultado, y lo mismo para y (con la
+  fracción simplificada cuando aplica, por ejemplo −6/4 = −3/2).
