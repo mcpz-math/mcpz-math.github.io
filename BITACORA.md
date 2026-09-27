@@ -369,3 +369,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
   `tema-02-intervalos-y-desigualdades.html` ya tiene las respuestas: h > 1.60 → (1.60, ∞);
   0 ≤ v ≤ 80 → [0, 80]; 8:00 ≤ t ≤ 8:15 → [8:00, 8:15]; c > 500 → (500, ∞). Debajo de la
   tabla se indica qué representa cada variable (h, v, t, c).
+- A pedido de Carmen, las respuestas de esa tabla ahora están escondidas: la tabla de la
+  Actividad 1 vuelve a mostrarse vacía y debajo hay un botón desplegable "Ver respuestas"
+  que abre la misma tabla ya contestada, con la nota de las variables.
