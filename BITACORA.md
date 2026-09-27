@@ -323,3 +323,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   **desplegables**: aparecen cerradas con un botón "+ Ver rúbrica del método …" y se
   abren al tocarlo (el botón cambia a "−" para cerrarla). Estilo `details.rubric` en
   `assets/style.css`, reutilizable en otras páginas.
+- A pedido de Carmen, los títulos "Método gráfico — Ejercicios, Serie 1" y "Método de
+  Cramer — Ejercicios, Serie 1" de la página de tareas se hicieron más grandes (títulos
+  en letra Outfit, verde bosque, con una línea verde-lima debajo). Estilo `.task-title`
+  en `assets/style.css`.
