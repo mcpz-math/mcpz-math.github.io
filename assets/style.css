@@ -767,3 +767,22 @@ details.rubric .table-scroll { width: 100%; margin: 0; }
   font-size: 1.25rem;
   color: var(--moss);
 }
+
+/* ---- Respuestas desplegables en los ejercicios ---- */
+.exercise-card.has-answer { flex-wrap: wrap; align-items: flex-start; }
+.exercise-card.has-answer .enum { margin-top: 0.15rem; }
+.exercise-card details.answer { flex-basis: 100%; }
+.exercise-card details.answer summary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--moss);
+}
+.exercise-card details.answer[open] summary { margin-bottom: 0.5rem; }
+.exercise-card details.answer p { font-size: 0.8rem; margin: 0 0 0.4rem; line-height: 1.45; }
+.exercise-card details.answer .answer-lines { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.72rem; }
+.exercise-card details.answer .answer-lines span { display: block; }
+.exercise-card details.answer .answer-lines .l1 { color: var(--forest); }
+.exercise-card details.answer .answer-lines .l2 { color: #b5452f; }
+.exercise-card details.answer svg { width: 100%; max-width: 220px; height: auto; display: block; margin: 0 auto; }
+.exercise-card.has-answer { align-self: start; }
