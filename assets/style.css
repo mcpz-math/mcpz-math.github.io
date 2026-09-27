@@ -786,3 +786,6 @@ details.rubric .table-scroll { width: 100%; margin: 0; }
 .exercise-card details.answer .answer-lines .l2 { color: #b5452f; }
 .exercise-card details.answer svg { width: 100%; max-width: 220px; height: auto; display: block; margin: 0 auto; }
 .exercise-card.has-answer { align-self: start; }
+.exercise-card details.answer .answer-dets { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.74rem; }
+.exercise-card details.answer .answer-dets span, .exercise-card details.answer .nw { white-space: nowrap; }
+.exercise-card details.answer .answer-dets span { margin-right: 0.6rem; }
