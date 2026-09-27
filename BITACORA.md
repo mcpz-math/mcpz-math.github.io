@@ -389,3 +389,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
   de ejercicio** (botón "Ver respuesta" en cada uno, con el intervalo y su recta numérica),
   en lugar de un solo desplegable al final. El recordatorio de corchetes/paréntesis quedó
   debajo de los ejercicios.
+- Carmen eligió otro video para Intervalos y desigualdades: ahora se muestra
+  "Representación gráfica de intervalos | Ejemplo 1" (https://www.youtube.com/watch?v=tyt6T1Ukq3w)
+  en lugar del de "Ejercicios con INTERVALOS".
