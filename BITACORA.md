@@ -327,3 +327,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   Cramer — Ejercicios, Serie 1" de la página de tareas se hicieron más grandes (títulos
   en letra Outfit, verde bosque, con una línea verde-lima debajo). Estilo `.task-title`
   en `assets/style.css`.
+- A pedido de Carmen, "Serie 1" ahora aparece **después del propósito**: los títulos
+  grandes quedan como "Método gráfico — Ejercicios" y "Método de Cramer — Ejercicios";
+  debajo va el Propósito, luego el subtítulo "Serie 1" y después las instrucciones y los
+  ejercicios. Estilo `.task-subtitle` en `assets/style.css`.
