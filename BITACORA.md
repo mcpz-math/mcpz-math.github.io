@@ -380,3 +380,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
   y, como las otras actividades, tiene un botón desplegable "Ver respuestas" con las 15
   desigualdades: su intervalo y su recta numérica (no a escala), más el recordatorio de
   cuándo va corchete o paréntesis.
+- A pedido de Carmen, en `tema-02-intervalos-y-desigualdades.html` se reemplazó el enlace
+  a Khan Academy por un video de YouTube incrustado: "Ejercicios con INTERVALOS — Expresar
+  como Desigualdad, Intervalo y Representación en Recta Numérica"
+  (https://www.youtube.com/watch?v=PmWyGkQ1gtg). Pendiente: que Carmen confirme que el
+  video le parece adecuado (desde aquí no se pudo reproducir).
