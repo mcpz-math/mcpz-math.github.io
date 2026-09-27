@@ -315,3 +315,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   `matematicas-3/tema-01-tarea.html` ("Tarea: método gráfico"), sin cambiar su contenido.
 - El bloque "Tarea" de `tema-01-sistemas-de-ecuaciones-simultaneas.html` ahora enlaza a
   esa página, y al final de la página del método gráfico queda un aviso con el enlace.
+- También se movieron los "Ejercicios — Serie 1" y la "Rúbrica" del método de Cramer
+  (`tema-01-cramer.html`) a la misma página de tareas, que ahora se llama "Tareas:
+  sistemas de ecuaciones simultáneas" y tiene dos partes: método gráfico y método de
+  Cramer. Los avisos de cada método enlazan directo a su parte.
