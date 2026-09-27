@@ -346,3 +346,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   solución única, 1 sin solución, 1 con infinitas soluciones), respuestas distintas entre
   sí y dos ejercicios que requieren escala. Las respuestas se le dieron a Carmen en el
   chat; no se guardan en el repositorio porque es público.
+- **Cramer, igual que el método gráfico:** cada ejercicio de la Serie 1 de Cramer tiene
+  ahora un botón "Ver respuesta" con los determinantes (Δ, Δx, Δy) y el resultado; en los
+  casos con Δ = 0 se explica si hay infinitas soluciones (misma recta) o ninguna (rectas
+  paralelas). Se publicó también la **Serie 2 de Cramer** (evaluación, sin respuestas):
+  10 sistemas con 8 de solución única (algunas con fracciones), 1 sin solución y 1 con
+  infinitas soluciones, todas las respuestas distintas. Las respuestas de la Serie 2 se
+  le dieron a Carmen en el chat; no se guardan en el repositorio porque es público.
