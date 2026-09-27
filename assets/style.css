@@ -690,3 +690,31 @@ footer.site-footer {
   .tema-row { flex-wrap: wrap; }
   .tema-row .go { align-self: flex-start; }
 }
+
+/* ---- Funciones: diagramas sagitales, gráficas pequeñas y clasificación ---- */
+.sagital-grid, .mini-graph-grid {
+  display: grid;
+  gap: 0.9rem;
+  width: min(100% - 3rem, 760px);
+  margin: 0 auto 1.6rem auto;
+}
+.sagital-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.mini-graph-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); margin-bottom: 2.5rem; }
+.sagital-card, .mini-graph {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.6rem;
+  text-align: center;
+  margin: 0;
+}
+.sagital-card svg, .mini-graph svg { max-width: 100%; height: auto; }
+.mini-graph figcaption {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+.fill-table td { height: 2.6rem; }
+.def-list, .class-tree { margin: 0; padding-left: 1.2rem; font-size: 0.92rem; line-height: 1.8; }
+.class-tree ul { padding-left: 1.3rem; }
+.class-tree mark { background: var(--lime); color: var(--forest); border-radius: 4px; padding: 0 0.3rem; font-weight: 700; }
