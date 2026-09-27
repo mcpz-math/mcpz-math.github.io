@@ -341,3 +341,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
   "Resuélvelo primero en tu cuaderno y después revisa". La idea es que la Serie 1 sea de
   práctica (con respuestas) y la Serie 2 de evaluación (sin respuestas; pendiente de que
   Carmen revise la propuesta).
+- Se publicó la **Serie 2 del método gráfico** (evaluación, sin respuestas en la página),
+  debajo de la Serie 1 y antes de la rúbrica: 10 sistemas con los tres casos (8 con
+  solución única, 1 sin solución, 1 con infinitas soluciones), respuestas distintas entre
+  sí y dos ejercicios que requieren escala. Las respuestas se le dieron a Carmen en el
+  chat; no se guardan en el repositorio porque es público.
