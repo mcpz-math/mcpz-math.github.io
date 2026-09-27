@@ -280,3 +280,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Archivos en `matematicas-3/materiales/` (`tema-03-valor-absoluto-ejemplo-1.mp4` y
   `-2.mp4`, con su portada); se muestran en `tema-03-valor-absoluto.html` debajo de la
   solución de cada ejemplo.
+
+## 2026-09-27 (Inecuaciones: solo videos en los ejemplos)
+- A pedido de Carmen, en `tema-02-inecuaciones-lineales.html` se quitó el desarrollo
+  escrito de los Ejemplos 1 y 2 (pasos, recta numérica e intervalo). Ahora cada ejemplo
+  muestra solo su video paso a paso. Se conservan la explicación inicial, los pasos para
+  resolver una inecuación lineal y la observación final.
