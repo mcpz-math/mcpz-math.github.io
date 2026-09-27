@@ -237,3 +237,16 @@ Registro de lo que vamos haciendo, en orden cronológico.
   gráfica aparece una nota ("Escala de esta cuadrícula: cada N cuadros = 1 unidad")
   que se actualiza junto con los controles; cuando b es un número entero no se
   muestra ninguna nota y la cuadrícula vuelve a su forma normal.
+
+## 2026-09-27 (contenido Tema 3: Valor absoluto)
+- Carmen notó que no se veían cambios en Valor absoluto: la página seguía vacía porque
+  su contenido nunca se había subido a GitHub. Compartió el PDF "Clase 5. Valor
+  absoluto" y con él se llenó `matematicas-3/tema-03-valor-absoluto.html`.
+- La página incluye: objetivo general, definición (con la fórmula por casos), el
+  ejercicio en clase (10 ecuaciones), la gráfica de y = |x|, los 5 pasos para resolver
+  desigualdades con valor absoluto y los dos ejemplos (|3x − 2| < 4 y |4x + 3| ≥ 2) con
+  su gráfica en la escala indicada y la solución como intervalo.
+- En cada ejemplo hay un botón "Ver cómo se hizo en el cuaderno" que muestra la foto
+  original de la hoja cuadriculada.
+- Nueva carpeta `matematicas-3/materiales/` con el PDF de la clase (descargable desde
+  la página) y las fotos de los ejemplos.
