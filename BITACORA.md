@@ -356,3 +356,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, en las respuestas de la Serie 1 de Cramer ahora se justifica cada
   valor con la fórmula: x = Δx/Δ = (valores) = resultado, y lo mismo para y (con la
   fracción simplificada cuando aplica, por ejemplo −6/4 = −3/2).
+- A pedido de Carmen, en Cramer, cuando Δ = 0 (ejercicios 2, 3 y 6 de la Serie 1) la
+  respuesta ahora dice solo: "Δ = 0 — Conclusión: el sistema tiene un infinito de
+  soluciones o no tiene solución", igual que la Observación de la página de Cramer (ya no
+  se especifica cuál de los dos casos es).
