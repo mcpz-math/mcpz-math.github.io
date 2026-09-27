@@ -319,3 +319,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (`tema-01-cramer.html`) a la misma página de tareas, que ahora se llama "Tareas:
   sistemas de ecuaciones simultáneas" y tiene dos partes: método gráfico y método de
   Cramer. Los avisos de cada método enlazan directo a su parte.
+- A pedido de Carmen, las dos rúbricas de la página de tareas del Tema 1 ahora son
+  **desplegables**: aparecen cerradas con un botón "+ Ver rúbrica del método …" y se
+  abren al tocarlo (el botón cambia a "−" para cerrarla). Estilo `details.rubric` en
+  `assets/style.css`, reutilizable en otras páginas.
