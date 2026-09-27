@@ -363,3 +363,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Carmen pidió regresar a la versión anterior: en Cramer, cuando Δ = 0, la respuesta
   vuelve a decir "Δ = 0: no se puede aplicar Cramer" y a especificar el caso (infinitas
   soluciones porque es la misma recta, o sin solución porque son rectas paralelas).
+
+## 2026-09-27 (Tema 2: respuestas de la Actividad 1 de Intervalos y desigualdades)
+- A pedido de Carmen, la tabla de la Actividad 1 ("Comparando expresiones") en
+  `tema-02-intervalos-y-desigualdades.html` ya tiene las respuestas: h > 1.60 → (1.60, ∞);
+  0 ≤ v ≤ 80 → [0, 80]; 8:00 ≤ t ≤ 8:15 → [8:00, 8:15]; c > 500 → (500, ∞). Debajo de la
+  tabla se indica qué representa cada variable (h, v, t, c).
