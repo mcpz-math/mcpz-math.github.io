@@ -266,7 +266,8 @@ footer.site-footer {
   border: 1px solid var(--line);
   background: var(--forest);
 }
-.video-embed iframe {
+.video-embed iframe,
+.video-embed video {
   position: absolute;
   inset: 0;
   width: 100%;

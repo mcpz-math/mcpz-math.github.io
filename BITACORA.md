@@ -254,3 +254,13 @@ Registro de lo que vamos haciendo, en orden cronológico.
   En los dos ejemplos se resalta en rojo el tramo de la "V" que cumple la desigualdad
   (debajo de y = 4 en el ejemplo 1; arriba de y = 2 en el ejemplo 2), igual que en las
   fotos del cuaderno, y se actualizó el texto debajo de cada gráfica.
+
+## 2026-09-27 (videos paso a paso de Inecuaciones)
+- Carmen pidió un video que muestre, paso por paso, la solución de los ejemplos de
+  Inecuaciones. Se crearon dos videos cortos (unos 45 segundos cada uno, sin audio) con el
+  estilo "Compás": aparece la inecuación y luego cada paso con su explicación; en el
+  último paso se resalta el signo (se invierte en el ejemplo 1 y no cambia en el 2) y al
+  final se dibuja la solución en la recta numérica y se escribe el intervalo.
+- Los videos están en `matematicas-3/materiales/` (`tema-02-inecuaciones-ejemplo-1.mp4`
+  y `-2.mp4`, con su imagen de portada) y se muestran en
+  `tema-02-inecuaciones-lineales.html`, debajo de cada ejemplo.
