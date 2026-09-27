@@ -264,3 +264,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Los videos están en `matematicas-3/materiales/` (`tema-02-inecuaciones-ejemplo-1.mp4`
   y `-2.mp4`, con su imagen de portada) y se muestran en
   `tema-02-inecuaciones-lineales.html`, debajo de cada ejemplo.
+- A pedido de Carmen, los videos se hicieron más lentos (ahora cada paso dura unos
+  8 segundos; cada video dura 1 min 12 s) y se reacomodaron para que **los 6 pasos se
+  vean completos en pantalla** al mismo tiempo (antes los primeros pasos se subían y
+  desaparecían). Ahora cada paso ocupa una fila: explicación a la izquierda y ecuación a
+  la derecha. La portada del video muestra todos los pasos.
