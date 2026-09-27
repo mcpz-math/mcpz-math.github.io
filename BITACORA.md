@@ -385,3 +385,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   como Desigualdad, Intervalo y Representación en Recta Numérica"
   (https://www.youtube.com/watch?v=PmWyGkQ1gtg). Pendiente: que Carmen confirme que el
   video le parece adecuado (desde aquí no se pudo reproducir).
+- A pedido de Carmen, las respuestas de la Actividad 3 ahora están **dentro de cada cuadro
+  de ejercicio** (botón "Ver respuesta" en cada uno, con el intervalo y su recta numérica),
+  en lugar de un solo desplegable al final. El recordatorio de corchetes/paréntesis quedó
+  debajo de los ejercicios.

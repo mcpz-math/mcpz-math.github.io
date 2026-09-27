@@ -800,3 +800,5 @@ details.rubric .interval-card p { margin: 0 0 0.5rem; font-family: 'IBM Plex Mon
 details.rubric .interval-card .enum { font-size: 0.72rem; color: var(--cream); background: var(--moss); border-radius: 50%; width: 1.5rem; height: 1.5rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 details.rubric .interval-card .eq { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.95rem; background: var(--cream); border: 1px solid var(--line); border-radius: 8px; padding: 0.3rem 0.8rem; display: inline-block; }
 details.rubric .interval-card svg { display: block; width: 100%; max-width: 260px; height: auto; margin-top: 0.4rem; }
+.exercise-card details.answer .answer-interval { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.9rem; white-space: nowrap; }
+.exercise-card details.answer svg[viewBox="0 0 260 72"] { max-width: 260px; }
