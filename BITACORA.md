@@ -372,3 +372,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, las respuestas de esa tabla ahora están escondidas: la tabla de la
   Actividad 1 vuelve a mostrarse vacía y debajo hay un botón desplegable "Ver respuestas"
   que abre la misma tabla ya contestada, con la nota de las variables.
+- Actividad 2 (representar como intervalo las expresiones de la Actividad 1): a pedido de
+  Carmen, se agregó un botón desplegable "Ver respuestas" con cada expresión, su intervalo
+  y su representación en la recta numérica (círculo relleno = extremo incluido, círculo
+  vacío = extremo no incluido).

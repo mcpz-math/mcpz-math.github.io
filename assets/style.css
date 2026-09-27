@@ -791,3 +791,6 @@ details.rubric .table-scroll { width: 100%; margin: 0; }
 .exercise-card details.answer .answer-dets span { margin-right: 0.6rem; }
 .exercise-card details.answer .answer-calc { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.78rem; line-height: 2.4; }
 .table-scroll td.ans { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.85rem; white-space: nowrap; color: var(--forest); }
+details.rubric .interval-answer { width: 100%; margin: 0 0 0.8rem; padding: 1rem 1.2rem; }
+details.rubric .interval-answer p { margin: 0 0 0.5rem; }
+details.rubric .interval-answer svg { display: block; max-width: 100%; height: auto; margin-top: 0.6rem; }
