@@ -415,3 +415,21 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - El bloque "f(x) = ax²" de `tema-05-funciones-cuadraticas.html` ahora enlaza a esta página.
 - Carmen aprobó la propuesta: se publicó en el sitio y se le entregó también en Word
   (con las respuestas en la última hoja).
+
+## 2026-10-02 (Tema 5: x² y ax² reescritos con la Clase 8 de Carmen)
+- Carmen compartió "Clase 8. Funciones cuadráticas" (PDF) y pidió reescribir con esa
+  información las páginas del sitio. El PDF se guardó en
+  `matematicas-3/materiales/clase-08-funciones-cuadraticas.pdf` y se enlaza desde las dos
+  páginas y desde "Materiales" del Tema 5.
+- `tema-05-x-cuadrada.html`: se quitó "Para empezar" (terreno cuadrado) y se agregaron,
+  con el texto de Carmen, la definición general f(x) = ax² + bx + c (a, b, c reales, a ≠ 0),
+  los "Elementos principales" (gráfica, mínimo/máximo, vértice, eje de simetría, cortes con
+  los ejes) y "Pero empecemos de a poco…". Las actividades se quedaron igual.
+- `tema-05-ax-cuadrada.html`: objetivo de Carmen (efecto de a, mínimo, máximo y raíces);
+  "¿Qué hace el número a?" con su redacción (|a|, “gorda”); "Lo que NO cambia" sólo con
+  vértice y eje de simetría; nueva sección "Raíces" (repetidas, reales y diferentes,
+  imaginarias). En el recuadro final se agregó que f(x) = ax² tiene raíz repetida x = 0.
+- La antigua Actividad 2 se reemplazó por los **Ejercicios de Carmen** ("Para cada función
+  grafica": 3x², −½x², 2/10 x², −4x², 5/2 x², −x²), cada uno con "Ver respuesta" (gráfica,
+  abertura, mínimo/máximo, vértice, eje y raíz). Las actividades de evaluar y de encontrar a
+  pasan a ser Actividad 2 y Actividad 3.
