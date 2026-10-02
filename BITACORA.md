@@ -433,3 +433,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   grafica": 3x², −½x², 2/10 x², −4x², 5/2 x², −x²), cada uno con "Ver respuesta" (gráfica,
   abertura, mínimo/máximo, vértice, eje y raíz). Las actividades de evaluar y de encontrar a
   pasan a ser Actividad 2 y Actividad 3.
+
+## 2026-10-02 (escalas en las gráficas de los Ejercicios de ax²)
+- A pedido de Carmen, las gráficas de las respuestas de los Ejercicios de
+  `tema-05-ax-cuadrada.html` ahora tienen escala completa: todos los números en el eje x
+  (−4 a 4) y en el eje y (−1 a 9, o −9 a 1), con los nombres de los ejes x, y; también son
+  un poco más grandes.
+- Se corrigió el texto de los puntos: decía "f(1) = 3 · f(2) = 12" (parecía una
+  multiplicación); ahora dice "f(1) = 3; f(2) = 12".
