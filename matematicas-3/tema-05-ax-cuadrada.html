@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>f(x) = ax² — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-05-funciones-cuadraticas.html">← Tema 5</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 3 · Tema 5 · Subtema</div>
+    <h1>La función f(x) = ax²</h1>
+  </div>
+
+  <div class="callout">
+    <div class="k">Objetivo</div>
+    <p>Que el estudiante descubra cómo cambia la parábola básica f(x) = x² cuando se
+       multiplica por un número <strong>a</strong>: hacia dónde abre y qué tan abierta o cerrada
+       es, y que pueda encontrar el valor de <strong>a</strong> a partir de un punto.</p>
+  </div>
+
+  <p class="section-label">Recordemos</p>
+  <div class="prose">
+    <p>En el subtema anterior vimos la <a href="tema-05-x-cuadrada.html"
+       style="color:var(--forest); font-weight:700;">parábola básica f(x) = x²</a>: tiene su
+       vértice en (0, 0), abre hacia arriba y su eje de simetría es x = 0.</p>
+    <p>Ahora vamos a <strong>multiplicar</strong> x² por un número <strong>a</strong>:</p>
+  </div>
+  <div class="example-box">
+    <span class="eq">f(x) = ax²   (con a ≠ 0)</span>
+    <p style="margin-top:1rem;">El número <strong>a</strong> se llama <strong>coeficiente
+       principal</strong>. Para calcular y, primero se eleva x al cuadrado y
+       <strong>después</strong> se multiplica por a:</p>
+    <ul class="def-list">
+      <li>Si f(x) = 2x², entonces <span class="eq-plain">f(3) = 2(3)² = 2(9) = 18</span></li>
+      <li>Si f(x) = −2x², entonces <span class="eq-plain">f(3) = −2(3)² = −2(9) = −18</span></li>
+    </ul>
+  </div>
+  <div class="callout">
+    <div class="k">¿Por qué a ≠ 0?</div>
+    <p>Si a = 0, la función queda f(x) = 0 · x² = 0, que es una <strong>recta horizontal</strong>
+       (el eje x), no una parábola.</p>
+  </div>
+
+  <p class="section-label">Actividad 1 · Comparando tablas</p>
+  <div class="prose">
+    <p><strong>Instrucciones.</strong> Copia la tabla en tu cuaderno y complétala. Después
+       compara las columnas: ¿qué le pasa a los valores de y cuando a = 2? ¿Y cuando
+       a = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>? ¿Y cuando a = −1?</p>
+  </div>
+  <div class="table-scroll">
+    <table class="fill-table">
+      <thead>
+        <tr><th>x</th><th>y = x²</th><th>y = 2x²</th><th>y = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>x²</th><th>y = −x²</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>−3</td><td></td><td></td><td></td><td></td></tr><tr><td>−2</td><td></td><td></td><td></td><td></td></tr><tr><td>−1</td><td></td><td></td><td></td><td></td></tr><tr><td>0</td><td></td><td></td><td></td><td></td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <details class="rubric">
+    <summary>Ver respuestas</summary>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>x</th><th>y = x²</th><th>y = 2x²</th><th>y = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>x²</th><th>y = −x²</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>−3</td><td class="ans">9</td><td class="ans">18</td><td class="ans"><span class="frac frac-inline"><span class="num">9</span><span class="den">2</span></span></td><td class="ans">−9</td></tr>
+          <tr><td>−2</td><td class="ans">4</td><td class="ans">8</td><td class="ans">2</td><td class="ans">−4</td></tr>
+          <tr><td>−1</td><td class="ans">1</td><td class="ans">2</td><td class="ans"><span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span></td><td class="ans">−1</td></tr>
+          <tr><td>0</td><td class="ans">0</td><td class="ans">0</td><td class="ans">0</td><td class="ans">0</td></tr>
+          <tr><td>1</td><td class="ans">1</td><td class="ans">2</td><td class="ans"><span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span></td><td class="ans">−1</td></tr>
+          <tr><td>2</td><td class="ans">4</td><td class="ans">8</td><td class="ans">2</td><td class="ans">−4</td></tr>
+          <tr><td>3</td><td class="ans">9</td><td class="ans">18</td><td class="ans"><span class="frac frac-inline"><span class="num">9</span><span class="den">2</span></span></td><td class="ans">−9</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="prose" style="width:100%; margin-top:0.8rem;">
+      <p style="font-size:0.9rem; color:var(--ink-soft);">Observa: con a = 2 cada y es el
+         <strong>doble</strong> que en x²; con a = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> es la <strong>mitad</strong>; y con
+         a = −1 es el mismo número pero <strong>con signo contrario</strong>.</p>
+    </div>
+  </details>
+
+  <p class="section-label">Las gráficas</p>
+  <div class="prose">
+    <p>Al graficar las funciones de la tabla (y otras con a negativa), todas comparten el mismo
+       vértice (0, 0), pero cambian de forma. La línea punteada gris es la parábola de
+       referencia (x² o −x²).</p>
+  </div>
+  <figure class="graph-figure">
+    <div style="display:flex; flex-wrap:wrap; gap:1.2rem; justify-content:center;">
+    <svg viewBox="0 0 268 360" width="322" height="432" role="img" aria-label="Gráficas de y = x², y = 2x² y y = ½x²">
+<g stroke="#dde2dc" stroke-width="1">
+<line x1="30" y1="24" x2="30" y2="284"/>
+<line x1="56" y1="24" x2="56" y2="284"/>
+<line x1="82" y1="24" x2="82" y2="284"/>
+<line x1="108" y1="24" x2="108" y2="284"/>
+<line x1="134" y1="24" x2="134" y2="284"/>
+<line x1="160" y1="24" x2="160" y2="284"/>
+<line x1="186" y1="24" x2="186" y2="284"/>
+<line x1="212" y1="24" x2="212" y2="284"/>
+<line x1="238" y1="24" x2="238" y2="284"/>
+<line x1="30" y1="284" x2="238" y2="284"/>
+<line x1="30" y1="258" x2="238" y2="258"/>
+<line x1="30" y1="232" x2="238" y2="232"/>
+<line x1="30" y1="206" x2="238" y2="206"/>
+<line x1="30" y1="180" x2="238" y2="180"/>
+<line x1="30" y1="154" x2="238" y2="154"/>
+<line x1="30" y1="128" x2="238" y2="128"/>
+<line x1="30" y1="102" x2="238" y2="102"/>
+<line x1="30" y1="76" x2="238" y2="76"/>
+<line x1="30" y1="50" x2="238" y2="50"/>
+<line x1="30" y1="24" x2="238" y2="24"/>
+</g>
+<line x1="22" y1="258" x2="248" y2="258" stroke="#56604f" stroke-width="1.5"/>
+<line x1="134" y1="290" x2="134" y2="16" stroke="#56604f" stroke-width="1.5"/>
+<text x="251" y="262" font-family="IBM Plex Mono, monospace" font-size="12" fill="#14301f">x</text>
+<text x="139" y="18" font-family="IBM Plex Mono, monospace" font-size="12" fill="#14301f">y</text>
+<text x="30" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−4</text>
+<text x="56" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−3</text>
+<text x="82" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−2</text>
+<text x="108" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−1</text>
+<text x="160" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">1</text>
+<text x="186" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">2</text>
+<text x="212" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">3</text>
+<text x="238" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">4</text>
+<text x="130" y="287" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−1</text>
+<text x="130" y="235" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">1</text>
+<text x="130" y="209" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">2</text>
+<text x="130" y="183" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">3</text>
+<text x="130" y="157" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">4</text>
+<text x="130" y="131" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">5</text>
+<text x="130" y="105" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">6</text>
+<text x="130" y="79" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">7</text>
+<text x="130" y="53" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">8</text>
+<text x="130" y="27" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">9</text>
+<polyline points="56.0,24.0 58.0,35.6 59.9,46.8 61.9,57.8 63.8,68.5 65.8,78.8 67.7,88.9 69.6,98.7 71.6,108.2 73.5,117.5 75.5,126.4 77.5,135.0 79.4,143.3 81.3,151.4 83.3,159.1 85.2,166.6 87.2,173.8 89.2,180.6 91.1,187.2 93.1,193.5 95.0,199.5 96.9,205.2 98.9,210.6 100.8,215.7 102.8,220.6 104.8,225.1 106.7,229.3 108.7,233.3 110.6,236.9 112.5,240.3 114.5,243.4 116.5,246.2 118.4,248.6 120.3,250.8 122.3,252.7 124.2,254.3 126.2,255.7 128.2,256.7 130.1,257.4 132.0,257.9 134.0,258.0 136.0,257.9 137.9,257.4 139.8,256.7 141.8,255.7 143.8,254.3 145.7,252.7 147.7,250.8 149.6,248.6 151.6,246.2 153.5,243.4 155.4,240.3 157.4,236.9 159.3,233.3 161.3,229.3 163.2,225.1 165.2,220.6 167.2,215.7 169.1,210.6 171.1,205.2 173.0,199.5 174.9,193.5 176.9,187.2 178.8,180.6 180.8,173.8 182.8,166.6 184.7,159.1 186.7,151.4 188.6,143.3 190.6,135.0 192.5,126.4 194.4,117.5 196.4,108.2 198.3,98.7 200.3,88.9 202.2,78.8 204.2,68.5 206.2,57.8 208.1,46.8 210.1,35.6 212.0,24.0" fill="none" stroke="#9aa596" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 4"/>
+<polyline points="78.8,24.0 80.2,35.6 81.6,46.8 83.0,57.8 84.4,68.5 85.7,78.8 87.1,88.9 88.5,98.7 89.9,108.2 91.3,117.5 92.6,126.4 94.0,135.0 95.4,143.3 96.8,151.4 98.1,159.1 99.5,166.6 100.9,173.8 102.3,180.6 103.7,187.2 105.0,193.5 106.4,199.5 107.8,205.2 109.2,210.6 110.6,215.7 111.9,220.6 113.3,225.1 114.7,229.3 116.1,233.3 117.5,236.9 118.8,240.3 120.2,243.4 121.6,246.2 123.0,248.6 124.3,250.8 125.7,252.7 127.1,254.3 128.5,255.7 129.9,256.7 131.2,257.4 132.6,257.9 134.0,258.0 135.4,257.9 136.8,257.4 138.1,256.7 139.5,255.7 140.9,254.3 142.3,252.7 143.7,250.8 145.0,248.6 146.4,246.2 147.8,243.4 149.2,240.3 150.5,236.9 151.9,233.3 153.3,229.3 154.7,225.1 156.1,220.6 157.4,215.7 158.8,210.6 160.2,205.2 161.6,199.5 163.0,193.5 164.3,187.2 165.7,180.6 167.1,173.8 168.5,166.6 169.9,159.1 171.2,151.4 172.6,143.3 174.0,135.0 175.4,126.4 176.7,117.5 178.1,108.2 179.5,98.7 180.9,88.9 182.3,78.8 183.6,68.5 185.0,57.8 186.4,46.8 187.8,35.6 189.2,24.0" fill="none" stroke="#14301f" stroke-width="2.8" stroke-linecap="round"/>
+<polyline points="30.0,50.0 32.6,60.3 35.2,70.3 37.8,80.0 40.4,89.5 43.0,98.8 45.6,107.7 48.2,116.4 50.8,124.9 53.4,133.1 56.0,141.0 58.6,148.7 61.2,156.1 63.8,163.2 66.4,170.1 69.0,176.8 71.6,183.1 74.2,189.2 76.8,195.1 79.4,200.7 82.0,206.0 84.6,211.1 87.2,215.9 89.8,220.4 92.4,224.7 95.0,228.8 97.6,232.5 100.2,236.0 102.8,239.3 105.4,242.3 108.0,245.0 110.6,247.5 113.2,249.7 115.8,251.6 118.4,253.3 121.0,254.8 123.6,255.9 126.2,256.8 128.8,257.5 131.4,257.9 134.0,258.0 136.6,257.9 139.2,257.5 141.8,256.8 144.4,255.9 147.0,254.8 149.6,253.3 152.2,251.6 154.8,249.7 157.4,247.5 160.0,245.0 162.6,242.3 165.2,239.3 167.8,236.0 170.4,232.5 173.0,228.8 175.6,224.7 178.2,220.4 180.8,215.9 183.4,211.1 186.0,206.0 188.6,200.7 191.2,195.1 193.8,189.2 196.4,183.1 199.0,176.8 201.6,170.1 204.2,163.2 206.8,156.1 209.4,148.7 212.0,141.0 214.6,133.1 217.2,124.9 219.8,116.4 222.4,107.7 225.0,98.8 227.6,89.5 230.2,80.0 232.8,70.3 235.4,60.3 238.0,50.0" fill="none" stroke="#6b9c3a" stroke-width="2.8" stroke-linecap="round"/>
+<line x1="30" y1="306" x2="60" y2="306" stroke="#14301f" stroke-width="2.8"/>
+<text x="68" y="310" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#14301f">y = 2x²</text>
+<line x1="30" y1="324" x2="60" y2="324" stroke="#9aa596" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="68" y="328" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#14301f">y = x²</text>
+<line x1="30" y1="342" x2="60" y2="342" stroke="#6b9c3a" stroke-width="2.8"/>
+<text x="68" y="346" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#14301f">y = ½x²</text>
+<circle cx="134" cy="258" r="4" fill="#14301f" stroke="#fff" stroke-width="1.5"/>
+</svg>
+    <svg viewBox="0 0 268 360" width="322" height="432" role="img" aria-label="Gráficas de y = −x², y = −2x² y y = −½x²">
+<g stroke="#dde2dc" stroke-width="1">
+<line x1="30" y1="24" x2="30" y2="284"/>
+<line x1="56" y1="24" x2="56" y2="284"/>
+<line x1="82" y1="24" x2="82" y2="284"/>
+<line x1="108" y1="24" x2="108" y2="284"/>
+<line x1="134" y1="24" x2="134" y2="284"/>
+<line x1="160" y1="24" x2="160" y2="284"/>
+<line x1="186" y1="24" x2="186" y2="284"/>
+<line x1="212" y1="24" x2="212" y2="284"/>
+<line x1="238" y1="24" x2="238" y2="284"/>
+<line x1="30" y1="284" x2="238" y2="284"/>
+<line x1="30" y1="258" x2="238" y2="258"/>
+<line x1="30" y1="232" x2="238" y2="232"/>
+<line x1="30" y1="206" x2="238" y2="206"/>
+<line x1="30" y1="180" x2="238" y2="180"/>
+<line x1="30" y1="154" x2="238" y2="154"/>
+<line x1="30" y1="128" x2="238" y2="128"/>
+<line x1="30" y1="102" x2="238" y2="102"/>
+<line x1="30" y1="76" x2="238" y2="76"/>
+<line x1="30" y1="50" x2="238" y2="50"/>
+<line x1="30" y1="24" x2="238" y2="24"/>
+</g>
+<line x1="22" y1="50" x2="248" y2="50" stroke="#56604f" stroke-width="1.5"/>
+<line x1="134" y1="290" x2="134" y2="16" stroke="#56604f" stroke-width="1.5"/>
+<text x="251" y="54" font-family="IBM Plex Mono, monospace" font-size="12" fill="#14301f">x</text>
+<text x="139" y="18" font-family="IBM Plex Mono, monospace" font-size="12" fill="#14301f">y</text>
+<text x="30" y="44" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−4</text>
+<text x="56" y="44" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−3</text>
+<text x="82" y="44" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−2</text>
+<text x="108" y="44" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−1</text>
+<text x="160" y="44" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">1</text>
+<text x="186" y="44" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">2</text>
+<text x="212" y="44" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">3</text>
+<text x="238" y="44" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">4</text>
+<text x="130" y="287" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−9</text>
+<text x="130" y="261" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−8</text>
+<text x="130" y="235" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−7</text>
+<text x="130" y="209" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−6</text>
+<text x="130" y="183" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−5</text>
+<text x="130" y="157" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−4</text>
+<text x="130" y="131" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−3</text>
+<text x="130" y="105" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−2</text>
+<text x="130" y="79" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">−1</text>
+<text x="130" y="27" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">1</text>
+<polyline points="56.0,284.0 58.0,272.4 59.9,261.2 61.9,250.2 63.8,239.5 65.8,229.2 67.7,219.1 69.6,209.3 71.6,199.8 73.5,190.5 75.5,181.6 77.5,173.0 79.4,164.7 81.3,156.6 83.3,148.9 85.2,141.4 87.2,134.2 89.2,127.4 91.1,120.8 93.1,114.5 95.0,108.5 96.9,102.8 98.9,97.4 100.8,92.3 102.8,87.4 104.8,82.9 106.7,78.7 108.7,74.7 110.6,71.1 112.5,67.7 114.5,64.6 116.5,61.8 118.4,59.4 120.3,57.2 122.3,55.3 124.2,53.7 126.2,52.3 128.2,51.3 130.1,50.6 132.0,50.1 134.0,50.0 136.0,50.1 137.9,50.6 139.8,51.3 141.8,52.3 143.8,53.7 145.7,55.3 147.7,57.2 149.6,59.4 151.6,61.8 153.5,64.6 155.4,67.7 157.4,71.1 159.3,74.7 161.3,78.7 163.2,82.9 165.2,87.4 167.2,92.3 169.1,97.4 171.1,102.8 173.0,108.5 174.9,114.5 176.9,120.8 178.8,127.4 180.8,134.2 182.8,141.4 184.7,148.9 186.7,156.6 188.6,164.7 190.6,173.0 192.5,181.6 194.4,190.5 196.4,199.8 198.3,209.3 200.3,219.1 202.2,229.2 204.2,239.5 206.2,250.2 208.1,261.2 210.1,272.4 212.0,284.0" fill="none" stroke="#9aa596" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 4"/>
+<polyline points="78.8,284.0 80.2,272.4 81.6,261.2 83.0,250.2 84.4,239.5 85.7,229.2 87.1,219.1 88.5,209.3 89.9,199.8 91.3,190.5 92.6,181.6 94.0,173.0 95.4,164.7 96.8,156.6 98.1,148.9 99.5,141.4 100.9,134.2 102.3,127.4 103.7,120.8 105.0,114.5 106.4,108.5 107.8,102.8 109.2,97.4 110.6,92.3 111.9,87.4 113.3,82.9 114.7,78.7 116.1,74.7 117.5,71.1 118.8,67.7 120.2,64.6 121.6,61.8 123.0,59.4 124.3,57.2 125.7,55.3 127.1,53.7 128.5,52.3 129.9,51.3 131.2,50.6 132.6,50.1 134.0,50.0 135.4,50.1 136.8,50.6 138.1,51.3 139.5,52.3 140.9,53.7 142.3,55.3 143.7,57.2 145.0,59.4 146.4,61.8 147.8,64.6 149.2,67.7 150.5,71.1 151.9,74.7 153.3,78.7 154.7,82.9 156.1,87.4 157.4,92.3 158.8,97.4 160.2,102.8 161.6,108.5 163.0,114.5 164.3,120.8 165.7,127.4 167.1,134.2 168.5,141.4 169.9,148.9 171.2,156.6 172.6,164.7 174.0,173.0 175.4,181.6 176.7,190.5 178.1,199.8 179.5,209.3 180.9,219.1 182.3,229.2 183.6,239.5 185.0,250.2 186.4,261.2 187.8,272.4 189.2,284.0" fill="none" stroke="#14301f" stroke-width="2.8" stroke-linecap="round"/>
+<polyline points="30.0,258.0 32.6,247.7 35.2,237.7 37.8,228.0 40.4,218.5 43.0,209.2 45.6,200.3 48.2,191.6 50.8,183.1 53.4,174.9 56.0,167.0 58.6,159.3 61.2,151.9 63.8,144.8 66.4,137.9 69.0,131.2 71.6,124.9 74.2,118.8 76.8,112.9 79.4,107.3 82.0,102.0 84.6,96.9 87.2,92.1 89.8,87.6 92.4,83.3 95.0,79.2 97.6,75.5 100.2,72.0 102.8,68.7 105.4,65.7 108.0,63.0 110.6,60.5 113.2,58.3 115.8,56.4 118.4,54.7 121.0,53.2 123.6,52.1 126.2,51.2 128.8,50.5 131.4,50.1 134.0,50.0 136.6,50.1 139.2,50.5 141.8,51.2 144.4,52.1 147.0,53.2 149.6,54.7 152.2,56.4 154.8,58.3 157.4,60.5 160.0,63.0 162.6,65.7 165.2,68.7 167.8,72.0 170.4,75.5 173.0,79.2 175.6,83.3 178.2,87.6 180.8,92.1 183.4,96.9 186.0,102.0 188.6,107.3 191.2,112.9 193.8,118.8 196.4,124.9 199.0,131.2 201.6,137.9 204.2,144.8 206.8,151.9 209.4,159.3 212.0,167.0 214.6,174.9 217.2,183.1 219.8,191.6 222.4,200.3 225.0,209.2 227.6,218.5 230.2,228.0 232.8,237.7 235.4,247.7 238.0,258.0" fill="none" stroke="#6b9c3a" stroke-width="2.8" stroke-linecap="round"/>
+<line x1="30" y1="306" x2="60" y2="306" stroke="#14301f" stroke-width="2.8"/>
+<text x="68" y="310" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#14301f">y = −2x²</text>
+<line x1="30" y1="324" x2="60" y2="324" stroke="#9aa596" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="68" y="328" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#14301f">y = −x²</text>
+<line x1="30" y1="342" x2="60" y2="342" stroke="#6b9c3a" stroke-width="2.8"/>
+<text x="68" y="346" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#14301f">y = −½x²</text>
+<circle cx="134" cy="50" r="4" fill="#14301f" stroke="#fff" stroke-width="1.5"/>
+</svg>
+    </div>
+    <figcaption>Izquierda: a &gt; 0, las parábolas abren hacia arriba. Derecha: a &lt; 0, las
+       parábolas abren hacia abajo. En ambas, la línea oscura (|a| = 2) es la más cerrada y la
+       verde (|a| = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>) la más abierta.</figcaption>
+  </figure>
+
+  <p class="section-label">¿Qué hace el número a?</p>
+  <div class="example-box">
+    <h2>1. El signo de a decide hacia dónde abre</h2>
+    <ul class="def-list">
+      <li><strong>a &gt; 0</strong> (positivo): abre <strong>hacia arriba</strong> ∪. El vértice
+          es el punto más bajo (<strong>mínimo</strong>).</li>
+      <li><strong>a &lt; 0</strong> (negativo): abre <strong>hacia abajo</strong> ∩. El vértice
+          es el punto más alto (<strong>máximo</strong>).</li>
+    </ul>
+  </div>
+  <div class="example-box">
+    <h2>2. El tamaño de a (sin signo) decide qué tan abierta es</h2>
+    <ul class="def-list">
+      <li>Si el número sin signo es <strong>mayor que 1</strong> (por ejemplo 2, 3, −4): la
+          parábola es <strong>más cerrada</strong> (más “flaca”) que x².</li>
+      <li>Si el número sin signo está <strong>entre 0 y 1</strong> (por ejemplo <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>, 0.2,
+          −<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>): la parábola es <strong>más abierta</strong> (más “ancha”) que x².</li>
+      <li>Si es <strong>1 o −1</strong>: tiene la misma abertura que x².</li>
+    </ul>
+  </div>
+  <div class="example-box">
+    <h2>3. Lo que NO cambia</h2>
+    <ul class="def-list">
+      <li><strong>Vértice:</strong> siempre V(0, 0).</li>
+      <li><strong>Eje de simetría:</strong> siempre x = 0.</li>
+      <li><strong>Dominio:</strong> todos los números reales, (−∞, ∞).</li>
+      <li><strong>Rango:</strong> [0, ∞) si a &gt; 0, y (−∞, 0] si a &lt; 0.</li>
+    </ul>
+  </div>
+  <div class="callout">
+    <div class="k">Escríbelo en tu cuaderno</div>
+    <p>En f(x) = ax²: <strong>el signo de a</strong> dice si la parábola abre hacia arriba o
+       hacia abajo, y <strong>el tamaño de a</strong> dice si es más cerrada o más abierta que
+       x². El vértice siempre se queda en el origen.</p>
+  </div>
+
+  <p class="section-label">Actividad 2 · Sin graficar, describe la parábola</p>
+  <div class="prose">
+    <p>Para cada función, indica: <strong>(a)</strong> si abre hacia arriba o hacia abajo, y
+       <strong>(b)</strong> si es más cerrada, más abierta o igual que x².</p>
+  </div>
+  <div class="exercise-grid">
+    <div class="exercise-card has-answer"><span class="enum">1</span><span class="eqs">f(x) = 3x²</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>a = 3. Abre <strong>hacia arriba</strong> (a &gt; 0) y es <strong>más cerrada</strong> que x² (3 &gt; 1).</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">2</span><span class="eqs">f(x) = −<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>x²</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>a = −<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>. Abre <strong>hacia abajo</strong> (a &lt; 0) y es <strong>más abierta</strong> que x² (<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> &lt; 1).</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">3</span><span class="eqs">f(x) = 0.2x²</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>a = 0.2. Abre <strong>hacia arriba</strong> y es <strong>más abierta</strong> que x² (0.2 &lt; 1).</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">4</span><span class="eqs">f(x) = −4x²</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>a = −4. Abre <strong>hacia abajo</strong> y es <strong>más cerrada</strong> que x² (4 &gt; 1).</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">5</span><span class="eqs">f(x) = <span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span>x²</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>a = <span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span> = 2.5. Abre <strong>hacia arriba</strong> y es <strong>más cerrada</strong> que x² (2.5 &gt; 1).</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">6</span><span class="eqs">f(x) = −x²</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>a = −1. Abre <strong>hacia abajo</strong> y tiene <strong>la misma abertura</strong> que x²: es su reflejo en el eje x.</p>
+      </details>
+    </div>
+  </div>
+
+  <p class="section-label">Actividad 3 · Evaluar la función</p>
+  <div class="prose">
+    <p>Calcula en tu cuaderno. Recuerda: <strong>primero el cuadrado, después la
+       multiplicación por a</strong>.</p>
+  </div>
+  <div class="exercise-grid">
+    <div class="exercise-card has-answer"><span class="enum">1</span><span class="eqs">f(x) = 3x², calcula f(2)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(2) = 3(2)² = 3(4) = <strong>12</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">2</span><span class="eqs">f(x) = −2x², calcula f(3)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(3) = −2(3)² = −2(9) = <strong>−18</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">3</span><span class="eqs">f(x) = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>x², calcula f(4)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(4) = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>(4)² = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>(16) = <strong>8</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">4</span><span class="eqs">f(x) = −<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>x², calcula f(−2)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(−2) = −<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>(−2)² = −<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>(4) = <strong>−1</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">5</span><span class="eqs">f(x) = 5x², calcula f(−1)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(−1) = 5(−1)² = 5(1) = <strong>5</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">6</span><span class="eqs">f(x) = −3x², calcula f(0)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(0) = −3(0)² = <strong>0</strong>. Es el vértice: toda parábola y = ax² pasa por (0, 0).</p>
+      </details>
+    </div>
+  </div>
+
+  <p class="section-label">Actividad 4 · Encuentra el valor de a</p>
+  <div class="prose">
+    <p>Cada punto pertenece a una parábola de la forma y = ax². Encuentra el valor de
+       <strong>a</strong>. <strong>Pista:</strong> sustituye x y y en y = ax² y despeja a.</p>
+  </div>
+  <div class="exercise-grid">
+    <div class="exercise-card has-answer"><span class="enum">1</span><span class="eqs">(2, 12)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>12 = a(2)² → 12 = 4a → a = <span class="frac frac-inline"><span class="num">12</span><span class="den">4</span></span> = <strong>3</strong>. La función es y = 3x².</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">2</span><span class="eqs">(1, −5)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>−5 = a(1)² → −5 = a → <strong>a = −5</strong>. La función es y = −5x².</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">3</span><span class="eqs">(4, 4)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>4 = a(4)² → 4 = 16a → a = <span class="frac frac-inline"><span class="num">4</span><span class="den">16</span></span> = <strong><span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span></strong>. La función es y = <span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>x².</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">4</span><span class="eqs">(−3, −18)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>−18 = a(−3)² → −18 = 9a → a = <span class="frac frac-inline"><span class="num">−18</span><span class="den">9</span></span> = <strong>−2</strong>. La función es y = −2x².</p>
+      </details>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>

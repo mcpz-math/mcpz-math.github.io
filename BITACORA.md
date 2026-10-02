@@ -403,3 +403,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
   Actividad 4 (¿qué x da ese resultado?), cada ejercicio con su botón "Ver respuesta".
 - El bloque "f(x) = x²" de `tema-05-funciones-cuadraticas.html` ahora enlaza a esta página.
 - Pendiente: que Carmen revise la propuesta y diga qué quiere cambiar.
+
+## 2026-10-02 (Tema 5: subtema f(x) = ax²)
+- Carmen pidió seguir con f(x) = ax² (sin material propio; se hizo una propuesta). Se creó
+  `matematicas-3/tema-05-ax-cuadrada.html` con: objetivo, recordatorio de x², qué es el
+  coeficiente a (y por qué a ≠ 0), Actividad 1 (tabla comparativa de x², 2x², ½x² y −x² con
+  "Ver respuestas"), dos gráficas comparativas (a > 0 y a < 0), qué hace el signo y el tamaño
+  de a, lo que no cambia (vértice, eje, dominio, rango), Actividad 2 (describir la parábola
+  sin graficar), Actividad 3 (evaluar) y Actividad 4 (encontrar a a partir de un punto),
+  cada ejercicio con "Ver respuesta".
+- El bloque "f(x) = ax²" de `tema-05-funciones-cuadraticas.html` ahora enlaza a esta página.
+- Pendiente: que Carmen revise la propuesta y apruebe publicarla.
