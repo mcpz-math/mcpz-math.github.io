@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>f(x) = x² — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-05-funciones-cuadraticas.html">← Tema 5</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 3 · Tema 5 · Subtema</div>
+    <h1>La función f(x) = x²</h1>
+  </div>
+
+  <div class="callout">
+    <div class="k">Objetivo</div>
+    <p>Que el estudiante conozca la función cuadrática más sencilla, <strong>f(x) = x²</strong>:
+       que sepa evaluarla, hacer su tabla de valores, trazar su gráfica (una
+       <strong>parábola</strong>) e identificar sus características principales.</p>
+  </div>
+
+  <p class="section-label">Para empezar</p>
+  <div class="prose">
+    <p>Imagina un terreno cuadrado. Si cada lado mide <strong>x</strong> metros, su área es
+       lado por lado:</p>
+  </div>
+  <div class="example-box">
+    <span class="eq">A = x · x = x²</span>
+    <p style="margin-top:1rem;">Si el lado mide 1 m, el área es 1 m². Si mide 2 m, el área es
+       4 m². Si mide 3 m, el área es 9 m². Observa que <strong>al duplicar el lado, el área no se
+       duplica: se multiplica por 4</strong>. Esto ya nos dice que esta relación <strong>no es
+       lineal</strong>: su gráfica no será una recta.</p>
+  </div>
+
+  <p class="section-label">Definición</p>
+  <div class="prose">
+    <p>Una <strong>función cuadrática</strong> es una función en la que la variable
+       <strong>x</strong> aparece elevada al cuadrado (exponente 2) como su mayor potencia.</p>
+    <p>La función cuadrática más sencilla de todas es:</p>
+  </div>
+  <div class="example-box">
+    <span class="eq">f(x) = x²</span>
+    <p style="margin-top:1rem;">Su regla de correspondencia dice: <strong>“a cada número x le
+       corresponde su cuadrado”</strong>, es decir, el número multiplicado por sí mismo.</p>
+    <ul class="def-list">
+      <li><span class="eq-plain">f(3)</span> = 3² = 3 · 3 = 9</li>
+      <li><span class="eq-plain">f(−3)</span> = (−3)² = (−3)(−3) = 9</li>
+    </ul>
+  </div>
+  <div class="callout">
+    <div class="k">¡Cuidado con los signos!</div>
+    <p>Cuando x es negativo, se escribe entre paréntesis: <strong>(−3)² = 9</strong>, porque
+       “menos por menos da más”. El cuadrado de cualquier número <strong>nunca es
+       negativo</strong>.</p>
+  </div>
+
+  <p class="section-label">Actividad 1 · Tabla de valores</p>
+  <div class="prose">
+    <p><strong>Instrucciones.</strong> Copia la tabla en tu cuaderno y complétala. Calcula
+       f(x) para cada valor de x y escribe el punto (x, y) que le corresponde.</p>
+  </div>
+  <div class="table-scroll">
+    <table class="fill-table">
+      <thead>
+        <tr><th>x</th><th>f(x) = x²</th><th>Punto (x, y)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>−3</td><td></td><td></td></tr><tr><td>−2</td><td></td><td></td></tr><tr><td>−1</td><td></td><td></td></tr><tr><td>0</td><td></td><td></td></tr><tr><td>1</td><td></td><td></td></tr><tr><td>2</td><td></td><td></td></tr><tr><td>3</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <details class="rubric">
+    <summary>Ver respuestas</summary>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>x</th><th>f(x) = x²</th><th>Punto (x, y)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>−3</td><td class="ans">f(−3) = (−3)² = 9</td><td class="ans">(−3, 9)</td></tr>
+          <tr><td>−2</td><td class="ans">f(−2) = (−2)² = 4</td><td class="ans">(−2, 4)</td></tr>
+          <tr><td>−1</td><td class="ans">f(−1) = (−1)² = 1</td><td class="ans">(−1, 1)</td></tr>
+          <tr><td>0</td><td class="ans">f(0) = 0² = 0</td><td class="ans">(0, 0)</td></tr>
+          <tr><td>1</td><td class="ans">f(1) = 1² = 1</td><td class="ans">(1, 1)</td></tr>
+          <tr><td>2</td><td class="ans">f(2) = 2² = 4</td><td class="ans">(2, 4)</td></tr>
+          <tr><td>3</td><td class="ans">f(3) = 3² = 9</td><td class="ans">(3, 9)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <p class="section-label">La gráfica: una parábola</p>
+  <div class="prose">
+    <p>Si colocamos en el plano cartesiano los puntos de la tabla y los unimos con una
+       <strong>línea curva suave</strong> (¡no con líneas rectas!), obtenemos la gráfica de
+       f(x) = x². Esta curva se llama <strong>parábola</strong>.</p>
+  </div>
+  <figure class="graph-figure">
+    <svg viewBox="0 0 320 370" width="320" height="370" role="img" aria-label="Gráfica de f(x) = x²">
+<g stroke="#dde2dc" stroke-width="1">
+<line x1="40" y1="20" x2="40" y2="350"/>
+<line x1="70" y1="20" x2="70" y2="350"/>
+<line x1="100" y1="20" x2="100" y2="350"/>
+<line x1="130" y1="20" x2="130" y2="350"/>
+<line x1="160" y1="20" x2="160" y2="350"/>
+<line x1="190" y1="20" x2="190" y2="350"/>
+<line x1="220" y1="20" x2="220" y2="350"/>
+<line x1="250" y1="20" x2="250" y2="350"/>
+<line x1="280" y1="20" x2="280" y2="350"/>
+<line x1="40" y1="350" x2="280" y2="350"/>
+<line x1="40" y1="320" x2="280" y2="320"/>
+<line x1="40" y1="290" x2="280" y2="290"/>
+<line x1="40" y1="260" x2="280" y2="260"/>
+<line x1="40" y1="230" x2="280" y2="230"/>
+<line x1="40" y1="200" x2="280" y2="200"/>
+<line x1="40" y1="170" x2="280" y2="170"/>
+<line x1="40" y1="140" x2="280" y2="140"/>
+<line x1="40" y1="110" x2="280" y2="110"/>
+<line x1="40" y1="80" x2="280" y2="80"/>
+<line x1="40" y1="50" x2="280" y2="50"/>
+<line x1="40" y1="20" x2="280" y2="20"/>
+</g>
+<line x1="30" y1="320" x2="294" y2="320" stroke="#56604f" stroke-width="1.5"/>
+<line x1="160" y1="358" x2="160" y2="10" stroke="#56604f" stroke-width="1.5"/>
+<text x="298" y="324" font-family="IBM Plex Mono, monospace" font-size="13" fill="#14301f">x</text>
+<text x="166" y="16" font-family="IBM Plex Mono, monospace" font-size="13" fill="#14301f">y</text>
+<text x="40" y="335" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−4</text>
+<text x="70" y="335" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−3</text>
+<text x="100" y="335" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−2</text>
+<text x="130" y="335" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−1</text>
+<text x="190" y="335" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">1</text>
+<text x="220" y="335" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">2</text>
+<text x="250" y="335" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">3</text>
+<text x="280" y="335" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">4</text>
+<text x="155" y="293" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">1</text>
+<text x="155" y="263" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">2</text>
+<text x="155" y="233" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">3</text>
+<text x="155" y="203" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">4</text>
+<text x="155" y="173" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">5</text>
+<text x="155" y="143" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">6</text>
+<text x="155" y="113" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">7</text>
+<text x="155" y="83" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">8</text>
+<text x="155" y="53" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">9</text>
+<text x="155" y="23" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">10</text>
+<line x1="160" y1="20" x2="160" y2="350" stroke="#c4e86b" stroke-width="3" stroke-dasharray="6 5"/>
+<polyline points="65.2,20.4 67.6,35.2 69.9,49.6 72.3,63.7 74.7,77.3 77.0,90.6 79.4,103.6 81.8,116.1 84.2,128.3 86.5,140.1 88.9,151.5 91.3,162.5 93.6,173.2 96.0,183.5 98.4,193.4 100.8,203.0 103.1,212.2 105.5,221.0 107.9,229.4 110.2,237.4 112.6,245.1 115.0,252.4 117.3,259.3 119.7,265.9 122.1,272.1 124.4,277.9 126.8,283.3 129.2,288.4 131.6,293.0 133.9,297.3 136.3,301.3 138.7,304.8 141.0,308.0 143.4,310.8 145.8,313.3 148.2,315.3 150.5,317.0 152.9,318.3 155.3,319.3 157.6,319.8 160.0,320.0 162.4,319.8 164.7,319.3 167.1,318.3 169.5,317.0 171.9,315.3 174.2,313.3 176.6,310.8 179.0,308.0 181.3,304.8 183.7,301.3 186.1,297.3 188.4,293.0 190.8,288.4 193.2,283.3 195.6,277.9 197.9,272.1 200.3,265.9 202.7,259.3 205.0,252.4 207.4,245.1 209.8,237.4 212.1,229.4 214.5,221.0 216.9,212.2 219.2,203.0 221.6,193.4 224.0,183.5 226.4,173.2 228.7,162.5 231.1,151.5 233.5,140.1 235.8,128.3 238.2,116.1 240.6,103.6 242.9,90.6 245.3,77.3 247.7,63.7 250.1,49.6 252.4,35.2 254.8,20.4" fill="none" stroke="#14301f" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="70" cy="50" r="4.5" fill="#3f6b4a" stroke="#fff" stroke-width="1.5"/>
+<text x="62" y="54" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#14301f">(−3, 9)</text>
+<circle cx="100" cy="200" r="4.5" fill="#3f6b4a" stroke="#fff" stroke-width="1.5"/>
+<text x="92" y="204" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#14301f">(−2, 4)</text>
+<circle cx="130" cy="290" r="4.5" fill="#3f6b4a" stroke="#fff" stroke-width="1.5"/>
+<text x="122" y="294" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#14301f">(−1, 1)</text>
+<circle cx="160" cy="320" r="4.5" fill="#3f6b4a" stroke="#fff" stroke-width="1.5"/>
+<circle cx="190" cy="290" r="4.5" fill="#3f6b4a" stroke="#fff" stroke-width="1.5"/>
+<text x="198" y="294" text-anchor="start" font-family="IBM Plex Mono, monospace" font-size="10" fill="#14301f">(1, 1)</text>
+<circle cx="220" cy="200" r="4.5" fill="#3f6b4a" stroke="#fff" stroke-width="1.5"/>
+<text x="228" y="204" text-anchor="start" font-family="IBM Plex Mono, monospace" font-size="10" fill="#14301f">(2, 4)</text>
+<circle cx="250" cy="50" r="4.5" fill="#3f6b4a" stroke="#fff" stroke-width="1.5"/>
+<text x="258" y="54" text-anchor="start" font-family="IBM Plex Mono, monospace" font-size="10" fill="#14301f">(3, 9)</text>
+<text x="168" y="312" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="500" fill="#14301f">V(0, 0)</text>
+</svg>
+    <figcaption>Gráfica de f(x) = x². Los puntos verdes son los de la tabla; la línea punteada
+       verde-lima es el eje de simetría (x = 0).</figcaption>
+  </figure>
+
+  <p class="section-label">Características de f(x) = x²</p>
+  <div class="example-box">
+    <ul class="def-list">
+      <li><strong>Vértice:</strong> V(0, 0). Es el punto más bajo de la parábola
+          (su <strong>mínimo</strong>).</li>
+      <li><strong>Abertura:</strong> la parábola <strong>abre hacia arriba</strong>, como una “U”.</li>
+      <li><strong>Eje de simetría:</strong> la recta <span class="eq-plain">x = 0</span> (el eje y).
+          La parábola es como un espejo: f(2) = f(−2) = 4, f(3) = f(−3) = 9.</li>
+      <li><strong>Dominio:</strong> todos los números reales, (−∞, ∞). Podemos elevar al cuadrado
+          cualquier número.</li>
+      <li><strong>Rango:</strong> y ≥ 0, es decir, [0, ∞). La gráfica nunca baja del eje x.</li>
+      <li><strong>Comportamiento:</strong> <strong>decrece</strong> (baja) cuando x &lt; 0 y
+          <strong>crece</strong> (sube) cuando x &gt; 0.</li>
+      <li><strong>Intersecciones con los ejes:</strong> sólo toca los ejes en el origen (0, 0).</li>
+    </ul>
+  </div>
+  <div class="callout">
+    <div class="k">Escríbelo en tu cuaderno</div>
+    <p>f(x) = x² es la <strong>parábola básica</strong>. En los siguientes subtemas veremos
+       cómo se mueve, se estira o se voltea cuando le agregamos números: ax², ax² + b,
+       (x − h)², etc. Por eso es importante conocerla muy bien.</p>
+  </div>
+
+  <p class="section-label">Actividad 2 · Evaluar la función</p>
+  <div class="prose">
+    <p>Si f(x) = x², calcula en tu cuaderno lo siguiente. Resuelve primero y después revisa
+       con el botón <strong>“Ver respuesta”</strong>.</p>
+  </div>
+  <div class="exercise-grid">
+    <div class="exercise-card has-answer"><span class="enum">1</span><span class="eqs">f(5)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(5) = (5)² = 5 · 5 = <strong>25</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">2</span><span class="eqs">f(−5)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(−5) = (−5)² = (−5)(−5) = <strong>25</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">3</span><span class="eqs">f(10)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(10) = (10)² = <strong>100</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">4</span><span class="eqs">f(<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>) = (<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>)² = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> · <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> = <strong><span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span></strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">5</span><span class="eqs">f(−1.5)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(−1.5) = (−1.5)² = (−1.5)(−1.5) = <strong>2.25</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">6</span><span class="eqs">f(0.1)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(0.1) = (0.1)² = <strong>0.01</strong></p>
+      </details>
+    </div>
+  </div>
+
+  <p class="section-label">Actividad 3 · ¿El punto está en la parábola?</p>
+  <div class="prose">
+    <p>Determina si cada punto pertenece a la gráfica de f(x) = x². <strong>Pista:</strong>
+       eleva al cuadrado el valor de x y compara el resultado con el valor de y.</p>
+  </div>
+  <div class="exercise-grid">
+    <div class="exercise-card has-answer"><span class="enum">1</span><span class="eqs">(4, 16)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>Sí pertenece, porque f(4) = 4² = 16.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">2</span><span class="eqs">(−3, 9)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>Sí pertenece, porque f(−3) = (−3)² = 9.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">3</span><span class="eqs">(3, −9)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>No pertenece, porque f(3) = 3² = 9, no −9. Además, x² nunca da un resultado negativo.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">4</span><span class="eqs">(−2, −4)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>No pertenece, porque f(−2) = (−2)² = 4, no −4.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">5</span><span class="eqs">(<span class="frac frac-inline"><span class="num">1</span><span class="den">3</span></span>, <span class="frac frac-inline"><span class="num">1</span><span class="den">9</span></span>)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>Sí pertenece, porque f(<span class="frac frac-inline"><span class="num">1</span><span class="den">3</span></span>) = (<span class="frac frac-inline"><span class="num">1</span><span class="den">3</span></span>)² = <span class="frac frac-inline"><span class="num">1</span><span class="den">9</span></span>.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">6</span><span class="eqs">(6, 12)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>No pertenece, porque f(6) = 6² = 36, no 12. (¡Cuidado! x² no es lo mismo que 2x.)</p>
+      </details>
+    </div>
+  </div>
+
+  <p class="section-label">Actividad 4 · De regreso: ¿qué x da ese resultado?</p>
+  <div class="prose">
+    <p>Encuentra <strong>todos</strong> los valores de x que cumplen cada igualdad. Recuerda
+       que la parábola es simétrica.</p>
+  </div>
+  <div class="exercise-grid">
+    <div class="exercise-card has-answer"><span class="enum">1</span><span class="eqs">x² = 16</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>x = 4 o x = −4, porque 4² = 16 y (−4)² = 16.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">2</span><span class="eqs">x² = 49</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>x = 7 o x = −7.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">3</span><span class="eqs">x² = 0</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>Sólo x = 0. Es el único valor que da 0: corresponde al vértice.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">4</span><span class="eqs">x² = −4</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>No hay ningún valor de x: el cuadrado de un número nunca es negativo.</p>
+      </details>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>

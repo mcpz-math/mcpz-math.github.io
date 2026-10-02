@@ -392,3 +392,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Carmen eligió otro video para Intervalos y desigualdades: ahora se muestra
   "Representación gráfica de intervalos | Ejemplo 1" (https://www.youtube.com/watch?v=tyt6T1Ukq3w)
   en lugar del de "Ejercicios con INTERVALOS".
+
+## 2026-10-02 (Tema 5: subtema f(x) = x²)
+- Carmen no tenía material para este subtema y pidió una propuesta. Se creó
+  `matematicas-3/tema-05-x-cuadrada.html` con: objetivo, situación inicial (área de un
+  cuadrado), definición, aviso sobre los signos ((−3)² = 9), Actividad 1 (tabla de valores
+  de −3 a 3 con "Ver respuestas"), gráfica de la parábola con su eje de simetría,
+  características (vértice, abertura, eje de simetría, dominio, rango, crece/decrece),
+  Actividad 2 (evaluar la función), Actividad 3 (¿el punto está en la parábola?) y
+  Actividad 4 (¿qué x da ese resultado?), cada ejercicio con su botón "Ver respuesta".
+- El bloque "f(x) = x²" de `tema-05-funciones-cuadraticas.html` ahora enlaza a esta página.
+- Pendiente: que Carmen revise la propuesta y diga qué quiere cambiar.
