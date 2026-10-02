@@ -413,4 +413,5 @@ Registro de lo que vamos haciendo, en orden cronológico.
   sin graficar), Actividad 3 (evaluar) y Actividad 4 (encontrar a a partir de un punto),
   cada ejercicio con "Ver respuesta".
 - El bloque "f(x) = ax²" de `tema-05-funciones-cuadraticas.html` ahora enlaza a esta página.
-- Pendiente: que Carmen revise la propuesta y apruebe publicarla.
+- Carmen aprobó la propuesta: se publicó en el sitio y se le entregó también en Word
+  (con las respuestas en la última hoja).
