@@ -463,3 +463,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   `tema-05-ax-cuadrada-mas-b-portada.jpg`. Carmen todavía no tiene el material del subtema, así que
   se creó `matematicas-3/tema-05-ax-cuadrada-mas-b.html` sólo con el video y un aviso de
   "Próximamente", y el bloque "f(x) = ax² + b" de la página del Tema 5 ya enlaza a ella.
+
+## 2026-10-04 (Word: ejercicios de raíces de ax² + b)
+- Carmen pidió un Word con ejercicios para hallar las raíces de f(x) = ax² + b (se valen
+  raíces imaginarias). Se le entregó "Ejercicios-raices-ax2-mas-b.docx" (tamaño carta):
+  pasos para despejar, 2 ejemplos (uno con raíces reales y otro con imaginarias),
+  18 ejercicios con espacio para resolver (8 reales y diferentes, 9 imaginarias y
+  1 repetida) y, en la última hoja, las respuestas con el procedimiento y el tipo de raíz.
+  No se publicó en el sitio.
