@@ -451,3 +451,15 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Archivos: `matematicas-3/materiales/tema-05-ax-cuadrada-variando-a.mp4` y su portada
   `tema-05-ax-cuadrada-variando-a-portada.jpg`.
 - Se insertó en `tema-05-ax-cuadrada.html`, antes de "¿Qué hace el número a?".
+
+## 2026-10-04 (video: f(x) = ax² + b)
+- Se hizo un segundo video (60 s, sin audio), con el mismo estilo que el de ax².
+  Primero se ve el efecto de **a** con b = 2 fijo (de 1 a 3, a 0.3, se detiene en a = 0
+  con el aviso "ya no es cuadrática", luego hasta −3). Después, el efecto de **b** con
+  a = 1 (sube a 4, baja a −4, regresa a 0). Siempre se marcan el vértice V(0, b) y las
+  raíces (repetida, reales y diferentes o imaginarias). Termina con un resumen. El orden
+  (primero a, luego b) lo eligió Carmen.
+- Archivos: `matematicas-3/materiales/tema-05-ax-cuadrada-mas-b.mp4` y su portada
+  `tema-05-ax-cuadrada-mas-b-portada.jpg`. Carmen todavía no tiene el material del subtema, así que
+  se creó `matematicas-3/tema-05-ax-cuadrada-mas-b.html` sólo con el video y un aviso de
+  "Próximamente", y el bloque "f(x) = ax² + b" de la página del Tema 5 ya enlaza a ella.
