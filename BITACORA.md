@@ -441,3 +441,13 @@ Registro de lo que vamos haciendo, en orden cronológico.
   un poco más grandes.
 - Se corrigió el texto de los puntos: decía "f(1) = 3 · f(2) = 12" (parecía una
   multiplicación); ahora dice "f(1) = 3; f(2) = 12".
+
+## 2026-10-04 (video: f(x) = ax² variando a)
+- A pedido de Carmen se hizo un video animado (51 s, sin audio) de cómo cambia la parábola
+  f(x) = ax² cuando varía a: de 1 a 4 (más cerrada), a 0.2 (más abierta), se detiene en
+  a = 0 (recta, "ya no es cuadrática, por eso a ≠ 0"), y luego valores negativos hasta −4
+  (abre hacia abajo, máximo). Siempre muestra y = x² punteada como referencia, un
+  deslizador con el valor de a, y al final un resumen.
+- Archivos: `matematicas-3/materiales/tema-05-ax-cuadrada-variando-a.mp4` y su portada
+  `tema-05-ax-cuadrada-variando-a-portada.jpg`.
+- Se insertó en `tema-05-ax-cuadrada.html`, antes de "¿Qué hace el número a?".
