@@ -474,8 +474,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
 
 ## 2026-10-04 (Word: raíces de ax² + b con binomios conjugados)
 - Mismo formato que el Word anterior, pero resolviendo por factorización en binomios
-  conjugados: A² − B² = (A + B)(A − B); para las sumas se usa (Bi)² = −B², por ejemplo
-  x² + 25 = (x + 5i)(x − 5i). Se entregó "Ejercicios-binomios-conjugados-ax2-mas-b.docx":
-  pasos (incluye sacar factor común), 2 ejemplos, 18 ejercicios nuevos (10 reales y
-  diferentes, 8 imaginarias) y respuestas en la última hoja con la factorización.
-  Todas las factorizaciones se comprobaron por computadora. No se publicó en el sitio.
+  conjugados: A² − B² = (A + B)(A − B). A pedido de Carmen, **sin raíces imaginarias**.
+  Se entregó "Ejercicios-binomios-conjugados-ax2-mas-b.docx": pasos (incluye sacar factor
+  común), 2 ejemplos (4x² − 9 y 2x² − 50), 18 ejercicios, todos con raíces reales y
+  diferentes (enteras, fracciones y una con √3), y respuestas en la última hoja con la
+  factorización. Todas se comprobaron por computadora. No se publicó en el sitio.
