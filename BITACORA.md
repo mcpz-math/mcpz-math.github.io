@@ -487,3 +487,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   expresiones como ecuaciones de Word (fracciones, potencias y raíces editables).
 - Se corrigió un detalle de la imagen: "(⅕y − 13)(⅕ + 13)" quedó como (⅕y − 13)(⅕y + 13).
   No se publicó en el sitio.
+- Ajuste a pedido de Carmen: los ejercicios ahora quedan alineados a la izquierda en cada
+  recuadro, como en su hoja original (antes Word los centraba). Se incluyeron también los
+  cambios que ella había hecho: el título ahora dice "Serie 1. Binomios conjugados" y el
+  recuadro tiene la "Observación: xᵃ · xᵇ = xᵃ⁺ᵇ". Archivo: "Serie-1-Binomios-conjugados.docx".
