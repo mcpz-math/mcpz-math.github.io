@@ -498,3 +498,12 @@ Registro de lo que vamos haciendo, en orden cronológico.
   dificultad parecida (enteros, fracciones, potencias, varias letras y raíces).
   Ejercicios alineados a la izquierda. Archivo: "Serie-2-Binomios-conjugados.docx".
   No se publicó en el sitio.
+
+## 2026-10-04 (Word: Serie 3. Diferencia de cuadrados perfectos)
+- Carmen pidió una serie de DCP. Mismo formato que las Series 1 y 2, pero al revés: se da
+  la diferencia (ej. x² − 9) y el alumno la factoriza en binomios conjugados. Objetivos y
+  recuadro adaptados (a² − b² = (a + b)(a − b); observación: √x⁶ = x³, el exponente se
+  divide entre 2). 30 ejercicios, comprobados por computadora; muchos son los resultados
+  de la Serie 1 (sirven para practicar el camino de regreso). Uno, 16s⁴ − 1, se puede
+  seguir factorizando. Archivo: "Serie-3-Diferencia-de-cuadrados-perfectos.docx".
+  No se publicó en el sitio.
