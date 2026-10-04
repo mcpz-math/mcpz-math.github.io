@@ -491,3 +491,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   recuadro, como en su hoja original (antes Word los centraba). Se incluyeron también los
   cambios que ella había hecho: el título ahora dice "Serie 1. Binomios conjugados" y el
   recuadro tiene la "Observación: xᵃ · xᵇ = xᵃ⁺ᵇ". Archivo: "Serie-1-Binomios-conjugados.docx".
+
+## 2026-10-04 (Word: Serie 2. Binomios conjugados)
+- Mismo formato que la Serie 1 (encabezado, objetivos, recuadro con (a + b)(a − b) = a² − b²
+  y la observación xᵃ · xᵇ = xᵃ⁺ᵇ), con 30 productos de binomios conjugados nuevos y de
+  dificultad parecida (enteros, fracciones, potencias, varias letras y raíces).
+  Ejercicios alineados a la izquierda. Archivo: "Serie-2-Binomios-conjugados.docx".
+  No se publicó en el sitio.
