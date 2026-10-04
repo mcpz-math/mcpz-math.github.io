@@ -479,3 +479,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   común), 2 ejemplos (4x² − 9 y 2x² − 50), 18 ejercicios, todos con raíces reales y
   diferentes (enteras, fracciones y una con √3), y respuestas en la última hoja con la
   factorización. Todas se comprobaron por computadora. No se publicó en el sitio.
+
+## 2026-10-04 (Word: hoja "Clase. Binomios conjugados")
+- Carmen mandó una imagen de su hoja "Clase. Binomios conjugados" (objetivos, recuadro con
+  (a + b)(a − b) = a² − b² y 30 productos de binomios conjugados en dos columnas) y pidió
+  pasarla a Word. Se entregó "Clase-Binomios-conjugados.docx" (tamaño carta) con las
+  expresiones como ecuaciones de Word (fracciones, potencias y raíces editables).
+- Se corrigió un detalle de la imagen: "(⅕y − 13)(⅕ + 13)" quedó como (⅕y − 13)(⅕y + 13).
+  No se publicó en el sitio.
