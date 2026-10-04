@@ -460,5 +460,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
   raíces (repetida, reales y diferentes o imaginarias). Termina con un resumen. El orden
   (primero a, luego b) lo eligió Carmen.
 - Archivos: `matematicas-3/materiales/tema-05-ax-cuadrada-mas-b.mp4` y su portada
-  `tema-05-ax-cuadrada-mas-b-portada.jpg`. El subtema ax² + b todavía no tiene página;
-  falta decidir dónde se publica.
+  `tema-05-ax-cuadrada-mas-b-portada.jpg`. Carmen todavía no tiene el material del subtema, así que
+  se creó `matematicas-3/tema-05-ax-cuadrada-mas-b.html` sólo con el video y un aviso de
+  "Próximamente", y el bloque "f(x) = ax² + b" de la página del Tema 5 ya enlaza a ella.
