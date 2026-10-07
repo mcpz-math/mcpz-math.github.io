@@ -463,3 +463,20 @@ Registro de lo que vamos haciendo, en orden cronológico.
   `tema-05-ax-cuadrada-mas-b-portada.jpg`. Carmen todavía no tiene el material del subtema, así que
   se creó `matematicas-3/tema-05-ax-cuadrada-mas-b.html` sólo con el video y un aviso de
   "Próximamente", y el bloque "f(x) = ax² + b" de la página del Tema 5 ya enlaza a ella.
+
+## 2026-10-07 (Tema 6: tarea de binomios conjugados)
+- A pedido de Carmen se creó una serie de ejercicios de **binomios conjugados** con el
+  mismo formato que las tareas del Tema 1, en la nueva página
+  `matematicas-3/tema-06-tarea.html` ("Tareas: productos notables y factorización").
+- Contenido: Propósito (cuadro verde), un recuadro "Recuerda" con la regla
+  (a + b)(a − b) = a² − b², **Serie 1** (práctica, 10 ejercicios con "Ver respuesta": término
+  que se repite, términos simétricos, diferencia de cuadrados y resultado) y **Serie 2**
+  (evaluación, 10 ejercicios sin respuestas). Ambas series van de lo sencillo a casos con
+  coeficientes, dos variables, exponentes, fracciones, orden cambiado y signos negativos.
+- **Rúbrica desplegable** con 5 competencias y 4 niveles (Excelente, Satisfactorio,
+  En proceso, Suficiente): identifica los binomios conjugados; aplica la regla del producto
+  notable; eleva al cuadrado coeficientes, variables y exponentes; argumenta y comunica el
+  procedimiento; verifica el resultado (multiplicando término a término).
+- El bloque "Tarea" de `tema-06-productos-notables-y-factorizacion.html` ahora enlaza a
+  esta página. Las respuestas de la Serie 2 se le dieron a Carmen en el chat; no se guardan
+  en el repositorio porque es público.
