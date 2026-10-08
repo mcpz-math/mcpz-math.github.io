@@ -463,3 +463,12 @@ Registro de lo que vamos haciendo, en orden cronológico.
   `tema-05-ax-cuadrada-mas-b-portada.jpg`. Carmen todavía no tiene el material del subtema, así que
   se creó `matematicas-3/tema-05-ax-cuadrada-mas-b.html` sólo con el video y un aviso de
   "Próximamente", y el bloque "f(x) = ax² + b" de la página del Tema 5 ya enlaza a ella.
+
+## 2026-10-08 (Serie 2 de binomios conjugados, en Word)
+- A pedido de Carmen se hizo la **Serie 2 de binomios conjugados** en Word, con 18 ejercicios
+  de menor a mayor dificultad: coeficientes enteros, dos variables, exponentes, signo negativo
+  al inicio, fracciones (½, ⅓), decimales y exponentes literales (xᵐ, yⁿ). Incluye recuadro
+  "Recuerda" con (a + b)(a − b) = a² − b², espacio para Nombre/Grupo/Fecha y una segunda
+  hoja con las respuestas.
+- Archivo: `matematicas-3/materiales/tema-06-serie-2-binomios-conjugados.docx` (todavía no
+  está enlazado desde la página del Tema 6).
