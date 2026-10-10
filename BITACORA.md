@@ -520,3 +520,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (abre arriba/abajo, más delgada/gorda, a = 0 ya no es cuadrática) y la tabla
   x | x² | ax² se muestran con fracciones comunes. Avisa si se escribe algo inválido o un
   denominador 0; se limita a −10 ≤ a ≤ 10.
+
+## 2026-10-10 (gráfica interactiva: puntos (±3, 9))
+- A pedido de Carmen, la gráfica interactiva de `tema-05-ax-cuadrada.html` ahora también
+  muestra los puntos (±3, 9) de x² y su movimiento a (±3, 9a); la tabla tiene esas filas.
+- Las etiquetas de los puntos ahora buscan solas un lugar libre (a un lado, arriba o abajo)
+  para no encimarse cuando los puntos quedan muy juntos (por ejemplo a = 1/3 o a = 0).
