@@ -571,3 +571,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   **"Video: binomios conjugados"** (debajo de los subtemas), donde está el video.
 - Enlace directo para compartir por correo:
   https://mcpz-math.github.io/matematicas-3/materiales/tema-06-binomios-conjugados.mp4
+
+## 2026-10-10 (video de binomios conjugados sin "¿De dónde sale la regla?")
+- A pedido de Carmen se quitó del video `tema-06-binomios-conjugados.mp4` la escena
+  "¿De dónde sale la regla?" (la multiplicación término por término de (x + 5)(x − 5)).
+  Ahora dura 1 min 23 s. Se quitó la frase "Ya no hace falta multiplicar término por
+  término" y en "¡Cuidado!" la nota final ahora dice "El resultado sólo tiene dos términos:
+  el cuadrado del primero y el cuadrado del segundo". Se actualizó la descripción del video
+  en la página del Tema 6.
