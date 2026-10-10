@@ -579,3 +579,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
   término" y en "¡Cuidado!" la nota final ahora dice "El resultado sólo tiene dos términos:
   el cuadrado del primero y el cuadrado del segundo". Se actualizó la descripción del video
   en la página del Tema 6.
+
+## 2026-10-10 (video de binomios conjugados: observación "elevar al cuadrado")
+- A pedido de Carmen, en la escena "La regla" del video `tema-06-binomios-conjugados.mp4`
+  se agregó un recuadro: **"Observación: elevar al cuadrado significa multiplicar por el
+  mismo"**, con a² = a · a, b² = b · b y el ejemplo (3x)² = 3x · 3x = 9x². Ahora dura
+  1 min 28 s. Se actualizó la portada.
