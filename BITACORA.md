@@ -477,3 +477,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - En `tema-06-productos-notables-y-factorizacion.html`, el bloque **Tarea** ahora tiene el
   enlace "Descargar Serie 2. Binomios conjugados (Word)". El archivo incluye la hoja de
   respuestas en la segunda página.
+
+## 2026-10-10 (Serie 3 de binomios conjugados, en Word)
+- Se hizo la **Serie 3 de binomios conjugados** en Word, con la misma estructura que la
+  Serie 2 (encabezado, Nombre/Grupo/Fecha, recuadro "Recuerda", 18 ejercicios de menor a
+  mayor dificultad y hoja de respuestas), pero con ejercicios nuevos.
+- Archivo: `matematicas-3/materiales/tema-06-serie-3-binomios-conjugados.docx` (todavía no
+  está enlazado desde la página del Tema 6).
