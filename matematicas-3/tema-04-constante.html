@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Función constante — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-04-funciones.html">← Tema 4</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 3 · Tema 4 · Subtema</div>
+    <h1>La función constante</h1>
+  </div>
+
+  <div class="callout">
+    <div class="k">Objetivo</div>
+    <p>Que el estudiante reconozca una <strong>función constante f(x) = c</strong>, la grafique
+       y diga su dominio, su rango y dónde corta a los ejes.</p>
+  </div>
+
+  <p class="section-label">Para empezar</p>
+  <div class="prose">
+    <p>Un estacionamiento cobra <strong>$30 sin importar cuántas horas</strong> te quedes.
+       ¿Cuánto pagas si te quedas 1 hora? ¿Y 3? ¿Y 5?</p>
+  </div>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Horas (x)</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Pago f(x)</td><td class="ans">30</td><td class="ans">30</td><td class="ans">30</td><td class="ans">30</td><td class="ans">30</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="prose">
+    <p>Siempre pagas $30: el pago <strong>no depende</strong> de las horas.
+       <strong>La x cambia, pero la y se queda igual.</strong> Esa es la idea de una función
+       constante.</p>
+  </div>
+
+  <p class="section-label">Definición</p>
+  <div class="example-box">
+    <span class="eq">f(x) = c</span>
+    <p style="margin-top:1rem;">Donde <strong>c</strong> es un número real fijo. A cada valor de
+       x le corresponde <strong>siempre el mismo valor</strong>: c.</p>
+    <ul class="def-list">
+      <li>Ejemplos: <span class="eq-plain">f(x) = 3</span>, <span class="eq-plain">f(x) = −2</span>,
+          <span class="eq-plain">f(x) = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span></span>, <span class="eq-plain">f(x) = 0</span>.</li>
+      <li>También se escribe <span class="eq-plain">y = c</span>; por ejemplo, y = 3.</li>
+    </ul>
+  </div>
+  <div class="callout">
+    <div class="k">¡Cuidado!</div>
+    <p>En f(x) = 3 <strong>no aparece la x</strong>, y aun así es una función. ¿Cuánto vale
+       f(10)? ¿Y f(−7)? Las dos dan <strong>3</strong>: no importa qué número pongas en x.</p>
+  </div>
+
+  <p class="section-label">Actividad 1 · Tabla de valores</p>
+  <div class="prose">
+    <p><strong>Instrucciones.</strong> Copia la tabla en tu cuaderno y complétala para
+       f(x) = 3.</p>
+  </div>
+  <div class="table-scroll">
+    <table class="fill-table">
+      <thead>
+        <tr><th>x</th><th>f(x) = 3</th><th>Punto (x, y)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>−2</td><td></td><td></td></tr><tr><td>−1</td><td></td><td></td></tr><tr><td>0</td><td></td><td></td></tr><tr><td>1</td><td></td><td></td></tr><tr><td>2</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <details class="rubric">
+    <summary>Ver respuestas</summary>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>x</th><th>f(x) = 3</th><th>Punto (x, y)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>−2</td><td class="ans">f(−2) = 3</td><td class="ans">(−2, 3)</td></tr>
+          <tr><td>−1</td><td class="ans">f(−1) = 3</td><td class="ans">(−1, 3)</td></tr>
+          <tr><td>0</td><td class="ans">f(0) = 3</td><td class="ans">(0, 3)</td></tr>
+          <tr><td>1</td><td class="ans">f(1) = 3</td><td class="ans">(1, 3)</td></tr>
+          <tr><td>2</td><td class="ans">f(2) = 3</td><td class="ans">(2, 3)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <p class="section-label">La gráfica: una recta horizontal</p>
+  <div class="prose">
+    <p>Si colocamos los puntos de la tabla en el plano cartesiano y los unimos, obtenemos una
+       <strong>recta horizontal</strong> que pasa a la altura y = 3.</p>
+  </div>
+  <figure class="graph-figure">
+    <svg viewBox="0 0 330 330" width="330" height="330" role="img" aria-label="Gráfica de f(x) = 3">
+<g stroke="#dde2dc" stroke-width="1">
+<line x1="40" y1="40" x2="40" y2="280"/>
+<line x1="40" y1="280" x2="280" y2="280"/>
+<line x1="70" y1="40" x2="70" y2="280"/>
+<line x1="40" y1="250" x2="280" y2="250"/>
+<line x1="100" y1="40" x2="100" y2="280"/>
+<line x1="40" y1="220" x2="280" y2="220"/>
+<line x1="130" y1="40" x2="130" y2="280"/>
+<line x1="40" y1="190" x2="280" y2="190"/>
+<line x1="160" y1="40" x2="160" y2="280"/>
+<line x1="40" y1="160" x2="280" y2="160"/>
+<line x1="190" y1="40" x2="190" y2="280"/>
+<line x1="40" y1="130" x2="280" y2="130"/>
+<line x1="220" y1="40" x2="220" y2="280"/>
+<line x1="40" y1="100" x2="280" y2="100"/>
+<line x1="250" y1="40" x2="250" y2="280"/>
+<line x1="40" y1="70" x2="280" y2="70"/>
+<line x1="280" y1="40" x2="280" y2="280"/>
+<line x1="40" y1="40" x2="280" y2="40"/>
+</g>
+<line x1="28" y1="160" x2="294" y2="160" stroke="#56604f" stroke-width="1.5"/>
+<line x1="160" y1="290" x2="160" y2="28" stroke="#56604f" stroke-width="1.5"/>
+<text x="298" y="164" font-family="IBM Plex Mono, monospace" font-size="13" fill="#14301f">x</text>
+<text x="166" y="26" font-family="IBM Plex Mono, monospace" font-size="13" fill="#14301f">y</text>
+<text x="40" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−4</text>
+<text x="155" y="284" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−4</text>
+<text x="70" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−3</text>
+<text x="155" y="254" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−3</text>
+<text x="100" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−2</text>
+<text x="155" y="224" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−2</text>
+<text x="130" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−1</text>
+<text x="155" y="194" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−1</text>
+<text x="190" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">1</text>
+<text x="155" y="134" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">1</text>
+<text x="220" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">2</text>
+<text x="155" y="104" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">2</text>
+<text x="250" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">3</text>
+<text x="155" y="74" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">3</text>
+<text x="280" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">4</text>
+<text x="155" y="44" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">4</text>
+<line x1="40" y1="70" x2="280" y2="70" stroke="#14301f" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="100" cy="70" r="4.5" fill="#3f6b4a" stroke="#fff" stroke-width="1.5"/>
+<circle cx="130" cy="70" r="4.5" fill="#3f6b4a" stroke="#fff" stroke-width="1.5"/>
+<circle cx="160" cy="70" r="4.5" fill="#3f6b4a" stroke="#fff" stroke-width="1.5"/>
+<circle cx="190" cy="70" r="4.5" fill="#3f6b4a" stroke="#fff" stroke-width="1.5"/>
+<circle cx="220" cy="70" r="4.5" fill="#3f6b4a" stroke="#fff" stroke-width="1.5"/>
+<text x="278" y="62" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#14301f">f(x) = 3</text>
+</svg>
+    <figcaption>Gráfica de f(x) = 3. Los puntos verdes son los de la tabla.</figcaption>
+  </figure>
+  <div class="prose">
+    <p>Lo mismo pasa con cualquier función constante. Mira tres de ellas en el mismo plano:</p>
+  </div>
+  <figure class="graph-figure">
+    <svg viewBox="0 0 330 330" width="330" height="330" role="img" aria-label="Gráficas de f(x) = 3, f(x) = 0 y f(x) = −2">
+<g stroke="#dde2dc" stroke-width="1">
+<line x1="40" y1="40" x2="40" y2="280"/>
+<line x1="40" y1="280" x2="280" y2="280"/>
+<line x1="70" y1="40" x2="70" y2="280"/>
+<line x1="40" y1="250" x2="280" y2="250"/>
+<line x1="100" y1="40" x2="100" y2="280"/>
+<line x1="40" y1="220" x2="280" y2="220"/>
+<line x1="130" y1="40" x2="130" y2="280"/>
+<line x1="40" y1="190" x2="280" y2="190"/>
+<line x1="160" y1="40" x2="160" y2="280"/>
+<line x1="40" y1="160" x2="280" y2="160"/>
+<line x1="190" y1="40" x2="190" y2="280"/>
+<line x1="40" y1="130" x2="280" y2="130"/>
+<line x1="220" y1="40" x2="220" y2="280"/>
+<line x1="40" y1="100" x2="280" y2="100"/>
+<line x1="250" y1="40" x2="250" y2="280"/>
+<line x1="40" y1="70" x2="280" y2="70"/>
+<line x1="280" y1="40" x2="280" y2="280"/>
+<line x1="40" y1="40" x2="280" y2="40"/>
+</g>
+<line x1="28" y1="160" x2="294" y2="160" stroke="#56604f" stroke-width="1.5"/>
+<line x1="160" y1="290" x2="160" y2="28" stroke="#56604f" stroke-width="1.5"/>
+<text x="298" y="164" font-family="IBM Plex Mono, monospace" font-size="13" fill="#14301f">x</text>
+<text x="166" y="26" font-family="IBM Plex Mono, monospace" font-size="13" fill="#14301f">y</text>
+<text x="40" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−4</text>
+<text x="155" y="284" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−4</text>
+<text x="70" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−3</text>
+<text x="155" y="254" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−3</text>
+<text x="100" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−2</text>
+<text x="155" y="224" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−2</text>
+<text x="130" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−1</text>
+<text x="155" y="194" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−1</text>
+<text x="190" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">1</text>
+<text x="155" y="134" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">1</text>
+<text x="220" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">2</text>
+<text x="155" y="104" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">2</text>
+<text x="250" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">3</text>
+<text x="155" y="74" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">3</text>
+<text x="280" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">4</text>
+<text x="155" y="44" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">4</text>
+<line x1="40" y1="70" x2="280" y2="70" stroke="#14301f" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="40" y1="220" x2="280" y2="220" stroke="#3f6b4a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="40" y1="160" x2="280" y2="160" stroke="#c4e86b" stroke-width="4" stroke-linecap="round"/>
+<text x="278" y="62" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#14301f">f(x) = 3</text>
+<text x="278" y="152" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#3f6b4a">f(x) = 0</text>
+<text x="278" y="212" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#3f6b4a">f(x) = −2</text>
+</svg>
+    <figcaption>f(x) = 3 queda arriba del eje x, f(x) = −2 queda abajo, y f(x) = 0 es el propio
+       eje x (en verde-lima).</figcaption>
+  </figure>
+  <div class="callout">
+    <div class="k">Escríbelo en tu cuaderno</div>
+    <p>La gráfica de <strong>f(x) = c</strong> es una <strong>recta horizontal a la altura c</strong>.
+       Si c es positivo, queda arriba del eje x; si es negativo, queda abajo; y si c = 0, es el
+       eje x.</p>
+  </div>
+
+  <p class="section-label">¿Por qué sí es función? La prueba de la recta vertical</p>
+  <div class="prose">
+    <p>Recuerda la <a href="tema-04-definicion.html" style="color:var(--forest); font-weight:700;">prueba
+       de la recta vertical</a>: una gráfica es función si cualquier recta vertical la toca
+       <strong>una sola vez</strong>.</p>
+  </div>
+  <figure class="graph-figure">
+      <svg viewBox="0 0 330 330" width="330" height="330" role="img" aria-label="La recta horizontal y = 3 sí es función">
+<g stroke="#dde2dc" stroke-width="1">
+<line x1="40" y1="40" x2="40" y2="280"/>
+<line x1="40" y1="280" x2="280" y2="280"/>
+<line x1="70" y1="40" x2="70" y2="280"/>
+<line x1="40" y1="250" x2="280" y2="250"/>
+<line x1="100" y1="40" x2="100" y2="280"/>
+<line x1="40" y1="220" x2="280" y2="220"/>
+<line x1="130" y1="40" x2="130" y2="280"/>
+<line x1="40" y1="190" x2="280" y2="190"/>
+<line x1="160" y1="40" x2="160" y2="280"/>
+<line x1="40" y1="160" x2="280" y2="160"/>
+<line x1="190" y1="40" x2="190" y2="280"/>
+<line x1="40" y1="130" x2="280" y2="130"/>
+<line x1="220" y1="40" x2="220" y2="280"/>
+<line x1="40" y1="100" x2="280" y2="100"/>
+<line x1="250" y1="40" x2="250" y2="280"/>
+<line x1="40" y1="70" x2="280" y2="70"/>
+<line x1="280" y1="40" x2="280" y2="280"/>
+<line x1="40" y1="40" x2="280" y2="40"/>
+</g>
+<line x1="28" y1="160" x2="294" y2="160" stroke="#56604f" stroke-width="1.5"/>
+<line x1="160" y1="290" x2="160" y2="28" stroke="#56604f" stroke-width="1.5"/>
+<text x="298" y="164" font-family="IBM Plex Mono, monospace" font-size="13" fill="#14301f">x</text>
+<text x="166" y="26" font-family="IBM Plex Mono, monospace" font-size="13" fill="#14301f">y</text>
+<text x="40" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−4</text>
+<text x="155" y="284" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−4</text>
+<text x="70" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−3</text>
+<text x="155" y="254" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−3</text>
+<text x="100" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−2</text>
+<text x="155" y="224" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−2</text>
+<text x="130" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−1</text>
+<text x="155" y="194" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−1</text>
+<text x="190" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">1</text>
+<text x="155" y="134" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">1</text>
+<text x="220" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">2</text>
+<text x="155" y="104" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">2</text>
+<text x="250" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">3</text>
+<text x="155" y="74" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">3</text>
+<text x="280" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">4</text>
+<text x="155" y="44" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">4</text>
+<line x1="40" y1="70" x2="280" y2="70" stroke="#14301f" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="190" y1="40" x2="190" y2="280" stroke="#c4e86b" stroke-width="3" stroke-dasharray="6 5"/>
+<circle cx="190" cy="70" r="4.5" fill="#b3412e" stroke="#fff" stroke-width="1.5"/>
+<text x="198" y="62" text-anchor="start" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#14301f">1 solo punto</text>
+<text x="42" y="62" text-anchor="start" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#14301f">y = 3</text>
+</svg>
+      <figcaption><strong>y = 3 sí es función.</strong> La recta vertical punteada la toca en un
+         solo punto, y lo mismo pasa con cualquier otra recta vertical.</figcaption>
+  </figure>
+  <figure class="graph-figure">
+      <svg viewBox="0 0 330 330" width="330" height="330" role="img" aria-label="La recta vertical x = 3 no es función">
+<g stroke="#dde2dc" stroke-width="1">
+<line x1="40" y1="40" x2="40" y2="280"/>
+<line x1="40" y1="280" x2="280" y2="280"/>
+<line x1="70" y1="40" x2="70" y2="280"/>
+<line x1="40" y1="250" x2="280" y2="250"/>
+<line x1="100" y1="40" x2="100" y2="280"/>
+<line x1="40" y1="220" x2="280" y2="220"/>
+<line x1="130" y1="40" x2="130" y2="280"/>
+<line x1="40" y1="190" x2="280" y2="190"/>
+<line x1="160" y1="40" x2="160" y2="280"/>
+<line x1="40" y1="160" x2="280" y2="160"/>
+<line x1="190" y1="40" x2="190" y2="280"/>
+<line x1="40" y1="130" x2="280" y2="130"/>
+<line x1="220" y1="40" x2="220" y2="280"/>
+<line x1="40" y1="100" x2="280" y2="100"/>
+<line x1="250" y1="40" x2="250" y2="280"/>
+<line x1="40" y1="70" x2="280" y2="70"/>
+<line x1="280" y1="40" x2="280" y2="280"/>
+<line x1="40" y1="40" x2="280" y2="40"/>
+</g>
+<line x1="28" y1="160" x2="294" y2="160" stroke="#56604f" stroke-width="1.5"/>
+<line x1="160" y1="290" x2="160" y2="28" stroke="#56604f" stroke-width="1.5"/>
+<text x="298" y="164" font-family="IBM Plex Mono, monospace" font-size="13" fill="#14301f">x</text>
+<text x="166" y="26" font-family="IBM Plex Mono, monospace" font-size="13" fill="#14301f">y</text>
+<text x="40" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−4</text>
+<text x="155" y="284" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−4</text>
+<text x="70" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−3</text>
+<text x="155" y="254" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−3</text>
+<text x="100" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−2</text>
+<text x="155" y="224" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−2</text>
+<text x="130" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−1</text>
+<text x="155" y="194" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">−1</text>
+<text x="190" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">1</text>
+<text x="155" y="134" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">1</text>
+<text x="220" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">2</text>
+<text x="155" y="104" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">2</text>
+<text x="250" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">3</text>
+<text x="155" y="74" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">3</text>
+<text x="280" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">4</text>
+<text x="155" y="44" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56604f">4</text>
+<line x1="250" y1="40" x2="250" y2="280" stroke="#14301f" stroke-width="2.6"/>
+<circle cx="250" cy="100" r="4.5" fill="#b3412e" stroke="#fff" stroke-width="1.5"/>
+<circle cx="250" cy="160" r="4.5" fill="#b3412e" stroke="#fff" stroke-width="1.5"/>
+<circle cx="250" cy="220" r="4.5" fill="#b3412e" stroke="#fff" stroke-width="1.5"/>
+<text x="242" y="58.0" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#14301f">x = 3</text>
+<text x="44" y="229.0" text-anchor="start" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#b3412e">a x = 3 le</text>
+<text x="44" y="242.0" text-anchor="start" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#b3412e">tocan muchos</text>
+<text x="44" y="255.0" text-anchor="start" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="#b3412e">valores de y</text>
+</svg>
+      <figcaption><strong>x = 3 no es función.</strong> Una recta vertical en x = 3 la toca en
+         todos sus puntos: a un mismo x le tocan muchos valores de y.</figcaption>
+  </figure>
+  <div class="callout">
+    <div class="k">No las confundas</div>
+    <p><strong>y = c</strong> es una recta <strong>horizontal</strong> y sí es función (constante).
+       <strong>x = c</strong> es una recta <strong>vertical</strong> y <strong>no</strong> es función.</p>
+  </div>
+
+  <p class="section-label">Características de f(x) = c</p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th></th><th>f(x) = 3</th><th>f(x) = −2</th><th>f(x) = 0</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Dominio</strong></td><td>todos los reales, (−∞, ∞)</td><td>todos los reales, (−∞, ∞)</td><td>todos los reales, (−∞, ∞)</td></tr>
+        <tr><td><strong>Rango</strong></td><td>{3}</td><td>{−2}</td><td>{0}</td></tr>
+        <tr><td><strong>Corte con el eje y</strong></td><td>(0, 3)</td><td>(0, −2)</td><td>(0, 0)</td></tr>
+        <tr><td><strong>Corte con el eje x (raíces)</strong></td><td>no tiene</td><td>no tiene</td><td>todos sus puntos</td></tr>
+        <tr><td><strong>¿Crece o decrece?</strong></td><td>ni crece ni decrece</td><td>ni crece ni decrece</td><td>ni crece ni decrece</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <div class="k">Algo nuevo</div>
+    <p>El <strong>rango</strong> de una función constante es <strong>un solo número</strong>: {c}.
+       Es la primera función que vemos con un rango así.</p>
+  </div>
+
+  <p class="section-label">Actividad 2 · Evaluar la función</p>
+  <div class="prose">
+    <p>Si <strong>f(x) = −4</strong>, calcula en tu cuaderno lo siguiente. Resuelve primero y
+       después revisa con el botón <strong>“Ver respuesta”</strong>.</p>
+  </div>
+  <div class="exercise-grid">
+    <div class="exercise-card has-answer"><span class="enum">1</span><span class="eqs">f(2)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(2) = <strong>−4</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">2</span><span class="eqs">f(−7)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(−7) = <strong>−4</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">3</span><span class="eqs">f(0)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(0) = <strong>−4</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">4</span><span class="eqs">f(<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>) = <strong>−4</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">5</span><span class="eqs">f(100)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(100) = <strong>−4</strong></p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">6</span><span class="eqs">f(2) + f(5)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(2) + f(5) = (−4) + (−4) = <strong>−8</strong></p>
+      </details>
+    </div>
+  </div>
+
+  <p class="section-label">Actividad 3 · ¿Es función constante?</p>
+  <div class="prose">
+    <p>Decide si cada expresión es una función constante y explica por qué.</p>
+  </div>
+  <div class="exercise-grid">
+    <div class="exercise-card has-answer"><span class="enum">1</span><span class="eqs">y = 7</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p><strong>Sí</strong> es constante: para cualquier x, y vale 7. Es una recta horizontal.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">2</span><span class="eqs">x = 7</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p><strong>No</strong> es función: es una recta vertical y no pasa la prueba de la recta vertical.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">3</span><span class="eqs">y = 7x</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p><strong>No</strong> es constante: el valor de y cambia con x (si x = 1, y = 7; si x = 2, y = 14).</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">4</span><span class="eqs">f(x) = −<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span></span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p><strong>Sí</strong> es constante: siempre vale −<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">5</span><span class="eqs">f(x) = 0</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p><strong>Sí</strong> es constante: siempre vale 0. Su gráfica es el propio eje x.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">6</span><span class="eqs">y = x + 3</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p><strong>No</strong> es constante: aparece la x y el valor de y cambia con ella.</p>
+      </details>
+    </div>
+  </div>
+
+  <p class="section-label">Actividad 4 · Encuentra la función</p>
+  <div class="prose">
+    <p>Escribe la función constante cuya gráfica pasa por cada punto. <strong>Pista:</strong>
+       fíjate en la y del punto.</p>
+  </div>
+  <div class="exercise-grid">
+    <div class="exercise-card has-answer"><span class="enum">1</span><span class="eqs">(4, −6)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(x) = −6. Lo que importa es la y del punto: la recta horizontal pasa a la altura −6.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">2</span><span class="eqs">(−2, 5)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(x) = 5.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">3</span><span class="eqs">(0, 0)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(x) = 0 (es el eje x).</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">4</span><span class="eqs">(3, <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(x) = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>.</p>
+      </details>
+    </div>
+    <div class="exercise-card has-answer"><span class="enum">5</span><span class="eqs">(−10, 2.5)</span>
+      <details class="answer"><summary>Ver respuesta</summary>
+        <p>f(x) = 2.5.</p>
+      </details>
+    </div>
+  </div>
+
+  <p class="section-label">Actividad 5 · Para pensar</p>
+  <div class="prose">
+    <p>Inventa una situación de la vida real que se pueda representar con una función
+       constante (como la del estacionamiento). Escribe la función y haz su gráfica.</p>
+  </div>
+
+  <p class="section-label">Ejercicios</p>
+  <div class="blocks">
+    <div class="block">
+      <h2>Serie 1. Función constante</h2>
+      <p><a href="materiales/tema-04-serie-1-funcion-constante.docx" download
+            style="color:var(--forest); font-weight:700;">Descargar ejercicios (Word) →</a></p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>

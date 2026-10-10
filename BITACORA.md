@@ -463,3 +463,49 @@ Registro de lo que vamos haciendo, en orden cronológico.
   `tema-05-ax-cuadrada-mas-b-portada.jpg`. Carmen todavía no tiene el material del subtema, así que
   se creó `matematicas-3/tema-05-ax-cuadrada-mas-b.html` sólo con el video y un aviso de
   "Próximamente", y el bloque "f(x) = ax² + b" de la página del Tema 5 ya enlaza a ella.
+
+## 2026-10-08 (Serie 2 de binomios conjugados, en Word)
+- A pedido de Carmen se hizo la **Serie 2 de binomios conjugados** en Word, con 18 ejercicios
+  de menor a mayor dificultad: coeficientes enteros, dos variables, exponentes, signo negativo
+  al inicio, fracciones (½, ⅓), decimales y exponentes literales (xᵐ, yⁿ). Incluye recuadro
+  "Recuerda" con (a + b)(a − b) = a² − b², espacio para Nombre/Grupo/Fecha y una segunda
+  hoja con las respuestas.
+- Archivo: `matematicas-3/materiales/tema-06-serie-2-binomios-conjugados.docx` (todavía no
+  está enlazado desde la página del Tema 6).
+
+## 2026-10-10 (Serie 2 de binomios conjugados en la página del Tema 6)
+- En `tema-06-productos-notables-y-factorizacion.html`, el bloque **Tarea** ahora tiene el
+  enlace "Descargar Serie 2. Binomios conjugados (Word)". El archivo incluye la hoja de
+  respuestas en la segunda página.
+
+## 2026-10-10 (Serie 3 de binomios conjugados, en Word)
+- Se hizo la **Serie 3 de binomios conjugados** en Word, con la misma estructura que la
+  Serie 2 (encabezado, Nombre/Grupo/Fecha, recuadro "Recuerda", 18 ejercicios de menor a
+  mayor dificultad y hoja de respuestas), pero con ejercicios nuevos.
+- Archivo: `matematicas-3/materiales/tema-06-serie-3-binomios-conjugados.docx` (todavía no
+  está enlazado desde la página del Tema 6).
+
+## 2026-10-10 (subtema Función constante + Serie 1 en Word)
+- Nueva página `matematicas-3/tema-04-constante.html`, enlazada desde el bloque "Constante"
+  de `tema-04-funciones.html`. Sigue el plan de clase que se platicó con Carmen: objetivo,
+  ejemplo del estacionamiento ($30 sin importar las horas), definición f(x) = c, aviso de que
+  "no aparece la x", Actividad 1 (tabla de f(x) = 3), gráfica de f(x) = 3 y de f(x) = 3, 0,
+  −2 juntas, comparación con la prueba de la recta vertical (y = 3 sí es función, x = 3 no),
+  cuadro de características (dominio, rango {c}, cortes con los ejes) y Actividades 2 a 5
+  (evaluar, ¿es constante?, encontrar la función por un punto y una situación de la vida
+  real), todas con "Ver respuesta".
+- **Serie 1 · Función constante** en Word (18 ejercicios: Parte A evaluar, Parte B dominio,
+  rango, eje y y raíces, Parte C función que pasa por un punto) con hoja de respuestas:
+  `matematicas-3/materiales/tema-04-serie-1-funcion-constante.docx`. Está enlazada al final
+  de la página del subtema.
+
+## 2026-10-10 (video: cómo se mueven los puntos de x² con el parámetro a)
+- A pedido de Carmen se hizo un tercer video (61 s, sin audio). Primero se grafica
+  f(x) = x² en **azul** con sus puntos principales V(0, 0), (±1, 1) y (±2, 4). Después x²
+  queda punteada como referencia y se ve cómo cada punto (x, y) se mueve a (x, a·y), con
+  flechas y una tabla x | x² | ax² que se actualiza. Se detiene en a = 2 (delgada), ½
+  (gorda), 0 (ya no es cuadrática), −1 (abre hacia abajo), −2 y −½, y regresa a 1. Termina
+  con un resumen (signo de a, |a| mayor o menor que 1, el vértice no se mueve).
+- Archivos: `matematicas-3/materiales/tema-05-ax-cuadrada-puntos.mp4` y su portada
+  `tema-05-ax-cuadrada-puntos-portada.jpg`. Se insertó en `tema-05-ax-cuadrada.html`, justo
+  debajo del video "variando el número a".
