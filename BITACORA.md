@@ -537,3 +537,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
     |a| · (−9) (ej. a = −2: 0, −2, −8, −18). Se escribió con |a| para que no se confunda
     con multiplicar un número negativo por −1, −4, −9.
 - Se actualizó la descripción del video en `tema-05-ax-cuadrada.html`.
+
+## 2026-10-10 (la tabla muestra la multiplicación a · x²)
+- A pedido de Carmen, para justificar de dónde salen los valores de y: en la tabla de la
+  gráfica interactiva de `tema-05-ax-cuadrada.html` la columna ahora dice "y = a · x²" y
+  muestra la multiplicación completa con fracciones, por ejemplo (−¾) · 9 = −27/4.
