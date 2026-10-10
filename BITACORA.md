@@ -472,3 +472,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
   hoja con las respuestas.
 - Archivo: `matematicas-3/materiales/tema-06-serie-2-binomios-conjugados.docx` (todavía no
   está enlazado desde la página del Tema 6).
+
+## 2026-10-10 (Serie 2 de binomios conjugados en la página del Tema 6)
+- En `tema-06-productos-notables-y-factorizacion.html`, el bloque **Tarea** ahora tiene el
+  enlace "Descargar Serie 2. Binomios conjugados (Word)". El archivo incluye la hoja de
+  respuestas en la segunda página.
