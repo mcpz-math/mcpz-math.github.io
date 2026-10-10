@@ -585,3 +585,18 @@ Registro de lo que vamos haciendo, en orden cronológico.
   se agregó un recuadro: **"Observación: elevar al cuadrado significa multiplicar por el
   mismo"**, con a² = a · a, b² = b · b y el ejemplo (3x)² = 3x · 3x = 9x². Ahora dura
   1 min 28 s. Se actualizó la portada.
+
+## 2026-10-10 (canal de YouTube — en proceso)
+- Carmen quiere un canal de YouTube para sus videos. Decidió **no borrar** su canal viejo
+  (Google pedía un código de verificación con la tablet) y creó un **canal nuevo** con la
+  misma cuenta: "Profesora Carmen Pèrez" (@ProfesoraCarmenPèrez).
+- Se diseñaron la foto de perfil y el banner con el estilo "Compás", guardados en
+  `materiales-youtube/foto-perfil.png` (800×800) y `materiales-youtube/banner.png`
+  (2560×1440).
+- **Pendiente para la próxima sesión:**
+  1. Corregir el nombre a "Profesora Carmen **Pérez**" (é, no è) y el identificador a
+     @ProfesoraCarmenPerez (sin acento), en studio.youtube.com → Personalización → Perfil →
+     "Publicar". Carmen intentó y "siguió igual"; revisar con una captura de esa pantalla.
+  2. Subir la foto de perfil y el banner.
+  3. Escribir la descripción del canal.
+  4. Subir los videos como "No listado" con título y descripción.
