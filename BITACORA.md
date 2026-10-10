@@ -542,3 +542,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, para justificar de dónde salen los valores de y: en la tabla de la
   gráfica interactiva de `tema-05-ax-cuadrada.html` la columna ahora dice "y = a · x²" y
   muestra la multiplicación completa con fracciones, por ejemplo (−¾) · 9 = −27/4.
+- Lo mismo en el video `tema-05-ax-cuadrada-puntos.mp4`: la tabla del panel ahora tiene la
+  columna "a · x² = ax²" y cada renglón muestra la multiplicación, por ejemplo 2 · 9 = 18 o
+  (−1) · 4 = −4. Se actualizó la portada.
