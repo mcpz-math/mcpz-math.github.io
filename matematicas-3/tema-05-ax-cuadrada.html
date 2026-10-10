@@ -279,7 +279,7 @@
     <div class="table-scroll" style="width:auto; margin:0;">
       <table>
         <thead>
-          <tr><th>x</th><th>y = x²</th><th>y = ax²</th><th>El punto se mueve</th></tr>
+          <tr><th>x</th><th>y = x²</th><th>y = a · x²</th><th>El punto se mueve</th></tr>
         </thead>
         <tbody id="ax2-table"></tbody>
       </table>
@@ -452,7 +452,8 @@
       tb.innerHTML = XS.map(function (x) {
         var y = mul(F, x * x), out = Math.abs(val(y)) > YL ? ' <span style="color:#b3412e; font-size:0.8rem;">(fuera de la gráfica)</span>' : '';
         var xs = String(x).replace('-', MINUS);
-        return '<tr><td>' + xs + '</td><td>' + (x * x) + '</td><td class="ans">' + fracHTML(y) + '</td><td>(' + xs + ', ' + (x * x) + ') → (' + xs + ', ' + fracHTML(y) + ')' + out + '</td></tr>';
+        var aS = F.n < 0 ? '(' + fracHTML(F) + ')' : fracHTML(F); // a · x² = resultado
+        return '<tr><td>' + xs + '</td><td>' + (x * x) + '</td><td style="white-space:nowrap;">' + aS + ' · ' + (x * x) + ' = <strong>' + fracHTML(y) + '</strong></td><td>(' + xs + ', ' + (x * x) + ') → (' + xs + ', ' + fracHTML(y) + ')' + out + '</td></tr>';
       }).join('');
     }
 
