@@ -509,3 +509,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Archivos: `matematicas-3/materiales/tema-05-ax-cuadrada-puntos.mp4` y su portada
   `tema-05-ax-cuadrada-puntos-portada.jpg`. Se insertó en `tema-05-ax-cuadrada.html`, justo
   debajo del video "variando el número a".
+
+## 2026-10-10 (gráfica interactiva: elige el valor de a)
+- A pedido de Carmen, en `tema-05-ax-cuadrada.html` (debajo de los videos) se agregó la
+  sección **"Pruébalo tú · Elige el valor de a"**. Se escribe a como **fracción común**
+  (1/2, −3/4), entero o decimal (0.25 se convierte en ¼) y se oprime "Graficar"; también hay
+  botones rápidos (2, ½, ¼, 3/2, −1, −⅓, −5/2, 0).
+- La parábola x² queda azul punteada de referencia y los puntos (±1, 1), (±2, 4) se mueven
+  con una animación a (x, a·y). Las coordenadas, la ecuación f(x) = ax², el mensaje
+  (abre arriba/abajo, más delgada/gorda, a = 0 ya no es cuadrática) y la tabla
+  x | x² | ax² se muestran con fracciones comunes. Avisa si se escribe algo inválido o un
+  denominador 0; se limita a −10 ≤ a ≤ 10.
