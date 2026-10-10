@@ -526,3 +526,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
   muestra los puntos (±3, 9) de x² y su movimiento a (±3, 9a); la tabla tiene esas filas.
 - Las etiquetas de los puntos ahora buscan solas un lugar libre (a un lado, arriba o abajo)
   para no encimarse cuando los puntos quedan muy juntos (por ejemplo a = 1/3 o a = 0).
+
+## 2026-10-10 (video de los puntos de x²: explicación y puntos (±3, 9))
+- A pedido de Carmen se rehízo `matematicas-3/materiales/tema-05-ax-cuadrada-puntos.mp4`
+  (ahora 78 s) y su portada:
+  - Ahora también muestra los puntos (±3, 9) en la gráfica y en la tabla.
+  - Nueva escena **"¿Qué observamos en la tabla?"** antes del resumen: la x no cambia, sólo
+    cambia la y; la nueva y es a · 0, a · 1, a · 4, a · 9 (abre hacia arriba, ej. a = 2:
+    0, 2, 8, 18) y, si a < 0, los valores son negativos: |a| · 0, |a| · (−1), |a| · (−4),
+    |a| · (−9) (ej. a = −2: 0, −2, −8, −18). Se escribió con |a| para que no se confunda
+    con multiplicar un número negativo por −1, −4, −9.
+- Se actualizó la descripción del video en `tema-05-ax-cuadrada.html`.
