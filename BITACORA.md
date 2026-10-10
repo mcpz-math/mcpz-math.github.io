@@ -545,3 +545,12 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Lo mismo en el video `tema-05-ax-cuadrada-puntos.mp4`: la tabla del panel ahora tiene la
   columna "a · x² = ax²" y cada renglón muestra la multiplicación, por ejemplo 2 · 9 = 18 o
   (−1) · 4 = −4. Se actualizó la portada.
+
+## 2026-10-10 (página aparte con sólo la gráfica interactiva de ax²)
+- Carmen quiere compartir por correo la gráfica interactiva sin compartir todavía la página
+  del tema. Se creó `matematicas-3/prueba-ax-cuadrada.html`: sólo título, instrucciones y la
+  gráfica interactiva (copia de la de `tema-05-ax-cuadrada.html`). No tiene menú ni enlaces
+  al resto del sitio, ninguna página la enlaza y tiene `noindex` para que no aparezca en
+  buscadores. Enlace para compartir:
+  https://mcpz-math.github.io/matematicas-3/prueba-ax-cuadrada.html
+- Ojo: si se cambia la gráfica interactiva, hay que cambiarla en los dos archivos.
