@@ -554,3 +554,15 @@ Registro de lo que vamos haciendo, en orden cronológico.
   buscadores. Enlace para compartir:
   https://mcpz-math.github.io/matematicas-3/prueba-ax-cuadrada.html
 - Ojo: si se cambia la gráfica interactiva, hay que cambiarla en los dos archivos.
+
+## 2026-10-10 (video: cómo se resuelve un binomio conjugado)
+- A pedido de Carmen se hizo un video (1 min 41 s, sin audio, estilo "Compás"): qué es un
+  binomio conjugado (mismos términos, sólo cambia el signo; primer término en azul y segundo
+  en naranja); de dónde sale la regla, multiplicando (x + 5)(x − 5) término por término y
+  cancelando −5x + 5x; la regla (a + b)(a − b) = a² − b², "el cuadrado del primero menos el
+  cuadrado del segundo"; Ejemplo 1 (3x + 4)(3x − 4) = 9x² − 16 en 4 pasos; Ejemplo 2
+  (2m² − 7n)(2m² + 7n) = 4m⁴ − 49n² (no importa el orden de los signos); "¡Cuidado!"
+  ((3x)² = 9x², no 3x²; el resultado siempre es una resta); "Ahora tú" (5y + 2)(5y − 2), con
+  cuenta regresiva para pausar y luego la respuesta 25y² − 4; y un resumen en 4 pasos.
+- Archivos: `matematicas-3/materiales/tema-06-binomios-conjugados.mp4` y su portada
+  `tema-06-binomios-conjugados-portada.jpg`. Todavía no está enlazado en ninguna página.
