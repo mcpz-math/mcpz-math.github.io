@@ -484,3 +484,17 @@ Registro de lo que vamos haciendo, en orden cronológico.
   mayor dificultad y hoja de respuestas), pero con ejercicios nuevos.
 - Archivo: `matematicas-3/materiales/tema-06-serie-3-binomios-conjugados.docx` (todavía no
   está enlazado desde la página del Tema 6).
+
+## 2026-10-10 (subtema Función constante + Serie 1 en Word)
+- Nueva página `matematicas-3/tema-04-constante.html`, enlazada desde el bloque "Constante"
+  de `tema-04-funciones.html`. Sigue el plan de clase que se platicó con Carmen: objetivo,
+  ejemplo del estacionamiento ($30 sin importar las horas), definición f(x) = c, aviso de que
+  "no aparece la x", Actividad 1 (tabla de f(x) = 3), gráfica de f(x) = 3 y de f(x) = 3, 0,
+  −2 juntas, comparación con la prueba de la recta vertical (y = 3 sí es función, x = 3 no),
+  cuadro de características (dominio, rango {c}, cortes con los ejes) y Actividades 2 a 5
+  (evaluar, ¿es constante?, encontrar la función por un punto y una situación de la vida
+  real), todas con "Ver respuesta".
+- **Serie 1 · Función constante** en Word (18 ejercicios: Parte A evaluar, Parte B dominio,
+  rango, eje y y raíces, Parte C función que pasa por un punto) con hoja de respuestas:
+  `matematicas-3/materiales/tema-04-serie-1-funcion-constante.docx`. Está enlazada al final
+  de la página del subtema.
