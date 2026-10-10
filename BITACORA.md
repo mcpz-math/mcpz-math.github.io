@@ -498,3 +498,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
   rango, eje y y raíces, Parte C función que pasa por un punto) con hoja de respuestas:
   `matematicas-3/materiales/tema-04-serie-1-funcion-constante.docx`. Está enlazada al final
   de la página del subtema.
+
+## 2026-10-10 (video: cómo se mueven los puntos de x² con el parámetro a)
+- A pedido de Carmen se hizo un tercer video (61 s, sin audio). Primero se grafica
+  f(x) = x² en **azul** con sus puntos principales V(0, 0), (±1, 1) y (±2, 4). Después x²
+  queda punteada como referencia y se ve cómo cada punto (x, y) se mueve a (x, a·y), con
+  flechas y una tabla x | x² | ax² que se actualiza. Se detiene en a = 2 (delgada), ½
+  (gorda), 0 (ya no es cuadrática), −1 (abre hacia abajo), −2 y −½, y regresa a 1. Termina
+  con un resumen (signo de a, |a| mayor o menor que 1, el vértice no se mueve).
+- Archivos: `matematicas-3/materiales/tema-05-ax-cuadrada-puntos.mp4` y su portada
+  `tema-05-ax-cuadrada-puntos-portada.jpg`. Se insertó en `tema-05-ax-cuadrada.html`, justo
+  debajo del video "variando el número a".
