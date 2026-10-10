@@ -565,4 +565,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
   ((3x)² = 9x², no 3x²; el resultado siempre es una resta); "Ahora tú" (5y + 2)(5y − 2), con
   cuenta regresiva para pausar y luego la respuesta 25y² − 4; y un resumen en 4 pasos.
 - Archivos: `matematicas-3/materiales/tema-06-binomios-conjugados.mp4` y su portada
-  `tema-06-binomios-conjugados-portada.jpg`. Todavía no está enlazado en ninguna página.
+  `tema-06-binomios-conjugados-portada.jpg`.
+- En `tema-06-productos-notables-y-factorizacion.html` el bloque "Binomios conjugados y DCP"
+  ya no dice "Próximamente": tiene una frase y un enlace "Ver video ↓" a la nueva sección
+  **"Video: binomios conjugados"** (debajo de los subtemas), donde está el video.
+- Enlace directo para compartir por correo:
+  https://mcpz-math.github.io/matematicas-3/materiales/tema-06-binomios-conjugados.mp4
