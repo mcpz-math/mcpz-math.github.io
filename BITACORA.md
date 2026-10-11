@@ -602,7 +602,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   4. Subir los videos como "No listado" con título y descripción.
 
 ## 2026-10-11 (video: raíces reales o imaginarias de f(x) = ax² + b)
-- A pedido de Carmen se hizo un video (2 min 25 s, sin audio, estilo "Compás") que enseña a
+- A pedido de Carmen se hizo un video (2 min 30 s, estilo "Compás") que enseña a
   decidir con la gráfica si f(x) = ax² + b tiene raíces **reales y diferentes** o
   **imaginarias**. Escenas: qué es una raíz (donde la parábola corta al eje x); las dos
   preguntas clave (¿hacia dónde abre? → signo de a; ¿dónde está el vértice V(0, b)? →
@@ -613,3 +613,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Archivos: `matematicas-3/materiales/tema-05-raices-ax-cuadrada-mas-b.mp4` y su portada
   `tema-05-raices-ax-cuadrada-mas-b-portada.jpg`. Se puso en
   `matematicas-3/tema-05-ax-cuadrada-mas-b.html`, debajo del video "variando a y b".
+- Cambios pedidos por Carmen: (1) se le puso **música de fondo** como a los otros videos
+  (Preludio en Do mayor, BWV 846, de Bach, piano suave a volumen bajo, sin voz); (2) los
+  ejemplos con raíces **reales y diferentes** ahora se resuelven como **diferencia de
+  cuadrados**: x² − 9 = x² − 3² = (x + 3)(x − 3) = 0 → x = −3, x = 3; y −2x² + 8 = 0 →
+  ÷(−2): x² − 4 = (x + 2)(x − 2) = 0 → x = −2, x = 2. En el resumen, la regla dice
+  "signos contrarios → reales y diferentes (diferencia de cuadrados)".
