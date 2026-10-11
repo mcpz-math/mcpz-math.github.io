@@ -642,3 +642,17 @@ Registro de lo que vamos haciendo, en orden cronológico.
   https://mcpz-math.github.io/matematicas-3/prueba-ax-cuadrada-mas-b.html
 - En celulares angostos, los cuadros de a y b y el botón "Graficar" ahora se acomodan en
   dos renglones para que no se corten.
+
+## 2026-10-11 (ejercicios de binomios conjugados con revisión automática)
+- A pedido de Carmen se agregó en `matematicas-3/tema-06-productos-notables-y-factorizacion.html`
+  la sección **"Ejercicios: binomios conjugados"** (debajo del video), con 16 ejercicios de
+  menor a mayor dificultad: enteros, coeficientes, dos variables, exponentes, (6 − y)(6 + y),
+  (−x + 8)(−x − 8), fracciones, decimales y x²y. El bloque "Binomios conjugados y DCP" tiene
+  el enlace "Practicar ejercicios ↓".
+- El alumno escribe su respuesta (con ^ o con los botones ², ³, ⁴, ⁶, −; fracciones con /) y
+  oprime "Comprobar". La página acepta cualquier forma equivalente (por ejemplo −25 + x²,
+  0.25 o 1/4) y le dice si es correcta. Si no lo es, le da una pista según el error: signo
+  más en lugar de menos, orden invertido, dejar paréntesis sin desarrollar, tres términos,
+  letras que no van, o no elevar al cuadrado el coeficiente; y un botón "Ver la respuesta"
+  con (a)² − (b)². Abajo lleva la cuenta "Llevas X de 16 correctas".
+- Estilos nuevos `.practice-*` en `assets/style.css`.
