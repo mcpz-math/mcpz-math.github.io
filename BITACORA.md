@@ -637,3 +637,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
   cuadrados** cuando salen exactas; si no, x = ±√… aproximado), imaginarias o raíz repetida.
   También trae la tabla x | x² | a · x² + b.
 - La aplicación de ax² (`tema-05-ax-cuadrada.html` y `prueba-ax-cuadrada.html`) no se cambió.
+- Se creó la página aparte `matematicas-3/prueba-ax-cuadrada-mas-b.html` (sólo la gráfica
+  interactiva de ax² + b, para compartir con los alumnos por liga directa):
+  https://mcpz-math.github.io/matematicas-3/prueba-ax-cuadrada-mas-b.html
+- En celulares angostos, los cuadros de a y b y el botón "Graficar" ahora se acomodan en
+  dos renglones para que no se corten.
