@@ -707,3 +707,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - La parte que lee y compara las respuestas de los alumnos se pasó a un archivo compartido,
   `assets/practica-algebra.js`, que usan las dos secciones de ejercicios.
 - Se probó que los 100 ejercicios de cada banco aceptan su respuesta correcta.
+- A pedido de Carmen se quitó la sección "Tarea" (Serie 2) de la página de binomios conjugados.
+  El archivo `materiales/tema-06-serie-2-binomios-conjugados.docx` sigue guardado, pero ya no
+  está enlazado en ninguna página.
