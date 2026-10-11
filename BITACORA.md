@@ -689,3 +689,5 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen se quitó el bloque "Tarea" de la página del Tema 6 (la sección ahora se
   llama sólo "Materiales"). La Serie 2 sigue disponible en la página del subtema
   `tema-06-binomios-conjugados.html`.
+- También se quitó, por el momento, la sección "Materiales" de la página del Tema 6. Ahora
+  sólo muestra los subtemas.
