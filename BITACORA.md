@@ -678,3 +678,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   **la respuesta correcta**, por ejemplo: (5x)² − (3)² = 25x² − 9.
 - Se agregó el botón ⁸ (para respuestas como 16x⁸ − 36).
 - Se probó que los 100 ejercicios aceptan su respuesta correcta.
+
+## 2026-10-11 (subtema "Binomios conjugados y DCP" con página propia)
+- A pedido de Carmen, todo lo de binomios conjugados se pasó de
+  `tema-06-productos-notables-y-factorizacion.html` a su propia página
+  `matematicas-3/tema-06-binomios-conjugados.html`: el video, los ejercicios con revisión
+  automática (banco de 100) y la tarea (Serie 2, en Word).
+- En la página del Tema 6, el bloque "Binomios conjugados y DCP" ahora tiene el enlace
+  "Ver subtema →", y el bloque "Tarea" indica que la Serie 2 está en el subtema.
