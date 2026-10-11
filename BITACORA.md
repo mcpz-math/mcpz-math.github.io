@@ -691,3 +691,19 @@ Registro de lo que vamos haciendo, en orden cronológico.
   `tema-06-binomios-conjugados.html`.
 - También se quitó, por el momento, la sección "Materiales" de la página del Tema 6. Ahora
   sólo muestra los subtemas.
+
+## 2026-10-11 (DCP: ejercicios y descripción del subtema)
+- En `matematicas-3/tema-06-binomios-conjugados.html` se agregó la sección **"Ejercicios:
+  diferencia de cuadrados perfectos (DCP)"** (debajo de los de binomios conjugados), igual que
+  la de binomios: banco de 100 ejercicios, 10 al azar ordenados de fácil a difícil, botón
+  "Otros 10 ejercicios (volver a intentar)" y la respuesta correcta al fallar. Aquí el alumno
+  **factoriza**: por ejemplo 9x² − 16 = (3x + 4)(3x − 4). Acepta los binomios en cualquier orden.
+  Pistas: si vuelve a escribir la diferencia sin factorizar, si los dos binomios llevan el
+  mismo signo, si usa letras que no van. La respuesta correcta se muestra como
+  √9x² = 3x y √16 = 4 → (3x + 4)(3x − 4). Botones ( ) ² ³ ⁴ −.
+- Al inicio de la página se agregó la sección **"¿Qué vamos a estudiar?"** con el texto que
+  escribió Carmen: qué es un binomio conjugado, ejemplos, por qué su producto es una diferencia
+  de cuadrados, la regla práctica y el proceso inverso (factorización).
+- La parte que lee y compara las respuestas de los alumnos se pasó a un archivo compartido,
+  `assets/practica-algebra.js`, que usan las dos secciones de ejercicios.
+- Se probó que los 100 ejercicios de cada banco aceptan su respuesta correcta.
