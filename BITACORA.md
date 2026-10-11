@@ -664,3 +664,5 @@ Registro de lo que vamos haciendo, en orden cronológico.
   Inecuaciones y Valor absoluto la etiqueta tapa el pie de página chiquito que ya tenían.
   La música y la duración de los videos no cambiaron.
 - Para videos nuevos: agregar la misma etiqueta.
+- En la pantalla de inicio del video de raíces (`tema-05-raices-ax-cuadrada-mas-b.mp4`) se
+  cambió "Profesora Carmen Pérez" por "DTI. Maria del Carmen Pérez Zarate", a pedido de Carmen.
