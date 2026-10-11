@@ -666,3 +666,15 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Para videos nuevos: agregar la misma etiqueta.
 - En la pantalla de inicio del video de raíces (`tema-05-raices-ax-cuadrada-mas-b.mp4`) se
   cambió "Profesora Carmen Pérez" por "DTI. Maria del Carmen Pérez Zarate", a pedido de Carmen.
+
+## 2026-10-11 (ejercicios de binomios conjugados: banco de 100 y "volver a intentar")
+- A pedido de Carmen, los ejercicios de binomios conjugados del Tema 6 ahora salen de un
+  **banco de 100 ejercicios** (de menor a mayor dificultad: x ± n, kx ± n, dos variables,
+  exponentes, productos de letras, orden invertido como (6 − y)(6 + y), primer término
+  negativo como (−m − 3)(−m + 3), fracciones y decimales). Cada vez se muestran **10 al azar**,
+  ordenados de más fácil a más difícil, y el botón **"Otros 10 ejercicios (volver a
+  intentar)"** reparte 10 nuevos.
+- Cuando la respuesta es incorrecta, además de la pista ahora se muestra directamente
+  **la respuesta correcta**, por ejemplo: (5x)² − (3)² = 25x² − 9.
+- Se agregó el botón ⁸ (para respuestas como 16x⁸ − 36).
+- Se probó que los 100 ejercicios aceptan su respuesta correcta.
