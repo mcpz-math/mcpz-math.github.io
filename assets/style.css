@@ -802,3 +802,68 @@ details.rubric .interval-card .eq { font-family: 'IBM Plex Mono', ui-monospace, 
 details.rubric .interval-card svg { display: block; width: 100%; max-width: 260px; height: auto; margin-top: 0.4rem; }
 .exercise-card details.answer .answer-interval { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.9rem; white-space: nowrap; }
 .exercise-card details.answer svg[viewBox="0 0 260 72"] { max-width: 260px; }
+
+/* ---- Ejercicios con revisión automática ---- */
+.practice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+  width: min(100% - 3rem, 760px);
+  margin: 0 auto 1.2rem auto;
+}
+@media (min-width: 620px) {
+  .practice-grid { grid-template-columns: 1fr 1fr; }
+}
+.practice-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.9rem 1rem 1rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.practice-card.ok { border-color: #6fa35a; background: #f3faea; }
+.practice-card.bad { border-color: #d48a78; }
+.practice-head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.6rem; }
+.practice-head .enum {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.78rem; color: var(--cream); background: var(--moss);
+  border-radius: 50%; width: 1.7rem; height: 1.7rem;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.practice-card.ok .enum { background: #4f8a3c; }
+.practice-q { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.98rem; color: var(--forest); font-weight: 500; }
+.practice-q .frac.frac-inline { font-size: 0.78rem; }
+.practice-row { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+.practice-row .eq { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 700; color: var(--forest); }
+.practice-row input {
+  flex: 1 1 140px; min-width: 0;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.95rem;
+  padding: 0.45rem 0.6rem; border: 1.5px solid var(--line); border-radius: 8px;
+  background: #fff; color: var(--ink);
+}
+.practice-row input:focus { outline: 2px solid var(--moss); outline-offset: 1px; }
+.practice-keys { display: flex; gap: 0.3rem; margin-top: 0.45rem; flex-wrap: wrap; }
+.practice-keys button {
+  font-family: 'Karla', system-ui, sans-serif; font-size: 1.25rem; font-weight: 700; line-height: 1;
+  border: 1px solid var(--line); background: var(--cream); color: var(--forest);
+  border-radius: 6px; min-width: 2.2rem; height: 2rem; padding: 0 0.5rem; cursor: pointer;
+}
+.practice-check {
+  font-family: 'Outfit', system-ui, sans-serif; font-weight: 600; font-size: 0.85rem;
+  background: var(--forest); color: var(--cream); border: 0; border-radius: 8px;
+  padding: 0.5rem 0.9rem; cursor: pointer;
+}
+.practice-check:hover { background: var(--forest-soft); }
+.practice-fb { font-size: 0.86rem; margin-top: 0.55rem; line-height: 1.5; min-height: 0; }
+.practice-fb .yes { color: #3d7a2c; font-weight: 700; }
+.practice-fb .no { color: #b3412e; font-weight: 700; }
+.practice-fb .show {
+  background: none; border: 0; padding: 0; margin-left: 0.2rem; cursor: pointer;
+  color: var(--moss); font-weight: 700; text-decoration: underline; font-size: 0.86rem;
+}
+.practice-fb .sol { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.82rem; color: var(--forest); margin-top: 0.3rem; }
+.practice-score {
+  width: min(100% - 3rem, 760px); margin: 0 auto 2.5rem auto; text-align: center;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.85rem; color: var(--moss);
+}
+.practice-score strong { color: var(--forest); font-size: 1rem; }

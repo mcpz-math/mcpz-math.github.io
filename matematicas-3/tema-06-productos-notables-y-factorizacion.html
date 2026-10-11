@@ -31,6 +31,8 @@
       <p>Cómo se resuelve un binomio conjugado: (a + b)(a − b) = a² − b².</p>
       <p style="margin-top:0.6rem;"><a href="#video-binomios-conjugados"
             style="color:var(--forest); font-weight:700;">Ver video ↓</a></p>
+      <p style="margin-top:0.4rem;"><a href="#ejercicios-binomios-conjugados"
+            style="color:var(--forest); font-weight:700;">Practicar ejercicios ↓</a></p>
     </div>
     <div class="block">
       <h2>Binomio al cuadrado y TCP</h2>
@@ -56,6 +58,201 @@
   <p class="video-embed-caption">Video: qué es un binomio conjugado, la regla
      (a + b)(a − b) = a² − b², dos ejemplos paso a paso, errores comunes y un ejercicio para
      resolver.</p>
+
+  <p class="section-label" id="ejercicios-binomios-conjugados">Ejercicios: binomios conjugados</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Escribe el resultado de cada producto y oprime <strong>Comprobar</strong> (o la tecla Enter).
+       La página te dirá si tu respuesta es correcta. Recuerda la regla:
+       <strong>(a + b)(a − b) = a² − b²</strong>.</p>
+    <p>Para escribir un exponente usa el signo <strong>^</strong> (por ejemplo <strong>x^2</strong>)
+       o los botones <strong>²</strong>, <strong>³</strong>… que están debajo de cada cuadro.
+       Las fracciones se escriben con <strong>/</strong> (por ejemplo <strong>1/4</strong>).</p>
+  </div>
+
+  <div class="practice-grid" id="bc-grid"></div>
+  <p class="practice-score" id="bc-score"></p>
+
+  <script>
+  (function () {
+    var MINUS = '−';
+    function F(n, d) { return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>'; }
+    // q: producto; A y B: términos (para la explicación); a2 y b2: sus cuadrados (para revisar); a2H y b2H: cómo se muestran
+    var EX = [
+      { q: '(x + 5)(x − 5)', A: 'x', B: '5', a2: 'x^2', b2: '25', a2H: 'x²', b2H: '25' },
+      { q: '(a − 3)(a + 3)', A: 'a', B: '3', a2: 'a^2', b2: '9', a2H: 'a²', b2H: '9' },
+      { q: '(m + 10)(m − 10)', A: 'm', B: '10', a2: 'm^2', b2: '100', a2H: 'm²', b2H: '100' },
+      { q: '(2x + 1)(2x − 1)', A: '2x', B: '1', a2: '4x^2', b2: '1', a2H: '4x²', b2H: '1' },
+      { q: '(3y − 4)(3y + 4)', A: '3y', B: '4', a2: '9y^2', b2: '16', a2H: '9y²', b2H: '16' },
+      { q: '(5a + 2b)(5a − 2b)', A: '5a', B: '2b', a2: '25a^2', b2: '4b^2', a2H: '25a²', b2H: '4b²' },
+      { q: '(x + 7y)(x − 7y)', A: 'x', B: '7y', a2: 'x^2', b2: '49y^2', a2H: 'x²', b2H: '49y²' },
+      { q: '(x² + 3)(x² − 3)', A: 'x²', B: '3', a2: 'x^4', b2: '9', a2H: 'x⁴', b2H: '9' },
+      { q: '(4m³ − 1)(4m³ + 1)', A: '4m³', B: '1', a2: '16m^6', b2: '1', a2H: '16m⁶', b2H: '1' },
+      { q: '(ab + 6)(ab − 6)', A: 'ab', B: '6', a2: 'a^2b^2', b2: '36', a2H: 'a²b²', b2H: '36' },
+      { q: '(6 − y)(6 + y)', A: '6', B: 'y', a2: '36', b2: 'y^2', a2H: '36', b2H: 'y²' },
+      { q: '(−x + 8)(−x − 8)', A: '−x', B: '8', a2: 'x^2', b2: '64', a2H: 'x²', b2H: '64' },
+      { q: '(x + ' + F(1, 2) + ')(x − ' + F(1, 2) + ')', A: 'x', B: F(1, 2), a2: 'x^2', b2: '1/4', a2H: 'x²', b2H: F(1, 4) },
+      { q: '(' + F(2, 3) + 'a − 1)(' + F(2, 3) + 'a + 1)', A: F(2, 3) + 'a', B: '1', a2: '4/9a^2', b2: '1', a2H: F(4, 9) + 'a²', b2H: '1' },
+      { q: '(0.5x + 3)(0.5x − 3)', A: '0.5x', B: '3', a2: '0.25x^2', b2: '9', a2H: '0.25x²', b2H: '9' },
+      { q: '(x²y + 2z)(x²y − 2z)', A: 'x²y', B: '2z', a2: 'x^4y^2', b2: '4z^2', a2H: 'x⁴y²', b2H: '4z²' }
+    ];
+
+    // ---------- fracciones ----------
+    function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = b; b = a % b; a = t; } return a || 1; }
+    function fr(n, d) { if (d < 0) { n = -n; d = -d; } var g = gcd(n, d); return [n / g, d / g]; }
+    function fadd(p, q) { return fr(p[0] * q[1] + q[0] * p[1], p[1] * q[1]); }
+    function fmul(p, q) { return fr(p[0] * q[0], p[1] * q[1]); }
+
+    // ---------- polinomios: { "x2y1": [n, d], "": [n, d] } ----------
+    function key(m) { return Object.keys(m).filter(function (v) { return m[v]; }).sort().map(function (v) { return v + m[v]; }).join(''); }
+    function unkey(k) { var m = {}, re = /([a-z])(\d+)/g, r; while ((r = re.exec(k))) m[r[1]] = +r[2]; return m; }
+    function clean(P) { var o = {}; for (var k in P) if (P[k][0] !== 0) o[k] = P[k]; return o; }
+    function padd(P, Q, s) {
+      var o = {}, k;
+      for (k in P) o[k] = P[k];
+      for (k in Q) { var c = s < 0 ? [-Q[k][0], Q[k][1]] : Q[k]; o[k] = o[k] ? fadd(o[k], c) : c; }
+      return clean(o);
+    }
+    function pmul(P, Q) {
+      var o = {};
+      for (var a in P) for (var b in Q) {
+        var m = unkey(a), n = unkey(b);
+        for (var v in n) m[v] = (m[v] || 0) + n[v];
+        var k = key(m), c = fmul(P[a], Q[b]);
+        o[k] = o[k] ? fadd(o[k], c) : c;
+      }
+      return clean(o);
+    }
+    function pconst(c) { return c[0] === 0 ? {} : { '': c }; }
+    function same(P, Q) { return Object.keys(padd(P, Q, -1)).length === 0; }
+
+    // ---------- lectura de lo que escribe el alumno ----------
+    var SUP = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9' };
+    function tokens(s) {
+      s = s.replace(/[−–—]/g, '-').replace(/[·×∙]/g, '*').replace(/,/g, '.').replace(/\s+/g, '').toLowerCase();
+      s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, function (m) { return '^' + m.split('').map(function (c) { return SUP[c]; }).join(''); });
+      var t = [], re = /(\d+\.?\d*|\.\d+)|([a-z])|([+\-*/^()])/g, r, pos = 0;
+      while ((r = re.exec(s))) {
+        if (r.index !== pos) throw 0;
+        pos = re.lastIndex;
+        if (r[1]) { var dec = (r[1].split('.')[1] || ''), p = Math.pow(10, dec.length); t.push({ n: fr(Math.round(parseFloat(r[1]) * p), p) }); }
+        else if (r[2]) t.push({ v: r[2] });
+        else t.push({ o: r[3] });
+      }
+      if (pos !== s.length || !t.length) throw 0;
+      return t;
+    }
+    function parse(s) {
+      var t = tokens(s), i = 0;
+      function peek(o) { return t[i] && t[i].o === o; }
+      function expr(top) {
+        var sign = 1, terms = 0;
+        if (peek('+')) i++; else if (peek('-')) { i++; sign = -1; }
+        var P = term(); if (sign < 0) P = padd({}, P, -1); terms++;
+        while (peek('+') || peek('-')) { var s2 = t[i++].o === '-' ? -1 : 1; P = padd(P, term(), s2); terms++; }
+        if (top) top.terms = terms;
+        return P;
+      }
+      function term() {
+        var P = factor();
+        while (i < t.length) {
+          if (peek('*')) { i++; P = pmul(P, factor()); }
+          else if (peek('/')) {
+            i++; var Q = factor(), ks = Object.keys(Q);
+            if (ks.length !== 1 || ks[0] !== '') throw 0;
+            P = pmul(P, pconst(fr(Q[''][1], Q[''][0])));
+          }
+          else if (t[i].n || t[i].v || peek('(')) P = pmul(P, factor());
+          else break;
+        }
+        return P;
+      }
+      function factor() {
+        var tk = t[i++], P;
+        if (!tk) throw 0;
+        if (tk.n) P = pconst(tk.n);
+        else if (tk.v) { var m = {}; m[tk.v] = 1; P = {}; P[key(m)] = [1, 1]; }
+        else if (tk.o === '(') { P = expr(); if (!peek(')')) throw 0; i++; }
+        else if (tk.o === '-') return padd({}, factor(), -1);
+        else throw 0;
+        if (peek('^')) {
+          i++; var e = t[i++];
+          if (!e || !e.n || e.n[1] !== 1 || e.n[0] > 20) throw 0;
+          var R = { '': [1, 1] };
+          for (var k = 0; k < e.n[0]; k++) R = pmul(R, P);
+          P = R;
+        }
+        return P;
+      }
+      var info = {}, P = expr(info);
+      if (i !== t.length) throw 0;
+      return { P: P, terms: info.terms };
+    }
+
+    // ---------- tarjetas ----------
+    var grid = document.getElementById('bc-grid'), scoreEl = document.getElementById('bc-score'), done = {};
+    function score() {
+      var n = Object.keys(done).length;
+      scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + EX.length + '</strong> correctas' + (n === EX.length ? ' — ¡excelente trabajo! 🎉' : '');
+    }
+    EX.forEach(function (ex, idx) {
+      var A2 = parse(ex.a2).P, B2 = parse(ex.b2).P;
+      ex.ans = padd(A2, B2, -1); ex.plus = padd(A2, B2, 1); ex.swap = padd(B2, A2, -1);
+      var card = document.createElement('div');
+      card.className = 'practice-card';
+      card.innerHTML =
+        '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + ex.q + '</span></div>' +
+        '<div class="practice-row"><span class="eq">=</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tu respuesta del ejercicio ' + (idx + 1) + '">' +
+        '<button type="button" class="practice-check">Comprobar</button></div>' +
+        '<div class="practice-keys"><button type="button" data-k="²">²</button><button type="button" data-k="³">³</button>' +
+        '<button type="button" data-k="⁴">⁴</button><button type="button" data-k="⁶">⁶</button><button type="button" data-k="−">−</button></div>' +
+        '<div class="practice-fb" aria-live="polite"></div>';
+      grid.appendChild(card);
+      var input = card.querySelector('input'), fb = card.querySelector('.practice-fb');
+      card.querySelectorAll('.practice-keys button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var s = input.selectionStart == null ? input.value.length : input.selectionStart, e = input.selectionEnd == null ? s : input.selectionEnd;
+          input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e);
+          input.focus(); input.setSelectionRange(s + 1, s + 1);
+        });
+      });
+      var sol = '<div class="sol">(' + ex.A + ')² − (' + ex.B + ')² = <strong>' + ex.a2H + ' − ' + ex.b2H + '</strong></div>';
+      function showBtn() { return ' <button type="button" class="show">Ver la respuesta</button>'; }
+      function check() {
+        var v = input.value.trim(), msg;
+        card.classList.remove('ok', 'bad');
+        if (!v) { fb.innerHTML = 'Escribe tu respuesta en el cuadro.'; return; }
+        var r;
+        try { r = parse(v); } catch (e) { r = null; }
+        if (!r) {
+          card.classList.add('bad');
+          fb.innerHTML = '<span class="no">No entendí lo que escribiste.</span> Escríbelo como, por ejemplo, <strong>x^2 − 25</strong> o <strong>4x² − 1</strong>.';
+          return;
+        }
+        if (same(r.P, ex.ans) && r.terms === 2) {
+          card.classList.add('ok'); done[idx] = 1; score();
+          fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span>' + sol;
+          return;
+        }
+        card.classList.add('bad'); delete done[idx]; score();
+        var vars = {}, bad = [];
+        Object.keys(ex.ans).forEach(function (k) { (k.match(/[a-z]/g) || []).forEach(function (c) { vars[c] = 1; }); });
+        Object.keys(r.P).forEach(function (k) { (k.match(/[a-z]/g) || []).forEach(function (c) { if (!vars[c] && bad.indexOf(c) < 0) bad.push(c); }); });
+        if (bad.length) msg = 'Revisa las letras: en este ejercicio sólo aparece' + (Object.keys(vars).length > 1 ? 'n ' : ' ') + '<strong>' + Object.keys(vars).sort().join(', ') + '</strong>.';
+        else if (same(r.P, ex.ans)) msg = 'Es el mismo resultado, pero <strong>desarróllalo</strong>: escríbelo como dos términos, sin paréntesis.';
+        else if (same(r.P, ex.plus)) msg = 'Casi. Revisa el <strong>signo</strong>: entre los dos cuadrados va un <strong>MENOS</strong>.';
+        else if (same(r.P, ex.swap)) msg = 'Casi. Revisa el <strong>orden</strong>: es el cuadrado del primer término <strong>menos</strong> el cuadrado del segundo.';
+        else if (Object.keys(r.P).length > 2) msg = 'Todavía no. En un binomio conjugado los términos de en medio se cancelan: el resultado sólo tiene <strong>dos términos</strong>.';
+        else msg = 'Todavía no. Eleva al cuadrado <strong>cada</strong> término (también el número que acompaña a la letra) y réstalos: a² − b².';
+        fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + msg + showBtn();
+        fb.querySelector('.show').addEventListener('click', function () { this.outerHTML = sol; });
+      }
+      card.querySelector('.practice-check').addEventListener('click', check);
+      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') check(); });
+    });
+    score();
+  })();
+  </script>
 
   <p class="section-label">Materiales y tareas</p>
   <div class="blocks">
