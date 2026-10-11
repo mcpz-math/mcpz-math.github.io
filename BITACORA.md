@@ -656,3 +656,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   letras que no van, o no elevar al cuadrado el coeficiente; y un botón "Ver la respuesta"
   con (a)² − (b)². Abajo lleva la cuenta "Llevas X de 16 correctas".
 - Estilos nuevos `.practice-*` en `assets/style.css`.
+
+## 2026-10-11 (nombre de Carmen en todos los videos)
+- A pedido de Carmen, los 9 videos de `matematicas-3/materiales/` (y sus portadas) ahora
+  muestran durante todo el video una etiqueta verde oscuro abajo a la derecha con su nombre:
+  **"DTI. Maria del Carmen Pérez Zarate"** (el nombre lo eligió ella). En los videos de
+  Inecuaciones y Valor absoluto la etiqueta tapa el pie de página chiquito que ya tenían.
+  La música y la duración de los videos no cambiaron.
+- Para videos nuevos: agregar la misma etiqueta.
