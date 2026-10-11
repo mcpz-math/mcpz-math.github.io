@@ -619,3 +619,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
   cuadrados**: x² − 9 = x² − 3² = (x + 3)(x − 3) = 0 → x = −3, x = 3; y −2x² + 8 = 0 →
   ÷(−2): x² − 4 = (x + 2)(x − 2) = 0 → x = −2, x = 2. En el resumen, la regla dice
   "signos contrarios → reales y diferentes (diferencia de cuadrados)".
+
+## 2026-10-11 (se quita el video "variando a y b")
+- A pedido de Carmen se quitó de `matematicas-3/tema-05-ax-cuadrada-mas-b.html` el video
+  "Video: variando a y b". En la página sólo queda el video de raíces reales o imaginarias.
+  El archivo `materiales/tema-05-ax-cuadrada-mas-b.mp4` se conserva en el repositorio (por
+  si alguien tiene la liga directa), pero ya no se muestra en ninguna página.
