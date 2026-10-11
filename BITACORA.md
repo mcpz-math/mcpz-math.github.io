@@ -686,3 +686,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
   automática (banco de 100) y la tarea (Serie 2, en Word).
 - En la página del Tema 6, el bloque "Binomios conjugados y DCP" ahora tiene el enlace
   "Ver subtema →", y el bloque "Tarea" indica que la Serie 2 está en el subtema.
+- A pedido de Carmen se quitó el bloque "Tarea" de la página del Tema 6 (la sección ahora se
+  llama sólo "Materiales"). La Serie 2 sigue disponible en la página del subtema
+  `tema-06-binomios-conjugados.html`.
