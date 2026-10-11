@@ -625,3 +625,15 @@ Registro de lo que vamos haciendo, en orden cronológico.
   "Video: variando a y b". En la página sólo queda el video de raíces reales o imaginarias.
   El archivo `materiales/tema-05-ax-cuadrada-mas-b.mp4` se conserva en el repositorio (por
   si alguien tiene la liga directa), pero ya no se muestra en ninguna página.
+
+## 2026-10-11 (aplicación "Prueba tú: f(x) = ax² + b")
+- A pedido de Carmen, en lugar del video "variando a y b" se puso en
+  `matematicas-3/tema-05-ax-cuadrada-mas-b.html` una versión de la gráfica interactiva de ax²
+  **con el parámetro b**. El alumno escribe a y b (enteros, decimales o fracciones) o usa los
+  botones rápidos; la parábola se anima desde la anterior. Muestra x² punteada de referencia,
+  los puntos de x = −3 a 3 con sus coordenadas, el vértice V(0, b) y las raíces como rombos
+  sobre el eje x. Debajo explica hacia dónde abre, si es más delgada o más abierta, dónde está
+  el vértice y qué tipo de raíces tiene: reales y diferentes (resueltas como **diferencia de
+  cuadrados** cuando salen exactas; si no, x = ±√… aproximado), imaginarias o raíz repetida.
+  También trae la tabla x | x² | a · x² + b.
+- La aplicación de ax² (`tema-05-ax-cuadrada.html` y `prueba-ax-cuadrada.html`) no se cambió.
