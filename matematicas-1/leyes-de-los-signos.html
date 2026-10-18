@@ -131,7 +131,7 @@
   <div class="callout">
     <div class="k">Instrucciones</div>
     <p>Resuelve cada operación, escribe el resultado y oprime <strong>Comprobar</strong> (o la tecla Enter).
-       Para el signo menos puedes usar el guion <strong>-</strong> del teclado o el botón <strong>−</strong>.</p>
+       Para el signo menos usa el guion <strong>-</strong> del teclado.</p>
     <p>Hay cuatro tipos: multiplicar y dividir, potencias, sumar y restar, y evaluar funciones.
        Si te equivocas, la página te muestra el procedimiento paso a paso.</p>
     <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Cuando termines,
@@ -146,7 +146,6 @@
 
   <script>
   (function () {
-    var MINUS = '−';
     // Banco de 100 ejercicios: [operación, resultado, procedimiento]
     // 1–25 multiplicar y dividir · 26–50 potencias · 51–75 sumar y restar · 76–100 evaluar f(x) = ax² + b
     var BANK = [
@@ -279,15 +278,9 @@
         '<div class="practice-ask" style="margin-top:0;">' + TIPO[Math.floor(bi / 25)] + '</div>' +
         '<div class="practice-row"><span class="eq">=</span><input type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tu respuesta del ejercicio ' + (idx + 1) + '">' +
         '<button type="button" class="practice-check">Comprobar</button></div>' +
-        '<div class="practice-keys"><button type="button" data-k="−">−</button></div>' +
         '<div class="practice-fb" aria-live="polite"></div>';
       grid.appendChild(card);
       var input = card.querySelector('input'), fb = card.querySelector('.practice-fb');
-      card.querySelector('.practice-keys button').addEventListener('click', function () {
-        var s = input.selectionStart == null ? input.value.length : input.selectionStart, e = input.selectionEnd == null ? s : input.selectionEnd;
-        input.value = input.value.slice(0, s) + MINUS + input.value.slice(e);
-        input.focus(); input.setSelectionRange(s + 1, s + 1);
-      });
       function check() {
         var v = input.value.trim(), r;
         card.classList.remove('ok', 'bad');
