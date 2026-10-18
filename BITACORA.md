@@ -863,3 +863,15 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Debajo del video se agregaron dos imágenes con cada ejemplo completo, igual que se ve en el
   video: `materiales/jerarquia-de-operaciones-ejemplo-1.jpg` y `-ejemplo-2.jpg`. Al tocarlas se
   abren en grande.
+
+## 2026-10-18 (Leyes de los signos: banco sin funciones y ejercicios de jerarquía)
+- A pedido de Carmen, el banco de 100 ejercicios de signos (`matematicas-1/leyes-de-los-signos.html`,
+  sección 6) ya **no tiene ejercicios de evaluar funciones** (f(x) = …; f(−3)), porque todavía no
+  se ven en Matemáticas 1. Ahora tiene 34 de multiplicar y dividir, 30 de potencias y 36 de sumar
+  y restar.
+- Nueva sección **"7 · Ejercicios: jerarquía de operaciones"** con el mismo formato: banco de 100,
+  10 al azar, "Comprobar", aviso cuando sólo el signo está mal y procedimiento paso a paso. Diez
+  formas, de la más sencilla a la más larga (10 de cada una): a + b·c, a − b÷c, (a + b)·c,
+  a·b − c·d, a − b(c − d), con potencias, (a − b)²÷c, a − b(c − d)², −k² + a÷b·c − (d) y
+  a(b + c) − d÷e. Todas las respuestas son enteras y se verificaron con la computadora.
+- Las dos secciones de ejercicios usan ahora la misma función en el código (`practice`).

@@ -151,7 +151,7 @@
     <div class="k">Instrucciones</div>
     <p>Resuelve cada operación, escribe el resultado y oprime <strong>Comprobar</strong> (o la tecla Enter).
        Para el signo menos usa el guion <strong>-</strong> del teclado.</p>
-    <p>Hay cuatro tipos: multiplicar y dividir, potencias, sumar y restar, y evaluar funciones.
+    <p>Hay tres tipos: multiplicar y dividir, potencias, y sumar y restar.
        Si te equivocas, la página te muestra el procedimiento paso a paso.</p>
     <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Cuando termines,
        oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
@@ -163,113 +163,232 @@
     <button type="button" class="pg-btn" id="sg-new">Otros 10 ejercicios (volver a intentar)</button>
   </p>
 
+  <p class="section-label" id="ejercicios-jerarquia">7 · Ejercicios: jerarquía de operaciones</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Resuelve cada operación respetando el orden: <strong>paréntesis</strong>, <strong>potencias</strong>,
+       <strong>multiplicaciones y divisiones</strong>, y al final <strong>sumas y restas</strong>, cuidando
+       los signos en cada paso. Escribe el resultado y oprime <strong>Comprobar</strong> (o la tecla Enter).</p>
+    <p>Resuélvelo primero en tu cuaderno, paso a paso. Si te equivocas, la página te muestra el procedimiento.</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>, de los más sencillos
+       a los más largos. Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar.</p>
+  </div>
+
+  <div class="practice-grid" id="jo-grid"></div>
+  <p class="practice-score" id="jo-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="jo-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
   <script>
   (function () {
-    // Banco de 100 ejercicios: [operación, resultado, procedimiento]
-    // 1–25 multiplicar y dividir · 26–50 potencias · 51–75 sumar y restar · 76–100 evaluar f(x) = ax² + b
-    var BANK = [
-      ["(−7)(−6)", 42, "7 · 6 = 42; menos por menos da <strong>más</strong> → <strong>42</strong>"],
-      ["(−4)(−5)", 20, "4 · 5 = 20; menos por menos da <strong>más</strong> → <strong>20</strong>"],
-      ["−12 ÷ 4", -3, "12 ÷ 4 = 3; signos diferentes dan <strong>menos</strong> → <strong>−3</strong>"],
-      ["(−4)(7)", -28, "4 · 7 = 28; signos diferentes dan <strong>menos</strong> → <strong>−28</strong>"],
-      ["(−2)(−3)", 6, "2 · 3 = 6; menos por menos da <strong>más</strong> → <strong>6</strong>"],
-      ["−32 ÷ 8", -4, "32 ÷ 8 = 4; signos diferentes dan <strong>menos</strong> → <strong>−4</strong>"],
-      ["8 · (−8)", -64, "8 · 8 = 64; signos diferentes dan <strong>menos</strong> → <strong>−64</strong>"],
-      ["(−9)(−6)", 54, "9 · 6 = 54; menos por menos da <strong>más</strong> → <strong>54</strong>"],
-      ["−72 ÷ (−9)", 8, "72 ÷ 9 = 8; menos entre menos da <strong>más</strong> → <strong>8</strong>"],
-      ["(−5)(3)", -15, "5 · 3 = 15; signos diferentes dan <strong>menos</strong> → <strong>−15</strong>"],
-      ["(−4)(−7)", 28, "4 · 7 = 28; menos por menos da <strong>más</strong> → <strong>28</strong>"],
-      ["18 ÷ (−3)", -6, "18 ÷ 3 = 6; signos diferentes dan <strong>menos</strong> → <strong>−6</strong>"],
-      ["(−5)(−9)", 45, "5 · 9 = 45; menos por menos da <strong>más</strong> → <strong>45</strong>"],
-      ["5 · (−9)", -45, "5 · 9 = 45; signos diferentes dan <strong>menos</strong> → <strong>−45</strong>"],
-      ["30 ÷ (−6)", -5, "30 ÷ 6 = 5; signos diferentes dan <strong>menos</strong> → <strong>−5</strong>"],
-      ["(−8)(−2)", 16, "8 · 2 = 16; menos por menos da <strong>más</strong> → <strong>16</strong>"],
-      ["8 · (−6)", -48, "8 · 6 = 48; signos diferentes dan <strong>menos</strong> → <strong>−48</strong>"],
-      ["−45 ÷ 5", -9, "45 ÷ 5 = 9; signos diferentes dan <strong>menos</strong> → <strong>−9</strong>"],
-      ["(−7)(−5)", 35, "7 · 5 = 35; menos por menos da <strong>más</strong> → <strong>35</strong>"],
-      ["(−4)(5)", -20, "4 · 5 = 20; signos diferentes dan <strong>menos</strong> → <strong>−20</strong>"],
-      ["−14 ÷ (−7)", 2, "14 ÷ 7 = 2; menos entre menos da <strong>más</strong> → <strong>2</strong>"],
-      ["(−5)(−3)", 15, "5 · 3 = 15; menos por menos da <strong>más</strong> → <strong>15</strong>"],
-      ["(−5)(2)", -10, "5 · 2 = 10; signos diferentes dan <strong>menos</strong> → <strong>−10</strong>"],
-      ["−48 ÷ (−8)", 6, "48 ÷ 8 = 6; menos entre menos da <strong>más</strong> → <strong>6</strong>"],
-      ["2 · (−8)", -16, "2 · 8 = 16; signos diferentes dan <strong>menos</strong> → <strong>−16</strong>"],
-      ["(−9)²", 81, "(−9)² = (−9)(−9); menos por menos da más → <strong>81</strong>"],
-      ["−2²", -4, "Sin paréntesis, el exponente sólo afecta al 2: −2² = −(2 · 2) = <strong>−4</strong>"],
-      ["(−2)³", -8, "(−2)³ = (−2)(−2)(−2): tres signos menos (impar) → <strong>−8</strong>"],
-      ["−(−6)²", -36, "Primero la potencia: (−6)² = 36. Después el signo de afuera: −(36) = <strong>−36</strong>"],
-      ["(−3)²", 9, "(−3)² = (−3)(−3); menos por menos da más → <strong>9</strong>"],
-      ["−8²", -64, "Sin paréntesis, el exponente sólo afecta al 8: −8² = −(8 · 8) = <strong>−64</strong>"],
-      ["(−3)³", -27, "(−3)³ = (−3)(−3)(−3): tres signos menos (impar) → <strong>−27</strong>"],
-      ["−(−3)²", -9, "Primero la potencia: (−3)² = 9. Después el signo de afuera: −(9) = <strong>−9</strong>"],
-      ["(−7)²", 49, "(−7)² = (−7)(−7); menos por menos da más → <strong>49</strong>"],
-      ["−9²", -81, "Sin paréntesis, el exponente sólo afecta al 9: −9² = −(9 · 9) = <strong>−81</strong>"],
-      ["(−5)³", -125, "(−5)³ = (−5)(−5)(−5): tres signos menos (impar) → <strong>−125</strong>"],
-      ["−(−8)²", -64, "Primero la potencia: (−8)² = 64. Después el signo de afuera: −(64) = <strong>−64</strong>"],
-      ["(−2)²", 4, "(−2)² = (−2)(−2); menos por menos da más → <strong>4</strong>"],
-      ["−4²", -16, "Sin paréntesis, el exponente sólo afecta al 4: −4² = −(4 · 4) = <strong>−16</strong>"],
-      ["(−4)³", -64, "(−4)³ = (−4)(−4)(−4): tres signos menos (impar) → <strong>−64</strong>"],
-      ["−(−9)²", -81, "Primero la potencia: (−9)² = 81. Después el signo de afuera: −(81) = <strong>−81</strong>"],
-      ["(−5)²", 25, "(−5)² = (−5)(−5); menos por menos da más → <strong>25</strong>"],
-      ["−6²", -36, "Sin paréntesis, el exponente sólo afecta al 6: −6² = −(6 · 6) = <strong>−36</strong>"],
-      ["(−8)²", 64, "(−8)² = (−8)(−8); menos por menos da más → <strong>64</strong>"],
-      ["−(−7)²", -49, "Primero la potencia: (−7)² = 49. Después el signo de afuera: −(49) = <strong>−49</strong>"],
-      ["(−6)²", 36, "(−6)² = (−6)(−6); menos por menos da más → <strong>36</strong>"],
-      ["−5²", -25, "Sin paréntesis, el exponente sólo afecta al 5: −5² = −(5 · 5) = <strong>−25</strong>"],
-      ["−7²", -49, "Sin paréntesis, el exponente sólo afecta al 7: −7² = −(7 · 7) = <strong>−49</strong>"],
-      ["−(−4)²", -16, "Primero la potencia: (−4)² = 16. Después el signo de afuera: −(16) = <strong>−16</strong>"],
-      ["(−4)²", 16, "(−4)² = (−4)(−4); menos por menos da más → <strong>16</strong>"],
-      ["−7 − 4", -11, "Mismo signo (los dos negativos): se suman 7 + 4 = 11 y se conserva el signo menos → <strong>−11</strong>"],
-      ["−9 + 8", -1, "Signos diferentes: se restan 9 − 8 = 1 y queda el signo del número más grande sin contar el signo (−9) → <strong>−1</strong>"],
-      ["3 − (−9)", 12, "Restar un negativo es sumar: 3 − (−9) = 3 + 9 = <strong>12</strong>"],
-      ["−12 − (−4)", -8, "Dos signos menos seguidos dan más: −12 + 4. Signos diferentes: 12 − 4 = 8, queda el signo del número más grande sin contar el signo (−12) → <strong>−8</strong>"],
-      ["−9 − 3", -12, "Mismo signo (los dos negativos): se suman 9 + 3 = 12 y se conserva el signo menos → <strong>−12</strong>"],
-      ["−11 + 2", -9, "Signos diferentes: se restan 11 − 2 = 9 y queda el signo del número más grande sin contar el signo (−11) → <strong>−9</strong>"],
-      ["2 − (−11)", 13, "Restar un negativo es sumar: 2 − (−11) = 2 + 11 = <strong>13</strong>"],
-      ["−10 − (−1)", -9, "Dos signos menos seguidos dan más: −10 + 1. Signos diferentes: 10 − 1 = 9, queda el signo del número más grande sin contar el signo (−10) → <strong>−9</strong>"],
-      ["−5 − 2", -7, "Mismo signo (los dos negativos): se suman 5 + 2 = 7 y se conserva el signo menos → <strong>−7</strong>"],
-      ["−4 + 3", -1, "Signos diferentes: se restan 4 − 3 = 1 y queda el signo del número más grande sin contar el signo (−4) → <strong>−1</strong>"],
-      ["1 − (−2)", 3, "Restar un negativo es sumar: 1 − (−2) = 1 + 2 = <strong>3</strong>"],
-      ["−11 − (−6)", -5, "Dos signos menos seguidos dan más: −11 + 6. Signos diferentes: 11 − 6 = 5, queda el signo del número más grande sin contar el signo (−11) → <strong>−5</strong>"],
-      ["−12 − 12", -24, "Mismo signo (los dos negativos): se suman 12 + 12 = 24 y se conserva el signo menos → <strong>−24</strong>"],
-      ["−7 + 1", -6, "Signos diferentes: se restan 7 − 1 = 6 y queda el signo del número más grande sin contar el signo (−7) → <strong>−6</strong>"],
-      ["12 − (−5)", 17, "Restar un negativo es sumar: 12 − (−5) = 12 + 5 = <strong>17</strong>"],
-      ["−5 − (−12)", 7, "Dos signos menos seguidos dan más: −5 + 12. Signos diferentes: 12 − 5 = 7, queda el signo del número más grande sin contar el signo (12) → <strong>7</strong>"],
-      ["−9 − 10", -19, "Mismo signo (los dos negativos): se suman 9 + 10 = 19 y se conserva el signo menos → <strong>−19</strong>"],
-      ["−11 + 4", -7, "Signos diferentes: se restan 11 − 4 = 7 y queda el signo del número más grande sin contar el signo (−11) → <strong>−7</strong>"],
-      ["10 − (−8)", 18, "Restar un negativo es sumar: 10 − (−8) = 10 + 8 = <strong>18</strong>"],
-      ["−6 − (−11)", 5, "Dos signos menos seguidos dan más: −6 + 11. Signos diferentes: 11 − 6 = 5, queda el signo del número más grande sin contar el signo (11) → <strong>5</strong>"],
-      ["−4 − 1", -5, "Mismo signo (los dos negativos): se suman 4 + 1 = 5 y se conserva el signo menos → <strong>−5</strong>"],
-      ["−2 + 6", 4, "Signos diferentes: se restan 6 − 2 = 4 y queda el signo del número más grande sin contar el signo (6) → <strong>4</strong>"],
-      ["5 − (−8)", 13, "Restar un negativo es sumar: 5 − (−8) = 5 + 8 = <strong>13</strong>"],
-      ["−1 − (−10)", 9, "Dos signos menos seguidos dan más: −1 + 10. Signos diferentes: 10 − 1 = 9, queda el signo del número más grande sin contar el signo (10) → <strong>9</strong>"],
-      ["−1 − 7", -8, "Mismo signo (los dos negativos): se suman 1 + 7 = 8 y se conserva el signo menos → <strong>−8</strong>"],
-      ["f(x) = −x² + 1; &nbsp;f(−3)", -8, "Primero la potencia: (−3)² = 9 → luego multiplica por a: −1 · 9 = −9 → al final suma b: −9 + 1 = −8. Resultado: <strong>−8</strong>"],
-      ["f(x) = −x² + 7; &nbsp;f(−2)", 3, "Primero la potencia: (−2)² = 4 → luego multiplica por a: −1 · 4 = −4 → al final suma b: −4 + 7 = 3. Resultado: <strong>3</strong>"],
-      ["f(x) = −2x² + 7; &nbsp;f(−3)", -11, "Primero la potencia: (−3)² = 9 → luego multiplica por a: −2 · 9 = −18 → al final suma b: −18 + 7 = −11. Resultado: <strong>−11</strong>"],
-      ["f(x) = −5x² + 6; &nbsp;f(−2)", -14, "Primero la potencia: (−2)² = 4 → luego multiplica por a: −5 · 4 = −20 → al final suma b: −20 + 6 = −14. Resultado: <strong>−14</strong>"],
-      ["f(x) = −3x² + 8; &nbsp;f(−2)", -4, "Primero la potencia: (−2)² = 4 → luego multiplica por a: −3 · 4 = −12 → al final suma b: −12 + 8 = −4. Resultado: <strong>−4</strong>"],
-      ["f(x) = −5x² − 3; &nbsp;f(−1)", -8, "Primero la potencia: (−1)² = 1 → luego multiplica por a: −5 · 1 = −5 → al final suma b: −5 − 3 = −8. Resultado: <strong>−8</strong>"],
-      ["f(x) = −3x² − 7; &nbsp;f(−4)", -55, "Primero la potencia: (−4)² = 16 → luego multiplica por a: −3 · 16 = −48 → al final suma b: −48 − 7 = −55. Resultado: <strong>−55</strong>"],
-      ["f(x) = 2x²; &nbsp;f(−3)", 18, "Primero la potencia: (−3)² = 9 → luego multiplica por a: 2 · 9 = 18. Resultado: <strong>18</strong>"],
-      ["f(x) = −x² + 3; &nbsp;f(−3)", -6, "Primero la potencia: (−3)² = 9 → luego multiplica por a: −1 · 9 = −9 → al final suma b: −9 + 3 = −6. Resultado: <strong>−6</strong>"],
-      ["f(x) = −3x² + 2; &nbsp;f(−2)", -10, "Primero la potencia: (−2)² = 4 → luego multiplica por a: −3 · 4 = −12 → al final suma b: −12 + 2 = −10. Resultado: <strong>−10</strong>"],
-      ["f(x) = −2x² + 3; &nbsp;f(−3)", -15, "Primero la potencia: (−3)² = 9 → luego multiplica por a: −2 · 9 = −18 → al final suma b: −18 + 3 = −15. Resultado: <strong>−15</strong>"],
-      ["f(x) = −2x²; &nbsp;f(−1)", -2, "Primero la potencia: (−1)² = 1 → luego multiplica por a: −2 · 1 = −2. Resultado: <strong>−2</strong>"],
-      ["f(x) = −x² + 2; &nbsp;f(−3)", -7, "Primero la potencia: (−3)² = 9 → luego multiplica por a: −1 · 9 = −9 → al final suma b: −9 + 2 = −7. Resultado: <strong>−7</strong>"],
-      ["f(x) = x²; &nbsp;f(−1)", 1, "Primero la potencia: (−1)² = 1 → luego multiplica por a: 1 · 1 = 1. Resultado: <strong>1</strong>"],
-      ["f(x) = −3x² − 6; &nbsp;f(3)", -33, "Primero la potencia: 3² = 9 → luego multiplica por a: −3 · 9 = −27 → al final suma b: −27 − 6 = −33. Resultado: <strong>−33</strong>"],
-      ["f(x) = −2x² − 7; &nbsp;f(−1)", -9, "Primero la potencia: (−1)² = 1 → luego multiplica por a: −2 · 1 = −2 → al final suma b: −2 − 7 = −9. Resultado: <strong>−9</strong>"],
-      ["f(x) = −5x² + 4; &nbsp;f(−4)", -76, "Primero la potencia: (−4)² = 16 → luego multiplica por a: −5 · 16 = −80 → al final suma b: −80 + 4 = −76. Resultado: <strong>−76</strong>"],
-      ["f(x) = −x² + 8; &nbsp;f(−1)", 7, "Primero la potencia: (−1)² = 1 → luego multiplica por a: −1 · 1 = −1 → al final suma b: −1 + 8 = 7. Resultado: <strong>7</strong>"],
-      ["f(x) = −x² + 7; &nbsp;f(−1)", 6, "Primero la potencia: (−1)² = 1 → luego multiplica por a: −1 · 1 = −1 → al final suma b: −1 + 7 = 6. Resultado: <strong>6</strong>"],
-      ["f(x) = 4x² + 2; &nbsp;f(−2)", 18, "Primero la potencia: (−2)² = 4 → luego multiplica por a: 4 · 4 = 16 → al final suma b: 16 + 2 = 18. Resultado: <strong>18</strong>"],
-      ["f(x) = −4x²; &nbsp;f(3)", -36, "Primero la potencia: 3² = 9 → luego multiplica por a: −4 · 9 = −36. Resultado: <strong>−36</strong>"],
-      ["f(x) = −5x² + 9; &nbsp;f(−1)", 4, "Primero la potencia: (−1)² = 1 → luego multiplica por a: −5 · 1 = −5 → al final suma b: −5 + 9 = 4. Resultado: <strong>4</strong>"],
-      ["f(x) = −2x² + 2; &nbsp;f(−1)", 0, "Primero la potencia: (−1)² = 1 → luego multiplica por a: −2 · 1 = −2 → al final suma b: −2 + 2 = 0. Resultado: <strong>0</strong>"],
-      ["f(x) = 2x² + 9; &nbsp;f(−4)", 41, "Primero la potencia: (−4)² = 16 → luego multiplica por a: 2 · 16 = 32 → al final suma b: 32 + 9 = 41. Resultado: <strong>41</strong>"],
-      ["f(x) = −x² + 9; &nbsp;f(−1)", 8, "Primero la potencia: (−1)² = 1 → luego multiplica por a: −1 · 1 = −1 → al final suma b: −1 + 9 = 8. Resultado: <strong>8</strong>"]
+    // Bancos de 100 ejercicios: [operación, resultado, procedimiento, tipo]
+    // Signos: 34 multiplicar y dividir · 30 potencias · 36 sumar y restar
+    var SIGNOS = [
+      ["(−7)(−6)", 42, "7 · 6 = 42; menos por menos da <strong>más</strong> → <strong>42</strong>", "Multiplica o divide"],
+      ["(−4)(−5)", 20, "4 · 5 = 20; menos por menos da <strong>más</strong> → <strong>20</strong>", "Multiplica o divide"],
+      ["−12 ÷ 4", -3, "12 ÷ 4 = 3; signos diferentes dan <strong>menos</strong> → <strong>−3</strong>", "Multiplica o divide"],
+      ["(−4)(7)", -28, "4 · 7 = 28; signos diferentes dan <strong>menos</strong> → <strong>−28</strong>", "Multiplica o divide"],
+      ["(−2)(−3)", 6, "2 · 3 = 6; menos por menos da <strong>más</strong> → <strong>6</strong>", "Multiplica o divide"],
+      ["−32 ÷ 8", -4, "32 ÷ 8 = 4; signos diferentes dan <strong>menos</strong> → <strong>−4</strong>", "Multiplica o divide"],
+      ["8 · (−8)", -64, "8 · 8 = 64; signos diferentes dan <strong>menos</strong> → <strong>−64</strong>", "Multiplica o divide"],
+      ["(−9)(−6)", 54, "9 · 6 = 54; menos por menos da <strong>más</strong> → <strong>54</strong>", "Multiplica o divide"],
+      ["−72 ÷ (−9)", 8, "72 ÷ 9 = 8; menos entre menos da <strong>más</strong> → <strong>8</strong>", "Multiplica o divide"],
+      ["(−5)(3)", -15, "5 · 3 = 15; signos diferentes dan <strong>menos</strong> → <strong>−15</strong>", "Multiplica o divide"],
+      ["(−4)(−7)", 28, "4 · 7 = 28; menos por menos da <strong>más</strong> → <strong>28</strong>", "Multiplica o divide"],
+      ["18 ÷ (−3)", -6, "18 ÷ 3 = 6; signos diferentes dan <strong>menos</strong> → <strong>−6</strong>", "Multiplica o divide"],
+      ["(−5)(−9)", 45, "5 · 9 = 45; menos por menos da <strong>más</strong> → <strong>45</strong>", "Multiplica o divide"],
+      ["5 · (−9)", -45, "5 · 9 = 45; signos diferentes dan <strong>menos</strong> → <strong>−45</strong>", "Multiplica o divide"],
+      ["30 ÷ (−6)", -5, "30 ÷ 6 = 5; signos diferentes dan <strong>menos</strong> → <strong>−5</strong>", "Multiplica o divide"],
+      ["(−8)(−2)", 16, "8 · 2 = 16; menos por menos da <strong>más</strong> → <strong>16</strong>", "Multiplica o divide"],
+      ["8 · (−6)", -48, "8 · 6 = 48; signos diferentes dan <strong>menos</strong> → <strong>−48</strong>", "Multiplica o divide"],
+      ["−45 ÷ 5", -9, "45 ÷ 5 = 9; signos diferentes dan <strong>menos</strong> → <strong>−9</strong>", "Multiplica o divide"],
+      ["(−7)(−5)", 35, "7 · 5 = 35; menos por menos da <strong>más</strong> → <strong>35</strong>", "Multiplica o divide"],
+      ["(−4)(5)", -20, "4 · 5 = 20; signos diferentes dan <strong>menos</strong> → <strong>−20</strong>", "Multiplica o divide"],
+      ["−14 ÷ (−7)", 2, "14 ÷ 7 = 2; menos entre menos da <strong>más</strong> → <strong>2</strong>", "Multiplica o divide"],
+      ["(−5)(−3)", 15, "5 · 3 = 15; menos por menos da <strong>más</strong> → <strong>15</strong>", "Multiplica o divide"],
+      ["(−5)(2)", -10, "5 · 2 = 10; signos diferentes dan <strong>menos</strong> → <strong>−10</strong>", "Multiplica o divide"],
+      ["−48 ÷ (−8)", 6, "48 ÷ 8 = 6; menos entre menos da <strong>más</strong> → <strong>6</strong>", "Multiplica o divide"],
+      ["2 · (−8)", -16, "2 · 8 = 16; signos diferentes dan <strong>menos</strong> → <strong>−16</strong>", "Multiplica o divide"],
+      ["6 · (−8)", -48, "6 · 8 = 48; signos diferentes dan <strong>menos</strong> → <strong>−48</strong>", "Multiplica o divide"],
+      ["−15 ÷ (−3)", 5, "15 ÷ 3 = 5; menos entre menos da <strong>más</strong> → <strong>5</strong>", "Multiplica o divide"],
+      ["(−7)(−8)", 56, "7 · 8 = 56; menos por menos da <strong>más</strong> → <strong>56</strong>", "Multiplica o divide"],
+      ["(−3)(−2)", 6, "3 · 2 = 6; menos por menos da <strong>más</strong> → <strong>6</strong>", "Multiplica o divide"],
+      ["−36 ÷ (−4)", 9, "36 ÷ 4 = 9; menos entre menos da <strong>más</strong> → <strong>9</strong>", "Multiplica o divide"],
+      ["8 · (−4)", -32, "8 · 4 = 32; signos diferentes dan <strong>menos</strong> → <strong>−32</strong>", "Multiplica o divide"],
+      ["(−4)(2)", -8, "4 · 2 = 8; signos diferentes dan <strong>menos</strong> → <strong>−8</strong>", "Multiplica o divide"],
+      ["−12 ÷ (−6)", 2, "12 ÷ 6 = 2; menos entre menos da <strong>más</strong> → <strong>2</strong>", "Multiplica o divide"],
+      ["(−9)(9)", -81, "9 · 9 = 81; signos diferentes dan <strong>menos</strong> → <strong>−81</strong>", "Multiplica o divide"],
+      ["(−5)²", 25, "(−5)² = (−5)(−5); menos por menos da más → <strong>25</strong>", "Potencia"],
+      ["−(−9)²", -81, "Primero la potencia: (−9)² = 81. Después el signo de afuera: −(81) = <strong>−81</strong>", "Potencia"],
+      ["−(−5)²", -25, "Primero la potencia: (−5)² = 25. Después el signo de afuera: −(25) = <strong>−25</strong>", "Potencia"],
+      ["−5²", -25, "Sin paréntesis, el exponente sólo afecta al 5: −5² = −(5 · 5) = <strong>−25</strong>", "Potencia"],
+      ["(−2)³", -8, "(−2)³ = (−2)(−2)(−2): tres signos menos (impar) → <strong>−8</strong>", "Potencia"],
+      ["(−6)²", 36, "(−6)² = (−6)(−6); menos por menos da más → <strong>36</strong>", "Potencia"],
+      ["(−4)²", 16, "(−4)² = (−4)(−4); menos por menos da más → <strong>16</strong>", "Potencia"],
+      ["−4²", -16, "Sin paréntesis, el exponente sólo afecta al 4: −4² = −(4 · 4) = <strong>−16</strong>", "Potencia"],
+      ["−(−7)²", -49, "Primero la potencia: (−7)² = 49. Después el signo de afuera: −(49) = <strong>−49</strong>", "Potencia"],
+      ["(−7)²", 49, "(−7)² = (−7)(−7); menos por menos da más → <strong>49</strong>", "Potencia"],
+      ["−10²", -100, "Sin paréntesis, el exponente sólo afecta al 10: −10² = −(10 · 10) = <strong>−100</strong>", "Potencia"],
+      ["−7²", -49, "Sin paréntesis, el exponente sólo afecta al 7: −7² = −(7 · 7) = <strong>−49</strong>", "Potencia"],
+      ["(−10)²", 100, "(−10)² = (−10)(−10); menos por menos da más → <strong>100</strong>", "Potencia"],
+      ["−(−8)²", -64, "Primero la potencia: (−8)² = 64. Después el signo de afuera: −(64) = <strong>−64</strong>", "Potencia"],
+      ["(−3)²", 9, "(−3)² = (−3)(−3); menos por menos da más → <strong>9</strong>", "Potencia"],
+      ["(−3)³", -27, "(−3)³ = (−3)(−3)(−3): tres signos menos (impar) → <strong>−27</strong>", "Potencia"],
+      ["(−5)³", -125, "(−5)³ = (−5)(−5)(−5): tres signos menos (impar) → <strong>−125</strong>", "Potencia"],
+      ["−9²", -81, "Sin paréntesis, el exponente sólo afecta al 9: −9² = −(9 · 9) = <strong>−81</strong>", "Potencia"],
+      ["(−2)²", 4, "(−2)² = (−2)(−2); menos por menos da más → <strong>4</strong>", "Potencia"],
+      ["−(−2)²", -4, "Primero la potencia: (−2)² = 4. Después el signo de afuera: −(4) = <strong>−4</strong>", "Potencia"],
+      ["−(−6)²", -36, "Primero la potencia: (−6)² = 36. Después el signo de afuera: −(36) = <strong>−36</strong>", "Potencia"],
+      ["−(−4)²", -16, "Primero la potencia: (−4)² = 16. Después el signo de afuera: −(16) = <strong>−16</strong>", "Potencia"],
+      ["(−4)³", -64, "(−4)³ = (−4)(−4)(−4): tres signos menos (impar) → <strong>−64</strong>", "Potencia"],
+      ["(−9)²", 81, "(−9)² = (−9)(−9); menos por menos da más → <strong>81</strong>", "Potencia"],
+      ["−3²", -9, "Sin paréntesis, el exponente sólo afecta al 3: −3² = −(3 · 3) = <strong>−9</strong>", "Potencia"],
+      ["−6²", -36, "Sin paréntesis, el exponente sólo afecta al 6: −6² = −(6 · 6) = <strong>−36</strong>", "Potencia"],
+      ["−2²", -4, "Sin paréntesis, el exponente sólo afecta al 2: −2² = −(2 · 2) = <strong>−4</strong>", "Potencia"],
+      ["−8²", -64, "Sin paréntesis, el exponente sólo afecta al 8: −8² = −(8 · 8) = <strong>−64</strong>", "Potencia"],
+      ["−(−3)²", -9, "Primero la potencia: (−3)² = 9. Después el signo de afuera: −(9) = <strong>−9</strong>", "Potencia"],
+      ["(−8)²", 64, "(−8)² = (−8)(−8); menos por menos da más → <strong>64</strong>", "Potencia"],
+      ["−5 − 11", -16, "Mismo signo (los dos negativos): se suman 5 + 11 = 16 y se conserva el signo menos → <strong>−16</strong>", "Suma o resta"],
+      ["−15 + 14", -1, "Signos diferentes: se restan 15 − 14 = 1 y queda el signo del número más grande sin contar el signo (−15) → <strong>−1</strong>", "Suma o resta"],
+      ["14 − (−12)", 26, "Restar un negativo es sumar: 14 − (−12) = 14 + 12 = <strong>26</strong>", "Suma o resta"],
+      ["−15 − (−4)", -11, "Dos signos menos seguidos dan más: −15 + 4. Signos diferentes: 15 − 4 = 11, queda el signo del número más grande sin contar el signo (−15) → <strong>−11</strong>", "Suma o resta"],
+      ["−11 − 8", -19, "Mismo signo (los dos negativos): se suman 11 + 8 = 19 y se conserva el signo menos → <strong>−19</strong>", "Suma o resta"],
+      ["−11 + 12", 1, "Signos diferentes: se restan 12 − 11 = 1 y queda el signo del número más grande sin contar el signo (12) → <strong>1</strong>", "Suma o resta"],
+      ["12 − (−12)", 24, "Restar un negativo es sumar: 12 − (−12) = 12 + 12 = <strong>24</strong>", "Suma o resta"],
+      ["−13 − (−6)", -7, "Dos signos menos seguidos dan más: −13 + 6. Signos diferentes: 13 − 6 = 7, queda el signo del número más grande sin contar el signo (−13) → <strong>−7</strong>", "Suma o resta"],
+      ["−8 − 2", -10, "Mismo signo (los dos negativos): se suman 8 + 2 = 10 y se conserva el signo menos → <strong>−10</strong>", "Suma o resta"],
+      ["−8 + 3", -5, "Signos diferentes: se restan 8 − 3 = 5 y queda el signo del número más grande sin contar el signo (−8) → <strong>−5</strong>", "Suma o resta"],
+      ["4 − (−10)", 14, "Restar un negativo es sumar: 4 − (−10) = 4 + 10 = <strong>14</strong>", "Suma o resta"],
+      ["−9 − (−8)", -1, "Dos signos menos seguidos dan más: −9 + 8. Signos diferentes: 9 − 8 = 1, queda el signo del número más grande sin contar el signo (−9) → <strong>−1</strong>", "Suma o resta"],
+      ["−2 − 11", -13, "Mismo signo (los dos negativos): se suman 2 + 11 = 13 y se conserva el signo menos → <strong>−13</strong>", "Suma o resta"],
+      ["−11 + 1", -10, "Signos diferentes: se restan 11 − 1 = 10 y queda el signo del número más grande sin contar el signo (−11) → <strong>−10</strong>", "Suma o resta"],
+      ["10 − (−2)", 12, "Restar un negativo es sumar: 10 − (−2) = 10 + 2 = <strong>12</strong>", "Suma o resta"],
+      ["−13 − (−9)", -4, "Dos signos menos seguidos dan más: −13 + 9. Signos diferentes: 13 − 9 = 4, queda el signo del número más grande sin contar el signo (−13) → <strong>−4</strong>", "Suma o resta"],
+      ["−13 − 5", -18, "Mismo signo (los dos negativos): se suman 13 + 5 = 18 y se conserva el signo menos → <strong>−18</strong>", "Suma o resta"],
+      ["−10 + 14", 4, "Signos diferentes: se restan 14 − 10 = 4 y queda el signo del número más grande sin contar el signo (14) → <strong>4</strong>", "Suma o resta"],
+      ["3 − (−7)", 10, "Restar un negativo es sumar: 3 − (−7) = 3 + 7 = <strong>10</strong>", "Suma o resta"],
+      ["−4 − (−9)", 5, "Dos signos menos seguidos dan más: −4 + 9. Signos diferentes: 9 − 4 = 5, queda el signo del número más grande sin contar el signo (9) → <strong>5</strong>", "Suma o resta"],
+      ["−13 − 8", -21, "Mismo signo (los dos negativos): se suman 13 + 8 = 21 y se conserva el signo menos → <strong>−21</strong>", "Suma o resta"],
+      ["−3 + 9", 6, "Signos diferentes: se restan 9 − 3 = 6 y queda el signo del número más grande sin contar el signo (9) → <strong>6</strong>", "Suma o resta"],
+      ["12 − (−4)", 16, "Restar un negativo es sumar: 12 − (−4) = 12 + 4 = <strong>16</strong>", "Suma o resta"],
+      ["−9 − (−3)", -6, "Dos signos menos seguidos dan más: −9 + 3. Signos diferentes: 9 − 3 = 6, queda el signo del número más grande sin contar el signo (−9) → <strong>−6</strong>", "Suma o resta"],
+      ["−11 − 2", -13, "Mismo signo (los dos negativos): se suman 11 + 2 = 13 y se conserva el signo menos → <strong>−13</strong>", "Suma o resta"],
+      ["−2 + 11", 9, "Signos diferentes: se restan 11 − 2 = 9 y queda el signo del número más grande sin contar el signo (11) → <strong>9</strong>", "Suma o resta"],
+      ["10 − (−1)", 11, "Restar un negativo es sumar: 10 − (−1) = 10 + 1 = <strong>11</strong>", "Suma o resta"],
+      ["−5 − (−2)", -3, "Dos signos menos seguidos dan más: −5 + 2. Signos diferentes: 5 − 2 = 3, queda el signo del número más grande sin contar el signo (−5) → <strong>−3</strong>", "Suma o resta"],
+      ["−4 − 3", -7, "Mismo signo (los dos negativos): se suman 4 + 3 = 7 y se conserva el signo menos → <strong>−7</strong>", "Suma o resta"],
+      ["−1 + 2", 1, "Signos diferentes: se restan 2 − 1 = 1 y queda el signo del número más grande sin contar el signo (2) → <strong>1</strong>", "Suma o resta"],
+      ["13 − (−11)", 24, "Restar un negativo es sumar: 13 − (−11) = 13 + 11 = <strong>24</strong>", "Suma o resta"],
+      ["−14 − (−6)", -8, "Dos signos menos seguidos dan más: −14 + 6. Signos diferentes: 14 − 6 = 8, queda el signo del número más grande sin contar el signo (−14) → <strong>−8</strong>", "Suma o resta"],
+      ["−12 − 12", -24, "Mismo signo (los dos negativos): se suman 12 + 12 = 24 y se conserva el signo menos → <strong>−24</strong>", "Suma o resta"],
+      ["−7 + 14", 7, "Signos diferentes: se restan 14 − 7 = 7 y queda el signo del número más grande sin contar el signo (14) → <strong>7</strong>", "Suma o resta"],
+      ["1 − (−12)", 13, "Restar un negativo es sumar: 1 − (−12) = 1 + 12 = <strong>13</strong>", "Suma o resta"],
+      ["−13 − (−12)", -1, "Dos signos menos seguidos dan más: −13 + 12. Signos diferentes: 13 − 12 = 1, queda el signo del número más grande sin contar el signo (−13) → <strong>−1</strong>", "Suma o resta"]
     ];
-    var TIPO = ['Multiplica o divide', 'Potencia', 'Suma o resta', 'Evalúa la función'];
+    // Jerarquía de operaciones: 10 formas, de la más sencilla a la más larga (10 de cada una)
+    var JERARQUIA = [
+      ["−4 + (−3) · (−2)", 2, "Primero la multiplicación: (−3) · (−2) = 6 → Después la suma: −4 + 6 = <strong>2</strong>", "Usa la jerarquía de operaciones"],
+      ["−6 + (−6) · 6", -42, "Primero la multiplicación: (−6) · 6 = −36 → Después la suma: −6 − 36 = <strong>−42</strong>", "Usa la jerarquía de operaciones"],
+      ["5 + (−2) · (−5)", 15, "Primero la multiplicación: (−2) · (−5) = 10 → Después la suma: 5 + 10 = <strong>15</strong>", "Usa la jerarquía de operaciones"],
+      ["5 + 7 · (−9)", -58, "Primero la multiplicación: 7 · (−9) = −63 → Después la suma: 5 − 63 = <strong>−58</strong>", "Usa la jerarquía de operaciones"],
+      ["−4 + (−9) · 6", -58, "Primero la multiplicación: (−9) · 6 = −54 → Después la suma: −4 − 54 = <strong>−58</strong>", "Usa la jerarquía de operaciones"],
+      ["−7 + (−3) · 7", -28, "Primero la multiplicación: (−3) · 7 = −21 → Después la suma: −7 − 21 = <strong>−28</strong>", "Usa la jerarquía de operaciones"],
+      ["−7 + (−6) · (−7)", 35, "Primero la multiplicación: (−6) · (−7) = 42 → Después la suma: −7 + 42 = <strong>35</strong>", "Usa la jerarquía de operaciones"],
+      ["5 + 8 · 6", 53, "Primero la multiplicación: 8 · 6 = 48 → Después la suma: 5 + 48 = <strong>53</strong>", "Usa la jerarquía de operaciones"],
+      ["−6 + (−2) · (−3)", 0, "Primero la multiplicación: (−2) · (−3) = 6 → Después la suma: −6 + 6 = <strong>0</strong>", "Usa la jerarquía de operaciones"],
+      ["−10 + (−7) · (−3)", 11, "Primero la multiplicación: (−7) · (−3) = 21 → Después la suma: −10 + 21 = <strong>11</strong>", "Usa la jerarquía de operaciones"],
+      ["13 − 40 ÷ 5", 5, "Primero la división: 40 ÷ 5 = 8 → Después la resta: 13 − 8 = <strong>5</strong>", "Usa la jerarquía de operaciones"],
+      ["−13 − 24 ÷ 3", -21, "Primero la división: 24 ÷ 3 = 8 → Después la resta: −13 − 8 = <strong>−21</strong>", "Usa la jerarquía de operaciones"],
+      ["8 − 15 ÷ (−5)", 11, "Primero la división: 15 ÷ (−5) = −3 → Después la resta: 8 − (−3) = 8 + 3 = <strong>11</strong>", "Usa la jerarquía de operaciones"],
+      ["3 − 30 ÷ (−5)", 9, "Primero la división: 30 ÷ (−5) = −6 → Después la resta: 3 − (−6) = 3 + 6 = <strong>9</strong>", "Usa la jerarquía de operaciones"],
+      ["−12 − (−40) ÷ (−5)", -20, "Primero la división: (−40) ÷ (−5) = 8 → Después la resta: −12 − 8 = <strong>−20</strong>", "Usa la jerarquía de operaciones"],
+      ["5 − (−10) ÷ (−2)", 0, "Primero la división: (−10) ÷ (−2) = 5 → Después la resta: 5 − 5 = <strong>0</strong>", "Usa la jerarquía de operaciones"],
+      ["−12 − 48 ÷ 6", -20, "Primero la división: 48 ÷ 6 = 8 → Después la resta: −12 − 8 = <strong>−20</strong>", "Usa la jerarquía de operaciones"],
+      ["11 − (−16) ÷ 2", 19, "Primero la división: (−16) ÷ 2 = −8 → Después la resta: 11 − (−8) = 11 + 8 = <strong>19</strong>", "Usa la jerarquía de operaciones"],
+      ["9 − 18 ÷ 6", 6, "Primero la división: 18 ÷ 6 = 3 → Después la resta: 9 − 3 = <strong>6</strong>", "Usa la jerarquía de operaciones"],
+      ["−8 − 21 ÷ 3", -15, "Primero la división: 21 ÷ 3 = 7 → Después la resta: −8 − 7 = <strong>−15</strong>", "Usa la jerarquía de operaciones"],
+      ["(−5 + 6) · 5", 5, "Primero el paréntesis: −5 + 6 = 1 → Después la multiplicación: 1 · 5 = <strong>5</strong>", "Usa la jerarquía de operaciones"],
+      ["(−8 + 12) · 6", 24, "Primero el paréntesis: −8 + 12 = 4 → Después la multiplicación: 4 · 6 = <strong>24</strong>", "Usa la jerarquía de operaciones"],
+      ["(−12 − 11) · (−6)", 138, "Primero el paréntesis: −12 − 11 = −23 → Después la multiplicación: (−23) · (−6) = <strong>138</strong>", "Usa la jerarquía de operaciones"],
+      ["(3 + 8) · (−6)", -66, "Primero el paréntesis: 3 + 8 = 11 → Después la multiplicación: 11 · (−6) = <strong>−66</strong>", "Usa la jerarquía de operaciones"],
+      ["(11 − 1) · 6", 60, "Primero el paréntesis: 11 − 1 = 10 → Después la multiplicación: 10 · 6 = <strong>60</strong>", "Usa la jerarquía de operaciones"],
+      ["(1 − 9) · (−2)", 16, "Primero el paréntesis: 1 − 9 = −8 → Después la multiplicación: (−8) · (−2) = <strong>16</strong>", "Usa la jerarquía de operaciones"],
+      ["(4 + 6) · 5", 50, "Primero el paréntesis: 4 + 6 = 10 → Después la multiplicación: 10 · 5 = <strong>50</strong>", "Usa la jerarquía de operaciones"],
+      ["(3 − 11) · 4", -32, "Primero el paréntesis: 3 − 11 = −8 → Después la multiplicación: (−8) · 4 = <strong>−32</strong>", "Usa la jerarquía de operaciones"],
+      ["(3 + 10) · 4", 52, "Primero el paréntesis: 3 + 10 = 13 → Después la multiplicación: 13 · 4 = <strong>52</strong>", "Usa la jerarquía de operaciones"],
+      ["(−9 − 8) · (−2)", 34, "Primero el paréntesis: −9 − 8 = −17 → Después la multiplicación: (−17) · (−2) = <strong>34</strong>", "Usa la jerarquía de operaciones"],
+      ["8 · (−6) − (−8) · 7", 8, "Primero las multiplicaciones: 8 · (−6) = −48 y (−8) · 7 = −56 → Después la resta: −48 − (−56) = −48 + 56 = <strong>8</strong>", "Usa la jerarquía de operaciones"],
+      ["3 · 5 − (−8) · (−7)", -41, "Primero las multiplicaciones: 3 · 5 = 15 y (−8) · (−7) = 56 → Después la resta: 15 − 56 = <strong>−41</strong>", "Usa la jerarquía de operaciones"],
+      ["7 · (−4) − (−8) · (−8)", -92, "Primero las multiplicaciones: 7 · (−4) = −28 y (−8) · (−8) = 64 → Después la resta: −28 − 64 = <strong>−92</strong>", "Usa la jerarquía de operaciones"],
+      ["(−6) · 6 − (−5) · 4", -16, "Primero las multiplicaciones: (−6) · 6 = −36 y (−5) · 4 = −20 → Después la resta: −36 − (−20) = −36 + 20 = <strong>−16</strong>", "Usa la jerarquía de operaciones"],
+      ["7 · (−5) − (−4) · (−2)", -43, "Primero las multiplicaciones: 7 · (−5) = −35 y (−4) · (−2) = 8 → Después la resta: −35 − 8 = <strong>−43</strong>", "Usa la jerarquía de operaciones"],
+      ["(−6) · (−3) − (−3) · (−4)", 6, "Primero las multiplicaciones: (−6) · (−3) = 18 y (−3) · (−4) = 12 → Después la resta: 18 − 12 = <strong>6</strong>", "Usa la jerarquía de operaciones"],
+      ["(−8) · (−7) − 8 · 4", 24, "Primero las multiplicaciones: (−8) · (−7) = 56 y 8 · 4 = 32 → Después la resta: 56 − 32 = <strong>24</strong>", "Usa la jerarquía de operaciones"],
+      ["5 · 7 − 8 · (−5)", 75, "Primero las multiplicaciones: 5 · 7 = 35 y 8 · (−5) = −40 → Después la resta: 35 − (−40) = 35 + 40 = <strong>75</strong>", "Usa la jerarquía de operaciones"],
+      ["7 · 5 − 6 · (−2)", 47, "Primero las multiplicaciones: 7 · 5 = 35 y 6 · (−2) = −12 → Después la resta: 35 − (−12) = 35 + 12 = <strong>47</strong>", "Usa la jerarquía de operaciones"],
+      ["(−8) · 7 − (−6) · (−7)", -98, "Primero las multiplicaciones: (−8) · 7 = −56 y (−6) · (−7) = 42 → Después la resta: −56 − 42 = <strong>−98</strong>", "Usa la jerarquía de operaciones"],
+      ["−10 − 3(−9 + 7)", -4, "Primero el paréntesis: −9 + 7 = −2 → Después la multiplicación: 3 · (−2) = −6 → Al final la resta: −10 − (−6) = −10 + 6 = <strong>−4</strong>", "Usa la jerarquía de operaciones"],
+      ["−7 − 6(−3 + 7)", -31, "Primero el paréntesis: −3 + 7 = 4 → Después la multiplicación: 6 · 4 = 24 → Al final la resta: −7 − 24 = <strong>−31</strong>", "Usa la jerarquía de operaciones"],
+      ["3 − 3(−6 − 3)", 30, "Primero el paréntesis: −6 − 3 = −9 → Después la multiplicación: 3 · (−9) = −27 → Al final la resta: 3 − (−27) = 3 + 27 = <strong>30</strong>", "Usa la jerarquía de operaciones"],
+      ["−1 − 5(6 − 8)", 9, "Primero el paréntesis: 6 − 8 = −2 → Después la multiplicación: 5 · (−2) = −10 → Al final la resta: −1 − (−10) = −1 + 10 = <strong>9</strong>", "Usa la jerarquía de operaciones"],
+      ["2 − 3(4 + 1)", -13, "Primero el paréntesis: 4 + 1 = 5 → Después la multiplicación: 3 · 5 = 15 → Al final la resta: 2 − 15 = <strong>−13</strong>", "Usa la jerarquía de operaciones"],
+      ["−1 − 2(7 − 1)", -13, "Primero el paréntesis: 7 − 1 = 6 → Después la multiplicación: 2 · 6 = 12 → Al final la resta: −1 − 12 = <strong>−13</strong>", "Usa la jerarquía de operaciones"],
+      ["−4 − 4(2 − 6)", 12, "Primero el paréntesis: 2 − 6 = −4 → Después la multiplicación: 4 · (−4) = −16 → Al final la resta: −4 − (−16) = −4 + 16 = <strong>12</strong>", "Usa la jerarquía de operaciones"],
+      ["10 − 6(3 − 7)", 34, "Primero el paréntesis: 3 − 7 = −4 → Después la multiplicación: 6 · (−4) = −24 → Al final la resta: 10 − (−24) = 10 + 24 = <strong>34</strong>", "Usa la jerarquía de operaciones"],
+      ["7 − 5(−1 − 3)", 27, "Primero el paréntesis: −1 − 3 = −4 → Después la multiplicación: 5 · (−4) = −20 → Al final la resta: 7 − (−20) = 7 + 20 = <strong>27</strong>", "Usa la jerarquía de operaciones"],
+      ["7 − 4(−7 + 1)", 31, "Primero el paréntesis: −7 + 1 = −6 → Después la multiplicación: 4 · (−6) = −24 → Al final la resta: 7 − (−24) = 7 + 24 = <strong>31</strong>", "Usa la jerarquía de operaciones"],
+      ["6 + (−4) · (−3)²", -30, "Primero la potencia: (−3)² = 9 → Después la multiplicación: (−4) · 9 = −36 → Al final la suma: 6 − 36 = <strong>−30</strong>", "Usa la jerarquía de operaciones"],
+      ["14 − 3² · (−5)", 59, "Primero la potencia: 3² = 9 → Después la multiplicación: 9 · (−5) = −45 → Al final la resta: 14 − (−45) = 14 + 45 = <strong>59</strong>", "Usa la jerarquía de operaciones"],
+      ["3 − 2² · 4", -13, "Primero la potencia: 2² = 4 → Después la multiplicación: 4 · 4 = 16 → Al final la resta: 3 − 16 = <strong>−13</strong>", "Usa la jerarquía de operaciones"],
+      ["12 − 2² · 4", -4, "Primero la potencia: 2² = 4 → Después la multiplicación: 4 · 4 = 16 → Al final la resta: 12 − 16 = <strong>−4</strong>", "Usa la jerarquía de operaciones"],
+      ["11 − 4² · (−3)", 59, "Primero la potencia: 4² = 16 → Después la multiplicación: 16 · (−3) = −48 → Al final la resta: 11 − (−48) = 11 + 48 = <strong>59</strong>", "Usa la jerarquía de operaciones"],
+      ["5 + (−5) · (−5)²", -120, "Primero la potencia: (−5)² = 25 → Después la multiplicación: (−5) · 25 = −125 → Al final la suma: 5 − 125 = <strong>−120</strong>", "Usa la jerarquía de operaciones"],
+      ["7 + (−4) · (−4)²", -57, "Primero la potencia: (−4)² = 16 → Después la multiplicación: (−4) · 16 = −64 → Al final la suma: 7 − 64 = <strong>−57</strong>", "Usa la jerarquía de operaciones"],
+      ["4 + (−5) · (−2)²", -16, "Primero la potencia: (−2)² = 4 → Después la multiplicación: (−5) · 4 = −20 → Al final la suma: 4 − 20 = <strong>−16</strong>", "Usa la jerarquía de operaciones"],
+      ["11 + (−3) · (−5)²", -64, "Primero la potencia: (−5)² = 25 → Después la multiplicación: (−3) · 25 = −75 → Al final la suma: 11 − 75 = <strong>−64</strong>", "Usa la jerarquía de operaciones"],
+      ["2 + (−4) · (−5)²", -98, "Primero la potencia: (−5)² = 25 → Después la multiplicación: (−4) · 25 = −100 → Al final la suma: 2 − 100 = <strong>−98</strong>", "Usa la jerarquía de operaciones"],
+      ["(−4 + 7)² ÷ (−9)", -1, "Primero el paréntesis: −4 + 7 = 3 → Después la potencia: 3² = 9 → Al final la división: 9 ÷ (−9) = <strong>−1</strong>", "Usa la jerarquía de operaciones"],
+      ["(−3 + 6)² ÷ 3", 3, "Primero el paréntesis: −3 + 6 = 3 → Después la potencia: 3² = 9 → Al final la división: 9 ÷ 3 = <strong>3</strong>", "Usa la jerarquía de operaciones"],
+      ["(4 − 8)² ÷ 8", 2, "Primero el paréntesis: 4 − 8 = −4 → Después la potencia: (−4)² = 16 → Al final la división: 16 ÷ 8 = <strong>2</strong>", "Usa la jerarquía de operaciones"],
+      ["(−2 − 2)² ÷ (−4)", -4, "Primero el paréntesis: −2 − 2 = −4 → Después la potencia: (−4)² = 16 → Al final la división: 16 ÷ (−4) = <strong>−4</strong>", "Usa la jerarquía de operaciones"],
+      ["(7 − 5)² ÷ 4", 1, "Primero el paréntesis: 7 − 5 = 2 → Después la potencia: 2² = 4 → Al final la división: 4 ÷ 4 = <strong>1</strong>", "Usa la jerarquía de operaciones"],
+      ["(4 + 5)² ÷ (−3)", -27, "Primero el paréntesis: 4 + 5 = 9 → Después la potencia: 9² = 81 → Al final la división: 81 ÷ (−3) = <strong>−27</strong>", "Usa la jerarquía de operaciones"],
+      ["(5 + 2)² ÷ 7", 7, "Primero el paréntesis: 5 + 2 = 7 → Después la potencia: 7² = 49 → Al final la división: 49 ÷ 7 = <strong>7</strong>", "Usa la jerarquía de operaciones"],
+      ["(3 + 1)² ÷ (−2)", -8, "Primero el paréntesis: 3 + 1 = 4 → Después la potencia: 4² = 16 → Al final la división: 16 ÷ (−2) = <strong>−8</strong>", "Usa la jerarquía de operaciones"],
+      ["(6 − 1)² ÷ (−5)", -5, "Primero el paréntesis: 6 − 1 = 5 → Después la potencia: 5² = 25 → Al final la división: 25 ÷ (−5) = <strong>−5</strong>", "Usa la jerarquía de operaciones"],
+      ["(−1 + 5)² ÷ 4", 4, "Primero el paréntesis: −1 + 5 = 4 → Después la potencia: 4² = 16 → Al final la división: 16 ÷ 4 = <strong>4</strong>", "Usa la jerarquía de operaciones"],
+      ["−2 − 3(−4 + 6)²", -14, "Paréntesis: −4 + 6 = 2 → Potencia: 2² = 4 → Multiplicación: 3 · 4 = 12 → Resta: −2 − 12 = <strong>−14</strong>", "Usa la jerarquía de operaciones"],
+      ["−7 − 4(1 − 6)²", -107, "Paréntesis: 1 − 6 = −5 → Potencia: (−5)² = 25 → Multiplicación: 4 · 25 = 100 → Resta: −7 − 100 = <strong>−107</strong>", "Usa la jerarquía de operaciones"],
+      ["−2 − 2(3 + 2)²", -52, "Paréntesis: 3 + 2 = 5 → Potencia: 5² = 25 → Multiplicación: 2 · 25 = 50 → Resta: −2 − 50 = <strong>−52</strong>", "Usa la jerarquía de operaciones"],
+      ["2 − 3(−1 − 4)²", -73, "Paréntesis: −1 − 4 = −5 → Potencia: (−5)² = 25 → Multiplicación: 3 · 25 = 75 → Resta: 2 − 75 = <strong>−73</strong>", "Usa la jerarquía de operaciones"],
+      ["−2 − 4(−5 + 1)²", -66, "Paréntesis: −5 + 1 = −4 → Potencia: (−4)² = 16 → Multiplicación: 4 · 16 = 64 → Resta: −2 − 64 = <strong>−66</strong>", "Usa la jerarquía de operaciones"],
+      ["1 − 2(−5 − 1)²", -71, "Paréntesis: −5 − 1 = −6 → Potencia: (−6)² = 36 → Multiplicación: 2 · 36 = 72 → Resta: 1 − 72 = <strong>−71</strong>", "Usa la jerarquía de operaciones"],
+      ["−6 − 2(−1 − 5)²", -78, "Paréntesis: −1 − 5 = −6 → Potencia: (−6)² = 36 → Multiplicación: 2 · 36 = 72 → Resta: −6 − 72 = <strong>−78</strong>", "Usa la jerarquía de operaciones"],
+      ["−10 − 2(5 + 1)²", -82, "Paréntesis: 5 + 1 = 6 → Potencia: 6² = 36 → Multiplicación: 2 · 36 = 72 → Resta: −10 − 72 = <strong>−82</strong>", "Usa la jerarquía de operaciones"],
+      ["5 − 3(−2 − 2)²", -43, "Paréntesis: −2 − 2 = −4 → Potencia: (−4)² = 16 → Multiplicación: 3 · 16 = 48 → Resta: 5 − 48 = <strong>−43</strong>", "Usa la jerarquía de operaciones"],
+      ["−8 − 2(2 + 1)²", -26, "Paréntesis: 2 + 1 = 3 → Potencia: 3² = 9 → Multiplicación: 2 · 9 = 18 → Resta: −8 − 18 = <strong>−26</strong>", "Usa la jerarquía de operaciones"],
+      ["−3² + 15 ÷ 3 · (−4) − 9", -38, "Potencia: −3² = −9 → División: 15 ÷ 3 = 5 → Multiplicación: 5 · (−4) = −20 → Suma: −9 − 20 = −29 → Resta: −29 − 9 = <strong>−38</strong>", "Usa la jerarquía de operaciones"],
+      ["−3² + (−8) ÷ (−4) · (−4) − 8", -25, "Potencia: −3² = −9 → División: (−8) ÷ (−4) = 2 → Multiplicación: 2 · (−4) = −8 → Suma: −9 − 8 = −17 → Resta: −17 − 8 = <strong>−25</strong>", "Usa la jerarquía de operaciones"],
+      ["−2² + (−6) ÷ 2 · 3 − 6", -19, "Potencia: −2² = −4 → División: (−6) ÷ 2 = −3 → Multiplicación: (−3) · 3 = −9 → Suma: −4 − 9 = −13 → Resta: −13 − 6 = <strong>−19</strong>", "Usa la jerarquía de operaciones"],
+      ["−3² + (−10) ÷ (−5) · 3 − 5", -8, "Potencia: −3² = −9 → División: (−10) ÷ (−5) = 2 → Multiplicación: 2 · 3 = 6 → Suma: −9 + 6 = −3 → Resta: −3 − 5 = <strong>−8</strong>", "Usa la jerarquía de operaciones"],
+      ["−5² + 15 ÷ 5 · 3 − (−6)", -10, "Potencia: −5² = −25 → División: 15 ÷ 5 = 3 → Multiplicación: 3 · 3 = 9 → Suma: −25 + 9 = −16 → Resta: −16 − (−6) = −16 + 6 = <strong>−10</strong>", "Usa la jerarquía de operaciones"],
+      ["−4² + 20 ÷ (−4) · 3 − (−2)", -29, "Potencia: −4² = −16 → División: 20 ÷ (−4) = −5 → Multiplicación: (−5) · 3 = −15 → Suma: −16 − 15 = −31 → Resta: −31 − (−2) = −31 + 2 = <strong>−29</strong>", "Usa la jerarquía de operaciones"],
+      ["−4² + 36 ÷ 6 · 4 − 1", 7, "Potencia: −4² = −16 → División: 36 ÷ 6 = 6 → Multiplicación: 6 · 4 = 24 → Suma: −16 + 24 = 8 → Resta: 8 − 1 = <strong>7</strong>", "Usa la jerarquía de operaciones"],
+      ["−4² + (−18) ÷ (−3) · (−4) − (−8)", -32, "Potencia: −4² = −16 → División: (−18) ÷ (−3) = 6 → Multiplicación: 6 · (−4) = −24 → Suma: −16 − 24 = −40 → Resta: −40 − (−8) = −40 + 8 = <strong>−32</strong>", "Usa la jerarquía de operaciones"],
+      ["−2² + (−6) ÷ 2 · (−4) − 4", 4, "Potencia: −2² = −4 → División: (−6) ÷ 2 = −3 → Multiplicación: (−3) · (−4) = 12 → Suma: −4 + 12 = 8 → Resta: 8 − 4 = <strong>4</strong>", "Usa la jerarquía de operaciones"],
+      ["−2² + (−15) ÷ (−3) · 2 − (−2)", 8, "Potencia: −2² = −4 → División: (−15) ÷ (−3) = 5 → Multiplicación: 5 · 2 = 10 → Suma: −4 + 10 = 6 → Resta: 6 − (−2) = 6 + 2 = <strong>8</strong>", "Usa la jerarquía de operaciones"],
+      ["(−3)(−6 + 1) − 14 ÷ 2", 8, "Paréntesis: −6 + 1 = −5 → Multiplicación: (−3) · (−5) = 15 → División: 14 ÷ 2 = 7 → Resta: 15 − 7 = <strong>8</strong>", "Usa la jerarquía de operaciones"],
+      ["(−4)(−4 − 9) − 35 ÷ (−5)", 59, "Paréntesis: −4 − 9 = −13 → Multiplicación: (−4) · (−13) = 52 → División: 35 ÷ (−5) = −7 → Resta: 52 − (−7) = 52 + 7 = <strong>59</strong>", "Usa la jerarquía de operaciones"],
+      ["(−4)(−9 + 2) − 12 ÷ 2", 22, "Paréntesis: −9 + 2 = −7 → Multiplicación: (−4) · (−7) = 28 → División: 12 ÷ 2 = 6 → Resta: 28 − 6 = <strong>22</strong>", "Usa la jerarquía de operaciones"],
+      ["2(−6 + 5) − 20 ÷ (−5)", 2, "Paréntesis: −6 + 5 = −1 → Multiplicación: 2 · (−1) = −2 → División: 20 ÷ (−5) = −4 → Resta: −2 − (−4) = −2 + 4 = <strong>2</strong>", "Usa la jerarquía de operaciones"],
+      ["(−4)(−6 − 4) − (−15) ÷ 3", 45, "Paréntesis: −6 − 4 = −10 → Multiplicación: (−4) · (−10) = 40 → División: (−15) ÷ 3 = −5 → Resta: 40 − (−5) = 40 + 5 = <strong>45</strong>", "Usa la jerarquía de operaciones"],
+      ["(−6)(−4 − 1) − 10 ÷ 2", 25, "Paréntesis: −4 − 1 = −5 → Multiplicación: (−6) · (−5) = 30 → División: 10 ÷ 2 = 5 → Resta: 30 − 5 = <strong>25</strong>", "Usa la jerarquía de operaciones"],
+      ["(−2)(1 − 4) − (−40) ÷ 5", 14, "Paréntesis: 1 − 4 = −3 → Multiplicación: (−2) · (−3) = 6 → División: (−40) ÷ 5 = −8 → Resta: 6 − (−8) = 6 + 8 = <strong>14</strong>", "Usa la jerarquía de operaciones"],
+      ["2(6 − 4) − (−35) ÷ 5", 11, "Paréntesis: 6 − 4 = 2 → Multiplicación: 2 · 2 = 4 → División: (−35) ÷ 5 = −7 → Resta: 4 − (−7) = 4 + 7 = <strong>11</strong>", "Usa la jerarquía de operaciones"],
+      ["6(−9 + 4) − 20 ÷ 5", -34, "Paréntesis: −9 + 4 = −5 → Multiplicación: 6 · (−5) = −30 → División: 20 ÷ 5 = 4 → Resta: −30 − 4 = <strong>−34</strong>", "Usa la jerarquía de operaciones"],
+      ["(−3)(3 − 5) − 20 ÷ (−4)", 11, "Paréntesis: 3 − 5 = −2 → Multiplicación: (−3) · (−2) = 6 → División: 20 ÷ (−4) = −5 → Resta: 6 − (−5) = 6 + 5 = <strong>11</strong>", "Usa la jerarquía de operaciones"]
+    ];
 
     function parseInt2(txt) { // acepta "-8", "−8", "+8", "8"
       var s = txt.replace(/[−–]/g, '-').replace(/\s+/g, '');
@@ -277,61 +396,65 @@
     }
 
     // ---------- tarjetas ----------
-    var N = 10;
-    var grid = document.getElementById('sg-grid'), scoreEl = document.getElementById('sg-score'), done = {};
-    function score() {
-      var n = Object.keys(done).length;
-      scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
-    }
-    function pick() { // 10 al azar, ordenados por tipo
-      var idx = BANK.map(function (e, i) { return i; });
-      for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
-      return idx.slice(0, N).sort(function (p, q) { return p - q; });
-    }
-    function makeCard(bi, idx) {
-      var ex = BANK[bi], ans = ex[1];
-      var card = document.createElement('div');
-      card.className = 'practice-card';
-      card.innerHTML =
-        '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + ex[0] + '</span></div>' +
-        '<div class="practice-ask" style="margin-top:0;">' + TIPO[Math.floor(bi / 25)] + '</div>' +
-        '<div class="practice-row"><span class="eq">=</span><input type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tu respuesta del ejercicio ' + (idx + 1) + '">' +
-        '<button type="button" class="practice-check">Comprobar</button></div>' +
-        '<div class="practice-fb" aria-live="polite"></div>';
-      grid.appendChild(card);
-      var input = card.querySelector('input'), fb = card.querySelector('.practice-fb');
-      function check() {
-        var v = input.value.trim(), r;
-        card.classList.remove('ok', 'bad');
-        if (!v) { fb.innerHTML = 'Escribe tu respuesta en el cuadro.'; return; }
-        r = parseInt2(v);
-        if (r === null) {
-          card.classList.add('bad');
-          fb.innerHTML = '<span class="no">No entendí lo que escribiste.</span> Escribe sólo un número entero, por ejemplo <strong>−12</strong> o <strong>7</strong>.';
-          return;
-        }
-        if (r === ans) {
-          card.classList.add('ok'); done[idx] = 1; score();
-          fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span><div class="sol" style="font-family:inherit;">' + ex[2] + '</div>';
-          return;
-        }
-        card.classList.add('bad'); delete done[idx]; score();
-        var hint = (r === -ans && ans !== 0) ? 'El número está bien, pero <strong>revisa el signo</strong>.' : 'Revisa el procedimiento:';
-        fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + hint + '<div class="sol" style="font-family:inherit;">' + ex[2] + '</div>';
+    function practice(BANK, prefix, anchorId) {
+      var N = 10;
+      var grid = document.getElementById(prefix + '-grid'), scoreEl = document.getElementById(prefix + '-score'), done = {};
+      function score() {
+        var n = Object.keys(done).length;
+        scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
       }
-      card.querySelector('.practice-check').addEventListener('click', check);
-      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') check(); });
-    }
-    function newSet() {
-      grid.innerHTML = ''; done = {};
-      pick().forEach(makeCard);
-      score();
-    }
-    document.getElementById('sg-new').addEventListener('click', function () {
+      function pick() { // 10 al azar, en el orden del banco
+        var idx = BANK.map(function (e, i) { return i; });
+        for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+        return idx.slice(0, N).sort(function (p, q) { return p - q; });
+      }
+      function makeCard(bi, idx) {
+        var ex = BANK[bi], ans = ex[1];
+        var card = document.createElement('div');
+        card.className = 'practice-card';
+        card.innerHTML =
+          '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + ex[0] + '</span></div>' +
+          '<div class="practice-ask" style="margin-top:0;">' + ex[3] + '</div>' +
+          '<div class="practice-row"><span class="eq">=</span><input type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tu respuesta del ejercicio ' + (idx + 1) + '">' +
+          '<button type="button" class="practice-check">Comprobar</button></div>' +
+          '<div class="practice-fb" aria-live="polite"></div>';
+        grid.appendChild(card);
+        var input = card.querySelector('input'), fb = card.querySelector('.practice-fb');
+        function check() {
+          var v = input.value.trim(), r;
+          card.classList.remove('ok', 'bad');
+          if (!v) { fb.innerHTML = 'Escribe tu respuesta en el cuadro.'; return; }
+          r = parseInt2(v);
+          if (r === null) {
+            card.classList.add('bad');
+            fb.innerHTML = '<span class="no">No entendí lo que escribiste.</span> Escribe sólo un número entero, por ejemplo <strong>−12</strong> o <strong>7</strong>.';
+            return;
+          }
+          if (r === ans) {
+            card.classList.add('ok'); done[idx] = 1; score();
+            fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span><div class="sol" style="font-family:inherit;">' + ex[2] + '</div>';
+            return;
+          }
+          card.classList.add('bad'); delete done[idx]; score();
+          var hint = (r === -ans && ans !== 0) ? 'El número está bien, pero <strong>revisa el signo</strong>.' : 'Revisa el procedimiento:';
+          fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + hint + '<div class="sol" style="font-family:inherit;">' + ex[2] + '</div>';
+        }
+        card.querySelector('.practice-check').addEventListener('click', check);
+        input.addEventListener('keydown', function (e) { if (e.key === 'Enter') check(); });
+      }
+      function newSet() {
+        grid.innerHTML = ''; done = {};
+        pick().forEach(makeCard);
+        score();
+      }
+      document.getElementById(prefix + '-new').addEventListener('click', function () {
+        newSet();
+        document.getElementById(anchorId).scrollIntoView({ behavior: 'smooth' });
+      });
       newSet();
-      document.getElementById('ejercicios-signos').scrollIntoView({ behavior: 'smooth' });
-    });
-    newSet();
+    }
+    practice(SIGNOS, 'sg', 'ejercicios-signos');
+    practice(JERARQUIA, 'jo', 'ejercicios-jerarquia');
   })();
   </script>
 
