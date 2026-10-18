@@ -46,7 +46,7 @@
 
     <div class="pg-controls">
       <div class="pg-field">
-        <label class="pg-field-label" for="ax2-input">Escribe a (ej. 1/2, −3/4, 2)</label>
+        <label class="pg-field-label no-caps" for="ax2-input">Escribe a (ej. 1/2, −3/4, 2)</label>
         <div class="pg-field-row">
           <span style="font-family:'IBM Plex Mono',monospace; font-size:1rem; font-weight:700; color:var(--forest); text-transform:none;">a =</span>
           <input type="text" id="ax2-input" class="pg-box wide" value="1/2" inputmode="text" autocomplete="off" style="width:90px;">
@@ -230,7 +230,7 @@
         else lines.push('<strong>|a| = 1:</strong> tiene la <strong>misma abertura</strong> que x²' + (a < 0 ? ', pero volteada.' : '.'));
       }
       lines.push('Cada punto (x, y) de x² se mueve a <strong>(x, a·y)</strong>. Por ejemplo, (2, 4) → (2, ' + aH + ' · 4) = (2, ' + fracHTML(mul(F, 4)) + ').');
-      msgEl.innerHTML = '<div class="k">¿Qué pasa con a = ' + aH + '?</div>' + lines.map(function (l) { return '<p style="margin:0.35rem 0;">' + l + '</p>'; }).join('');
+      msgEl.innerHTML = '<div class="k no-caps">¿Qué pasa con a = ' + aH + '?</div>' + lines.map(function (l) { return '<p style="margin:0.35rem 0;">' + l + '</p>'; }).join('');
       eqEl.innerHTML = 'f(x) = ' + (F.n === 0 ? '0 · x² = 0' : coefHTML(F) + 'x²');
       tb.innerHTML = XS.map(function (x) {
         var y = mul(F, x * x), out = Math.abs(val(y)) > YL ? ' <span style="color:#b3412e; font-size:0.8rem;">(fuera de la gráfica)</span>' : '';
