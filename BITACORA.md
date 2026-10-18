@@ -814,3 +814,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   los signos?". La clase de signos queda sólo en Matemáticas 1.
 - En la página de inicio (`index.html`) se quitó la etiqueta "Próximamente" de Matemáticas 1,
   porque ya tiene contenido. Se actualizó CLAUDE.md.
+
+## 2026-10-18 (Leyes de los signos: se quita "¡Cuidado al sustituir!")
+- A pedido de Carmen se quitó el recuadro "¡Cuidado al sustituir!" de la sección 2 (potencias)
+  en `matematicas-1/leyes-de-los-signos.html`.
