@@ -998,3 +998,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (por ejemplo (8 + (−8))²). Todas las respuestas se volvieron a verificar.
 - Enlaces: en el Tema 5, "Jerarquía de operaciones usando números ℤ" lleva a la página nueva;
   también el subtema de jerarquía del Tema 1 de Matemáticas 2.
+
+## 2026-10-18 (Nuevo título de la clase de signos)
+- A pedido de Carmen, la clase `matematicas-1/leyes-de-los-signos.html` ahora se titula
+  **"Los números enteros y las leyes de los signos en sus operaciones"** (también en la pestaña
+  del navegador, en el título de su rúbrica y en el recuadro del Tema 5). El nombre del archivo no
+  cambió, para que los enlaces sigan funcionando.
