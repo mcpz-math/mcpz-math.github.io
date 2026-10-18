@@ -954,3 +954,19 @@ Registro de lo que vamos haciendo, en orden cronológico.
 ## 2026-10-18 (Temario de Matemáticas 2: sin la ecuación en el Tema 3)
 - A pedido de Carmen se quitó del temario (`matematicas-2/index.html`) la etiqueta
   "a(x + b) + c = d(x + e) + f" debajo de "Ecuaciones lineales". La página del Tema 3 no cambió.
+
+## 2026-10-18 (Matemáticas 1: temario)
+- A partir de la hoja de registro de Matemáticas I (semestre 2025_2026A, 28 temas con su objetivo)
+  se armó el temario en `matematicas-1/index.html`, con el mismo formato que Matemáticas 2 y 3.
+  Los puntos se agruparon en 11 temas, en el orden de la hoja (cada uno con su página
+  `matematicas-1/tema-XX-….html`, un bloque por subtema con su objetivo y "Materiales y tareas"):
+  01 Razonamiento lógico y datos · 02 Sistemas de numeración y sucesiones · 03 Operaciones básicas ·
+  04 Notación científica · 05 Números enteros · 06 Ecuaciones de primer grado · 07 Divisibilidad ·
+  08 Geometría plana · 09 Ángulos · 10 Rectas y puntos notables del triángulo · 11 Áreas de figuras
+  combinadas.
+- El subtema "Jerarquía de operaciones usando números ℤ" (Tema 5) enlaza a la clase "Las leyes de
+  los signos". Se quitó el recuadro "Temario: Próximamente".
+- En la página de inicio se cambió la descripción de Matemáticas 1 por los temas de la hoja.
+- Por confirmar con Carmen: los nombres de los temas (la hoja no los trae), si "Suma, resta…" del
+  punto 5 son operaciones básicas y las del punto 7 son con notación científica, y si "Medianas y
+  bisectriz" (punto 24) debería decir "Medianas y baricentro".
