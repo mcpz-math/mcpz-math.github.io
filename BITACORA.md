@@ -761,3 +761,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Se cambiaron 20 funciones del banco para que tengan a = 1 o a = −1. El banco sigue con 100:
   40 flacas, 40 gordas y 20 iguales que x²; 50 arriba y 50 abajo; 40 raíces reales y diferentes,
   40 imaginarias y 20 reales y repetidas.
+
+## 2026-10-18 (ax² + b: se quita "Próximamente")
+- A pedido de Carmen se quitó el recuadro "Próximamente" al final de
+  `matematicas-3/tema-05-ax-cuadrada-mas-b.html`.
