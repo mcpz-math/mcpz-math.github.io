@@ -824,3 +824,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
   los dos ejemplos) de `matematicas-1/leyes-de-los-signos.html`. Las secciones siguientes se
   renumeraron: Errores más comunes (4) y Ejercicios (5).
 - Se actualizó la descripción de la tarjeta en `matematicas-1/index.html`.
+
+## 2026-10-18 (Leyes de los signos: sección 4 regresa como "Jerarquía de operaciones")
+- A pedido de Carmen, en lugar de quitar la sección 4 se restauró con el título
+  **"4 · Jerarquía de operaciones"** (mismo contenido: los 4 pasos y los dos ejemplos).
+  Errores más comunes vuelve a ser la 5 y Ejercicios la 6.
+- La tarjeta de `matematicas-1/index.html` menciona la jerarquía de operaciones.

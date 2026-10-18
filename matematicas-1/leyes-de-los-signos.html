@@ -98,7 +98,36 @@
     <p style="margin:0.6rem 0 0;">Dos signos menos seguidos, <strong>− (−</strong>, se convierten en un <strong>+</strong>.</p>
   </div>
 
-  <p class="section-label">4 · Errores más comunes</p>
+  <p class="section-label">4 · Jerarquía de operaciones</p>
+  <div class="prose">
+    <p>Al evaluar una función se respeta este <strong>orden</strong>. Hazlo paso a paso, sin saltarte ninguno:</p>
+  </div>
+  <ol class="steps">
+    <li><span><strong>Sustituye</strong> x por el número, <strong>entre paréntesis</strong>.</span></li>
+    <li><span><strong>Primero la potencia:</strong> eleva el número al cuadrado (siempre da positivo o cero).</span></li>
+    <li><span><strong>Luego multiplica por a</strong>, usando la ley de los signos.</span></li>
+    <li><span><strong>Al final suma b</strong>, con las reglas de suma y resta.</span></li>
+  </ol>
+  <div class="example-box">
+    <h2>Ejemplo 1: f(x) = −2x² + 3, &nbsp;calcula f(−1)</h2>
+    <ul class="def-list">
+      <li>Sustituye: f(−1) = −2(−1)² + 3</li>
+      <li>Potencia: (−1)² = 1 → −2(1) + 3</li>
+      <li>Multiplica: −2 · 1 = −2 → −2 + 3</li>
+      <li>Suma: −2 + 3 = <strong>1</strong></li>
+    </ul>
+  </div>
+  <div class="example-box">
+    <h2>Ejemplo 2: f(x) = −x² − 4, &nbsp;calcula f(−3)</h2>
+    <ul class="def-list">
+      <li>Sustituye: f(−3) = −(−3)² − 4</li>
+      <li>Potencia: (−3)² = 9 → −(9) − 4</li>
+      <li>Multiplica: −1 · 9 = −9 → −9 − 4</li>
+      <li>Suma: −9 − 4 = <strong>−13</strong> (mismo signo: se suman y se queda el menos)</li>
+    </ul>
+  </div>
+
+  <p class="section-label">5 · Errores más comunes</p>
   <div class="table-scroll">
     <table>
       <thead>
@@ -116,7 +145,7 @@
     </table>
   </div>
 
-  <p class="section-label" id="ejercicios-signos">5 · Ejercicios: practica los signos</p>
+  <p class="section-label" id="ejercicios-signos">6 · Ejercicios: practica los signos</p>
   <div class="callout">
     <div class="k">Instrucciones</div>
     <p>Resuelve cada operación, escribe el resultado y oprime <strong>Comprobar</strong> (o la tecla Enter).
