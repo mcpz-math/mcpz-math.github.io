@@ -1032,3 +1032,13 @@ Registro de lo que vamos haciendo, en orden cronológico.
   07 Geometría plana · 08 Ángulos · 09 Rectas y puntos notables del triángulo · 10 Áreas de figuras combinadas.
 - Se actualizaron todos los enlaces (también el de Matemáticas 2 a la página de jerarquía). Se revisó
   que no quedara ningún enlace roto.
+
+## 2026-10-18 (Tema 2 de Matemáticas 1: introducción a los números naturales)
+- A pedido de Carmen, en `matematicas-1/tema-02-numeros-naturales.html` (antes de los subtemas) se agregó
+  una introducción breve:
+  - "¿De dónde vienen?": se contaba con marcas en huesos o palos (hueso de Ishango, unos 20 000 años);
+    luego los sistemas de numeración de egipcios, babilonios, mayas (con cero) y romanos; las cifras
+    indoarábigas (India → mundo árabe → Europa) y el valor posicional.
+  - "¿Por qué son importantes?": ℕ = {1, 2, 3, …}; sirven para contar, ordenar, identificar y son la
+    base de los demás conjuntos de números.
+  - "Para recordar": no tienen fin; algunos libros incluyen el 0, en el curso se usa ℕ = {1, 2, 3, …}.
