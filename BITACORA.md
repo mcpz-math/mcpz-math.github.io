@@ -1042,3 +1042,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   - "¿Por qué son importantes?": ℕ = {1, 2, 3, …}; sirven para contar, ordenar, identificar y son la
     base de los demás conjuntos de números.
   - "Para recordar": no tienen fin; algunos libros incluyen el 0, en el curso se usa ℕ = {1, 2, 3, …}.
+
+## 2026-10-18 (Matemáticas 1: "Medianas y baricentro")
+- A pedido de Carmen, el subtema "Medianas y bisectriz" del Tema 9 (Rectas y puntos notables del
+  triángulo) ahora dice **"Medianas y baricentro"**, en el temario y en la página del tema.
