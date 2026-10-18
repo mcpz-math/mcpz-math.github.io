@@ -869,3 +869,13 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
   font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.85rem; color: var(--moss);
 }
 .practice-score strong { color: var(--forest); font-size: 1rem; }
+/* Ejercicios de opción (botones para elegir una respuesta) */
+.practice-ask { font-size: 0.86rem; font-weight: 700; color: var(--forest); margin: 0.55rem 0 0.3rem; }
+.practice-opts { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.practice-opts button {
+  font-family: 'Karla', system-ui, sans-serif; font-size: 0.85rem;
+  border: 1px solid var(--line); background: var(--cream); color: var(--forest);
+  border-radius: 999px; padding: 0.3rem 0.8rem; cursor: pointer;
+}
+.practice-opts button:hover { border-color: var(--moss); }
+.practice-opts button.on { background: var(--forest); border-color: var(--forest); color: var(--cream); font-weight: 700; }
