@@ -883,3 +883,16 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Competencias: (1) ley de los signos al multiplicar y dividir, (2) potencias de números negativos,
   (3) suma y resta con signo, (4) jerarquía de operaciones, (5) identifica y corrige errores,
   (6) argumenta y comunica el procedimiento.
+
+## 2026-10-18 (Jerarquía de operaciones: ejercicios Nivel 2)
+- A pedido de Carmen, los ejercicios de jerarquía de operaciones de
+  `matematicas-1/leyes-de-los-signos.html` ahora tienen dos niveles:
+  - **"7 · … Nivel 1"**: el banco de 100 que ya existía.
+  - **"8 · … Nivel 2"** (nuevo): banco de 100 ejercicios más largos, con **paréntesis dentro de
+    paréntesis, corchetes [ ] y llaves { }**. Diez formas (10 de cada una), por ejemplo
+    a − [b + c(d − e)], [(a + b)² − c] ÷ d, a − p[b − q(c − d)], {a − [b + (c − d)]} · p y
+    a − {p · [c − (d + e)²] + f}.
+- Mismo formato (10 al azar, "Comprobar", aviso de signo). Si la respuesta está mal, el
+  procedimiento muestra **cómo va quedando toda la operación** después de cada paso, de adentro
+  hacia afuera. Todas las respuestas son enteras y se verificaron con la computadora; se evitaron
+  divisiones entre ±1 y grupos que valen 0.
