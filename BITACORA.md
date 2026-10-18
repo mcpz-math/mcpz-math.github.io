@@ -1046,3 +1046,17 @@ Registro de lo que vamos haciendo, en orden cronológico.
 ## 2026-10-18 (Matemáticas 1: "Medianas y baricentro")
 - A pedido de Carmen, el subtema "Medianas y bisectriz" del Tema 9 (Rectas y puntos notables del
   triángulo) ahora dice **"Medianas y baricentro"**, en el temario y en la página del tema.
+
+## 2026-10-18 (Video: medianas y baricentro)
+- A pedido de Carmen se hizo un video (2 min 41 s, estilo "Compás", con la misma música de fondo y la
+  etiqueta "DTI. Maria del Carmen Pérez Zarate") que explica cómo construir las medianas de un
+  **triángulo escaleno** (lados de 6, 7 y 8 cm) para hallar el **baricentro**. Escenas: portada;
+  ¿qué es una mediana? (necesitas regla y lápiz); construcción en 6 pasos, con el dibujo apareciendo
+  al mismo tiempo (medir cada lado, marcar su punto medio M₁, M₂, M₃ con marcas de partes iguales y
+  unirlo con el vértice opuesto); las tres medianas se cortan en G; ¿qué tiene de especial? (siempre
+  queda dentro, AG = 2 · GM₁, centro de gravedad); y "Para recordar".
+- Archivos: `matematicas-1/materiales/medianas-y-baricentro.mp4` y su portada `…-portada.jpg`.
+- Nueva página del subtema: `matematicas-1/tema-09-medianas-y-baricentro.html` (objetivo, definiciones
+  y el video), enlazada desde el bloque "Medianas y baricentro" del Tema 9.
+- Enlace directo para compartir:
+  https://mcpz-math.github.io/matematicas-1/materiales/medianas-y-baricentro.mp4
