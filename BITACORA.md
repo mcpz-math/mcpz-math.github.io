@@ -801,3 +801,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   6. Ejercicios con revisión automática: banco de 100 (25 de cada tipo), 10 al azar; si la
      respuesta sólo tiene el signo mal, se le avisa al alumno, y siempre se muestra el procedimiento.
 - Se enlazó desde `tema-05-x-cuadrada.html`, justo debajo del recuadro "¡Cuidado con los signos!".
+
+## 2026-10-18 (La clase de signos pasa a Matemáticas 1)
+- A pedido de Carmen, la clase de repaso de los signos se movió a la sección de Matemáticas 1:
+  ahora es `matematicas-1/leyes-de-los-signos.html` (antes `matematicas-3/tema-05-repaso-signos.html`).
+- `matematicas-1/index.html` tiene una nueva sección "Clases" con la tarjeta "Las leyes de los
+  signos". Los recuadros de Temario, Materiales y Tareas siguen en "Próximamente".
+- La tarjeta de la página `matematicas-3/tema-05-x-cuadrada.html` sigue y ahora lleva a la nueva dirección.
