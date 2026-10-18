@@ -770,3 +770,12 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, en los botones de opción de los ejercicios (`.practice-opts` en
   `assets/style.css`) la opción elegida ahora se pinta de **verde-lima** con borde oscuro y una
   palomita ✓. Las opciones no elegidas tienen un círculo ○ y se ven más tenues después de elegir.
+
+## 2026-10-18 (ax² + b: rúbrica por competencias)
+- A pedido de Carmen, al final de `matematicas-3/tema-05-ax-cuadrada-mas-b.html` (donde antes estaba
+  "Próximamente") se agregó una **rúbrica por competencias** desplegable ("Ver rúbrica por
+  competencias"), con el mismo formato que la rúbrica del método gráfico del Tema 1.
+- Niveles: Excelente, Satisfactorio, En proceso y Suficiente.
+- Competencias: (1) hacia dónde abre (signo de a), (2) abertura comparada con x² (|a|),
+  (3) vértice V(0, b) y desplazamiento vertical, (4) naturaleza de las raíces, (5) tabla de
+  valores y gráfica, (6) argumenta y comunica el procedimiento.
