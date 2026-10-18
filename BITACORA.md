@@ -710,3 +710,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen se quitó la sección "Tarea" (Serie 2) de la página de binomios conjugados.
   El archivo `materiales/tema-06-serie-2-binomios-conjugados.docx` sigue guardado, pero ya no
   está enlazado en ninguna página.
+
+## 2026-10-18 (f(x) = ax² + b: a y b de −50 a 50)
+- A pedido de Carmen, en la gráfica de `matematicas-3/tema-05-ax-cuadrada-mas-b.html` (y en la
+  página aparte `prueba-ax-cuadrada-mas-b.html`) ahora **a** y **b** aceptan valores de **−50 a 50**
+  (antes a sólo llegaba a ±10 y b a ±9).
+- El eje y cambia de escala solo (cada cuadrito vale 1, 2, 5, 10 o 20 unidades) para que siempre
+  se vean el vértice y los puntos en x = ±1. Debajo de la gráfica se indica cuánto vale cada cuadrito.
+- Las instrucciones ahora dicen que los valores van entre −50 y 50.
