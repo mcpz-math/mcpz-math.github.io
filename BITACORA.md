@@ -830,3 +830,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   **"4 · Jerarquía de operaciones"** (mismo contenido: los 4 pasos y los dos ejemplos).
   Errores más comunes vuelve a ser la 5 y Ejercicios la 6.
 - La tarjeta de `matematicas-1/index.html` menciona la jerarquía de operaciones.
+
+## 2026-10-18 (Leyes de los signos: se quitan los ejemplos de la sección 4)
+- A pedido de Carmen se quitaron los dos ejemplos (f(x) = −2x² + 3 y f(x) = −x² − 4) de la sección
+  "4 · Jerarquía de operaciones" en `matematicas-1/leyes-de-los-signos.html`. Quedan los 4 pasos.
