@@ -874,8 +874,18 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
 .practice-opts { display: flex; gap: 0.35rem; flex-wrap: wrap; }
 .practice-opts button {
   font-family: 'Karla', system-ui, sans-serif; font-size: 0.85rem;
-  border: 1px solid var(--line); background: var(--cream); color: var(--forest);
+  border: 2px solid var(--line); background: var(--surface); color: var(--ink-soft);
   border-radius: 999px; padding: 0.3rem 0.8rem; cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
 }
-.practice-opts button:hover { border-color: var(--moss); }
-.practice-opts button.on { background: var(--forest); border-color: var(--forest); color: var(--cream); font-weight: 700; }
+.practice-opts button::before { content: '○ '; }
+.practice-opts button:hover { border-color: var(--moss); color: var(--forest); }
+/* La opción elegida: fondo verde-lima, borde oscuro y palomita */
+.practice-opts button.on {
+  background: var(--lime); border-color: var(--forest); color: var(--forest);
+  font-weight: 700; box-shadow: 0 2px 6px rgba(20, 48, 31, 0.25);
+}
+.practice-opts button.on::before { content: '✓ '; }
+/* Cuando ya se eligió una, las demás se ven más tenues */
+.practice-opts:has(button.on) button:not(.on) { opacity: 0.55; }
+.practice-opts:has(button.on) button:not(.on):hover { opacity: 1; }

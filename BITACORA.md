@@ -765,3 +765,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
 ## 2026-10-18 (ax² + b: se quita "Próximamente")
 - A pedido de Carmen se quitó el recuadro "Próximamente" al final de
   `matematicas-3/tema-05-ax-cuadrada-mas-b.html`.
+
+## 2026-10-18 (Ejercicios ax² + b: se ve claramente la opción elegida)
+- A pedido de Carmen, en los botones de opción de los ejercicios (`.practice-opts` en
+  `assets/style.css`) la opción elegida ahora se pinta de **verde-lima** con borde oscuro y una
+  palomita ✓. Las opciones no elegidas tienen un círculo ○ y se ven más tenues después de elegir.
