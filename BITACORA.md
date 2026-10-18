@@ -896,3 +896,15 @@ Registro de lo que vamos haciendo, en orden cronológico.
   procedimiento muestra **cómo va quedando toda la operación** después de cada paso, de adentro
   hacia afuera. Todas las respuestas son enteras y se verificaron con la computadora; se evitaron
   divisiones entre ±1 y grupos que valen 0.
+
+## 2026-10-18 (Jerarquía de operaciones: potencias y raíces)
+- A pedido de Carmen, en `matematicas-1/leyes-de-los-signos.html` el paso 2 de la jerarquía ahora
+  dice **"Potencias y raíces"** (ejemplo: (−4)² = 16 y √25 = 5). También se actualizaron las
+  instrucciones de los ejercicios y la rúbrica (competencia "Aplica la jerarquía de operaciones").
+- Los ejercicios de jerarquía ahora incluyen **raíces cuadradas con resultado natural** (de √4 a √144):
+  - **Nivel 1:** 30 de los 100 tienen raíz: a + b · √c, √c ÷ b − a, (a − √c) · b. Los otros 70 son
+    de las 10 formas que ya había (7 de cada una).
+  - **Nivel 2:** 30 de los 100 tienen raíz: a − [b + √c · (d − e)], {a − √(b + c)} · p (raíz de una
+    operación) y [√c − (d − e)²] ÷ p. Los otros 70 son de las 10 formas anteriores (7 de cada una).
+- El banco de signos (sección 6) no cambió. Todas las respuestas se verificaron con la computadora.
+- Pendiente de decidir con Carmen: el video y las imágenes de los ejemplos todavía dicen "Potencias".
