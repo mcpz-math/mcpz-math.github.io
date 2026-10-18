@@ -980,3 +980,21 @@ Registro de lo que vamos haciendo, en orden cronológico.
     (`leyes-de-los-signos.html#jerarquia`).
 - El enlace de regreso de la clase ahora dice "← Tema 5". El enlace desde Matemáticas 2 (Tema 1,
   Jerarquía de operaciones) también lleva directo a la sección de jerarquía.
+
+## 2026-10-18 (Jerarquía de operaciones: página propia en el Tema 5 de Matemáticas 1)
+- A pedido de Carmen, todo lo de jerarquía de operaciones salió de `matematicas-1/leyes-de-los-signos.html`
+  y ahora está en su propia página: `matematicas-1/tema-05-jerarquia-de-operaciones.html`
+  ("Matemáticas 1 · Tema 5 · Subtema"). Contiene: objetivo, 1 · El orden de las operaciones (pasos,
+  video y las dos imágenes de los ejemplos), 2 · Ejercicios Nivel 1, 3 · Ejercicios Nivel 2 y una
+  rúbrica por competencias propia (orden de las operaciones, signos de agrupación, potencias y raíces
+  en el momento correcto, identifica y corrige errores, argumenta y comunica).
+- "Las leyes de los signos" quedó con: 1 Multiplicar y dividir, 2 Potencias de números negativos,
+  3 Sumar y restar, 4 Errores más comunes, 5 Ejercicios de signos y su rúbrica (sin la fila de jerarquía).
+  A pedido de Carmen, su objetivo ahora termina: "…en álgebra y al evaluar funciones en los siguientes
+  cursos de matemáticas y en otras áreas de conocimiento."
+- El código de los ejercicios (función `practice`) se pasó a un archivo compartido:
+  `assets/practica.js`, que usan las dos páginas.
+- En el Nivel 2 se cambiaron los ejercicios que tenían un grupo que vale 0 elevado al cuadrado
+  (por ejemplo (8 + (−8))²). Todas las respuestas se volvieron a verificar.
+- Enlaces: en el Tema 5, "Jerarquía de operaciones usando números ℤ" lleva a la página nueva;
+  también el subtema de jerarquía del Tema 1 de Matemáticas 2.

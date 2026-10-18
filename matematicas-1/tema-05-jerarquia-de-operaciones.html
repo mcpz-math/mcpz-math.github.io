@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jerarquía de operaciones — Matemáticas 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-05-numeros-enteros.html">← Tema 5</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 1 · Tema 5 · Subtema</div>
+    <h1>Jerarquía de operaciones</h1>
+  </div>
+
+  <div class="callout">
+    <div class="k">Objetivo</div>
+    <p>Que el estudiante resuelva operaciones combinadas con números enteros respetando la
+       <strong>jerarquía de operaciones</strong> y usando correctamente las
+       <a href="leyes-de-los-signos.html" style="color:var(--forest); font-weight:700;">leyes de los signos</a>.</p>
+  </div>
+
+  <p class="section-label" id="jerarquia">1 · El orden de las operaciones</p>
+  <div class="prose">
+    <p>Cuando una operación tiene varias partes, se resuelve en este <strong>orden</strong>. Hazlo paso a paso,
+       sin saltarte ninguno, y en cada paso <strong>usa las leyes de los signos</strong>:</p>
+  </div>
+  <ol class="steps">
+    <li><span><strong>Paréntesis:</strong> primero se resuelve lo que está dentro de los paréntesis.</span></li>
+    <li><span><strong>Potencias y raíces:</strong> después se calculan las potencias y las raíces, por ejemplo (−4)² = 16 y <span class='rad'>√<span class='radicand'>25</span></span> = 5.</span></li>
+    <li><span><strong>Multiplicaciones y divisiones:</strong> luego se hacen, de izquierda a derecha.</span></li>
+    <li><span><strong>Sumas y restas:</strong> al final se hacen, de izquierda a derecha.</span></li>
+  </ol>
+
+  <div class="video-embed">
+    <video controls preload="metadata" playsinline poster="materiales/jerarquia-de-operaciones-portada.jpg">
+      <source src="materiales/jerarquia-de-operaciones.mp4" type="video/mp4">
+      Tu navegador no puede reproducir este video.
+    </video>
+  </div>
+  <p class="video-embed-caption">Video: cómo usar la jerarquía de operaciones con dos ejemplos paso a paso,
+     5 − 2(3 − 7)² y −3² + 12 ÷ (−4) · 2 − (−5), cuidando los signos en cada paso.</p>
+
+  <figure class="graph-figure">
+    <a href="materiales/jerarquia-de-operaciones-ejemplo-1.jpg" target="_blank" rel="noopener"><img src="materiales/jerarquia-de-operaciones-ejemplo-1.jpg" alt="Ejemplo 1 resuelto paso a paso: 5 − 2(3 − 7)² = −27" loading="lazy" style="max-width:100%; height:auto; border-radius:10px;"></a>
+    <figcaption>Ejemplo 1 completo: 5 − 2(3 − 7)² = −27. Toca la imagen para verla en grande.</figcaption>
+  </figure>
+  <figure class="graph-figure">
+    <a href="materiales/jerarquia-de-operaciones-ejemplo-2.jpg" target="_blank" rel="noopener"><img src="materiales/jerarquia-de-operaciones-ejemplo-2.jpg" alt="Ejemplo 2 resuelto paso a paso: −3² + 12 ÷ (−4) · 2 − (−5) = −10" loading="lazy" style="max-width:100%; height:auto; border-radius:10px;"></a>
+    <figcaption>Ejemplo 2 completo: −3² + 12 ÷ (−4) · 2 − (−5) = −10. Toca la imagen para verla en grande.</figcaption>
+  </figure>
+
+  <p class="section-label" id="ejercicios-jerarquia">2 · Ejercicios · Nivel 1</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Resuelve cada operación respetando el orden: <strong>paréntesis</strong>, <strong>potencias y raíces</strong>,
+       <strong>multiplicaciones y divisiones</strong>, y al final <strong>sumas y restas</strong>, cuidando
+       los signos en cada paso. Escribe el resultado y oprime <strong>Comprobar</strong> (o la tecla Enter).</p>
+    <p>Resuélvelo primero en tu cuaderno, paso a paso. Si te equivocas, la página te muestra el procedimiento.</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>, de los más sencillos
+       a los más largos. Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar.</p>
+  </div>
+
+  <div class="practice-grid" id="jo-grid"></div>
+  <p class="practice-score" id="jo-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="jo-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <p class="section-label" id="ejercicios-jerarquia-2">3 · Ejercicios · Nivel 2</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Estos ejercicios son <strong>más largos</strong>: tienen paréntesis dentro de otros paréntesis, y también
+       <strong>corchetes [ ]</strong> y <strong>llaves { }</strong>. Todos se usan igual que los paréntesis.</p>
+    <p>Empieza por el grupo <strong>de más adentro</strong> y ve saliendo: primero ( ), después [ ] y al final { }.
+       Dentro de cada grupo respeta el orden: potencias y raíces, multiplicaciones y divisiones, sumas y restas.
+       Si una raíz tiene una operación adentro, como <span class='rad'>√<span class='radicand'>16 + 9</span></span>, primero se resuelve lo de adentro: <span class='rad'>√<span class='radicand'>25</span></span> = 5.</p>
+    <p>Resuélvelo en tu cuaderno, escribe el resultado y oprime <strong>Comprobar</strong>. Si te equivocas, la página
+       te muestra cómo va quedando toda la operación en cada paso. Te tocan <strong>10 ejercicios al azar</strong> de
+       un banco de <strong>100</strong>.</p>
+  </div>
+
+  <div class="practice-grid" id="jo2-grid"></div>
+  <p class="practice-score" id="jo2-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="jo2-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script src="../assets/practica.js"></script>
+  <script>
+  (function () {
+    // Jerarquía de operaciones, nivel 1: 10 formas, de la más sencilla a la más larga (10 de cada una)
+    var JERARQUIA = [
+      ["−4 + (−3) · (−2)", 2, "Primero la multiplicación: (−3) · (−2) = 6 → Después la suma: −4 + 6 = <strong>2</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−6 + (−6) · 6", -42, "Primero la multiplicación: (−6) · 6 = −36 → Después la suma: −6 − 36 = <strong>−42</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["5 + (−2) · (−5)", 15, "Primero la multiplicación: (−2) · (−5) = 10 → Después la suma: 5 + 10 = <strong>15</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["5 + 7 · (−9)", -58, "Primero la multiplicación: 7 · (−9) = −63 → Después la suma: 5 − 63 = <strong>−58</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−4 + (−9) · 6", -58, "Primero la multiplicación: (−9) · 6 = −54 → Después la suma: −4 − 54 = <strong>−58</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−7 + (−3) · 7", -28, "Primero la multiplicación: (−3) · 7 = −21 → Después la suma: −7 − 21 = <strong>−28</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−7 + (−6) · (−7)", 35, "Primero la multiplicación: (−6) · (−7) = 42 → Después la suma: −7 + 42 = <strong>35</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["2 + 6 · <span class='rad'>√<span class='radicand'>36</span></span>", 38, "Primero la raíz: <span class='rad'>√<span class='radicand'>36</span></span> = 6 → Después la multiplicación: 6 · 6 = 36 → Al final la suma: 2 + 36 = <strong>38</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["2 + (−3) · <span class='rad'>√<span class='radicand'>25</span></span>", -13, "Primero la raíz: <span class='rad'>√<span class='radicand'>25</span></span> = 5 → Después la multiplicación: (−3) · 5 = −15 → Al final la suma: 2 − 15 = <strong>−13</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−9 + (−5) · <span class='rad'>√<span class='radicand'>9</span></span>", -24, "Primero la raíz: <span class='rad'>√<span class='radicand'>9</span></span> = 3 → Después la multiplicación: (−5) · 3 = −15 → Al final la suma: −9 − 15 = <strong>−24</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["12 + (−3) · <span class='rad'>√<span class='radicand'>100</span></span>", -18, "Primero la raíz: <span class='rad'>√<span class='radicand'>100</span></span> = 10 → Después la multiplicación: (−3) · 10 = −30 → Al final la suma: 12 − 30 = <strong>−18</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["13 + 3 · <span class='rad'>√<span class='radicand'>100</span></span>", 43, "Primero la raíz: <span class='rad'>√<span class='radicand'>100</span></span> = 10 → Después la multiplicación: 3 · 10 = 30 → Al final la suma: 13 + 30 = <strong>43</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−13 + (−5) · <span class='rad'>√<span class='radicand'>25</span></span>", -38, "Primero la raíz: <span class='rad'>√<span class='radicand'>25</span></span> = 5 → Después la multiplicación: (−5) · 5 = −25 → Al final la suma: −13 − 25 = <strong>−38</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["8 + (−5) · <span class='rad'>√<span class='radicand'>9</span></span>", -7, "Primero la raíz: <span class='rad'>√<span class='radicand'>9</span></span> = 3 → Después la multiplicación: (−5) · 3 = −15 → Al final la suma: 8 − 15 = <strong>−7</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["3 + (−5) · <span class='rad'>√<span class='radicand'>100</span></span>", -47, "Primero la raíz: <span class='rad'>√<span class='radicand'>100</span></span> = 10 → Después la multiplicación: (−5) · 10 = −50 → Al final la suma: 3 − 50 = <strong>−47</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−12 + (−2) · <span class='rad'>√<span class='radicand'>81</span></span>", -30, "Primero la raíz: <span class='rad'>√<span class='radicand'>81</span></span> = 9 → Después la multiplicación: (−2) · 9 = −18 → Al final la suma: −12 − 18 = <strong>−30</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["5 + 6 · <span class='rad'>√<span class='radicand'>100</span></span>", 65, "Primero la raíz: <span class='rad'>√<span class='radicand'>100</span></span> = 10 → Después la multiplicación: 6 · 10 = 60 → Al final la suma: 5 + 60 = <strong>65</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["14 − (−10) ÷ (−5)", 12, "Primero la división: (−10) ÷ (−5) = 2 → Después la resta: 14 − 2 = <strong>12</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["11 − (−16) ÷ 2", 19, "Primero la división: (−16) ÷ 2 = −8 → Después la resta: 11 − (−8) = 11 + 8 = <strong>19</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["9 − 18 ÷ 6", 6, "Primero la división: 18 ÷ 6 = 3 → Después la resta: 9 − 3 = <strong>6</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−8 − 21 ÷ 3", -15, "Primero la división: 21 ÷ 3 = 7 → Después la resta: −8 − 7 = <strong>−15</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−3 − (−27) ÷ (−3)", -12, "Primero la división: (−27) ÷ (−3) = 9 → Después la resta: −3 − 9 = <strong>−12</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["9 − (−25) ÷ 5", 14, "Primero la división: (−25) ÷ 5 = −5 → Después la resta: 9 − (−5) = 9 + 5 = <strong>14</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−15 − 18 ÷ 6", -18, "Primero la división: 18 ÷ 6 = 3 → Después la resta: −15 − 3 = <strong>−18</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−11 − 11) · 4", -88, "Primero el paréntesis: −11 − 11 = −22 → Después la multiplicación: (−22) · 4 = <strong>−88</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−11 + 11) · 6", 0, "Primero el paréntesis: −11 + 11 = 0 → Después la multiplicación: 0 · 6 = <strong>0</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(1 − 9) · (−2)", 16, "Primero el paréntesis: 1 − 9 = −8 → Después la multiplicación: (−8) · (−2) = <strong>16</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(4 + 6) · 5", 50, "Primero el paréntesis: 4 + 6 = 10 → Después la multiplicación: 10 · 5 = <strong>50</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(3 − 11) · 4", -32, "Primero el paréntesis: 3 − 11 = −8 → Después la multiplicación: (−8) · 4 = <strong>−32</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(3 + 10) · 4", 52, "Primero el paréntesis: 3 + 10 = 13 → Después la multiplicación: 13 · 4 = <strong>52</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−9 − 8) · (−2)", 34, "Primero el paréntesis: −9 − 8 = −17 → Después la multiplicación: (−17) · (−2) = <strong>34</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["<span class='rad'>√<span class='radicand'>144</span></span> ÷ 2 − 3", 3, "Primero la raíz: <span class='rad'>√<span class='radicand'>144</span></span> = 12 → Después la división: 12 ÷ 2 = 6 → Al final la resta: 6 − 3 = <strong>3</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["<span class='rad'>√<span class='radicand'>81</span></span> ÷ 9 − (−11)", 12, "Primero la raíz: <span class='rad'>√<span class='radicand'>81</span></span> = 9 → Después la división: 9 ÷ 9 = 1 → Al final la resta: 1 − (−11) = 1 + 11 = <strong>12</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["<span class='rad'>√<span class='radicand'>121</span></span> ÷ 11 − 10", -9, "Primero la raíz: <span class='rad'>√<span class='radicand'>121</span></span> = 11 → Después la división: 11 ÷ 11 = 1 → Al final la resta: 1 − 10 = <strong>−9</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["<span class='rad'>√<span class='radicand'>16</span></span> ÷ 2 − 9", -7, "Primero la raíz: <span class='rad'>√<span class='radicand'>16</span></span> = 4 → Después la división: 4 ÷ 2 = 2 → Al final la resta: 2 − 9 = <strong>−7</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["<span class='rad'>√<span class='radicand'>121</span></span> ÷ (−11) − 3", -4, "Primero la raíz: <span class='rad'>√<span class='radicand'>121</span></span> = 11 → Después la división: 11 ÷ (−11) = −1 → Al final la resta: −1 − 3 = <strong>−4</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["<span class='rad'>√<span class='radicand'>25</span></span> ÷ 5 − (−4)", 5, "Primero la raíz: <span class='rad'>√<span class='radicand'>25</span></span> = 5 → Después la división: 5 ÷ 5 = 1 → Al final la resta: 1 − (−4) = 1 + 4 = <strong>5</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["<span class='rad'>√<span class='radicand'>49</span></span> ÷ 7 − (−7)", 8, "Primero la raíz: <span class='rad'>√<span class='radicand'>49</span></span> = 7 → Después la división: 7 ÷ 7 = 1 → Al final la resta: 1 − (−7) = 1 + 7 = <strong>8</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["<span class='rad'>√<span class='radicand'>36</span></span> ÷ 2 − (−5)", 8, "Primero la raíz: <span class='rad'>√<span class='radicand'>36</span></span> = 6 → Después la división: 6 ÷ 2 = 3 → Al final la resta: 3 − (−5) = 3 + 5 = <strong>8</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["<span class='rad'>√<span class='radicand'>144</span></span> ÷ (−6) − 3", -5, "Primero la raíz: <span class='rad'>√<span class='radicand'>144</span></span> = 12 → Después la división: 12 ÷ (−6) = −2 → Al final la resta: −2 − 3 = <strong>−5</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["<span class='rad'>√<span class='radicand'>144</span></span> ÷ 4 − 3", 0, "Primero la raíz: <span class='rad'>√<span class='radicand'>144</span></span> = 12 → Después la división: 12 ÷ 4 = 3 → Al final la resta: 3 − 3 = <strong>0</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["5 · 6 − (−2) · (−8)", 14, "Primero las multiplicaciones: 5 · 6 = 30 y (−2) · (−8) = 16 → Después la resta: 30 − 16 = <strong>14</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["7 · (−6) − (−7) · (−8)", -98, "Primero las multiplicaciones: 7 · (−6) = −42 y (−7) · (−8) = 56 → Después la resta: −42 − 56 = <strong>−98</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−4) · (−8) − (−6) · (−5)", 2, "Primero las multiplicaciones: (−4) · (−8) = 32 y (−6) · (−5) = 30 → Después la resta: 32 − 30 = <strong>2</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["8 · (−2) − (−6) · 5", 14, "Primero las multiplicaciones: 8 · (−2) = −16 y (−6) · 5 = −30 → Después la resta: −16 − (−30) = −16 + 30 = <strong>14</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−3) · (−5) − 4 · 6", -9, "Primero las multiplicaciones: (−3) · (−5) = 15 y 4 · 6 = 24 → Después la resta: 15 − 24 = <strong>−9</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["7 · 4 − (−2) · 5", 38, "Primero las multiplicaciones: 7 · 4 = 28 y (−2) · 5 = −10 → Después la resta: 28 − (−10) = 28 + 10 = <strong>38</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−6) · 8 − 2 · 2", -52, "Primero las multiplicaciones: (−6) · 8 = −48 y 2 · 2 = 4 → Después la resta: −48 − 4 = <strong>−52</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−4 − 4(2 − 6)", 12, "Primero el paréntesis: 2 − 6 = −4 → Después la multiplicación: 4 · (−4) = −16 → Al final la resta: −4 − (−16) = −4 + 16 = <strong>12</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["10 − 6(3 − 7)", 34, "Primero el paréntesis: 3 − 7 = −4 → Después la multiplicación: 6 · (−4) = −24 → Al final la resta: 10 − (−24) = 10 + 24 = <strong>34</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["7 − 5(−1 − 3)", 27, "Primero el paréntesis: −1 − 3 = −4 → Después la multiplicación: 5 · (−4) = −20 → Al final la resta: 7 − (−20) = 7 + 20 = <strong>27</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["7 − 4(−7 + 1)", 31, "Primero el paréntesis: −7 + 1 = −6 → Después la multiplicación: 4 · (−6) = −24 → Al final la resta: 7 − (−24) = 7 + 24 = <strong>31</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−7 − 3(−5 − 2)", 14, "Primero el paréntesis: −5 − 2 = −7 → Después la multiplicación: 3 · (−7) = −21 → Al final la resta: −7 − (−21) = −7 + 21 = <strong>14</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["9 − 6(−8 − 7)", 99, "Primero el paréntesis: −8 − 7 = −15 → Después la multiplicación: 6 · (−15) = −90 → Al final la resta: 9 − (−90) = 9 + 90 = <strong>99</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−2 − 3(1 + 8)", -29, "Primero el paréntesis: 1 + 8 = 9 → Después la multiplicación: 3 · 9 = 27 → Al final la resta: −2 − 27 = <strong>−29</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(6 − <span class='rad'>√<span class='radicand'>64</span></span>) · 5", -10, "Primero el paréntesis; adentro hay una raíz: <span class='rad'>√<span class='radicand'>64</span></span> = 8, y 6 − 8 = −2 → Después la multiplicación: (−2) · 5 = <strong>−10</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−8 − <span class='rad'>√<span class='radicand'>36</span></span>) · 5", -70, "Primero el paréntesis; adentro hay una raíz: <span class='rad'>√<span class='radicand'>36</span></span> = 6, y −8 − 6 = −14 → Después la multiplicación: (−14) · 5 = <strong>−70</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−8 − <span class='rad'>√<span class='radicand'>4</span></span>) · 4", -40, "Primero el paréntesis; adentro hay una raíz: <span class='rad'>√<span class='radicand'>4</span></span> = 2, y −8 − 2 = −10 → Después la multiplicación: (−10) · 4 = <strong>−40</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−9 − <span class='rad'>√<span class='radicand'>16</span></span>) · 5", -65, "Primero el paréntesis; adentro hay una raíz: <span class='rad'>√<span class='radicand'>16</span></span> = 4, y −9 − 4 = −13 → Después la multiplicación: (−13) · 5 = <strong>−65</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(5 − <span class='rad'>√<span class='radicand'>100</span></span>) · 6", -30, "Primero el paréntesis; adentro hay una raíz: <span class='rad'>√<span class='radicand'>100</span></span> = 10, y 5 − 10 = −5 → Después la multiplicación: (−5) · 6 = <strong>−30</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−8 − <span class='rad'>√<span class='radicand'>9</span></span>) · (−6)", 66, "Primero el paréntesis; adentro hay una raíz: <span class='rad'>√<span class='radicand'>9</span></span> = 3, y −8 − 3 = −11 → Después la multiplicación: (−11) · (−6) = <strong>66</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−9 − <span class='rad'>√<span class='radicand'>16</span></span>) · 6", -78, "Primero el paréntesis; adentro hay una raíz: <span class='rad'>√<span class='radicand'>16</span></span> = 4, y −9 − 4 = −13 → Después la multiplicación: (−13) · 6 = <strong>−78</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−9 − <span class='rad'>√<span class='radicand'>36</span></span>) · 6", -90, "Primero el paréntesis; adentro hay una raíz: <span class='rad'>√<span class='radicand'>36</span></span> = 6, y −9 − 6 = −15 → Después la multiplicación: (−15) · 6 = <strong>−90</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(9 − <span class='rad'>√<span class='radicand'>16</span></span>) · (−2)", -10, "Primero el paréntesis; adentro hay una raíz: <span class='rad'>√<span class='radicand'>16</span></span> = 4, y 9 − 4 = 5 → Después la multiplicación: 5 · (−2) = <strong>−10</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(7 − <span class='rad'>√<span class='radicand'>9</span></span>) · 4", 16, "Primero el paréntesis; adentro hay una raíz: <span class='rad'>√<span class='radicand'>9</span></span> = 3, y 7 − 3 = 4 → Después la multiplicación: 4 · 4 = <strong>16</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−13 − 5² · (−5)", 112, "Primero la potencia: 5² = 25 → Después la multiplicación: 25 · (−5) = −125 → Al final la resta: −13 − (−125) = −13 + 125 = <strong>112</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−13 + (−3) · (−5)²", -88, "Primero la potencia: (−5)² = 25 → Después la multiplicación: (−3) · 25 = −75 → Al final la suma: −13 − 75 = <strong>−88</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["3 + 2(−3)²", 21, "Primero la potencia: (−3)² = 9 → Después la multiplicación: 2 · 9 = 18 → Al final la suma: 3 + 18 = <strong>21</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["3 − 5² · 4", -97, "Primero la potencia: 5² = 25 → Después la multiplicación: 25 · 4 = 100 → Al final la resta: 3 − 100 = <strong>−97</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["12 + 3(−3)²", 39, "Primero la potencia: (−3)² = 9 → Después la multiplicación: 3 · 9 = 27 → Al final la suma: 12 + 27 = <strong>39</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−12 − 4² · (−2)", 20, "Primero la potencia: 4² = 16 → Después la multiplicación: 16 · (−2) = −32 → Al final la resta: −12 − (−32) = −12 + 32 = <strong>20</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−5 + 5(−5)²", 120, "Primero la potencia: (−5)² = 25 → Después la multiplicación: 5 · 25 = 125 → Al final la suma: −5 + 125 = <strong>120</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(8 − 3)² ÷ (−5)", -5, "Primero el paréntesis: 8 − 3 = 5 → Después la potencia: 5² = 25 → Al final la división: 25 ÷ (−5) = <strong>−5</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(3 + 1)² ÷ (−2)", -8, "Primero el paréntesis: 3 + 1 = 4 → Después la potencia: 4² = 16 → Al final la división: 16 ÷ (−2) = <strong>−8</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(6 − 1)² ÷ (−5)", -5, "Primero el paréntesis: 6 − 1 = 5 → Después la potencia: 5² = 25 → Al final la división: 25 ÷ (−5) = <strong>−5</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−1 + 5)² ÷ 4", 4, "Primero el paréntesis: −1 + 5 = 4 → Después la potencia: 4² = 16 → Al final la división: 16 ÷ 4 = <strong>4</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(1 + 3)² ÷ (−2)", -8, "Primero el paréntesis: 1 + 3 = 4 → Después la potencia: 4² = 16 → Al final la división: 16 ÷ (−2) = <strong>−8</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(3 − 7)² ÷ (−4)", -4, "Primero el paréntesis: 3 − 7 = −4 → Después la potencia: (−4)² = 16 → Al final la división: 16 ÷ (−4) = <strong>−4</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−3 − 4)² ÷ (−7)", -7, "Primero el paréntesis: −3 − 4 = −7 → Después la potencia: (−7)² = 49 → Al final la división: 49 ÷ (−7) = <strong>−7</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−2 − 4(−5 + 1)²", -66, "Paréntesis: −5 + 1 = −4 → Potencia: (−4)² = 16 → Multiplicación: 4 · 16 = 64 → Resta: −2 − 64 = <strong>−66</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["1 − 2(−5 − 1)²", -71, "Paréntesis: −5 − 1 = −6 → Potencia: (−6)² = 36 → Multiplicación: 2 · 36 = 72 → Resta: 1 − 72 = <strong>−71</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−6 − 2(−1 − 5)²", -78, "Paréntesis: −1 − 5 = −6 → Potencia: (−6)² = 36 → Multiplicación: 2 · 36 = 72 → Resta: −6 − 72 = <strong>−78</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−10 − 2(5 + 1)²", -82, "Paréntesis: 5 + 1 = 6 → Potencia: 6² = 36 → Multiplicación: 2 · 36 = 72 → Resta: −10 − 72 = <strong>−82</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["5 − 3(−2 − 2)²", -43, "Paréntesis: −2 − 2 = −4 → Potencia: (−4)² = 16 → Multiplicación: 3 · 16 = 48 → Resta: 5 − 48 = <strong>−43</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−8 − 2(2 + 1)²", -26, "Paréntesis: 2 + 1 = 3 → Potencia: 3² = 9 → Multiplicación: 2 · 9 = 18 → Resta: −8 − 18 = <strong>−26</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["6 − 2(3 − 5)²", -2, "Paréntesis: 3 − 5 = −2 → Potencia: (−2)² = 4 → Multiplicación: 2 · 4 = 8 → Resta: 6 − 8 = <strong>−2</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−2² + 16 ÷ 4 · (−2) − (−4)", -8, "Potencia: −2² = −4 → División: 16 ÷ 4 = 4 → Multiplicación: 4 · (−2) = −8 → Suma: −4 − 8 = −12 → Resta: −12 − (−4) = −12 + 4 = <strong>−8</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−3² + 4 ÷ (−2) · (−4) − 8", -9, "Potencia: −3² = −9 → División: 4 ÷ (−2) = −2 → Multiplicación: (−2) · (−4) = 8 → Suma: −9 + 8 = −1 → Resta: −1 − 8 = <strong>−9</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−2² + (−6) ÷ 2 · 3 − 6", -19, "Potencia: −2² = −4 → División: (−6) ÷ 2 = −3 → Multiplicación: (−3) · 3 = −9 → Suma: −4 − 9 = −13 → Resta: −13 − 6 = <strong>−19</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−3² + (−10) ÷ (−5) · 3 − 5", -8, "Potencia: −3² = −9 → División: (−10) ÷ (−5) = 2 → Multiplicación: 2 · 3 = 6 → Suma: −9 + 6 = −3 → Resta: −3 − 5 = <strong>−8</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−5² + 15 ÷ 5 · 3 − (−6)", -10, "Potencia: −5² = −25 → División: 15 ÷ 5 = 3 → Multiplicación: 3 · 3 = 9 → Suma: −25 + 9 = −16 → Resta: −16 − (−6) = −16 + 6 = <strong>−10</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−4² + 20 ÷ (−4) · 3 − (−2)", -29, "Potencia: −4² = −16 → División: 20 ÷ (−4) = −5 → Multiplicación: (−5) · 3 = −15 → Suma: −16 − 15 = −31 → Resta: −31 − (−2) = −31 + 2 = <strong>−29</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["−4² + 36 ÷ 6 · 4 − 1", 7, "Potencia: −4² = −16 → División: 36 ÷ 6 = 6 → Multiplicación: 6 · 4 = 24 → Suma: −16 + 24 = 8 → Resta: 8 − 1 = <strong>7</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["5(−1 + 1) − 6 ÷ 2", -3, "Paréntesis: −1 + 1 = 0 → Multiplicación: 5 · 0 = 0 → División: 6 ÷ 2 = 3 → Resta: 0 − 3 = <strong>−3</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["5(1 − 2) − 35 ÷ (−5)", 2, "Paréntesis: 1 − 2 = −1 → Multiplicación: 5 · (−1) = −5 → División: 35 ÷ (−5) = −7 → Resta: −5 − (−7) = −5 + 7 = <strong>2</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−6)(8 − 2) − (−32) ÷ 4", -28, "Paréntesis: 8 − 2 = 6 → Multiplicación: (−6) · 6 = −36 → División: (−32) ÷ 4 = −8 → Resta: −36 − (−8) = −36 + 8 = <strong>−28</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−5)(−3 + 4) − (−14) ÷ (−2)", -12, "Paréntesis: −3 + 4 = 1 → Multiplicación: (−5) · 1 = −5 → División: (−14) ÷ (−2) = 7 → Resta: −5 − 7 = <strong>−12</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["5(−2 + 1) − 10 ÷ (−2)", 0, "Paréntesis: −2 + 1 = −1 → Multiplicación: 5 · (−1) = −5 → División: 10 ÷ (−2) = −5 → Resta: −5 − (−5) = −5 + 5 = <strong>0</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["4(1 + 6) − 28 ÷ 4", 21, "Paréntesis: 1 + 6 = 7 → Multiplicación: 4 · 7 = 28 → División: 28 ÷ 4 = 7 → Resta: 28 − 7 = <strong>21</strong>", "Nivel 1 · Usa la jerarquía de operaciones"],
+      ["(−4)(−4 − 9) − 35 ÷ (−5)", 59, "Paréntesis: −4 − 9 = −13 → Multiplicación: (−4) · (−13) = 52 → División: 35 ÷ (−5) = −7 → Resta: 52 − (−7) = 52 + 7 = <strong>59</strong>", "Nivel 1 · Usa la jerarquía de operaciones"]
+    ];
+
+    // Jerarquía de operaciones, nivel 2: paréntesis anidados, corchetes y llaves (10 formas × 10).
+    // El procedimiento muestra cómo queda toda la operación después de cada paso.
+    var JERARQUIA2 = [
+      ["−4 − [−3 + 9(7 − (−10))]", -154, "= −4 − [−3 + 9 · 17]<br>= −4 − [−3 + 153]<br>= −4 − 150<br>= <strong>−154</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−3 − [−10 + (−4)(12 − 8)]", 23, "= −3 − [−10 + (−4) · 4]<br>= −3 − [−10 + (−16)]<br>= −3 − (−26)<br>= <strong>23</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−5 − [−7 + 11(−2 − (−1))]", 13, "= −5 − [−7 + 11 · (−1)]<br>= −5 − [−7 + (−11)]<br>= −5 − (−18)<br>= <strong>13</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−7 − [2 + (−1)(11 − (−2))]", 4, "= −7 − [2 + (−1) · 13]<br>= −7 − [2 + (−13)]<br>= −7 − (−11)<br>= <strong>4</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["12 − [−11 + (−2)(3 − (−4))]", 37, "= 12 − [−11 + (−2) · 7]<br>= 12 − [−11 + (−14)]<br>= 12 − (−25)<br>= <strong>37</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["12 − [1 + 6(−10 − 12)]", 143, "= 12 − [1 + 6 · (−22)]<br>= 12 − [1 + (−132)]<br>= 12 − (−131)<br>= <strong>143</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−10 − [−10 + 8(7 − 5)]", -16, "= −10 − [−10 + 8 · 2]<br>= −10 − [−10 + 16]<br>= −10 − 6<br>= <strong>−16</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[3 − (−5 − (−6))] · 2", 4, "= [3 − 1] · 2<br>= 2 · 2<br>= <strong>4</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[12 − (4 − 9)] · (−2)", -34, "= [12 − (−5)] · (−2)<br>= 17 · (−2)<br>= <strong>−34</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[−9 − (7 − (−8))] · 4", -96, "= [−9 − 15] · 4<br>= −24 · 4<br>= <strong>−96</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[−12 − (8 − (−2))] · (−4)", 88, "= [−12 − 10] · (−4)<br>= −22 · (−4)<br>= <strong>88</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[3 − (2 − (−6))] · 5", -25, "= [3 − 8] · 5<br>= −5 · 5<br>= <strong>−25</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[−5 − (7 − (−12))] · (−5)", 120, "= [−5 − 19] · (−5)<br>= −24 · (−5)<br>= <strong>120</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[6 − (5 − (−8))] · 3", -21, "= [6 − 13] · 3<br>= −7 · 3<br>= <strong>−21</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["2(−3 − 3) − [1 + (−8 − 9)]", 4, "= 2 · (−6) − [1 + (−8 − 9)]<br>= 2 · (−6) − [1 + (−17)]<br>= 2 · (−6) − (−16)<br>= −12 − (−16)<br>= <strong>4</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−2(−6 − 2) − [−8 + (8 − (−3))]", 13, "= −2(−8) − [−8 + (8 − (−3))]<br>= −2(−8) − [−8 + 11]<br>= −2(−8) − 3<br>= 16 − 3<br>= <strong>13</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["4(−4 − (−1)) − [6 + (−6 − 7)]", -5, "= 4 · (−3) − [6 + (−6 − 7)]<br>= 4 · (−3) − [6 + (−13)]<br>= 4 · (−3) − (−7)<br>= −12 − (−7)<br>= <strong>−5</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["4(−6 − (−9)) − [−9 + (−5 − (−4))]", 22, "= 4 · 3 − [−9 + (−5 − (−4))]<br>= 4 · 3 − [−9 + (−1)]<br>= 4 · 3 − (−10)<br>= 12 − (−10)<br>= <strong>22</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["5(12 − 11) − [−8 + (−12 − 9)]", 34, "= 5 · 1 − [−8 + (−12 − 9)]<br>= 5 · 1 − [−8 + (−21)]<br>= 5 · 1 − (−29)<br>= 5 − (−29)<br>= <strong>34</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−4(−9 − 8) − [−10 + (5 − 1)]", 74, "= −4(−17) − [−10 + (5 − 1)]<br>= −4(−17) − [−10 + 4]<br>= −4(−17) − (−6)<br>= 68 − (−6)<br>= <strong>74</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−5(6 − (−2)) − [8 + (−6 − (−8))]", -50, "= −5 · 8 − [8 + (−6 − (−8))]<br>= −5 · 8 − [8 + 2]<br>= −5 · 8 − 10<br>= −40 − 10<br>= <strong>−50</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["8 − [−2 + <span class='rad'>√<span class='radicand'>16</span></span> · (1 − 10)]", 46, "= 8 − [−2 + <span class='rad'>√<span class='radicand'>16</span></span> · (−9)]<br>= 8 − [−2 + 4 · (−9)]<br>= 8 − [−2 + (−36)]<br>= 8 − (−38)<br>= <strong>46</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−7 − [−12 + <span class='rad'>√<span class='radicand'>4</span></span> · (6 − 2)]", -3, "= −7 − [−12 + <span class='rad'>√<span class='radicand'>4</span></span> · 4]<br>= −7 − [−12 + 2 · 4]<br>= −7 − [−12 + 8]<br>= −7 − (−4)<br>= <strong>−3</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−7 − [12 + <span class='rad'>√<span class='radicand'>25</span></span> · (−3 − (−9))]", -49, "= −7 − [12 + <span class='rad'>√<span class='radicand'>25</span></span> · 6]<br>= −7 − [12 + 5 · 6]<br>= −7 − [12 + 30]<br>= −7 − 42<br>= <strong>−49</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["10 − [−5 + <span class='rad'>√<span class='radicand'>25</span></span> · (−10 − (−2))]", 55, "= 10 − [−5 + <span class='rad'>√<span class='radicand'>25</span></span> · (−8)]<br>= 10 − [−5 + 5 · (−8)]<br>= 10 − [−5 + (−40)]<br>= 10 − (−45)<br>= <strong>55</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["3 − [6 + <span class='rad'>√<span class='radicand'>16</span></span> · (−8 − 10)]", 69, "= 3 − [6 + <span class='rad'>√<span class='radicand'>16</span></span> · (−18)]<br>= 3 − [6 + 4 · (−18)]<br>= 3 − [6 + (−72)]<br>= 3 − (−66)<br>= <strong>69</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−10 − [−5 + <span class='rad'>√<span class='radicand'>81</span></span> · (4 − 8)]", 31, "= −10 − [−5 + <span class='rad'>√<span class='radicand'>81</span></span> · (−4)]<br>= −10 − [−5 + 9 · (−4)]<br>= −10 − [−5 + (−36)]<br>= −10 − (−41)<br>= <strong>31</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−8 − [−7 + <span class='rad'>√<span class='radicand'>81</span></span> · (2 − 3)]", 8, "= −8 − [−7 + <span class='rad'>√<span class='radicand'>81</span></span> · (−1)]<br>= −8 − [−7 + 9 · (−1)]<br>= −8 − [−7 + (−9)]<br>= −8 − (−16)<br>= <strong>8</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−6 − [10 + <span class='rad'>√<span class='radicand'>9</span></span> · (6 − 8)]", -10, "= −6 − [10 + <span class='rad'>√<span class='radicand'>9</span></span> · (−2)]<br>= −6 − [10 + 3 · (−2)]<br>= −6 − [10 + (−6)]<br>= −6 − 4<br>= <strong>−10</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−5 − [−6 + <span class='rad'>√<span class='radicand'>9</span></span> · (6 − 9)]", 10, "= −5 − [−6 + <span class='rad'>√<span class='radicand'>9</span></span> · (−3)]<br>= −5 − [−6 + 3 · (−3)]<br>= −5 − [−6 + (−9)]<br>= −5 − (−15)<br>= <strong>10</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["11 − [6 + <span class='rad'>√<span class='radicand'>16</span></span> · (6 − (−3))]", -31, "= 11 − [6 + <span class='rad'>√<span class='radicand'>16</span></span> · 9]<br>= 11 − [6 + 4 · 9]<br>= 11 − [6 + 36]<br>= 11 − 42<br>= <strong>−31</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[(8 + 11)² − (−7)] ÷ (−4)", -92, "= [19² − (−7)] ÷ (−4)<br>= [361 − (−7)] ÷ (−4)<br>= 368 ÷ (−4)<br>= <strong>−92</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[(−10 + (−1))² − (−4)] ÷ 5", 25, "= [(−11)² − (−4)] ÷ 5<br>= [121 − (−4)] ÷ 5<br>= 125 ÷ 5<br>= <strong>25</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[(11 + (−7))² − 1] ÷ (−3)", -5, "= [4² − 1] ÷ (−3)<br>= [16 − 1] ÷ (−3)<br>= 15 ÷ (−3)<br>= <strong>−5</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[(−10 + 9)² − 4] ÷ 3", -1, "= [(−1)² − 4] ÷ 3<br>= [1 − 4] ÷ 3<br>= −3 ÷ 3<br>= <strong>−1</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[(−12 + (−9))² − 9] ÷ (−2)", -216, "= [(−21)² − 9] ÷ (−2)<br>= [441 − 9] ÷ (−2)<br>= 432 ÷ (−2)<br>= <strong>−216</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[(4 + (−5))² − 3] ÷ 2", -1, "= [(−1)² − 3] ÷ 2<br>= [1 − 3] ÷ 2<br>= −2 ÷ 2<br>= <strong>−1</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[(−2 + (−2))² − (−12)] ÷ 2", 14, "= [(−4)² − (−12)] ÷ 2<br>= [16 − (−12)] ÷ 2<br>= 28 ÷ 2<br>= <strong>14</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["11 − 3[7 − 2(9 − 6)]", 8, "= 11 − 3[7 − 2 · 3]<br>= 11 − 3[7 − 6]<br>= 11 − 3 · 1<br>= 11 − 3<br>= <strong>8</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−9 − 2[6 − 4(−6 − 5)]", -109, "= −9 − 2[6 − 4 · (−11)]<br>= −9 − 2[6 − (−44)]<br>= −9 − 2 · 50<br>= −9 − 100<br>= <strong>−109</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["6 − (−2)[−9 − 3(4 − (−8))]", -84, "= 6 − (−2)[−9 − 3 · 12]<br>= 6 − (−2)[−9 − 36]<br>= 6 − (−2)(−45)<br>= 6 − 90<br>= <strong>−84</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−8 − 3[−3 − 4(−10 − (−5))]", -59, "= −8 − 3[−3 − 4 · (−5)]<br>= −8 − 3[−3 − (−20)]<br>= −8 − 3 · 17<br>= −8 − 51<br>= <strong>−59</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−2 − (−5)[−3 − 2(3 − 11)]", 63, "= −2 − (−5)[−3 − 2 · (−8)]<br>= −2 − (−5)[−3 − (−16)]<br>= −2 − (−5) · 13<br>= −2 − (−65)<br>= <strong>63</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−1 − (−3)[−12 − 3(7 − (−6))]", -154, "= −1 − (−3)[−12 − 3 · 13]<br>= −1 − (−3)[−12 − 39]<br>= −1 − (−3)(−51)<br>= −1 − 153<br>= <strong>−154</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["10 − 3[10 − 2(−11 − 2)]", -98, "= 10 − 3[10 − 2 · (−13)]<br>= 10 − 3[10 − (−26)]<br>= 10 − 3 · 36<br>= 10 − 108<br>= <strong>−98</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−[−8 − (12 − 1)²] + (−3)", 126, "= −[−8 − 11²] + (−3)<br>= −[−8 − 121] + (−3)<br>= −(−129) + (−3)<br>= 129 + (−3)<br>= <strong>126</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−[7 − (−1 − 3)²] + (−11)", -2, "= −[7 − (−4)²] + (−11)<br>= −[7 − 16] + (−11)<br>= −(−9) + (−11)<br>= 9 + (−11)<br>= <strong>−2</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−[3 − (3 − (−5))²] + 11", 72, "= −[3 − 8²] + 11<br>= −[3 − 64] + 11<br>= −(−61) + 11<br>= 61 + 11<br>= <strong>72</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−[−1 − (−4 − 6)²] + 11", 112, "= −[−1 − (−10)²] + 11<br>= −[−1 − 100] + 11<br>= −(−101) + 11<br>= 101 + 11<br>= <strong>112</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−[−2 − (10 − 7)²] + 5", 16, "= −[−2 − 3²] + 5<br>= −[−2 − 9] + 5<br>= −(−11) + 5<br>= 11 + 5<br>= <strong>16</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−[−7 − (4 − 6)²] + 11", 22, "= −[−7 − (−2)²] + 11<br>= −[−7 − 4] + 11<br>= −(−11) + 11<br>= 11 + 11<br>= <strong>22</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−[−10 − (8 − (−6))²] + (−7)", 199, "= −[−10 − 14²] + (−7)<br>= −[−10 − 196] + (−7)<br>= −(−206) + (−7)<br>= 206 + (−7)<br>= <strong>199</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{−7 − <span class='rad'>√<span class='radicand'>26 + 38</span></span>} · 2", -30, "= {−7 − <span class='rad'>√<span class='radicand'>64</span></span>} · 2<br>= {−7 − 8} · 2<br>= −15 · 2<br>= <strong>−30</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{−2 − <span class='rad'>√<span class='radicand'>14 + 50</span></span>} · 2", -20, "= {−2 − <span class='rad'>√<span class='radicand'>64</span></span>} · 2<br>= {−2 − 8} · 2<br>= −10 · 2<br>= <strong>−20</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{−10 − <span class='rad'>√<span class='radicand'>−14 + 63</span></span>} · 4", -68, "= {−10 − <span class='rad'>√<span class='radicand'>49</span></span>} · 4<br>= {−10 − 7} · 4<br>= −17 · 4<br>= <strong>−68</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{1 − <span class='rad'>√<span class='radicand'>21 + 60</span></span>} · 2", -16, "= {1 − <span class='rad'>√<span class='radicand'>81</span></span>} · 2<br>= {1 − 9} · 2<br>= −8 · 2<br>= <strong>−16</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{−5 − <span class='rad'>√<span class='radicand'>19 + 6</span></span>} · (−3)", 30, "= {−5 − <span class='rad'>√<span class='radicand'>25</span></span>} · (−3)<br>= {−5 − 5} · (−3)<br>= −10 · (−3)<br>= <strong>30</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{11 − <span class='rad'>√<span class='radicand'>17 + 47</span></span>} · (−3)", -9, "= {11 − <span class='rad'>√<span class='radicand'>64</span></span>} · (−3)<br>= {11 − 8} · (−3)<br>= 3 · (−3)<br>= <strong>−9</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{−7 − <span class='rad'>√<span class='radicand'>1 + 143</span></span>} · (−4)", 76, "= {−7 − <span class='rad'>√<span class='radicand'>144</span></span>} · (−4)<br>= {−7 − 12} · (−4)<br>= −19 · (−4)<br>= <strong>76</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{−6 − <span class='rad'>√<span class='radicand'>9 + 16</span></span>} · 2", -22, "= {−6 − <span class='rad'>√<span class='radicand'>25</span></span>} · 2<br>= {−6 − 5} · 2<br>= −11 · 2<br>= <strong>−22</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{8 − <span class='rad'>√<span class='radicand'>1 + 80</span></span>} · 3", -3, "= {8 − <span class='rad'>√<span class='radicand'>81</span></span>} · 3<br>= {8 − 9} · 3<br>= −1 · 3<br>= <strong>−3</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{−3 − <span class='rad'>√<span class='radicand'>13 + (−4)</span></span>} · (−2)", 12, "= {−3 − <span class='rad'>√<span class='radicand'>9</span></span>} · (−2)<br>= {−3 − 3} · (−2)<br>= −6 · (−2)<br>= <strong>12</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["(−3 − 11)² − (7 + (−2)) · 5", 171, "= (−14)² − (7 + (−2)) · 5<br>= (−14)² − 5 · 5<br>= 196 − 5 · 5<br>= 196 − 25<br>= <strong>171</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["(−4 − 1)² − (5 + 4) · 2", 7, "= (−5)² − (5 + 4) · 2<br>= (−5)² − 9 · 2<br>= 25 − 9 · 2<br>= 25 − 18<br>= <strong>7</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["(−5 − (−4))² − (4 + (−11)) · (−2)", -13, "= (−1)² − (4 + (−11)) · (−2)<br>= (−1)² − (−7) · (−2)<br>= 1 − (−7) · (−2)<br>= 1 − 14<br>= <strong>−13</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["(11 − 9)² − (−10 + (−12)) · (−3)", -62, "= 2² − (−10 + (−12)) · (−3)<br>= 2² − (−22) · (−3)<br>= 4 − (−22) · (−3)<br>= 4 − 66<br>= <strong>−62</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["(8 − (−5))² − (4 + 6) · 5", 119, "= 13² − (4 + 6) · 5<br>= 13² − 10 · 5<br>= 169 − 10 · 5<br>= 169 − 50<br>= <strong>119</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["(−10 − 3)² − (11 + 12) · (−4)", 261, "= (−13)² − (11 + 12) · (−4)<br>= (−13)² − 23 · (−4)<br>= 169 − 23 · (−4)<br>= 169 − (−92)<br>= <strong>261</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["(4 − 6)² − (6 + 11) · (−5)", 89, "= (−2)² − (6 + 11) · (−5)<br>= (−2)² − 17 · (−5)<br>= 4 − 17 · (−5)<br>= 4 − (−85)<br>= <strong>89</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{−2 − [−7 + (−1 − 6)]} · 4", 48, "= {−2 − [−7 + (−7)]} · 4<br>= {−2 − (−14)} · 4<br>= 12 · 4<br>= <strong>48</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{11 − [1 + (−1 − (−7))]} · 5", 20, "= {11 − [1 + 6]} · 5<br>= {11 − 7} · 5<br>= 4 · 5<br>= <strong>20</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{−7 − [11 + (−6 − 4)]} · 5", -40, "= {−7 − [11 + (−10)]} · 5<br>= {−7 − 1} · 5<br>= −8 · 5<br>= <strong>−40</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{5 − [12 + (−1 − (−8))]} · (−2)", 28, "= {5 − [12 + 7]} · (−2)<br>= {5 − 19} · (−2)<br>= −14 · (−2)<br>= <strong>28</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{−5 − [−7 + (−9 − 6)]} · 5", 85, "= {−5 − [−7 + (−15)]} · 5<br>= {−5 − (−22)} · 5<br>= 17 · 5<br>= <strong>85</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{11 − [−3 + (1 − (−4))]} · (−4)", -36, "= {11 − [−3 + 5]} · (−4)<br>= {11 − 2} · (−4)<br>= 9 · (−4)<br>= <strong>−36</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["{−1 − [7 + (−7 − 11)]} · 3", 30, "= {−1 − [7 + (−18)]} · 3<br>= {−1 − (−11)} · 3<br>= 10 · 3<br>= <strong>30</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[<span class='rad'>√<span class='radicand'>36</span></span> − (−4 − 2)²] ÷ (−5)", 6, "= [<span class='rad'>√<span class='radicand'>36</span></span> − (−6)²] ÷ (−5)<br>= [6 − (−6)²] ÷ (−5)<br>= [6 − 36] ÷ (−5)<br>= −30 ÷ (−5)<br>= <strong>6</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[<span class='rad'>√<span class='radicand'>81</span></span> − (11 − (−6))²] ÷ 5", -56, "= [<span class='rad'>√<span class='radicand'>81</span></span> − 17²] ÷ 5<br>= [9 − 17²] ÷ 5<br>= [9 − 289] ÷ 5<br>= −280 ÷ 5<br>= <strong>−56</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[<span class='rad'>√<span class='radicand'>16</span></span> − (9 − (−4))²] ÷ (−5)", 33, "= [<span class='rad'>√<span class='radicand'>16</span></span> − 13²] ÷ (−5)<br>= [4 − 13²] ÷ (−5)<br>= [4 − 169] ÷ (−5)<br>= −165 ÷ (−5)<br>= <strong>33</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[<span class='rad'>√<span class='radicand'>16</span></span> − (−12 − 2)²] ÷ 3", -64, "= [<span class='rad'>√<span class='radicand'>16</span></span> − (−14)²] ÷ 3<br>= [4 − (−14)²] ÷ 3<br>= [4 − 196] ÷ 3<br>= −192 ÷ 3<br>= <strong>−64</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[<span class='rad'>√<span class='radicand'>64</span></span> − (2 − 12)²] ÷ (−4)", 23, "= [<span class='rad'>√<span class='radicand'>64</span></span> − (−10)²] ÷ (−4)<br>= [8 − (−10)²] ÷ (−4)<br>= [8 − 100] ÷ (−4)<br>= −92 ÷ (−4)<br>= <strong>23</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[<span class='rad'>√<span class='radicand'>100</span></span> − (10 − (−6))²] ÷ 2", -123, "= [<span class='rad'>√<span class='radicand'>100</span></span> − 16²] ÷ 2<br>= [10 − 16²] ÷ 2<br>= [10 − 256] ÷ 2<br>= −246 ÷ 2<br>= <strong>−123</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[<span class='rad'>√<span class='radicand'>25</span></span> − (−3 − 8)²] ÷ (−4)", 29, "= [<span class='rad'>√<span class='radicand'>25</span></span> − (−11)²] ÷ (−4)<br>= [5 − (−11)²] ÷ (−4)<br>= [5 − 121] ÷ (−4)<br>= −116 ÷ (−4)<br>= <strong>29</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[<span class='rad'>√<span class='radicand'>16</span></span> − (1 − (−6))²] ÷ 3", -15, "= [<span class='rad'>√<span class='radicand'>16</span></span> − 7²] ÷ 3<br>= [4 − 7²] ÷ 3<br>= [4 − 49] ÷ 3<br>= −45 ÷ 3<br>= <strong>−15</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[<span class='rad'>√<span class='radicand'>81</span></span> − (−5 − (−12))²] ÷ 5", -8, "= [<span class='rad'>√<span class='radicand'>81</span></span> − 7²] ÷ 5<br>= [9 − 7²] ÷ 5<br>= [9 − 49] ÷ 5<br>= −40 ÷ 5<br>= <strong>−8</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[<span class='rad'>√<span class='radicand'>36</span></span> − (11 − (−3))²] ÷ 5", -38, "= [<span class='rad'>√<span class='radicand'>36</span></span> − 14²] ÷ 5<br>= [6 − 14²] ÷ 5<br>= [6 − 196] ÷ 5<br>= −190 ÷ 5<br>= <strong>−38</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[10 ÷ (−4 − (−9)) + 12] · (9 − (−3))", 168, "= [10 ÷ 5 + 12] · (9 − (−3))<br>= [2 + 12] · (9 − (−3))<br>= 14 · (9 − (−3))<br>= 14 · 12<br>= <strong>168</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[12 ÷ (2 − (−1)) + (−2)] · (5 − (−10))", 30, "= [12 ÷ 3 + (−2)] · (5 − (−10))<br>= [4 + (−2)] · (5 − (−10))<br>= 2 · (5 − (−10))<br>= 2 · 15<br>= <strong>30</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[−10 ÷ (−5 − 5) + (−8)] · (8 − (−3))", -77, "= [−10 ÷ (−10) + (−8)] · (8 − (−3))<br>= [1 + (−8)] · (8 − (−3))<br>= −7 · (8 − (−3))<br>= −7 · 11<br>= <strong>−77</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[9 ÷ (−5 − (−8)) + 11] · (−6 − 6)", -168, "= [9 ÷ 3 + 11] · (−6 − 6)<br>= [3 + 11] · (−6 − 6)<br>= 14 · (−6 − 6)<br>= 14 · (−12)<br>= <strong>−168</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[−8 ÷ (7 − 3) + 1] · (−9 − (−1))", 8, "= [−8 ÷ 4 + 1] · (−9 − (−1))<br>= [−2 + 1] · (−9 − (−1))<br>= −1 · (−9 − (−1))<br>= −1 · (−8)<br>= <strong>8</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[−8 ÷ (8 − 10) + (−7)] · (8 − 1)", -21, "= [−8 ÷ (−2) + (−7)] · (8 − 1)<br>= [4 + (−7)] · (8 − 1)<br>= −3 · (8 − 1)<br>= −3 · 7<br>= <strong>−21</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["[12 ÷ (−8 − (−6)) + 12] · (−4 − 10)", -84, "= [12 ÷ (−2) + 12] · (−4 − 10)<br>= [−6 + 12] · (−4 − 10)<br>= 6 · (−4 − 10)<br>= 6 · (−14)<br>= <strong>−84</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−8 − {4 · [5 − (−11 + 12)²] + (−5)}", -19, "= −8 − {4 · [5 − 1²] + (−5)}<br>= −8 − {4 · [5 − 1] + (−5)}<br>= −8 − {4 · 4 + (−5)}<br>= −8 − {16 + (−5)}<br>= −8 − 11<br>= <strong>−19</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["2 − {−4 · [9 − (−6 + 8)²] + 1}", 21, "= 2 − {−4 · [9 − 2²] + 1}<br>= 2 − {−4 · [9 − 4] + 1}<br>= 2 − {−4 · 5 + 1}<br>= 2 − {−20 + 1}<br>= 2 − (−19)<br>= <strong>21</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["5 − {−5 · [−5 − (6 + (−7))²] + 11}", -36, "= 5 − {−5 · [−5 − (−1)²] + 11}<br>= 5 − {−5 · [−5 − 1] + 11}<br>= 5 − {−5 · (−6) + 11}<br>= 5 − {30 + 11}<br>= 5 − 41<br>= <strong>−36</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−7 − {4 · [−8 − (−9 + 2)²] + 8}", 213, "= −7 − {4 · [−8 − (−7)²] + 8}<br>= −7 − {4 · [−8 − 49] + 8}<br>= −7 − {4 · (−57) + 8}<br>= −7 − {−228 + 8}<br>= −7 − (−220)<br>= <strong>213</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["9 − {−3 · [−7 − (−9 + 7)²] + 5}", -29, "= 9 − {−3 · [−7 − (−2)²] + 5}<br>= 9 − {−3 · [−7 − 4] + 5}<br>= 9 − {−3 · (−11) + 5}<br>= 9 − {33 + 5}<br>= 9 − 38<br>= <strong>−29</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−12 − {3 · [−8 − (5 + 2)²] + 12}", 147, "= −12 − {3 · [−8 − 7²] + 12}<br>= −12 − {3 · [−8 − 49] + 12}<br>= −12 − {3 · (−57) + 12}<br>= −12 − {−171 + 12}<br>= −12 − (−159)<br>= <strong>147</strong>", "Nivel 2 · Usa la jerarquía de operaciones"],
+      ["−11 − {−3 · [−8 − (4 + (−9))²] + (−2)}", -108, "= −11 − {−3 · [−8 − (−5)²] + (−2)}<br>= −11 − {−3 · [−8 − 25] + (−2)}<br>= −11 − {−3 · (−33) + (−2)}<br>= −11 − {99 + (−2)}<br>= −11 − 97<br>= <strong>−108</strong>", "Nivel 2 · Usa la jerarquía de operaciones"]
+    ];
+
+    practice(JERARQUIA, 'jo', 'ejercicios-jerarquia');
+    practice(JERARQUIA2, 'jo2', 'ejercicios-jerarquia-2');
+  })();
+  </script>
+
+  <p class="section-label">Rúbrica · Jerarquía de operaciones</p>
+  <details class="rubric">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Competencia</th>
+            <th>Excelente</th>
+            <th>Satisfactorio</th>
+            <th>En proceso</th>
+            <th>Suficiente</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Respeta el orden de las operaciones</td>
+            <td>Resuelve operaciones combinadas respetando el orden (paréntesis, potencias y raíces, multiplicaciones y divisiones, sumas y restas), de izquierda a derecha cuando corresponde, y cuida los signos en cada paso.</td>
+            <td>Respeta la jerarquía de operaciones en la mayoría de los ejercicios, con errores menores de signo o de cálculo.</td>
+            <td>Altera el orden de las operaciones en algunos ejercicios (por ejemplo, resta antes de multiplicar o de elevar a una potencia).</td>
+            <td>No respeta la jerarquía de operaciones.</td>
+          </tr>
+          <tr>
+            <td>Resuelve signos de agrupación</td>
+            <td>Resuelve correctamente operaciones con paréntesis, corchetes y llaves, incluso unos dentro de otros, trabajando de adentro hacia afuera.</td>
+            <td>Resuelve correctamente la mayoría de las operaciones con signos de agrupación, con errores menores en los ejercicios más largos.</td>
+            <td>Se confunde con los grupos anidados: resuelve primero lo de afuera o pierde signos al quitar paréntesis.</td>
+            <td>No logra resolver operaciones con signos de agrupación.</td>
+          </tr>
+          <tr>
+            <td>Calcula potencias y raíces en el momento correcto</td>
+            <td>Calcula correctamente potencias (también de números negativos) y raíces cuadradas exactas, después de resolver lo que está dentro de ellas y antes de multiplicar, dividir, sumar o restar.</td>
+            <td>Calcula correctamente la mayoría de las potencias y raíces, con errores menores.</td>
+            <td>Calcula potencias o raíces fuera de orden (por ejemplo, saca la raíz antes de resolver la operación que tiene adentro) o confunde (−3)² con −3².</td>
+            <td>No logra calcular potencias ni raíces dentro de una operación combinada.</td>
+          </tr>
+          <tr>
+            <td>Identifica y corrige errores</td>
+            <td>Revisa su procedimiento paso a paso, identifica errores de orden y de signos, y los corrige explicando por qué.</td>
+            <td>Identifica la mayoría de sus errores y los corrige, aunque no siempre explica por qué.</td>
+            <td>Identifica algunos errores sólo con ayuda y le cuesta corregirlos.</td>
+            <td>No identifica ni corrige sus errores.</td>
+          </tr>
+          <tr>
+            <td>Argumenta y comunica el procedimiento</td>
+            <td>Escribe cada paso de manera clara, ordenada y fundamentada, utilizando lenguaje matemático adecuado.</td>
+            <td>Escribe el procedimiento de manera clara, aunque omite algunos pasos.</td>
+            <td>El procedimiento es incompleto o poco ordenado y requiere apoyo.</td>
+            <td>No escribe el procedimiento o no permite comprender cómo obtuvo el resultado.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>
