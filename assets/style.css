@@ -889,3 +889,6 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
 /* Cuando ya se eligió una, las demás se ven más tenues */
 .practice-opts:has(button.on) button:not(.on) { opacity: 0.55; }
 .practice-opts:has(button.on) button:not(.on):hover { opacity: 1; }
+/* Raíz cuadrada con barra (vínculo) que cubre todo el radicando */
+.rad { white-space: nowrap; }
+.radicand { border-top: 0.08em solid currentColor; padding: 0.08em 0.12em 0 0.14em; margin-left: -0.08em; }

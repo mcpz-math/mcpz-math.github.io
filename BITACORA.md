@@ -931,3 +931,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   "Clases" y los recuadros de Materiales y Tareas.
 - Nota: la hoja que compartió Carmen dice "Matemáticas II" en el encabezado; se usó para
   Matemáticas 1 como ella pidió.
+
+## 2026-10-18 (Raíces con barra que cubre el radicando)
+- A pedido de Carmen (no se veía claro qué quedaba dentro de la raíz en √(−9 + 73)), todas las raíces
+  de `matematicas-1/leyes-de-los-signos.html` (ejercicios, procedimientos y textos) ahora se dibujan
+  con la **barra del radical** encima de todo lo que está adentro, sin paréntesis: √‾‾‾‾‾‾‾ −9 + 73.
+- Estilos nuevos `.rad` y `.radicand` en `assets/style.css`. En el código se escribe
+  `<span class='rad'>√<span class='radicand'>…</span></span>`.
