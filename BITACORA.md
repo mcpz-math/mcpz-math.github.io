@@ -834,3 +834,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
 ## 2026-10-18 (Leyes de los signos: se quitan los ejemplos de la sección 4)
 - A pedido de Carmen se quitaron los dos ejemplos (f(x) = −2x² + 3 y f(x) = −x² − 4) de la sección
   "4 · Jerarquía de operaciones" en `matematicas-1/leyes-de-los-signos.html`. Quedan los 4 pasos.
+
+## 2026-10-18 (Leyes de los signos: sin botón "−" en los ejercicios)
+- A pedido de Carmen se quitó el botón "−" que aparecía debajo de cada cuadro de respuesta en los
+  ejercicios de `matematicas-1/leyes-de-los-signos.html`. El signo menos se escribe con el guion
+  del teclado (la página acepta - y −). Se ajustaron las instrucciones.
