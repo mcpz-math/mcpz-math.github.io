@@ -754,3 +754,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (no hay a = ±1 para que siempre sea gorda o flaca); 40 con raíces reales y diferentes,
   40 imaginarias y 20 reales y repetidas (b = 0). b va de −9 a 9.
 - Se agregaron estilos para los botones de opción (`.practice-ask`, `.practice-opts`) en `assets/style.css`.
+
+## 2026-10-18 (Ejercicios ax² + b: opción "igual que x²")
+- A pedido de Carmen, en los ejercicios de `tema-05-ax-cuadrada-mas-b.html` la pregunta 2 ahora
+  tiene tres opciones: **gorda**, **flaca** o **igual que x²** (cuando |a| = 1).
+- Se cambiaron 20 funciones del banco para que tengan a = 1 o a = −1. El banco sigue con 100:
+  40 flacas, 40 gordas y 20 iguales que x²; 50 arriba y 50 abajo; 40 raíces reales y diferentes,
+  40 imaginarias y 20 reales y repetidas.

@@ -396,7 +396,7 @@
     <div class="k">Instrucciones</div>
     <p>Para cada función contesta cuatro preguntas y oprime <strong>Comprobar</strong>:</p>
     <p><strong>1.</strong> ¿Abre hacia <strong>arriba</strong> o hacia <strong>abajo</strong>? (fíjate en el signo de a)<br>
-       <strong>2.</strong> ¿Es <strong>gorda</strong> o <strong>flaca</strong> comparada con x²? (fíjate en |a|: mayor que 1 es flaca, menor que 1 es gorda)<br>
+       <strong>2.</strong> Comparada con x², ¿es <strong>gorda</strong>, <strong>flaca</strong> o <strong>igual que x²</strong>? (fíjate en |a|: mayor que 1 es flaca, menor que 1 es gorda, igual a 1 es igual que x²)<br>
        <strong>3.</strong> ¿Dónde está su <strong>vértice</strong>? Escribe el número que falta en V(0, ___).<br>
        <strong>4.</strong> ¿Sus raíces son <strong>reales y diferentes</strong>, <strong>reales y repetidas</strong> o <strong>imaginarias</strong>? (compara los signos de a y b)</p>
     <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Cuando termines,
@@ -413,27 +413,27 @@
   (function () {
     var MINUS = '−';
     // Banco de 100 ejercicios: [numerador de a, denominador de a, b]
-    // 50 abren hacia arriba y 50 hacia abajo; 50 flacas (|a| > 1) y 50 gordas (|a| < 1);
+    // 50 abren hacia arriba y 50 hacia abajo; 40 flacas (|a| > 1), 40 gordas (|a| < 1) y 20 iguales que x² (|a| = 1);
     // 40 con raíces reales y diferentes, 40 imaginarias y 20 reales y repetidas (b = 0).
     var BANK = [
-      [-3, 1, -7], [4, 1, -1], [-6, 1, 7], [-2, 1, 3], [4, 1, -3],
-      [3, 1, -7], [5, 1, 0], [-6, 1, -8], [4, 1, 1], [-5, 1, 7],
-      [5, 1, -2], [-3, 1, 0], [-3, 1, -8], [2, 1, 0], [-3, 1, 1],
-      [-5, 1, 3], [2, 1, 5], [2, 1, -8], [4, 1, -9], [3, 1, 9],
-      [4, 1, 7], [-4, 1, -8], [-2, 1, -2], [3, 1, 0], [5, 1, 7],
-      [-4, 1, 9], [5, 1, 5], [3, 5, 7], [-1, 2, -4], [-1, 2, 9],
-      [5, 3, -7], [1, 3, -1], [-3, 4, 0], [-1, 3, 8], [-5, 2, -5],
-      [-4, 3, -4], [-1, 2, 1], [2, 5, 0], [-3, 4, 8], [-3, 4, -2],
-      [2, 3, 5], [1, 3, 0], [-5, 2, 3], [-3, 5, 0], [3, 4, 0],
-      [5, 2, 9], [-2, 5, -9], [-4, 3, -9], [3, 2, 6], [-5, 3, 4],
-      [-5, 3, 0], [-2, 3, -8], [-2, 5, 2], [2, 5, -1], [2, 3, 9],
-      [4, 3, -3], [3, 4, -5], [5, 2, 4], [-2, 5, 1], [-1, 4, 5],
-      [-3, 5, -6], [1, 4, -9], [3, 4, -8], [5, 2, 0], [-4, 3, 0],
-      [2, 5, -3], [2, 3, 0], [1, 4, 8], [-5, 2, 0], [5, 3, -2],
-      [1, 2, 0], [-5, 3, -8], [5, 3, -8], [-3, 2, 0], [-3, 2, 6],
-      [3, 5, 8], [-1, 3, 0], [1, 4, -7], [2, 3, -2], [-2, 3, 0],
-      [2, 3, 7], [-3, 5, -2], [4, 3, 0], [-1, 3, -8], [-4, 3, 6],
-      [-1, 5, 8], [-1, 5, 0], [1, 5, -4], [1, 2, 1], [-1, 5, 9],
+      [-1, 1, -7], [4, 1, -1], [-6, 1, 7], [-1, 1, 3], [4, 1, -3],
+      [3, 1, -7], [1, 1, 0], [-6, 1, -8], [4, 1, 1], [-1, 1, 7],
+      [5, 1, -2], [-3, 1, 0], [-1, 1, -8], [2, 1, 0], [-3, 1, 1],
+      [-5, 1, 3], [2, 1, 5], [2, 1, -8], [1, 1, -9], [3, 1, 9],
+      [4, 1, 7], [-4, 1, -8], [-2, 1, -2], [3, 1, 0], [1, 1, 7],
+      [-4, 1, 9], [5, 1, 5], [-1, 1, -4], [1, 1, -7], [1, 1, -1],
+      [-1, 1, 1], [-1, 1, -2], [-1, 1, 0], [1, 1, 6], [1, 1, 9],
+      [1, 1, -3], [-1, 1, 5], [1, 1, -8], [1, 1, 8], [1, 1, -4],
+      [3, 5, 7], [-1, 2, 9], [-3, 4, 0], [-1, 3, 8], [-5, 2, -5],
+      [-4, 3, -4], [2, 5, 0], [-3, 4, 8], [2, 3, 5], [1, 3, 0],
+      [-5, 2, 3], [3, 4, 0], [5, 2, 9], [-2, 5, -9], [-4, 3, -9],
+      [-5, 3, 4], [-5, 3, 0], [-2, 3, -8], [-2, 5, 2], [2, 5, -1],
+      [3, 4, -5], [5, 2, 4], [-2, 5, 1], [-3, 5, -6], [1, 4, -9],
+      [5, 2, 0], [-4, 3, 0], [2, 5, -3], [2, 3, 0], [-5, 2, 0],
+      [5, 3, -2], [1, 2, 0], [-5, 3, -8], [5, 3, -8], [-3, 2, 0],
+      [-3, 2, 6], [3, 5, 8], [-1, 3, 0], [1, 4, -7], [2, 3, -2],
+      [-2, 3, 0], [2, 3, 7], [-3, 5, -2], [4, 3, 0], [-1, 3, -8],
+      [-4, 3, 6], [-1, 5, 8], [-1, 5, 0], [1, 2, 1], [-1, 5, 9],
       [1, 5, -8], [4, 3, 9], [3, 5, 2], [-2, 3, 6], [-1, 2, -8],
       [1, 3, 7], [-4, 3, -3], [-2, 3, -1], [-3, 5, -7], [3, 4, 8]
     ];
@@ -453,12 +453,12 @@
       var a = ex[0] / ex[1], b = ex[2];
       return {
         abre: a > 0 ? 'arriba' : 'abajo',
-        forma: Math.abs(a) > 1 ? 'flaca' : 'gorda',
+        forma: Math.abs(a) > 1 ? 'flaca' : (Math.abs(a) < 1 ? 'gorda' : 'igual'),
         v: b,
         raices: b === 0 ? 'repetidas' : ((a > 0) === (b > 0) ? 'imaginarias' : 'diferentes')
       };
     }
-    var LABEL = { arriba: 'hacia arriba', abajo: 'hacia abajo', flaca: 'flaca', gorda: 'gorda',
+    var LABEL = { arriba: 'hacia arriba', abajo: 'hacia abajo', flaca: 'flaca', gorda: 'gorda', igual: 'igual que x²',
                   diferentes: 'reales y diferentes', repetidas: 'reales y repetidas', imaginarias: 'imaginarias' };
 
     function parseV(txt) { // acepta "−3", "-3", "+3", "(0, -3)" o "V(0, -3)"
@@ -492,7 +492,7 @@
       card.innerHTML =
         '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + fxHTML(ex) + '</span></div>' +
         '<div class="practice-ask">1. ¿Hacia dónde abre?</div>' + opts('abre', ['arriba', 'abajo']) +
-        '<div class="practice-ask">2. Comparada con x², ¿es gorda o flaca?</div>' + opts('forma', ['gorda', 'flaca']) +
+        '<div class="practice-ask">2. Comparada con x², ¿es gorda, flaca o igual?</div>' + opts('forma', ['gorda', 'flaca', 'igual']) +
         '<div class="practice-ask">3. ¿Dónde está su vértice?</div>' +
         '<div class="practice-row"><span class="eq">V(0,</span><input type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" style="flex:0 1 5.5rem;" aria-label="Coordenada y del vértice del ejercicio ' + (idx + 1) + '"><span class="eq">)</span></div>' +
         '<div class="practice-ask">4. ¿Cómo son sus raíces?</div>' + opts('raices', ['diferentes', 'repetidas', 'imaginarias']) +
@@ -512,7 +512,9 @@
       var a = ex[0] / ex[1], aH = num(ex[0], ex[1]), absH = num(Math.abs(ex[0]), ex[1]), bH = num(ex[2], 1);
       var why = {
         abre: '<strong>a = ' + aH + '</strong> es ' + (a > 0 ? 'positivo' : 'negativo') + ', así que abre <strong>' + LABEL[ans.abre] + '</strong>.',
-        forma: '<strong>|a| = ' + absH + '</strong> es ' + (Math.abs(a) > 1 ? 'mayor' : 'menor') + ' que 1, así que es <strong>' + ans.forma + '</strong> (más ' + (Math.abs(a) > 1 ? 'cerrada' : 'abierta') + ' que x²).',
+        forma: ans.forma === 'igual'
+          ? '<strong>|a| = 1</strong>, así que tiene la <strong>misma abertura que x²</strong>: no es gorda ni flaca.'
+          : '<strong>|a| = ' + absH + '</strong> es ' + (Math.abs(a) > 1 ? 'mayor' : 'menor') + ' que 1, así que es <strong>' + ans.forma + '</strong> (más ' + (Math.abs(a) > 1 ? 'cerrada' : 'abierta') + ' que x²).',
         v: 'El vértice de ax² + b es V(0, b). Aquí <strong>b = ' + bH + '</strong>, así que el vértice es <strong><span style="white-space:nowrap;">V(0, ' + bH + ')</span></strong>.',
         raices: ex[2] === 0
           ? '<strong>b = 0</strong>: el vértice está sobre el eje x y la parábola sólo lo toca ahí. Raíces <strong>reales y repetidas</strong> (x = 0).'
@@ -531,7 +533,7 @@
         if (chosen.raices !== ans.raices) wrong.push('raices');
         if (!wrong.length) {
           card.classList.add('ok'); done[idx] = 1; score();
-          fb.innerHTML = '<span class="yes">✓ ¡Todo correcto!</span><div class="sol">Abre ' + LABEL[ans.abre] + ' · ' + ans.forma +
+          fb.innerHTML = '<span class="yes">✓ ¡Todo correcto!</span><div class="sol">Abre ' + LABEL[ans.abre] + ' · ' + LABEL[ans.forma] +
                          ' · <span style="white-space:nowrap;">V(0, ' + bH + ')</span> · raíces ' + LABEL[ans.raices] + '</div>';
           return;
         }
