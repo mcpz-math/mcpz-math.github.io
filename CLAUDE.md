@@ -36,8 +36,8 @@ y Karla (texto). Estilos compartidos en `assets/style.css`.
   (`tema-XX-nombre-subtema.html`, ej. `tema-01-grafico.html`) enlazada desde el
   bloque de ese subtema en la página del tema, en vez de meter todo el contenido
   ahí mismo.
-- Todos los cursos muestran la etiqueta "Próximamente" excepto el que ya tiene
-  contenido activo (actualmente Matemáticas 3).
+- Todos los cursos muestran la etiqueta "Próximamente" excepto los que ya tienen
+  contenido activo (actualmente Matemáticas 1 y Matemáticas 3).
 
 ## Flujo de trabajo para agregar temas
 1. Elegir la materia y el tema a trabajar.

@@ -808,3 +808,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - `matematicas-1/index.html` tiene una nueva sección "Clases" con la tarjeta "Las leyes de los
   signos". Los recuadros de Temario, Materiales y Tareas siguen en "Próximamente".
 - La tarjeta de la página `matematicas-3/tema-05-x-cuadrada.html` sigue y ahora lleva a la nueva dirección.
+
+## 2026-10-18 (Matemáticas 1 sin "Próximamente"; se quita tarjeta de signos en x²)
+- A pedido de Carmen se quitó de `matematicas-3/tema-05-x-cuadrada.html` la tarjeta "¿Te confunden
+  los signos?". La clase de signos queda sólo en Matemáticas 1.
+- En la página de inicio (`index.html`) se quitó la etiqueta "Próximamente" de Matemáticas 1,
+  porque ya tiene contenido. Se actualizó CLAUDE.md.
