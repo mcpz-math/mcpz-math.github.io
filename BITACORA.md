@@ -854,3 +854,12 @@ Registro de lo que vamos haciendo, en orden cronológico.
   https://mcpz-math.github.io/matematicas-1/materiales/jerarquia-de-operaciones.mp4
 - A pedido de Carmen, el encabezado de la página ahora dice sólo "Matemáticas 1" (se quitó
   "Clase de repaso").
+
+## 2026-10-18 (Jerarquía de operaciones: pasos generales e imágenes de los ejemplos)
+- A pedido de Carmen, en la sección "4 · Jerarquía de operaciones" de
+  `matematicas-1/leyes-de-los-signos.html` los 4 pasos ahora son el orden general: paréntesis,
+  potencias, multiplicaciones y divisiones (de izquierda a derecha), sumas y restas (de izquierda
+  a derecha), usando las leyes de los signos en cada paso.
+- Debajo del video se agregaron dos imágenes con cada ejemplo completo, igual que se ve en el
+  video: `materiales/jerarquia-de-operaciones-ejemplo-1.jpg` y `-ejemplo-2.jpg`. Al tocarlas se
+  abren en grande.
