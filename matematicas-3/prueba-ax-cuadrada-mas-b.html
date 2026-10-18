@@ -47,7 +47,7 @@
 
     <div class="pg-controls">
       <div class="pg-field">
-        <label class="pg-field-label" for="axb-a">Escribe a y b (ej. 1/2, −4, 3)</label>
+        <label class="pg-field-label no-caps" for="axb-a">Escribe a y b (ej. 1/2, −4, 3)</label>
         <div class="pg-field-row" style="flex-wrap:wrap; justify-content:center;">
           <span style="display:inline-flex; align-items:center; gap:0.4rem;"><span style="font-family:'IBM Plex Mono',monospace; font-size:1rem; font-weight:700; color:var(--forest); text-transform:none; white-space:nowrap;">a =</span>
           <input type="text" id="axb-a" class="pg-box wide" value="1" inputmode="text" autocomplete="off" style="width:70px;"></span>
@@ -304,7 +304,7 @@
         '<br>• Paso 1: 4 · ' + aP + ' = ' + fracHTML(aY) +
         '<br>• Paso 2: ' + fracHTML(aY) + (B.n === 0 ? ' + 0' : plusHTML(B)) + ' = <strong>' + fracHTML(nY) + '</strong>' +
         '<br>Entonces (2, 4) se mueve a <strong>(2, ' + fracHTML(nY) + ')</strong>.');
-      msgEl.innerHTML = '<div class="k">¿Qué pasa con a = ' + aH + ' y b = ' + bH + '?</div>' + lines.map(function (l) { return '<p style="margin:0.35rem 0;">' + l + '</p>'; }).join('');
+      msgEl.innerHTML = '<div class="k no-caps">¿Qué pasa con a = ' + aH + ' y b = ' + bH + '?</div>' + lines.map(function (l) { return '<p style="margin:0.35rem 0;">' + l + '</p>'; }).join('');
       tb.innerHTML = XS.map(function (x) {
         var y = add(mul(A, x * x), B), out = Math.abs(val(y)) > YM ? ' <span style="color:#b3412e; font-size:0.8rem;">(fuera de la gráfica)</span>' : '';
         var xs = String(x).replace('-', MINUS);

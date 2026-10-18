@@ -726,3 +726,12 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (2) al resultado se le suma b.
 - El ejemplo con el punto (2, 4) ahora muestra cada paso por separado con los valores de a y b que
   eligió el alumno (por ejemplo, con a = −1 y b = −2: 4 · (−1) = −4, luego −4 − 2 = −6 → (2, −6)).
+
+## 2026-10-18 (Etiquetas con fórmulas ya no salen en MAYÚSCULAS)
+- A pedido de Carmen: el estilo pone en mayúsculas las etiquetas pequeñas (títulos de sección,
+  recuadros, campos), y eso convertía `f(x) = ax² + b` en `F(X) = AX² + B`.
+- Se agregó la clase `no-caps` en `assets/style.css`. Las etiquetas que tienen fórmulas o letras
+  matemáticas (a, b, x, f(x)) se muestran tal cual, con minúsculas.
+- Se aplicó en Matemáticas 3: `tema-04-constante`, `tema-05-x-cuadrada`, `tema-05-ax-cuadrada`,
+  `tema-05-ax-cuadrada-mas-b` y las páginas `prueba-ax-cuadrada` y `prueba-ax-cuadrada-mas-b`.
+- Regla para páginas nuevas: si una etiqueta lleva letras matemáticas, agregarle `no-caps`.

@@ -638,6 +638,8 @@ footer.site-footer {
   color: var(--moss);
 }
 .pg-field-row { display: flex; align-items: center; gap: 0.5rem; }
+/* Etiquetas con fórmulas o letras matemáticas: se muestran tal cual (sin mayúsculas) */
+.section-label.no-caps, .callout .k.no-caps, .pg-field-label.no-caps { text-transform: none; }
 .pg-box {
   width: 52px;
   text-align: center;
