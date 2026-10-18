@@ -1004,3 +1004,13 @@ Registro de lo que vamos haciendo, en orden cronológico.
   **"Los números enteros y las leyes de los signos en sus operaciones"** (también en la pestaña
   del navegador, en el título de su rúbrica y en el recuadro del Tema 5). El nombre del archivo no
   cambió, para que los enlaces sigan funcionando.
+
+## 2026-10-18 (Tema 5 de Matemáticas 1: introducción a los números enteros)
+- A pedido de Carmen, en `matematicas-1/tema-05-numeros-enteros.html` (antes de los subtemas) se agregó
+  una introducción sobre por qué se extienden los números naturales a los enteros:
+  - Recuadro "Introducción": en los naturales, 3 − 5 no tiene resultado.
+  - "¿Por qué necesitamos los números enteros?": ejemplos de la vida diaria (temperaturas, dinero,
+    alturas, sótanos, línea del tiempo) y porque así las restas y ecuaciones sencillas tienen solución
+    (ℤ = {…, −3, −2, −1, 0, 1, 2, 3, …}; 3 − 5 = −2; x + 5 = 2 → x = −3).
+  - Recta numérica de −6 a 6 (naturales a la derecha, negativos a la izquierda, opuestos).
+  - "Para recordar": todo natural es entero, pero no todo entero es natural.
