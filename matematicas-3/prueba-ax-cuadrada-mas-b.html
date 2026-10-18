@@ -295,7 +295,15 @@
         lines.push(rootsText(A, B));
         eqEl.innerHTML = 'f(x) = ' + coefHTML(A) + 'x²' + plusHTML(B);
       }
-      lines.push('Cada punto (x, y) de x² se mueve a <strong>(x, a·y + b)</strong>. Por ejemplo, (2, 4) → (2, ' + aH + ' · 4' + plusHTML(B) + ') = (2, ' + fracHTML(add(mul(A, 4), B)) + ').');
+      var aY = mul(A, 4), nY = add(aY, B), aP = A.n < 0 ? '(' + aH + ')' : aH;
+      lines.push('<strong>¿Cómo se mueve cada punto de x²?</strong> La <strong>x no cambia</strong>; solo cambia la <strong>y</strong>, en dos pasos:' +
+        '<br><strong>1.</strong> La y se <strong>multiplica por a</strong> (a = ' + aH + ').' +
+        '<br><strong>2.</strong> Al resultado se le <strong>suma b</strong> (b = ' + bH + ').');
+      lines.push('<strong>Ejemplo</strong> con el punto (2, 4) de x²:' +
+        '<br>• La x = 2 se queda igual.' +
+        '<br>• Paso 1: 4 · ' + aP + ' = ' + fracHTML(aY) +
+        '<br>• Paso 2: ' + fracHTML(aY) + (B.n === 0 ? ' + 0' : plusHTML(B)) + ' = <strong>' + fracHTML(nY) + '</strong>' +
+        '<br>Entonces (2, 4) se mueve a <strong>(2, ' + fracHTML(nY) + ')</strong>.');
       msgEl.innerHTML = '<div class="k">¿Qué pasa con a = ' + aH + ' y b = ' + bH + '?</div>' + lines.map(function (l) { return '<p style="margin:0.35rem 0;">' + l + '</p>'; }).join('');
       tb.innerHTML = XS.map(function (x) {
         var y = add(mul(A, x * x), B), out = Math.abs(val(y)) > YM ? ' <span style="color:#b3412e; font-size:0.8rem;">(fuera de la gráfica)</span>' : '';

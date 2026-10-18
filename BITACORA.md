@@ -718,3 +718,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - El eje y cambia de escala solo (cada cuadrito vale 1, 2, 5, 10 o 20 unidades) para que siempre
   se vean el vértice y los puntos en x = ±1. Debajo de la gráfica se indica cuánto vale cada cuadrito.
 - Las instrucciones ahora dicen que los valores van entre −50 y 50.
+
+## 2026-10-18 (f(x) = ax² + b: explicación más clara de cómo se mueve cada punto)
+- A pedido de Carmen, en `matematicas-3/tema-05-ax-cuadrada-mas-b.html` (y en
+  `prueba-ax-cuadrada-mas-b.html`) se cambió la frase "Cada punto (x, y) de x² se mueve a (x, a·y + b)"
+  por una explicación en pasos: la **x no cambia** y sólo cambia la **y**: (1) se multiplica por a,
+  (2) al resultado se le suma b.
+- El ejemplo con el punto (2, 4) ahora muestra cada paso por separado con los valores de a y b que
+  eligió el alumno (por ejemplo, con a = −1 y b = −2: 4 · (−1) = −4, luego −4 − 2 = −6 → (2, −6)).
