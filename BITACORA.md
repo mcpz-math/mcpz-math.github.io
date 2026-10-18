@@ -908,3 +908,26 @@ Registro de lo que vamos haciendo, en orden cronológico.
     operación) y [√c − (d − e)²] ÷ p. Los otros 70 son de las 10 formas anteriores (7 de cada una).
 - El banco de signos (sección 6) no cambió. Todas las respuestas se verificaron con la computadora.
 - Pendiente de decidir con Carmen: el video y las imágenes de los ejemplos todavía dicen "Potencias".
+
+## 2026-10-18 (Matemáticas 1: temario)
+- A partir de la hoja de registro de Carmen (27 evaluaciones con su objetivo), se armó el temario de
+  Matemáticas 1 en `matematicas-1/index.html`, con el mismo formato que el de Matemáticas 3. Los
+  puntos se agruparon en 6 temas, en el orden de la hoja:
+  1. **Números racionales** (`tema-01-numeros-racionales.html`): definición de racionales, racionales y
+     fracciones, clasificación, fracciones decimales, orden, operaciones, problemas, jerarquía de operaciones.
+  2. **Proporcionalidad y porcentajes** (`tema-02-…`): proporciones directas, proporciones inversas, porcentajes.
+  3. **Ecuaciones lineales** (`tema-03-…`): a(x + b) + c = d(x + e) + f.
+  4. **Geometría analítica: la recta** (`tema-04-la-recta.html`): plano cartesiano, ecuación general de
+     la recta, recta dados m y A, recta dados A y B, rectas perpendiculares y paralelas, distancia entre
+     dos puntos, punto medio.
+  5. **Trigonometría** (`tema-05-trigonometria.html`): teorema de Pitágoras, razones trigonométricas,
+     valores de los ángulos más importantes, signos de las razones trigonométricas, resolución de
+     triángulos rectángulos y oblicuángulos, semejanza y teorema de Tales.
+  6. **Probabilidad** (`tema-06-probabilidad.html`).
+- Cada tema tiene su página con un bloque por subtema (indica su objetivo y "Próximamente") y
+  "Materiales y tareas". El subtema "Jerarquía de operaciones" del Tema 1 enlaza a la clase
+  "Las leyes de los signos".
+- En `matematicas-1/index.html` se quitó el recuadro "Temario: Próximamente"; siguen la sección
+  "Clases" y los recuadros de Materiales y Tareas.
+- Nota: la hoja que compartió Carmen dice "Matemáticas II" en el encabezado; se usó para
+  Matemáticas 1 como ella pidió.
