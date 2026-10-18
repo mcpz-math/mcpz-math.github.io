@@ -787,3 +787,17 @@ Registro de lo que vamos haciendo, en orden cronológico.
   parábola? (ahora 2) y De regreso: ¿qué x da ese resultado? (ahora 3).
 - El texto de la gráfica decía "los puntos de la tabla"; ahora menciona los puntos directamente
   ((−3, 9), (−2, 4), …, (3, 9)).
+
+## 2026-10-18 (Clase de repaso: leyes de los signos)
+- A pedido de Carmen (los alumnos se confunden con los signos, tema de Matemáticas 1), se creó
+  la página `matematicas-3/tema-05-repaso-signos.html` con una clase de repaso:
+  1. Multiplicar y dividir (ley de los signos, contar signos menos: par/impar).
+  2. Potencias de números negativos: (−3)² = 9 vs −3² = −9, (−2)³, −(−4)²; sustituir siempre
+     entre paréntesis.
+  3. Sumar y restar (mismo signo, signos diferentes, restar un negativo).
+  4. Evaluar f(x) = ax² + b paso a paso (sustituir, potencia, multiplicar por a, sumar b) con
+     dos ejemplos.
+  5. Tabla de errores más comunes (error / correcto / por qué).
+  6. Ejercicios con revisión automática: banco de 100 (25 de cada tipo), 10 al azar; si la
+     respuesta sólo tiene el signo mal, se le avisa al alumno, y siempre se muestra el procedimiento.
+- Se enlazó desde `tema-05-x-cuadrada.html`, justo debajo del recuadro "¡Cuidado con los signos!".
