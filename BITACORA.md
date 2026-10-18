@@ -970,3 +970,13 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Por confirmar con Carmen: los nombres de los temas (la hoja no los trae), si "Suma, resta…" del
   punto 5 son operaciones básicas y las del punto 7 son con notación científica, y si "Medianas y
   bisectriz" (punto 24) debería decir "Medianas y baricentro".
+
+## 2026-10-18 (La clase de signos pasa al Tema 5 de Matemáticas 1)
+- A pedido de Carmen, la tarjeta "Las leyes de los signos" ya no está en la sección "Clases" de
+  `matematicas-1/index.html` (se quitó esa sección). Ahora se llega desde el **Tema 5 · Números
+  enteros** (`tema-05-numeros-enteros.html`):
+  - "Algoritmo de operaciones con números enteros" → la clase completa.
+  - "Jerarquía de operaciones usando números ℤ" → directo a la sección 4 de la clase
+    (`leyes-de-los-signos.html#jerarquia`).
+- El enlace de regreso de la clase ahora dice "← Tema 5". El enlace desde Matemáticas 2 (Tema 1,
+  Jerarquía de operaciones) también lleva directo a la sección de jerarquía.
