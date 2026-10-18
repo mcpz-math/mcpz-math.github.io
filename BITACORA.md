@@ -735,3 +735,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Se aplicó en Matemáticas 3: `tema-04-constante`, `tema-05-x-cuadrada`, `tema-05-ax-cuadrada`,
   `tema-05-ax-cuadrada-mas-b` y las páginas `prueba-ax-cuadrada` y `prueba-ax-cuadrada-mas-b`.
 - Regla para páginas nuevas: si una etiqueta lleva letras matemáticas, agregarle `no-caps`.
+
+## 2026-10-18 (f(x) = ax² + b: explicación del número b)
+- A pedido de Carmen, en `matematicas-3/tema-05-ax-cuadrada-mas-b.html` se agregó, antes del video,
+  la sección "¿Qué hace el número b?": si **b > 0** la gráfica **sube**, si **b < 0** la gráfica
+  **baja**, y si b = 0 se queda igual. Ejemplos: x² + 3 (sube 3, V(0, 3)) y x² − 2 (baja 2, V(0, −2)).
+- También se aclara que b no cambia la forma ni hacia dónde abre, y que el vértice es V(0, b).
