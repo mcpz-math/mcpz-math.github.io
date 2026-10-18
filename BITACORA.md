@@ -839,3 +839,18 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen se quitó el botón "−" que aparecía debajo de cada cuadro de respuesta en los
   ejercicios de `matematicas-1/leyes-de-los-signos.html`. El signo menos se escribe con el guion
   del teclado (la página acepta - y −). Se ajustaron las instrucciones.
+
+## 2026-10-18 (Video: jerarquía de operaciones)
+- A pedido de Carmen se hizo un video (3 min 7 s, estilo "Compás", con la música de fondo de los
+  otros videos —Preludio en Do mayor de Bach— y la etiqueta "DTI. Maria del Carmen Pérez Zarate").
+  Escenas: portada; el orden de las operaciones (paréntesis, potencias, multiplicaciones y
+  divisiones, sumas y restas; "usa las leyes de los signos"); Ejemplo 1: 5 − 2(3 − 7)² = −27 en
+  4 pasos, con "¡Cuidado!: no hagas primero 5 − 2"; Ejemplo 2: −3² + 12 ÷ (−4) · 2 − (−5) = −10
+  en 6 pasos; y "Para recordar".
+- Archivos: `matematicas-1/materiales/jerarquia-de-operaciones.mp4` y su portada
+  `jerarquia-de-operaciones-portada.jpg`. Se puso en `matematicas-1/leyes-de-los-signos.html`,
+  en la sección "4 · Jerarquía de operaciones", debajo de los 4 pasos.
+- Enlace directo para compartir:
+  https://mcpz-math.github.io/matematicas-1/materiales/jerarquia-de-operaciones.mp4
+- A pedido de Carmen, el encabezado de la página ahora dice sólo "Matemáticas 1" (se quitó
+  "Clase de repaso").
