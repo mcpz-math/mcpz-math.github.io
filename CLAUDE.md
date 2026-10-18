@@ -39,6 +39,11 @@ y Karla (texto). Estilos compartidos en `assets/style.css`.
 - Todos los cursos muestran la etiqueta "Próximamente" excepto los que ya tienen
   contenido activo (actualmente Matemáticas 1, Matemáticas 2 y Matemáticas 3).
 
+## Geometría plana
+- Todas las construcciones se hacen **con regla y compás, sin medir**: la regla sólo sirve para
+  trazar rectas. No se dan medidas de los lados (no hace falta conocerlas). Por ejemplo, el punto
+  medio se encuentra con la mediatriz y las perpendiculares con arcos de compás (no con escuadra).
+
 ## Flujo de trabajo para agregar temas
 1. Elegir la materia y el tema a trabajar.
 2. Carmen comparte el contenido (texto en el chat, PDF, Word o imagen).

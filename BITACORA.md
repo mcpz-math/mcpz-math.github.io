@@ -1060,3 +1060,26 @@ Registro de lo que vamos haciendo, en orden cronológico.
   y el video), enlazada desde el bloque "Medianas y baricentro" del Tema 9.
 - Enlace directo para compartir:
   https://mcpz-math.github.io/matematicas-1/materiales/medianas-y-baricentro.mp4
+
+## 2026-10-18 (Videos de puntos notables con regla y compás)
+- Regla de Carmen para **toda la geometría plana**: las construcciones se hacen **con regla y compás,
+  sin medir** (la regla sólo traza rectas) y no hace falta conocer las medidas de los lados. Se anotó
+  en CLAUDE.md.
+- Por eso se **rehízo el video de medianas** (antes medía los lados con regla): ahora el punto medio de
+  cada lado se encuentra trazando su mediatriz con el compás (línea punteada auxiliar).
+- Videos nuevos, con el mismo estilo, música y etiqueta de nombre, sobre el mismo triángulo escaleno
+  (sin medidas): portada · ¿qué es? · construcción paso a paso · ¿qué tiene de especial? · para recordar.
+  - **Mediatrices y circuncentro** (2 min 45 s): arcos desde los extremos de cada lado y recta por los
+    cruces; O equidista de los vértices; circunferencia circunscrita.
+  - **Bisectrices e incentro** (2 min 39 s): arco desde el vértice (P y Q), arcos iguales desde P y Q (R),
+    recta vértice–R; I equidista de los lados; circunferencia inscrita.
+  - **Alturas y ortocentro** (2 min 48 s): arco con centro en el vértice que corta el lado opuesto (se
+    prolonga el lado si hace falta) y arcos iguales que se cruzan del otro lado; H dentro en un
+    acutángulo, en el vértice del ángulo recto en un rectángulo, afuera en un obtusángulo; área = base ×
+    altura ÷ 2.
+- Archivos en `matematicas-1/materiales/`: `medianas-y-baricentro.mp4` (reemplazado),
+  `mediatriz-y-circuncentro.mp4`, `bisectriz-e-incentro.mp4`, `alturas-y-ortocentro.mp4`, cada uno con
+  su portada.
+- Páginas de subtema (objetivo, definiciones, material y video): `tema-09-medianas-y-baricentro.html`
+  (actualizada), `tema-09-mediatriz-y-circuncentro.html`, `tema-09-bisectriz-e-incentro.html` y
+  `tema-09-alturas-y-ortocentro.html`, enlazadas desde el Tema 9.
