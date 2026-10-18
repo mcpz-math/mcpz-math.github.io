@@ -779,3 +779,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Competencias: (1) hacia dónde abre (signo de a), (2) abertura comparada con x² (|a|),
   (3) vértice V(0, b) y desplazamiento vertical, (4) naturaleza de las raíces, (5) tabla de
   valores y gráfica, (6) argumenta y comunica el procedimiento.
+
+## 2026-10-18 (f(x) = x²: se quita la Actividad 1 · Tabla de valores)
+- A pedido de Carmen se quitó de `matematicas-3/tema-05-x-cuadrada.html` la "Actividad 1 · Tabla de
+  valores" (tabla para completar y su botón "Ver respuestas").
+- Las demás actividades se renumeraron: Evaluar la función (ahora 1), ¿El punto está en la
+  parábola? (ahora 2) y De regreso: ¿qué x da ese resultado? (ahora 3).
+- El texto de la gráfica decía "los puntos de la tabla"; ahora menciona los puntos directamente
+  ((−3, 9), (−2, 4), …, (3, 9)).
