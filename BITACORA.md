@@ -950,3 +950,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   Matemáticas 1 (`../matematicas-1/leyes-de-los-signos.html`).
 - En la página de inicio se quitó la etiqueta "Próximamente" de Matemáticas 2 y se cambió su
   descripción por los temas de la hoja. Se actualizó CLAUDE.md.
+
+## 2026-10-18 (Temario de Matemáticas 2: sin la ecuación en el Tema 3)
+- A pedido de Carmen se quitó del temario (`matematicas-2/index.html`) la etiqueta
+  "a(x + b) + c = d(x + e) + f" debajo de "Ecuaciones lineales". La página del Tema 3 no cambió.
