@@ -938,3 +938,15 @@ Registro de lo que vamos haciendo, en orden cronológico.
   con la **barra del radical** encima de todo lo que está adentro, sin paréntesis: √‾‾‾‾‾‾‾ −9 + 73.
 - Estilos nuevos `.rad` y `.radicand` en `assets/style.css`. En el código se escribe
   `<span class='rad'>√<span class='radicand'>…</span></span>`.
+
+## 2026-10-18 (El temario es de Matemáticas 2)
+- Carmen aclaró que la hoja de registro es de **Matemáticas 2**. El temario y las 6 páginas de temas
+  se movieron de `matematicas-1/` a `matematicas-2/` (mismos nombres de archivo), con el encabezado
+  "Matemáticas 2 · Tema N de 6".
+- `matematicas-2/index.html` ahora tiene el temario, más los recuadros de Materiales y Tareas.
+- `matematicas-1/index.html` vuelve a tener el recuadro "Temario: Próximamente"; la clase
+  "Las leyes de los signos" se queda en Matemáticas 1.
+- El subtema "Jerarquía de operaciones" del Tema 1 de Matemáticas 2 enlaza a la clase de
+  Matemáticas 1 (`../matematicas-1/leyes-de-los-signos.html`).
+- En la página de inicio se quitó la etiqueta "Próximamente" de Matemáticas 2 y se cambió su
+  descripción por los temas de la hoja. Se actualizó CLAUDE.md.

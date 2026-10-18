@@ -37,7 +37,7 @@ y Karla (texto). Estilos compartidos en `assets/style.css`.
   bloque de ese subtema en la página del tema, en vez de meter todo el contenido
   ahí mismo.
 - Todos los cursos muestran la etiqueta "Próximamente" excepto los que ya tienen
-  contenido activo (actualmente Matemáticas 1 y Matemáticas 3).
+  contenido activo (actualmente Matemáticas 1, Matemáticas 2 y Matemáticas 3).
 
 ## Flujo de trabajo para agregar temas
 1. Elegir la materia y el tema a trabajar.
