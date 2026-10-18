@@ -1014,3 +1014,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
     (ℤ = {…, −3, −2, −1, 0, 1, 2, 3, …}; 3 − 5 = −2; x + 5 = 2 → x = −3).
   - Recta numérica de −6 a 6 (naturales a la derecha, negativos a la izquierda, opuestos).
   - "Para recordar": todo natural es entero, pero no todo entero es natural.
+
+## 2026-10-18 (Matemáticas 1: Tema 3 cambia de nombre)
+- A pedido de Carmen, el Tema 3 de Matemáticas 1 ahora se llama **"Números naturales y sus operaciones
+  básicas"** (antes "Operaciones básicas"), en el temario y en su página. El archivo sigue siendo
+  `matematicas-1/tema-03-operaciones-basicas.html`.
