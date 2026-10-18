@@ -875,3 +875,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   a·b − c·d, a − b(c − d), con potencias, (a − b)²÷c, a − b(c − d)², −k² + a÷b·c − (d) y
   a(b + c) − d÷e. Todas las respuestas son enteras y se verificaron con la computadora.
 - Las dos secciones de ejercicios usan ahora la misma función en el código (`practice`).
+
+## 2026-10-18 (Leyes de los signos: rúbrica por competencias)
+- A pedido de Carmen, al final de `matematicas-1/leyes-de-los-signos.html` se agregó una
+  **rúbrica por competencias** desplegable ("Ver rúbrica por competencias"), con el mismo formato
+  que las otras rúbricas (Excelente, Satisfactorio, En proceso, Suficiente).
+- Competencias: (1) ley de los signos al multiplicar y dividir, (2) potencias de números negativos,
+  (3) suma y resta con signo, (4) jerarquía de operaciones, (5) identifica y corrige errores,
+  (6) argumenta y comunica el procedimiento.
