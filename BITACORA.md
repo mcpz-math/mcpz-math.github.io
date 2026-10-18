@@ -818,3 +818,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
 ## 2026-10-18 (Leyes de los signos: se quita "¡Cuidado al sustituir!")
 - A pedido de Carmen se quitó el recuadro "¡Cuidado al sustituir!" de la sección 2 (potencias)
   en `matematicas-1/leyes-de-los-signos.html`.
+
+## 2026-10-18 (Leyes de los signos: se quita "Todo junto: evaluar f(x) = ax² + b")
+- A pedido de Carmen se quitó la sección "4 · Todo junto: evaluar f(x) = ax² + b" (los 4 pasos y
+  los dos ejemplos) de `matematicas-1/leyes-de-los-signos.html`. Las secciones siguientes se
+  renumeraron: Errores más comunes (4) y Ejercicios (5).
+- Se actualizó la descripción de la tarjeta en `matematicas-1/index.html`.
