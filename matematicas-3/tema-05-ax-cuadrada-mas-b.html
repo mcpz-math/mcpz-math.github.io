@@ -391,6 +391,171 @@
   })();
   </script>
 
+  <p class="section-label no-caps" id="ejercicios-ax2-b">Ejercicios: analiza f(x) = ax² + b</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Para cada función contesta cuatro preguntas y oprime <strong>Comprobar</strong>:</p>
+    <p><strong>1.</strong> ¿Abre hacia <strong>arriba</strong> o hacia <strong>abajo</strong>? (fíjate en el signo de a)<br>
+       <strong>2.</strong> ¿Es <strong>gorda</strong> o <strong>flaca</strong> comparada con x²? (fíjate en |a|: mayor que 1 es flaca, menor que 1 es gorda)<br>
+       <strong>3.</strong> ¿Dónde está su <strong>vértice</strong>? Escribe el número que falta en V(0, ___).<br>
+       <strong>4.</strong> ¿Sus raíces son <strong>reales y diferentes</strong>, <strong>reales y repetidas</strong> o <strong>imaginarias</strong>? (compara los signos de a y b)</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Cuando termines,
+       oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="axbq-grid"></div>
+  <p class="practice-score" id="axbq-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="axbq-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script>
+  (function () {
+    var MINUS = '−';
+    // Banco de 100 ejercicios: [numerador de a, denominador de a, b]
+    // 50 abren hacia arriba y 50 hacia abajo; 50 flacas (|a| > 1) y 50 gordas (|a| < 1);
+    // 40 con raíces reales y diferentes, 40 imaginarias y 20 reales y repetidas (b = 0).
+    var BANK = [
+      [-3, 1, -7], [4, 1, -1], [-6, 1, 7], [-2, 1, 3], [4, 1, -3],
+      [3, 1, -7], [5, 1, 0], [-6, 1, -8], [4, 1, 1], [-5, 1, 7],
+      [5, 1, -2], [-3, 1, 0], [-3, 1, -8], [2, 1, 0], [-3, 1, 1],
+      [-5, 1, 3], [2, 1, 5], [2, 1, -8], [4, 1, -9], [3, 1, 9],
+      [4, 1, 7], [-4, 1, -8], [-2, 1, -2], [3, 1, 0], [5, 1, 7],
+      [-4, 1, 9], [5, 1, 5], [3, 5, 7], [-1, 2, -4], [-1, 2, 9],
+      [5, 3, -7], [1, 3, -1], [-3, 4, 0], [-1, 3, 8], [-5, 2, -5],
+      [-4, 3, -4], [-1, 2, 1], [2, 5, 0], [-3, 4, 8], [-3, 4, -2],
+      [2, 3, 5], [1, 3, 0], [-5, 2, 3], [-3, 5, 0], [3, 4, 0],
+      [5, 2, 9], [-2, 5, -9], [-4, 3, -9], [3, 2, 6], [-5, 3, 4],
+      [-5, 3, 0], [-2, 3, -8], [-2, 5, 2], [2, 5, -1], [2, 3, 9],
+      [4, 3, -3], [3, 4, -5], [5, 2, 4], [-2, 5, 1], [-1, 4, 5],
+      [-3, 5, -6], [1, 4, -9], [3, 4, -8], [5, 2, 0], [-4, 3, 0],
+      [2, 5, -3], [2, 3, 0], [1, 4, 8], [-5, 2, 0], [5, 3, -2],
+      [1, 2, 0], [-5, 3, -8], [5, 3, -8], [-3, 2, 0], [-3, 2, 6],
+      [3, 5, 8], [-1, 3, 0], [1, 4, -7], [2, 3, -2], [-2, 3, 0],
+      [2, 3, 7], [-3, 5, -2], [4, 3, 0], [-1, 3, -8], [-4, 3, 6],
+      [-1, 5, 8], [-1, 5, 0], [1, 5, -4], [1, 2, 1], [-1, 5, 9],
+      [1, 5, -8], [4, 3, 9], [3, 5, 2], [-2, 3, 6], [-1, 2, -8],
+      [1, 3, 7], [-4, 3, -3], [-2, 3, -1], [-3, 5, -7], [3, 4, 8]
+    ];
+    function F(n, d) { return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>'; }
+    function num(n, d) { // número con signo, como fracción si hace falta
+      var s = n < 0 ? MINUS : '';
+      return s + (d === 1 ? Math.abs(n) : F(Math.abs(n), d));
+    }
+    function fxHTML(ex) {
+      var n = ex[0], d = ex[1], b = ex[2], coef;
+      if (d === 1 && n === 1) coef = '';
+      else if (d === 1 && n === -1) coef = MINUS;
+      else coef = num(n, d);
+      return 'f(x) = ' + coef + 'x²' + (b === 0 ? '' : (b > 0 ? ' + ' : ' ' + MINUS + ' ') + Math.abs(b));
+    }
+    function answers(ex) {
+      var a = ex[0] / ex[1], b = ex[2];
+      return {
+        abre: a > 0 ? 'arriba' : 'abajo',
+        forma: Math.abs(a) > 1 ? 'flaca' : 'gorda',
+        v: b,
+        raices: b === 0 ? 'repetidas' : ((a > 0) === (b > 0) ? 'imaginarias' : 'diferentes')
+      };
+    }
+    var LABEL = { arriba: 'hacia arriba', abajo: 'hacia abajo', flaca: 'flaca', gorda: 'gorda',
+                  diferentes: 'reales y diferentes', repetidas: 'reales y repetidas', imaginarias: 'imaginarias' };
+
+    function parseV(txt) { // acepta "−3", "-3", "+3", "(0, -3)" o "V(0, -3)"
+      var s = txt.replace(/[−–]/g, '-').replace(/\s+/g, '').replace(/^v/i, '');
+      var m = s.match(/^\(?0,(.+?)\)?$/);
+      if (m) s = m[1];
+      return /^[+-]?\d+$/.test(s) ? parseInt(s, 10) : null;
+    }
+
+    // ---------- tarjetas ----------
+    var N = 10;
+    var grid = document.getElementById('axbq-grid'), scoreEl = document.getElementById('axbq-score'), done = {};
+    function score() {
+      var n = Object.keys(done).length;
+      scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
+    }
+    function pick() { // 10 al azar, ordenados como en el banco
+      var idx = BANK.map(function (e, i) { return i; });
+      for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+      return idx.slice(0, N).sort(function (p, q) { return p - q; }).map(function (i) { return BANK[i]; });
+    }
+    function opts(name, list) {
+      return '<div class="practice-opts" data-q="' + name + '">' + list.map(function (v) {
+        return '<button type="button" data-v="' + v + '">' + LABEL[v].charAt(0).toUpperCase() + LABEL[v].slice(1) + '</button>';
+      }).join('') + '</div>';
+    }
+    function makeCard(ex, idx) {
+      var ans = answers(ex), chosen = {};
+      var card = document.createElement('div');
+      card.className = 'practice-card';
+      card.innerHTML =
+        '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + fxHTML(ex) + '</span></div>' +
+        '<div class="practice-ask">1. ¿Hacia dónde abre?</div>' + opts('abre', ['arriba', 'abajo']) +
+        '<div class="practice-ask">2. Comparada con x², ¿es gorda o flaca?</div>' + opts('forma', ['gorda', 'flaca']) +
+        '<div class="practice-ask">3. ¿Dónde está su vértice?</div>' +
+        '<div class="practice-row"><span class="eq">V(0,</span><input type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" style="flex:0 1 5.5rem;" aria-label="Coordenada y del vértice del ejercicio ' + (idx + 1) + '"><span class="eq">)</span></div>' +
+        '<div class="practice-ask">4. ¿Cómo son sus raíces?</div>' + opts('raices', ['diferentes', 'repetidas', 'imaginarias']) +
+        '<div class="practice-row" style="margin-top:0.7rem;"><button type="button" class="practice-check">Comprobar</button></div>' +
+        '<div class="practice-fb" aria-live="polite"></div>';
+      grid.appendChild(card);
+      var input = card.querySelector('input'), fb = card.querySelector('.practice-fb');
+      card.querySelectorAll('.practice-opts').forEach(function (g) {
+        g.querySelectorAll('button').forEach(function (b) {
+          b.addEventListener('click', function () {
+            g.querySelectorAll('button').forEach(function (o) { o.classList.remove('on'); });
+            b.classList.add('on'); chosen[g.dataset.q] = b.dataset.v;
+          });
+        });
+      });
+
+      var a = ex[0] / ex[1], aH = num(ex[0], ex[1]), absH = num(Math.abs(ex[0]), ex[1]), bH = num(ex[2], 1);
+      var why = {
+        abre: '<strong>a = ' + aH + '</strong> es ' + (a > 0 ? 'positivo' : 'negativo') + ', así que abre <strong>' + LABEL[ans.abre] + '</strong>.',
+        forma: '<strong>|a| = ' + absH + '</strong> es ' + (Math.abs(a) > 1 ? 'mayor' : 'menor') + ' que 1, así que es <strong>' + ans.forma + '</strong> (más ' + (Math.abs(a) > 1 ? 'cerrada' : 'abierta') + ' que x²).',
+        v: 'El vértice de ax² + b es V(0, b). Aquí <strong>b = ' + bH + '</strong>, así que el vértice es <strong><span style="white-space:nowrap;">V(0, ' + bH + ')</span></strong>.',
+        raices: ex[2] === 0
+          ? '<strong>b = 0</strong>: el vértice está sobre el eje x y la parábola sólo lo toca ahí. Raíces <strong>reales y repetidas</strong> (x = 0).'
+          : 'a y b tienen ' + (ans.raices === 'imaginarias' ? '<strong>el mismo signo</strong>: la parábola <strong>no corta</strong> el eje x. Raíces <strong>imaginarias</strong>.'
+                                                             : '<strong>signos diferentes</strong>: la parábola <strong>corta</strong> el eje x en dos puntos. Raíces <strong>reales y diferentes</strong>.')
+      };
+      function check() {
+        card.classList.remove('ok', 'bad');
+        var v = input.value.trim(), vN = v ? parseV(v) : null;
+        if (!chosen.abre || !chosen.forma || !v || !chosen.raices) { fb.innerHTML = 'Contesta las <strong>cuatro</strong> preguntas antes de comprobar.'; return; }
+        if (vN === null) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí el vértice.</span> Escribe sólo un número, por ejemplo <strong>−3</strong> o <strong>5</strong>.'; return; }
+        var wrong = [];
+        if (chosen.abre !== ans.abre) wrong.push('abre');
+        if (chosen.forma !== ans.forma) wrong.push('forma');
+        if (vN !== ans.v) wrong.push('v');
+        if (chosen.raices !== ans.raices) wrong.push('raices');
+        if (!wrong.length) {
+          card.classList.add('ok'); done[idx] = 1; score();
+          fb.innerHTML = '<span class="yes">✓ ¡Todo correcto!</span><div class="sol">Abre ' + LABEL[ans.abre] + ' · ' + ans.forma +
+                         ' · <span style="white-space:nowrap;">V(0, ' + bH + ')</span> · raíces ' + LABEL[ans.raices] + '</div>';
+          return;
+        }
+        card.classList.add('bad'); delete done[idx]; score();
+        var NAME = { abre: '1', forma: '2', v: '3', raices: '4' };
+        fb.innerHTML = '<span class="no">✗ Tienes ' + (4 - wrong.length) + ' de 4 bien.</span> Revisa: ' +
+          wrong.map(function (k) { return '<div class="sol" style="font-family:inherit;"><strong>' + NAME[k] + '.</strong> ' + why[k] + '</div>'; }).join('');
+      }
+      card.querySelector('.practice-check').addEventListener('click', check);
+      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') check(); });
+    }
+    function newSet() {
+      grid.innerHTML = ''; done = {};
+      pick().forEach(makeCard);
+      score();
+    }
+    document.getElementById('axbq-new').addEventListener('click', function () {
+      newSet();
+      document.getElementById('ejercicios-ax2-b').scrollIntoView({ behavior: 'smooth' });
+    });
+    newSet();
+  })();
+  </script>
+
   <div class="callout">
     <div class="k">Próximamente</div>
     <p>Muy pronto se agregará aquí el contenido completo de este subtema.</p>

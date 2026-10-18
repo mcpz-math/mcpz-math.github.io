@@ -741,3 +741,16 @@ Registro de lo que vamos haciendo, en orden cronológico.
   la sección "¿Qué hace el número b?": si **b > 0** la gráfica **sube**, si **b < 0** la gráfica
   **baja**, y si b = 0 se queda igual. Ejemplos: x² + 3 (sube 3, V(0, 3)) y x² − 2 (baja 2, V(0, −2)).
 - También se aclara que b no cambia la forma ni hacia dónde abre, y que el vértice es V(0, b).
+
+## 2026-10-18 (f(x) = ax² + b: ejercicios con revisión automática)
+- A pedido de Carmen, al final de `matematicas-3/tema-05-ax-cuadrada-mas-b.html` se agregó la
+  sección "Ejercicios: analiza f(x) = ax² + b": un banco de **100 funciones** del que se toman
+  **10 al azar** cada vez (botón "Otros 10 ejercicios").
+- En cada función el alumno contesta: (1) si abre hacia arriba o hacia abajo, (2) si es gorda o
+  flaca comparada con x², (3) el vértice V(0, ___) y (4) si las raíces son reales y diferentes,
+  reales y repetidas o imaginarias. Al oprimir "Comprobar" se califica y, si algo está mal, se
+  explica por qué. Abajo se muestra cuántas lleva bien de 10.
+- El banco está balanceado: 50 abren hacia arriba y 50 hacia abajo; 50 flacas y 50 gordas
+  (no hay a = ±1 para que siempre sea gorda o flaca); 40 con raíces reales y diferentes,
+  40 imaginarias y 20 reales y repetidas (b = 0). b va de −9 a 9.
+- Se agregaron estilos para los botones de opción (`.practice-ask`, `.practice-opts`) en `assets/style.css`.
