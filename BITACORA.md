@@ -1019,3 +1019,16 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, el Tema 3 de Matemáticas 1 ahora se llama **"Números naturales y sus operaciones
   básicas"** (antes "Operaciones básicas"), en el temario y en su página. El archivo sigue siendo
   `matematicas-1/tema-03-operaciones-basicas.html`.
+
+## 2026-10-18 (Matemáticas 1: se juntan los temas 2 y 3; el temario queda con 10 temas)
+- A pedido de Carmen, "Sistemas antiguos de numeración" y "Sucesiones" pasaron al tema
+  **"Números naturales y sus operaciones básicas"**, que ahora es el **Tema 2**
+  (`matematicas-1/tema-02-numeros-naturales.html`) con los subtemas: Sistemas antiguos de numeración,
+  Sucesiones, Suma, Resta, Multiplicación y División. Se borraron las páginas
+  `tema-02-numeracion-y-sucesiones.html` y `tema-03-operaciones-basicas.html`.
+- Los temas siguientes se recorrieron un número (archivos y encabezados "Tema N de 10"):
+  03 Notación científica · 04 Números enteros (con sus subtemas `tema-04-jerarquia-de-operaciones.html`
+  y la clase `leyes-de-los-signos.html`) · 05 Ecuaciones de primer grado · 06 Divisibilidad ·
+  07 Geometría plana · 08 Ángulos · 09 Rectas y puntos notables del triángulo · 10 Áreas de figuras combinadas.
+- Se actualizaron todos los enlaces (también el de Matemáticas 2 a la página de jerarquía). Se revisó
+  que no quedara ningún enlace roto.
