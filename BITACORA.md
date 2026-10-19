@@ -1095,3 +1095,15 @@ Registro de lo que vamos haciendo, en orden cronológico.
   - Parte D — Graficar en plano vacío: x + 2, −2x + 1, ⅔x − 1 y −x − 3.
   - Rúbrica de 5 competencias (Excelente / Satisfactorio / En proceso / Suficiente).
 - Archivo: `matematicas-3/materiales/Serie3_Funcion_Lineal.docx` (aún no enlazado en ninguna página).
+
+## 2026-10-19 (Matemáticas 3: Serie 3 en Word — Definición de función)
+- Carmen pidió **el mismo tipo de ejercicios** que la Serie 2 (función o relación), así que se hizo
+  otra Serie 3 con ejercicios nuevos y el mismo formato: encabezado, propósito, Partes A–D y rúbrica.
+  - Parte A — Lenguaje cotidiano: 6 expresiones (fecha de nacimiento, grupos de un maestro, placa de
+    un auto, raíces cuadradas de un número, calificación final, libros de un autor).
+  - Parte B — 4 diagramas sagitales (incluye un elemento con dos flechas y otro sin flecha).
+  - Parte C — 6 gráficas para la prueba de la recta vertical: circunferencia, recta, parábola
+    acostada, cúbica, recta vertical y valor absoluto.
+  - Parte D — 4 conjuntos de pares ordenados para pasar a diagrama sagital.
+  - Rúbrica de 4 competencias, igual a la de la Serie 2.
+- Archivo: `matematicas-3/materiales/Serie3_Definicion_de_Funciones.docx` (aún no enlazado).
