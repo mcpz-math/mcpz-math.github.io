@@ -1083,3 +1083,15 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Páginas de subtema (objetivo, definiciones, material y video): `tema-09-medianas-y-baricentro.html`
   (actualizada), `tema-09-mediatriz-y-circuncentro.html`, `tema-09-bisectriz-e-incentro.html` y
   `tema-09-alturas-y-ortocentro.html`, enlazadas desde el Tema 9.
+
+## 2026-10-19 (Matemáticas 3: Serie 3 en Word — Función lineal)
+- A pedido de Carmen se hizo una **Serie 3** en Word con el mismo formato que la "Serie 2. Definición de
+  función (Opción 2)": encabezado con nombre y fecha, propósito, cuatro partes y rúbrica.
+- Tema: **función lineal** f(x) = mx + b (el siguiente subtema de Funciones).
+  - Parte A — Lenguaje cotidiano: 6 situaciones; decir si es lineal, escribir la regla y justificar.
+  - Parte B — Tablas de valores: f(x) = 2x + 1, −x + 3, ½x − 2 y −3x (x de −2 a 2), con pendiente,
+    ordenada al origen y si crece o decrece.
+  - Parte C — Gráficas: 6 rectas en cuadrícula para leer pendiente y ordenada y escribir la regla.
+  - Parte D — Graficar en plano vacío: x + 2, −2x + 1, ⅔x − 1 y −x − 3.
+  - Rúbrica de 5 competencias (Excelente / Satisfactorio / En proceso / Suficiente).
+- Archivo: `matematicas-3/materiales/Serie3_Funcion_Lineal.docx` (aún no enlazado en ninguna página).
