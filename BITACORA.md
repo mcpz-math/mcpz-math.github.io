@@ -1107,3 +1107,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   - Parte D — 4 conjuntos de pares ordenados para pasar a diagrama sagital.
   - Rúbrica de 4 competencias, igual a la de la Serie 2.
 - Archivo: `matematicas-3/materiales/Serie3_Definicion_de_Funciones.docx` (aún no enlazado).
+- Cambios pedidos por Carmen: en la Parte C la **recta vertical** se sustituyó por una **hipérbola
+  y = 1/x** (función), y se rehicieron los 4 **diagramas sagitales** con conjuntos A y B nuevos:
+  {1,2,3,4}→{5,6,7} (función), {2,4,6}→{1,2,3,4} con el 4 de dos flechas (relación),
+  {−1,0,1}→{0,1} como x² (función) y {a,b,c,d}→{1,2} con la d sin flecha (relación).
