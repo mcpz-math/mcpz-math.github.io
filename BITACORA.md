@@ -1104,3 +1104,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
   Todas las raíces son exactas (enteros o fracciones).
 - Archivo: `matematicas-3/materiales/tema-05-serie-3-raices-ax-cuadrada-mas-b.docx` (todavía no
   está enlazado en ninguna página).
+
+## 2026-10-20 (Serie 1 de binomio al cuadrado, en Word)
+- A pedido de Carmen se hizo la **Serie 1. Binomio al cuadrado** con el mismo formato de su Serie 2 de
+  raíces de ax² + b: título, DTI, Estudiante/Fecha/Grupo, propósito, instrucciones a), b), c), tabla
+  numerada y rúbrica por competencias (Identifica los términos, Aplica la regla, Maneja signos,
+  exponentes y fracciones, Argumenta y comunica, Verifica el resultado).
+- 20 ejercicios de menor a mayor dificultad: binomios sencillos (1–4), con coeficiente (5–9),
+  con exponentes (10, 11, 15), con primer término negativo (12, 13), con dos variables (8, 9, 14),
+  con fracciones (16–18), con decimales (19) y con exponentes literales (20).
+- Archivo: `matematicas-3/materiales/tema-06-serie-1-binomio-al-cuadrado.docx` (todavía no está
+  enlazado en ninguna página).
