@@ -1083,3 +1083,15 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Páginas de subtema (objetivo, definiciones, material y video): `tema-09-medianas-y-baricentro.html`
   (actualizada), `tema-09-mediatriz-y-circuncentro.html`, `tema-09-bisectriz-e-incentro.html` y
   `tema-09-alturas-y-ortocentro.html`, enlazadas desde el Tema 9.
+
+## 2026-10-20 (Matemáticas 3: la gráfica de f(x) = ax² + b cambia de escala sola)
+- En `matematicas-3/tema-05-ax-cuadrada-mas-b.html` y `matematicas-3/prueba-ax-cuadrada-mas-b.html`
+  la gráfica ahora ajusta la escala de **los dos ejes** según los valores de a y b, para que se vean
+  valores de **−50 a 50**:
+  - Eje y: cada cuadrito vale 1, 2 o 5 unidades (hasta ±55), de modo que el vértice V(0, b) siempre
+    se vea.
+  - Eje x: cada cuadrito vale 1, 2, 5 o 10 unidades (hasta ±50), de modo que las raíces (rombos)
+    se vean.
+  - La nota bajo la gráfica dice cuánto vale cada cuadrito en x y en y.
+  - Cuando la escala crece y los puntos quedan muy juntos, se achican y sólo se escriben las
+    etiquetas que caben (la del vértice siempre).

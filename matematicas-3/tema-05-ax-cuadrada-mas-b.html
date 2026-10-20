@@ -73,7 +73,7 @@
       <g id="axb-pts"></g>
       <g id="axb-labels"></g>
     </svg>
-    <p class="pg-scale-note">Azul punteada: f(x) = x² (referencia) · Verde: f(x) = ax² + b · Rombos: raíces (donde corta al eje x) · Eje y: cada cuadrito = <span id="axb-scale">1 unidad</span></p>
+    <p class="pg-scale-note">Azul punteada: f(x) = x² (referencia) · Verde: f(x) = ax² + b · Rombos: raíces (donde corta al eje x) · Eje x: cada cuadrito = <span id="axb-xscale">1 unidad</span> · Eje y: cada cuadrito = <span id="axb-scale">1 unidad</span></p>
 
     <div class="pg-controls">
       <div class="pg-field">
@@ -105,10 +105,11 @@
   <script>
   (function () {
     var NS = 'http://www.w3.org/2000/svg';
-    var UX = 40, UY = 20, OX = 180, OY = 200, XL = 4, YL = 9;
+    var UX = 32, UY = 16, OX = 180, OY = 200, XL = 5, YL = 11;
     var S = 1, YM = YL; // S: unidades por cuadrito vertical; YM: valor más alto que se ve en y
+    var SX = 1, XM = XL; // SX: unidades por cuadrito horizontal; XM: valor más alto que se ve en x
     var XS = [-3, -2, -1, 0, 1, 2, 3];
-    function sx(x) { return OX + x * UX; }
+    function sx(x) { return OX + x * UX / SX; }
     function sy(y) { return OY - y * UY / S; }
     function el(tag, attrs, parent) {
       var e = document.createElementNS(NS, tag);
@@ -165,37 +166,46 @@
     var mono = 'IBM Plex Mono, monospace';
     function drawGrid() {
       clear(grid);
-      for (var i = -XL; i <= XL; i++) el('line', { x1: sx(i), y1: sy(YM), x2: sx(i), y2: sy(-YM), stroke: '#dde2dc', 'stroke-width': 1 }, grid);
-      for (var j = -YL; j <= YL; j++) el('line', { x1: sx(-XL), y1: sy(j * S), x2: sx(XL), y2: sy(j * S), stroke: '#dde2dc', 'stroke-width': j % 3 === 0 ? 1 : 0.5 }, grid);
-      el('line', { x1: sx(-XL) - 8, y1: OY, x2: sx(XL) + 8, y2: OY, stroke: '#56604f', 'stroke-width': 1.5 }, grid);
+      for (var i = -XL; i <= XL; i++) el('line', { x1: sx(i * SX), y1: sy(YM), x2: sx(i * SX), y2: sy(-YM), stroke: '#dde2dc', 'stroke-width': 1 }, grid);
+      for (var j = -YL; j <= YL; j++) el('line', { x1: sx(-XM), y1: sy(j * S), x2: sx(XM), y2: sy(j * S), stroke: '#dde2dc', 'stroke-width': j % 2 === 0 ? 1 : 0.5 }, grid);
+      el('line', { x1: sx(-XM) - 8, y1: OY, x2: sx(XM) + 8, y2: OY, stroke: '#56604f', 'stroke-width': 1.5 }, grid);
       el('line', { x1: OX, y1: sy(YM) - 8, x2: OX, y2: sy(-YM) + 8, stroke: '#56604f', 'stroke-width': 1.5 }, grid);
-      el('text', { x: sx(XL) + 10, y: OY + 4, 'font-family': mono, 'font-size': 12, fill: '#14301f' }, grid).textContent = 'x';
+      el('text', { x: sx(XM) + 10, y: OY + 4, 'font-family': mono, 'font-size': 12, fill: '#14301f' }, grid).textContent = 'x';
       el('text', { x: OX + 5, y: sy(YM) - 6, 'font-family': mono, 'font-size': 12, fill: '#14301f' }, grid).textContent = 'y';
-      for (i = -XL; i <= XL; i++) if (i) el('text', { x: sx(i), y: OY + 13, 'text-anchor': 'middle', 'font-family': mono, 'font-size': 9, fill: '#56604f' }, grid).textContent = String(i).replace('-', MINUS);
-      for (j = -YL; j <= YL; j += 3) if (j) el('text', { x: OX - 4, y: sy(j * S) + 3, 'text-anchor': 'end', 'font-family': mono, 'font-size': 9, fill: '#56604f' }, grid).textContent = String(j * S).replace('-', MINUS);
+      for (i = -XL; i <= XL; i++) if (i) el('text', { x: sx(i * SX), y: OY + 13, 'text-anchor': 'middle', 'font-family': mono, 'font-size': 9, fill: '#56604f' }, grid).textContent = String(i * SX).replace('-', MINUS);
+      for (j = -YL; j <= YL; j++) if (j && j % 2 === 0) el('text', { x: OX - 4, y: sy(j * S) + 3, 'text-anchor': 'end', 'font-family': mono, 'font-size': 9, fill: '#56604f' }, grid).textContent = String(j * S).replace('-', MINUS);
     }
 
     function parabola(a, b) {
       var d = '';
       for (var k = 0; k <= 160; k++) {
-        var x = -XL - 0.2 + k * (2 * XL + 0.4) / 160;
+        var x = -XM - 0.2 * SX + k * (2 * XM + 0.4 * SX) / 160;
         var y = Math.max(-YM - 2 * S, Math.min(YM + 2 * S, a * x * x + b));
         d += (k ? 'L' : 'M') + sx(x).toFixed(1) + ',' + sy(y).toFixed(1);
       }
       return d;
     }
-    var refpts = document.getElementById('axb-refpts'), scaleEl = document.getElementById('axb-scale');
-    // Escala del eje y: el vértice y los puntos en x = ±1 siempre quedan a la vista.
+    var refpts = document.getElementById('axb-refpts'), scaleEl = document.getElementById('axb-scale'), scaleXEl = document.getElementById('axb-xscale');
+    // Tamaño de los puntos: más chicos cuando la escala de x los junta mucho.
+    function ptR(big) { return Math.min(big, Math.max(2.5, UX / SX / 2.4)); }
+    // Escala de los ejes según a y b: se ven valores de −50 a 50 en x y en y.
+    // Eje y: el vértice (y los puntos en x = ±1, si caben) quedan a la vista.
+    // Eje x: las raíces quedan a la vista.
     function setScale(a, b) {
-      var need = Math.max(Math.abs(b), Math.abs(a + b)), steps = [1, 2, 5, 10, 20], k = 0;
-      while (k < steps.length - 1 && steps[k] * YL < need) k++;
-      if (steps[k] === S && grid.firstChild) return;
-      S = steps[k]; YM = YL * S;
+      var needY = Math.max(Math.abs(b), Math.abs(a + b)), ys = [1, 2, 5], ky = 0;
+      while (ky < ys.length - 1 && ys[ky] * YL < needY) ky++;
+      var r = a !== 0 && (a > 0) !== (b > 0) ? Math.sqrt(-b / a) : 0;
+      var needX = Math.max(4, r * 1.15), xs = [1, 2, 5, 10], kx = 0;
+      while (kx < xs.length - 1 && xs[kx] * XL < needX) kx++;
+      if (ys[ky] === S && xs[kx] === SX && grid.firstChild) return;
+      S = ys[ky]; YM = YL * S; SX = xs[kx]; XM = XL * SX;
       drawGrid();
       document.getElementById('axb-ref').setAttribute('d', parabola(1, 0));
       clear(refpts);
-      XS.forEach(function (x) { el('circle', { cx: sx(x), cy: sy(x * x), r: 4.5, fill: '#fff', stroke: '#2b6cb0', 'stroke-width': 1.8 }, refpts); });
-      scaleEl.textContent = S === 1 ? '1 unidad' : S + ' unidades';
+      XS.forEach(function (x) { el('circle', { cx: sx(x), cy: sy(x * x), r: ptR(4.5), fill: '#fff', stroke: '#2b6cb0', 'stroke-width': 1.8 }, refpts); });
+      function u(n) { return n === 1 ? '1 unidad' : n + ' unidades'; }
+      scaleEl.textContent = u(S);
+      scaleXEl.textContent = u(SX);
     }
     setScale(1, 0);
 
@@ -230,12 +240,13 @@
         var side = { right: { x: px + 9, yc: py }, left: { x: px - 11 - sp.w, yc: py },
                      above: { x: px - sp.w / 2, yc: py - 9 - sp.h / 2 }, below: { x: px - sp.w / 2, yc: py + 9 + sp.h / 2 } };
         it.order.forEach(function (k) { cands.push(side[k]); });
-        var pick = cands[0];
+        var pick = it.optional ? null : cands[0];
         for (var i = 0; i < cands.length; i++) {
           var c = cands[i], box = { x: c.x - 2, y: c.yc - sp.h / 2, w: sp.w + 4, h: sp.h };
           var inside = box.x >= 20 && box.x + box.w <= 340 && box.y >= 20 && box.y + box.h <= 380;
           if (inside && !taken.some(function (t) { return overlaps(box, t); })) { pick = c; break; }
         }
+        if (!pick) return;
         taken.push({ x: pick.x - 2, y: pick.yc - sp.h / 2, w: sp.w + 4, h: sp.h });
         drawLabel(g, sp, pick.x, pick.yc);
       });
@@ -250,18 +261,18 @@
     function drawAt(a, b, final, A, B) {
       curve.setAttribute('d', parabola(a, b));
       clear(arrows); clear(pts); clear(labels); clear(rootsG);
-      var items = [], rootBoxes = [];
+      var items = [], rootBoxes = [], rr = ptR(6);
       XS.forEach(function (x) {
         var y0 = x * x, y1 = a * x * x + b;
         var yc = Math.max(-YM - 0.3 * S, Math.min(YM + 0.3 * S, y1));
         if (Math.abs(y1 - y0) > 0.15 * S) el('line', { x1: sx(x), y1: sy(y0), x2: sx(x), y2: sy(yc), stroke: '#3f6b4a', 'stroke-width': 1.6, 'stroke-dasharray': '4 3', 'marker-end': 'url(#axb-arrow)' }, arrows);
         if (Math.abs(y1) <= YM) {
-          el('circle', { cx: sx(x), cy: sy(y1), r: 6, fill: '#c4e86b', stroke: '#14301f', 'stroke-width': 2 }, pts);
+          el('circle', { cx: sx(x), cy: sy(y1), r: x === 0 ? 6 : rr, fill: '#c4e86b', stroke: '#14301f', 'stroke-width': 2 }, pts);
           if (final) {
             var out = x > 0 ? 'right' : 'left', inn = x > 0 ? 'left' : 'right';
             var vert = a >= 0 ? ['below', 'above'] : ['above', 'below'];
             items.push({ px: sx(x), py: sy(y1), spec: labelSpec(x, add(mul(A, x * x), B), x === 0),
-                         order: x === 0 ? vert.concat(['right', 'left']) : [out, vert[1], vert[0], inn] });
+                         order: x === 0 ? vert.concat(['right', 'left']) : [out, vert[1], vert[0], inn], optional: x !== 0 && (SX > 1 || S > 1) });
           }
         }
       });
@@ -269,7 +280,7 @@
       if (final && A.n !== 0 && (A.n > 0) !== (B.n > 0) || final && B.n === 0 && A.n !== 0) {
         var r = Math.sqrt(-val(B) / val(A));
         (r === 0 ? [0] : [-r, r]).forEach(function (x) {
-          if (Math.abs(x) > XL) return;
+          if (Math.abs(x) > XM) return;
           var cx = sx(x), s = 7;
           el('path', { d: 'M' + cx + ',' + (OY - s) + ' L' + (cx + s) + ',' + OY + ' L' + cx + ',' + (OY + s) + ' L' + (cx - s) + ',' + OY + ' z', fill: '#14301f', stroke: '#c4e86b', 'stroke-width': 1.5 }, rootsG);
           rootBoxes.push({ x: cx - 8, y: OY - 8, w: 16, h: 16 });
