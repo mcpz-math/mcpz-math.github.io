@@ -1095,3 +1095,12 @@ Registro de lo que vamos haciendo, en orden cronológico.
   - La nota bajo la gráfica dice cuánto vale cada cuadrito en x y en y.
   - Cuando la escala crece y los puntos quedan muy juntos, se achican y sólo se escriben las
     etiquetas que caben (la del vértice siempre).
+
+## 2026-10-20 (Serie 3 de raíces de f(x) = ax² + b, en Word)
+- A pedido de Carmen se hizo la **Serie 3. Raíces de f(x) = ax² + b** a partir de su Serie 2: mismo
+  encabezado, propósito, instrucciones a), b), c) y rúbrica; sólo cambian las 18 funciones.
+- Ejercicios: 13 con raíces reales y diferentes (1, 3, 5, 6, 8, 9, 11, 12, 13, 15, 16, 17, 18),
+  3 con raíces imaginarias (2, 7, 14) y 2 con raíz repetida x = 0 (4, 10), igual que en la Serie 2.
+  Todas las raíces son exactas (enteros o fracciones).
+- Archivo: `matematicas-3/materiales/tema-05-serie-3-raices-ax-cuadrada-mas-b.docx` (todavía no
+  está enlazado en ninguna página).
