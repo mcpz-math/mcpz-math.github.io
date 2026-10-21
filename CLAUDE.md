@@ -44,6 +44,23 @@ y Karla (texto). Estilos compartidos en `assets/style.css`.
   trazar rectas. No se dan medidas de los lados (no hace falta conocerlas). Por ejemplo, el punto
   medio se encuentra con la mediatriz y las perpendiculares con arcos de compás (no con escuadra).
 
+## Rúbricas
+- **Toda rúbrica nueva o editada se hace con la matriz de niveles de evaluación de Carmen**
+  (`matrizNivelesEvaluación2.xlsx`), nunca con la escala vieja de Excelente / Satisfactorio /
+  En proceso / Suficiente. Pedido explícito de Carmen (2026-10-21).
+- El contenido de la matriz está guardado en
+  [materiales-fuente/matriz-niveles-evaluacion.json](materiales-fuente/matriz-niveles-evaluacion.json):
+  competencias (Comunicación, Representación geométrica / algebraica / aritmética,
+  Modelación y resolución de problemas, Argumentación) con los textos de los Niveles 1 a 5
+  y la nota del Nivel 0. Usar esos textos tal cual; no inventar descriptores.
+- Formato: copiar la estructura de una rúbrica ya hecha (por ejemplo la de
+  `matematicas-3/tema-05-ax-cuadrada-mas-b.html`): `<details class="rubric rubric-matriz">`
+  con tabla `table.matriz`, columnas Criterio y Niveles 1 a 5, celdas combinadas donde la
+  matriz las combina (Niveles 2 y 3; en Modelación también Niveles 4 y 5), un recuadro "En esta
+  actividad" en cada criterio (lo que se evalúa en esa tarea) y la nota del Nivel 0 debajo.
+- Elegir las competencias que correspondan a la actividad (Comunicación y Argumentación casi
+  siempre; Representación según el tema; Modelación cuando se resuelven problemas).
+
 ## Flujo de trabajo para agregar temas
 1. Elegir la materia y el tema a trabajar.
 2. Carmen comparte el contenido (texto en el chat, PDF, Word o imagen).

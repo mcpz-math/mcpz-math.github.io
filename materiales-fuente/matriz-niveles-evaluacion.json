@@ -1,0 +1,60 @@
+{
+    "fuente":  "matrizNivelesEvaluacion2.xlsx (hoja criterios) de Carmen. Niveles: 1 insuficiente, 2 en desarrollo, 3 en desarrollo (minimo indispensable), 4 suficiente, 5 satisfactorio, 0 no hay elementos. Niveles 2 y 3 comparten texto salvo en ARG; en MOD los niveles 4 y 5 comparten texto (n45).",
+    "comp":  {
+                 "COM":  {
+                             "nombre":  "Comunicación",
+                             "sub":  "Expresión escrita y oral",
+                             "criterio":  "Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).",
+                             "n1":  "Sus producciones contienen errores de expresión significativos y resultan incoherentes. El uso de recursos como herramientas tecnológicas o simbólicas, tablas, diagramas, gráficas, dibujos, o su propio lenguaje simbólico, para transmitir sus ideas es deficiente. La recuperación de conocimiento a partir de sus producciones es superficial.",
+                             "n23":  "Utiliza la simbología y lenguaje matemático en sus producciones de manera limitada. Existen deficiencias en la expresión oral y escrita, sin embargo se complementan para expresar un proceso matemático sin tener errores significativos. Sus producciones le permiten repetir de manera mecánica los procedimientos. Su uso de recursos como tablas, diagramas, gráficas, o dibujos, para transmitir ideas es limitado.",
+                             "n4":  "Utiliza simbología y lenguaje matemático para expresar de forma oral o escrita una idea o proceso, sin embargo puede presentar algunas deficiencias. Sus producciones le permiten recuperar conocimientos y reproducir procedimientos. Utiliza recursos como tablas, diagramas, gráficas, o dibujos, para transmitir sus ideas de manera clara.",
+                             "n5":  "Expresa de manera correcta sus conocimientos por diferentes medios. Utiliza de forma adecuada la simbología matemática y se ayuda de diferentes recursos (tablas, gráficas, dibujos, etc.). A partir de sus producciones (apuntes de clase, ejercicios en pizarrón, exámenes orales o escritos, etc.) recupera y además reconstruye conocimientos, y es capaz de explicarlos en forma oral o escrita."
+                         },
+                 "REP_GEO":  {
+                                 "nombre":  "Representación geométrica",
+                                 "sub":  "",
+                                 "criterio":  "Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.",
+                                 "n1":  "Conoce las formas geométricas básicas relativas al contexto.",
+                                 "n23":  "Describe propiedades y relaciones de las formas geométricas.",
+                                 "n4":  "Clasifica las formas geométricas e interpreta sus relaciones y propiedades.",
+                                 "n5":  "Infiere e integra las relaciones y propiedades que describen las formas geométricas."
+                             },
+                 "REP_ARI":  {
+                                 "nombre":  "Representación aritmética",
+                                 "sub":  "",
+                                 "criterio":  "Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.",
+                                 "n1":  "Conoce una representación de un sistema numérico de manera mecánica.",
+                                 "n23":  "Comprende y describe una representación de un sistema numérico.",
+                                 "n4":  "Comprende al menos dos formas de representación de un sistema numérico, las asocia y las compara.",
+                                 "n5":  "Combina diferentes representaciones de un sistema numérico; selecciona entre dos o más representaciones la más adecuada, justificando dicha elección."
+                             },
+                 "REP_ALG":  {
+                                 "nombre":  "Representación algebraica",
+                                 "sub":  "",
+                                 "criterio":  "Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.",
+                                 "n1":  "Aún no logra lo descrito para el Nivel 2: el uso correcto de las expresiones algebraicas.",
+                                 "n23":  "Hace uso de la semántica (uso correcto de las expresiones algebraicas) y sintaxis del lenguaje algebraico.",
+                                 "n4":  "Comprende y maneja propiedades del lenguaje algebraico.",
+                                 "n5":  "Dota de significado y generaliza las propiedades del lenguaje algebraico."
+                             },
+                 "MOD":  {
+                             "nombre":  "Modelación y resolución de problemas",
+                             "sub":  "",
+                             "criterio":  "Formulación del problema y sistematización · Matematización y análisis del sistema matemático · Interpretación, evaluación y validación.",
+                             "n1":  "Usa datos del problema y procedimientos aleatoriamente. Confunde qué es una variable, una incógnita o una constante y no las relaciona. Se limita a leer el problema sin comprender.",
+                             "n23":  "Identifica o reconoce a las literales como una forma de representación y de acuerdo a su naturaleza les asigna un significado como: cantidad general, incógnita o variable. Identifica variables, incógnitas y constantes y la relación entre ellas. Utiliza alguna técnica o método matemático para obtener resultados.",
+                             "n45":  "Identifica variables, incógnitas y constantes, jerarquiza las variables y menciona la relación entre ellas. Modela el fenómeno al escribir en términos matemáticos dicha relación (propone un modelo matemático de la situación que se le plantea). Obtiene resultados y revisa si éstos son razonables respecto al modelo y al fenómeno."
+                         },
+                 "ARG":  {
+                             "nombre":  "Argumentación",
+                             "sub":  "Pensamiento y razonamiento matemático",
+                             "criterio":  "Seguir y elaborar cadenas de argumentos.",
+                             "n1":  "Elabora argumentos en lenguaje natural que muestran ideas que defienden una afirmación ya sea en matemáticas u otras disciplinas. Reconoce intuitivamente la estructura del argumento.",
+                             "n2":  "Elabora argumentos persuasivos y utiliza la analogía para defender una afirmación utilizando elementos básicos del lenguaje matemático. Reconoce a la argumentación como una forma de validar afirmaciones matemáticas y de otras disciplinas.",
+                             "n3":  "Elabora argumentos inductivos y muestra ejemplos para validar afirmaciones matemáticas. Distingue argumentos relacionados con las conjeturas y las elabora. Comprende, de manera intuitiva, la estructura de un argumento. Proporciona ejemplos y no-ejemplos de definiciones y conceptos.",
+                             "n4":  "Comprende la estructura de un argumento matemático y reconoce algunos elementos. Elabora argumentos deductivos, inductivos o analógicos para validar afirmaciones matemáticas. Distingue entre conjeturas y conclusiones y elabora argumentos para justificarlas.",
+                             "n5":  "Elabora argumentos y cadenas de argumentos que validan y generalizan sus conjeturas. Hace patente la relación del convencimiento con la demostración en las ciencias, particularmente en las matemáticas. Comprende la estructura de un argumento, a saber, hipótesis, conclusión, uso de la analogía, inferencia e inducción, cuantificadores y conectivos lógicos."
+                         }
+             },
+    "nota0":  "\u003cstrong\u003eNivel 0 · No hay elementos:\u003c/strong\u003e no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso)."
+}
