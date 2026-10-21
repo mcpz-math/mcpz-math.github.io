@@ -1094,3 +1094,22 @@ Registro de lo que vamos haciendo, en orden cronológico.
   fracciones salen apiladas.
 - El cambio está en `matematicas-3/tema-05-ax-cuadrada-mas-b.html` y en la página para
   compartir `matematicas-3/prueba-ax-cuadrada-mas-b.html` (misma gráfica, mismo texto).
+
+## 2026-10-21 (rúbricas con la matriz de niveles de evaluación)
+- Carmen compartió `matrizNivelesEvaluación2.xlsx` (competencias de Matemáticas con
+  Niveles 1 a 5 y Nivel 0) y pidió rehacer con ella todas las rúbricas del sitio.
+- Se reemplazaron las 5 rúbricas: `matematicas-1/leyes-de-los-signos.html`,
+  `matematicas-1/tema-04-jerarquia-de-operaciones.html`, Método gráfico y Método de
+  Cramer en `matematicas-3/tema-01-tarea.html`, y `matematicas-3/tema-05-ax-cuadrada-mas-b.html`.
+- Cada rúbrica usa las competencias de la matriz (Comunicación, Representación
+  geométrica / algebraica / aritmética según la actividad, Modelación y resolución de
+  problemas, y Argumentación) con los textos de la matriz para los Niveles 1 a 5, y una
+  nota con el Nivel 0 (no hay elementos). En la primera columna, un recuadro "En esta
+  actividad" dice qué se evalúa en esa tarea.
+- Como en la matriz, Niveles 2 y 3 comparten texto (en desarrollo) salvo en Argumentación,
+  y en Modelación los Niveles 4 y 5 comparten texto.
+- Se corrigieron erratas del documento ("sin embrago", "explíctas", etc.). Dos ajustes
+  por celdas incompletas de la matriz: el Nivel 1 de Representación algebraica estaba
+  vacío (queda "Aún no logra lo descrito para el Nivel 2…") y una frase suelta marcada
+  "nivel 2" dentro de Modelación se pasó a la columna de Niveles 2 y 3.
+- Estilos nuevos de la tabla (`.rubric-matriz`) en `assets/style.css`.
