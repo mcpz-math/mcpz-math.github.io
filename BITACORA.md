@@ -1083,3 +1083,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Páginas de subtema (objetivo, definiciones, material y video): `tema-09-medianas-y-baricentro.html`
   (actualizada), `tema-09-mediatriz-y-circuncentro.html`, `tema-09-bisectriz-e-incentro.html` y
   `tema-09-alturas-y-ortocentro.html`, enlazadas desde el Tema 9.
+
+## 2026-10-21 (valor de las raíces imaginarias en el análisis de f(x) = ax² + b)
+- Carmen pidió que, cuando la gráfica interactiva de f(x) = ax² + b da raíces imaginarias,
+  el cuadro de análisis diga también cuánto valen (antes solo explicaba por qué no hay
+  raíces reales).
+- Ahora el cuadro explica la unidad imaginaria (i = √−1, i² = −1) y da el valor: por
+  ejemplo, con a = 1 y b = 4: x² = −4 → x = ±√4 · i = ±2i → x₁ = 2i, x₂ = −2i. Si el
+  número no es cuadrado perfecto muestra el valor aproximado (por ejemplo ±1.73i), y las
+  fracciones salen apiladas.
+- El cambio está en `matematicas-3/tema-05-ax-cuadrada-mas-b.html` y en la página para
+  compartir `matematicas-3/prueba-ax-cuadrada-mas-b.html` (misma gráfica, mismo texto).

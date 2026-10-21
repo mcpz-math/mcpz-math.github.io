@@ -283,6 +283,20 @@
 
     // ---------- texto: ecuación, mensaje y tabla ----------
     var eqEl = document.getElementById('axb-eq'), msgEl = document.getElementById('axb-msg'), tb = document.getElementById('axb-table');
+    // Valor de las raíces imaginarias: x² = −q (q > 0) → x = ±√q · i
+    function imagText(q) {
+      var rn = isqrt(q.n), rd = isqrt(q.d);
+      var qs = q.d === 1 ? q.n : '(' + fracHTML(q) + ')';
+      var t = 'Si f(x) = 0 → x² = ' + fracHTML(neg(q)) + ', y no hay número real que al cuadrado dé un negativo. ' +
+              'Por eso se usa la <strong>unidad imaginaria</strong> i = √' + MINUS + '1, que cumple i² = ' + MINUS + '1.' +
+              '<br>x = ±√' + MINUS + qs + ' = ±√' + qs + ' · i';
+      if (rn !== null && rd !== null) {
+        var r = frac(rn, rd), c = (r.n === 1 && r.d === 1) ? '' : fracHTML(r);
+        return t + ' = <strong>±' + c + 'i</strong> → <strong>x₁ = ' + c + 'i</strong>, <strong>x₂ = ' + MINUS + c + 'i</strong>.';
+      }
+      return t + ' ≈ <strong>±' + dec(Math.sqrt(val(q))) + 'i</strong>. ' +
+             '(' + fracHTML(q) + ' no es un cuadrado perfecto, por eso no sale exacta.)';
+    }
     function rootsText(A, B) {
       var aH = fracHTML(A), bH = fracHTML(B);
       if (B.n === 0) {
@@ -292,7 +306,7 @@
       if ((A.n > 0) === (B.n > 0)) {
         var q = div(B, A); // x² = −q, con q > 0
         return '<strong>Raíces IMAGINARIAS:</strong> a y b tienen el <strong>mismo signo</strong>, así que la parábola <strong>no corta al eje x</strong>. ' +
-               'Si f(x) = 0 → x² = ' + fracHTML(neg(q)) + ', y no hay número real que al cuadrado dé un negativo.';
+               imagText(q);
       }
       var q = neg(div(B, A)); // x² = q > 0
       var rn = isqrt(q.n), rd = isqrt(q.d);
