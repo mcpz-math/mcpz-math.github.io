@@ -1,0 +1,373 @@
+{
+  "fuente": "Niveles concretos por actividad, escritos a partir de la matriz de Carmen (ver matriz-niveles-evaluacion.json). Cada celda conserva la idea del nivel de la matriz, pero dice qué se ve en el trabajo del alumno en esa actividad. Se usa para generar las rúbricas del sitio y la guía en Word (generar-rubricas.ps1).",
+  "etiquetas": {
+    "observar": "Qué observar",
+    "criterio": "Criterio",
+    "nota0": "<strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).",
+    "guiaTitulo": "Guía para evaluar con la matriz de niveles",
+    "guiaSub": "DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS",
+    "guiaIntro": "Para cada actividad de la página, esta guía dice qué debes observar en el trabajo del alumno (cuaderno, hojas cuadriculadas o respuestas en la página) y qué se ve en cada nivel de la matriz. Los niveles 2 y 3 comparten texto, salvo en Argumentación; en Modelación comparten texto los niveles 4 y 5, igual que en la matriz.",
+    "guiaSugerencia": "Sugerencia: revisa al menos tres o cuatro ejercicios del alumno y asigna el nivel que describe lo que hace en la mayoría. Si hay mucha diferencia entre ejercicios, pregúntale cómo lo resolvió antes de decidir.",
+    "guiaNota0": "Nivel 0 · No hay elementos: no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).",
+    "evidencia": "Qué evidencia revisar",
+    "errores": "Errores típicos que ayudan a ubicar el nivel",
+    "queDiceMatriz": "La matriz dice",
+    "queVer": "Qué debo ver en esta actividad",
+    "nivel": "Nivel",
+    "niveles23": "Niveles 2 y 3",
+    "niveles45": "Niveles 4 y 5"
+  },
+  "actividades": [
+    {
+      "id": "signos",
+      "titulo": "Matemáticas 1 · Los números enteros y las leyes de los signos",
+      "file": "matematicas-1/leyes-de-los-signos.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios de la sección 5 resueltos en el cuaderno, con el procedimiento (no sólo el resultado).",
+        "Multiplicaciones y divisiones, potencias de números negativos, y sumas y restas con signo.",
+        "Las correcciones que el alumno hace de sus propios errores."
+      ],
+      "errores": [
+        "(−4)(−3) = −12 (confunde cuándo el producto es positivo).",
+        "(−3)² = −9 o −3² = 9 (confunde el papel de los paréntesis).",
+        "−7 + 3 = −10 o −4 − 2 = −2 (decide mal el signo del resultado).",
+        "5 − (−3) = 2 (no convierte restar un negativo en sumar).",
+        "En productos de varios factores, no cuenta bien los signos menos."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe cada operación con signos y paréntesis correctos, por ejemplo (−4)(−3) y no −4 −3.",
+            "Distingue por escrito (−3)² de −3².",
+            "Sus pasos están en orden y se entiende qué hizo."
+          ],
+          "n1": "Sus escritos tienen errores de notación que cambian el sentido (omite paréntesis, mezcla el signo de la operación con el del número) y no se entiende su procedimiento. No usa ningún apoyo, como la recta numérica o un ejemplo.",
+          "n23": "Escribe las operaciones con signos de forma limitada: se entiende lo que hace, aunque a veces omite paréntesis o pasos. Repite la regla de memoria y casi no usa recursos (recta numérica, ejemplos) para apoyarla.",
+          "n4": "Escribe correctamente casi todas las operaciones, con paréntesis y signos bien puestos, y escribe el resultado y la regla que usó; puede tener alguna deficiencia (por ejemplo, no escribe un paso intermedio). Se apoya en la recta numérica o en un ejemplo cuando se le pide.",
+          "n5": "Escribe todas las operaciones con paréntesis y signos correctos, presenta cada paso en orden, y explica por escrito u oralmente por qué el resultado es positivo o negativo, apoyándose en recursos como la recta numérica o ejemplos. Reconstruye la regla con sus palabras."
+        },
+        {
+          "id": "REP_ARI",
+          "observar": [
+            "Ubica y compara números enteros (positivos y negativos), por ejemplo en la recta numérica.",
+            "Relaciona la regla de los signos con otra forma de verla (recta numérica, conteo de signos menos).",
+            "Reconoce que restar un negativo es sumar: 5 − (−3) = 5 + 3."
+          ],
+          "n1": "Conoce la regla de los signos sólo de memoria («menos por menos, más») y la usa de forma mecánica; no la relaciona con otra representación. Comete errores como (−4)(−3) = −12 o −7 + 3 = −10.",
+          "n23": "Comprende y describe una forma de representar los enteros (la regla de los signos o la recta numérica) y la usa en casos sencillos. Se confunde al restar un negativo o con potencias de base negativa.",
+          "n4": "Usa al menos dos formas de representar las operaciones (la regla de los signos y la recta numérica, o el conteo de signos menos), las asocia y las compara. Por ejemplo, ve que 5 − (−3) es lo mismo que 5 + 3 = 8.",
+          "n5": "Combina varias representaciones (regla de signos, recta numérica, conteo de signos menos en productos largos, potencia par o impar) y elige la más adecuada para cada ejercicio, justificando su elección."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Identifica qué operación es (suma o resta con signo, producto, división, potencia) antes de resolver.",
+            "Obtiene el resultado con un procedimiento correcto y revisa si el signo tiene sentido.",
+            "Encuentra y corrige sus propios errores."
+          ],
+          "n1": "Aplica las reglas al azar: usa la regla de la suma en un producto, o al revés. No distingue qué hace cada signo (el de la operación y el del número) y se limita a copiar sin comprender.",
+          "n23": "Reconoce qué hace cada signo y usa alguna regla para obtener resultados. Acierta en casos sencillos, pero falla en productos de varios factores o al restar un negativo, y no revisa sus resultados.",
+          "n45": "Identifica el tipo de operación, decide primero el signo y después la cantidad, obtiene resultados correctos y revisa si el signo es razonable. Detecta sus errores comunes (potencias, resta de negativos) y los corrige."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué un resultado es positivo o negativo.",
+            "Da ejemplos que apoyan la regla y ejemplos que la distinguen de otras (por ejemplo, (−3)² frente a −3²).",
+            "Explica con la cantidad de signos menos (par o impar) el signo de un producto largo."
+          ],
+          "n1": "Defiende su resultado con frases como «así es la regla» o «así me salió». Reconoce intuitivamente que hay una regla, pero no la explica.",
+          "n2": "Explica con sus palabras o con una analogía (por ejemplo, «quitar una deuda es como ganar») por qué el resultado tiene ese signo, con pocos términos matemáticos.",
+          "n3": "Valida la regla con ejemplos: muestra varios productos y sus signos, y distingue con ejemplos y contraejemplos (−3)² = 9 de −3² = −9.",
+          "n4": "Explica la estructura del argumento: la cantidad de signos menos (par o impar) determina el signo del producto. Justifica paso a paso el signo de varios resultados y distingue lo que supone de lo que concluye.",
+          "n5": "Construye una cadena de argumentos que generaliza la regla (para cualquier cantidad de factores y para potencias pares e impares) y distingue convencerse con ejemplos de demostrar por qué funciona."
+        }
+      ]
+    },
+    {
+      "id": "jerarquia",
+      "titulo": "Matemáticas 1 · Jerarquía de operaciones",
+      "file": "matematicas-1/tema-04-jerarquia-de-operaciones.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios de Nivel 1 (suma o resta con producto, división, raíz o paréntesis) y de Nivel 2 (paréntesis, corchetes y llaves anidados, potencias y raíces), resueltos paso a paso en el cuaderno.",
+        "Que cada paso quede en una línea, para poder ver en qué orden resolvió."
+      ],
+      "errores": [
+        "Resuelve de izquierda a derecha sin respetar la jerarquía (por ejemplo, suma antes de multiplicar).",
+        "Confunde (−3)² con −3².",
+        "Saca la raíz antes de resolver la operación que tiene adentro.",
+        "En grupos anidados, resuelve primero lo de afuera o pierde signos al quitar paréntesis.",
+        "Pierde la barra de la raíz o los paréntesis al copiar el ejercicio."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Cada paso está en una línea y se ve qué operación resolvió.",
+            "Usa bien paréntesis, corchetes y llaves, y la barra de la raíz cubre todo lo que está adentro.",
+            "Puede decir en voz alta qué hizo primero y por qué."
+          ],
+          "n1": "Escribe la operación de corrido o con cortes sin sentido; pierde paréntesis, signos o la barra de la raíz, y no se entiende en qué orden resolvió.",
+          "n23": "Escribe sus pasos, aunque a veces junta varios en una sola línea u omite signos de agrupación. Sus producciones le permiten repetir el procedimiento de manera mecánica; casi no explica lo que hace.",
+          "n4": "Escribe los pasos de forma clara, uno por línea, con los signos de agrupación correctos; puede tener alguna deficiencia en los ejercicios largos. Explica qué operación hizo en cada paso.",
+          "n5": "Escribe cada paso en orden y con la simbología correcta (paréntesis, corchetes, llaves, potencias y raíces), y explica por escrito u oralmente qué operación hizo primero y por qué, incluso reconstruyendo el orden de un ejercicio nuevo."
+        },
+        {
+          "id": "REP_ARI",
+          "observar": [
+            "Entiende los signos de agrupación como una manera de decir «esto se hace primero».",
+            "Distingue (−3)² de −3² y calcula bien potencias y raíces dentro de la operación.",
+            "Reconoce que la raíz exacta es la operación inversa de la potencia (√36 = 6)."
+          ],
+          "n1": "Conoce la jerarquía como una lista memorizada, pero opera de izquierda a derecha o confunde −3² con (−3)².",
+          "n23": "Comprende y describe cómo se representa una operación combinada con enteros y aplica la jerarquía en ejercicios con una o dos operaciones. Se confunde con potencias y raíces dentro de la misma expresión.",
+          "n4": "Asocia y compara dos formas de ver la operación: el orden de la jerarquía y los signos de agrupación que lo cambian. Las aplica en ejercicios con paréntesis, potencias y raíces.",
+          "n5": "Combina las representaciones (agrupación, potencias, raíces, signo de números negativos) y elige la más conveniente para simplificar cada ejercicio, justificando su elección."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Decide el orden correcto de los pasos y resuelve de adentro hacia afuera.",
+            "Llega al resultado correcto, también en los ejercicios de Nivel 2.",
+            "Revisa su resultado y corrige sus errores."
+          ],
+          "n1": "Resuelve en el orden en que aparecen los números o elige los pasos al azar; no distingue qué operación va primero.",
+          "n23": "Identifica las operaciones y usa la jerarquía en los ejercicios sencillos (Nivel 1), pero falla en los anidados (Nivel 2). No revisa sus resultados.",
+          "n45": "Identifica el orden correcto, resuelve de adentro hacia afuera y obtiene resultados correctos incluso con grupos anidados, potencias y raíces. Revisa si el resultado es razonable y corrige sus errores."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué una operación va antes que otra.",
+            "Muestra con un ejemplo que cambiar el orden cambia el resultado (2 + 3 · 4 frente a (2 + 3) · 4)."
+          ],
+          "n1": "Defiende su resultado con «así lo resolví», sin mencionar el orden. Reconoce intuitivamente que hay un orden, pero no lo explica.",
+          "n2": "Explica con una analogía o un ejemplo sencillo («las multiplicaciones se resuelven antes que las sumas») usando elementos básicos del lenguaje matemático.",
+          "n3": "Muestra con ejemplos que cambiar el orden da otro resultado, y da ejemplos y contraejemplos de la jerarquía (compara 2 + 3 · 4 con (2 + 3) · 4).",
+          "n4": "Justifica paso a paso por qué sigue cierto orden (agrupación, potencias y raíces, producto y división, suma y resta) y distingue lo que supone de lo que concluye.",
+          "n5": "Construye una cadena de argumentos que explica por qué la jerarquía es necesaria (para que una expresión tenga un solo resultado) y la generaliza a cualquier operación combinada, incluidos los grupos anidados."
+        }
+      ]
+    },
+    {
+      "id": "grafico",
+      "titulo": "Matemáticas 3 · Tema 1 · Método gráfico (Serie 1)",
+      "file": "matematicas-3/tema-01-tarea.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Las hojas cuadriculadas con las gráficas de los 10 sistemas de la Serie 1.",
+        "El despeje de y en cada ecuación, la escala usada y la coordenada de solución.",
+        "La comprobación en ambas ecuaciones (sólo cuando la solución es única) y la conclusión escrita."
+      ],
+      "errores": [
+        "Invierte x con y al ubicar un punto.",
+        "Despeja mal y (error de signo en la pendiente o en la ordenada).",
+        "La escala no es uniforme o no la rotula, y por eso lee mal el punto de intersección.",
+        "No distingue rectas paralelas (sin solución) de rectas coincidentes (infinitas soluciones).",
+        "Da una solución sin comprobarla en las dos ecuaciones."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe las ecuaciones, el despeje y la solución como par ordenado (x, y).",
+            "Rotula los ejes, la escala y cada recta.",
+            "Escribe una conclusión: solución única, sin solución o infinitas soluciones."
+          ],
+          "n1": "La hoja no se entiende: no rotula ejes ni rectas, escribe las ecuaciones con errores de signo y no escribe una conclusión.",
+          "n23": "Escribe las ecuaciones y la coordenada solución, aunque con errores de notación o sin rotular todo. Usa la gráfica para repetir el procedimiento de manera mecánica; sus tablas y gráficas son limitadas.",
+          "n4": "Escribe correctamente ecuaciones, despeje y solución como par ordenado; rotula ejes y rectas con claridad, aunque puede tener alguna deficiencia (por ejemplo, escala poco uniforme). Su conclusión es clara.",
+          "n5": "Presenta el despeje, la tabla de valores, la gráfica con ejes, escala y rectas rotuladas, y la conclusión escrita. Expresa la solución por varios medios (par ordenado y su lectura en la gráfica) y puede explicarla."
+        },
+        {
+          "id": "REP_GEO",
+          "observar": [
+            "Ubica bien los puntos y traza cada recta con una escala adecuada.",
+            "Reconoce si las rectas se cruzan, coinciden o son paralelas.",
+            "Lee correctamente la coordenada donde se cruzan."
+          ],
+          "n1": "Conoce el plano cartesiano y ubica puntos, pero traza las rectas sin escala, con puntos mal ubicados o invirtiendo x con y.",
+          "n23": "Describe las rectas (pendiente y ordenada) y traza cada una con dos o más puntos. Sus gráficas tienen errores de escala o de ubicación que no impiden leer el resultado.",
+          "n4": "Clasifica la posición de las rectas (se cruzan, coinciden o son paralelas) e interpreta sus relaciones a partir de la pendiente y la ordenada.",
+          "n5": "A partir de la pendiente y la ordenada anticipa si las rectas se cruzan, coinciden o son paralelas, y lo confirma con la gráfica."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Transforma cada ecuación general a la forma y = mx + b.",
+            "Identifica la pendiente m y la ordenada b de cada recta.",
+            "Maneja bien los signos y las fracciones al despejar."
+          ],
+          "n1": "Conoce la forma y = mx + b, pero despeja con errores de signo y no identifica m y b.",
+          "n23": "Despeja y correctamente en la mayoría de las ecuaciones, usa la forma y = mx + b e identifica la pendiente y la ordenada.",
+          "n4": "Comprende y maneja las propiedades del lenguaje algebraico para transformar cualquier ecuación general a su forma normal (también con coeficientes fraccionarios) y compara las pendientes de las dos rectas.",
+          "n5": "Explica qué representan m y b en la gráfica y generaliza cómo las pendientes y las ordenadas determinan el número de soluciones del sistema."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Sabe que la solución es el punto donde se cruzan las rectas.",
+            "Obtiene el punto de intersección y decide si hay solución única, ninguna o infinitas.",
+            "Comprueba sustituyendo en ambas ecuaciones."
+          ],
+          "n1": "Grafica o resuelve sin saber qué se busca: confunde x con y o una ecuación con la otra, y no relaciona la solución con el punto de intersección.",
+          "n23": "Identifica que la solución es el punto donde se cruzan las rectas y usa el método (despeje, tabla, gráfica) para encontrarlo. No siempre comprueba, y falla en los casos sin solución o con infinitas soluciones.",
+          "n45": "Identifica qué se busca, grafica las dos rectas, obtiene el punto de intersección, decide si el sistema tiene solución única, ninguna o infinitas, y revisa el resultado sustituyendo en ambas ecuaciones."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué el punto que encontró es la solución.",
+            "Explica por qué un sistema no tiene solución o tiene infinitas, según la posición de las rectas.",
+            "Explica por qué la comprobación valida el resultado."
+          ],
+          "n1": "Afirma el resultado sin explicar («porque las rectas se cruzan»). Reconoce intuitivamente de dónde sale, pero no lo defiende.",
+          "n2": "Defiende la solución con un argumento simple («el punto está en las dos rectas, por eso cumple las dos ecuaciones») con lenguaje matemático básico.",
+          "n3": "Valida su solución con ejemplos: sustituye el par en las ecuaciones. Reconoce ejemplos de sistemas con una, ninguna o infinitas soluciones.",
+          "n4": "Explica la estructura del argumento: las ecuaciones son la hipótesis y la solución (o su ausencia) es la conclusión, que justifica con la comprobación. Distingue lo que ve en la gráfica (conjetura) de lo que comprueba (conclusión).",
+          "n5": "Elabora una cadena de argumentos que generaliza: relaciona la posición de las rectas con el número de soluciones para cualquier sistema 2×2, y explica por qué ver la gráfica no basta y hay que comprobar."
+        }
+      ]
+    },
+    {
+      "id": "cramer",
+      "titulo": "Matemáticas 3 · Tema 1 · Método de Cramer (Serie 1)",
+      "file": "matematicas-3/tema-01-tarea.html",
+      "ocurrencia": 1,
+      "evidencia": [
+        "Las hojas cuadriculadas con los 10 sistemas de la Serie 1.",
+        "Los determinantes Δ, Δx y Δy escritos con su cálculo, y los valores de x y y.",
+        "La comprobación en ambas ecuaciones y la conclusión cuando Δ = 0."
+      ],
+      "errores": [
+        "Confunde las columnas de Δx y Δy (cambia la columna que no es).",
+        "Calcula el determinante con error de signo (ad + bc o bc − ad en lugar de ad − bc).",
+        "Olvida dividir entre Δ para obtener x y y.",
+        "No sabe qué concluir cuando Δ = 0.",
+        "Da x y y sin comprobar en las dos ecuaciones."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe el sistema y arma cada determinante con barras y con su nombre (Δ, Δx, Δy).",
+            "Escribe el cálculo de cada determinante y cómo obtiene x y y.",
+            "Escribe una conclusión clara."
+          ],
+          "n1": "Escribe los determinantes sin barras ni nombres, o mezcla las columnas, y no se entiende cómo obtuvo x y y.",
+          "n23": "Escribe los determinantes y sus operaciones con la simbología básica, aunque omite nombres o pasos. Repite el procedimiento de manera mecánica.",
+          "n4": "Escribe el sistema, los determinantes y los resultados con la simbología correcta (Δ, Δx, Δy, y x como Δx dividido entre Δ), con alguna deficiencia. Su procedimiento se sigue sin dificultad.",
+          "n5": "Escribe cada determinante, su cálculo y la conclusión con notación correcta, y explica por qué se usa cada uno y de dónde sale cada valor."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Acomoda los coeficientes de x y y y los términos independientes en los determinantes correctos.",
+            "Sabe qué columna se sustituye en Δx y cuál en Δy."
+          ],
+          "n1": "Conoce los determinantes, pero los acomoda de forma mecánica: coloca mal los coeficientes o los signos.",
+          "n23": "Organiza el sistema en forma de determinantes (coeficientes de x y de y, y columna de términos independientes) con uso correcto de las expresiones; tiene errores ocasionales de signo.",
+          "n4": "Comprende y maneja las propiedades: arma Δ, Δx y Δy correctamente y explica qué columna se reemplaza por los términos independientes.",
+          "n5": "Da significado y generaliza: explica por qué se sustituye cada columna y generaliza el método para cualquier sistema 2×2."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Calcula Δ, Δx y Δy y obtiene x y y.",
+            "Reconoce el caso Δ = 0 y decide si el sistema no tiene solución o tiene infinitas.",
+            "Comprueba sustituyendo en ambas ecuaciones."
+          ],
+          "n1": "Aplica las fórmulas sin saber qué calcula cada determinante; confunde Δx con Δy o x con y.",
+          "n23": "Identifica Δ, Δx y Δy y usa el método para obtener x y y en los casos con Δ distinto de 0. Se equivoca con los signos al calcular determinantes y no revisa.",
+          "n45": "Calcula correctamente los tres determinantes, obtiene x y y, identifica los casos con Δ = 0 (sin solución o infinitas soluciones) y revisa el resultado sustituyendo en ambas ecuaciones."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué la solución es correcta.",
+            "Explica qué significa que Δ sea 0.",
+            "Usa la comprobación como argumento."
+          ],
+          "n1": "Dice «me dio x = …» sin explicar. Reconoce intuitivamente que hay un procedimiento, pero no lo defiende.",
+          "n2": "Defiende que la solución es correcta porque «el método da ese valor», con lenguaje matemático básico, sin explicar por qué el método sirve.",
+          "n3": "Valida con ejemplos: sustituye x y y en las dos ecuaciones. Distingue ejemplos con Δ distinto de 0 de ejemplos con Δ = 0.",
+          "n4": "Explica la estructura del argumento: el sistema es la hipótesis, la solución es la conclusión y la comprobación la valida. Justifica qué pasa cuando Δ = 0 (el sistema no tiene solución o tiene infinitas) y distingue la conjetura de la conclusión.",
+          "n5": "Elabora una cadena de argumentos que generaliza el método a cualquier sistema 2×2 y explica por qué funciona (relaciona Δ con la posición de las rectas), no sólo que funciona."
+        }
+      ]
+    },
+    {
+      "id": "ax2b",
+      "titulo": "Matemáticas 3 · Tema 5 · f(x) = ax² + b",
+      "file": "matematicas-3/tema-05-ax-cuadrada-mas-b.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los 10 ejercicios al azar (o los que resuelva en el cuaderno), con las cuatro preguntas: hacia dónde abre, comparación de |a| con 1, vértice y tipo de raíces.",
+        "La tabla de valores y la gráfica cuando se pida graficar.",
+        "Las raíces escritas (x = ±r o x = ±ri) y su explicación."
+      ],
+      "errores": [
+        "Escribe el vértice como V(b, 0) o confunde a con b.",
+        "Confunde el signo de a con hacia dónde abre la parábola.",
+        "En la tabla suma b antes de multiplicar por a.",
+        "Se equivoca al comparar |a| con 1 cuando a es fracción o es negativa.",
+        "Dice que las raíces son reales cuando a y b tienen el mismo signo, u olvida el caso b = 0 (raíz doble).",
+        "Escribe las raíces sin el ± o sin la i en el caso imaginario."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe f(x), el vértice V(0, b) y la comparación de |a| con 1 con la simbología correcta.",
+            "Escribe las raíces en la forma adecuada (x = ±2, x = 0 o x = ±2i).",
+            "Explica con palabras cada una de sus respuestas."
+          ],
+          "n1": "Escribe el vértice con las coordenadas invertidas o sin paréntesis, no distingue a de b, y sus respuestas no se entienden.",
+          "n23": "Usa la simbología con limitaciones: escribe V(0, b) y las raíces, pero no siempre en la forma correcta (±2 sin el signo, o 2 en lugar de 2i). Contesta sin explicar.",
+          "n4": "Escribe V(0, b), la comparación de |a| con 1 y las raíces con la simbología correcta, aunque con alguna deficiencia (por ejemplo, en las raíces imaginarias). Explica sus respuestas de forma clara.",
+          "n5": "Escribe y explica con simbología correcta a, |a|, V(0, b), las raíces reales (x = ±r) o imaginarias (x = ±ri) y la gráfica, por diferentes medios, y reconstruye el análisis de una función nueva."
+        },
+        {
+          "id": "REP_GEO",
+          "observar": [
+            "Dice hacia dónde abre la parábola y si es más delgada, más gorda o igual que x².",
+            "Ubica el vértice V(0, b) por encima o por debajo del eje x.",
+            "Reconoce si la parábola corta al eje x en dos puntos, en uno o en ninguno."
+          ],
+          "n1": "Conoce la parábola básica x², pero no distingue hacia dónde abre ni dónde queda el vértice.",
+          "n23": "Describe las propiedades de la parábola: hacia dónde abre, si es más abierta o más cerrada que x², y ubica el vértice. Tiene errores con fracciones o con a negativa.",
+          "n4": "Clasifica la parábola (abre hacia arriba o hacia abajo; más delgada, más gorda o igual) e interpreta cómo a y b cambian la gráfica de x², incluyendo si corta al eje x.",
+          "n5": "Sin graficar, anticipa la forma, el vértice y los cortes con el eje x a partir de a y b, y lo confirma con la gráfica."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Identifica a y b en f(x) = ax² + b, incluso si son fracciones o negativos.",
+            "Calcula puntos multiplicando primero por a y luego sumando b.",
+            "Obtiene las raíces despejando x²."
+          ],
+          "n1": "Conoce f(x) = ax² + b, pero confunde los papeles de a y b; al calcular la tabla suma antes de multiplicar.",
+          "n23": "Usa correctamente la expresión: identifica a y b, y calcula puntos multiplicando y por a y luego sumando b.",
+          "n4": "Comprende y maneja las propiedades: despeja x² para hallar las raíces y lo hace también con a o b fraccionarios o negativos.",
+          "n5": "Explica que b mueve el vértice y a cambia la forma, y generaliza cuándo las raíces son reales o imaginarias para cualquier a y b."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Justifica con los signos de a y b por qué la parábola corta o no al eje x.",
+            "Justifica si las raíces son reales y diferentes, repetidas (b = 0) o imaginarias.",
+            "Relaciona su conclusión con la gráfica."
+          ],
+          "n1": "Dice «sí corta» o «no corta» al eje x sin justificar. Reconoce intuitivamente que depende de la gráfica.",
+          "n2": "Defiende con una regla simple («si a y b son positivos, la parábola queda arriba y no toca el eje») con lenguaje matemático básico.",
+          "n3": "Valida con ejemplos: prueba varias parejas de a y b y compara los signos; da ejemplos y no-ejemplos de cuándo hay raíces reales.",
+          "n4": "Explica la estructura del argumento: los signos de a y b son la hipótesis y el tipo de raíces es la conclusión. La justifica al despejar x² (positivo: dos raíces reales; negativo: raíces imaginarias; cero: raíz doble).",
+          "n5": "Elabora una cadena de argumentos que generaliza para cualquier a y b, y la relaciona con la gráfica (vértice arriba, abajo o sobre el eje x)."
+        }
+      ]
+    }
+  ]
+}

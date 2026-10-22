@@ -53,6 +53,12 @@ y Karla (texto). Estilos compartidos en `assets/style.css`.
   competencias (Comunicación, Representación geométrica / algebraica / aritmética,
   Modelación y resolución de problemas, Argumentación) con los textos de los Niveles 1 a 5
   y la nota del Nivel 0. Usar esos textos tal cual; no inventar descriptores.
+- **Cada rúbrica debe decir, para esa actividad en concreto, qué debe ver Carmen en cada
+  nivel** (no basta copiar el texto general de la matriz). Lo concreto por actividad está en
+  [materiales-fuente/rubricas-por-actividad.json](materiales-fuente/rubricas-por-actividad.json)
+  (qué observar, niveles 1 a 5 y errores típicos). Para una actividad nueva, agregar ahí su
+  entrada y correr `materiales-fuente/generar-rubricas.ps1`: actualiza las rúbricas del sitio y
+  genera la guía en Word `Escritorio\IEMS\Guia_para_evaluar_con_la_matriz.docx` (opción `-Guia`).
 - Formato: copiar la estructura de una rúbrica ya hecha (por ejemplo la de
   `matematicas-3/tema-05-ax-cuadrada-mas-b.html`): `<details class="rubric rubric-matriz">`
   con tabla `table.matriz`, columnas Criterio y Niveles 1 a 5, celdas combinadas donde la

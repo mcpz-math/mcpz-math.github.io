@@ -785,6 +785,8 @@ details.rubric.rubric-matriz { width: min(100% - 3rem, 1040px); }
   color: var(--forest);
 }
 .rubric-matriz table.matriz td.crit .en-act strong { display: inline; }
+.rubric-matriz table.matriz td.crit .en-act ul { margin: 0.3rem 0 0; padding-left: 1.05rem; }
+.rubric-matriz table.matriz td.crit .en-act li { margin: 0 0 0.25rem; }
 .rubric-matriz .rubric-note {
   margin: 0.8rem 0 0;
   padding: 0.7rem 0.9rem;

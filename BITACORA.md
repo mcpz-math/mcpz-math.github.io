@@ -1113,3 +1113,17 @@ Registro de lo que vamos haciendo, en orden cronológico.
   vacío (queda "Aún no logra lo descrito para el Nivel 2…") y una frase suelta marcada
   "nivel 2" dentro de Modelación se pasó a la columna de Niveles 2 y 3.
 - Estilos nuevos de la tabla (`.rubric-matriz`) en `assets/style.css`.
+
+## 2026-10-21 (rúbricas: qué observar en cada actividad + guía en Word)
+- Carmen notó que las rúbricas solo copiaban la matriz y pidió que, para cada actividad,
+  se diga qué debe ver ella para evaluar según la matriz. Se hizo en las dos formas
+  (rúbricas del sitio y guía aparte).
+- Las 5 rúbricas del sitio (Leyes de los signos, Jerarquía de operaciones, Método gráfico,
+  Método de Cramer y f(x) = ax² + b) ahora traen en cada criterio un recuadro "Qué observar" y,
+  en cada nivel, lo que se ve en el trabajo del alumno en esa actividad (por ejemplo
+  «(−4)(−3) = −12»), conservando la idea del nivel de la matriz.
+- Guía para Carmen en Word (no está en el sitio): `Escritorio\IEMS\Guia_para_evaluar_con_la_matriz.docx`.
+  Por actividad trae la evidencia a revisar, qué observar por competencia, una tabla con lo que
+  dice la matriz frente a lo que debe ver en esa actividad, y los errores típicos.
+- La fuente está en `materiales-fuente/rubricas-por-actividad.json` y se regenera todo con
+  `materiales-fuente/generar-rubricas.ps1`. Se agregó el estilo de las listas "Qué observar".
