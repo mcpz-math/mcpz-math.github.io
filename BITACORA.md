@@ -1127,3 +1127,13 @@ Registro de lo que vamos haciendo, en orden cronológico.
   dice la matriz frente a lo que debe ver en esa actividad, y los errores típicos.
 - La fuente está en `materiales-fuente/rubricas-por-actividad.json` y se regenera todo con
   `materiales-fuente/generar-rubricas.ps1`. Se agregó el estilo de las listas "Qué observar".
+
+## 2026-10-21 (se quita la tabla de la gráfica interactiva de f(x) = ax² + b)
+- Carmen pidió quitar la tabla que aparecía debajo del análisis (columnas x, y = x²,
+  y = a · x² + b y "El punto se mueve").
+- Se quitó en `matematicas-3/tema-05-ax-cuadrada-mas-b.html` y en la página para compartir
+  `matematicas-3/prueba-ax-cuadrada-mas-b.html` (HTML y el código que la llenaba). El
+  análisis (incluido "¿Cómo se mueve cada punto de x²?" con el ejemplo del punto (2, 4)) y la
+  gráfica quedan igual.
+- La página de f(x) = ax² (`tema-05-ax-cuadrada.html` y `prueba-ax-cuadrada.html`) tiene una
+  tabla parecida y no se tocó.

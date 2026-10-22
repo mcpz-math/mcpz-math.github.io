@@ -61,15 +61,6 @@
     <div class="pg-actions" id="axb-quick" aria-label="Valores rápidos de a y b"></div>
 
     <div class="callout" style="width:auto; margin:1.2rem 0 1rem; text-align:left;" id="axb-msg"></div>
-
-    <div class="table-scroll" style="width:auto; margin:0;">
-      <table>
-        <thead>
-          <tr><th>x</th><th>y = x²</th><th>y = a · x² + b</th><th>El punto se mueve</th></tr>
-        </thead>
-        <tbody id="axb-table"></tbody>
-      </table>
-    </div>
   </div>
 
   <script>
@@ -252,7 +243,7 @@
     }
 
     // ---------- texto: ecuación, mensaje y tabla ----------
-    var eqEl = document.getElementById('axb-eq'), msgEl = document.getElementById('axb-msg'), tb = document.getElementById('axb-table');
+    var eqEl = document.getElementById('axb-eq'), msgEl = document.getElementById('axb-msg');
     // Valor de las raíces imaginarias: x² = −q (q > 0) → x = ±√q · i
     function imagText(q) {
       var rn = isqrt(q.n), rd = isqrt(q.d);
@@ -319,12 +310,6 @@
         '<br>• Paso 2: ' + fracHTML(aY) + (B.n === 0 ? ' + 0' : plusHTML(B)) + ' = <strong>' + fracHTML(nY) + '</strong>' +
         '<br>Entonces (2, 4) se mueve a <strong>(2, ' + fracHTML(nY) + ')</strong>.');
       msgEl.innerHTML = '<div class="k no-caps">¿Qué pasa con a = ' + aH + ' y b = ' + bH + '?</div>' + lines.map(function (l) { return '<p style="margin:0.35rem 0;">' + l + '</p>'; }).join('');
-      tb.innerHTML = XS.map(function (x) {
-        var y = add(mul(A, x * x), B), out = Math.abs(val(y)) > YM ? ' <span style="color:#b3412e; font-size:0.8rem;">(fuera de la gráfica)</span>' : '';
-        var xs = String(x).replace('-', MINUS);
-        var aS = A.n < 0 ? '(' + fracHTML(A) + ')' : fracHTML(A);
-        return '<tr><td>' + xs + '</td><td>' + (x * x) + '</td><td style="white-space:nowrap;">' + aS + ' · ' + (x * x) + plusHTML(B) + ' = <strong>' + fracHTML(y) + '</strong></td><td>(' + xs + ', ' + (x * x) + ') → (' + xs + ', ' + fracHTML(y) + ')' + out + '</td></tr>';
-      }).join('');
     }
 
     // ---------- animación ----------
