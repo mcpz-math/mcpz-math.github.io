@@ -1157,3 +1157,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   evaluar también incluye esta serie.
 - Aviso: el archivo `Cuadraticas\Serie 1_ f(x)=ax2+b.docx` que ya existía contiene en realidad la
   "Serie 2. Raíces de f(x)=ax²+b" (copia de la Serie 2); no se tocó.
+
+## 2026-10-21 (se quita "¿Cómo se mueve cada punto de x²?" del análisis de f(x) = ax² + b)
+- Carmen pidió quitar del cuadro de análisis de la gráfica interactiva el bloque "¿Cómo se mueve
+  cada punto de x²?" (los dos pasos: multiplicar por a y sumar b, con el ejemplo del punto (2, 4)).
+- Se quitó en `matematicas-3/tema-05-ax-cuadrada-mas-b.html` y en la página para compartir
+  `matematicas-3/prueba-ax-cuadrada-mas-b.html`. El análisis ahora termina con las raíces
+  (reales, repetidas o imaginarias con su valor); la gráfica no cambia.
