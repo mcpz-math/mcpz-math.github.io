@@ -76,7 +76,7 @@ function Build-Block($a, [string]$summary) {
 
 if (-not $SoloGuia) {
   $rx = [regex]'(?s)<details class="rubric rubric-matriz">\s*<summary>(.*?)</summary>.*?</details>'
-  $files = $act.actividades | ForEach-Object { $_.file } | Select-Object -Unique
+  $files = $act.actividades | Where-Object { $_.file -ne '' } | ForEach-Object { $_.file } | Select-Object -Unique
   foreach ($f in $files) {
     $path = Join-Path $Root ($f.Replace('/', '\'))
     $text = [IO.File]::ReadAllText($path, $utf8)
