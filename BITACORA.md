@@ -1179,3 +1179,18 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (serie1 o serie2). La guía en Word para evaluar se regeneró e incluye también esta serie.
 - Aviso: en esa carpeta ya existe `Serie 2_Raices f(x)=ax2+b.docx` (la serie de raíces); la nueva
   tiene otro nombre para no encimarse.
+
+## 2026-10-22 (Serie 4 de Binomios conjugados en Word)
+- Carmen pidió una Serie 4 siguiendo la Serie 3 de Binomios conjugados. Se hizo
+  `Serie4_Binomios conjugados.docx` en `Escritorio\IEMS\Matemàticas III\DCP y Binomios conjugados\`
+  (no está en el sitio), con el mismo formato de la Serie 3: encabezado verde, recuadro "Recuerda",
+  instrucciones, 18 ejercicios en dos columnas (con espacio para resolver) y una página de
+  respuestas. Las fracciones van apiladas (ecuaciones de Word) y los exponentes en superíndice.
+- Los 18 ejercicios son nuevos (ninguno repite las Series 2 y 3) y siguen la misma progresión:
+  1–5 un término con número, 6–7 dos letras, 8–9 potencias, 10 con signo negativo, 11–13 monomios
+  de varias letras, 14–16 fracciones y 17–18 coeficientes literales con fracción.
+- Generador guardado en `materiales-fuente/generar-serie-binomios-conjugados.ps1` (parte del .docx
+  de la Serie 3 y cambia título y las dos tablas; parámetro `-Num` para otras series).
+- Aviso: en la respuesta de la Serie 3 (`Serie3_Binomios conjugados.docx`) los ejercicios 16, 17 y
+  18 no coinciden con el enunciado (el 16 y el 18 usan otras fracciones en el enunciado que en la
+  respuesta, y la respuesta del 17 es a⁴x − b²y en lugar de a⁴x² − b²y²). No se tocó.
