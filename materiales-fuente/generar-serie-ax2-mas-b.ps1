@@ -1,16 +1,16 @@
-# Genera la "Serie 1. Analisis de f(x) = ax^2 + b" en Word (.docx) con 10 ejercicios y su rubrica
+# Genera una serie "Analisis de f(x) = ax^2 + b" (Serie 1, Serie 2...) en Word (.docx) con 10 ejercicios y su rubrica
 # (matriz de niveles de Carmen). Toma los textos de materiales-fuente\rubricas-por-actividad.json
-# (bloque "serie1" y actividad "serie1ax2b") y de matriz-niveles-evaluacion.json.
+# (bloque "serie1"/"serie2" y su actividad "serie1ax2b"/"serie2ax2b", segun -Serie) y de matriz-niveles-evaluacion.json.
 # Usa como base (estilos, fuentes, tema) cualquier otra Serie en Word de Carmen: parametro -Base.
-# Uso: powershell -ExecutionPolicy Bypass -File generar-serie-1-ax2-mas-b.ps1 -Root <sitio> -Base <Serie.docx> -Out <salida.docx>
+# Uso: powershell -ExecutionPolicy Bypass -File generar-serie-ax2-mas-b.ps1 -Root <sitio> -Base <Serie.docx> -Out <salida.docx> [-Serie serie2]
 # Script solo ASCII: el texto con acentos viene de los JSON (UTF-8).
-param([string]$Root, [string]$Base, [string]$Out)
+param([string]$Root, [string]$Base, [string]$Out, [string]$Serie = 'serie1')
 $ErrorActionPreference = 'Stop'
 $utf8 = New-Object System.Text.UTF8Encoding($false)
 $matriz = [IO.File]::ReadAllText((Join-Path $Root 'materiales-fuente\matriz-niveles-evaluacion.json'), $utf8) | ConvertFrom-Json
 $act = [IO.File]::ReadAllText((Join-Path $Root 'materiales-fuente\rubricas-por-actividad.json'), $utf8) | ConvertFrom-Json
-$s = $act.serie1
-$ru = $act.actividades | Where-Object { $_.id -eq 'serie1ax2b' }
+$s = $act.$Serie
+$ru = $act.actividades | Where-Object { $_.id -eq ($Serie + 'ax2b') }
 $et = $act.etiquetas
 $bul = [string][char]0x2022
 $dot = [char]0x00B7

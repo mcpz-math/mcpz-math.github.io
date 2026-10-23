@@ -46,6 +46,35 @@
       { "a": [1, 4], "b": [2, 1] }
     ]
   },
+  "serie2": {
+    "titulo": "Serie 2. Análisis de f(x) = ax² + b",
+    "autor": "DTI. Maria del Carmen Pérez Zarate",
+    "estudiante": "Estudiante________________________________________________  Fecha______________  Grupo______________",
+    "propositoTitulo": "PROPÓSITO",
+    "proposito": "Evaluar el desarrollo de habilidades para analizar funciones cuadráticas de la forma f(x) = ax² + b, interpretando cómo los números a y b modifican la gráfica de y = x², representando la función en el plano cartesiano y explicando y justificando cada parte del procedimiento.",
+    "instruccionesTitulo": "INSTRUCCIONES:",
+    "instruccionesIntro": "Para cada una de las siguientes funciones:",
+    "pasos": [
+      "Indica hacia dónde abre la parábola y si su vértice es un mínimo o un máximo (fíjate en el signo de a).",
+      "Compara |a| con 1 y escribe si la parábola es más delgada, más abierta o igual de abierta que la de y = x².",
+      "Escribe las coordenadas del vértice, V(0, b), e indica si la gráfica de y = x² subió, bajó o se quedó en su lugar.",
+      "Elabora una tabla de valores para x = −2, −1, 0, 1, 2 (multiplica el valor de y = x² por a y después suma b) y grafica la función en hoja cuadriculada.",
+      "Sin resolver la ecuación, compara los signos de a y b e indica si la parábola corta al eje x en dos puntos, lo toca en uno o no lo corta, y si sus raíces son reales y diferentes, repetidas o imaginarias."
+    ],
+    "rubricaTitulo": "Rúbrica",
+    "ejercicios": [
+      { "a": [3, 1], "b": [-12, 1] },
+      { "a": [-1, 1], "b": [-4, 1] },
+      { "a": [1, 2], "b": [4, 1] },
+      { "a": [-4, 1], "b": [0, 1] },
+      { "a": [-1, 3], "b": [3, 1] },
+      { "a": [2, 1], "b": [5, 1] },
+      { "a": [5, 1], "b": [-5, 1] },
+      { "a": [-1, 2], "b": [8, 1] },
+      { "a": [1, 4], "b": [-4, 1] },
+      { "a": [1, 1], "b": [4, 1] }
+    ]
+  },
   "actividades": [
     {
       "id": "signos",
@@ -401,6 +430,77 @@
     {
       "id": "serie1ax2b",
       "titulo": "Matemáticas 3 · Tema 5 · Serie 1 de f(x) = ax² + b (Word)",
+      "file": "",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Las hojas cuadriculadas con la tabla de valores y la gráfica de las 10 funciones.",
+        "Las respuestas de los incisos a) al e) de cada función.",
+        "Que se vean los pasos de la tabla (multiplicar por a y sumar b), no sólo los puntos."
+      ],
+      "errores": [
+        "Escribe el vértice como V(b, 0) o confunde a con b.",
+        "Confunde el signo de a con hacia dónde abre la parábola.",
+        "En la tabla suma b antes de multiplicar por a, o ignora el signo de a.",
+        "Une los puntos de la tabla con líneas rectas en lugar de trazar la curva.",
+        "Se equivoca al comparar |a| con 1 cuando a es fracción o es negativa.",
+        "Dice que las raíces son reales cuando a y b tienen el mismo signo, u olvida el caso b = 0 (raíz doble)."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe V(0, b) con las coordenadas en orden y con paréntesis.",
+            "Usa la simbología correcta al comparar |a| con 1 (>, <, =) y escribe la tabla de valores completa.",
+            "Rotula ejes, escala y puntos en la gráfica."
+          ],
+          "n1": "Escribe el vértice con las coordenadas invertidas o sin paréntesis, no distingue a de b, deja la tabla incompleta y su gráfica no se entiende (sin ejes ni escala).",
+          "n23": "Usa la simbología con limitaciones: escribe V(0, b) y la tabla, pero no siempre en la forma correcta (por ejemplo, olvida el signo de b o la comparación de |a| con 1). Rotula la gráfica de manera incompleta y contesta sin explicar.",
+          "n4": "Escribe V(0, b), la comparación de |a| con 1 y la tabla con la simbología correcta, aunque con alguna deficiencia (por ejemplo, una escala poco uniforme). Rotula ejes y puntos, y explica sus respuestas de forma clara.",
+          "n5": "Escribe y explica con simbología correcta a, |a|, V(0, b), la tabla y la gráfica con ejes, escala y puntos rotulados, por diferentes medios, y reconstruye el análisis de una función nueva."
+        },
+        {
+          "id": "REP_GEO",
+          "observar": [
+            "Dice hacia dónde abre la parábola y si el vértice es un mínimo o un máximo.",
+            "Compara su abertura con la de y = x² (más delgada, más abierta o igual).",
+            "Traza la parábola simétrica, con el vértice en V(0, b) y el eje de simetría x = 0.",
+            "Reconoce si la parábola corta, toca o no corta el eje x."
+          ],
+          "n1": "Conoce la parábola básica y = x², pero no distingue hacia dónde abre ni dónde queda el vértice; une los puntos de su tabla con líneas rectas.",
+          "n23": "Describe las propiedades de la parábola: hacia dónde abre, si es más abierta o más cerrada que y = x², y ubica el vértice. Su gráfica tiene errores de escala o de ubicación de puntos (por ejemplo, con a fraccionario o negativo), pero se puede leer.",
+          "n4": "Clasifica la parábola (abre hacia arriba o hacia abajo; más delgada, más abierta o igual) e interpreta cómo a y b cambian la gráfica de y = x²: traza una parábola simétrica con el vértice correcto e identifica si corta al eje x.",
+          "n5": "Sin graficar, anticipa la forma, el vértice y los cortes con el eje x a partir de a y b, y lo confirma con su gráfica, que traza con simetría y escala adecuadas."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Identifica a y b en f(x) = ax² + b, también cuando son fracciones o negativos.",
+            "Llena la tabla multiplicando primero por a y después sumando b.",
+            "Relaciona los signos de a y b con el tipo de raíces."
+          ],
+          "n1": "Conoce f(x) = ax² + b, pero confunde los papeles de a y b; al llenar la tabla suma antes de multiplicar o ignora el signo de a.",
+          "n23": "Usa correctamente la expresión: identifica a y b, y calcula los puntos multiplicando el valor de y = x² por a y luego sumando b.",
+          "n4": "Comprende y maneja las propiedades: calcula bien la tabla también con a o b fraccionarios o negativos y relaciona los signos de a y b con el tipo de raíces.",
+          "n5": "Explica que b mueve el vértice y a cambia la forma, y generaliza cuándo las raíces son reales, repetidas o imaginarias para cualquier a y b."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Justifica con los signos de a y b (sin resolver la ecuación) por qué la parábola corta, toca o no corta al eje x.",
+            "Dice si las raíces son reales y diferentes, repetidas (b = 0) o imaginarias.",
+            "Relaciona su conclusión con su gráfica."
+          ],
+          "n1": "Dice «sí corta» o «no corta» al eje x sin justificar. Reconoce intuitivamente que depende de la gráfica.",
+          "n2": "Defiende con una regla simple («si a y b son positivos, la parábola queda arriba y no toca el eje») con lenguaje matemático básico.",
+          "n3": "Valida con ejemplos: compara los signos de a y b en varias de las funciones de la serie y da ejemplos y no-ejemplos de cuándo la parábola corta al eje x.",
+          "n4": "Explica la estructura del argumento: los signos de a y b son la hipótesis y el tipo de raíces es la conclusión. Verifica que lo que concluye coincide con su gráfica.",
+          "n5": "Elabora una cadena de argumentos que generaliza para cualquier a y b (b = 0: raíz doble; signos contrarios: dos raíces reales; mismo signo: raíces imaginarias) y la relaciona con la posición del vértice respecto del eje x."
+        }
+      ]
+    },
+    {
+      "id": "serie2ax2b",
+      "titulo": "Matemáticas 3 · Tema 5 · Serie 2 de f(x) = ax² + b (Word)",
       "file": "",
       "ocurrencia": 0,
       "evidencia": [

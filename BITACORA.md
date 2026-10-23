@@ -1164,3 +1164,18 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Se quitó en `matematicas-3/tema-05-ax-cuadrada-mas-b.html` y en la página para compartir
   `matematicas-3/prueba-ax-cuadrada-mas-b.html`. El análisis ahora termina con las raíces
   (reales, repetidas o imaginarias con su valor); la gráfica no cambia.
+
+## 2026-10-22 (Serie 2 de f(x) = ax² + b en Word)
+- Carmen pidió una Serie 2 igual a la Serie 1 de ayer, para evaluar el tema f(x) = ax² + b. Se hizo
+  `Serie 2_Analisis de f(x)=ax2+b.docx` en `Escritorio\IEMS\Matemàticas III\Cuadraticas\` (no está
+  en el sitio), con el mismo formato (título, Estudiante / Fecha / Grupo, propósito, instrucciones
+  a) a e), tabla de 10 ejercicios con ecuaciones de Word y fracciones apiladas) y la misma rúbrica
+  según la matriz de niveles (Niveles 1 a 5 y nota del Nivel 0), en hoja horizontal.
+- Los 10 ejercicios son nuevos (distintos de la Serie 1) y mantienen la mezcla: 5 con raíces reales
+  y diferentes, 4 imaginarias y 1 raíz doble (b = 0), con a positivo, negativo y fraccionario.
+  Funciones: 3x² − 12, −x² − 4, ½x² + 4, −4x², −⅓x² + 3, 2x² + 5, 5x² − 5, −½x² + 8, ¼x² − 4, x² + 4.
+- Fuente guardada en `materiales-fuente/rubricas-por-actividad.json` (bloque "serie2" y actividad
+  "serie2ax2b"). El generador se renombró a `generar-serie-ax2-mas-b.ps1` y ahora recibe `-Serie`
+  (serie1 o serie2). La guía en Word para evaluar se regeneró e incluye también esta serie.
+- Aviso: en esa carpeta ya existe `Serie 2_Raices f(x)=ax2+b.docx` (la serie de raíces); la nueva
+  tiene otro nombre para no encimarse.
