@@ -1317,3 +1317,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen se quitó de `matematicas-3/tema-01-grafico.html` el enlace "También puedes consultar
   este recurso de Khan Academy: La gráfica de una ecuación en la forma pendiente-ordenada al origen".
   Debajo del video sólo queda la sección "Tarea".
+
+## 2026-10-24 (Método gráfico: ejercicios y rúbrica regresan a su propia página)
+- A pedido de Carmen, "Método gráfico — Ejercicios" (propósito, Serie 1 con "Ver respuesta", Serie 2) y
+  "Método gráfico — Rúbrica" se movieron de `matematicas-3/tema-01-tarea.html` a
+  `matematicas-3/tema-01-grafico.html`, después del video (sin cambiar su contenido). Se quitó el aviso
+  "Tarea" que enviaba a la página de tareas.
+- Como la página de tareas se quedó sin contenido, se eliminó `tema-01-tarea.html` (sigue en el historial
+  de git) y se quitó el bloque "Tarea" de `tema-01-sistemas-de-ecuaciones-simultaneas.html`; ese tema
+  muestra ahora sólo "Materiales".
+- En `materiales-fuente/rubricas-por-actividad.json` la rúbrica del método gráfico apunta ahora a
+  `tema-01-grafico.html`.
