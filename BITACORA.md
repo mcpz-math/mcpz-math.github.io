@@ -1263,3 +1263,19 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Archivos: `matematicas-3/materiales/tema-01-general-a-ordinaria.mp4` (6.5 MB) y su portada.
   En `matematicas-3/tema-01-grafico.html` sustituye al video de YouTube (sección "Videos recomendados");
   el enlace a Khan Academy se conservó. Generador: `materiales-fuente/generar-video-ecuaciones-ordinaria.html`.
+
+## 2026-10-24 (video propio del método de Cramer)
+- Carmen pidió un video como el de YouTube "Sistemas de ecuaciones lineales 2x2 | Determinantes - Método
+  de Cramer | Ejemplo 1" y sustituirlo. Se hizo un video propio (3 min 5 s, estilo "Compás", con la música
+  de Bach de los otros videos y la etiqueta "DTI. Maria del Carmen Pérez Zarate"). Escenas: portada;
+  el determinante 2×2 (Δ = ad − bc, con las dos diagonales dibujadas); un sistema y sus tres
+  determinantes (Δ, Δx y Δy, con la columna cambiada resaltada); los 5 pasos del método; Ejemplo 1
+  7x + 4y = 13, 5x − 2y = 19 (x = 3, y = −2, con comprobación); Ejemplo 2 con negativos
+  2x − 3y = 13, 3x + 5y = −9 (x = 2, y = −3); "¿Y si el determinante es 0?" (x + y = 4, 2x + 2y = 10:
+  no se puede aplicar Cramer, el sistema no tiene solución o tiene un infinito de soluciones);
+  "¡Cuidado!" (sumar en vez de restar las diagonales, cambiar la columna equivocada, no dividir entre Δ);
+  "Ahora tú" 3x + 2y = 8, x − y = 1 con cuenta regresiva; y "Para recordar".
+- Archivos: `matematicas-3/materiales/tema-01-cramer.mp4` (6.8 MB) y su portada. En
+  `matematicas-3/tema-01-cramer.html` sustituye al video de YouTube (sección "Video recomendado").
+  Generador: `materiales-fuente/generar-video-cramer.html` (agrega una pieza para dibujar determinantes).
+- Los sistemas del video no repiten los de la Serie 1 ni la Serie 2 de ejercicios.
