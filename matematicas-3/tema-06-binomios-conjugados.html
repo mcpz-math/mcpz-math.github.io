@@ -477,6 +477,250 @@
   })();
   </script>
 
+  <p class="section-label" id="video-ecuaciones-imaginarias">Video: ecuaciones ax² + b = 0 con raíces imaginarias</p>
+  <div class="video-embed">
+    <video controls preload="metadata" playsinline poster="materiales/tema-06-ecuaciones-raices-imaginarias-portada.jpg">
+      <source src="materiales/tema-06-ecuaciones-raices-imaginarias.mp4" type="video/mp4">
+      Tu navegador no puede reproducir este video.
+    </video>
+  </div>
+  <p class="video-embed-caption">Video: cuando a y b tienen el mismo signo, ax² + b = 0 es una suma de
+     cuadrados (no se puede factorizar como DCP) y sus raíces son imaginarias. Qué es el número
+     <strong>i</strong>, los pasos para resolverla, tres ejemplos paso a paso, errores comunes y un
+     ejercicio para resolver.</p>
+
+  <p class="section-label" id="ejercicios-raices-imaginarias">Ejercicios: ecuaciones ax² + b = 0 con raíces imaginarias</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Resuelve cada ecuación en tu cuaderno y escribe sus <strong>raíces</strong> en el cuadro. Puedes
+       escribir las dos juntas con <strong>±</strong> (por ejemplo <strong>±5i</strong>) o separadas con
+       coma (por ejemplo <strong>5i, −5i</strong>). Después oprime <strong>Comprobar</strong> (o la tecla Enter).</p>
+    <p>La <strong>i</strong> se escribe con la letra i. Para una raíz cuadrada usa el botón <strong>√</strong>
+       (por ejemplo <strong>±2√2 i</strong>) y para una fracción el signo <strong>/</strong> (por ejemplo
+       <strong>±3/2 i</strong>). Escribe siempre la raíz y la fracción <strong>simplificadas</strong>.</p>
+    <p>Todas son de la forma <strong>ax² + b = 0</strong> con a y b del mismo signo: son una suma de
+       cuadrados, <strong>no se pueden factorizar como DCP</strong> y sus raíces son imaginarias.
+       Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Oprime
+       <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="ri-grid"></div>
+  <p class="practice-score" id="ri-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="ri-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script>
+  (function () {
+    var MINUS = '−';
+    function F(n, d) { return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>'; }
+    // Banco de 100 ecuaciones ax² + b = 0 con a y b del mismo signo (suma de cuadrados: no es DCP,
+    // las raíces son imaginarias). Cada par es [a, b]; de menor a mayor dificultad:
+    //  1–15   a = 1 y b cuadrado perfecto                (x = ±5i)
+    //  16–35  a > 1 y b/a cuadrado perfecto               (2x² + 8 = 0)
+    //  36–50  a = 1 y b no es cuadrado perfecto           (x = ±2√2 i)
+    //  51–65  a > 1 y b/a no es cuadrado perfecto         (3x² + 6 = 0)
+    //  66–80  a y b cuadrados perfectos, raíz fraccionaria (4x² + 9 = 0 → ±3/2 i)
+    //  81–100 a y b negativos                             (−2x² − 32 = 0)
+    var BANK = [
+      [1, 1], [1, 4], [1, 9], [1, 16], [1, 25], [1, 36], [1, 49], [1, 64], [1, 81], [1, 100], [1, 121], [1, 144], [1, 169], [1, 196], [1, 225],
+      [5, 5], [7, 7], [2, 8], [3, 12], [2, 18], [5, 20], [6, 24], [3, 27], [2, 32], [8, 32], [4, 36], [10, 40], [5, 45], [3, 48], [2, 50], [6, 54], [7, 63], [4, 64], [3, 75], [9, 81],
+      [1, 2], [1, 3], [1, 5], [1, 6], [1, 7], [1, 8], [1, 10], [1, 12], [1, 13], [1, 18], [1, 20], [1, 24], [1, 27], [1, 32], [1, 45],
+      [3, 6], [2, 6], [4, 20], [5, 30], [3, 21], [2, 16], [5, 50], [4, 48], [3, 54], [2, 40], [2, 48], [3, 81], [2, 56], [2, 64], [2, 90],
+      [4, 1], [9, 1], [16, 1], [25, 1], [4, 9], [9, 4], [4, 25], [16, 9], [25, 4], [9, 16], [9, 25], [25, 9], [16, 25], [4, 49], [36, 25],
+      [-1, -4], [-1, -9], [-1, -25], [-2, -8], [-3, -12], [-5, -20], [-2, -18], [-4, -36], [-2, -32], [-1, -3], [-1, -7], [-2, -6], [-5, -35], [-3, -18], [-4, -32], [-2, -24], [-6, -60], [-4, -9], [-9, -16], [-25, -4]
+    ];
+
+    function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = a % b; a = b; b = t; } return a; }
+    function sqFree(n) { var c = 1, d = n; for (var f = 2; f * f <= d; f++) { while (d % (f * f) === 0) { d /= f * f; c *= f; } } return { c: c, d: d }; }
+    function num(n) { return (n < 0 ? MINUS : '') + Math.abs(n); }
+
+    // Datos de cada ecuación: x² = −p/q  →  x = ±(c√d / s) i
+    function build(ab) {
+      var a = ab[0], b = ab[1], A = Math.abs(a), B = Math.abs(b), g = gcd(A, B), p = B / g, q = A / g;
+      var s = Math.round(Math.sqrt(q)), sf = sqFree(p), c = sf.c, d = sf.d;
+      var coef = a === 1 ? '' : a === -1 ? MINUS : num(a);
+      var rad = d === 1 ? String(c) : (c > 1 ? c : '') + '√' + d;
+      var R = (s > 1 ? F(rad, s) : (rad === '1' ? '' : rad)) + 'i';
+      var K = q === 1 ? String(p) : F(p, q);
+      var lines = [coef + 'x² = ' + num(-b)];
+      if (a !== 1) lines.push('x² = ' + MINUS + K);
+      lines.push('x = ±√(' + MINUS + K + ') = ±√' + (q === 1 ? K : '(' + K + ')') + ' · i');
+      lines.push('x = ±' + R);
+      lines.push('x₁ = ' + R + '&nbsp;&nbsp;&nbsp; x₂ = ' + MINUS + R);
+      return { a: a, b: b, p: p, q: q, v: c * Math.sqrt(d) / s,
+               text: coef + 'x² ' + (b < 0 ? MINUS + ' ' : '+ ') + B + ' = 0', sol: lines.join('<br>') };
+    }
+
+    // ---------- revisar lo que escribe el alumno ----------
+    // Lee una raíz como  ±2√2 i,  3/2 i,  5i,  √8 i…  Devuelve {v, ip, rad, frac, neg}: v es el valor
+    // sin la i, ip cuántas veces aparece la i (debe ser 1).
+    function evalPart(s) {
+      var i = 0, info = { rad: [], frac: [], neg: false };
+      function ws() { while (i < s.length && s.charAt(i) === ' ') i++; }
+      function number() {
+        var m = /^\d+(\.\d+)?/.exec(s.slice(i));
+        if (!m) throw 'num';
+        i += m[0].length; return parseFloat(m[0]);
+      }
+      function close() { ws(); if (s.charAt(i) !== ')') throw 'par'; i++; }
+      function atom() {
+        ws(); var c = s.charAt(i), w = s.substr(i, 4);
+        if (c === '(') { i++; var r = expr(); close(); return r; }
+        if (c === 'i') { i++; return { v: 1, ip: 1, lit: null }; }
+        if (c === '√' || w === 'sqrt' || w === 'raiz') {
+          i += c === '√' ? 1 : 4; ws();
+          var inner;
+          if (s.charAt(i) === '(') { i++; inner = expr(); close(); }
+          else if (s.charAt(i) === '-') { i++; var n = number(); inner = { v: -n, ip: 0, lit: -n }; }
+          else { var n2 = number(); inner = { v: n2, ip: 0, lit: n2 }; }
+          if (inner.ip !== 0) throw 'rad';
+          if (inner.v < 0) { info.neg = true; return { v: Math.sqrt(-inner.v), ip: 1, lit: null }; }
+          info.rad.push(inner.v);
+          return { v: Math.sqrt(inner.v), ip: 0, lit: null };
+        }
+        if (/[\d.]/.test(c)) { var n3 = number(); return { v: n3, ip: 0, lit: n3 }; }
+        throw 'tok';
+      }
+      function unary() {
+        ws();
+        if (s.charAt(i) === '-') { i++; var r = unary(); return { v: -r.v, ip: r.ip, lit: null }; }
+        if (s.charAt(i) === '+') { i++; return unary(); }
+        return atom();
+      }
+      function term() {
+        var r = unary();
+        for (;;) {
+          ws(); var c = s.charAt(i), op;
+          if (c === '*') { i++; op = '*'; }
+          else if (c === '/') { i++; op = '/'; }
+          else if (c && (/[\d.(i√]/.test(c) || s.substr(i, 4) === 'sqrt' || s.substr(i, 4) === 'raiz')) op = '*';
+          else break;
+          var t = unary();
+          if (op === '/') {
+            if (t.v === 0) throw 'div';
+            if (r.lit !== null && t.lit !== null && r.lit % 1 === 0 && t.lit % 1 === 0) info.frac.push([r.lit, t.lit]);
+            r = { v: r.v / t.v, ip: r.ip - t.ip, lit: null };
+          } else r = { v: r.v * t.v, ip: r.ip + t.ip, lit: null };
+        }
+        return r;
+      }
+      function expr() {
+        var r = term();
+        ws();
+        while (s.charAt(i) === '+' || s.charAt(i) === '-') {
+          var op = s.charAt(i++), t = term();
+          if (r.ip !== t.ip) throw 'mix';
+          r = { v: op === '+' ? r.v + t.v : r.v - t.v, ip: r.ip, lit: null };
+          ws();
+        }
+        return r;
+      }
+      var res = expr(); ws();
+      if (i < s.length) throw 'extra';
+      return { v: res.v, ip: res.ip, info: info };
+    }
+
+    function analyze(raw, ex) {
+      var s = raw.toLowerCase().replace(/[−–—]/g, '-').replace(/[·×]/g, '*').replace(/ /g, ' ')
+                 .replace(/\+\s*\/\s*-|\+\s*-|-\s*\+/g, '±').trim();
+      var parts = s.split(/\s*(?:;|,|\by\b|\bo\b)\s*|\s+(?=x\s*[12₁₂]?\s*=)/).filter(function (p) { return p.trim(); });
+      if (!parts.length) return { kind: 'parse' };
+      var signs = {}, magOk = true, noI = false, neg = false, unsimp = false, onlyK = false;
+      for (var k = 0; k < parts.length; k++) {
+        var t = parts[k].replace(/^x\s*[12₁₂]?\s*=\s*/, '').trim(), both = false;
+        if (t.charAt(0) === '±') { both = true; t = t.slice(1).trim(); }
+        var r;
+        try { r = evalPart(t); } catch (e) { return { kind: 'parse' }; }
+        if (r.ip === 0) { noI = true; continue; }
+        if (r.ip !== 1 || r.v === 0) return { kind: 'parse' };
+        var m = Math.abs(r.v);
+        if (Math.abs(m - ex.v) > 1e-9 * Math.max(1, ex.v)) { magOk = false; if (Math.abs(m - ex.p / ex.q) < 1e-9 * Math.max(1, m)) onlyK = true; }
+        if (both) { signs['+'] = 1; signs['-'] = 1; } else signs[r.v > 0 ? '+' : '-'] = 1;
+        if (r.info.neg) neg = true;
+        r.info.rad.forEach(function (n) { if (n % 1 !== 0 || sqFree(n).c > 1) unsimp = true; });
+        r.info.frac.forEach(function (f) { if (gcd(f[0], f[1]) > 1) unsimp = true; });
+      }
+      if (noI) return { kind: 'noI' };
+      if (neg) return { kind: 'neg' };
+      if (!magOk) return { kind: onlyK ? 'onlyK' : 'wrong' };
+      if (!(signs['+'] && signs['-'])) return { kind: parts.length > 1 ? 'sameSign' : 'oneRoot' };
+      if (unsimp) return { kind: 'simplify' };
+      return { kind: 'ok' };
+    }
+
+    // ---------- tarjetas ----------
+    var N = 10;
+    var grid = document.getElementById('ri-grid'), scoreEl = document.getElementById('ri-score'), done = {};
+    function score() {
+      var n = Object.keys(done).length;
+      scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
+    }
+    function pick() { // 10 al azar, ordenados de menor a mayor dificultad
+      var idx = BANK.map(function (e, i) { return i; });
+      for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+      return idx.slice(0, N).sort(function (p, q) { return p - q; }).map(function (i) { return BANK[i]; });
+    }
+    var MSG = {
+      parse: '<span class="no">No entendí lo que escribiste.</span> Escríbelo como, por ejemplo, <strong>±5i</strong>, <strong>±2√2 i</strong> o <strong>±3/2 i</strong>.',
+      noI: 'Falta la <strong>i</strong>: como x² es un número negativo, las raíces son <strong>imaginarias</strong> (√−1 = i).',
+      neg: 'Todavía falta <strong>sacar la i</strong> de la raíz: √−k = √k · i. Escribe la raíz ya resuelta, por ejemplo 5i.',
+      onlyK: 'Eso es lo que vale <strong>x²</strong>. Falta sacar la <strong>raíz cuadrada</strong> (y separar la i).',
+      wrong: 'Revisa tu despeje: pasa b restando, divide entre a y saca la raíz cuadrada de <strong>−b/a</strong> (separando la i).',
+      oneRoot: 'Falta una raíz: siempre son <strong>dos</strong>, una con <strong>+</strong> y otra con <strong>−</strong>. Puedes escribir ±.',
+      sameSign: 'Una raíz va con <strong>+</strong> y la otra con <strong>−</strong>.',
+      simplify: 'Está bien, pero <strong>simplifica</strong>: saca del radical los cuadrados perfectos (√8 = 2√2) y reduce las fracciones.'
+    };
+    function makeCard(ab, idx) {
+      var ex = build(ab);
+      var card = document.createElement('div');
+      card.className = 'practice-card';
+      card.innerHTML =
+        '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + ex.text + '</span></div>' +
+        '<div class="practice-row"><span class="eq">x =</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Las raíces del ejercicio ' + (idx + 1) + '">' +
+        '<button type="button" class="practice-check">Comprobar</button></div>' +
+        '<div class="practice-keys"><button type="button" data-k="±">±</button><button type="button" data-k="√">√</button>' +
+        '<button type="button" data-k="i">i</button><button type="button" data-k="(">(</button><button type="button" data-k=")">)</button>' +
+        '<button type="button" data-k="/">/</button></div>' +
+        '<div class="practice-fb" aria-live="polite"></div>';
+      grid.appendChild(card);
+      var input = card.querySelector('input'), fb = card.querySelector('.practice-fb');
+      card.querySelectorAll('.practice-keys button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var s = input.selectionStart == null ? input.value.length : input.selectionStart, e = input.selectionEnd == null ? s : input.selectionEnd;
+          input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e);
+          input.focus(); input.setSelectionRange(s + 1, s + 1);
+        });
+      });
+      function check() {
+        var v = input.value.trim();
+        card.classList.remove('ok', 'bad');
+        if (!v) { fb.innerHTML = 'Escribe tus raíces en el cuadro.'; return; }
+        var r = analyze(v, ex);
+        if (r.kind === 'ok') {
+          card.classList.add('ok'); done[idx] = 1; score();
+          fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span><div class="sol">' + ex.sol + '</div>';
+          return;
+        }
+        card.classList.add('bad'); delete done[idx]; score();
+        fb.innerHTML = (r.kind === 'parse' ? '' : '<span class="no">✗ No es correcta.</span> ') + MSG[r.kind] +
+                       (r.kind === 'parse' ? '' : '<div class="sol">Así se resuelve:<br>' + ex.sol + '</div>');
+      }
+      card.querySelector('.practice-check').addEventListener('click', check);
+      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') check(); });
+    }
+    function newSet() {
+      grid.innerHTML = ''; done = {};
+      pick().forEach(makeCard);
+      score();
+    }
+    document.getElementById('ri-new').addEventListener('click', function () {
+      newSet();
+      document.getElementById('ejercicios-raices-imaginarias').scrollIntoView({ behavior: 'smooth' });
+    });
+    newSet();  })();
+  </script>
+
   <footer class="site-footer">
     DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
   </footer>

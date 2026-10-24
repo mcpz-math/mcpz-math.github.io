@@ -1194,3 +1194,35 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Aviso: en la respuesta de la Serie 3 (`Serie3_Binomios conjugados.docx`) los ejercicios 16, 17 y
   18 no coinciden con el enunciado (el 16 y el 18 usan otras fracciones en el enunciado que en la
   respuesta, y la respuesta del 17 es a⁴x − b²y en lugar de a⁴x² − b²y²). No se tocó.
+
+## 2026-10-24 (video y 100 ejercicios: ecuaciones ax² + b = 0 con raíces imaginarias)
+- Carmen pidió un video paso a paso y 100 ejercicios (10 al azar) de ecuaciones ax² + b = 0 que no se
+  pueden factorizar como DCP y cuyas raíces son imaginarias. Todo se publicó en
+  `matematicas-3/tema-06-binomios-conjugados.html`, debajo de los ejercicios de DCP.
+- **Video** (2 min 58 s, estilo "Compás", con la música de Bach de los otros videos y la etiqueta
+  "DTI. Maria del Carmen Pérez Zarate"): portada; "¿Se puede factorizar como DCP?" (resta de
+  cuadrados x² − 9 → raíces reales, frente a suma de cuadrados x² + 9 → raíces imaginarias, y la
+  regla: a y b con el mismo signo); el número i (i = √−1, i² = −1, √−k = √k · i); los 4 pasos del
+  método; Ejemplo 1 x² + 25 = 0 (con comprobación), Ejemplo 2 4x² + 49 = 0 (raíces fraccionarias),
+  Ejemplo 3 3x² + 24 = 0 (simplificar √8 = 2√2); "¡Cuidado con estos errores!" (olvidar la i, dar
+  una sola raíz, i² = 1); "Ahora tú" 2x² + 32 = 0 con cuenta regresiva para pausar; y "Para recordar".
+- Archivos: `matematicas-3/materiales/tema-06-ecuaciones-raices-imaginarias.mp4` (7 MB) y su portada
+  `tema-06-ecuaciones-raices-imaginarias-portada.jpg`.
+- **Ejercicios:** banco de 100 ecuaciones, con a y b del mismo signo, de menor a mayor dificultad:
+  1–15 a = 1 y b cuadrado perfecto (±5i); 16–35 a > 1 con b/a cuadrado perfecto (2x² + 8 = 0);
+  36–50 a = 1 con raíz que se simplifica (x² + 8 = 0 → ±2√2 i); 51–65 a > 1 con radical
+  (3x² + 6 = 0); 66–80 raíces fraccionarias (4x² + 9 = 0 → ±3/2 i); 81–100 a y b negativos
+  (−2x² − 32 = 0). Todas las raíces quedan simplificadas sin racionalizar. Cada vez se sacan 10 al
+  azar y el botón "Otros 10 ejercicios" las cambia.
+- **Revisión automática:** el alumno escribe las raíces (±5i, 5i y −5i, ±2√2 i, ±3/2 i; botones ±, √,
+  i, ( ), /). La página entiende varias formas de escribirlas y avisa si falta la i, si hay una sola
+  raíz, si las dos tienen el mismo signo, si todavía hay que sacar la i de la raíz, si falta
+  simplificar el radical o reducir la fracción; siempre muestra cómo se resuelve. Se probaron los
+  100 ejercicios con respuestas correctas e incorrectas.
+- En `tema-06-productos-notables-y-factorizacion.html` el bloque del subtema menciona ahora las
+  ecuaciones con raíces imaginarias.
+- Cómo se hizo el video (esta computadora no tiene ffmpeg ni Python): el generador está en
+  `materiales-fuente/generar-video-ecuaciones-imaginarias.html`; dibuja los cuadros en un canvas y
+  los codifica con WebCodecs (H.264 + AAC) y mp4-muxer desde Chrome/Edge; la música se toma del audio
+  de `matematicas-1/materiales/jerarquia-de-operaciones.mp4`. Necesita un servidor local (ver el
+  comentario al inicio del archivo).
