@@ -1279,3 +1279,22 @@ Registro de lo que vamos haciendo, en orden cronológico.
   `matematicas-3/tema-01-cramer.html` sustituye al video de YouTube (sección "Video recomendado").
   Generador: `materiales-fuente/generar-video-cramer.html` (agrega una pieza para dibujar determinantes).
 - Los sistemas del video no repiten los de la Serie 1 ni la Serie 2 de ejercicios.
+
+## 2026-10-24 (video general a ordinaria: sin atajo, con la gráfica tras cada ejemplo y b racional)
+- A pedido de Carmen se rehízo el video `matematicas-3/materiales/tema-01-general-a-ordinaria.mp4`
+  (ahora 2 min 58 s):
+  - Se quitó el atajo (m = −A/B, b = −C/B), tanto su escena como el recuadro del resumen.
+  - **La gráfica se traza inmediatamente después de encontrar m y b:** cada ejemplo tiene dos escenas
+    seguidas, primero los pasos y luego "la gráfica" (marcar b en el eje y, usar m = sube/avanza para el
+    segundo punto y unir con la regla). Se quitó la escena que juntaba las dos rectas en un sistema.
+  - **Ejemplo 1:** 2x − y − 5 = 0 → y = 2x − 5 (m = 2, b = −5), escala de 1 en 1.
+  - **Ejemplo 2, con b racional:** 4x + 2y − 3 = 0 → y = −2x + 3/2 (m = −2, b = 3/2). El video dice que el
+    denominador de b (2) dicta la escala: cada unidad se divide en 2 partes (escala de medios); la
+    rejilla y los números del eje y aparecen en medios (½, 1, 3/2, 2…), se cuentan 3 cuadritos desde el
+    origen para marcar (0, 3/2) y la pendiente se cuenta en cuadritos (avanza 1 = 2 cuadritos, baja 2 = 4).
+  - "¡Cuidado!" se ajustó al nuevo Ejemplo 2 (dividir también el 3 entre 2), "Ahora tú" suma el paso
+    "Grafica: marca (0, 3), avanza 1 y baja 2" y "Para recordar" termina con cómo graficar y la regla de
+    la escala en lugar del atajo.
+- Se actualizó la descripción del video en `matematicas-3/tema-01-grafico.html`. El generador
+  (`materiales-fuente/generar-video-ecuaciones-ordinaria.html`) tiene ahora `planoEsc`, que dibuja el plano
+  con rejilla en fracciones.
