@@ -1234,3 +1234,18 @@ Registro de lo que vamos haciendo, en orden cronológico.
   quitó el aviso "Tarea" que enviaba a la página de tareas.
 - `tema-01-tarea.html` ahora sólo tiene el método gráfico (se llama otra vez "Tarea: método gráfico");
   el bloque "Tarea" de `tema-01-sistemas-de-ecuaciones-simultaneas.html` se ajustó a ese texto.
+
+## 2026-10-24 (rúbrica por competencias de Binomios conjugados y DCP)
+- Carmen pidió una rúbrica por competencias para la sección de Binomios conjugados y DCP, con opción de
+  mostrar u ocultar. Se publicó al final de `matematicas-3/tema-06-binomios-conjugados.html`, como
+  "Rúbrica · Binomios conjugados y DCP": un botón desplegable "Ver rúbrica por competencias" (cerrada
+  al abrir la página; el botón cambia de + a −).
+- Hecha con la matriz de niveles de Carmen (Niveles 1 a 5 y nota del Nivel 0), con cuatro competencias:
+  Comunicación, Representación algebraica, Modelación y resolución de problemas y Argumentación. Cada
+  criterio tiene "Qué observar" y lo que se ve en cada nivel en esta sección (multiplicar binomios
+  conjugados, factorizar DCP y resolver ax² + b = 0 con raíces imaginarias).
+- Fuente en `materiales-fuente/rubricas-por-actividad.json` (actividad "binomios"). La guía en Word
+  `Escritorio\IEMS\Guia_para_evaluar_con_la_matriz.docx` se regeneró e incluye también esta rúbrica
+  (con los errores típicos).
+- Se corrigió en ese archivo la ubicación de la rúbrica de Cramer (ahora está en `tema-01-cramer.html`,
+  desde que se movió de la página de tareas).

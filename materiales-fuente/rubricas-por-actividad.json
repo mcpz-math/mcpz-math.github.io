@@ -293,8 +293,8 @@
     {
       "id": "cramer",
       "titulo": "Matemáticas 3 · Tema 1 · Método de Cramer (Serie 1)",
-      "file": "matematicas-3/tema-01-tarea.html",
-      "ocurrencia": 1,
+      "file": "matematicas-3/tema-01-cramer.html",
+      "ocurrencia": 0,
       "evidencia": [
         "Las hojas cuadriculadas con los 10 sistemas de la Serie 1.",
         "Los determinantes Δ, Δx y Δy escritos con su cálculo, y los valores de x y y.",
@@ -566,6 +566,77 @@
           "n3": "Valida con ejemplos: compara los signos de a y b en varias de las funciones de la serie y da ejemplos y no-ejemplos de cuándo la parábola corta al eje x.",
           "n4": "Explica la estructura del argumento: los signos de a y b son la hipótesis y el tipo de raíces es la conclusión. Verifica que lo que concluye coincide con su gráfica.",
           "n5": "Elabora una cadena de argumentos que generaliza para cualquier a y b (b = 0: raíz doble; signos contrarios: dos raíces reales; mismo signo: raíces imaginarias) y la relaciona con la posición del vértice respecto del eje x."
+        }
+      ]
+    },
+    {
+      "id": "binomios",
+      "titulo": "Matemáticas 3 · Tema 6 · Binomios conjugados y DCP",
+      "file": "matematicas-3/tema-06-binomios-conjugados.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de las tres prácticas de la página (binomios conjugados, DCP y ecuaciones ax² + b = 0 con raíces imaginarias), resueltos en el cuaderno con el procedimiento (no sólo el resultado).",
+        "Al menos un ejercicio de cada tipo: multiplicar (a + b)(a − b), factorizar a² − b² y resolver ax² + b = 0 con i.",
+        "La explicación (oral o escrita) de por qué una suma de cuadrados no se factoriza como DCP y de dónde sale la i."
+      ],
+      "errores": [
+        "(3x)² = 3x² (no eleva al cuadrado el coeficiente).",
+        "(a + b)(a − b) = a² + b² (escribe una suma en lugar de una resta).",
+        "Al factorizar escribe (a − b)(a − b) o (a + b)² en lugar de binomios conjugados.",
+        "Factoriza x² + 9 como (x + 3)(x − 3), sin ver que eso da x² − 9.",
+        "De x² = −25 concluye x = ±5 (olvida la i), da una sola raíz o dice que i² = 1.",
+        "No simplifica: deja ±√8 i en lugar de ±2√2 i, o no reduce la fracción."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe cada producto o factorización con paréntesis y signos correctos, y eleva al cuadrado todo el término ((3x)² = 9x²).",
+            "Escribe la i y las raíces con ±, √ y fracciones bien formadas (±2√2 i, ±3/2 i).",
+            "Sus pasos están en orden (despejar x², sacar la raíz, separar la i) y puede explicarlos con sus palabras."
+          ],
+          "n1": "Escribe productos, factorizaciones o raíces con errores que cambian el sentido (omite paréntesis, no eleva el coeficiente al cuadrado, escribe √−25 = 5 sin la i) y no se entiende su procedimiento. No usa ningún apoyo, como un ejemplo o la comprobación.",
+          "n23": "Usa la simbología con limitaciones: se entiende lo que hizo, aunque a veces omite un paréntesis, un paso o el signo ±. Repite el procedimiento de manera mecánica y casi no lo explica.",
+          "n4": "Escribe con la simbología correcta los productos, las factorizaciones (a + b)(a − b) y las raíces ±…i, con alguna deficiencia (por ejemplo, no simplifica un radical o deja un paso intermedio incompleto). Explica con claridad qué hizo en cada paso.",
+          "n5": "Escribe todos los pasos con notación correcta (producto, factorización y raíces imaginarias) y explica por escrito u oralmente por qué se cancelan los términos de en medio y de dónde sale la i, reconstruyendo el procedimiento en un ejercicio nuevo."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Distingue la diferencia de cuadrados a² − b² (DCP) de la suma de cuadrados a² + b².",
+            "Identifica el primer y el segundo término de un binomio conjugado, también con coeficientes, potencias, varias letras o fracciones.",
+            "Reconoce cuándo a y b tienen el mismo signo en ax² + b = 0 y usa √−k = √k · i."
+          ],
+          "n1": "Conoce la regla (a + b)(a − b) = a² − b² sólo de memoria; confunde la diferencia con la suma de cuadrados o no distingue el primer término del segundo.",
+          "n23": "Hace un uso correcto de las expresiones: identifica el primer y el segundo término y aplica la regla en casos sencillos (x² − 9, 4x² − 25). Le fallan los casos con coeficientes, potencias, fracciones o varias letras, y la suma de cuadrados.",
+          "n4": "Comprende y maneja las propiedades: eleva al cuadrado cada término (coeficiente y letra), factoriza la DCP incluso con varias letras o fracciones y reconoce que una suma de cuadrados no es DCP. Relaciona el signo de a y b con las raíces imaginarias y usa √−k = √k · i.",
+          "n5": "Dota de significado y generaliza: explica por qué (a + b)(a − b) = a² − b² y por qué a² + b² no se factoriza con números reales. Generaliza cuándo ax² + b = 0 tiene raíces reales (signos contrarios, DCP) o imaginarias (mismo signo), para cualquier a y b."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Decide qué procedimiento usar: multiplicar, factorizar o despejar y sacar la raíz.",
+            "En ax² + b = 0: despeja x², saca la raíz con ±, separa la i y simplifica.",
+            "Comprueba su resultado (multiplica de vuelta los binomios o sustituye la raíz en la ecuación, por ejemplo (5i)² + 25 = 0).",
+            "Detecta y corrige sus propios errores."
+          ],
+          "n1": "Aplica los procedimientos al azar: multiplica cuando debía factorizar, o saca la raíz sin despejar x². No distingue la incógnita del término constante y se limita a copiar sin comprender.",
+          "n23": "Identifica el tipo de ejercicio y usa algún procedimiento para obtener resultados. Acierta en los casos sencillos (a = 1, cuadrados perfectos), pero falla en los de varios pasos (a distinto de 1, radicales, fracciones, a y b negativos) y no revisa.",
+          "n45": "Identifica el tipo de ejercicio, elige el procedimiento y obtiene resultados correctos, incluso con a distinto de 1, radicales, fracciones y a y b negativos. Revisa si el resultado es razonable (multiplica de vuelta o sustituye la raíz en la ecuación) y corrige sus errores."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué en un producto de binomios conjugados desaparece el término de en medio (−ab + ab = 0).",
+            "Explica por qué x² + 9 = 0 no tiene raíces reales y qué significa la i.",
+            "Usa la comprobación (multiplicar de vuelta, sustituir la raíz) como argumento.",
+            "Distingue con ejemplos x² − 9 (DCP, raíces reales) de x² + 9 (no es DCP, raíces imaginarias)."
+          ],
+          "n1": "Defiende su resultado con frases como «así es la regla» o «así me salió». Reconoce intuitivamente que hay un procedimiento, pero no lo explica.",
+          "n2": "Explica con sus palabras («los de en medio se quitan», «ningún número al cuadrado da negativo») por qué el producto es una resta o por qué hace falta la i, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: multiplica varios binomios conjugados y verifica la regla, y da ejemplos y no-ejemplos de DCP (x² − 9 sí; x² + 9 no). Comprueba sustituyendo la raíz en la ecuación.",
+          "n4": "Explica la estructura del argumento: que a y b tengan el mismo signo es la hipótesis y que las raíces sean imaginarias es la conclusión (x² = −k, y ningún número real al cuadrado es negativo). Justifica los pasos y distingue lo que supone de lo que concluye, apoyándose en la comprobación.",
+          "n5": "Elabora una cadena de argumentos que generaliza: demuestra por qué (a + b)(a − b) = a² − b², relaciona la factorización con las raíces reales de ax² + b = 0 y explica por qué, con a y b del mismo signo, las raíces son un par ±…i para cualquier a y b. Distingue convencerse con ejemplos de demostrar."
         }
       ]
     }
