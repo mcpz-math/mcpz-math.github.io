@@ -1226,3 +1226,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   los codifica con WebCodecs (H.264 + AAC) y mp4-muxer desde Chrome/Edge; la música se toma del audio
   de `matematicas-1/materiales/jerarquia-de-operaciones.mp4`. Necesita un servidor local (ver el
   comentario al inicio del archivo).
+
+## 2026-10-24 (Cramer: ejercicios y rúbrica regresan a su propia página)
+- A pedido de Carmen, "Método de Cramer — Ejercicios" (propósito, Serie 1 con "Ver respuesta", Serie 2)
+  y "Método de Cramer — Rúbrica" se movieron de `matematicas-3/tema-01-tarea.html` a
+  `matematicas-3/tema-01-cramer.html`, después del video recomendado (sin cambiar su contenido). Se
+  quitó el aviso "Tarea" que enviaba a la página de tareas.
+- `tema-01-tarea.html` ahora sólo tiene el método gráfico (se llama otra vez "Tarea: método gráfico");
+  el bloque "Tarea" de `tema-01-sistemas-de-ecuaciones-simultaneas.html` se ajustó a ese texto.
