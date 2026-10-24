@@ -1312,3 +1312,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
   - "Ahora tú" termina con "m = −2/1: avanza 1, baja 2". Se acortaron algunas escenas para que el video
     siga cabiendo en la música (3 min 4 s).
 - Se actualizó la descripción del video en `matematicas-3/tema-01-grafico.html`.
+
+## 2026-10-24 (se quita el enlace a Khan Academy del método gráfico)
+- A pedido de Carmen se quitó de `matematicas-3/tema-01-grafico.html` el enlace "También puedes consultar
+  este recurso de Khan Academy: La gráfica de una ecuación en la forma pendiente-ordenada al origen".
+  Debajo del video sólo queda la sección "Tarea".
