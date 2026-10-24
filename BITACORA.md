@@ -1298,3 +1298,17 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Se actualizó la descripción del video en `matematicas-3/tema-01-grafico.html`. El generador
   (`materiales-fuente/generar-video-ecuaciones-ordinaria.html`) tiene ahora `planoEsc`, que dibuja el plano
   con rejilla en fracciones.
+
+## 2026-10-24 (video general a ordinaria: la pendiente es una fracción, m = y/x)
+- A pedido de Carmen, el video `matematicas-3/materiales/tema-01-general-a-ordinaria.mp4` (ahora 3 min 4 s)
+  muestra que **la pendiente debe ser una fracción** y que **m = y/x**:
+  - Escena nueva "La pendiente es una fracción", antes de los ejemplos: m = y/x, con y arriba (cuánto
+    subes o bajas) y x abajo (cuánto avanzas); ejemplo m = 3/2 (avanza 2 en x y sube 3 en y) dibujado en
+    el plano con x = 2 y y = 3; y la regla "si m no es una fracción, escribe 1 en el denominador"
+    (2 = 2/1, −2 = −2/1).
+  - En las gráficas de los ejemplos, m se escribe como fracción: Ejemplo 1, m = 2 = 2/1 (y: sube 2,
+    x: avanza 1); Ejemplo 2, m = −2 = −2/1 (y: baja 2 = 4 cuadritos, x: avanza 1 = 2 cuadritos). En el
+    triángulo de la gráfica se rotulan x = … (verde) y y = … (morado).
+  - "Ahora tú" termina con "m = −2/1: avanza 1, baja 2". Se acortaron algunas escenas para que el video
+    siga cabiendo en la música (3 min 4 s).
+- Se actualizó la descripción del video en `matematicas-3/tema-01-grafico.html`.

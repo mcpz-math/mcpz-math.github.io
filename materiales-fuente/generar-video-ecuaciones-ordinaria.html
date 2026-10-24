@@ -32,6 +32,7 @@ const t = (s, c) => ({ t: s, c }), sup = (n, c) => ({ sup: n, c }), sub = (n, c)
 const fr = (n, d) => ({ fr: [n, d] }), sq = n => ({ sq: n });
 const bl = s => t(s, C.blue), or = s => t(s, C.orange), pl = s => t(s, C.plum), rd = s => t(s, C.red), gr = s => t(s, C.green);
 const arr = n => Array.isArray(n) ? n : [n];
+function numDesc(n, s, a) { return Math.max(a.desc, /"t":"[^"]*[gjpqy]/.test(JSON.stringify(n.fr[0])) ? s * .22 : 0); }
 let FW = 600;
 function setFont(sz) { ctx.font = `${FW} ${sz}px ${FM}`; }
 function meas(nodes, sz) {
@@ -47,7 +48,7 @@ function measOne(n, sz) {
   if (n.sub) { const s = sz * .62, r = meas(n.sub, s); return { w: r.w + sz * .03, asc: sz * .78, desc: sz * .2 + r.desc }; }
   if (n.fr) {
     const s = sz * .85, a = meas(n.fr[0], s), b = meas(n.fr[1], s);
-    return { w: Math.max(a.w, b.w) + sz * .2, asc: sz * .42 + a.asc, desc: Math.max(0, b.asc + b.desc - sz * .18) };
+    return { w: Math.max(a.w, b.w) + sz * .2, asc: sz * .42 + a.asc + numDesc(n, s, a), desc: Math.max(0, b.asc + b.desc - sz * .18) };
   }
   if (n.sq) { const r = meas(n.sq, sz); return { w: r.w + sz * .52, asc: r.asc + sz * .16, desc: Math.max(r.desc, sz * .08) }; }
   return { w: 0, asc: 0, desc: 0 };
@@ -66,7 +67,7 @@ function drawOne(n, x, y, sz, col) {
   if (n.sub) return drawSeq(n.sub, x, y + sz * .18, sz * .62, c) + sz * .03;
   if (n.fr) {
     const s = sz * .85, a = meas(n.fr[0], s), b = meas(n.fr[1], s), Wd = Math.max(a.w, b.w), x0 = x + sz * .1, axis = y - sz * .3;
-    drawSeq(n.fr[0], x0 + (Wd - a.w) / 2, axis - sz * .12, s, c);
+    drawSeq(n.fr[0], x0 + (Wd - a.w) / 2, axis - sz * .12 - numDesc(n, s, a), s, c);
     drawSeq(n.fr[1], x0 + (Wd - b.w) / 2, axis + sz * .12 + b.asc, s, c);
     ctx.strokeStyle = c; ctx.lineWidth = Math.max(3, sz * .08); ctx.lineCap = 'butt';
     ctx.beginPath(); ctx.moveTo(x0 - sz * .04, axis); ctx.lineTo(x0 + Wd + sz * .04, axis); ctx.stroke();
@@ -231,7 +232,7 @@ escena(5, tt => {
 });
 
 // 1. Las dos formas
-escena(15, tt => {
+escena(13.5, tt => {
   titulo(tt, 'Dos formas de escribir una recta');
   withAlpha(fade(tt, .8), () => {
     rr(60, 120, 700, 170, 16, C.white, C.line);
@@ -269,8 +270,37 @@ escena(13, tt => {
   withAlpha(fade(tt, 10.6), () => txt('m es el número que acompaña a x  ·  b es el término sin x', W / 2, 536, 28, C.forest, { w: 700, align: 'center' }));
 });
 
+// 2b. La pendiente es una fracción: m = y/x
+escena(16, tt => {
+  titulo(tt, 'La pendiente es una fracción');
+  const g = GR(86, 130, 70, -1, 5, -1, 6);
+  withAlpha(fade(tt, .4), () => planoEsc(g, { minor: 1 }));
+  const Y = t('y', C.plum), Xv = t('x', C.green);
+  withAlpha(fade(tt, 1), () => mathAt([mS(), ' = ', fr([Y], [Xv])], 640, 196, 70, C.forest));
+  withAlpha(fade(tt, 2.6), () => { mathAt([Y, ' (arriba): cuánto SUBES o bajas'], 640, 262, 28, C.forest); });
+  withAlpha(fade(tt, 4.2), () => { mathAt([Xv, ' (abajo): cuánto AVANZAS'], 640, 306, 28, C.forest); });
+  withAlpha(fade(tt, 6), () => {
+    rr(620, 336, 600, 100, 14, C.white, C.blue, 2.5);
+    mathMid([mS(), ' = ', fr([t('3', C.plum)], [t('2', C.green)])], 650, 386, 40, C.forest);
+    txt('avanza 2 en x y sube 3 en y', 800, 394, 25, C.forest, { w: 700 });
+  });
+  withAlpha(fade(tt, 7), () => {
+    segmento(g, 0, 0, 2, 0, C.green); segmento(g, 2, 0, 2, 3, C.plum);
+    txt('x = 2', g.px(1), g.py(0) - 12, 22, C.green, { w: 700, f: FM, align: 'center' });
+    txt('y = 3', g.px(2) + 14, g.py(1.5) + 6, 22, C.plum, { w: 700, f: FM });
+  });
+  withAlpha(fade(tt, 8), () => { punto(g, 0, 0, C.blue); punto(g, 2, 3, C.blue); });
+  recta(g, 1.5, 0, C.blue, fade(tt, 9, 1.6));
+  withAlpha(fade(tt, 11), () => {
+    rr(620, 462, 600, 170, 18, C.lime);
+    txt('Si m no es una fracción,', 650, 504, 27, C.forest, { w: 700 });
+    txt('escribe 1 en el denominador:', 650, 538, 27, C.forest, { w: 700 });
+    mathAt(['2 = ', fr(['2'], ['1']), '           ', MINUS, '2 = ', fr([MINUS + '2'], ['1'])], 650, 600, 40, C.forest);
+  });
+});
+
 // 3. Ejemplo 1: pasos
-escena(21, tt => {
+escena(19, tt => {
   titulo(tt, 'Ejemplo 1', 60, 32);
   withAlpha(fade(tt, .3), () => mathAt([bl('2x'), ' ', MINUS, ' ', pl('y'), ' ', MINUS, ' ', or('5'), ' = 0'], W / 2, 142, 62, C.forest, 'center'));
   const o = { sz: 38 }, h = 90, y0 = 196, g = 14;
@@ -280,7 +310,7 @@ escena(21, tt => {
 });
 
 // 3b. Ejemplo 1: la gráfica (inmediatamente después de encontrar m y b)
-escena(20, tt => {
+escena(19, tt => {
   titulo(tt, 'Ejemplo 1: la gráfica', 60, 38);
   const g = GR(80, 126, 52, -3, 6, -7, 3);
   withAlpha(fade(tt, .4), () => planoEsc(g, { minor: 1 }));
@@ -289,23 +319,27 @@ escena(20, tt => {
     rr(620, y, 600, h, 14, C.white, C.blue, 2.5); txt(l1, 644, y + 34, 25, C.forest, { w: 700 }); if (l2) txt(l2, 644, y + 64, 23, C.forest);
   });
   R(2, 196, 78, 'b = −5: marca el punto (0, −5)', 'es donde la recta cruza el eje y');
-  withAlpha(fade(tt, 3.4), () => { punto(g, 0, -5, C.orange); txt('b = −5', g.px(0) + 18, g.py(-5) + 28, 22, C.orange, { w: 700, f: FM }); });
-  R(6, 290, 78, 'm = 2 = 2/1: avanza 1 y sube 2', 'ahí marca el segundo punto');
+  withAlpha(fade(tt, 3.4), () => { punto(g, 0, -5, C.orange); txt('b = −5', g.px(0) - 16, g.py(-5) - 12, 22, C.orange, { w: 700, f: FM, align: 'right' }); });
+  withAlpha(fade(tt, 6), () => {
+    rr(620, 290, 600, 104, 14, C.white, C.blue, 2.5);
+    mathMid([mS(), ' = ', bl('2'), ' = ', fr([t('2', C.plum)], [t('1', C.green)]), t('     (m debe ser fracción)', C.mute)], 646, 330, 34, C.forest);
+    txt('y: sube 2  ·  x: avanza 1  →  segundo punto', 644, 378, 24, C.forest, { w: 700 });
+  });
   withAlpha(fade(tt, 7.4), () => {
     segmento(g, 0, -5, 1, -5, C.blue); segmento(g, 1, -5, 1, -3, C.blue); punto(g, 1, -3, C.blue);
-    txt('1', g.px(.5), g.py(-5) - 12, 22, C.blue, { w: 700, f: FM, align: 'center' });
-    txt('2', g.px(1) + 16, g.py(-4) + 6, 22, C.blue, { w: 700, f: FM });
+    txt('x = 1', g.px(.5), g.py(-5) + 30, 22, C.green, { w: 700, f: FM, align: 'center' });
+    txt('y = 2', g.px(1) + 16, g.py(-4) + 6, 22, C.plum, { w: 700, f: FM });
   });
-  R(11, 384, 78, 'Une los puntos con la regla', 'y prolonga la recta hacia los dos lados');
+  R(11, 406, 78, 'Une los puntos con la regla', 'y prolonga la recta hacia los dos lados');
   recta(g, 2, -5, C.forest, fade(tt, 12, 2.2));
   withAlpha(fade(tt, 15.5), () => {
-    rr(620, 486, 600, 80, 14, C.lime);
+    rr(620, 498, 600, 80, 14, C.lime);
     txt('Ésta es la gráfica de y = 2x − 5', 644, 534, 28, C.forest, { w: 700, f: FM });
   });
 });
 
 // 4. Ejemplo 2: pasos (b racional)
-escena(24, tt => {
+escena(22, tt => {
   titulo(tt, 'Ejemplo 2', 60, 32);
   withAlpha(fade(tt, .3), () => mathAt([bl('4x'), ' + ', pl('2y'), ' ', MINUS, ' ', or('3'), ' = 0'], W / 2, 142, 62, C.forest, 'center'));
   const o = { sz: 36 }, h = 94, y0 = 172, g = 9;
@@ -316,7 +350,7 @@ escena(24, tt => {
 });
 
 // 4b. Ejemplo 2: la gráfica, con b racional: el denominador dicta la escala
-escena(32, tt => {
+escena(31, tt => {
   titulo(tt, 'Ejemplo 2: la gráfica, con b racional', 60, 38);
   const g = GR(86, 150, 100, -2, 3, -2, 3);
   const minorA = fade(tt, 7.4, 1.2);
@@ -337,23 +371,27 @@ escena(32, tt => {
     });
   });
   withAlpha(fade(tt, 16.4), () => { punto(g, 0, 1.5, C.orange); });
-  R(18, 408, 70, C.blue, 'm = −2: avanza 1 (2 cuadritos) y baja 2', '(4 cuadritos); ahí marca el segundo punto');
+  withAlpha(fade(tt, 18), () => {
+    rr(640, 408, 580, 96, 14, C.white, C.blue, 2.5);
+    mathMid([mS(), ' = ', bl(MINUS + '2'), ' = ', fr([t(MINUS + '2', C.plum)], [t('1', C.green)])], 662, 446, 32, C.forest);
+    txt('y: baja 2 (4 cuadritos)  ·  x: avanza 1 (2 cuadritos)', 662, 490, 21, C.forest, { w: 700 });
+  });
   withAlpha(fade(tt, 19.4), () => {
     segmento(g, 0, 1.5, 1, 1.5, C.blue); segmento(g, 1, 1.5, 1, -.5, C.blue); punto(g, 1, -.5, C.blue);
-    txt('1', g.px(.5), g.py(1.5) - 12, 22, C.blue, { w: 700, f: FM, align: 'center' });
-    txt('2', g.px(1) + 16, g.py(.5) + 6, 22, C.blue, { w: 700, f: FM });
+    txt('x = 1', g.px(.5), g.py(1.5) - 12, 22, C.green, { w: 700, f: FM, align: 'center' });
+    txt('y = −2', g.px(1) + 16, g.py(.5) + 6, 22, C.plum, { w: 700, f: FM });
   });
-  R(23, 488, 70, C.forest, 'Une los puntos con la regla', 'y prolonga la recta');
+  R(23, 512, 70, C.forest, 'Une los puntos con la regla', 'y prolonga la recta');
   recta(g, -2, 1.5, C.forest, fade(tt, 24, 2.2));
   withAlpha(fade(tt, 27.4), () => {
-    rr(640, 574, 580, 78, 14, C.lime);
-    txt('El denominador de b dictó la escala:', 662, 606, 24, C.forest, { w: 700 });
-    txt('con medios pudimos ubicar 3/2', 662, 636, 24, C.forest, { w: 700 });
+    rr(640, 592, 580, 72, 14, C.lime);
+    txt('El denominador de b dictó la escala:', 662, 620, 23, C.forest, { w: 700 });
+    txt('con medios pudimos ubicar 3/2', 662, 648, 23, C.forest, { w: 700 });
   });
 });
 
 // 7. ¡Cuidado!
-escena(15, tt => {
+escena(13, tt => {
   titulo(tt, '¡Cuidado con estos errores!');
   const card = (at, y, mal, bien, nota) => withAlpha(fade(tt, at), () => {
     rr(60, y, 1160, 150, 16, C.white, C.line);
@@ -388,11 +426,11 @@ escena(22, tt => {
   fila(tt, 11.3, y0, h, 'Paso 1.', 'Pasa 6x y −9 al otro lado:', [pl('3y'), ' = ', bl(MINUS + '6x'), ' + ', or('9')], o);
   fila(tt, 14.3, y0 + (h + g), h, 'Paso 2.', 'Divide todo entre 3:', ['y = ', bl(MINUS + '2x'), ' + ', or('3')], o);
   fila(tt, 17.3, y0 + 2 * (h + g), h, 'Paso 3.', 'Identifica m y b:', [mS(), ' = ', bl(MINUS + '2'), '        ', bS(), ' = ', or('3')], { ...o, fill: C.lime, stroke: C.lime, lime: true });
-  fila(tt, 19.6, y0 + 3 * (h + g), h, 'Paso 4.', 'Grafica: marca (0, 3), avanza 1 y baja 2.', null, { stroke: C.green, lw: 2.5 });
+  fila(tt, 19.6, y0 + 3 * (h + g), h, 'Paso 4.', 'Grafica: marca (0, 3); m = −2/1: avanza 1, baja 2.', null, { stroke: C.green, lw: 2.5 });
 });
 
 // 9. Para recordar
-escena(11, tt => {
+escena(10, tt => {
   titulo(tt, 'Para recordar');
   const p = (at, y, n, txtl) => withAlpha(fade(tt, at), () => {
     rr(60, y, 1160, 70, 14, C.white, C.line);
