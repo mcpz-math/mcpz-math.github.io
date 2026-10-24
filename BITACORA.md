@@ -1249,3 +1249,17 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (con los errores típicos).
 - Se corrigió en ese archivo la ubicación de la rúbrica de Cramer (ahora está en `tema-01-cramer.html`,
   desde que se movió de la página de tareas).
+
+## 2026-10-24 (video propio: de la ecuación general a la ordinaria, en el método gráfico)
+- Carmen pidió un video como el de YouTube "Pasar de la ecuación General (Fundamental) a la Ordinaria"
+  y sustituirlo. Se hizo un video propio (2 min 53 s, estilo "Compás", con la música de Bach de los
+  otros videos y la etiqueta "DTI. Maria del Carmen Pérez Zarate"). Escenas: portada; las dos formas
+  (Ax + By + C = 0 y y = mx + b, qué es la pendiente m y la ordenada al origen b, con la gráfica de
+  y = 2x − 5); los 3 pasos (pasar términos cambiando el signo, dividir todo entre el coeficiente de y,
+  identificar m y b); Ejemplo 1 2x − y − 5 = 0 → y = 2x − 5; Ejemplo 2 3x + 2y − 4 = 0 →
+  y = −3/2 x + 2; el atajo m = −A/B, b = −C/B; "Graficamos con m y b" (las dos rectas del ejemplo
+  resuelto de la página, que se cortan en (2, −1)); "¡Cuidado!" (no cambiar el signo, dividir sólo un
+  término, dejar −y); "Ahora tú" 6x + 3y − 9 = 0 con cuenta regresiva; y "Para recordar".
+- Archivos: `matematicas-3/materiales/tema-01-general-a-ordinaria.mp4` (6.5 MB) y su portada.
+  En `matematicas-3/tema-01-grafico.html` sustituye al video de YouTube (sección "Videos recomendados");
+  el enlace a Khan Academy se conservó. Generador: `materiales-fuente/generar-video-ecuaciones-ordinaria.html`.

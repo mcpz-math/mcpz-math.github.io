@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Generador del video: de la ecuación general a la ordinaria</title>
+<!--
+  Genera el video matematicas-3/materiales/tema-01-general-a-ordinaria.mp4 (de la ecuacion general
+  Ax + By + C = 0 a la ordinaria y = mx + b). Mismo motor que generar-video-ecuaciones-imaginarias.html:
+  dibuja cada cuadro en un <canvas> (1280x720, 30 cuadros por segundo, estilo "Compas"), lo codifica con
+  WebCodecs (H.264 + AAC) y lo empaqueta con mp4-muxer; la musica es la de los otros videos.
+  Uso: abrir esta pagina desde un servidor local (http://localhost:.../materiales-fuente/...) en Chrome/Edge y,
+  en la consola, llamar  await hacerVideo('nombre.mp4', {hw:'prefer-software', br:500000})  (sube el .mp4 a /subir/...)
+  o dibujarEn(segundos) para ver un cuadro.
+-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Karla:wght@400;700&display=swap">
+<style>body{margin:0;background:#222}canvas{width:960px;height:540px;display:block}</style>
+</head>
+<body>
+<canvas id="c" width="1280" height="720"></canvas>
+<script type="module">
+import { Muxer, ArrayBufferTarget } from 'https://cdn.jsdelivr.net/npm/mp4-muxer@5.1.3/build/mp4-muxer.mjs';
+
+const W = 1280, H = 720, FPS = 30;
+const C = { forest:'#14301f', cream:'#f6f3ea', lime:'#c4e86b', blue:'#2f6db5', orange:'#c2621b', red:'#b3261e',
+            green:'#2f7d3b', plum:'#7b3fa0', mute:'#3a6b4a', line:'#d7d2c2', white:'#ffffff' };
+const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+const FM = 'Outfit, "DejaVu Sans", "Segoe UI", sans-serif', FT = 'Karla, "Segoe UI", sans-serif';
+const MINUS = '−', PM = '±', DOT = '·';
+
+// ---------- motor de fórmulas: texto, superíndice, subíndice, fracción apilada y raíz ----------
+const t = (s, c) => ({ t: s, c }), sup = (n, c) => ({ sup: n, c }), sub = (n, c) => ({ sub: n, c });
+const fr = (n, d) => ({ fr: [n, d] }), sq = n => ({ sq: n });
+const bl = s => t(s, C.blue), or = s => t(s, C.orange), pl = s => t(s, C.plum), rd = s => t(s, C.red), gr = s => t(s, C.green);
+const arr = n => Array.isArray(n) ? n : [n];
+let FW = 600;
+function setFont(sz) { ctx.font = `${FW} ${sz}px ${FM}`; }
+function meas(nodes, sz) {
+  let w = 0, asc = sz * .78, desc = 0;
+  for (const n of arr(nodes)) { const r = measOne(n, sz); w += r.w; asc = Math.max(asc, r.asc); desc = Math.max(desc, r.desc); }
+  return { w, asc, desc };
+}
+function measOne(n, sz) {
+  if (Array.isArray(n)) return meas(n, sz);
+  if (typeof n === 'string') n = { t: n };
+  if (n.t !== undefined) { setFont(sz); return { w: ctx.measureText(n.t).width, asc: sz * .78, desc: 0 }; }
+  if (n.sup) { const s = sz * .62, r = meas(n.sup, s); return { w: r.w + sz * .03, asc: sz * .42 + r.asc, desc: 0 }; }
+  if (n.sub) { const s = sz * .62, r = meas(n.sub, s); return { w: r.w + sz * .03, asc: sz * .78, desc: sz * .2 + r.desc }; }
+  if (n.fr) {
+    const s = sz * .85, a = meas(n.fr[0], s), b = meas(n.fr[1], s);
+    return { w: Math.max(a.w, b.w) + sz * .2, asc: sz * .42 + a.asc, desc: Math.max(0, b.asc + b.desc - sz * .18) };
+  }
+  if (n.sq) { const r = meas(n.sq, sz); return { w: r.w + sz * .52, asc: r.asc + sz * .16, desc: Math.max(r.desc, sz * .08) }; }
+  return { w: 0, asc: 0, desc: 0 };
+}
+function drawSeq(nodes, x, y, sz, col) {
+  let w = 0;
+  for (const n of arr(nodes)) w += drawOne(n, x + w, y, sz, col);
+  return w;
+}
+function drawOne(n, x, y, sz, col) {
+  if (Array.isArray(n)) return drawSeq(n, x, y, sz, col);
+  if (typeof n === 'string') n = { t: n };
+  const c = n.c || col;
+  if (n.t !== undefined) { setFont(sz); ctx.fillStyle = c; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; ctx.fillText(n.t, x, y); return ctx.measureText(n.t).width; }
+  if (n.sup) return drawSeq(n.sup, x, y - sz * .42, sz * .62, c) + sz * .03;
+  if (n.sub) return drawSeq(n.sub, x, y + sz * .18, sz * .62, c) + sz * .03;
+  if (n.fr) {
+    const s = sz * .85, a = meas(n.fr[0], s), b = meas(n.fr[1], s), Wd = Math.max(a.w, b.w), x0 = x + sz * .1, axis = y - sz * .3;
+    drawSeq(n.fr[0], x0 + (Wd - a.w) / 2, axis - sz * .12, s, c);
+    drawSeq(n.fr[1], x0 + (Wd - b.w) / 2, axis + sz * .12 + b.asc, s, c);
+    ctx.strokeStyle = c; ctx.lineWidth = Math.max(3, sz * .08); ctx.lineCap = 'butt';
+    ctx.beginPath(); ctx.moveTo(x0 - sz * .04, axis); ctx.lineTo(x0 + Wd + sz * .04, axis); ctx.stroke();
+    return Wd + sz * .2;
+  }
+  if (n.sq) {
+    const inn = meas(n.sq, sz), top = y - inn.asc - sz * .08, bot = y + sz * .06;
+    ctx.strokeStyle = c; ctx.lineWidth = Math.max(2, sz * .06); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(x + sz * .02, y - sz * .28); ctx.lineTo(x + sz * .1, y - sz * .33); ctx.lineTo(x + sz * .22, bot);
+    ctx.lineTo(x + sz * .38, top); ctx.lineTo(x + sz * .42 + inn.w + sz * .08, top); ctx.stroke();
+    drawSeq(n.sq, x + sz * .42, y, sz, c);
+    return inn.w + sz * .52;
+  }
+  return 0;
+}
+// dibuja las fórmulas centradas / alineadas
+function mathAt(nodes, x, y, sz, col = C.forest, align = 'left') {
+  const m = meas(nodes, sz);
+  const x0 = align === 'center' ? x - m.w / 2 : align === 'right' ? x - m.w : x;
+  drawSeq(nodes, x0, y, sz, col);
+  return m;
+}
+function mathMid(nodes, x, ymid, sz, col, align) { // centra verticalmente
+  const m = meas(nodes, sz);
+  mathAt(nodes, x, ymid + (m.asc - m.desc) / 2, sz, col, align);
+  return m;
+}
+
+// ---------- utilidades de dibujo ----------
+const ease = x => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x);
+const fade = (tt, at, d = .6) => ease((tt - at) / d);
+function rr(x, y, w, h, r, fill, stroke, lw = 1.5) {
+  ctx.beginPath(); ctx.roundRect(x, y, w, h, r);
+  if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lw; ctx.stroke(); }
+}
+function txt(s, x, y, sz, col, o = {}) {
+  ctx.font = `${o.w || 400} ${sz}px ${o.f || FT}`; ctx.fillStyle = col; ctx.textAlign = o.align || 'left'; ctx.textBaseline = 'alphabetic';
+  ctx.fillText(s, x, y); return ctx.measureText(s).width;
+}
+function withAlpha(a, fn) { if (a <= 0) return; ctx.save(); ctx.globalAlpha = Math.min(1, a); fn(); ctx.restore(); }
+
+function fondo() {
+  ctx.fillStyle = C.cream; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = 'rgba(196,232,107,.55)'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(150, 0); ctx.lineTo(0, 130); ctx.fill();
+  ctx.fillStyle = 'rgba(196,232,107,.38)'; ctx.beginPath(); ctx.arc(1230, 745, 135, 0, Math.PI * 2); ctx.fill();
+  rr(936, 682, 330, 32, 16, 'rgba(20,48,31,.88)');
+  ctx.fillStyle = C.lime; ctx.beginPath(); ctx.arc(953, 698, 4.5, 0, Math.PI * 2); ctx.fill();
+  txt('DTI. Maria del Carmen Pérez Zarate', 964, 704, 16, '#eef3e6', { w: 700 });
+}
+function titulo(tt, s, y = 72, sz = 44) { withAlpha(fade(tt, .1), () => txt(s, W / 2, y, sz, C.forest, { w: 600, f: FM, align: 'center' })); }
+
+// fila de un paso: tarjeta con explicación a la izquierda y fórmula a la derecha
+function fila(tt, at, y, h, n, expl, math, o = {}) {
+  withAlpha(fade(tt, at), () => {
+    rr(60, y, 1160, h, 14, o.fill || C.white, o.stroke || C.line, o.lw || 1.5);
+    let x = 88;
+    if (n) x += txt(n, x, y + h / 2 + 8, 22, o.lab || C.mute, { w: 600, f: FM }) + 16;
+    txt(expl, x, y + h / 2 + 8, 24, C.forest, { w: o.lime ? 700 : 400 });
+  });
+  if (math) withAlpha(fade(tt, at + 1.3), () => mathMid(math, 1196, y + h / 2, o.sz || 40, C.forest, 'right'));
+}
+
+// ---------- piezas de las ecuaciones ----------
+const X2 = c => [t('x', c), sup('2', c)];
+const iI = pl('i');
+const X = bl('x');
+const x1 = [bl('x'), sub('1', C.blue)], x2 = [bl('x'), sub('2', C.blue)];
+
+// ---------- gráfica del plano ----------
+const GR = (x0, y0, u, xmin, xmax, ymin, ymax) => ({ x0, y0, u, xmin, xmax, ymin, ymax, w: (xmax - xmin) * u, h: (ymax - ymin) * u,
+  px(x) { return x0 + (x - xmin) * u; }, py(y) { return y0 + (ymax - y) * u; } });
+function planoXY(g) {
+  rr(g.x0 - 12, g.y0 - 12, g.w + 24, g.h + 24, 14, C.white, C.line);
+  ctx.save(); ctx.beginPath(); ctx.rect(g.x0, g.y0, g.w, g.h); ctx.clip();
+  ctx.strokeStyle = '#e6e2d3'; ctx.lineWidth = 1;
+  for (let x = Math.ceil(g.xmin); x <= g.xmax; x++) { ctx.beginPath(); ctx.moveTo(g.px(x), g.y0); ctx.lineTo(g.px(x), g.y0 + g.h); ctx.stroke(); }
+  for (let y = Math.ceil(g.ymin); y <= g.ymax; y++) { ctx.beginPath(); ctx.moveTo(g.x0, g.py(y)); ctx.lineTo(g.x0 + g.w, g.py(y)); ctx.stroke(); }
+  ctx.strokeStyle = C.forest; ctx.lineWidth = 2.2;
+  ctx.beginPath(); ctx.moveTo(g.x0, g.py(0)); ctx.lineTo(g.x0 + g.w, g.py(0)); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(g.px(0), g.y0); ctx.lineTo(g.px(0), g.y0 + g.h); ctx.stroke();
+  ctx.restore();
+  for (let x = Math.ceil(g.xmin); x <= g.xmax; x++) if (x !== 0 && x % 2 === 0) txt(String(x).replace('-', MINUS), g.px(x), g.py(0) + 18, 14, C.mute, { align: 'center' });
+  for (let y = Math.ceil(g.ymin); y <= g.ymax; y++) if (y !== 0 && y % 2 === 0) txt(String(y).replace('-', MINUS), g.px(0) - 7, g.py(y) + 5, 14, C.mute, { align: 'right' });
+  txt('x', g.x0 + g.w - 12, g.py(0) - 8, 18, C.forest, { w: 700, f: FM });
+  txt('y', g.px(0) + 9, g.y0 + 16, 18, C.forest, { w: 700, f: FM });
+}
+function recta(g, m, b, col, p) { // p: 0..1, se traza de izquierda a derecha
+  if (p <= 0) return;
+  const xa = g.xmin, xb = g.xmin + (g.xmax - g.xmin) * Math.min(1, p);
+  ctx.save(); ctx.beginPath(); ctx.rect(g.x0, g.y0, g.w, g.h); ctx.clip();
+  ctx.strokeStyle = col; ctx.lineWidth = 4.5; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(g.px(xa), g.py(m * xa + b)); ctx.lineTo(g.px(xb), g.py(m * xb + b)); ctx.stroke();
+  ctx.restore();
+}
+function punto(g, x, y, col, r = 8) {
+  ctx.fillStyle = col; ctx.strokeStyle = C.forest; ctx.lineWidth = 2.5;
+  ctx.beginPath(); ctx.arc(g.px(x), g.py(y), r, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+}
+function segmento(g, x1, y1, x2, y2, col, p = 1) {
+  ctx.strokeStyle = col; ctx.lineWidth = 3.5; ctx.setLineDash([9, 7]); ctx.lineCap = 'butt';
+  ctx.beginPath(); ctx.moveTo(g.px(x1), g.py(y1)); ctx.lineTo(g.px(x1 + (x2 - x1) * p), g.py(y1 + (y2 - y1) * p)); ctx.stroke(); ctx.setLineDash([]);
+}
+
+// piezas de las ecuaciones
+const yy = pl('y'), xx = bl('x');
+const mS = () => t('m', C.blue), bS = () => t('b', C.orange);
+
+// ---------- escenas ----------
+const ESC = [];
+function escena(dur, draw) { ESC.push({ dur, draw }); }
+
+// 0. Portada
+escena(5, tt => {
+  withAlpha(fade(tt, .2), () => txt('MATEMÁTICAS 3  ·  TEMA 1  ·  MÉTODO GRÁFICO', W / 2, 190, 22, C.mute, { w: 700, align: 'center' }));
+  withAlpha(fade(tt, .5), () => {
+    ctx.font = `600 66px ${FM}`; const w1 = ctx.measureText('De la ecuación ').width;
+    ctx.font = `700 66px ${FM}`; const w2 = ctx.measureText('general').width, x0 = W / 2 - (w1 + w2) / 2;
+    txt('De la ecuación ', x0, 300, 66, C.forest, { w: 600, f: FM });
+    txt('general', x0 + w1, 300, 66, C.blue, { w: 700, f: FM });
+    ctx.font = `600 66px ${FM}`; const v1 = ctx.measureText('a la ').width;
+    ctx.font = `700 66px ${FM}`; const v2 = ctx.measureText('ordinaria').width, x1 = W / 2 - (v1 + v2) / 2;
+    txt('a la ', x1, 384, 66, C.forest, { w: 600, f: FM });
+    txt('ordinaria', x1 + v1, 384, 66, C.orange, { w: 700, f: FM });
+  });
+  withAlpha(fade(tt, 1.6), () => {
+    ctx.fillStyle = C.lime; ctx.fillRect(W / 2 - 130, 420, 260, 6);
+    mathAt([bl('A'), 'x + ', pl('B'), 'y + ', or('C'), ' = 0   →   y = ', bl('m'), 'x + ', or('b')], W / 2, 500, 46, C.forest, 'center');
+  });
+  withAlpha(fade(tt, 2.6), () => txt('Para graficar con la pendiente y la ordenada al origen', W / 2, 568, 28, C.forest, { align: 'center' }));
+});
+
+// 1. Las dos formas
+escena(15, tt => {
+  titulo(tt, 'Dos formas de escribir una recta');
+  withAlpha(fade(tt, .8), () => {
+    rr(60, 120, 700, 170, 16, C.white, C.line);
+    txt('FORMA GENERAL', 92, 160, 20, C.mute, { w: 700 });
+    mathAt([bl('A'), 'x + ', pl('B'), 'y + ', or('C'), ' = 0'], 92, 232, 56, C.forest);
+  });
+  withAlpha(fade(tt, 3.2), () => {
+    rr(60, 316, 700, 330, 16, C.lime);
+    txt('FORMA ORDINARIA (pendiente–ordenada)', 92, 356, 20, C.forest, { w: 700 });
+    mathAt(['y = ', bl('m'), 'x + ', or('b')], 92, 430, 56, C.forest);
+  });
+  withAlpha(fade(tt, 5.6), () => { mathAt([bl('m'), ' = pendiente'], 92, 502, 36, C.forest); txt('qué tanto sube o baja la recta', 92, 536, 24, C.forest); });
+  withAlpha(fade(tt, 8), () => { mathAt([or('b'), ' = ordenada al origen'], 92, 596, 36, C.forest); txt('dónde corta la recta al eje y: punto (0, b)', 92, 630, 24, C.forest); });
+  // gráfica de y = 2x − 5
+  const g = GR(880, 130, 40, -2, 5, -7, 3);
+  withAlpha(fade(tt, 1.5), () => planoXY(g));
+  withAlpha(fade(tt, 3.4), () => { recta(g, 2, -5, C.forest, fade(tt, 3.4, 2)); });
+  withAlpha(fade(tt, 8.4), () => { punto(g, 0, -5, C.orange); txt('b = −5', g.px(0) + 34, g.py(-5) + 44, 22, C.orange, { w: 700, f: FM }); });
+  withAlpha(fade(tt, 10.4), () => {
+    segmento(g, 0, -5, 1, -5, C.blue); segmento(g, 1, -5, 1, -3, C.blue);
+    txt('1', g.px(.5), g.py(-5) - 12, 22, C.blue, { w: 700, f: FM, align: 'center' });
+    txt('2', g.px(1) + 18, g.py(-4) + 6, 22, C.blue, { w: 700, f: FM });
+  });
+  withAlpha(fade(tt, 11.4), () => txt('y = 2x − 5', 880 + 8, 112, 24, C.forest, { w: 700, f: FM }));
+  withAlpha(fade(tt, 12), () => txt('m = 2/1 : avanza 1, sube 2', 1020, 592, 26, C.blue, { w: 700, f: FM, align: 'center' }));
+});
+
+// 2. Pasos
+escena(13, tt => {
+  titulo(tt, 'Cómo pasar de general a ordinaria');
+  const f = (at, y, n, expl, math) => fila(tt, at, y, 110, 'Paso ' + n + '.', expl, math, { sz: 36 });
+  f(1.2, 124, 1, 'Pasa Ax y C al otro lado (cambian de signo):', [pl('B'), 'y = ', MINUS, bl('A'), 'x ', MINUS, ' ', or('C')]);
+  f(4.6, 248, 2, 'Divide todo entre el coeficiente de y:', ['y = ', fr([MINUS, bl('A'), 'x ', MINUS, ' ', or('C')], [pl('B')])]);
+  f(8, 372, 3, 'Acomoda: y = mx + b e identifica m y b:', ['y = ', bl('m'), 'x + ', or('b')]);
+  withAlpha(fade(tt, 10.6), () => txt('m es el número que acompaña a x  ·  b es el término sin x', W / 2, 536, 28, C.forest, { w: 700, align: 'center' }));
+});
+
+// 3. Ejemplo 1
+escena(25, tt => {
+  titulo(tt, 'Ejemplo 1', 60, 32);
+  withAlpha(fade(tt, .3), () => mathAt([bl('2x'), ' ', MINUS, ' ', pl('y'), ' ', MINUS, ' ', or('5'), ' = 0'], W / 2, 142, 62, C.forest, 'center'));
+  const o = { sz: 38 }, h = 82, y0 = 184, g = 12;
+  fila(tt, 1.2, y0, h, 'Paso 1.', 'Pasa 2x y −5 al otro lado (cambian de signo):', [pl(MINUS + 'y'), ' = ', bl(MINUS + '2x'), ' + ', or('5')], o);
+  fila(tt, 6, y0 + (h + g), h, 'Paso 2.', 'Divide todo entre −1 (todo cambia de signo):', ['y = ', bl('2x'), ' ', MINUS, ' ', or('5')], o);
+  fila(tt, 11.4, y0 + 2 * (h + g), h, 'Paso 3.', 'Identifica la pendiente m y la ordenada b:', [mS(), ' = ', bl('2'), '        ', bS(), ' = ', or(MINUS + '5')], { ...o, fill: C.lime, stroke: C.lime, lime: true });
+  withAlpha(fade(tt, 17), () => {
+    rr(60, y0 + 3 * (h + g), 1160, 82, 14, '#fff', C.green, 2.5);
+    txt('m es el número que acompaña a x  ·  b es el término sin x', 90, y0 + 3 * (h + g) + 50, 26, C.forest, { w: 700 });
+  });
+});
+
+// 4. Ejemplo 2
+escena(29, tt => {
+  titulo(tt, 'Ejemplo 2', 60, 32);
+  withAlpha(fade(tt, .3), () => mathAt([bl('3x'), ' + ', pl('2y'), ' ', MINUS, ' ', or('4'), ' = 0'], W / 2, 142, 62, C.forest, 'center'));
+  const o = { sz: 36 }, h = 94, y0 = 172, g = 9;
+  fila(tt, 1.2, y0, h, 'Paso 1.', 'Pasa 3x y −4 al otro lado (cambian de signo):', [pl('2y'), ' = ', bl(MINUS + '3x'), ' + ', or('4')], o);
+  fila(tt, 6.2, y0 + (h + g), h, 'Paso 2.', 'Divide cada término entre 2:', ['y = ', fr([bl(MINUS + '3x')], ['2']), ' + ', fr([or('4')], ['2'])], o);
+  fila(tt, 12, y0 + 2 * (h + g), h, 'Paso 3.', 'Simplifica cada fracción:', ['y = ', bl(MINUS), fr([bl('3')], ['2']), bl('x'), ' + ', or('2')], o);
+  fila(tt, 18, y0 + 3 * (h + g), h, 'Paso 4.', 'Identifica la pendiente m y la ordenada b:', [mS(), ' = ', bl(MINUS), fr([bl('3')], ['2']), '        ', bS(), ' = ', or('2')], { ...o, fill: C.lime, stroke: C.lime, lime: true });
+});
+
+// 5. Atajo con la fórmula
+escena(13, tt => {
+  titulo(tt, 'Atajo: con una fórmula');
+  withAlpha(fade(tt, .6), () => mathAt([bl('A'), 'x + ', pl('B'), 'y + ', or('C'), ' = 0'], W / 2, 170, 66, C.forest, 'center'));
+  const o = { sz: 38 };
+  fila(tt, 2, 220, 110, '', 'Despejamos y una sola vez:', ['y = ', MINUS, fr([bl('A')], [pl('B')]), 'x ', MINUS, ' ', fr([or('C')], [pl('B')])], o);
+  fila(tt, 5.6, 344, 110, '', 'Entonces:', [mS(), ' = ', MINUS, fr([bl('A')], [pl('B')]), '        ', bS(), ' = ', MINUS, fr([or('C')], [pl('B')])], { ...o, fill: C.lime, stroke: C.lime, lime: true });
+  fila(tt, 8.6, 468, 110, '', 'Ejemplo: 3x + 2y − 4 = 0  (A = 3, B = 2, C = −4)', [mS(), ' = ', MINUS, fr([bl('3')], ['2']), '     ', bS(), ' = ', fr([or(MINUS + '(' + MINUS + '4)')], ['2']), ' = 2'], { sz: 32 });
+});
+
+// 6. Graficamos con m y b
+escena(25, tt => {
+  titulo(tt, 'Graficamos con m y b', 60, 40);
+  const g = GR(70, 120, 38, -4, 7, -7, 7);
+  withAlpha(fade(tt, .4), () => planoXY(g));
+  // recta 1: y = 2x − 5
+  withAlpha(fade(tt, 3), () => { punto(g, 0, -5, C.blue); });
+  withAlpha(fade(tt, 6), () => { segmento(g, 0, -5, 1, -5, C.blue); segmento(g, 1, -5, 1, -3, C.blue); });
+  recta(g, 2, -5, C.blue, fade(tt, 8.4, 1.6));
+  // recta 2: y = −3/2 x + 2
+  withAlpha(fade(tt, 12), () => { punto(g, 0, 2, C.orange); });
+  withAlpha(fade(tt, 15), () => { segmento(g, 0, 2, 2, 2, C.orange); segmento(g, 2, 2, 2, -1, C.orange); });
+  recta(g, -1.5, 2, C.orange, fade(tt, 17.4, 1.6));
+  withAlpha(fade(tt, 20), () => punto(g, 2, -1, C.lime, 10));
+  withAlpha(fade(tt, 20), () => txt('(2, −1)', g.px(2) + 16, g.py(-1) + 26, 24, C.forest, { w: 700, f: FM }));
+  // pasos a la derecha
+  const R = (at, y, h, col, l1, l2) => withAlpha(fade(tt, at), () => {
+    rr(560, y, 660, h, 14, C.white, col, 2.5); txt(l1, 584, y + 30, 22, C.forest, { w: 700 }); if (l2) txt(l2, 584, y + 56, 22, C.forest);
+  });
+  withAlpha(fade(tt, 2), () => mathAt(['y = 2x ', MINUS, ' 5'], 560, 150, 38, C.blue));
+  R(3, 168, 40, C.blue, 'b = −5: marca el punto (0, −5)');
+  R(6, 214, 40, C.blue, 'm = 2/1: avanza 1 y sube 2');
+  R(8.4, 260, 40, C.blue, 'Une los puntos con la regla');
+  withAlpha(fade(tt, 11), () => mathAt(['y = ', MINUS, fr(['3'], ['2']), 'x + 2'], 560, 372, 38, C.orange));
+  R(12, 396, 40, C.orange, 'b = 2: marca el punto (0, 2)');
+  R(15, 442, 40, C.orange, 'm = −3/2: avanza 2 y baja 3');
+  R(17.4, 488, 40, C.orange, 'Une los puntos con la regla');
+  withAlpha(fade(tt, 20), () => {
+    rr(560, 560, 660, 100, 14, C.lime);
+    txt('Las rectas se cortan en un solo punto:', 584, 600, 24, C.forest, { w: 700 });
+    txt('solución única, x = 2 y y = −1', 584, 636, 28, C.forest, { w: 700, f: FM });
+  });
+});
+
+// 7. ¡Cuidado!
+escena(15, tt => {
+  titulo(tt, '¡Cuidado con estos errores!');
+  const card = (at, y, mal, bien, nota) => withAlpha(fade(tt, at), () => {
+    rr(60, y, 1160, 150, 16, C.white, C.line);
+    rr(76, y + 14, 540, 74, 10, '#fbeaea'); rr(644, y + 14, 560, 74, 10, '#eaf5df');
+    txt('✗', 96, y + 62, 34, C.red, { w: 700 }); txt('✓', 664, y + 62, 34, C.green, { w: 700 });
+    mathMid(mal, 140, y + 51, 32, C.forest); mathMid(bien, 712, y + 51, 32, C.forest);
+    txt(nota, 96, y + 125, 24, C.mute, { w: 700 });
+  });
+  card(1, 112, ['2x ', MINUS, ' y ', MINUS, ' 5 = 0   →   ', MINUS, 'y = 2x ', MINUS, ' 5'], [MINUS, 'y = ', MINUS, '2x + 5'], 'Al pasar un término al otro lado, cambia de signo.');
+  card(5, 282, ['2y = ', MINUS, '3x + 4   →   y = ', MINUS, '3x + 2'], ['y = ', MINUS, fr(['3'], ['2']), 'x + 2'], 'Divide TODOS los términos entre 2, no sólo el último.');
+  card(9, 452, [MINUS, 'y = ', MINUS, '2x + 5   →   m = ', MINUS, '2'], ['y = 2x ', MINUS, ' 5   →   m = 2'], 'La y debe quedar sola y positiva: y = mx + b.');
+});
+
+// 8. Ahora tú
+escena(22, tt => {
+  titulo(tt, 'Ahora tú', 60, 32);
+  withAlpha(fade(tt, .3), () => mathAt([bl('6x'), ' + ', pl('3y'), ' ', MINUS, ' ', or('9'), ' = 0'], W / 2, 150, 70, C.forest, 'center'));
+  const cd = tt < 2 ? -1 : tt < 11 ? Math.ceil(11 - tt) : 0;
+  if (tt >= .8 && tt < 11) {
+    withAlpha(Math.min(fade(tt, .8), 1 - fade(tt, 10.5, .5)), () => {
+      txt('Pausa el video y pásala a la forma y = mx + b', W / 2, 270, 34, C.forest, { w: 600, f: FM, align: 'center' });
+      txt('Después di cuánto valen m y b', W / 2, 312, 26, C.mute, { align: 'center' });
+      if (cd > 0) {
+        ctx.strokeStyle = C.line; ctx.lineWidth = 12; ctx.beginPath(); ctx.arc(W / 2, 470, 86, 0, Math.PI * 2); ctx.stroke();
+        ctx.strokeStyle = C.lime; ctx.lineCap = 'round'; ctx.beginPath();
+        ctx.arc(W / 2, 470, 86, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * (1 - (tt - 2) / 9)); ctx.stroke();
+        txt(String(cd), W / 2, 500, 86, C.forest, { w: 700, f: FM, align: 'center' });
+      }
+    });
+  }
+  const o = { sz: 38 }, h = 80, y0 = 200, g = 12;
+  fila(tt, 11.3, y0, h, 'Paso 1.', 'Pasa 6x y −9 al otro lado:', [pl('3y'), ' = ', bl(MINUS + '6x'), ' + ', or('9')], o);
+  fila(tt, 14.3, y0 + (h + g), h, 'Paso 2.', 'Divide todo entre 3:', ['y = ', bl(MINUS + '2x'), ' + ', or('3')], o);
+  fila(tt, 17.3, y0 + 2 * (h + g), h, 'Paso 3.', 'Identifica m y b:', [mS(), ' = ', bl(MINUS + '2'), '        ', bS(), ' = ', or('3')], { ...o, fill: C.lime, stroke: C.lime, lime: true });
+});
+
+// 9. Para recordar
+escena(11, tt => {
+  titulo(tt, 'Para recordar');
+  const p = (at, y, n, txtl) => withAlpha(fade(tt, at), () => {
+    rr(60, y, 1160, 70, 14, C.white, C.line);
+    ctx.fillStyle = C.forest; ctx.beginPath(); ctx.arc(106, y + 35, 21, 0, Math.PI * 2); ctx.fill();
+    txt(String(n), 106, y + 44, 24, C.lime, { w: 700, f: FM, align: 'center' });
+    txt(txtl, 148, y + 44, 27, C.forest);
+  });
+  p(.8, 110, 1, 'Pasa los términos con x y los números al otro lado: cambian de signo.');
+  p(2.4, 194, 2, 'Divide todo entre el coeficiente de y (todos los términos).');
+  p(4, 278, 3, 'Queda y = mx + b: m acompaña a x y b es el término sin x.');
+  withAlpha(fade(tt, 5.8), () => {
+    rr(60, 380, 1160, 190, 18, C.lime);
+    txt('ATAJO', 96, 420, 20, C.forest, { w: 700 });
+    mathAt([bl('A'), 'x + ', pl('B'), 'y + ', or('C'), ' = 0   →   ', mS(), ' = ', MINUS, fr([bl('A')], [pl('B')]), '       ', bS(), ' = ', MINUS, fr([or('C')], [pl('B')])], 96, 520, 46, C.forest);
+  });
+  withAlpha(fade(tt, 8), () => txt('Con m y b ya puedes graficar la recta', W / 2, 640, 30, C.forest, { w: 700, f: FM, align: 'center' }));
+});
+
+const TOTAL = ESC.reduce((s, e) => s + e.dur, 0);
+const FADE = .35;
+function dibujarEn(T) {
+  T = Math.max(0, Math.min(T, TOTAL - 1e-6));
+  let a = 0, i = 0;
+  while (i < ESC.length - 1 && T >= a + ESC[i].dur) { a += ESC[i].dur; i++; }
+  const tt = T - a, d = ESC[i].dur;
+  fondo(); ctx.save(); ESC[i].draw(tt); ctx.restore();
+  const o = Math.max(1 - tt / FADE, 1 - (d - tt) / FADE, 0);
+  if (o > 0) { ctx.fillStyle = `rgba(246,243,234,${Math.min(1, o)})`; ctx.fillRect(0, 0, W, H); }
+}
+function inicioDeEscena(n) { let a = 0; for (let i = 0; i < n; i++) a += ESC[i].dur; return a; }
+
+async function cargarFuentes() {
+  await Promise.all([
+    document.fonts.load('600 40px Outfit', 'x²−±√áéíóú·→'), document.fonts.load('700 40px Outfit', 'x²−±√áéíóú'),
+    document.fonts.load('400 24px Karla', 'x²−±√áéíóú'), document.fonts.load('700 24px Karla', 'x²−±√áéíóú')
+  ]);
+}
+async function subir(nombre, blob) { await fetch('/subir/' + nombre, { method: 'POST', body: blob }); }
+async function guardarCuadro(T, nombre, tipo = 'image/png') {
+  dibujarEn(T);
+  const b = await new Promise(r => cv.toBlob(r, tipo, .92));
+  await subir(nombre, b);
+}
+
+// ---------- codificación ----------
+async function hacerVideo(nombre = 'video.mp4', opc = {}) {
+  const DUR = opc.seg || TOTAL, QP = opc.qp || 0, HW = opc.hw || 'no-preference';
+  await cargarFuentes();
+  window.estado = 'cargando audio';
+  const SR = 48000;
+  const ac = new AudioContext({ sampleRate: SR });
+  const src = await ac.decodeAudioData(await (await fetch('/matematicas-1/materiales/jerarquia-de-operaciones.mp4')).arrayBuffer());
+  const N = Math.round(DUR * SR), ch = [src.getChannelData(0), src.getChannelData(1)];
+  const pcm = [new Float32Array(N), new Float32Array(N)];
+  for (let c = 0; c < 2; c++) for (let i = 0; i < N; i++) {
+    let g = 1; const s = i / SR;
+    if (s > DUR - 3) g = Math.max(0, (DUR - s) / 3);
+    pcm[c][i] = (i < ch[c].length ? ch[c][i] : 0) * g;
+  }
+  const muxer = new Muxer({ target: new ArrayBufferTarget(), fastStart: 'in-memory',
+    video: { codec: 'avc', width: W, height: H, frameRate: FPS }, audio: { codec: 'aac', numberOfChannels: 2, sampleRate: SR } });
+  const ve = new VideoEncoder({ output: (c, m) => muxer.addVideoChunk(c, m), error: e => { window.estado = 'error video ' + e; } });
+  ve.configure({ codec: 'avc1.640028', width: W, height: H, bitrate: opc.br || 700000, bitrateMode: opc.mode || 'variable', framerate: FPS, hardwareAcceleration: HW });
+  const ae = new AudioEncoder({ output: (c, m) => muxer.addAudioChunk(c, m), error: e => { window.estado = 'error audio ' + e; } });
+  ae.configure({ codec: 'mp4a.40.2', sampleRate: SR, numberOfChannels: 2, bitrate: 96000 });
+  const NF = Math.round(DUR * FPS);
+  for (let f = 0; f < NF; f++) {
+    dibujarEn(f / FPS);
+    const bm = await createImageBitmap(cv); // copia fija del cuadro ya dibujado
+    const vf = new VideoFrame(bm, { timestamp: Math.round(f * 1e6 / FPS), duration: Math.round(1e6 / FPS) }); bm.close();
+    ve.encode(vf, QP ? { keyFrame: f % 150 === 0, avc: { quantizer: QP } } : { keyFrame: f % 150 === 0 }); vf.close();
+    while (ve.encodeQueueSize > 12) await new Promise(r => setTimeout(r, 2));
+    if (f % 150 === 0) { window.estado = 'video ' + f + '/' + NF; await new Promise(r => setTimeout(r, 0)); }
+  }
+  window.estado = 'audio';
+  const CH = SR; // 1 s por bloque
+  for (let s = 0; s < N; s += CH) {
+    const n = Math.min(CH, N - s), data = new Float32Array(n * 2);
+    data.set(pcm[0].subarray(s, s + n), 0); data.set(pcm[1].subarray(s, s + n), n);
+    const ad = new AudioData({ format: 'f32-planar', sampleRate: SR, numberOfFrames: n, numberOfChannels: 2, timestamp: Math.round(s * 1e6 / SR), data });
+    ae.encode(ad); ad.close();
+  }
+  await ve.flush(); await ae.flush(); muxer.finalize();
+  const buf = muxer.target.buffer;
+  window.estado = 'subiendo ' + buf.byteLength;
+  await subir(nombre, new Blob([buf], { type: 'video/mp4' }));
+  window.estado = 'listo ' + buf.byteLength;
+  return buf.byteLength;
+}
+
+Object.assign(window, { dibujarEn, guardarCuadro, hacerVideo, cargarFuentes, TOTAL, inicioDeEscena, ESC });
+await cargarFuentes();
+dibujarEn(0);
+window.listo = true;
+</script>
+</body>
+</html>
