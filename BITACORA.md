@@ -1497,3 +1497,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
 ## 2026-10-25 (orden de los temas de la ecuación de la recta en Matemáticas 2)
 - A pedido de Carmen se invirtió el orden: ahora va primero "Ecuación ordinaria de la recta y su gráfica" y después "Ecuación general de la
   recta", tanto en la lista de subtemas del temario (`matematicas-2/index.html`) como en los bloques de `tema-04-la-recta.html`.
+
+## 2026-10-25 (se quita "Materiales y tareas" de Geometría analítica: la recta)
+- A pedido de Carmen, en `matematicas-2/tema-04-la-recta.html` se quitó la sección "Materiales y tareas" (los cuadros "Materiales" y
+  "Tarea" con "Próximamente"). La página termina con la lista de subtemas.
