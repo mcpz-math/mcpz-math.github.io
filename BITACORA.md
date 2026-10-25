@@ -1486,3 +1486,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   una recta dadas la pendiente y la ordenada. Los dos temas aparecen en el temario de Matemáticas 2 (lista de la recta y bloques de
   `tema-04-la-recta.html`).
 - En el método gráfico de Matemáticas 3: el repaso de la animación lleva a la ecuación ordinaria y el del video, a la ecuación general.
+
+## 2026-10-25 (se quitan "Materiales" y "Tareas" de los temarios de los cursos)
+- A pedido de Carmen, se quitaron los cuadros "Materiales: Próximamente: apuntes, presentaciones y ejercicios" y "Tareas: Próximamente:
+  tareas y fechas de entrega" de los temarios (páginas de inicio) de **Matemáticas 1 y 2** (sección "Curso" completa) y de **Matemáticas
+  4, Matemáticas 5 y Probabilidad y Estadística** (quedó el cuadro "Temario"). Matemáticas 3 ya no los tenía.
+- Las páginas de cada tema (por ejemplo `tema-04-la-recta.html`) siguen teniendo su sección "Materiales y tareas" con esos mismos
+  cuadros; no se tocaron.
