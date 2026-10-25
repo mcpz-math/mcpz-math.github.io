@@ -1434,3 +1434,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   PERFECTO (TCP): CÓMO SE FACTORIZA") y se perdían en el texto ahora son un **título con línea verde-lima debajo**: tipografía
   Outfit, verde bosque, sin mayúsculas, un poco más grande y con más espacio arriba. Se cambió una sola regla (`.section-label`)
   en `assets/style.css`, así que aplica a las ~160 etiquetas de las 49 páginas del sitio (portada, temarios, temas y subtemas).
+
+## 2026-10-25 (el video de general a ordinaria, como tema nuevo de la recta en Matemáticas 2)
+- A pedido de Carmen, en `matematicas-2/tema-04-la-recta.html` el video aparece ahora como un **tema nuevo**, "De la ecuación
+  general a la ordinaria", justo después de "Ecuación general de la recta" (que vuelve a decir "Próximamente"). La página del
+  video se renombró a `matematicas-2/tema-04-general-a-ordinaria.html` (antes `tema-04-ecuacion-general-de-la-recta.html`).
+- En el método gráfico de Matemáticas 3 se dejó el repaso, ahora con el mismo estilo del recuadro "Repaso" de arriba (centrado,
+  con botón): "¿Ya se te olvidó cómo pasar la ecuación general a la ordinaria? Lo viste en Matemáticas 2." y el botón
+  "Ver el video en Matemáticas 2 →", que lleva directo al video.
