@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Generador del video: método gráfico (sistemas de ecuaciones)</title>
+<!--
+  Genera el video matematicas-3/materiales/tema-01-metodo-grafico.mp4 (metodo grafico para resolver sistemas
+  de ecuaciones lineales 2x2: los 5 pasos y tres ejemplos). Mismo motor que generar-video-ecuaciones-ordinaria.html:
+  dibuja cada cuadro en un <canvas> (1280x720, 30 cuadros por segundo, estilo "Compas"), lo codifica con
+  WebCodecs (H.264 + AAC) y lo empaqueta con mp4-muxer; la musica es la de los otros videos.
+  Uso: abrir esta pagina desde un servidor local (http://localhost:.../materiales-fuente/...) en Chrome/Edge y,
+  en la consola, llamar  await hacerVideo('nombre.mp4', {hw:'prefer-software', br:500000})  (sube el .mp4 a /subir/...)
+  o dibujarEn(segundos) para ver un cuadro.
+-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Karla:wght@400;700&display=swap">
+<style>body{margin:0;background:#222}canvas{width:960px;height:540px;display:block}</style>
+</head>
+<body>
+<canvas id="c" width="1280" height="720"></canvas>
+<script type="module">
+import { Muxer, ArrayBufferTarget } from 'https://cdn.jsdelivr.net/npm/mp4-muxer@5.1.3/build/mp4-muxer.mjs';
+
+const W = 1280, H = 720, FPS = 30;
+const C = { forest:'#14301f', cream:'#f6f3ea', lime:'#c4e86b', blue:'#2f6db5', orange:'#c2621b', red:'#b3261e',
+            green:'#2f7d3b', plum:'#7b3fa0', mute:'#3a6b4a', line:'#d7d2c2', white:'#ffffff' };
+const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+const FM = 'Outfit, "DejaVu Sans", "Segoe UI", sans-serif', FT = 'Karla, "Segoe UI", sans-serif';
+const MINUS = '−', PM = '±', DOT = '·';
+
+// ---------- motor de fórmulas: texto, superíndice, subíndice, fracción apilada y raíz ----------
+const t = (s, c) => ({ t: s, c }), sup = (n, c) => ({ sup: n, c }), sub = (n, c) => ({ sub: n, c });
+const fr = (n, d) => ({ fr: [n, d] }), sq = n => ({ sq: n });
+const bl = s => t(s, C.blue), or = s => t(s, C.orange), pl = s => t(s, C.plum), rd = s => t(s, C.red), gr = s => t(s, C.green);
+const arr = n => Array.isArray(n) ? n : [n];
+function numDesc(n, s, a) { return Math.max(a.desc, /"t":"[^"]*[gjpqy]/.test(JSON.stringify(n.fr[0])) ? s * .22 : 0); }
+let FW = 600;
+function setFont(sz) { ctx.font = `${FW} ${sz}px ${FM}`; }
+function meas(nodes, sz) {
+  let w = 0, asc = sz * .78, desc = 0;
+  for (const n of arr(nodes)) { const r = measOne(n, sz); w += r.w; asc = Math.max(asc, r.asc); desc = Math.max(desc, r.desc); }
+  return { w, asc, desc };
+}
+function measOne(n, sz) {
+  if (Array.isArray(n)) return meas(n, sz);
+  if (typeof n === 'string') n = { t: n };
+  if (n.t !== undefined) { setFont(sz); return { w: ctx.measureText(n.t).width, asc: sz * .78, desc: 0 }; }
+  if (n.sup) { const s = sz * .62, r = meas(n.sup, s); return { w: r.w + sz * .03, asc: sz * .42 + r.asc, desc: 0 }; }
+  if (n.sub) { const s = sz * .62, r = meas(n.sub, s); return { w: r.w + sz * .03, asc: sz * .78, desc: sz * .2 + r.desc }; }
+  if (n.fr) {
+    const s = sz * .85, a = meas(n.fr[0], s), b = meas(n.fr[1], s);
+    return { w: Math.max(a.w, b.w) + sz * .2, asc: sz * .42 + a.asc + numDesc(n, s, a), desc: Math.max(0, b.asc + b.desc - sz * .18) };
+  }
+  if (n.sq) { const r = meas(n.sq, sz); return { w: r.w + sz * .52, asc: r.asc + sz * .16, desc: Math.max(r.desc, sz * .08) }; }
+  return { w: 0, asc: 0, desc: 0 };
+}
+function drawSeq(nodes, x, y, sz, col) {
+  let w = 0;
+  for (const n of arr(nodes)) w += drawOne(n, x + w, y, sz, col);
+  return w;
+}
+function drawOne(n, x, y, sz, col) {
+  if (Array.isArray(n)) return drawSeq(n, x, y, sz, col);
+  if (typeof n === 'string') n = { t: n };
+  const c = n.c || col;
+  if (n.t !== undefined) { setFont(sz); ctx.fillStyle = c; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; ctx.fillText(n.t, x, y); return ctx.measureText(n.t).width; }
+  if (n.sup) return drawSeq(n.sup, x, y - sz * .42, sz * .62, c) + sz * .03;
+  if (n.sub) return drawSeq(n.sub, x, y + sz * .18, sz * .62, c) + sz * .03;
+  if (n.fr) {
+    const s = sz * .85, a = meas(n.fr[0], s), b = meas(n.fr[1], s), Wd = Math.max(a.w, b.w), x0 = x + sz * .1, axis = y - sz * .3;
+    drawSeq(n.fr[0], x0 + (Wd - a.w) / 2, axis - sz * .12 - numDesc(n, s, a), s, c);
+    drawSeq(n.fr[1], x0 + (Wd - b.w) / 2, axis + sz * .12 + b.asc, s, c);
+    ctx.strokeStyle = c; ctx.lineWidth = Math.max(3, sz * .08); ctx.lineCap = 'butt';
+    ctx.beginPath(); ctx.moveTo(x0 - sz * .04, axis); ctx.lineTo(x0 + Wd + sz * .04, axis); ctx.stroke();
+    return Wd + sz * .2;
+  }
+  if (n.sq) {
+    const inn = meas(n.sq, sz), top = y - inn.asc - sz * .08, bot = y + sz * .06;
+    ctx.strokeStyle = c; ctx.lineWidth = Math.max(2, sz * .06); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(x + sz * .02, y - sz * .28); ctx.lineTo(x + sz * .1, y - sz * .33); ctx.lineTo(x + sz * .22, bot);
+    ctx.lineTo(x + sz * .38, top); ctx.lineTo(x + sz * .42 + inn.w + sz * .08, top); ctx.stroke();
+    drawSeq(n.sq, x + sz * .42, y, sz, c);
+    return inn.w + sz * .52;
+  }
+  return 0;
+}
+// dibuja las fórmulas centradas / alineadas
+function mathAt(nodes, x, y, sz, col = C.forest, align = 'left') {
+  const m = meas(nodes, sz);
+  const x0 = align === 'center' ? x - m.w / 2 : align === 'right' ? x - m.w : x;
+  drawSeq(nodes, x0, y, sz, col);
+  return m;
+}
+function mathMid(nodes, x, ymid, sz, col, align) { // centra verticalmente
+  const m = meas(nodes, sz);
+  mathAt(nodes, x, ymid + (m.asc - m.desc) / 2, sz, col, align);
+  return m;
+}
+
+// ---------- utilidades de dibujo ----------
+const ease = x => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x);
+const fade = (tt, at, d = .6) => ease((tt - at) / d);
+function rr(x, y, w, h, r, fill, stroke, lw = 1.5) {
+  ctx.beginPath(); ctx.roundRect(x, y, w, h, r);
+  if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lw; ctx.stroke(); }
+}
+function txt(s, x, y, sz, col, o = {}) {
+  ctx.font = `${o.w || 400} ${sz}px ${o.f || FT}`; ctx.fillStyle = col; ctx.textAlign = o.align || 'left'; ctx.textBaseline = 'alphabetic';
+  ctx.fillText(s, x, y); return ctx.measureText(s).width;
+}
+function withAlpha(a, fn) { if (a <= 0) return; ctx.save(); ctx.globalAlpha = Math.min(1, a); fn(); ctx.restore(); }
+
+function fondo() {
+  ctx.fillStyle = C.cream; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = 'rgba(196,232,107,.55)'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(150, 0); ctx.lineTo(0, 130); ctx.fill();
+  ctx.fillStyle = 'rgba(196,232,107,.38)'; ctx.beginPath(); ctx.arc(1230, 745, 135, 0, Math.PI * 2); ctx.fill();
+  rr(936, 682, 330, 32, 16, 'rgba(20,48,31,.88)');
+  ctx.fillStyle = C.lime; ctx.beginPath(); ctx.arc(953, 698, 4.5, 0, Math.PI * 2); ctx.fill();
+  txt('DTI. Maria del Carmen Pérez Zarate', 964, 704, 16, '#eef3e6', { w: 700 });
+}
+function titulo(tt, s, y = 72, sz = 44) { withAlpha(fade(tt, .1), () => txt(s, W / 2, y, sz, C.forest, { w: 600, f: FM, align: 'center' })); }
+
+// fila de un paso: tarjeta con explicación a la izquierda y fórmula a la derecha
+function fila(tt, at, y, h, n, expl, math, o = {}) {
+  withAlpha(fade(tt, at), () => {
+    rr(60, y, 1160, h, 14, o.fill || C.white, o.stroke || C.line, o.lw || 1.5);
+    let x = 88;
+    if (n) x += txt(n, x, y + h / 2 + 8, 22, o.lab || C.mute, { w: 600, f: FM }) + 16;
+    txt(expl, x, y + h / 2 + 8, 24, C.forest, { w: o.lime ? 700 : 400 });
+  });
+  if (math) withAlpha(fade(tt, at + 1.3), () => mathMid(math, 1196, y + h / 2, o.sz || 40, C.forest, 'right'));
+}
+
+// ---------- piezas de las ecuaciones ----------
+const X2 = c => [t('x', c), sup('2', c)];
+const iI = pl('i');
+const X = bl('x');
+const x1 = [bl('x'), sub('1', C.blue)], x2 = [bl('x'), sub('2', C.blue)];
+
+// ---------- gráfica del plano ----------
+const GR = (x0, y0, u, xmin, xmax, ymin, ymax) => ({ x0, y0, u, xmin, xmax, ymin, ymax, w: (xmax - xmin) * u, h: (ymax - ymin) * u,
+  px(x) { return x0 + (x - xmin) * u; }, py(y) { return y0 + (ymax - y) * u; } });
+function planoXY(g) {
+  rr(g.x0 - 12, g.y0 - 12, g.w + 24, g.h + 24, 14, C.white, C.line);
+  ctx.save(); ctx.beginPath(); ctx.rect(g.x0, g.y0, g.w, g.h); ctx.clip();
+  ctx.strokeStyle = '#e6e2d3'; ctx.lineWidth = 1;
+  for (let x = Math.ceil(g.xmin); x <= g.xmax; x++) { ctx.beginPath(); ctx.moveTo(g.px(x), g.y0); ctx.lineTo(g.px(x), g.y0 + g.h); ctx.stroke(); }
+  for (let y = Math.ceil(g.ymin); y <= g.ymax; y++) { ctx.beginPath(); ctx.moveTo(g.x0, g.py(y)); ctx.lineTo(g.x0 + g.w, g.py(y)); ctx.stroke(); }
+  ctx.strokeStyle = C.forest; ctx.lineWidth = 2.2;
+  ctx.beginPath(); ctx.moveTo(g.x0, g.py(0)); ctx.lineTo(g.x0 + g.w, g.py(0)); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(g.px(0), g.y0); ctx.lineTo(g.px(0), g.y0 + g.h); ctx.stroke();
+  ctx.restore();
+  for (let x = Math.ceil(g.xmin); x <= g.xmax; x++) if (x !== 0 && x % 2 === 0) txt(String(x).replace('-', MINUS), g.px(x), g.py(0) + 18, 14, C.mute, { align: 'center' });
+  for (let y = Math.ceil(g.ymin); y <= g.ymax; y++) if (y !== 0 && y % 2 === 0) txt(String(y).replace('-', MINUS), g.px(0) - 7, g.py(y) + 5, 14, C.mute, { align: 'right' });
+  txt('x', g.x0 + g.w - 12, g.py(0) - 8, 18, C.forest, { w: 700, f: FM });
+  txt('y', g.px(0) + 9, g.y0 + 16, 18, C.forest, { w: 700, f: FM });
+}
+function recta(g, m, b, col, p) { // p: 0..1, se traza de izquierda a derecha
+  if (p <= 0) return;
+  const xa = g.xmin, xb = g.xmin + (g.xmax - g.xmin) * Math.min(1, p);
+  ctx.save(); ctx.beginPath(); ctx.rect(g.x0, g.y0, g.w, g.h); ctx.clip();
+  ctx.strokeStyle = col; ctx.lineWidth = 4.5; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(g.px(xa), g.py(m * xa + b)); ctx.lineTo(g.px(xb), g.py(m * xb + b)); ctx.stroke();
+  ctx.restore();
+}
+function punto(g, x, y, col, r = 8) {
+  ctx.fillStyle = col; ctx.strokeStyle = C.forest; ctx.lineWidth = 2.5;
+  ctx.beginPath(); ctx.arc(g.px(x), g.py(y), r, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+}
+function segmento(g, x1, y1, x2, y2, col, p = 1) {
+  ctx.strokeStyle = col; ctx.lineWidth = 3.5; ctx.setLineDash([9, 7]); ctx.lineCap = 'butt';
+  ctx.beginPath(); ctx.moveTo(g.px(x1), g.py(y1)); ctx.lineTo(g.px(x1 + (x2 - x1) * p), g.py(y1 + (y2 - y1) * p)); ctx.stroke(); ctx.setLineDash([]);
+}
+
+// plano con escala: rejilla de unidades y, si cfg.minor < 1, rejilla de fracciones (medios, tercios...) con etiquetas
+function planoEsc(g, cfg) {
+  const mA = cfg.minorAlpha === undefined ? 1 : cfg.minorAlpha, den = Math.round(1 / (cfg.minor || 1));
+  rr(g.x0 - 12, g.y0 - 12, g.w + 24, g.h + 24, 14, C.white, C.line);
+  const rej = (paso, col, lw, al) => {
+    if (al <= 0) return;
+    ctx.save(); ctx.globalAlpha *= al; ctx.strokeStyle = col; ctx.lineWidth = lw;
+    for (let x = Math.ceil(g.xmin / paso - 1e-9) * paso; x <= g.xmax + 1e-9; x += paso) { ctx.beginPath(); ctx.moveTo(g.px(x), g.y0); ctx.lineTo(g.px(x), g.y0 + g.h); ctx.stroke(); }
+    for (let y = Math.ceil(g.ymin / paso - 1e-9) * paso; y <= g.ymax + 1e-9; y += paso) { ctx.beginPath(); ctx.moveTo(g.x0, g.py(y)); ctx.lineTo(g.x0 + g.w, g.py(y)); ctx.stroke(); }
+    ctx.restore();
+  };
+  ctx.save(); ctx.beginPath(); ctx.rect(g.x0, g.y0, g.w, g.h); ctx.clip();
+  if (den > 1) rej(1 / den, '#e6e2d3', 1, mA);
+  rej(1, den > 1 ? '#cfc9b4' : '#e6e2d3', den > 1 ? 1.4 : 1, 1);
+  ctx.strokeStyle = C.forest; ctx.lineWidth = 2.4;
+  ctx.beginPath(); ctx.moveTo(g.x0, g.py(0)); ctx.lineTo(g.x0 + g.w, g.py(0)); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(g.px(0), g.y0); ctx.lineTo(g.px(0), g.y0 + g.h); ctx.stroke();
+  ctx.restore();
+  const Mn = s => s < 0 ? MINUS : '';
+  for (let x = Math.ceil(g.xmin); x <= g.xmax; x++) if (x !== 0) txt(Mn(x) + Math.abs(x), g.px(x), g.py(0) + 20, 15, C.mute, { align: 'center' });
+  const paso = 1 / den;
+  for (let k = Math.ceil(g.ymin / paso - 1e-9); k * paso <= g.ymax + 1e-9; k++) {
+    if (k === 0) continue;
+    const v = k * paso, entero = k % den === 0;
+    if (entero) txt(Mn(v) + Math.abs(v), g.px(0) - 8, g.py(v) + 5, 15, C.mute, { align: 'right' });
+    else if (mA > 0) { ctx.save(); ctx.globalAlpha *= mA; mathAt([Mn(v), fr([String(Math.abs(k))], [String(den)])], g.px(0) - 8, g.py(v) + 5, 15, C.mute, 'right'); ctx.restore(); }
+  }
+  txt('x', g.x0 + g.w - 12, g.py(0) - 10, 18, C.forest, { w: 700, f: FM });
+  txt('y', g.px(0) + 10, g.y0 + 16, 18, C.forest, { w: 700, f: FM });
+}
+
+// piezas de las ecuaciones
+const yy = pl('y'), xx = bl('x');
+const mS = () => t('m', C.blue), bS = () => t('b', C.orange);
+
+// ---------- escenas ----------
+const ESC = [];
+function escena(dur, draw) { ESC.push({ dur, draw }); }
+
+// ---------- piezas ----------
+const LIME = { fill: C.lime, stroke: C.lime, lime: true };
+const C1 = C.blue, C2 = C.orange;          // color de la recta 1 y de la recta 2
+const G = () => GR(80, 126, 52, -3, 6, -7, 3);
+
+// cuadro de la derecha (x = 620): dibuja su contenido con fn(x, y)
+function caja(tt, at, y, h, borde, fn, fondo = C.white) {
+  withAlpha(fade(tt, at), () => { rr(620, y, 600, h, 14, fondo, borde, 2.5); fn(644, y); });
+}
+// recta punteada (para mostrar que dos rectas son la misma)
+function rectaPunteada(g, m, b, col, p) {
+  if (p <= 0) return;
+  const xa = g.xmin, xb = g.xmin + (g.xmax - g.xmin) * Math.min(1, p);
+  ctx.save(); ctx.beginPath(); ctx.rect(g.x0, g.y0, g.w, g.h); ctx.clip();
+  ctx.strokeStyle = col; ctx.lineWidth = 4.5; ctx.setLineDash([16, 14]); ctx.lineCap = 'butt';
+  ctx.beginPath(); ctx.moveTo(g.px(xa), g.py(m * xa + b)); ctx.lineTo(g.px(xb), g.py(m * xb + b)); ctx.stroke();
+  ctx.restore();
+}
+// plano pequeño con rectas (coordenadas relativas 0..1) para las tarjetas de los tres casos
+function mini(x, y, w, h, rectas, punto0) {
+  ctx.save(); ctx.strokeStyle = '#cfc9b4'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(x, y + h / 2); ctx.lineTo(x + w, y + h / 2); ctx.moveTo(x + w / 2, y); ctx.lineTo(x + w / 2, y + h); ctx.stroke();
+  rectas.forEach(l => {
+    ctx.strokeStyle = l.c; ctx.lineWidth = 6; ctx.setLineDash(l.d || []); ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(x + l.p[0] * w, y + l.p[1] * h); ctx.lineTo(x + l.p[2] * w, y + l.p[3] * h); ctx.stroke();
+  });
+  ctx.setLineDash([]);
+  if (punto0) { ctx.fillStyle = C.lime; ctx.strokeStyle = C.forest; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(x + punto0[0] * w, y + punto0[1] * h, 10, 0, Math.PI * 2); ctx.fill(); ctx.stroke(); }
+  ctx.restore();
+}
+const frac32 = () => fr(['3'], ['2']);
+
+// ---------- escenas ----------
+// 0. Portada
+escena(5, tt => {
+  withAlpha(fade(tt, .2), () => txt('MATEMÁTICAS 3  ·  TEMA 1', W / 2, 180, 22, C.mute, { w: 700, align: 'center' }));
+  withAlpha(fade(tt, .5), () => txt('Sistemas de ecuaciones', W / 2, 280, 70, C.forest, { w: 600, f: FM, align: 'center' }));
+  withAlpha(fade(tt, 1.1), () => txt('Método gráfico', W / 2, 382, 84, C.forest, { w: 700, f: FM, align: 'center' }));
+  withAlpha(fade(tt, 1.8), () => {
+    ctx.fillStyle = C.lime; ctx.fillRect(W / 2 - 130, 424, 260, 6);
+    txt('Los 5 pasos, con tres ejemplos', W / 2, 490, 32, C.forest, { align: 'center' });
+  });
+  withAlpha(fade(tt, 2.6), () => mathAt([bl('y = 2x '), MINUS, or(' 5'), '      ', t('y = ', C.forest), MINUS, fr(['3'], ['2']), 'x + 2'], W / 2, 590, 40, C.forest, 'center'));
+  withAlpha(fade(tt, 3), () => {
+    ctx.strokeStyle = C1; ctx.lineWidth = 5; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(1040, 170); ctx.lineTo(1150, 80); ctx.stroke();
+    ctx.strokeStyle = C2; ctx.beginPath(); ctx.moveTo(1040, 90); ctx.lineTo(1150, 165); ctx.stroke();
+  });
+});
+
+// 1. Los tres casos
+escena(17, tt => {
+  titulo(tt, 'Un sistema 2×2 puede tener…');
+  const card = (at, x, titulo2, desc, dibujar) => withAlpha(fade(tt, at), () => {
+    rr(x, 120, 370, 470, 18, C.white, C.line);
+    dibujar(x + 35, 150);
+    txt(titulo2, x + 185, 420, 30, C.forest, { w: 700, f: FM, align: 'center' });
+    desc.forEach((l, i) => txt(l, x + 185, 466 + i * 32, 24, C.forest, { align: 'center' }));
+  });
+  card(1, 60, 'Solución única', ['Las rectas se cruzan', 'en un solo punto'], (x, y) => mini(x, y, 300, 240, [{ c: C1, p: [.05, .9, .95, .1] }, { c: C2, p: [.05, .15, .95, .85] }], [.5, .5]));
+  card(5, 455, 'Infinito de soluciones', ['Las rectas son coincidentes', '(la misma recta)'], (x, y) => { mini(x, y, 300, 240, [{ c: C1, p: [.05, .9, .95, .1] }, { c: C2, d: [14, 12], p: [.05, .9, .95, .1] }]); });
+  card(9, 850, 'No tiene solución', ['Las rectas son paralelas', 'y nunca se cruzan'], (x, y) => mini(x, y, 300, 240, [{ c: C1, p: [.05, .78, .95, .28] }, { c: C2, p: [.05, .58, .95, .08] }]));
+  withAlpha(fade(tt, 13), () => txt('La gráfica nos dice cuál de los tres casos es', W / 2, 640, 30, C.forest, { w: 600, f: FM, align: 'center' }));
+});
+
+// 2. Los 5 pasos
+escena(20, tt => {
+  titulo(tt, 'Procedimiento');
+  const pasos = [
+    ['Observa las ecuaciones:', 'deben tener la forma y = mx + b; si no, transfórmalas.'],
+    ['Grafica cada recta', 'usando la pendiente m y la ordenada b. De ser necesario, encuentra una escala.'],
+    ['Determina, a partir de la gráfica,', 'si hay solución única, no hay solución o hay infinitas soluciones.'],
+    ['Si hay solución única,', 'encuentra la coordenada de intersección y el valor de x y de y.'],
+    ['Comprueba', 'sustituyendo los valores en ambas ecuaciones.']
+  ];
+  pasos.forEach((p, k) => withAlpha(fade(tt, 1 + k * 3.2), () => {
+    const y = 104 + k * 106;
+    rr(60, y, 1160, 92, 14, C.white, C.line);
+    ctx.fillStyle = C.forest; ctx.beginPath(); ctx.arc(110, y + 46, 24, 0, Math.PI * 2); ctx.fill();
+    txt(String(k + 1), 110, y + 56, 28, C.lime, { w: 700, f: FM, align: 'center' });
+    txt(p[0], 160, y + 38, 27, C.forest, { w: 700 });
+    txt(p[1], 160, y + 74, 25, C.forest);
+  }));
+});
+
+// 3. Ejemplo 1, paso 1
+escena(20, tt => {
+  titulo(tt, 'Ejemplo 1', 60, 32);
+  withAlpha(fade(tt, .3), () => mathAt(['2x ', MINUS, ' y = 5', '          ', '3x + 2y = 4'], W / 2, 150, 54, C.forest, 'center'));
+  const o = { sz: 36 }, h = 92, y0 = 200, g = 12;
+  fila(tt, 1.2, y0, h, 'Paso 1.', 'Observa: ¿tienen la forma y = mx + b? No, hay que transformarlas.', null, o);
+  fila(tt, 5, y0 + (h + g), h, '', 'Despeja y en la primera:', [t('y = ', C.forest), bl('2x'), ' ', MINUS, ' ', or('5')], o);
+  fila(tt, 9, y0 + 2 * (h + g), h, '', 'Despeja y en la segunda:', [t('y = ', C.forest), MINUS, bl(''), fr([bl('3')], [bl('2')]), bl('x'), ' + ', or('2')], o);
+  fila(tt, 13, y0 + 3 * (h + g), h, '', 'Pendientes y ordenadas:', [bl('m'), ' = 2, ', or('b'), ' = ', MINUS, '5        ', bl('m'), ' = ', MINUS, fr(['3'], ['2']), ', ', or('b'), ' = 2'], Object.assign({}, o, LIME, { sz: 32 }));
+  withAlpha(fade(tt, 16.5), () => txt('Las ordenadas son enteras: no hace falta una escala especial', W / 2, 660, 26, C.mute, { w: 700, align: 'center' }));
+});
+
+// 4. Ejemplo 1, paso 2: las gráficas
+escena(26, tt => {
+  titulo(tt, 'Ejemplo 1 · Paso 2: grafica cada recta', 60, 36);
+  const g = G();
+  withAlpha(fade(tt, .4), () => planoEsc(g, { minor: 1 }));
+  // recta 1: y = 2x − 5
+  caja(tt, 1.2, 128, 150, C1, (x, y) => {
+    txt('Recta 1', x, y + 34, 25, C1, { w: 700 });
+    mathAt(['y = 2x ', MINUS, ' 5'], x + 130, y + 40, 34, C.forest);
+    txt('b = −5: marca (0, −5)   ·   m = 2: sube 2, avanza 1', x, y + 112, 22, C.forest);
+  });
+  withAlpha(fade(tt, 3), () => { punto(g, 0, -5, C1); });
+  withAlpha(fade(tt, 4.6), () => { segmento(g, 0, -5, 1, -5, C1, fade(tt, 4.6, 1)); segmento(g, 1, -5, 1, -3, C1, fade(tt, 5.4, 1)); });
+  withAlpha(fade(tt, 6.4), () => punto(g, 1, -3, C1));
+  recta(g, 2, -5, C1, fade(tt, 7.4, 2));
+  // recta 2: y = −3/2 x + 2
+  caja(tt, 11, 296, 150, C2, (x, y) => {
+    txt('Recta 2', x, y + 34, 25, C2, { w: 700 });
+    mathAt(['y = ', MINUS, frac32(), 'x + 2'], x + 130, y + 40, 34, C.forest);
+    txt('b = 2: marca (0, 2)   ·   m = −3/2: baja 3, avanza 2', x, y + 112, 22, C.forest);
+  });
+  withAlpha(fade(tt, 12.6), () => punto(g, 0, 2, C2));
+  withAlpha(fade(tt, 14), () => { segmento(g, 0, 2, 2, 2, C2, fade(tt, 14, 1)); segmento(g, 2, 2, 2, -1, C2, fade(tt, 15, 1.2)); });
+  withAlpha(fade(tt, 16.4), () => punto(g, 2, -1, C2));
+  recta(g, -1.5, 2, C2, fade(tt, 17.6, 2));
+  withAlpha(fade(tt, 21), () => {
+    rr(620, 466, 600, 116, 14, C.lime);
+    txt('Ya están las dos rectas', 644, 514, 30, C.forest, { w: 700, f: FM });
+    txt('¿Dónde se cruzan?', 644, 556, 26, C.forest);
+  });
+});
+
+// 5. Ejemplo 1, pasos 3, 4 y 5
+escena(24, tt => {
+  titulo(tt, 'Ejemplo 1 · Pasos 3, 4 y 5', 60, 36);
+  const g = G();
+  planoEsc(g, { minor: 1 }); recta(g, 2, -5, C1, 1); recta(g, -1.5, 2, C2, 1);
+  withAlpha(fade(tt, 1.6), () => { punto(g, 2, -1, C.lime, 11); txt('(2, −1)', g.px(2) + 16, g.py(-1) - 14, 24, C.forest, { w: 700, f: FM }); });
+  caja(tt, 1.6, 128, 112, C.green, (x, y) => {
+    txt('Paso 3.', x, y + 38, 22, C.mute, { w: 700, f: FM }); txt('Las rectas se cruzan en un solo punto', x + 92, y + 38, 24, C.forest);
+    txt('Solución única', x, y + 88, 32, C.green, { w: 700, f: FM });
+  });
+  caja(tt, 7, 258, 124, C.blue, (x, y) => {
+    txt('Paso 4.', x, y + 38, 22, C.mute, { w: 700, f: FM }); txt('Lee la coordenada de intersección', x + 92, y + 38, 24, C.forest);
+    mathAt(['(x, y) = (', bl('2'), ', ', or(MINUS + '1'), ')'], x, y + 98, 38, C.forest);
+    mathAt([bl('x'), ' = 2', '     ', or('y'), ' = ', MINUS, '1'], x + 330, y + 98, 38, C.forest);
+  });
+  caja(tt, 12, 400, 186, C.green, (x, y) => {
+    txt('Paso 5.', x, y + 38, 22, C.mute, { w: 700, f: FM }); txt('Comprueba en las dos ecuaciones', x + 92, y + 38, 24, C.forest);
+    withAlpha(fade(tt, 13.5), () => mathAt(['2(2) ', MINUS, ' (', MINUS, '1) = 4 + 1 = 5   ', gr('✓')], x, y + 100, 34, C.forest));
+    withAlpha(fade(tt, 17), () => mathAt(['3(2) + 2(', MINUS, '1) = 6 ', MINUS, ' 2 = 4   ', gr('✓')], x, y + 152, 34, C.forest));
+  });
+  withAlpha(fade(tt, 20.5), () => txt('La solución es  x = 2,  y = −1', 620 + 24, 636, 28, C.forest, { w: 700, f: FM }));
+});
+
+// 6. Ejemplo 2: no tiene solución
+escena(24, tt => {
+  titulo(tt, 'Ejemplo 2', 60, 32);
+  const g = G();
+  withAlpha(fade(tt, .4), () => planoEsc(g, { minor: 1 }));
+  withAlpha(fade(tt, .3), () => mathAt(['2x ', MINUS, ' y = 1', '          ', '4x ', MINUS, ' 2y = 6'], 920, 126, 34, C.forest, 'center'));
+  caja(tt, 1.5, 158, 120, C.blue, (x, y) => {
+    txt('Paso 1.  Despeja y en cada ecuación', x, y + 36, 24, C.forest, { w: 700 });
+    mathAt([bl('y = 2x '), MINUS, bl(' 1'), '        ', t('y = 2x ', C2), MINUS, t(' 3', C2)], x, y + 90, 34, C.forest);
+  });
+  caja(tt, 5, 298, 124, C.blue, (x, y) => {
+    txt('Paso 2.  Grafica cada recta', x, y + 36, 24, C.forest, { w: 700 });
+    txt('Las dos tienen m = 2 (la misma inclinación)', x, y + 74, 23, C.forest);
+    txt('b = −1 en la primera y b = −3 en la segunda', x, y + 104, 23, C.forest);
+  });
+  recta(g, 2, -1, C1, fade(tt, 6.5, 2)); recta(g, 2, -3, C2, fade(tt, 9.5, 2));
+  caja(tt, 13.5, 444, 150, C.lime, (x, y) => {
+    txt('Paso 3.', x, y + 38, 22, C.forest, { w: 700, f: FM }); txt('Las rectas son paralelas: nunca se cruzan', x + 92, y + 38, 24, C.forest);
+    txt('No tiene solución', x, y + 100, 36, C.forest, { w: 700, f: FM });
+  }, C.lime);
+  withAlpha(fade(tt, 18.5), () => txt('Como no hay solución única, no hay pasos 4 y 5', 620 + 24, 636, 24, C.mute, { w: 700 }));
+});
+
+// 7. Ejemplo 3: infinito de soluciones
+escena(24, tt => {
+  titulo(tt, 'Ejemplo 3', 60, 32);
+  const g = GR(80, 126, 52, -3, 6, -3, 7);
+  withAlpha(fade(tt, .4), () => planoEsc(g, { minor: 1 }));
+  withAlpha(fade(tt, .3), () => mathAt(['x + y = 3', '          ', '2x + 2y = 6'], 920, 126, 34, C.forest, 'center'));
+  caja(tt, 1.5, 158, 150, C.blue, (x, y) => {
+    txt('Paso 1.  Despeja y en cada ecuación', x, y + 36, 24, C.forest, { w: 700 });
+    mathAt([bl('y = '), MINUS, bl('x + 3'), '        ', t('y = ', C2), MINUS, t('x + 3', C2)], x, y + 90, 34, C.forest);
+    txt('¡Son la misma ecuación!', x, y + 132, 24, C.mute, { w: 700 });
+  });
+  caja(tt, 6, 328, 112, C.blue, (x, y) => {
+    txt('Paso 2.  Grafica cada recta', x, y + 36, 24, C.forest, { w: 700 });
+    txt('m = −1 y b = 3 en las dos: salen encimadas', x, y + 80, 23, C.forest);
+  });
+  recta(g, -1, 3, C1, fade(tt, 7, 2)); rectaPunteada(g, -1, 3, C2, fade(tt, 10, 2));
+  caja(tt, 14, 460, 150, C.lime, (x, y) => {
+    txt('Paso 3.', x, y + 38, 22, C.forest, { w: 700, f: FM }); txt('Son coincidentes: la misma recta', x + 92, y + 38, 24, C.forest);
+    txt('Infinito de soluciones', x, y + 100, 36, C.forest, { w: 700, f: FM });
+  }, C.lime);
+  withAlpha(fade(tt, 19), () => txt('Cada punto de la recta es una solución', 620 + 24, 646, 24, C.mute, { w: 700 }));
+});
+
+// 8. ¡Cuidado!
+escena(15, tt => {
+  titulo(tt, '¡Cuidado con estos errores!');
+  const card = (at, y, mal, bien, nota) => {
+    withAlpha(fade(tt, at), () => {
+      rr(60, y, 1160, 150, 16, C.white, C.line);
+      rr(76, y + 14, 540, 74, 10, '#fbeaea'); rr(644, y + 14, 560, 74, 10, '#eaf5df');
+      txt('✗', 96, y + 62, 34, C.red, { w: 700 }); txt('✓', 664, y + 62, 34, C.green, { w: 700 });
+      mathMid(mal, 140, y + 51, 30, C.forest);
+      mathMid(bien, 712, y + 51, 30, C.forest);
+      txt(nota, 96, y + 125, 24, C.mute, { w: 700 });
+    });
+  };
+  card(1, 112, ['2x ', MINUS, ' y = 5  →  y = 2x + 5'], ['2x ', MINUS, ' y = 5  →  y = 2x ', MINUS, ' 5'], 'Al despejar y, los signos cambian: cuidado con ellos.');
+  card(5, 282, ['(x, y) = (', MINUS, '1, 2)'], ['(x, y) = (2, ', MINUS, '1)'], 'Primero x (eje horizontal) y luego y (eje vertical).');
+  card(9, 452, ['Sustituye sólo en la primera'], ['Sustituye en las dos ecuaciones'], 'Si una sola falla, el punto no es la solución.');
+});
+
+// 9. Ahora tú
+escena(26, tt => {
+  titulo(tt, 'Ahora tú', 60, 32);
+  withAlpha(fade(tt, .3), () => mathAt(['x + y = 5', '          ', 'x ', MINUS, ' y = 1'], W / 2, 150, 64, C.forest, 'center'));
+  const cd = tt < 2 ? -1 : tt < 12 ? Math.ceil(12 - tt) : 0;
+  if (tt >= .8 && tt < 12) {
+    withAlpha(Math.min(fade(tt, .8), 1 - fade(tt, 11.5, .5)), () => {
+      txt('Pausa el video y resuélvelo en tu cuaderno', W / 2, 270, 34, C.forest, { w: 600, f: FM, align: 'center' });
+      txt('Despeja y, grafica las dos rectas, lee el punto y comprueba', W / 2, 312, 26, C.mute, { align: 'center' });
+      if (cd > 0) {
+        ctx.strokeStyle = C.line; ctx.lineWidth = 12; ctx.beginPath(); ctx.arc(W / 2, 470, 86, 0, Math.PI * 2); ctx.stroke();
+        ctx.strokeStyle = C.lime; ctx.lineCap = 'round'; ctx.beginPath();
+        ctx.arc(W / 2, 470, 86, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * (1 - (tt - 2) / 10)); ctx.stroke();
+        txt(String(cd), W / 2, 500, 86, C.forest, { w: 700, f: FM, align: 'center' });
+      }
+    });
+  }
+  const o = { sz: 36 }, h = 84, y0 = 196, g = 12;
+  fila(tt, 12.3, y0, h, 'Paso 1.', 'Despeja y:', [bl('y = '), MINUS, bl('x + 5'), '        ', t('y = x ', C2), MINUS, t(' 1', C2)], o);
+  fila(tt, 14.8, y0 + (h + g), h, 'Pasos 2 y 3.', 'Grafica: las rectas se cruzan en un punto →', [t('Solución única', C.green)], o);
+  fila(tt, 17.8, y0 + 2 * (h + g), h, 'Paso 4.', 'La coordenada de intersección:', ['(x, y) = (3, 2)'], Object.assign({}, o, LIME));
+  fila(tt, 20.8, y0 + 3 * (h + g), h, 'Paso 5.', 'Comprueba:', ['3 + 2 = 5   ', gr('✓'), '      3 ', MINUS, ' 2 = 1   ', gr('✓')], Object.assign({}, o, { stroke: C.green, lw: 2.5 }));
+});
+
+// 10. Para recordar
+escena(14, tt => {
+  titulo(tt, 'Para recordar');
+  const p = (at, y, n, txtl) => withAlpha(fade(tt, at), () => {
+    rr(60, y, 1160, 62, 14, C.white, C.line);
+    ctx.fillStyle = C.forest; ctx.beginPath(); ctx.arc(104, y + 31, 20, 0, Math.PI * 2); ctx.fill();
+    txt(String(n), 104, y + 40, 24, C.lime, { w: 700, f: FM, align: 'center' });
+    txt(txtl, 144, y + 40, 25, C.forest);
+  });
+  p(.8, 102, 1, 'Pon las dos ecuaciones en la forma y = mx + b.');
+  p(2, 174, 2, 'Grafica cada recta con m y b (con una escala si hace falta).');
+  p(3.2, 246, 3, 'Mira la gráfica: ¿se cruzan, son paralelas o son la misma recta?');
+  p(4.4, 318, 4, 'Si se cruzan: lee la coordenada de intersección (x, y).');
+  p(5.6, 390, 5, 'Comprueba sustituyendo en las dos ecuaciones.');
+  withAlpha(fade(tt, 7), () => {
+    rr(60, 472, 1160, 120, 18, C.lime);
+    txt('TRES CASOS', 96, 508, 20, C.forest, { w: 700 });
+    txt('Se cruzan → solución única   ·   Paralelas → no hay solución   ·   Coincidentes → infinitas', 96, 560, 27, C.forest, { w: 700, f: FM });
+  });
+  withAlpha(fade(tt, 9.4), () => {
+    rr(300, 618, 650, 40, 10, C.forest);
+    txt('Practica abajo con los ejercicios del método gráfico', 625, 646, 24, C.lime, { w: 700, align: 'center' });
+  });
+});
+
+const TOTAL = ESC.reduce((s, e) => s + e.dur, 0);
+const FADE = .35;
+function dibujarEn(T) {
+  T = Math.max(0, Math.min(T, TOTAL - 1e-6));
+  let a = 0, i = 0;
+  while (i < ESC.length - 1 && T >= a + ESC[i].dur) { a += ESC[i].dur; i++; }
+  const tt = T - a, d = ESC[i].dur;
+  fondo(); ctx.save(); ESC[i].draw(tt); ctx.restore();
+  const o = Math.max(1 - tt / FADE, 1 - (d - tt) / FADE, 0);
+  if (o > 0) { ctx.fillStyle = `rgba(246,243,234,${Math.min(1, o)})`; ctx.fillRect(0, 0, W, H); }
+}
+function inicioDeEscena(n) { let a = 0; for (let i = 0; i < n; i++) a += ESC[i].dur; return a; }
+
+async function cargarFuentes() {
+  await Promise.all([
+    document.fonts.load('600 40px Outfit', 'x²−±√áéíóú·→'), document.fonts.load('700 40px Outfit', 'x²−±√áéíóú'),
+    document.fonts.load('400 24px Karla', 'x²−±√áéíóú'), document.fonts.load('700 24px Karla', 'x²−±√áéíóú')
+  ]);
+}
+async function subir(nombre, blob) { await fetch('/subir/' + nombre, { method: 'POST', body: blob }); }
+async function guardarCuadro(T, nombre, tipo = 'image/png') {
+  dibujarEn(T);
+  const b = await new Promise(r => cv.toBlob(r, tipo, .92));
+  await subir(nombre, b);
+}
+
+// ---------- codificación ----------
+async function hacerVideo(nombre = 'video.mp4', opc = {}) {
+  const DUR = opc.seg || TOTAL, QP = opc.qp || 0, HW = opc.hw || 'no-preference';
+  await cargarFuentes();
+  window.estado = 'cargando audio';
+  const SR = 48000;
+  const ac = new AudioContext({ sampleRate: SR });
+  const src = await ac.decodeAudioData(await (await fetch('/matematicas-1/materiales/jerarquia-de-operaciones.mp4')).arrayBuffer());
+  const N = Math.round(DUR * SR), ch = [src.getChannelData(0), src.getChannelData(1)];
+  const pcm = [new Float32Array(N), new Float32Array(N)];
+  for (let c = 0; c < 2; c++) for (let i = 0; i < N; i++) {
+    let g = 1; const s = i / SR;
+    if (s > DUR - 3) g = Math.max(0, (DUR - s) / 3);
+    pcm[c][i] = (i < ch[c].length ? ch[c][i] : 0) * g;
+  }
+  const muxer = new Muxer({ target: new ArrayBufferTarget(), fastStart: 'in-memory',
+    video: { codec: 'avc', width: W, height: H, frameRate: FPS }, audio: { codec: 'aac', numberOfChannels: 2, sampleRate: SR } });
+  const ve = new VideoEncoder({ output: (c, m) => muxer.addVideoChunk(c, m), error: e => { window.estado = 'error video ' + e; } });
+  ve.configure({ codec: 'avc1.640028', width: W, height: H, bitrate: opc.br || 700000, bitrateMode: opc.mode || 'variable', framerate: FPS, hardwareAcceleration: HW });
+  const ae = new AudioEncoder({ output: (c, m) => muxer.addAudioChunk(c, m), error: e => { window.estado = 'error audio ' + e; } });
+  ae.configure({ codec: 'mp4a.40.2', sampleRate: SR, numberOfChannels: 2, bitrate: 96000 });
+  const NF = Math.round(DUR * FPS);
+  for (let f = 0; f < NF; f++) {
+    dibujarEn(f / FPS);
+    const bm = await createImageBitmap(cv); // copia fija del cuadro ya dibujado
+    const vf = new VideoFrame(bm, { timestamp: Math.round(f * 1e6 / FPS), duration: Math.round(1e6 / FPS) }); bm.close();
+    ve.encode(vf, QP ? { keyFrame: f % 150 === 0, avc: { quantizer: QP } } : { keyFrame: f % 150 === 0 }); vf.close();
+    while (ve.encodeQueueSize > 12) await new Promise(r => setTimeout(r, 2));
+    if (f % 150 === 0) { window.estado = 'video ' + f + '/' + NF; await new Promise(r => setTimeout(r, 0)); }
+  }
+  window.estado = 'audio';
+  const CH = SR; // 1 s por bloque
+  for (let s = 0; s < N; s += CH) {
+    const n = Math.min(CH, N - s), data = new Float32Array(n * 2);
+    data.set(pcm[0].subarray(s, s + n), 0); data.set(pcm[1].subarray(s, s + n), n);
+    const ad = new AudioData({ format: 'f32-planar', sampleRate: SR, numberOfFrames: n, numberOfChannels: 2, timestamp: Math.round(s * 1e6 / SR), data });
+    ae.encode(ad); ad.close();
+  }
+  await ve.flush(); await ae.flush(); muxer.finalize();
+  const buf = muxer.target.buffer;
+  window.estado = 'subiendo ' + buf.byteLength;
+  await subir(nombre, new Blob([buf], { type: 'video/mp4' }));
+  window.estado = 'listo ' + buf.byteLength;
+  return buf.byteLength;
+}
+
+Object.assign(window, { dibujarEn, guardarCuadro, hacerVideo, cargarFuentes, TOTAL, inicioDeEscena, ESC });
+await cargarFuentes();
+dibujarEn(0);
+window.listo = true;
+</script>
+</body>
+</html>

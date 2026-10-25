@@ -1501,3 +1501,15 @@ Registro de lo que vamos haciendo, en orden cronológico.
 ## 2026-10-25 (se quita "Materiales y tareas" de Geometría analítica: la recta)
 - A pedido de Carmen, en `matematicas-2/tema-04-la-recta.html` se quitó la sección "Materiales y tareas" (los cuadros "Materiales" y
   "Tarea" con "Próximamente"). La página termina con la lista de subtemas.
+
+## 2026-10-25 (video del método gráfico con los 5 pasos)
+- A pedido de Carmen se hizo el video `matematicas-3/materiales/tema-01-metodo-grafico.mp4` (3:35, con portada) y se puso en
+  `matematicas-3/tema-01-grafico.html`, justo después del "Procedimiento" y antes del "Ejemplo resuelto".
+- Sigue los 5 pasos del Procedimiento de la página: (1) observar las ecuaciones y ponerlas en la forma y = mx + b, (2) graficar cada recta
+  con m y b (y una escala si hace falta), (3) determinar con la gráfica si hay solución única, ninguna o infinitas, (4) si es única,
+  leer la coordenada de intersección y (5) comprobar en las dos ecuaciones.
+- Contenido: los tres casos con dibujos (se cruzan / coincidentes / paralelas), los 5 pasos, **Ejemplo 1** (el de la página: 2x − y = 5 y
+  3x + 2y = 4, solución (2, −1), con las gráficas trazadas paso a paso y la comprobación), **Ejemplo 2** (2x − y = 1 y 4x − 2y = 6:
+  paralelas, no tiene solución), **Ejemplo 3** (x + y = 3 y 2x + 2y = 6: coincidentes, infinitas soluciones), errores comunes, "Ahora tú"
+  (x + y = 5 y x − y = 1, solución (3, 2)) y repaso.
+- Generador: `materiales-fuente/generar-video-metodo-grafico.html` (misma plantilla de los demás videos).
