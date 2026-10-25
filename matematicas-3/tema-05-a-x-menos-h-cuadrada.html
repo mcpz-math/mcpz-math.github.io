@@ -606,6 +606,208 @@
   })();
   </script>
 
+  <p class="section-label no-caps" id="ejercicios-x-menos-h-2">Ejercicios: analiza f(x) = a(x − h)² con otros valores de a</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Ahora a es un número distinto de 1 y de −1 (entero o fracción, positivo o negativo). Para cada función contesta y oprime <strong>Comprobar</strong>:</p>
+    <p><strong>1.</strong> ¿Hacia dónde abre la parábola? (fíjate en el signo de a)<br>
+       <strong>2.</strong> ¿Tiene un máximo o un mínimo?<br>
+       <strong>3.</strong> Comparada con x², ¿es <strong>gorda</strong> o <strong>flaca</strong>? (fíjate en |a|: mayor que 1 es flaca, menor que 1 es gorda)<br>
+       <strong>4.</strong> ¿Dónde está su vértice? Escribe las dos coordenadas en V(___, ___).<br>
+       <strong>5.</strong> <strong>Desarrolla</strong> el binomio al cuadrado (x − h)² con la regla (a ± b)² = a² ± 2ab + b².<br>
+       <strong>6.</strong> <strong>Multiplica</strong> el resultado por a: así obtienes f(x) desarrollada.<br>
+       <strong>7.</strong> ¿Dónde <strong>corta al eje y</strong>? Es el valor de f(x) cuando x = 0, el término que no tiene x.</p>
+    <p>Debajo de cada casilla hay botones para escribir x, ², los signos y la fracción; también puedes usar <strong>^2</strong> y <strong>/</strong> con el
+       teclado, por ejemplo <strong>x^2 − 6x + 9</strong> o <strong>5/2</strong>.</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Cuando termines,
+       oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="hq2-grid"></div>
+  <p class="practice-score" id="hq2-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="hq2-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script>
+  (function () {
+    var MINUS = '−', parse = Algebra.parse, padd = Algebra.padd, pmul = Algebra.pmul, same = Algebra.same;
+    function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = b; b = a % b; a = t; } return a || 1; }
+    function frac(n, d) { if (d < 0) { n = -n; d = -d; } var g = gcd(n, d); return { n: n / g, d: d / g }; }
+    function absF(f) { return frac(Math.abs(f.n), f.d); }
+    function mulF(f, g) { return frac(f.n * g.n, f.d * g.d); }
+    function eq(f, g) { return f.n * g.d === g.n * f.d; }
+    function parseNum(txt) { // "−3", "5/2", "0.25", "+4"…  →  fracción, o null si no se entiende
+      var s = String(txt).replace(/\s+/g, '').replace(/[−–—]/g, '-').replace(',', '.'), m;
+      if ((m = s.match(/^([+-]?)(\d+)\/(\d+)$/))) { var d = parseInt(m[3], 10); return d === 0 ? null : frac((m[1] === '-' ? -1 : 1) * parseInt(m[2], 10), d); }
+      if ((m = s.match(/^([+-]?)(\d*)\.?(\d*)$/)) && (m[2] || m[3])) {
+        var dec = m[3] || '', p = Math.pow(10, dec.length);
+        return frac((m[1] === '-' ? -1 : 1) * parseInt((m[2] || '0') + dec, 10), p);
+      }
+      return null;
+    }
+    function F(n, d) { return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>'; }
+    function fracHTML(f) { return (f.n < 0 ? MINUS : '') + (f.d === 1 ? Math.abs(f.n) : F(Math.abs(f.n), f.d)); }
+
+    // Banco de 100 ejercicios {a, h}, de menor a mayor dificultad (a nunca es 1 ni −1, h nunca es 0):
+    //   1–20 a entero positivo, h entero · 21–40 a entero negativo, h entero · 41–60 a fraccionario positivo, h entero
+    //   61–80 a fraccionario negativo, h entero · 81–100 a entero o 1/2 (positivo o negativo), h fraccionario
+    var BANK = [];
+    function add(as, hs) { as.forEach(function (a) { hs.forEach(function (h) { BANK.push({ a: frac(a[0], a[1]), h: frac(h[0], h[1]) }); }); }); }
+    function ints(l) { return l.map(function (n) { return [n, 1]; }); }
+    add(ints([2, 3, 4, 5]), ints([3, -2, 1, -4, 5]));
+    add(ints([-2, -3, -4, -5]), ints([-3, 2, -1, 4, -5]));
+    add([[1, 2], [1, 3], [3, 2], [2, 3]], ints([2, -3, 4, -1, -5]));
+    add([[-1, 2], [-1, 3], [-3, 2], [-2, 3]], ints([-2, 3, 1, -4, 5]));
+    add([[2, 1], [-2, 1], [3, 1], [-3, 1], [4, 1], [-4, 1], [5, 1], [-5, 1], [1, 2], [-1, 2]], [[1, 2], [-3, 2]]);
+
+    function pconst(f) { return { '': [f.n, f.d] }; }
+    function pnum(f) { return parse(f.n + '/' + f.d).P; }
+    function build(ex) {
+      var a = ex.a, h = ex.h, h2 = mulF(h, h), x = parse('x').P, base = pmul(padd(x, pnum(h), -1), padd(x, pnum(h), -1));
+      return { a: a, h: h, h2: h2, abre: a.n > 0 ? 'arriba' : 'abajo', ext: a.n > 0 ? 'minimo' : 'maximo', forma: Math.abs(a.n) > a.d ? 'flaca' : 'gorda', cy: mulF(a, h2),
+               base: base, P: pmul(pconst(a), base), c1: frac(-2 * h.n, h.d), x2h2: padd(pmul(x, x), pnum(h2), 1) };
+    }
+    // trinomio c2·x² + c1·x + c0 con fracciones apiladas
+    function termHTML(c, v, first) {
+      if (c.n === 0) return '';
+      var sign = c.n < 0 ? (first ? MINUS : ' ' + MINUS + ' ') : (first ? '' : ' + ');
+      var ab = absF(c), body = (v && ab.n === 1 && ab.d === 1) ? '' : fracHTML(ab);
+      return sign + body + v;
+    }
+    function trin(c2, c1, c0) { return termHTML(c2, 'x²', true) + termHTML(c1, 'x', false) + termHTML(c0, '', false); }
+    function binHTML(e) { return '(x ' + (e.h.n > 0 ? MINUS : '+') + ' ' + fracHTML(absF(e.h)) + ')'; }
+    function fxHTML(e) { return 'f(x) = ' + fracHTML(e.a) + binHTML(e) + '²'; }
+    var LABEL = { arriba: 'Hacia arriba', abajo: 'Hacia abajo', minimo: 'Un mínimo', maximo: 'Un máximo', gorda: 'Gorda', flaca: 'Flaca' };
+
+    // ---------- tarjetas ----------
+    var N = 10;
+    var grid = document.getElementById('hq2-grid'), scoreEl = document.getElementById('hq2-score'), done = {};
+    function score() {
+      var n = Object.keys(done).length;
+      scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
+    }
+    function pick() { // 10 al azar, ordenados como en el banco
+      var idx = BANK.map(function (e, i) { return i; });
+      for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+      return idx.slice(0, N).sort(function (p, q) { return p - q; }).map(function (i) { return BANK[i]; });
+    }
+    function opts(name, list) {
+      return '<div class="practice-opts" data-q="' + name + '">' + list.map(function (v) {
+        return '<button type="button" data-v="' + v + '">' + LABEL[v] + '</button>';
+      }).join('') + '</div>';
+    }
+    function inputHTML(f, label, style) {
+      return '<input type="text" data-f="' + f + '" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" style="' + style + '" aria-label="' + label + '">';
+    }
+    function keysHTML(list, targets) {
+      return '<div class="practice-keys" data-t="' + targets + '">' + list.map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('') + '</div>';
+    }
+    var BOX = 'flex:0 1 5.5rem;', ALG = ['x', '²', '+', '−', '/'], NUM = ['−', '/'];
+    function makeCard(ex, idx) {
+      var e = build(ex), chosen = {}, n = idx + 1;
+      var card = document.createElement('div');
+      card.className = 'practice-card';
+      card.innerHTML =
+        '<div class="practice-head"><span class="enum">' + n + '</span><span class="practice-q">' + fxHTML(e) + '</span></div>' +
+        '<div class="practice-ask">1. ¿Hacia dónde abre?</div>' + opts('abre', ['arriba', 'abajo']) +
+        '<div class="practice-ask">2. ¿Tiene un máximo o un mínimo?</div>' + opts('ext', ['maximo', 'minimo']) +
+        '<div class="practice-ask">3. Comparada con x², ¿es gorda o flaca?</div>' + opts('forma', ['gorda', 'flaca']) +
+        '<div class="practice-ask">4. ¿Dónde está su vértice?</div>' +
+        '<div class="practice-row"><span class="eq">V(</span>' + inputHTML('vx', 'Coordenada x del vértice del ejercicio ' + n, BOX) + '<span class="eq">,</span>' + inputHTML('vy', 'Coordenada y del vértice del ejercicio ' + n, BOX) + '<span class="eq">)</span></div>' +
+        keysHTML(NUM, 'vx,vy') +
+        '<div class="practice-ask">5. Desarrolla el binomio al cuadrado</div>' +
+        '<div class="practice-row"><span class="eq">' + binHTML(e) + '² =</span>' + inputHTML('d1', 'Binomio desarrollado del ejercicio ' + n, 'flex:1 1 9rem;') + '</div>' + keysHTML(ALG, 'd1') +
+        '<div class="practice-ask">6. Multiplícalo por a = ' + fracHTML(e.a) + '</div>' +
+        '<div class="practice-row"><span class="eq">f(x) =</span>' + inputHTML('d2', 'Función desarrollada del ejercicio ' + n, 'flex:1 1 9rem;') + '</div>' + keysHTML(ALG, 'd2') +
+        '<div class="practice-ask">7. ¿Dónde corta al eje y?</div>' +
+        '<div class="practice-row"><span class="eq">(0,</span>' + inputHTML('cy', 'Corte con el eje y del ejercicio ' + n, BOX) + '<span class="eq">)</span></div>' + keysHTML(NUM, 'cy') +
+        '<div class="practice-row" style="margin-top:0.7rem;"><button type="button" class="practice-check">Comprobar</button></div>' +
+        '<div class="practice-fb" aria-live="polite"></div>';
+      grid.appendChild(card);
+      var fb = card.querySelector('.practice-fb'), inp = {}, lastIn = null;
+      card.querySelectorAll('input').forEach(function (i) { inp[i.dataset.f] = i; i.addEventListener('focus', function () { lastIn = i.dataset.f; }); });
+      card.querySelectorAll('.practice-keys button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var ts = b.parentNode.dataset.t.split(','), t = ts.indexOf(lastIn) >= 0 ? lastIn : ts[0], input = inp[t];
+          var s = input.selectionStart == null ? input.value.length : input.selectionStart, e2 = input.selectionEnd == null ? s : input.selectionEnd;
+          input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e2);
+          input.focus(); input.setSelectionRange(s + b.dataset.k.length, s + b.dataset.k.length);
+        });
+      });
+      card.querySelectorAll('.practice-opts').forEach(function (g) {
+        g.querySelectorAll('button').forEach(function (b) {
+          b.addEventListener('click', function () {
+            g.querySelectorAll('button').forEach(function (o) { o.classList.remove('on'); });
+            b.classList.add('on'); chosen[g.dataset.q] = b.dataset.v;
+          });
+        });
+      });
+
+      var hH = fracHTML(e.h), hA = fracHTML(absF(e.h)), aH = fracHTML(e.a), cyH = fracHTML(e.cy), sg = e.h.n > 0 ? MINUS : '+';
+      var one = frac(1, 1), tb = trin(one, e.c1, e.h2), tf = trin(e.a, mulF(e.a, e.c1), e.cy);
+      var why = {
+        abre: '<strong>a = ' + aH + '</strong> es ' + (e.a.n > 0 ? 'positivo' : 'negativo') + ', así que abre <strong>hacia ' + e.abre + '</strong>.',
+        ext: 'Abre hacia ' + e.abre + ', así que el vértice es el punto más ' + (e.a.n > 0 ? 'bajo' : 'alto') + ': tiene un <strong>' + (e.a.n > 0 ? 'mínimo' : 'máximo') + '</strong>.',
+        forma: '<strong>|a| = ' + fracHTML(absF(e.a)) + '</strong> es ' + (e.forma === 'flaca' ? 'mayor' : 'menor') + ' que 1, así que la parábola es <strong>' + e.forma + '</strong> (más ' + (e.forma === 'flaca' ? 'cerrada' : 'abierta') + ' que x²).',
+        v: 'En a(x ' + MINUS + ' h)² el vértice es V(h, 0). ' + (e.h.n < 0 ? 'Aquí ' + binHTML(e) + ' = (x ' + MINUS + ' (' + hH + ')), así que h = ' + hH : 'Aquí h = ' + hH) +
+           ': el vértice es <strong><span style="white-space:nowrap;">V(' + hH + ', 0)</span></strong>.',
+        d1: 'Usa la regla (x ' + sg + ' ' + hA + ')² = x² ' + sg + ' 2 · x · ' + hA + ' + (' + hA + ')². Queda: ' + binHTML(e) + '² = <strong>' + tb + '</strong>.',
+        d2: 'Multiplica <strong>cada término</strong> por a = ' + aH + ': ' + aH + '(' + tb + ') = <strong>' + tf + '</strong>.',
+        cy: 'El corte con el eje y es donde x = 0, y es el término sin x de la función desarrollada: a · h² = ' + aH + ' · ' + fracHTML(e.h2) + ' = <strong>' + cyH + '</strong>, así que corta en <strong><span style="white-space:nowrap;">(0, ' + cyH + ')</span></strong>.'
+      };
+      function check() {
+        card.classList.remove('ok', 'bad');
+        var vx = parseNum(inp.vx.value), vy = parseNum(inp.vy.value), cy = parseNum(inp.cy.value), t1 = inp.d1.value.trim(), t2 = inp.d2.value.trim();
+        if (!chosen.abre || !chosen.ext || !chosen.forma || !inp.vx.value.trim() || !inp.vy.value.trim() || !inp.cy.value.trim() || !t1 || !t2) { fb.innerHTML = 'Contesta <strong>todas</strong> las preguntas antes de comprobar.'; return; }
+        if (!vx || !vy || !cy) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí algún número.</span> Escribe enteros, fracciones o decimales, por ejemplo <strong>−3</strong>, <strong>5/2</strong> o <strong>0.5</strong>.'; return; }
+        var r1 = null, r2 = null;
+        try { r1 = parse(t1); } catch (x) { r1 = null; }
+        try { r2 = parse(t2); } catch (x) { r2 = null; }
+        if (!r1 || !r2) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí lo que escribiste en el paso 4 o 5.</span> Escríbelo como, por ejemplo, <strong>x^2 − 6x + 9</strong> o <strong>2x² − 12x + 18</strong>.'; return; }
+        var wrong = [], extra = {};
+        if (chosen.abre !== e.abre) wrong.push('abre');
+        if (chosen.ext !== e.ext) wrong.push('ext');
+        if (chosen.forma !== e.forma) wrong.push('forma');
+        if (!eq(vx, e.h) || !eq(vy, frac(0, 1))) wrong.push('v');
+        if (!(same(r1.P, e.base) && r1.terms === 3)) {
+          wrong.push('d1');
+          if (same(r1.P, e.base)) extra.d1 = 'Es el mismo resultado, pero <strong>desarróllalo</strong>: escríbelo como un trinomio (tres términos), sin paréntesis.';
+          else if (same(r1.P, e.x2h2)) extra.d1 = 'Te faltó el <strong>doble producto</strong>: (x ' + sg + ' ' + hA + ')² <strong>no</strong> es x² + (' + hA + ')². ';
+        }
+        if (!(same(r2.P, e.P) && r2.terms === 3)) {
+          wrong.push('d2');
+          if (same(r2.P, e.base) && !same(e.base, e.P)) extra.d2 = 'Todavía falta <strong>multiplicar por a = ' + aH + '</strong>: ese es el resultado del paso 4.';
+          else if (same(r2.P, e.P)) extra.d2 = 'Es equivalente, pero <strong>desarróllalo</strong>: escríbelo como un trinomio sin paréntesis.';
+        }
+        if (!eq(cy, e.cy)) wrong.push('cy');
+        var total = 7;
+        if (!wrong.length) {
+          card.classList.add('ok'); done[idx] = 1; score();
+          fb.innerHTML = '<span class="yes">✓ ¡Todo correcto!</span><div class="sol">Abre ' + e.abre.replace('arriba', 'hacia arriba').replace('abajo', 'hacia abajo') + ' · ' + (e.a.n > 0 ? 'mínimo' : 'máximo') + ' · ' + e.forma +
+                         ' · <span style="white-space:nowrap;">V(' + hH + ', 0)</span><br>' + binHTML(e) + '² = ' + tb + '<br>f(x) = ' + tf + ' → <span style="white-space:nowrap;">(0, ' + cyH + ')</span></div>';
+          return;
+        }
+        card.classList.add('bad'); delete done[idx]; score();
+        fb.innerHTML = '<span class="no">✗ Tienes ' + (total - wrong.length) + ' de ' + total + ' bien.</span> Revisa: ' +
+          wrong.map(function (k) { return '<div class="sol" style="font-family:inherit;">' + (extra[k] ? extra[k] + '<br>' : '') + why[k] + '</div>'; }).join('');
+      }
+      card.querySelector('.practice-check').addEventListener('click', check);
+      card.querySelectorAll('input').forEach(function (i) { i.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') check(); }); });
+    }
+    function newSet() {
+      grid.innerHTML = ''; done = {};
+      pick().forEach(makeCard);
+      score();
+    }
+    document.getElementById('hq2-new').addEventListener('click', function () {
+      newSet();
+      document.getElementById('ejercicios-x-menos-h-2').scrollIntoView({ behavior: 'smooth' });
+    });
+    newSet();
+  })();
+  </script>
+
   <footer class="site-footer">
     DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
   </footer>

@@ -1602,3 +1602,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - El cuadro de texto explica a (hacia dónde abre, máximo o mínimo, delgada o gorda), h, vértice, eje de simetría, raíz y el corte con el eje y
   con la cuenta f(0) = a(0 − h)². Se actualizaron las instrucciones, el párrafo de entrada y "Para recordar".
 - El título de la sección de ejercicios ahora dice "Ejercicios: analiza f(x) = a(x − h)² cuando a = 1 o a = −1".
+
+## 2026-10-25 (segunda serie de 100 ejercicios de f(x) = a(x − h)², con a distinta de 1 y −1)
+- A pedido de Carmen, `matematicas-3/tema-05-a-x-menos-h-cuadrada.html` tiene una **segunda serie de 100 ejercicios** (10 al azar cada vez)
+  "Ejercicios: analiza f(x) = a(x − h)² con otros valores de a", justo después de la serie de a = 1 y a = −1. Aquí la función siempre viene
+  **factorizada** (no hay trinomio para factorizar), con a entero o fraccionario, positivo o negativo (2, −3, 1/2, −2/3, 3/2…), nunca 1 ni −1,
+  y h entero o fraccionario distinto de 0. 50 abren hacia arriba y 50 hacia abajo; 66 son flacas (|a| > 1) y 34 gordas (|a| < 1).
+- Siete preguntas: (1) hacia dónde abre, (2) máximo o mínimo, (3) **¿es gorda o flaca?** (pedido después por Carmen), (4) vértice V(h, 0),
+  (5) **desarrolla el binomio** (x − h)² con la regla, (6) **multiplícalo por a** para obtener f(x) desarrollada y (7) dónde corta al eje y
+  (el término sin x). Con botones para escribir x, ², signos y fracciones. Si hay errores, explica cada uno (por ejemplo "te faltó el doble
+  producto" o "todavía falta multiplicar por a") y muestra los pasos con las cuentas.
+- La serie de a = 1 y a = −1 no tiene la pregunta de gorda o flaca (siempre sería "igual que x²"). Se probó con 140 tarjetas (todas correctas).
