@@ -23,7 +23,7 @@
   <div class="prose">
     <p>En f(x) = a(x − h)², el número <strong>a</strong> decide hacia dónde abre la parábola y qué tan abierta es (como ya vimos en
        f(x) = ax²), y el número <strong>h</strong> la mueve hacia los lados. Para ver bien qué hace h, primero tomamos a = 1:
-       f(x) = (x − h)². Al final practicas con a = 1 y con a = −1.</p>
+       f(x) = (x − h)². En la aplicación puedes cambiar a y h, y al final practicas con a = 1 y con a = −1.</p>
   </div>
 
   <p class="section-label no-caps">¿Qué hace el número h?</p>
@@ -52,20 +52,21 @@
        (x + 5)² = (x − (−5))² ese número es −5, y la parábola se mueve 5 a la izquierda.</p>
   </div>
 
-  <p class="section-label no-caps">Prueba tú: f(x) = (x − h)²</p>
+  <p class="section-label no-caps">Prueba tú: f(x) = a(x − h)²</p>
   <div class="callout">
     <div class="k">Instrucciones</div>
-    <p>Escribe un valor para <strong>h</strong> (por ejemplo <strong>3</strong>, <strong>−2</strong> o <strong>1/2</strong>), entre
-       <strong>−5</strong> y <strong>5</strong>, y oprime <strong>Graficar</strong>. Si h es una fracción (con denominador de 2 a 10), cada cuadrito
-       del eje x se divide en partes iguales para que puedas ver la <strong>escala</strong>. También puedes usar los botones. Observa hacia dónde
-       se mueve la parábola azul punteada (x²) para convertirse en la verde, dónde queda el vértice V(h, 0) y qué pasa
-       con la forma de la parábola.</p>
+    <p>Escribe un valor para <strong>a</strong> (entre <strong>−50</strong> y <strong>50</strong>, distinto de 0) y otro para <strong>h</strong>
+       (entre <strong>−5</strong> y <strong>5</strong>), por ejemplo <strong>3</strong>, <strong>−2</strong> o <strong>1/2</strong>, y oprime <strong>Graficar</strong>.
+       También puedes usar los botones. Observa cómo la parábola azul punteada (x²) se convierte en la verde: primero a la <strong>estira o la voltea</strong>
+       (flechas verticales claras) y luego h la <strong>mueve hacia los lados</strong> (flechas con punta). Fíjate dónde queda el vértice V(h, 0).
+       Si h es una fracción (con denominador de 2 a 10), cada cuadrito del eje x se divide en partes iguales para que puedas ver la <strong>escala</strong>.
+       Para ver qué hace sólo h, deja a = 1.</p>
   </div>
 
   <div class="graph-figure" id="h-lab">
-    <div class="pg-equation" id="h-eq">f(x) = x²</div>
+    <div class="pg-equation" id="h-eq">f(x) = (x − 3)²</div>
     <svg viewBox="0 0 480 380" width="480" height="380" id="h-svg" role="img" style="max-width:100%; height:auto;"
-         aria-label="Gráfica de f(x) = x² y de f(x) = (x − h)² con el valor de h que elijas">
+         aria-label="Gráfica de f(x) = x² y de f(x) = a(x − h)² con los valores de a y h que elijas">
       <defs>
         <clipPath id="h-clip"><rect x="24" y="24" width="432" height="342"/></clipPath>
         <marker id="h-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -74,19 +75,21 @@
       </defs>
       <g id="h-grid"></g>
       <path id="h-ref" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="6 4" clip-path="url(#h-clip)"/>
-      <g id="h-arrows"></g>
+      <g id="h-arrows" clip-path="url(#h-clip)"></g>
       <path id="h-curve" fill="none" stroke="#14301f" stroke-width="3" clip-path="url(#h-clip)"/>
-      <g id="h-refpts"></g>
+      <g id="h-refpts" clip-path="url(#h-clip)"></g>
       <g id="h-pts"></g>
       <g id="h-roots"></g>
       <g id="h-labels"></g>
     </svg>
-    <p class="pg-scale-note">Azul punteada: f(x) = x² (referencia) · Verde: f(x) = (x − h)² · Rombo: raíz (donde toca al eje x) · Cuadro naranja: donde corta al eje y · Eje x: cada cuadrito = <span id="h-xscale">1 unidad</span> · Eje y: cada cuadrito = <span id="h-scale">1 unidad</span></p>
+    <p class="pg-scale-note">Azul punteada: f(x) = x² (referencia) · Verde: f(x) = a(x − h)² · Rombo: raíz (donde toca al eje x) · Cuadro naranja: donde corta al eje y · Eje x: cada cuadrito = <span id="h-xscale">1 unidad</span> · Eje y: cada cuadrito = <span id="h-scale">1 unidad</span></p>
 
     <div class="pg-controls">
       <div class="pg-field">
-        <label class="pg-field-label no-caps" for="h-in">Escribe h (ej. 3, −2, 1/2)</label>
+        <label class="pg-field-label no-caps" for="a-in">Escribe a y h (ej. 3, −2, 1/2)</label>
         <div class="pg-field-row" style="flex-wrap:wrap; justify-content:center;">
+          <span style="display:inline-flex; align-items:center; gap:0.4rem;"><span style="font-family:'IBM Plex Mono',monospace; font-size:1rem; font-weight:700; color:var(--forest); text-transform:none; white-space:nowrap;">a =</span>
+          <input type="text" id="a-in" class="pg-box wide" value="1" inputmode="text" autocomplete="off" style="width:70px;"></span>
           <span style="display:inline-flex; align-items:center; gap:0.4rem;"><span style="font-family:'IBM Plex Mono',monospace; font-size:1rem; font-weight:700; color:var(--forest); text-transform:none; white-space:nowrap;">h =</span>
           <input type="text" id="h-in" class="pg-box wide" value="3" inputmode="text" autocomplete="off" style="width:70px;"></span>
           <button class="pg-btn" id="h-go" type="button">Graficar</button>
@@ -94,7 +97,7 @@
       </div>
     </div>
     <p id="h-error" style="text-align:center; color:#b3412e; font-weight:700; min-height:1.2em; margin:-0.6rem 0 0.6rem;"></p>
-    <div class="pg-actions" id="h-quick" aria-label="Valores rápidos de h"></div>
+    <div class="pg-actions" id="h-quick" aria-label="Valores rápidos de a y h"></div>
 
     <div class="callout" style="width:auto; margin:1.2rem 0 1rem; text-align:left;" id="h-msg"></div>
   </div>
@@ -102,9 +105,9 @@
   <script>
   (function () {
     var NS = 'http://www.w3.org/2000/svg';
-    var UX = 27, UY = 30, OX = 240, OY = 330, XL = 8, YT = 10, YB = -1;
+    var UX = 27, UY = 30, OX = 240, OY = 330, XL = 8, RT = 10, RB = 1; // RT y RB: cuadritos hacia arriba y hacia abajo del eje x
     var XS = [-3, -2, -1, 0, 1, 2, 3];
-    var S = 1; // unidades por cuadrito en el eje y (se ajusta para que se vea el corte con el eje y: h²)
+    var S = 1; // unidades por cuadrito en el eje y (se ajusta para que se vea la parábola completa)
     var D = 1; // denominador de h: si h es racional, cada cuadrito del eje x se divide en D partes iguales
     var MINUS = '−', mono = 'IBM Plex Mono, monospace';
     function sx(x) { return OX + x * UX; }
@@ -121,6 +124,7 @@
     function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = b; b = a % b; a = t; } return a || 1; }
     function frac(n, d) { if (d < 0) { n = -n; d = -d; } var g = gcd(n, d); return { n: n / g, d: d / g }; }
     function add(f, g) { return frac(f.n * g.d + g.n * f.d, f.d * g.d); }
+    function mul(f, g) { return frac(f.n * g.n, f.d * g.d); }
     function val(f) { return f.n / f.d; }
     function absF(f) { return frac(Math.abs(f.n), f.d); }
     function parseNum(txt, name) {
@@ -143,21 +147,25 @@
       return sign + '<span class="frac frac-inline"><span class="num">' + Math.abs(f.n) +
              '</span><span class="den">' + f.d + '</span></span>';
     }
+    function isOne(f) { return f.n === 1 && f.d === 1; }
+    function isMinusOne(f) { return f.n === -1 && f.d === 1; }
+    function coefHTML(f) { return isOne(f) ? '' : (isMinusOne(f) ? MINUS : fracHTML(f)); }
 
     // ---------- cuadrícula ----------
     var grid = document.getElementById('h-grid');
     function drawGrid() {
       clear(grid);
+      var top = sy(RT * S), bot = sy(-RB * S);
       // rejilla fina: cada cuadrito del eje x se divide en D partes iguales cuando h es racional
-      if (D > 1) for (var m = -XL * D; m <= XL * D; m++) if (m % D) el('line', { x1: sx(m / D), y1: sy(YT * S), x2: sx(m / D), y2: sy(YB * S), stroke: '#c9d3c6', 'stroke-width': 0.7 }, grid);
-      for (var i = -XL; i <= XL; i++) el('line', { x1: sx(i), y1: sy(YT * S), x2: sx(i), y2: sy(YB * S), stroke: '#dde2dc', 'stroke-width': 1 }, grid);
-      for (var j = YB; j <= YT; j++) el('line', { x1: sx(-XL), y1: sy(j * S), x2: sx(XL), y2: sy(j * S), stroke: '#dde2dc', 'stroke-width': 1 }, grid);
+      if (D > 1) for (var m = -XL * D; m <= XL * D; m++) if (m % D) el('line', { x1: sx(m / D), y1: top, x2: sx(m / D), y2: bot, stroke: '#c9d3c6', 'stroke-width': 0.7 }, grid);
+      for (var i = -XL; i <= XL; i++) el('line', { x1: sx(i), y1: top, x2: sx(i), y2: bot, stroke: '#dde2dc', 'stroke-width': 1 }, grid);
+      for (var j = -RB; j <= RT; j++) el('line', { x1: sx(-XL), y1: sy(j * S), x2: sx(XL), y2: sy(j * S), stroke: '#dde2dc', 'stroke-width': 1 }, grid);
       el('line', { x1: sx(-XL) - 8, y1: OY, x2: sx(XL) + 10, y2: OY, stroke: '#56604f', 'stroke-width': 1.5 }, grid);
-      el('line', { x1: OX, y1: sy(YT * S) - 8, x2: OX, y2: sy(YB * S) + 4, stroke: '#56604f', 'stroke-width': 1.5 }, grid);
+      el('line', { x1: OX, y1: top - 8, x2: OX, y2: bot + 4, stroke: '#56604f', 'stroke-width': 1.5 }, grid);
       el('text', { x: sx(XL) + 12, y: OY + 4, 'font-family': mono, 'font-size': 12, fill: '#14301f' }, grid).textContent = 'x';
-      el('text', { x: OX + 6, y: sy(YT * S) - 8, 'font-family': mono, 'font-size': 12, fill: '#14301f' }, grid).textContent = 'y';
+      el('text', { x: OX + 6, y: top - 8, 'font-family': mono, 'font-size': 12, fill: '#14301f' }, grid).textContent = 'y';
       for (i = -XL; i <= XL; i++) if (i) el('text', { x: sx(i), y: OY + 13, 'text-anchor': 'middle', 'font-family': mono, 'font-size': 9, fill: '#56604f' }, grid).textContent = String(i).replace('-', MINUS);
-      for (j = 2; j <= YT; j += 2) el('text', { x: OX - 5, y: sy(j * S) + 3, 'text-anchor': 'end', 'font-family': mono, 'font-size': 9, fill: '#56604f' }, grid).textContent = String(j * S);
+      for (j = -RB; j <= RT; j++) if (j && j % 2 === 0) el('text', { x: OX - 5, y: sy(j * S) + 3, 'text-anchor': 'end', 'font-family': mono, 'font-size': 9, fill: '#56604f' }, grid).textContent = String(j * S).replace('-', MINUS);
       // marcas de fracciones en el eje x (medios o tercios): numerador sobre una rayita y denominador debajo
       if (D > 1 && D <= 3) for (m = -XL * D; m <= XL * D; m++) if (m % D) {
         var cx = sx(m / D), tk = { 'text-anchor': 'middle', 'font-family': mono, 'font-size': 7, fill: '#2b6cb0', 'font-weight': 600 };
@@ -167,36 +175,37 @@
       }
     }
 
-    function parabola(h) {
+    // y = a(x − h)², con la altura limitada a la ventana
+    function parabola(a, h) {
       var d = '';
       for (var k = 0; k <= 240; k++) {
         var x = -XL - 0.3 + k * (2 * XL + 0.6) / 240;
-        var y = Math.min((YT + 2) * S, (x - h) * (x - h));
+        var y = Math.max(-(RB + 2) * S, Math.min((RT + 2) * S, a * (x - h) * (x - h)));
         d += (k ? 'L' : 'M') + sx(x).toFixed(1) + ',' + sy(y).toFixed(1);
       }
       return d;
     }
     var refpts = document.getElementById('h-refpts'), scaleEl = document.getElementById('h-scale'), xscaleEl = document.getElementById('h-xscale');
-    // Escala del eje y: el corte con el eje y, (0, h²), siempre queda a la vista.
+    // Escala del eje y: toda la parábola (los puntos con x de −3 a 3 y el corte con el eje y) queda a la vista; si a < 0 la ventana baja.
     // Escala del eje x: si h es racional, cada cuadrito se divide en D partes iguales (D = denominador de h).
-    function setScale(H) {
-      var h = val(H), need = Math.max(9, h * h), steps = [1, 2, 3], k = 0, nd = H.d;
-      while (k < steps.length - 1 && steps[k] * YT < need) k++;
-      if (steps[k] === S && nd === D && grid.firstChild) return;
-      S = steps[k]; D = nd;
+    function setScale(A, H) {
+      var a = val(A), h = val(H), need = Math.max(9, 9 * Math.abs(a), Math.abs(a) * h * h), steps = [1, 2, 3, 5, 10, 20, 50], k = 0, nd = H.d;
+      while (k < steps.length - 1 && steps[k] * 10 < need) k++; // la parábola ocupa 10 cuadritos hacia arriba (a > 0) o hacia abajo (a < 0)
+      var rt = a > 0 ? 10 : 1, rb = a > 0 ? 1 : 10;
+      if (steps[k] === S && nd === D && rt === RT && grid.firstChild) return;
+      S = steps[k]; D = nd; RT = rt; RB = rb; OY = 30 + RT * UY;
       xscaleEl.innerHTML = D === 1 ? '1 unidad' : '1 unidad, dividido en ' + D + ' partes iguales (cada línea fina = <span class="frac frac-inline"><span class="num">1</span><span class="den">' + D + '</span></span>)';
       drawGrid();
-      document.getElementById('h-ref').setAttribute('d', parabola(0));
+      document.getElementById('h-ref').setAttribute('d', parabola(1, 0));
       clear(refpts);
       XS.forEach(function (x) { el('circle', { cx: sx(x), cy: sy(x * x), r: 4.5, fill: '#fff', stroke: '#2b6cb0', 'stroke-width': 1.8 }, refpts); });
       scaleEl.textContent = S === 1 ? '1 unidad' : S + ' unidades';
     }
-    setScale(frac(0, 1));
+    setScale(frac(1, 1), frac(0, 1));
 
     // ---------- etiquetas "(x, y)" con fracciones apiladas ----------
     var CW = 6.6; // ancho aproximado de un carácter (11px monoespaciada)
-    // partes: { t: 'texto' } o { n, d } (fracción apilada)
-    // etiqueta "(x, y)" con x e y como fracciones (xf, yf); isV agrega la V del vértice
+    // partes: { t: 'texto' } o { n, d } (fracción apilada); isV agrega la V del vértice
     function labelSpec(xf, yf, isV) {
       var parts = [], w = 0, hasFrac = false;
       function text(s) { parts.push({ t: s }); w += s.length * CW; }
@@ -245,29 +254,32 @@
     // ---------- dibujo ----------
     var curve = document.getElementById('h-curve'), arrows = document.getElementById('h-arrows'),
         pts = document.getElementById('h-pts'), rootsG = document.getElementById('h-roots'), labels = document.getElementById('h-labels');
-    function drawAt(h, final, H) {
-      curve.setAttribute('d', parabola(h));
+    // a y h (números) son los valores del cuadro de animación; A y H (fracciones), los valores finales
+    function drawAt(a, h, final, A, H) {
+      curve.setAttribute('d', parabola(a, h));
       clear(arrows); clear(pts); clear(labels); clear(rootsG);
-      var items = [], rootBoxes = [], H2 = frac(H.n * H.n, H.d * H.d);
+      var items = [], rootBoxes = [], AH2 = mul(A, frac(H.n * H.n, H.d * H.d)), up = val(A) > 0;
       XS.forEach(function (x) {
-        var y = x * x, xn = x + h;
-        if (Math.abs(h) > 0.15) el('line', { x1: sx(x), y1: sy(y), x2: sx(xn), y2: sy(y), stroke: '#3f6b4a', 'stroke-width': 1.6, 'stroke-dasharray': '4 3', 'marker-end': 'url(#h-arrow)' }, arrows);
-        if (Math.abs(xn) <= XL) {
-          el('circle', { cx: sx(xn), cy: sy(y), r: 6, fill: '#c4e86b', stroke: '#14301f', 'stroke-width': 2 }, pts);
+        var y0 = x * x, y1 = a * x * x, xn = x + h;
+        // 1.º se multiplica por a (sube o baja) y 2.º se suma h (se mueve hacia los lados)
+        if (Math.abs(y1 - y0) > 0.15 * S) el('line', { x1: sx(x), y1: sy(y0), x2: sx(x), y2: sy(y1), stroke: '#9bb39b', 'stroke-width': 1.4, 'stroke-dasharray': '3 3' }, arrows);
+        if (Math.abs(h) > 0.15) el('line', { x1: sx(x), y1: sy(y1), x2: sx(xn), y2: sy(y1), stroke: '#3f6b4a', 'stroke-width': 1.6, 'stroke-dasharray': '4 3', 'marker-end': 'url(#h-arrow)' }, arrows);
+        if (Math.abs(xn) <= XL && y1 <= (RT + 0.3) * S && y1 >= -(RB + 0.3) * S) {
+          el('circle', { cx: sx(xn), cy: sy(y1), r: 6, fill: '#c4e86b', stroke: '#14301f', 'stroke-width': 2 }, pts);
           // el punto que cae sobre el eje y se rotula aparte, como corte con el eje y
           if (final && !(Math.abs(xn) < 1e-9 && H.n !== 0)) {
             var right = xn > val(H);
-            items.push({ px: sx(xn), py: sy(y), spec: labelSpec(add(frac(x, 1), H), frac(y, 1), x === 0),
-                         order: x === 0 ? ['below', 'right', 'left', 'above'] : (right ? ['right', 'above', 'left', 'below'] : ['left', 'above', 'right', 'below']) });
+            items.push({ px: sx(xn), py: sy(y1), spec: labelSpec(add(frac(x, 1), H), mul(A, frac(x * x, 1)), x === 0),
+                         order: x === 0 ? (up ? ['below', 'right', 'left', 'above'] : ['above', 'right', 'left', 'below']) : (right ? ['right', 'above', 'left', 'below'] : ['left', 'above', 'right', 'below']) });
           }
         }
       });
-      // corte con el eje y: (0, h²) = (0, f(0)); con h = 0 es el propio vértice
+      // corte con el eje y: (0, a·h²) = (0, f(0)); con h = 0 es el propio vértice
       if (H.n !== 0) {
-        var q = 8, ix = sx(0), iy = sy(h * h);
+        var q = 8, ix = sx(0), iy = sy(a * h * h);
         el('rect', { x: ix - q / 2 - 1, y: iy - q / 2 - 1, width: q + 2, height: q + 2, rx: 2, fill: '#c2621b', stroke: '#ffffff', 'stroke-width': 1.5 }, rootsG);
         rootBoxes.push({ x: ix - 7, y: iy - 7, w: 14, h: 14 });
-        if (final) items.push({ px: ix, py: iy, spec: labelSpec(frac(0, 1), H2, false), order: ['right', 'left', 'above', 'below'] });
+        if (final) items.push({ px: ix, py: iy, spec: labelSpec(frac(0, 1), AH2, false), order: ['right', 'left', up ? 'above' : 'below', up ? 'below' : 'above'] });
       }
       // raíz: rombo sobre el eje x, justo en el vértice (h, 0)
       var cx = sx(h), s = 8;
@@ -281,90 +293,97 @@
 
     // ---------- texto: ecuación y mensaje ----------
     var eqEl = document.getElementById('h-eq'), msgEl = document.getElementById('h-msg');
-    function describe(H) {
-      var h = val(H), hH = fracHTML(H), absH = fracHTML(absF(H)), lines = [];
-      if (H.n === 0) {
-        eqEl.innerHTML = 'f(x) = x²';
-        lines.push('<strong>h = 0:</strong> la parábola <strong>no se movió</strong>: es f(x) = x².');
-      } else if (h > 0) {
-        eqEl.innerHTML = 'f(x) = (x ' + MINUS + ' ' + absH + ')²';
-        lines.push('<strong>h = ' + hH + ' &gt; 0:</strong> la parábola se movió <strong>' + absH + ' ' + (absH === '1' ? 'unidad' : 'unidades') + ' a la DERECHA</strong>. En el paréntesis se resta h: <strong>(x ' + MINUS + ' ' + hH + ')²</strong>.');
-      } else {
-        eqEl.innerHTML = 'f(x) = (x + ' + absH + ')²';
-        lines.push('<strong>h = ' + hH + ' &lt; 0:</strong> la parábola se movió <strong>' + absH + ' ' + (absH === '1' ? 'unidad' : 'unidades') + ' a la IZQUIERDA</strong>. Como (x + ' + absH + ') = (x ' + MINUS + ' (' + hH + ')), se ve con signo <strong>más</strong>: <strong>(x + ' + absH + ')²</strong>.');
-      }
-      lines.push('<strong>Vértice:</strong> V(' + hH + ', 0), el punto más bajo de la parábola (un <strong>MÍNIMO</strong>). <strong>Eje de simetría:</strong> x = ' + hH + '.');
+    function describe(A, H) {
+      var a = val(A), h = val(H), aH = fracHTML(A), hH = fracHTML(H), absH = fracHTML(absF(H)), absA = fracHTML(absF(A)), lines = [];
+      var par = H.n === 0 ? 'x²' : (h > 0 ? '(x ' + MINUS + ' ' + absH + ')²' : '(x + ' + absH + ')²');
+      eqEl.innerHTML = 'f(x) = ' + coefHTML(A) + par;
+      // a: hacia dónde abre y qué tan abierta es
+      lines.push(a > 0 ? '<strong>a = ' + aH + ' &gt; 0:</strong> abre <strong>hacia ARRIBA</strong> y el vértice es un <strong>MÍNIMO</strong>.'
+                       : '<strong>a = ' + aH + ' &lt; 0:</strong> abre <strong>hacia ABAJO</strong> y el vértice es un <strong>MÁXIMO</strong>.');
+      if (Math.abs(a) > 1) lines.push('<strong>|a| = ' + absA + ' &gt; 1:</strong> es más <strong>DELGADA</strong> que x².');
+      else if (Math.abs(a) < 1) lines.push('<strong>|a| = ' + absA + ' &lt; 1:</strong> es más <strong>GORDA</strong> (abierta) que x².');
+      else lines.push('<strong>|a| = 1:</strong> tiene la <strong>misma abertura</strong> que x²' + (a < 0 ? ', pero volteada.' : '.'));
+      // h: hacia dónde se mueve
+      if (H.n === 0) lines.push('<strong>h = 0:</strong> la parábola <strong>no se movió hacia los lados</strong>: f(x) = ' + coefHTML(A) + 'x².');
+      else if (h > 0) lines.push('<strong>h = ' + hH + ' &gt; 0:</strong> la parábola se movió <strong>' + absH + ' ' + (absH === '1' ? 'unidad' : 'unidades') + ' a la DERECHA</strong>. En el paréntesis se resta h: <strong>(x ' + MINUS + ' ' + hH + ')²</strong>.');
+      else lines.push('<strong>h = ' + hH + ' &lt; 0:</strong> la parábola se movió <strong>' + absH + ' ' + (absH === '1' ? 'unidad' : 'unidades') + ' a la IZQUIERDA</strong>. Como (x + ' + absH + ') = (x ' + MINUS + ' (' + hH + ')), se ve con signo <strong>más</strong>: <strong>(x + ' + absH + ')²</strong>.');
+      lines.push('<strong>Vértice:</strong> V(' + hH + ', 0), el punto más ' + (a > 0 ? 'bajo' : 'alto') + ' de la parábola. <strong>Eje de simetría:</strong> x = ' + hH + '.');
       if (H.d > 1) {
         var whole = Math.floor(Math.abs(H.n) / H.d), rem = Math.abs(H.n) % H.d, plural = whole > 1 ? 's' : '';
         lines.push('<strong>Escala:</strong> h es un racional con denominador ' + H.d + ', así que cada cuadrito del eje x se divide en <strong>' + H.d + ' partes iguales</strong> (las líneas finas) y cada parte vale ' + fracHTML(frac(1, H.d)) +
                    '. Para ubicar x = ' + hH + ' desde el origen, avanza ' + (whole ? whole + ' cuadrito' + plural + ' completo' + plural + ' y luego ' : '') + rem + ' de las ' + H.d + ' partes' + (whole ? ' del siguiente' : '') + ' hacia la ' + (h > 0 ? 'derecha' : 'izquierda') + '.');
       }
-      lines.push('<strong>Forma:</strong> abre <strong>hacia ARRIBA</strong> y es <strong>igual de abierta</strong> que x²: h sólo mueve la gráfica hacia los lados.');
+      var h2 = frac(H.n * H.n, H.d * H.d), cy = mul(A, h2), cyH = fracHTML(cy), h2H = fracHTML(h2);
+      var pre = isOne(A) ? '' : (isMinusOne(A) ? MINUS : aH + ' · ');
       if (H.n === 0) lines.push('<strong>Corte con el eje y:</strong> con h = 0 el vértice está sobre el eje y: la parábola lo corta en <strong>(0, 0)</strong>.');
       else {
-        var h2H = fracHTML(frac(H.n * H.n, H.d * H.d));
-        lines.push('<strong>Corte con el eje y:</strong> es el punto donde x = 0 (cuadro naranja). f(0) = (0 ' + MINUS + (h < 0 ? ' (' + hH + ')' : ' ' + hH) + ')² = (' + (h < 0 ? '' : MINUS) + (h < 0 ? absH : hH) + ')² = <strong>' + h2H + '</strong>, así que la parábola corta al eje y en <strong>(0, ' + h2H + ')</strong>.');
+        var inner = '(0 ' + MINUS + (h < 0 ? ' (' + hH + ')' : ' ' + hH) + ')²';
+        lines.push('<strong>Corte con el eje y:</strong> es el punto donde x = 0 (cuadro naranja). f(0) = ' + pre + inner + ' = ' + (pre ? pre + h2H + ' = ' : '') + '<strong>' + cyH + '</strong>, así que la parábola corta al eje y en <strong>(0, ' + cyH + ')</strong>.');
       }
-      lines.push('<strong>Raíz:</strong> (x ' + MINUS + (h < 0 ? ' (' + hH + ')' : ' ' + hH) + ')² = 0 → x ' + MINUS + (h < 0 ? ' (' + hH + ')' : ' ' + hH) + ' = 0 → <strong>x = ' + hH + '</strong>. Es una raíz real <strong>repetida</strong>: la parábola sólo toca al eje x en un punto.');
-      msgEl.innerHTML = '<div class="k no-caps">¿Qué pasa con h = ' + hH + '?</div>' + lines.map(function (l) { return '<p style="margin:0.35rem 0;">' + l + '</p>'; }).join('');
+      lines.push('<strong>Raíz:</strong> ' + coefHTML(A) + par + ' = 0 → x ' + MINUS + (h < 0 ? ' (' + hH + ')' : ' ' + hH) + ' = 0 → <strong>x = ' + hH + '</strong>. Es una raíz real <strong>repetida</strong>: la parábola sólo toca al eje x en un punto.');
+      msgEl.innerHTML = '<div class="k no-caps">¿Qué pasa con a = ' + aH + ' y h = ' + hH + '?</div>' + lines.map(function (l) { return '<p style="margin:0.35rem 0;">' + l + '</p>'; }).join('');
     }
 
     // ---------- animación ----------
-    var curH = 0, anim = null;
-    function go(H) {
-      var fh = curH, th = val(H), t0 = null;
+    var curA = 1, curH = 0, anim = null;
+    function go(A, H) {
+      var fa = curA, fh = curH, ta = val(A), th = val(H), t0 = null;
       if (anim) cancelAnimationFrame(anim);
-      describe(H);
+      describe(A, H);
       function step(ts) {
         if (t0 === null) t0 = ts;
         var p = Math.min(1, (ts - t0) / 900), e = p * p * (3 - 2 * p);
-        curH = fh + (th - fh) * e;
-        drawAt(curH, p >= 1, H);
+        curA = fa + (ta - fa) * e; curH = fh + (th - fh) * e;
+        drawAt(curA, curH, p >= 1, A, H);
         if (p < 1) anim = requestAnimationFrame(step);
       }
       anim = requestAnimationFrame(step);
     }
 
-    var inH = document.getElementById('h-in'), errEl = document.getElementById('h-error');
+    var inA = document.getElementById('a-in'), inH = document.getElementById('h-in'), errEl = document.getElementById('h-error');
     function submit() {
-      var H = parseNum(inH.value, 'h');
-      inH.classList.remove('invalid');
+      var A = parseNum(inA.value, 'a'), H = parseNum(inH.value, 'h');
+      inA.classList.remove('invalid'); inH.classList.remove('invalid');
       function bad(input, msg) { errEl.textContent = msg; input.classList.add('invalid'); }
+      if (A.error) return bad(inA, A.error);
       if (H.error) return bad(inH, H.error);
+      if (A.n === 0) return bad(inA, 'a no puede ser 0: con a = 0 la función ya no es cuadrática.');
+      if (Math.abs(val(A)) > 50) return bad(inA, 'Elige un valor de a entre −50 y 50.');
+      if (A.d > 99) return bad(inA, 'Usa una fracción con denominador menor que 100.');
       if (Math.abs(val(H)) > 5) return bad(inH, 'Elige un valor de h entre −5 y 5.');
       if (H.d > 10) return bad(inH, 'Usa una fracción con denominador de 2 a 10, por ejemplo 1/2, 3/4 o 5/3.');
       errEl.textContent = '';
-      setScale(H);
-      go(H);
+      setScale(A, H);
+      go(A, H);
     }
     document.getElementById('h-go').addEventListener('click', submit);
-    inH.addEventListener('keydown', function (e) { if (e.key === 'Enter') submit(); });
+    [inA, inH].forEach(function (inp) { inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') submit(); }); });
 
     var quick = document.getElementById('h-quick');
-    ['3', '-2', '0', '1', '-4', '5', '1/2', '-5/2'].forEach(function (v) {
+    [['1', '3'], ['1', '-2'], ['2', '1'], ['-1', '3'], ['1/2', '-2'], ['-2', '-1'], ['3', '0'], ['-1/2', '5/2']].forEach(function (v) {
       var btn = document.createElement('button');
       btn.type = 'button'; btn.className = 'pg-btn secondary';
       btn.style.padding = '0.4rem 0.9rem';
-      btn.innerHTML = 'h = ' + fracHTML(parseNum(v));
-      btn.addEventListener('click', function () { inH.value = v.replace('-', MINUS); submit(); });
+      btn.innerHTML = 'a = ' + fracHTML(parseNum(v[0])) + ', h = ' + fracHTML(parseNum(v[1]));
+      btn.addEventListener('click', function () { inA.value = v[0].replace('-', MINUS); inH.value = v[1].replace('-', MINUS); submit(); });
       quick.appendChild(btn);
     });
 
-    drawAt(0, false, frac(0, 1));
+    drawAt(1, 0, false, frac(1, 1), frac(0, 1));
     submit();
   })();
   </script>
 
   <p class="section-label no-caps">Para recordar</p>
   <div class="callout">
-    <div class="k no-caps">En f(x) = (x − h)²</div>
+    <div class="k no-caps">En f(x) = a(x − h)²</div>
     <p><strong>1.</strong> h es el número que <strong>se le resta a x</strong> dentro del paréntesis. Si ves (x + 4)², entonces h = −4.</p>
-    <p><strong>2.</strong> h &gt; 0 mueve la parábola a la <strong>derecha</strong>; h &lt; 0, a la <strong>izquierda</strong>; h = 0 la deja en su lugar.</p>
-    <p><strong>3.</strong> No cambia la forma ni hacia dónde abre: siempre es igual de abierta que x² y abre hacia arriba.</p>
-    <p><strong>4.</strong> El vértice es <strong>V(h, 0)</strong>, el eje de simetría es <strong>x = h</strong> y la única raíz es <strong>x = h</strong> (raíz repetida). Corta al eje y en <strong>(0, h²)</strong>.</p>
+    <p><strong>2.</strong> h &gt; 0 mueve la parábola a la <strong>derecha</strong>; h &lt; 0, a la <strong>izquierda</strong>; h = 0 la deja en su lugar. h no cambia la forma ni hacia dónde abre.</p>
+    <p><strong>3.</strong> a decide hacia dónde abre (a &gt; 0 arriba y mínimo; a &lt; 0 abajo y máximo) y qué tan abierta es (|a| &gt; 1 delgada; |a| &lt; 1 gorda).</p>
+    <p><strong>4.</strong> El vértice es <strong>V(h, 0)</strong>, el eje de simetría es <strong>x = h</strong> y la única raíz es <strong>x = h</strong> (raíz repetida). Corta al eje y en <strong>(0, a·h²)</strong>.</p>
   </div>
 
-  <p class="section-label no-caps" id="ejercicios-x-menos-h">Ejercicios: analiza f(x) = a(x − h)²</p>
+  <p class="section-label no-caps" id="ejercicios-x-menos-h">Ejercicios: analiza f(x) = a(x − h)² cuando a = 1 o a = −1</p>
   <div class="callout">
     <div class="k">Instrucciones</div>
     <p>Algunas funciones vienen <strong>factorizadas</strong>, por ejemplo f(x) = (x − 3)², y otras vienen como un

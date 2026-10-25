@@ -1590,3 +1590,15 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (el teclado del celular o la tableta no tiene fácil el ^). Ahora, debajo de la casilla de la función factorizada hay botones
   ( ) x ² + − , y debajo del vértice y del corte con el eje y hay botones − y / (se escribe en la casilla donde se esté escribiendo). Se
   sigue aceptando ^2 con el teclado. Las instrucciones lo mencionan. Se probó tecleando sólo con los botones (6 trinomios, todos correctos).
+
+## 2026-10-25 (la aplicación ahora es f(x) = a(x − h)², con casilla para a)
+- A pedido de Carmen, la aplicación de `matematicas-3/tema-05-a-x-menos-h-cuadrada.html` tiene ahora **dos casillas, a y h** (con botones
+  rápidos como a = 2, h = 1 o a = −1/2, h = 5/2), y el título que se ve arriba de la gráfica es f(x) = a(x − h)² con los valores elegidos
+  (por ejemplo f(x) = −2(x + 1)²). a puede ser un entero, fracción o decimal entre −50 y 50, distinto de 0; h sigue entre −5 y 5.
+- La gráfica muestra cómo la parábola azul punteada x² se convierte en la verde: primero a la estira o la voltea (flechas verticales claras) y
+  luego h la mueve hacia los lados (flechas con punta). Con a < 0 la ventana baja para que se vea la parábola completa (máximo en el
+  vértice); la escala del eje y se ajusta sola (1, 2, 3, 5, 10, 20 o 50 unidades por cuadrito). Se sigue marcando el vértice V(h, 0), la raíz,
+  el corte con el eje y, **(0, a·h²)**, y la escala del eje x cuando h es racional.
+- El cuadro de texto explica a (hacia dónde abre, máximo o mínimo, delgada o gorda), h, vértice, eje de simetría, raíz y el corte con el eje y
+  con la cuenta f(0) = a(0 − h)². Se actualizaron las instrucciones, el párrafo de entrada y "Para recordar".
+- El título de la sección de ejercicios ahora dice "Ejercicios: analiza f(x) = a(x − h)² cuando a = 1 o a = −1".
