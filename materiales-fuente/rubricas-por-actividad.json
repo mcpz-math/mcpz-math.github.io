@@ -75,6 +75,32 @@
       { "a": [1, 1], "b": [4, 1] }
     ]
   },
+  "serie2cuad": {
+    "titulo": "Serie 2. Binomio al cuadrado",
+    "autor": "DTI. Maria del Carmen Pérez Zarate",
+    "estudiante": "Estudiante____________________________________________________  Fecha______________  Grupo___________",
+    "propositoTitulo": "PROPÓSITO",
+    "proposito": "Evaluar el desarrollo de habilidades para desarrollar binomios al cuadrado de la forma @@, identificando correctamente cada término (con su signo, coeficiente, exponente o fracción), reconociendo el resultado como un trinomio cuadrado perfecto y explicando y justificando cada parte del procedimiento.",
+    "instruccionesIntro": "Para cada uno de los siguientes binomios al cuadrado:",
+    "pasos": [
+      "Identifica el primer término (a) y el segundo término (b) del binomio, con su signo.",
+      "Desarróllalo con la regla: el cuadrado del primer término, más (o menos) el doble producto del primero por el segundo, más el cuadrado del segundo término.",
+      "Comprueba tu resultado multiplicando el binomio por sí mismo, término a término, y reduciendo los términos semejantes."
+    ],
+    "rubricaTitulo": "Rúbrica",
+    "ejercicios": [
+      "x+8", "n-6", "b+12", "k-9", "3y+4",
+      "5m-2", "6c+1", "2a-7b", "4r+5s", "a^2-10",
+      "2k^3+5", "-3x+7", "-5n-4", "6pq-5r", "3x^2y-2z^3",
+      "x-{1/3}", "{2/5}y+5", "{3/4}a-{1/2}b", "0.6m-0.2", "p^m-q^n"
+    ],
+    "respuestas": [
+      "x^2+16x+64", "n^2-12n+36", "b^2+24b+144", "k^2-18k+81", "9y^2+24y+16",
+      "25m^2-20m+4", "36c^2+12c+1", "4a^2-28ab+49b^2", "16r^2+40rs+25s^2", "a^4-20a^2+100",
+      "4k^6+20k^3+25", "9x^2-42x+49", "25n^2+40n+16", "36p^2q^2-60pqr+25r^2", "9x^4y^2-12x^2yz^3+4z^6",
+      "x^2-{2/3}x+{1/9}", "{4/25}y^2+4y+25", "{9/16}a^2-{3/4}ab+{1/4}b^2", "0.36m^2-0.24m+0.04", "p^{2m}-2p^mq^n+q^{2n}"
+    ]
+  },
   "actividades": [
     {
       "id": "signos",
@@ -566,6 +592,65 @@
           "n3": "Valida con ejemplos: compara los signos de a y b en varias de las funciones de la serie y da ejemplos y no-ejemplos de cuándo la parábola corta al eje x.",
           "n4": "Explica la estructura del argumento: los signos de a y b son la hipótesis y el tipo de raíces es la conclusión. Verifica que lo que concluye coincide con su gráfica.",
           "n5": "Elabora una cadena de argumentos que generaliza para cualquier a y b (b = 0: raíz doble; signos contrarios: dos raíces reales; mismo signo: raíces imaginarias) y la relaciona con la posición del vértice respecto del eje x."
+        }
+      ]
+    },
+    {
+      "id": "serie2cuad",
+      "titulo": "Matemáticas 3 · Tema 6 · Serie 2 de binomio al cuadrado (Word)",
+      "file": "",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los 20 binomios al cuadrado desarrollados en la hoja, con los incisos a), b) y c) de cada uno.",
+        "Que se vea la identificación de a y b con su signo, el cuadrado de cada término y el doble producto, no sólo el trinomio final.",
+        "La comprobación de varios ejercicios, multiplicando el binomio por sí mismo término a término."
+      ],
+      "errores": [
+        "(a + b)² = a² + b² (olvida el doble producto 2ab).",
+        "(3x)² = 3x² (no eleva al cuadrado el coeficiente) o (x³)² = x⁵ (suma los exponentes en lugar de multiplicarlos).",
+        "Pierde el signo: (−3x + 7)² con doble producto positivo, o (a − b)² = a² − b².",
+        "En (6pq − 5r)² deja fuera una letra del doble producto o no eleva al cuadrado todas las letras del término.",
+        "Con fracciones o decimales calcula mal el cuadrado ((1/3)² = 1/6, (0.2)² = 0.4) o no simplifica el doble producto.",
+        "Con exponentes literales escribe (pᵐ)² = pᵐ + 2 o pᵐ² en lugar de p²ᵐ."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe cada binomio con paréntesis y el exponente 2, y el trinomio con los signos en su lugar.",
+            "Escribe a y b con su signo, coeficiente, exponentes y fracciones o decimales.",
+            "Sus pasos están en orden (a y b, cuadrados, doble producto, comprobación) y puede explicarlos con sus palabras."
+          ],
+          "n1": "Escribe el binomio sin paréntesis o sin el exponente, deja términos sin signo o sin coeficiente (por ejemplo x² + 25 en lugar de x² + 10x + 25) y no se entiende su procedimiento. No usa ningún apoyo, como escribir a y b o la comprobación.",
+          "n23": "Usa la simbología con limitaciones: se entiende lo que hizo, aunque a veces omite un paréntesis, un signo o la identificación de a y b. Repite la regla de manera mecánica y casi no la explica.",
+          "n4": "Escribe con la simbología correcta a, b y el trinomio de cada ejercicio, con alguna deficiencia (por ejemplo, deja una fracción sin simplificar o un signo ambiguo). Explica con claridad qué hizo en cada paso.",
+          "n5": "Escribe todos los pasos con notación correcta (a y b con su signo, trinomio ordenado, exponentes, fracciones y decimales) y explica por escrito u oralmente de dónde sale cada término, reconstruyendo el procedimiento en un binomio nuevo."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Identifica a y b con su signo, también cuando traen coeficiente, potencias, varias letras, fracciones o decimales.",
+            "Aplica (a ± b)² = a² ± 2ab + b² y reconoce el resultado como un trinomio cuadrado perfecto.",
+            "Eleva al cuadrado cada término completo (coeficiente y letras) y multiplica los exponentes."
+          ],
+          "n1": "Conoce la regla (a + b)² = a² + 2ab + b² sólo de memoria; escribe a² + b² (olvida el doble producto) o no eleva al cuadrado el coeficiente. No distingue el primer término del segundo.",
+          "n23": "Hace un uso correcto de las expresiones: identifica a y b y aplica la regla en casos sencillos ((x + 8)², (n − 6)²). Le fallan los casos con coeficientes, potencias, varias letras, fracciones o decimales, o el signo del doble producto.",
+          "n4": "Comprende y maneja las propiedades: eleva al cuadrado cada término, calcula el doble producto con su signo y simplifica, incluso con varias letras, fracciones, decimales o exponentes literales. Reconoce que el resultado es un trinomio cuadrado perfecto.",
+          "n5": "Dota de significado y generaliza: explica por qué (a ± b)² no es a² ± b² (aparece el doble producto 2ab) y generaliza la regla para cualquier a y b, también con signos negativos, y la usa al revés para reconocer un trinomio cuadrado perfecto."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué (a + b)² no es a² + b²: aparece el doble producto 2ab.",
+            "Explica de qué depende el signo del término de en medio (suma o resta en el binomio).",
+            "Comprueba multiplicando el binomio por sí mismo, término a término, y reduciendo los términos semejantes.",
+            "Distingue con ejemplos un trinomio cuadrado perfecto (x² + 10x + 25) de uno que no lo es (x² + 25)."
+          ],
+          "n1": "Defiende su resultado con frases como «así es la regla» o «así me salió». Reconoce intuitivamente que hay un procedimiento, pero no lo explica ni lo comprueba.",
+          "n2": "Explica con sus palabras («se eleva cada uno al cuadrado y se suma el doble del primero por el segundo») por qué sale un trinomio, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: multiplica varios binomios por sí mismos y comprueba que coinciden con la regla, y da ejemplos y no-ejemplos ((x + 5)² = x² + 10x + 25 sí; x² + 25 no).",
+          "n4": "Explica la estructura del argumento: la regla (a ± b)² = a² ± 2ab + b² es la hipótesis y el trinomio es la conclusión. Justifica cada paso y verifica multiplicando (a ± b)(a ± b) y reduciendo términos semejantes hasta llegar al mismo trinomio.",
+          "n5": "Elabora una cadena de argumentos que generaliza: demuestra por qué (a ± b)² = a² ± 2ab + b² a partir de (a ± b)(a ± b) y explica por qué el término de en medio cambia de signo y el primero y el último siempre son positivos. Distingue convencerse con ejemplos de demostrar."
         }
       ]
     },

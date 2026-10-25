@@ -1328,3 +1328,21 @@ Registro de lo que vamos haciendo, en orden cronológico.
   muestra ahora sólo "Materiales".
 - En `materiales-fuente/rubricas-por-actividad.json` la rúbrica del método gráfico apunta ahora a
   `tema-01-grafico.html`.
+
+## 2026-10-25 (Serie 2 de Binomio al cuadrado en Word)
+- Carmen pidió una serie de 20 binomios al cuadrado con el formato de sus series en Word. Se hizo
+  `Serie-2-binomio-al-cuadrado.docx` en `Escritorio\IEMS\Matemàticas III\Productos notables\Binomios al cuadrado\`
+  (junto a la Serie 1; no está en el sitio), con el mismo diseño de la Serie 1: título, Estudiante / Fecha /
+  Grupo, propósito con (a ± b)² = a² ± 2ab + b², instrucciones y tabla de 20 ejercicios en dos bloques (1–10 y
+  11–20) con ecuaciones de Word (fracciones apiladas).
+- Los 20 ejercicios son nuevos (ninguno repite la Serie 1) y siguen su progresión: 1–4 suma o resta con un
+  número, 5–7 con coeficiente, 8–9 dos letras, 10–11 potencias, 12–13 primer término negativo, 14–15
+  monomios de varias letras, 16–18 fracciones, 19 decimales y 20 exponentes literales.
+- Se agregó un inciso c) (comprobar multiplicando el binomio por sí mismo) para que la rúbrica pueda evaluar
+  la verificación. La rúbrica usa la matriz de niveles (Comunicación, Representación algebraica y
+  Argumentación; Niveles 1 a 5 y nota del Nivel 0) con "Qué observar" y niveles concretos de esta serie, en
+  hoja horizontal.
+- Fuente y generador guardados en `materiales-fuente/` (`rubricas-por-actividad.json`, bloque y actividad
+  "serie2cuad", con las respuestas en el campo "respuestas"; `generar-serie-binomio-cuadrado.ps1`).
+- No se pudo abrir en Word para revisar cómo se ve (Word no se deja automatizar en esta PC); sólo se
+  comprobó que el XML es válido y que los 20 ejercicios salen en su lugar.
