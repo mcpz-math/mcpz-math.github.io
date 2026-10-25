@@ -75,6 +75,34 @@
       { "a": [1, 1], "b": [4, 1] }
     ]
   },
+  "serie1tcp": {
+    "titulo": "Serie 1. Trinomio cuadrado perfecto",
+    "autor": "DTI. Maria del Carmen Pérez Zarate",
+    "estudiante": "Estudiante____________________________________________________  Fecha______________  Grupo___________",
+    "propositoTitulo": "PROPÓSITO",
+    "tipo": "trinomio",
+    "proposito": "Evaluar el desarrollo de habilidades para reconocer un trinomio cuadrado perfecto (TCP), es decir, uno cuyos extremos son cuadrados perfectos y cuyo término de en medio es el doble producto de sus raíces, y para factorizarlo como un binomio al cuadrado de la forma @@, explicando y justificando cada parte del procedimiento.",
+    "instruccionesIntro": "Para cada uno de los siguientes trinomios (algunos no son un trinomio cuadrado perfecto):",
+    "pasos": [
+      "Escribe la raíz cuadrada del primer y del último término. Si alguno no es un cuadrado perfecto, ya no es un TCP.",
+      "Calcula el doble producto de las dos raíces (2ab) y compáralo con el término de en medio.",
+      "Escribe si es o no es un TCP y explica por qué.",
+      "Sólo si es un TCP, factorízalo como un binomio al cuadrado, con el signo del término de en medio, y compruébalo multiplicando el binomio por sí mismo."
+    ],
+    "rubricaTitulo": "Rúbrica",
+    "ejercicios": [
+      "x^2+14x+49", "y^2-10y+25", "a^2+8a+9", "4m^2+12m+9", "25n^2-30n+9",
+      "9p^2+6p+4", "36x^2+60x+25", "4a^2-12ab+9b^2", "x^2+6xy+16y^2", "49p^2+28pq+4q^2",
+      "x^4+10x^2+25", "9y^6-24y^3+16", "4x^2y^2+12xy+9", "x^2+8x+8", "x^2+x+{1/4}",
+      "{1/4}a^2-3a+9", "{4/9}m^2+{4/3}m+1", "0.25p^2-0.6p+0.36", "x^2+{1/2}x+{1/4}", "0.04n^2+0.4n+0.25"
+    ],
+    "respuestas": [
+      "Sí: (x+7)^2", "Sí: (y-5)^2", "No: 2(a)(3) = 6a, no 8a", "Sí: (2m+3)^2", "Sí: (5n-3)^2",
+      "No: 2(3p)(2) = 12p, no 6p", "Sí: (6x+5)^2", "Sí: (2a-3b)^2", "No: 2(x)(4y) = 8xy, no 6xy", "Sí: (7p+2q)^2",
+      "Sí: (x^2+5)^2", "Sí: (3y^3-4)^2", "Sí: (2xy+3)^2", "No: 8 no es cuadrado perfecto", "Sí: (x+{1/2})^2",
+      "Sí: ({1/2}a-3)^2", "Sí: ({2/3}m+1)^2", "Sí: (0.5p-0.6)^2", "No: 2(x)({1/2}) = x, no {1/2}x", "No: 2(0.2n)(0.5) = 0.2n, no 0.4n"
+    ]
+  },
   "serie2cuad": {
     "titulo": "Serie 2. Binomio al cuadrado",
     "autor": "DTI. Maria del Carmen Pérez Zarate",
@@ -651,6 +679,65 @@
           "n3": "Valida con ejemplos: multiplica varios binomios por sí mismos y comprueba que coinciden con la regla, y da ejemplos y no-ejemplos ((x + 5)² = x² + 10x + 25 sí; x² + 25 no).",
           "n4": "Explica la estructura del argumento: la regla (a ± b)² = a² ± 2ab + b² es la hipótesis y el trinomio es la conclusión. Justifica cada paso y verifica multiplicando (a ± b)(a ± b) y reduciendo términos semejantes hasta llegar al mismo trinomio.",
           "n5": "Elabora una cadena de argumentos que generaliza: demuestra por qué (a ± b)² = a² ± 2ab + b² a partir de (a ± b)(a ± b) y explica por qué el término de en medio cambia de signo y el primero y el último siempre son positivos. Distingue convencerse con ejemplos de demostrar."
+        }
+      ]
+    },
+    {
+      "id": "serie1tcp",
+      "titulo": "Matemáticas 3 · Tema 6 · Serie 1 de trinomio cuadrado perfecto (Word)",
+      "file": "",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los 20 trinomios resueltos en la hoja, con los incisos a), b), c) y d) de cada uno (la factorización sólo en los que sí son TCP).",
+        "Que se vean las dos raíces, el doble producto 2ab comparado con el término de en medio y la decisión «sí es» o «no es» con su razón.",
+        "La comprobación de varias factorizaciones, multiplicando el binomio por sí mismo."
+      ],
+      "errores": [
+        "Dice «sí es TCP» porque los dos extremos son cuadrados perfectos, sin revisar el término de en medio (x² + 8x + 9).",
+        "Dice «no es TCP» cuando el término de en medio sí es 2ab, o factoriza uno que no lo es.",
+        "No distingue un término que no es cuadrado perfecto (x² + 8x + 8, 2a² + 8a + 8).",
+        "Factoriza x² − 6x + 9 como (x + 3)² (el signo del binomio es el del término de en medio) o como (x² − 3)².",
+        "Saca mal la raíz de un coeficiente, una potencia, una fracción o un decimal (√4m² = 4m, √y⁶ = y², √0.04 = 0.4).",
+        "Calcula el doble producto sin el 2, o compara con el término de en medio sin fijarse en el signo."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe las raíces a y b y el doble producto 2ab con su signo, coeficiente, exponentes, fracciones o decimales.",
+            "Escribe «sí es» o «no es» un TCP con su razón, y el binomio con paréntesis y el exponente 2.",
+            "Sus pasos están en orden (raíces, doble producto, decisión, factorización, comprobación) y puede explicarlos con sus palabras."
+          ],
+          "n1": "Escribe sólo el resultado («sí», «no» o un binomio) sin las raíces ni el doble producto, olvida el exponente 2 o los paréntesis y no se entiende su procedimiento. No usa ningún apoyo, como calcular 2ab o la comprobación.",
+          "n23": "Usa la simbología con limitaciones: se entiende lo que hizo, aunque a veces omite las raíces, un signo o el exponente. Dice si es o no es un TCP sin justificarlo o repite la regla de manera mecánica.",
+          "n4": "Escribe con la simbología correcta las raíces, el doble producto y la factorización (a ± b)², con alguna deficiencia (por ejemplo, un signo ambiguo o una fracción sin simplificar). Explica con claridad por qué es o no es un TCP.",
+          "n5": "Escribe todos los pasos con notación correcta y explica por escrito u oralmente por qué cada trinomio es o no es un TCP, reconstruyendo el procedimiento en un trinomio nuevo."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Reconoce los cuadrados perfectos (coeficiente, letras con exponente par, fracciones y decimales) y saca su raíz.",
+            "Compara 2ab con el término de en medio para decidir si es un TCP.",
+            "Factoriza como (a + b)² o (a − b)² según el signo del término de en medio."
+          ],
+          "n1": "Conoce la regla a² ± 2ab + b² = (a ± b)² sólo de memoria; no distingue si un término es un cuadrado perfecto, o decide «sí es» sólo porque los extremos son cuadrados perfectos, sin revisar el término de en medio.",
+          "n23": "Hace un uso correcto de las expresiones: saca las raíces y reconoce un TCP en casos sencillos (x² + 14x + 49, a² + 8a + 9). Le fallan los casos con coeficientes, potencias, varias letras, fracciones o decimales, o el signo del binomio.",
+          "n4": "Comprende y maneja las propiedades: reconoce cuándo un término no es un cuadrado perfecto, calcula bien 2ab y lo compara con el término de en medio, y factoriza con el signo correcto, incluso con varias letras, potencias, fracciones o decimales.",
+          "n5": "Dota de significado y generaliza: explica por qué un trinomio con extremos cuadrados perfectos puede no ser un TCP (el término de en medio no es ±2ab) y generaliza el procedimiento para cualquier a y b, también con signos negativos; usa la regla al revés para desarrollar (a ± b)²."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Justifica por qué un trinomio no es un TCP (un extremo no es cuadrado perfecto, o 2ab no coincide con el término de en medio).",
+            "Explica de qué depende el signo del binomio al factorizar un TCP.",
+            "Comprueba multiplicando el binomio por sí mismo, término a término, y reduciendo los términos semejantes, hasta llegar al trinomio original.",
+            "Distingue con ejemplos un TCP (x² + 10x + 25) de uno que no lo es (x² + 10x + 16)."
+          ],
+          "n1": "Defiende su respuesta con frases como «así es la regla» o «así me salió», o dice «sí es» o «no es» sin justificar. Reconoce intuitivamente que hay un procedimiento, pero no lo explica ni lo comprueba.",
+          "n2": "Explica con sus palabras («los de las orillas tienen raíz y el de en medio es el doble de multiplicarlas») por qué es o no es un TCP, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: compara 2ab con el término de en medio en varios trinomios y comprueba al menos una factorización multiplicando el binomio por sí mismo; da ejemplos y no-ejemplos de TCP.",
+          "n4": "Explica la estructura del argumento: que los extremos sean cuadrados perfectos y que el de en medio sea ±2ab es la hipótesis, y que se factorice como (a ± b)² es la conclusión; si falla una condición, concluye que no es un TCP. Justifica cada paso y verifica multiplicando (a ± b)(a ± b).",
+          "n5": "Elabora una cadena de argumentos que generaliza: demuestra que (a ± b)² = a² ± 2ab + b² y que un trinomio de extremos cuadrados perfectos es un TCP si y sólo si su término de en medio es ±2ab. Distingue convencerse con ejemplos de demostrar."
         }
       ]
     },

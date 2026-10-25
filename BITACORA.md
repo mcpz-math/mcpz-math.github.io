@@ -1400,3 +1400,25 @@ Registro de lo que vamos haciendo, en orden cronológico.
   regla (a ± b)² = a² ± 2ab + b², con 3 ejemplos, errores comunes, "Ahora tú" y repaso. Dura 3:02 (antes 3:24).
 - La figura del cuadrado sigue en la explicación escrita de la página. Generador actualizado en
   `materiales-fuente/generar-video-binomio-al-cuadrado.html`.
+
+## 2026-10-25 (ejercicios de TCP: "sí es / no es un TCP" + Serie 1 de TCP en Word)
+- A pedido de Carmen, en los ejercicios de trinomio cuadrado perfecto de `matematicas-3/tema-06-binomio-al-cuadrado-y-tcp.html`
+  ahora hay trinomios que **no** son un TCP. Cada tarjeta tiene dos botones, "Sí es un TCP" y "No es un TCP". Si el
+  alumno dice que no lo es y tiene razón, la página explica por qué. **Sólo si dice que sí lo es (y lo es)** aparece el
+  cuadro para factorizar. Si se equivoca al decidir, ve la respuesta correcta y la razón.
+- El banco de 100 quedó con **80 TCP y 20 que no lo son**, repartidos en todos los niveles (letra ± número, coeficientes,
+  dos letras, potencias, varias letras, fracciones, decimales). Cada "no TCP" falla por una razón y la página la calcula
+  sola: el primer o el último término no es cuadrado perfecto, o el doble producto 2ab no coincide con el término de en
+  medio (la página revisa al cargar que ninguno de los 20 sea en realidad un TCP).
+- **Serie 1 de TCP en Word** (20 ejercicios, 14 TCP y 6 que no lo son, para evaluar): `Escritorio\IEMS\Matemàticas III\Productos notables\
+  Trinomio cuadrado perfecto\Serie-1-trinomio-cuadrado-perfecto.docx` (no está en el sitio). Mismo formato de sus series:
+  título, Estudiante / Fecha / Grupo, propósito, instrucciones a) a d) (raíces, doble producto 2ab, decir si es o no es un
+  TCP y por qué, y factorizar sólo si lo es y comprobarlo), tabla de 20 trinomios en dos bloques con ecuaciones de Word y
+  la rúbrica con la matriz de niveles (Comunicación, Representación algebraica y Argumentación), en hoja horizontal.
+- Fuente y generador: `materiales-fuente/rubricas-por-actividad.json` (bloque y actividad "serie1tcp", con las respuestas)
+  y `generar-serie-binomio-cuadrado.ps1` (ahora también hace series de trinomios con "tipo": "trinomio"; con 3 o más
+  incisos las filas de la tabla son un poco más bajas para que quepa en la primera hoja). La guía en Word para evaluar se
+  regeneró e incluye esta serie.
+- No se pudo abrir en Word para revisar el aspecto (sólo se comprobó que el XML es válido). La Serie 2 de binomio al
+  cuadrado estaba abierta en Word, así que no se regeneró; si su tabla se pasa a una segunda hoja, hay que bajar la altura
+  de las filas como en esta serie.

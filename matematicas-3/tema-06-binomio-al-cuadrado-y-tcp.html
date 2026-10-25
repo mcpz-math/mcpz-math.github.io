@@ -147,10 +147,12 @@
   <p class="section-label" id="ejercicios-tcp">Ejercicios: trinomio cuadrado perfecto (TCP)</p>
   <div class="callout">
     <div class="k">Instrucciones</div>
-    <p>Ahora al revés: <strong>factoriza</strong> cada trinomio cuadrado perfecto. Saca la raíz cuadrada del
-       primer y del último término, comprueba que el de en medio sea el doble producto y escribe un binomio
-       al cuadrado: <strong>a² ± 2ab + b² = (a ± b)²</strong>.</p>
-    <p>Escribe tu respuesta con paréntesis, por ejemplo <strong>(x + 5)^2</strong> o <strong>(x + 5)(x + 5)</strong>,
+    <p>Ahora al revés. <strong>Algunos de estos trinomios no son un TCP.</strong> Para cada uno, saca la raíz
+       cuadrada del primer y del último término y comprueba que el de en medio sea el doble producto 2ab.
+       Después oprime <strong>Sí es un TCP</strong> o <strong>No es un TCP</strong>.</p>
+    <p>Si no lo es, la página te explica por qué. <strong>Sólo si sí lo es</strong>, aparece un cuadro para
+       <strong>factorizarlo</strong> como un binomio al cuadrado: <strong>a² ± 2ab + b² = (a ± b)²</strong>.
+       Escribe tu respuesta con paréntesis, por ejemplo <strong>(x + 5)^2</strong> o <strong>(x + 5)(x + 5)</strong>,
        y oprime <strong>Comprobar</strong>. Para los exponentes usa <strong>^</strong> o los botones de abajo de
        cada cuadro; las fracciones con <strong>/</strong>.</p>
     <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Oprime
@@ -186,18 +188,21 @@
       'x+{1/2}', 'y-{1/3}', 'm+{3/2}', 'n-{2/5}', '{1/2}x+4', '{1/3}y-6', '{2/3}a+3', '{3/4}m-2', '{1/2}x+{1/3}', '{2/5}p-{1/2}', '{3/4}a+{2/3}b', '{1/2}x^2-{1/4}',
       '0.5x+2', '0.3y-4', '0.2m+0.5', '1.5a-3', '0.4p+0.6q', '0.1x^2-0.5'
     ];
-    // Banco 2 (TCP): se factoriza el trinomio que resulta de (primer término ± segundo término)².
+    // Banco 2 (TCP): 80 trinomios que sí son TCP (se escriben como el binomio que se eleva al cuadrado:
+    // primer término, signo, segundo término) y 20 que no lo son (empiezan con "!" y se escriben completos).
+    // En los que no lo son: 3 de cada 15 letra ± número, 4 con coeficiente, 3 con dos letras, 2 con potencias,
+    // 4 con varias letras, 2 con fracciones y 2 con decimales. Cada uno falla por una razón: el primer o el
+    // último término no es cuadrado perfecto, o el de en medio no es el doble producto.
     //   1–15 letra ± número · 16–35 con coeficiente · 36–50 dos letras · 51–62 potencias ·
     //   63–82 monomios de varias letras · 83–94 fracciones · 95–100 decimales.
     var BANK_TCP = [
-      'x+6', 'y-4', 'a+9', 'm-10', 'n+12', 'p-2', 'b+3', 'k-7', 'z+5', 'c-8', 't+11', 'w-1', 'r+14', 'q-9', 'x+7',
-      '2x+5', '3y-2', '4a+3', '5m-4', '6n+1', '2p-9', '3b+7', '4k-5', '5z+2', '7c-3', '2t+11', '3w-8', '6r+5', '8q-1', '9x+4', '4y-7', '5a+6', '3m+10', '2n-3', '10p+1',
-      '3a+2b', '5x-3y', '2m-7n', '4p+5q', '7r-2s', 'a+6b', '3c-d', '2u+9v', '6x-5y', '4m+3n', '5p-8q', '9a+2b', 'x-12y', '8s+t', '3h-4k',
-      'x^2+3', 'y^3-6', 'a^2+8', 'm^3-1', 'n^4+5', 'p^2-10', '2x^2+3', '3y^3-2', '4a^2-5', '5m^3+1', '2n^4-7', '3p^2+4',
-      'xy+4', '2ab-5', '3xy+2z', '4mn-3', '5pq-2r', '2xy-7z^2', '3a^2b+1', '2x^2y-5z', '4mn^2+3', '3p^2q-2r^3', '5x^2y^3+z', '2ab^2-9c^2',
-      '6xy+1', '3mn-8', '2pq+9r', '4a^2b^2-3', 'x^2y+7', '5m^2n-2p', '3xy^2+4', '2ab+3c^2',
-      'x-{1/4}', 'y+{2/3}', 'm-{3/2}', 'n+{4/5}', '{1/2}x-6', '{1/3}y+9', '{3/2}a-2', '{2/3}m+4', '{1/2}x+{1/5}', '{3/5}p-{1/2}', '{2/3}a-{3/4}b', '{1/3}x^2+{1/2}',
-      '0.5x-4', '0.3y+2', '0.2m-0.5', '1.5a+3', '0.6p-0.4q', '0.1x^2+0.7'
+      'x+6', 'y-4', '!x^2+10x+16', 'a+9', 'm-10', 'n+12', '!y^2-6y+10', 'p-2', 'b+3', 'k-7', '!a^2+8a+9', 'z+5', 'c-8', 't+11', 'w-1',
+      '2x+5', '3y-2', '!4x^2+10x+9', '4a+3', '5m-4', '6n+1', '2p-9', '!9y^2-6y+4', '3b+7', '4k-5', '5z+2', '7c-3', '!2a^2+8a+8', '2t+11', '3w-8', '6r+5', '8q-1', '9x+4', '!16p^2-24p+10', '4y-7',
+      '3a+2b', '5x-3y', '!4a^2+10ab+9b^2', '2m-7n', '4p+5q', '7r-2s', 'a+6b', '!x^2-6xy+10y^2', '3c-d', '2u+9v', '6x-5y', '4m+3n', '9a+2b', '!9m^2+12mn+n^2', '5p-8q',
+      'x^2+3', 'y^3-6', 'a^2+8', '!x^4+6x^2+8', 'm^3-1', 'n^4+5', 'p^2-10', '2x^2+3', '3y^3-2', '4a^2-5', '!4y^6-10y^3+25', '5m^3+1',
+      'xy+4', '2ab-5', '3xy+2z', '!x^2y^2+5xy+9', '4mn-3', '5pq-2r', '2xy-7z^2', '3a^2b+1', '!9a^2b^2-12ab+5', '2x^2y-5z', '4mn^2+3', '3p^2q-2r^3', '!4m^2n^2+8mn+9', '5x^2y^3+z', '2ab^2-9c^2', '6xy+1', '3mn-8', '2pq+9r', '4a^2b^2-3', '!x^2y^4-4xy^2+8',
+      'x-{1/4}', 'y+{2/3}', '!x^2+{1/2}x+{1/4}', 'm-{3/2}', 'n+{4/5}', '{1/2}x-6', '{1/3}y+9', '{3/2}a-2', '{2/3}m+4', '!{1/4}y^2-y+{1/2}', '{1/2}x+{1/5}', '{3/5}p-{1/2}',
+      '0.5x-4', '0.3y+2', '!0.04x^2+0.4x+0.25', '0.2m-0.5', '1.5a+3', '!0.09p^2-0.6p+0.4'
     ];
 
     // ---------- texto del banco → pantalla y → lectura ----------
@@ -213,9 +218,10 @@
       return { A: str.slice(0, i), s: str.charAt(i), B: str.slice(i + 1) };
     }
     function build(str) {
+      if (str.charAt(0) === '!') return buildNo(str.slice(1));
       var p = split(str), PA = parse(ps(p.A)).P, PB = parse(ps(p.B)).P, PBs = p.s === '-' ? padd({}, PB, -1) : PB;
       var a2 = pmul(PA, PA), b2 = pmul(PB, PB), ab = pmul(PA, PBs), mid = pmul(ab, { '': [2, 1] });
-      return { A: p.A, B: p.B, s: p.s, sg: p.s === '-' ? MINUS : '+', dec: str.indexOf('.') >= 0,
+      return { isTCP: true, A: p.A, B: p.B, s: p.s, sg: p.s === '-' ? MINUS : '+', dec: str.indexOf('.') >= 0,
                PA: PA, PB: PB, a2: a2, b2: b2, ab: ab, mid: mid, tri: padd(padd(a2, mid, 1), b2, 1) };
     }
     // un término (polinomio de un solo término) → { neg, html }
@@ -225,6 +231,32 @@
       if (d === 1) coef = (n === 1 && vs) ? '' : String(n);
       else coef = dec ? String(n / d) : F(n, d);
       return { neg: c[0] < 0, html: coef + vs };
+    }
+    // raíz cuadrada de un término (polinomio de un solo término), o null si no es cuadrado perfecto
+    function sqrtMono(P) {
+      var k = Object.keys(P)[0], c = P[k];
+      if (c[0] <= 0) return null;
+      var n = Math.sqrt(c[0]), d = Math.sqrt(c[1]), key = '', ok = true;
+      if (n % 1 || d % 1) return null;
+      k.replace(/([a-z])(\d+)/g, function (m, v, e) { if (e % 2) ok = false; else key += v + (e / 2); return m; });
+      if (!ok) return null;
+      var R = {}; R[key] = [n, d]; return R;
+    }
+    // trinomio que NO es un TCP, escrito completo (p. ej. "x^2+10x+16"), con la razón de por qué no lo es
+    function buildNo(str) {
+      var ts = str.match(/[+-]?[^+-]+/g), P = ts.map(function (t) { return parse(ps(t)).P; });
+      var ex = { isTCP: false, dec: str.indexOf('.') >= 0, a2: P[0], mid: P[1], b2: P[2] };
+      ex.tri = padd(padd(P[0], P[1], 1), P[2], 1);
+      var r1 = sqrtMono(P[0]), r3 = sqrtMono(P[2]), h = function (Q) { return termHTML(Q, ex.dec).html; };
+      if (!r1) ex.why = 'El primer término (' + h(P[0]) + ') no es un cuadrado perfecto.';
+      else if (!r3) ex.why = 'El último término (' + h(P[2]) + ') no es un cuadrado perfecto.';
+      else {
+        var dp = pmul(pmul(r1, r3), { '': [2, 1] });
+        if (same(dp, P[1]) || same(dp, padd({}, P[1], -1))) throw new Error('Este ejercicio sí es un TCP: ' + str);
+        ex.why = '√(' + h(P[0]) + ') = ' + h(r1) + ' y √(' + h(P[2]) + ') = ' + h(r3) + ', pero el doble producto 2(' + h(r1) + ')(' + h(r3) + ') = ' + h(dp) +
+                 ' y el término de en medio es ' + h(P[1]) + ': no coinciden.';
+      }
+      return ex;
     }
     function triHTML(ex) {
       return [ex.a2, ex.mid, ex.b2].map(function (P, i) {
@@ -255,27 +287,51 @@
         try { var q = parse(m[1]); return q.terms === 2 && same(pmul(q.P, q.P), ex.tri); } catch (e) { return false; }
       }
       function makeCard(ex, idx) {
-        var bin = '(' + fx(ex.A) + ' ' + ex.sg + ' ' + fx(ex.B) + ')²', sol, q, label;
+        var bin = ex.isTCP ? '(' + fx(ex.A) + ' ' + ex.sg + ' ' + fx(ex.B) + ')²' : '', sol, q, label;
         if (kind === 'bc') {
           q = bin; label = 'Tu desarrollo del ejercicio ' + (idx + 1);
           sol = '<span style="white-space:nowrap;">' + bin + ' = (' + fx(ex.A) + ')² ' + ex.sg + ' 2(' + fx(ex.A) + ')(' + fx(ex.B) + ') + (' + fx(ex.B) + ')²</span><br>= <strong>' + triHTML(ex) + '</strong>';
         } else {
           q = triHTML(ex); label = 'Tu factorización del ejercicio ' + (idx + 1);
-          sol = '<span style="white-space:nowrap;">√(' + termHTML(ex.a2, ex.dec).html + ') = ' + fx(ex.A) + '</span> &nbsp;y&nbsp; <span style="white-space:nowrap;">√(' + termHTML(ex.b2, ex.dec).html + ') = ' + fx(ex.B) + '</span><br>' +
+          sol = !ex.isTCP ? '<strong>No es un TCP.</strong><br>' + ex.why :
+                '<span style="white-space:nowrap;">√(' + termHTML(ex.a2, ex.dec).html + ') = ' + fx(ex.A) + '</span> &nbsp;y&nbsp; <span style="white-space:nowrap;">√(' + termHTML(ex.b2, ex.dec).html + ') = ' + fx(ex.B) + '</span><br>' +
                 '<span style="white-space:nowrap;">Doble producto: 2(' + fx(ex.A) + ')(' + fx(ex.B) + ') = ' + termHTML(ex.mid, ex.dec).html + ' ✓</span><br>' +
-                '<strong>' + bin + '</strong>';
+                '<strong>Sí es un TCP: ' + bin + '</strong>';
         }
         var keys = (kind === 'bc' ? KEYS_BC : KEYS_TCP).map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('');
         var card = document.createElement('div');
         card.className = 'practice-card';
-        card.innerHTML =
-          '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + q + '</span></div>' +
-          '<div class="practice-row"><span class="eq">=</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="' + label + '">' +
+        var choice = kind === 'tcp' ?
+          '<div class="practice-choice" style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.6rem;">' +
+          '<button type="button" class="pg-btn" data-c="si">Sí es un TCP</button><button type="button" class="pg-btn secondary" data-c="no">No es un TCP</button></div>' : '';
+        var fact = '<div class="practice-row"><span class="eq">=</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="' + label + '">' +
           '<button type="button" class="practice-check">Comprobar</button></div>' +
-          '<div class="practice-keys">' + keys + '</div>' +
+          '<div class="practice-keys">' + keys + '</div>';
+        card.innerHTML =
+          '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + q + '</span></div>' + choice +
+          (kind === 'tcp' ? '<div class="practice-fact" hidden>' + fact + '</div>' : fact) +
           '<div class="practice-fb" aria-live="polite"></div>';
         grid.appendChild(card);
-        var input = card.querySelector('input'), fb = card.querySelector('.practice-fb');
+        var input = card.querySelector('input'), fb = card.querySelector('.practice-fb'), factBox = card.querySelector('.practice-fact');
+        // TCP: primero se decide si lo es; sólo si lo es se pide la factorización
+        card.querySelectorAll('.practice-choice button').forEach(function (b) {
+          b.addEventListener('click', function () {
+            var sayYes = b.dataset.c === 'si';
+            card.classList.remove('ok', 'bad'); delete done[idx]; score(); factBox.hidden = true; input.value = '';
+            if (sayYes && ex.isTCP) {
+              factBox.hidden = false; input.focus();
+              fb.innerHTML = '<span class="yes">¡Sí es un TCP!</span> Ahora <strong>factorízalo</strong>: escribe el binomio al cuadrado y oprime <strong>Comprobar</strong>.';
+            } else if (!sayYes && !ex.isTCP) {
+              card.classList.add('ok'); done[idx] = 1; score();
+              fb.innerHTML = '<span class="yes">✓ ¡Correcto! No es un TCP.</span><div class="sol">' + ex.why + '</div>';
+            } else {
+              card.classList.add('bad');
+              fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + (ex.isTCP
+                ? 'Sí es un TCP: los dos extremos son cuadrados perfectos y el término de en medio es su doble producto.'
+                : 'No es un TCP: no se puede escribir como un binomio al cuadrado.') + '<div class="sol">' + sol + '</div>';
+            }
+          });
+        });
         card.querySelectorAll('.practice-keys button').forEach(function (b) {
           b.addEventListener('click', function () {
             var s = input.selectionStart == null ? input.value.length : input.selectionStart, e = input.selectionEnd == null ? s : input.selectionEnd;

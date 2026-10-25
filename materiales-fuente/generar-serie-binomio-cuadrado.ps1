@@ -1,4 +1,5 @@
-# Genera una Serie de "Binomio al cuadrado" (Serie 2, 3...) en Word (.docx) con 20 ejercicios y su rubrica
+# Genera una Serie de "Binomio al cuadrado" (Serie 2, 3...) o de "Trinomio cuadrado perfecto" (serie1tcp, con
+# "tipo": "trinomio" en el JSON: se muestra el trinomio tal cual) en Word (.docx) con 20 ejercicios y su rubrica
 # (matriz de niveles de Carmen). Mismo formato de la Serie 1 en Word: titulo, Estudiante / Fecha / Grupo,
 # proposito, instrucciones, tabla de 20 ejercicios en dos bloques (1-10 y 11-20) con ecuaciones de Word.
 # Toma los textos de materiales-fuente\rubricas-por-actividad.json (bloque y actividad con el id de -Serie, p. ej. "serie2cuad")
@@ -66,11 +67,18 @@ function MParse([string]$t) {
   if ($buf -ne '') { $out += (MR $buf) }
   return $out
 }
-function Binomio([string]$e) {   # (expresion)^2 con parentesis que se ajustan a las fracciones
+function Binomio([string]$e) {
+  if ($s.tipo -eq 'trinomio') {   # serie de trinomios: la expresion se muestra tal cual
+    return '<m:oMathPara><m:oMath>' + (MParse $e) + '</m:oMath></m:oMathPara>'
+  }
+  # serie de binomios: (expresion)^2 con parentesis que se ajustan a las fracciones
   return '<m:oMathPara><m:oMath>' + (MSup (MPar (MParse $e)) (MR '2')) + '</m:oMath></m:oMathPara>'
 }
-# regla (a +- b)^2 = a^2 +- 2ab + b^2, en linea dentro del proposito
-$regla = '<m:oMath>' + (MSup (MR ('(a' + $pm + 'b)')) (MR '2')) + (MR '=') + (MSup (MR 'a') (MR '2')) + (MR ($pm + '2ab+')) + (MSup (MR 'b') (MR '2')) + '</m:oMath>'
+# regla del proposito, en linea: (a +- b)^2 = a^2 +- 2ab + b^2   (o, en las series de trinomios, al reves)
+$cuad = (MSup (MR ('(a' + $pm + 'b)')) (MR '2'))
+$tri = (MSup (MR 'a') (MR '2')) + (MR ($pm + '2ab+')) + (MSup (MR 'b') (MR '2'))
+if ($s.tipo -eq 'trinomio') { $regla = '<m:oMath>' + $tri + (MR '=') + $cuad + '</m:oMath>' }
+else { $regla = '<m:oMath>' + $cuad + (MR '=') + $tri + '</m:oMath>' }
 
 # ---- tabla de ejercicios (dos bloques: 1-10 y 11-20) ----
 $bd = ''
@@ -84,12 +92,14 @@ function Tc([int]$w, [string]$inner, [string]$fill = '', [int]$span = 1) {
 }
 if ($s.ejercicios.Count -ne 20) { throw "Se esperaban 20 ejercicios y hay $($s.ejercicios.Count)." }
 $rowsEj = ''
+$rowH = 800   # con 3 o mas incisos las filas son un poco mas bajas para que la tabla quepa en la primera hoja
+if ($s.pasos.Count -gt 2) { $rowH = 700 }
 for ($k = 0; $k -lt 10; $k++) {
   $cells = (Tc 700 (P (Run ([string]($k + 1)) 0 $true) 0 '<w:jc w:val="center"/>')) +
            (Tc 4170 ('<w:p><w:pPr><w:spacing w:after="0"/></w:pPr>' + (Binomio $s.ejercicios[$k]) + '</w:p>')) +
            (Tc 700 (P (Run ([string]($k + 11)) 0 $true) 0 '<w:jc w:val="center"/>')) +
            (Tc 4170 ('<w:p><w:pPr><w:spacing w:after="0"/></w:pPr>' + (Binomio $s.ejercicios[$k + 10]) + '</w:p>'))
-  $rowsEj += '<w:tr><w:trPr><w:cantSplit/><w:trHeight w:val="800"/><w:jc w:val="center"/></w:trPr>' + $cells + '</w:tr>'
+  $rowsEj += '<w:tr><w:trPr><w:cantSplit/><w:trHeight w:val="' + $rowH + '"/><w:jc w:val="center"/></w:trPr>' + $cells + '</w:tr>'
 }
 $tblEj = '<w:tbl>' + (TblPr 9740) + '<w:tblGrid><w:gridCol w:w="700"/><w:gridCol w:w="4170"/><w:gridCol w:w="700"/><w:gridCol w:w="4170"/></w:tblGrid>' + $rowsEj + '</w:tbl>'
 
@@ -162,6 +172,11 @@ $zip = New-Object System.IO.Compression.ZipArchive($fs, [System.IO.Compression.Z
 foreach ($e in $src.Entries) {
   $ne = $zip.CreateEntry($e.FullName); $o = $ne.Open()
   if ($e.FullName -eq 'word/document.xml') { $bytes = $utf8.GetBytes($doc); $o.Write($bytes, 0, $bytes.Length) }
+  elseif ($e.FullName -eq 'docProps/core.xml') {   # el titulo de las propiedades es el de esta serie, no el de la base
+    $rd = New-Object IO.StreamReader($e.Open(), $utf8); $core = $rd.ReadToEnd(); $rd.Close()
+    $core = [regex]::Replace($core, '<dc:title>.*?</dc:title>', '<dc:title>' + (Esc $s.titulo) + '</dc:title>')
+    $bytes = $utf8.GetBytes($core); $o.Write($bytes, 0, $bytes.Length)
+  }
   else { $i = $e.Open(); $i.CopyTo($o); $i.Close() }
   $o.Close()
 }
