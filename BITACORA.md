@@ -1446,3 +1446,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
 ## 2026-10-25 (se quita la liga de regreso en la página del video de Matemáticas 2)
 - A pedido de Carmen, en `matematicas-2/tema-04-general-a-ordinaria.html` se quitó el recuadro "Más contenido" (versión anterior)
   y la liga "← Volver al método gráfico (Matemáticas 3)". La página queda sólo con el video y su descripción.
+
+## 2026-10-25 (el video vuelve a "Ecuación general de la recta" y se quita el bloque extra)
+- A pedido de Carmen, el contenido del bloque "De la ecuación general a la ordinaria" (el video) se pasó al bloque
+  "Ecuación general de la recta" de `matematicas-2/tema-04-la-recta.html`, y el bloque "De la ecuación general a la
+  ordinaria" se quitó del menú. La página se llama otra vez `matematicas-2/tema-04-ecuacion-general-de-la-recta.html`
+  (título "Ecuación general de la recta"); el video sigue siendo `materiales/tema-04-general-a-ordinaria.mp4`.
+- El botón "Ver el video en Matemáticas 2 →" del repaso en el método gráfico (Matemáticas 3) apunta a esa página.
