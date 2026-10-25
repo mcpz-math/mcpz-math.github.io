@@ -1422,3 +1422,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - No se pudo abrir en Word para revisar el aspecto (sólo se comprobó que el XML es válido). La Serie 2 de binomio al
   cuadrado estaba abierta en Word, así que no se regeneró; si su tabla se pasa a una segunda hoja, hay que bajar la altura
   de las filas como en esta serie.
+
+## 2026-10-25 (video de TCP: ejemplos sin "comprueba multiplicando")
+- A pedido de Carmen, en los tres ejemplos del video `matematicas-3/materiales/tema-06-trinomio-cuadrado-perfecto.mp4` se
+  quitó la fila "Comprueba multiplicando" (por ejemplo (x + 6)(x + 6) = x² + 12x + 36). Cada ejemplo termina en el
+  paso 4, con el binomio al cuadrado, como en "Ahora tú". El video dura 3:03 (antes 3:20). Generador actualizado en
+  `materiales-fuente/generar-video-trinomio-cuadrado-perfecto.html`.

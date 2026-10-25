@@ -221,30 +221,27 @@ escena(13, tt => {
 });
 
 // 4. Ejemplo 1
-ejemplo(24, 1, [bl('x'), sup('2', C.blue), ' + 12x + ', or('36')], [
+ejemplo(19, 1, [bl('x'), sup('2', C.blue), ' + 12x + ', or('36')], [
   { at: 1.2, n: 'Paso 1.', expl: 'Raíz del primero:', math: [sq([bl('x'), sup('2', C.blue)]), ' = ', bl('x')] },
   { at: 4.2, n: 'Paso 2.', expl: 'Raíz del último:', math: [sq([or('36')]), ' = ', or('6')] },
   { at: 7.2, n: 'Paso 3.', expl: 'Comprueba el doble producto:', math: ['2 · ', bl('x'), ' · ', or('6'), ' = 12x  ', gr('✓')] },
-  { at: 11, n: 'Paso 4.', expl: 'El de en medio es +12x (suma):', math: ['(', bl('x'), ' + ', or('6'), ')', sup('2')], o: LIME },
-  { at: 15.2, n: '', expl: 'Comprueba multiplicando:', math: ['(x + 6)(x + 6) = x', sup('2'), ' + 12x + 36  ', gr('✓')], o: Object.assign({ sz: 30 }, OKR) }
+  { at: 11, n: 'Paso 4.', expl: 'El de en medio es +12x (suma):', math: ['(', bl('x'), ' + ', or('6'), ')', sup('2')], o: LIME }
 ]);
 
 // 5. Ejemplo 2 (con resta)
-ejemplo(28, 2, [bl('9m'), sup('2', C.blue), ' ' + MINUS + ' 24m + ', or('16')], [
+ejemplo(22, 2, [bl('9m'), sup('2', C.blue), ' ' + MINUS + ' 24m + ', or('16')], [
   { at: 1.2, n: 'Paso 1.', expl: 'Raíz del primero:', math: [sq([bl('9m'), sup('2', C.blue)]), ' = ', bl('3m')] },
   { at: 4.4, n: 'Paso 2.', expl: 'Raíz del último:', math: [sq([or('16')]), ' = ', or('4')] },
   { at: 7.6, n: 'Paso 3.', expl: 'Comprueba el doble producto:', math: ['2(', bl('3m'), ')(', or('4'), ') = 24m  ', gr('✓')] },
-  { at: 11.6, n: 'Paso 4.', expl: 'El de en medio es ' + MINUS + '24m (resta):', math: ['(', bl('3m'), ' ' + MINUS + ' ', or('4'), ')', sup('2')], o: LIME },
-  { at: 16.4, n: '', expl: 'Comprueba multiplicando:', math: ['(3m ' + MINUS + ' 4)(3m ' + MINUS + ' 4) = 9m', sup('2'), ' ' + MINUS + ' 24m + 16  ', gr('✓')], o: Object.assign({ sz: 28 }, OKR) }
+  { at: 11.6, n: 'Paso 4.', expl: 'El de en medio es ' + MINUS + '24m (resta):', math: ['(', bl('3m'), ' ' + MINUS + ' ', or('4'), ')', sup('2')], o: LIME }
 ]);
 
 // 6. Ejemplo 3 (dos letras)
-ejemplo(28, 3, [bl('4a'), sup('2', C.blue), ' + 12ab + ', or('9b'), sup('2', C.orange)], [
+ejemplo(22, 3, [bl('4a'), sup('2', C.blue), ' + 12ab + ', or('9b'), sup('2', C.orange)], [
   { at: 1.2, n: 'Paso 1.', expl: 'Raíz del primero:', math: [sq([bl('4a'), sup('2', C.blue)]), ' = ', bl('2a')] },
   { at: 4.4, n: 'Paso 2.', expl: 'Raíz del último:', math: [sq([or('9b'), sup('2', C.orange)]), ' = ', or('3b')] },
   { at: 7.6, n: 'Paso 3.', expl: 'Comprueba el doble producto:', math: ['2(', bl('2a'), ')(', or('3b'), ') = 12ab  ', gr('✓')] },
-  { at: 11.6, n: 'Paso 4.', expl: 'El de en medio es +12ab (suma):', math: ['(', bl('2a'), ' + ', or('3b'), ')', sup('2')], o: LIME },
-  { at: 16.4, n: '', expl: 'Comprueba multiplicando:', math: ['(2a + 3b)(2a + 3b) = 4a', sup('2'), ' + 12ab + 9b', sup('2'), '  ', gr('✓')], o: Object.assign({ sz: 28 }, OKR) }
+  { at: 11.6, n: 'Paso 4.', expl: 'El de en medio es +12ab (suma):', math: ['(', bl('2a'), ' + ', or('3b'), ')', sup('2')], o: LIME }
 ]);
 
 // 7. ¿Y si no es un TCP?
