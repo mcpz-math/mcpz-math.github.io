@@ -50,7 +50,8 @@
   <div class="callout">
     <div class="k">Instrucciones</div>
     <p>Escribe un valor para <strong>h</strong> (por ejemplo <strong>3</strong>, <strong>−2</strong> o <strong>1/2</strong>), entre
-       <strong>−5</strong> y <strong>5</strong>, y oprime <strong>Graficar</strong>. También puedes usar los botones. Observa hacia dónde
+       <strong>−5</strong> y <strong>5</strong>, y oprime <strong>Graficar</strong>. Si h es una fracción (con denominador de 2 a 10), cada cuadrito
+       del eje x se divide en partes iguales para que puedas ver la <strong>escala</strong>. También puedes usar los botones. Observa hacia dónde
        se mueve la parábola azul punteada (x²) para convertirse en la verde, dónde queda el vértice V(h, 0) y qué pasa
        con la forma de la parábola.</p>
   </div>
@@ -74,7 +75,7 @@
       <g id="h-roots"></g>
       <g id="h-labels"></g>
     </svg>
-    <p class="pg-scale-note">Azul punteada: f(x) = x² (referencia) · Verde: f(x) = (x − h)² · Rombo: raíz (donde toca al eje x) · Cuadro naranja: donde corta al eje y · Eje x: cada cuadrito = 1 unidad · Eje y: cada cuadrito = <span id="h-scale">1 unidad</span></p>
+    <p class="pg-scale-note">Azul punteada: f(x) = x² (referencia) · Verde: f(x) = (x − h)² · Rombo: raíz (donde toca al eje x) · Cuadro naranja: donde corta al eje y · Eje x: cada cuadrito = <span id="h-xscale">1 unidad</span> · Eje y: cada cuadrito = <span id="h-scale">1 unidad</span></p>
 
     <div class="pg-controls">
       <div class="pg-field">
@@ -98,6 +99,7 @@
     var UX = 27, UY = 30, OX = 240, OY = 330, XL = 8, YT = 10, YB = -1;
     var XS = [-3, -2, -1, 0, 1, 2, 3];
     var S = 1; // unidades por cuadrito en el eje y (se ajusta para que se vea el corte con el eje y: h²)
+    var D = 1; // denominador de h: si h es racional, cada cuadrito del eje x se divide en D partes iguales
     var MINUS = '−', mono = 'IBM Plex Mono, monospace';
     function sx(x) { return OX + x * UX; }
     function sy(y) { return OY - y * UY / S; }
@@ -140,7 +142,9 @@
     var grid = document.getElementById('h-grid');
     function drawGrid() {
       clear(grid);
-      for (var i = -XL; i <= XL; i++) el('line', { x1: sx(i), y1: sy(YT), x2: sx(i), y2: sy(YB), stroke: '#dde2dc', 'stroke-width': 1 }, grid);
+      // rejilla fina: cada cuadrito del eje x se divide en D partes iguales cuando h es racional
+      if (D > 1) for (var m = -XL * D; m <= XL * D; m++) if (m % D) el('line', { x1: sx(m / D), y1: sy(YT * S), x2: sx(m / D), y2: sy(YB * S), stroke: '#c9d3c6', 'stroke-width': 0.7 }, grid);
+      for (var i = -XL; i <= XL; i++) el('line', { x1: sx(i), y1: sy(YT * S), x2: sx(i), y2: sy(YB * S), stroke: '#dde2dc', 'stroke-width': 1 }, grid);
       for (var j = YB; j <= YT; j++) el('line', { x1: sx(-XL), y1: sy(j * S), x2: sx(XL), y2: sy(j * S), stroke: '#dde2dc', 'stroke-width': 1 }, grid);
       el('line', { x1: sx(-XL) - 8, y1: OY, x2: sx(XL) + 10, y2: OY, stroke: '#56604f', 'stroke-width': 1.5 }, grid);
       el('line', { x1: OX, y1: sy(YT * S) - 8, x2: OX, y2: sy(YB * S) + 4, stroke: '#56604f', 'stroke-width': 1.5 }, grid);
@@ -148,6 +152,13 @@
       el('text', { x: OX + 6, y: sy(YT * S) - 8, 'font-family': mono, 'font-size': 12, fill: '#14301f' }, grid).textContent = 'y';
       for (i = -XL; i <= XL; i++) if (i) el('text', { x: sx(i), y: OY + 13, 'text-anchor': 'middle', 'font-family': mono, 'font-size': 9, fill: '#56604f' }, grid).textContent = String(i).replace('-', MINUS);
       for (j = 2; j <= YT; j += 2) el('text', { x: OX - 5, y: sy(j * S) + 3, 'text-anchor': 'end', 'font-family': mono, 'font-size': 9, fill: '#56604f' }, grid).textContent = String(j * S);
+      // marcas de fracciones en el eje x (medios o tercios): numerador sobre una rayita y denominador debajo
+      if (D > 1 && D <= 3) for (m = -XL * D; m <= XL * D; m++) if (m % D) {
+        var cx = sx(m / D), tk = { 'text-anchor': 'middle', 'font-family': mono, 'font-size': 7, fill: '#2b6cb0', 'font-weight': 600 };
+        el('text', Object.assign({ x: cx, y: OY + 11 }, tk), grid).textContent = (m < 0 ? MINUS : '') + Math.abs(m);
+        el('line', { x1: cx - 3.5, y1: OY + 13, x2: cx + 3.5, y2: OY + 13, stroke: '#2b6cb0', 'stroke-width': 0.8 }, grid);
+        el('text', Object.assign({ x: cx, y: OY + 21 }, tk), grid).textContent = D;
+      }
     }
 
     function parabola(h) {
@@ -159,20 +170,22 @@
       }
       return d;
     }
-    var refpts = document.getElementById('h-refpts'), scaleEl = document.getElementById('h-scale');
+    var refpts = document.getElementById('h-refpts'), scaleEl = document.getElementById('h-scale'), xscaleEl = document.getElementById('h-xscale');
     // Escala del eje y: el corte con el eje y, (0, h²), siempre queda a la vista.
-    function setScale(h) {
-      var need = Math.max(9, h * h), steps = [1, 2, 3], k = 0;
+    // Escala del eje x: si h es racional, cada cuadrito se divide en D partes iguales (D = denominador de h).
+    function setScale(H) {
+      var h = val(H), need = Math.max(9, h * h), steps = [1, 2, 3], k = 0, nd = H.d;
       while (k < steps.length - 1 && steps[k] * YT < need) k++;
-      if (steps[k] === S && grid.firstChild) return;
-      S = steps[k];
+      if (steps[k] === S && nd === D && grid.firstChild) return;
+      S = steps[k]; D = nd;
+      xscaleEl.innerHTML = D === 1 ? '1 unidad' : '1 unidad, dividido en ' + D + ' partes iguales (cada línea fina = <span class="frac frac-inline"><span class="num">1</span><span class="den">' + D + '</span></span>)';
       drawGrid();
       document.getElementById('h-ref').setAttribute('d', parabola(0));
       clear(refpts);
       XS.forEach(function (x) { el('circle', { cx: sx(x), cy: sy(x * x), r: 4.5, fill: '#fff', stroke: '#2b6cb0', 'stroke-width': 1.8 }, refpts); });
       scaleEl.textContent = S === 1 ? '1 unidad' : S + ' unidades';
     }
-    setScale(0);
+    setScale(frac(0, 1));
 
     // ---------- etiquetas "(x, y)" con fracciones apiladas ----------
     var CW = 6.6; // ancho aproximado de un carácter (11px monoespaciada)
@@ -275,6 +288,11 @@
         lines.push('<strong>h = ' + hH + ' &lt; 0:</strong> la parábola se movió <strong>' + absH + ' ' + (absH === '1' ? 'unidad' : 'unidades') + ' a la IZQUIERDA</strong>. Como (x + ' + absH + ') = (x ' + MINUS + ' (' + hH + ')), se ve con signo <strong>más</strong>: <strong>(x + ' + absH + ')²</strong>.');
       }
       lines.push('<strong>Vértice:</strong> V(' + hH + ', 0), el punto más bajo de la parábola (un <strong>MÍNIMO</strong>). <strong>Eje de simetría:</strong> x = ' + hH + '.');
+      if (H.d > 1) {
+        var whole = Math.floor(Math.abs(H.n) / H.d), rem = Math.abs(H.n) % H.d, plural = whole > 1 ? 's' : '';
+        lines.push('<strong>Escala:</strong> h es un racional con denominador ' + H.d + ', así que cada cuadrito del eje x se divide en <strong>' + H.d + ' partes iguales</strong> (las líneas finas) y cada parte vale ' + fracHTML(frac(1, H.d)) +
+                   '. Para ubicar x = ' + hH + ' desde el origen, avanza ' + (whole ? whole + ' cuadrito' + plural + ' completo' + plural + ' y luego ' : '') + rem + ' de las ' + H.d + ' partes' + (whole ? ' del siguiente' : '') + ' hacia la ' + (h > 0 ? 'derecha' : 'izquierda') + '.');
+      }
       lines.push('<strong>Forma:</strong> abre <strong>hacia ARRIBA</strong> y es <strong>igual de abierta</strong> que x²: h sólo mueve la gráfica hacia los lados.');
       if (H.n === 0) lines.push('<strong>Corte con el eje y:</strong> con h = 0 el vértice está sobre el eje y: la parábola lo corta en <strong>(0, 0)</strong>.');
       else {
@@ -308,9 +326,9 @@
       function bad(input, msg) { errEl.textContent = msg; input.classList.add('invalid'); }
       if (H.error) return bad(inH, H.error);
       if (Math.abs(val(H)) > 5) return bad(inH, 'Elige un valor de h entre −5 y 5.');
-      if (H.d > 99) return bad(inH, 'Usa una fracción con denominador menor que 100.');
+      if (H.d > 10) return bad(inH, 'Usa una fracción con denominador de 2 a 10, por ejemplo 1/2, 3/4 o 5/3.');
       errEl.textContent = '';
-      setScale(val(H));
+      setScale(H);
       go(H);
     }
     document.getElementById('h-go').addEventListener('click', submit);

@@ -1548,3 +1548,12 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Como h² puede llegar a 25, la escala del eje y se ajusta sola (1, 2 o 3 unidades por cuadrito) para que el punto siempre se vea; la nota
   de debajo dice cuántas unidades vale cada cuadrito. En el cuadro de texto se agregó "Corte con el eje y" con la cuenta
   f(0) = (0 − h)² = h², y en la explicación y en "Para recordar" se agregó que corta al eje y en (0, h²).
+
+## 2026-10-25 (la aplicación de f(x) = (x − h)² muestra la escala cuando h es racional)
+- A pedido de Carmen, cuando h es una fracción (o decimal) la aplicación de `matematicas-3/tema-05-x-menos-h-cuadrada.html` divide cada
+  cuadrito del eje x en D partes iguales (D = denominador de h) con líneas finas, y para D = 2 o 3 marca las fracciones en el eje
+  (±1/2, 3/2…; ±1/3, 2/3…). La nota de debajo dice "cada cuadrito = 1 unidad, dividido en D partes iguales (cada línea fina = 1/D)", y el
+  cuadro de texto agrega "Escala" con cómo ubicar x = h (por ejemplo, para 5/2: avanza 2 cuadritos completos y luego 1 de las 2 partes
+  del siguiente).
+- Ahora h puede ser una fracción con denominador de 2 a 10 (antes, hasta 99), para que la rejilla fina se pueda leer; con otro
+  denominador la página pide usar una fracción como 1/2, 3/4 o 5/3.
