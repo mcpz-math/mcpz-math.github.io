@@ -1467,3 +1467,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
 ## 2026-10-25 (se quita "Materiales y tareas" de Sistemas de ecuaciones simultáneas)
 - A pedido de Carmen, en `matematicas-3/tema-01-sistemas-de-ecuaciones-simultaneas.html` se quitó la sección "Materiales y tareas"
   (el cuadro "Materiales: Próximamente: apuntes, presentaciones y ejercicios"). La página termina con los métodos Gráfico y Cramer.
+
+## 2026-10-25 (el tema "Ecuación ordinaria de la recta y su gráfica" aparece en el temario de Matemáticas 2, con su video)
+- Carmen no veía el tema nuevo en el temario de Matemáticas 2: faltaba en la lista de subtemas de `matematicas-2/index.html`
+  (la fila "Geometría analítica: la recta"). Se agregó el chip **"Ecuación ordinaria de la recta y su gráfica"** después de
+  "Ecuación general de la recta".
+- El video "de la ecuación general a la ordinaria" se pasó a esa página (`matematicas-2/tema-04-ecuacion-ordinaria-y-grafica.html`),
+  antes de la animación interactiva. La página de "Ecuación general de la recta" (sólo tenía el video) se eliminó y su bloque
+  en `tema-04-la-recta.html` vuelve a decir "Próximamente". El bloque de la ecuación ordinaria dice ahora que trae el video y la
+  animación interactiva.
+- En el método gráfico de Matemáticas 3, los dos recuadros de repaso (animación y video) apuntan a la página de la ecuación
+  ordinaria de Matemáticas 2 (el del video, directo a la sección del video).
