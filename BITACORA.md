@@ -1493,3 +1493,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   4, Matemáticas 5 y Probabilidad y Estadística** (quedó el cuadro "Temario"). Matemáticas 3 ya no los tenía.
 - Las páginas de cada tema (por ejemplo `tema-04-la-recta.html`) siguen teniendo su sección "Materiales y tareas" con esos mismos
   cuadros; no se tocaron.
+
+## 2026-10-25 (orden de los temas de la ecuación de la recta en Matemáticas 2)
+- A pedido de Carmen se invirtió el orden: ahora va primero "Ecuación ordinaria de la recta y su gráfica" y después "Ecuación general de la
+  recta", tanto en la lista de subtemas del temario (`matematicas-2/index.html`) como en los bloques de `tema-04-la-recta.html`.
