@@ -1392,3 +1392,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   `tema-04-la-recta.html`. Esa página trae una liga para volver al método gráfico de Matemáticas 3.
 - En `matematicas-3/tema-01-grafico.html` el lugar del video quedó con "Conocimiento previo · ¿Ya se te olvidó?" y la
   liga "da clic aquí para repasarlo", que lleva directo al video en Matemáticas 2.
+
+## 2026-10-25 (video de binomio al cuadrado, más concreto)
+- A pedido de Carmen, el video `matematicas-3/materiales/tema-06-binomio-al-cuadrado.mp4` ya no muestra el
+  desarrollo del producto término a término: se quitó la escena "Multiplica término a término" y la escena de la
+  figura del cuadrado de lado a + b. Ahora, después de decir qué es un binomio al cuadrado, va directo a la
+  regla (a ± b)² = a² ± 2ab + b², con 3 ejemplos, errores comunes, "Ahora tú" y repaso. Dura 3:02 (antes 3:24).
+- La figura del cuadrado sigue en la explicación escrita de la página. Generador actualizado en
+  `materiales-fuente/generar-video-binomio-al-cuadrado.html`.

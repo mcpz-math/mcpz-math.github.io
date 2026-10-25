@@ -176,16 +176,19 @@ escena(5, tt => {
 });
 
 // 1. ¿Qué es un binomio al cuadrado?
-escena(17, tt => {
+escena(12, tt => {
   titulo(tt, '¿Qué es un binomio al cuadrado?');
   withAlpha(fade(tt, .8), () => mathAt(['(', bl('x'), ' + ', or('5'), ')', sup('2'), ' = (x + 5)(x + 5)'], W / 2, 196, 64, C.forest, 'center'));
   withAlpha(fade(tt, 1.6), () => txt('Un binomio multiplicado por sí mismo', W / 2, 252, 28, C.mute, { w: 700, align: 'center' }));
-  const o = { sz: 38 }, h = 88;
-  fila(tt, 3.4, 286, h, '', 'Multiplica término a término:', ['x', DOT, 'x  +  x', DOT, '5  +  5', DOT, 'x  +  5', DOT, '5'], o);
-  fila(tt, 7, 384, h, '', 'Resuelve cada producto:', ['x', sup('2'), ' + 5x + 5x + 25'], o);
-  fila(tt, 10.6, 482, h, '', 'Suma los términos semejantes:', ['x', sup('2'), ' + 10x + 25'], Object.assign({}, o, LIME));
-  withAlpha(fade(tt, 13.8), () => txt('Siempre salen tres términos', W / 2, 626, 30, C.forest, { w: 600, f: FM, align: 'center' }));
+  withAlpha(fade(tt, 4), () => {
+    rr(60, 330, 1160, 200, 18, C.lime);
+    txt('SU RESULTADO', 96, 372, 20, C.forest, { w: 700 });
+    txt('Siempre tiene tres términos y sigue una regla', 96, 420, 32, C.forest, { w: 700, f: FM });
+    mathAt(['(', bl('x'), ' + ', or('5'), ')', sup('2'), ' = ', bl('x'), sup('2', C.blue), ' + 10x + ', or('25')], 96, 490, 46, C.forest);
+  });
+  withAlpha(fade(tt, 7.5), () => txt('Veamos cuál es la regla', W / 2, 600, 30, C.forest, { w: 600, f: FM, align: 'center' }));
 });
+
 
 // 2. ¿Es lo mismo que x² + 25?
 escena(16, tt => {
@@ -201,33 +204,6 @@ escena(16, tt => {
     mathAt(['(a + b)', sup('2'), ' ≠ ', a2.map(n => n), ' + ', b2], 96, 590, 44, C.forest);
     txt('Falta el doble producto, el término de en medio', 560, 590, 26, C.forest, { w: 700 });
   });
-});
-
-// 3. La figura
-escena(17, tt => {
-  titulo(tt, 'La figura: un cuadrado de lado a + b');
-  const x0 = 110, y0 = 150, A = 230, B = 150;
-  const reg = (at, x, y, w, h, fill, lab, col) => withAlpha(fade(tt, at), () => {
-    ctx.fillStyle = fill; ctx.fillRect(x, y, w, h); ctx.strokeStyle = C.forest; ctx.lineWidth = 3; ctx.strokeRect(x, y, w, h);
-    mathMid(lab, x + w / 2, y + h / 2, 50, col, 'center');
-  });
-  withAlpha(fade(tt, .5), () => {
-    mathAt([aa], x0 + A / 2, y0 - 14, 38, C.blue, 'center'); mathAt([bb], x0 + A + B / 2, y0 - 14, 38, C.orange, 'center');
-    mathAt([aa], x0 - 30, y0 + A / 2 + 14, 38, C.blue, 'center'); mathAt([bb], x0 - 30, y0 + A + B / 2 + 14, 38, C.orange, 'center');
-  });
-  reg(1.8, x0, y0, A, A, '#d6e6fb', a2, C.blue);
-  reg(4.2, x0 + A, y0, B, A, C.lime, [t('ab')], C.forest);
-  reg(6.2, x0, y0 + A, A, B, C.lime, [t('ab')], C.forest);
-  reg(8.2, x0 + A, y0 + A, B, B, '#fbe3cf', b2, C.orange);
-  const X = 620;
-  withAlpha(fade(tt, 9.6), () => txt('Área del cuadrado grande:', X, 214, 28, C.forest, { w: 700 }));
-  withAlpha(fade(tt, 10.4), () => mathAt(['(', aa, ' + ', bb, ')', sup('2')], X, 290, 56, C.forest));
-  withAlpha(fade(tt, 11.8), () => mathAt(['= ', a2, ' + ', t('ab'), ' + ', t('ab'), ' + ', b2], X, 372, 50, C.forest));
-  withAlpha(fade(tt, 13.4), () => {
-    rr(X - 20, 410, 580, 110, 16, C.lime);
-    mathMid(['= ', a2, ' + 2', aa, bb, ' + ', b2], X + 270, 465, 56, C.forest, 'center');
-  });
-  withAlpha(fade(tt, 14.8), () => txt('Los dos rectángulos ab forman el doble producto', X, 574, 24, C.mute, { w: 700 }));
 });
 
 // 4. La regla
