@@ -1537,3 +1537,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, en `matematicas-3/tema-05-funciones-cuadraticas.html` se quitó la sección "Materiales y tareas" (el cuadro
   "Materiales" con la descarga "Clase 8. Funciones cuadráticas (PDF)" y el cuadro "Tarea"). El archivo
   `matematicas-3/materiales/clase-08-funciones-cuadraticas.pdf` sigue guardado en el repositorio, pero ya no tiene liga en el sitio.
+
+## 2026-10-25 (título "En f(x) = (x − h)²" en minúsculas)
+- A pedido de Carmen, el encabezado del recuadro "Para recordar" de `matematicas-3/tema-05-x-menos-h-cuadrada.html` ("En f(x) = (x − h)²")
+  ya no sale todo en mayúsculas (se le puso la clase `no-caps`), para que se lea bien la fórmula.
