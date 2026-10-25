@@ -1578,3 +1578,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - La página se renombró `matematicas-3/tema-05-a-x-menos-h-cuadrada.html` (antes `tema-05-x-menos-h-cuadrada.html`), con título y
   encabezado "La función f(x) = a(x − h)²" y un párrafo de entrada: a decide hacia dónde abre y qué tan abierta es; h la mueve hacia los
   lados; para ver bien qué hace h se toma primero a = 1. Los demás subtemas siguen igual.
+
+## 2026-10-25 (explicación de cómo se factoriza, más clara)
+- A pedido de Carmen, en los ejercicios de `matematicas-3/tema-05-a-x-menos-h-cuadrada.html` la explicación que sale cuando el alumno se
+  equivoca al factorizar un trinomio cuadrado perfecto no se entendía. Ahora es "Cómo se factoriza:" en pasos cortos: (si hay un signo menos
+  adelante, se saca como factor común), raíz del primer término, raíz del último término, doble producto comparado con el término de en
+  medio, el signo de ese término como signo del binomio, y al final "Respuesta:" con la función factorizada.

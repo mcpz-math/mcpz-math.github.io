@@ -507,9 +507,15 @@
       var hH = fracHTML(e.h), neg = e.a < 0 ? MINUS : '', cyH = fracHTML(e.cy), hA = fracHTML(absF(e.h));
       var dif = e.h.n === 0 ? '0' : (e.h.n > 0 ? '0 ' + MINUS + ' ' + hH : '0 ' + MINUS + ' (' + hH + ')');
       var c2 = absF(frac(2 * e.h.n, e.h.d)), c2H = (c2.n === 1 && c2.d === 1) ? '' : fracHTML(c2);
-      var whyFac = 'Es un trinomio cuadrado perfecto. ' + (e.a < 0 ? 'Saca el signo menos de factor común: f(x) = ' + MINUS + '(x² ' + (e.h.n > 0 ? MINUS : '+') + ' ' + c2H + 'x + ' + fracHTML(e.h2) + '). ' : '') +
-                   'Las raíces son x y ' + hA + '; el doble producto 2 · x · ' + hA + ' es el término de en medio, y el signo de ese término (' + (e.h.n > 0 ? 'negativo' : 'positivo') + ') es el signo del binomio: ' +
-                   '<strong>' + factHTML(e) + '</strong>.';
+      // Cómo se factoriza, paso a paso. g es el trinomio sin el signo menos de adelante: x² ∓ 2|h|x + h²
+      var gSign = e.h.n > 0 ? MINUS : '+', gH = 'x² ' + gSign + ' ' + c2H + 'x + ' + fracHTML(e.h2);
+      var whyFac = '<strong>Cómo se factoriza:</strong>' +
+        (e.a < 0 ? '<br>Hay un signo menos adelante: sácalo como factor común, f(x) = ' + MINUS + '(' + gH + '), y factoriza lo que queda dentro.' : '') +
+        '<br>• Raíz del primer término: √(x²) = x.' +
+        '<br>• Raíz del último término: √(' + fracHTML(e.h2) + ') = ' + hA + '.' +
+        '<br>• Doble producto de las raíces: 2 · x · ' + hA + ' = ' + c2H + 'x. Coincide con el término de en medio, así que sí es un trinomio cuadrado perfecto.' +
+        '<br>• El término de en medio es ' + gSign + ' ' + c2H + 'x, y su signo (' + (e.h.n > 0 ? 'menos' : 'más') + ') es el signo del binomio: (x ' + gSign + ' ' + hA + ').' +
+        '<br>Respuesta: <strong>' + factHTML(e) + '</strong>';
       var why = {
         fac: whyFac,
         abre: (e.a > 0 ? 'No hay signo menos delante del paréntesis: <strong>a = 1 &gt; 0</strong>' : 'Hay un signo menos delante del paréntesis: <strong>a = ' + MINUS + '1 &lt; 0</strong>') +
