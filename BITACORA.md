@@ -1453,3 +1453,13 @@ Registro de lo que vamos haciendo, en orden cronológico.
   ordinaria" se quitó del menú. La página se llama otra vez `matematicas-2/tema-04-ecuacion-general-de-la-recta.html`
   (título "Ecuación general de la recta"); el video sigue siendo `materiales/tema-04-general-a-ordinaria.mp4`.
 - El botón "Ver el video en Matemáticas 2 →" del repaso en el método gráfico (Matemáticas 3) apunta a esa página.
+
+## 2026-10-25 (la animación de pendiente y ordenada pasa a Matemáticas 2)
+- A pedido de Carmen, la página "Cómo graficar una recta con la pendiente y la ordenada al origen" (con la animación interactiva) se
+  movió de Matemáticas 3 a Matemáticas 2, como un bloque nuevo de la sección de la recta: **"Ecuación ordinaria de la recta y su
+  gráfica"** (`matematicas-2/tema-04-ecuacion-ordinaria-y-grafica.html`, antes `matematicas-3/tema-01-pendiente-ordenada.html`).
+  Se adaptó el encabezado ("Matemáticas 2 · Tema 4 · Subtema"), el texto de entrada y el "← Tema 4"; se quitó la liga "Volver a
+  Método gráfico". El bloque aparece en el menú de `tema-04-la-recta.html` después de "Ecuación general de la recta".
+- En el método gráfico de Matemáticas 3 quedó el cuadrito "Repaso" (¿Necesitas repasar cómo graficar una recta con la pendiente y la
+  ordenada al origen? Lo viste en Matemáticas 2) con el botón "Practicar con la animación interactiva →", que ahora lleva a la página
+  de Matemáticas 2.
