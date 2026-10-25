@@ -345,21 +345,26 @@ escena(24, tt => {
   const g = G();
   planoEsc(g, { minor: 1 }); recta(g, 2, -5, C1, 1); recta(g, -1.5, 2, C2, 1);
   withAlpha(fade(tt, 1.6), () => { punto(g, 2, -1, C.lime, 11); txt('(2, −1)', g.px(2) + 16, g.py(-1) - 14, 24, C.forest, { w: 700, f: FM }); });
-  caja(tt, 1.6, 128, 112, C.green, (x, y) => {
-    txt('Paso 3.', x, y + 38, 22, C.mute, { w: 700, f: FM }); txt('Las rectas se cruzan en un solo punto', x + 92, y + 38, 24, C.forest);
-    txt('Solución única', x, y + 88, 32, C.green, { w: 700, f: FM });
+  caja(tt, 1.6, 124, 100, C.green, (x, y) => {
+    txt('Paso 3.', x, y + 36, 22, C.mute, { w: 700, f: FM }); txt('Las rectas se cruzan en un solo punto', x + 92, y + 36, 24, C.forest);
+    txt('Solución única', x, y + 80, 30, C.green, { w: 700, f: FM });
   });
-  caja(tt, 7, 258, 124, C.blue, (x, y) => {
-    txt('Paso 4.', x, y + 38, 22, C.mute, { w: 700, f: FM }); txt('Lee la coordenada de intersección', x + 92, y + 38, 24, C.forest);
-    mathAt(['(x, y) = (', bl('2'), ', ', or(MINUS + '1'), ')'], x, y + 98, 38, C.forest);
-    mathAt([bl('x'), ' = 2', '     ', or('y'), ' = ', MINUS, '1'], x + 330, y + 98, 38, C.forest);
+  caja(tt, 6.5, 238, 116, C.blue, (x, y) => {
+    txt('Paso 4.', x, y + 36, 22, C.mute, { w: 700, f: FM }); txt('Lee la coordenada de intersección', x + 92, y + 36, 24, C.forest);
+    mathAt(['(x, y) = (', bl('2'), ', ', or(MINUS + '1'), ')'], x, y + 90, 36, C.forest);
+    mathAt([bl('x'), ' = 2', '     ', or('y'), ' = ', MINUS, '1'], x + 330, y + 90, 36, C.forest);
   });
-  caja(tt, 12, 400, 186, C.green, (x, y) => {
-    txt('Paso 5.', x, y + 38, 22, C.mute, { w: 700, f: FM }); txt('Comprueba en las dos ecuaciones', x + 92, y + 38, 24, C.forest);
-    withAlpha(fade(tt, 13.5), () => mathAt(['2(2) ', MINUS, ' (', MINUS, '1) = 4 + 1 = 5   ', gr('✓')], x, y + 100, 34, C.forest));
-    withAlpha(fade(tt, 17), () => mathAt(['3(2) + 2(', MINUS, '1) = 6 ', MINUS, ' 2 = 4   ', gr('✓')], x, y + 152, 34, C.forest));
+  // Paso 5: dos columnas, una por ecuación (como en la página): ecuación, sustitución, operaciones y resultado
+  caja(tt, 11, 368, 282, C.green, (x, y) => {
+    txt('Paso 5.', x, y + 36, 22, C.mute, { w: 700, f: FM }); txt('Comprueba en las dos ecuaciones', x + 92, y + 36, 24, C.forest);
+    ctx.strokeStyle = C.line; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x + 280, y + 56); ctx.lineTo(x + 280, y + 262); ctx.stroke();
+    const col = (cx, titulo3, lineas) => {
+      withAlpha(fade(tt, 12), () => txt(titulo3, cx, y + 80, 24, C.forest, { w: 700, f: FM }));
+      lineas.forEach((l, i) => withAlpha(fade(tt, 13.2 + i * 2.2), () => mathAt(l, cx, y + 122 + i * 44, i === 3 ? 31 : 28, C.forest)));
+    };
+    col(x, 'Ecuación 1', [['2x ', MINUS, ' y = 5'], ['2(2) ', MINUS, ' (', MINUS, '1) = 5'], ['4 + 1 = 5'], ['5 = 5  ', gr('✓')]]);
+    col(x + 306, 'Ecuación 2', [['3x + 2y = 4'], ['3(2) + 2(', MINUS, '1) = 4'], ['6 ', MINUS, ' 2 = 4'], ['4 = 4  ', gr('✓')]]);
   });
-  withAlpha(fade(tt, 20.5), () => txt('La solución es  x = 2,  y = −1', 620 + 24, 636, 28, C.forest, { w: 700, f: FM }));
 });
 
 // 6. Ejemplo 2: no tiene solución

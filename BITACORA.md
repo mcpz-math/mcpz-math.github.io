@@ -1513,3 +1513,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
   paralelas, no tiene solución), **Ejemplo 3** (x + y = 3 y 2x + 2y = 6: coincidentes, infinitas soluciones), errores comunes, "Ahora tú"
   (x + y = 5 y x − y = 1, solución (3, 2)) y repaso.
 - Generador: `materiales-fuente/generar-video-metodo-grafico.html` (misma plantilla de los demás videos).
+
+## 2026-10-25 (video del método gráfico: la comprobación en dos columnas)
+- A pedido de Carmen, en el Ejemplo 1 del video `matematicas-3/materiales/tema-01-metodo-grafico.mp4` el Paso 5 (comprobación) se ve
+  como en la página: dos columnas, "Ecuación 1" y "Ecuación 2", cada una con la ecuación, la sustitución, la operación y el
+  resultado con ✓ (5 = 5 ✓ y 4 = 4 ✓), que aparecen renglón por renglón. Se quitó la frase final de esa escena. Dura igual (3:35).
