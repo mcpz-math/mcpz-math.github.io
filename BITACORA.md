@@ -1557,3 +1557,16 @@ Registro de lo que vamos haciendo, en orden cronológico.
   del siguiente).
 - Ahora h puede ser una fracción con denominador de 2 a 10 (antes, hasta 99), para que la rejilla fina se pueda leer; con otro
   denominador la página pide usar una fracción como 1/2, 3/4 o 5/3.
+
+## 2026-10-25 (100 ejercicios de f(x) = a(x − h)², con trinomios cuadrados perfectos)
+- A pedido de Carmen, `matematicas-3/tema-05-x-menos-h-cuadrada.html` tiene al final la sección "Ejercicios: analiza f(x) = a(x − h)²":
+  un banco de **100 ejercicios** de los que se toman **10 al azar** cada vez (botón "Otros 10 ejercicios"), con revisión automática.
+- Mezcla (de menor a mayor dificultad): 24 funciones **factorizadas** con h entero ((x − 3)², −(x + 2)²…), 28 **trinomios cuadrados perfectos**
+  con h entero (x² − 6x + 9, −x² + 4x − 4…), 22 factorizadas con h fraccionario y 26 trinomios con h fraccionario (medios, tercios, cuartos y
+  quintos). La mitad lleva signo menos delante (a = −1), para que "hacia dónde abre" y "máximo o mínimo" no siempre tengan la misma respuesta.
+- Preguntas: en los trinomios, primero **factorizar** (escribir el binomio al cuadrado, p. ej. (x − 3)^2 o −(x + 2)^2; se aceptan los
+  signos − y ^ o ²) y de ahí hallar h; después, en todos: ¿hacia dónde abre?, ¿máximo o mínimo?, ¿dónde está el vértice V(h, 0)? (dos
+  casillas) y ¿dónde corta al eje y, (0, a·h²)? Cada ejercicio cuenta si todo está bien; si no, la página dice cuántas lleva bien y explica
+  cada error (cómo se factoriza el TCP, el signo de a, el vértice con (x + k) = (x − (−k)), el corte f(0)).
+- Los números pueden escribirse como enteros, fracciones o decimales. Se revisó con 140 tarjetas de prueba (todas correctas) y los 100
+  ejercicios son distintos.
