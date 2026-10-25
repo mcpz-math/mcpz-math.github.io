@@ -1463,3 +1463,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - En el método gráfico de Matemáticas 3 quedó el cuadrito "Repaso" (¿Necesitas repasar cómo graficar una recta con la pendiente y la
   ordenada al origen? Lo viste en Matemáticas 2) con el botón "Practicar con la animación interactiva →", que ahora lleva a la página
   de Matemáticas 2.
+
+## 2026-10-25 (se quita "Materiales y tareas" de Sistemas de ecuaciones simultáneas)
+- A pedido de Carmen, en `matematicas-3/tema-01-sistemas-de-ecuaciones-simultaneas.html` se quitó la sección "Materiales y tareas"
+  (el cuadro "Materiales: Próximamente: apuntes, presentaciones y ejercicios"). La página termina con los métodos Gráfico y Cramer.
