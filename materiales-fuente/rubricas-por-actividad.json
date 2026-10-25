@@ -655,6 +655,65 @@
       ]
     },
     {
+      "id": "binomioscuad",
+      "titulo": "Matemáticas 3 · Tema 6 · Binomio al cuadrado y TCP",
+      "file": "matematicas-3/tema-06-binomio-al-cuadrado-y-tcp.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de las dos prácticas de la página (desarrollar un binomio al cuadrado y factorizar un trinomio cuadrado perfecto), resueltos en el cuaderno con el procedimiento (no sólo el resultado).",
+        "Al menos un ejercicio de cada tipo, con a y b identificados con su signo, el doble producto y la comprobación.",
+        "La explicación (oral o escrita) de por qué (a + b)² no es a² + b² y de cómo se reconoce un TCP."
+      ],
+      "errores": [
+        "(a + b)² = a² + b² (olvida el doble producto 2ab).",
+        "(3x)² = 3x² (no eleva al cuadrado el coeficiente) o (x³)² = x⁵ (suma los exponentes en lugar de multiplicarlos).",
+        "Pierde el signo del término de en medio, o escribe ab en lugar de 2ab.",
+        "Dice que x² + 10x + 16 es un TCP sin revisar que 2 · x · 4 no es 10x.",
+        "Factoriza x² − 6x + 9 como (x + 3)² (el signo del binomio es el del término de en medio) o como (x² − 3)².",
+        "Con fracciones o decimales calcula mal el cuadrado de b o el doble producto, o no simplifica."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe cada binomio con paréntesis y el exponente 2, y el trinomio con los signos en su lugar.",
+            "Escribe a y b con su signo, coeficiente, exponentes, fracciones o decimales.",
+            "Sus pasos están en orden (a y b, cuadrados, doble producto, comprobación) y puede explicarlos con sus palabras."
+          ],
+          "n1": "Escribe el binomio sin paréntesis o sin el exponente, deja términos sin signo o sin coeficiente (por ejemplo x² + 25 en lugar de x² + 10x + 25) y no se entiende su procedimiento. No usa ningún apoyo, como identificar a y b o la comprobación.",
+          "n23": "Usa la simbología con limitaciones: se entiende lo que hizo, aunque a veces omite un paréntesis, un signo o la identificación de a y b. Repite la regla de manera mecánica y casi no la explica.",
+          "n4": "Escribe con la simbología correcta los binomios al cuadrado y las factorizaciones (a ± b)², con alguna deficiencia (por ejemplo, deja una fracción sin simplificar o un signo ambiguo). Explica con claridad qué hizo en cada paso.",
+          "n5": "Escribe todos los pasos con notación correcta (desarrollo y factorización) y explica por escrito u oralmente de dónde sale cada término del trinomio y cómo se obtiene el binomio, reconstruyendo el procedimiento en un ejercicio nuevo."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Identifica a y b con su signo, también cuando traen coeficiente, potencias, varias letras, fracciones o decimales.",
+            "Aplica (a ± b)² = a² ± 2ab + b² y reconoce el resultado como un trinomio cuadrado perfecto.",
+            "Reconoce un TCP: dos cuadrados perfectos y el doble producto en medio, y distingue uno que no lo es (x² + 10x + 16)."
+          ],
+          "n1": "Conoce la regla (a + b)² = a² + 2ab + b² sólo de memoria; escribe a² + b² (olvida el doble producto) o no eleva al cuadrado el coeficiente. No distingue el primer término del segundo ni reconoce un TCP.",
+          "n23": "Hace un uso correcto de las expresiones: identifica a y b, y desarrolla y factoriza en casos sencillos ((x + 8)², x² + 6x + 9). Le fallan los casos con coeficientes, potencias, varias letras, fracciones o decimales, o el signo del doble producto.",
+          "n4": "Comprende y maneja las propiedades: eleva al cuadrado cada término, calcula el doble producto con su signo y simplifica; al factorizar, saca las raíces, verifica que el término de en medio sea 2ab y distingue un TCP de un trinomio que no lo es, incluso con varias letras, fracciones o decimales.",
+          "n5": "Dota de significado y generaliza: explica por qué (a ± b)² no es a² ± b² (aparece el doble producto 2ab, que en la figura son dos rectángulos) y generaliza la regla y su uso inverso para cualquier a y b, también con signos negativos."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué (a + b)² no es a² + b²: aparece el doble producto 2ab.",
+            "Explica de qué depende el signo del binomio al factorizar un TCP (el signo del término de en medio).",
+            "Comprueba multiplicando el binomio por sí mismo, término a término, y reduciendo los términos semejantes.",
+            "Distingue con ejemplos un TCP (x² + 10x + 25) de uno que no lo es (x² + 10x + 16)."
+          ],
+          "n1": "Defiende su resultado con frases como «así es la regla» o «así me salió». Reconoce intuitivamente que hay un procedimiento, pero no lo explica ni lo comprueba.",
+          "n2": "Explica con sus palabras («se eleva cada uno al cuadrado y se suma el doble del primero por el segundo») por qué sale un trinomio, o cómo reconoce un TCP, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: multiplica varios binomios por sí mismos y comprueba que coinciden con la regla, y da ejemplos y no-ejemplos de TCP (x² + 10x + 25 sí; x² + 10x + 16 no).",
+          "n4": "Explica la estructura del argumento: la regla (a ± b)² = a² ± 2ab + b² es la hipótesis y el trinomio es la conclusión; para factorizar, que el término de en medio sea 2ab es lo que confirma que es un TCP. Justifica cada paso y verifica multiplicando (a ± b)(a ± b) hasta llegar al mismo trinomio.",
+          "n5": "Elabora una cadena de argumentos que generaliza: demuestra por qué (a ± b)² = a² ± 2ab + b² a partir de (a ± b)(a ± b), usa la figura del cuadrado de lado a + b y explica por qué un trinomio es un TCP si y sólo si su término de en medio es ±2ab. Distingue convencerse con ejemplos de demostrar."
+        }
+      ]
+    },
+    {
       "id": "binomios",
       "titulo": "Matemáticas 3 · Tema 6 · Binomios conjugados y DCP",
       "file": "matematicas-3/tema-06-binomios-conjugados.html",

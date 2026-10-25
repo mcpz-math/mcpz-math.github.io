@@ -1354,3 +1354,30 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Cuando la respuesta no está simplificada, junto al "¡Correcto!" aparece un consejo para dejarla en su
   forma más sencilla (±3√2 i). Siguen siendo incorrectas las respuestas sin i, con una sola raíz o con
   un valor equivocado. La instrucción de la página se ajustó a esto.
+
+## 2026-10-25 (subtema Binomio al cuadrado y TCP: explicación, 2 videos y 200 ejercicios)
+- Carmen pidió, en la sección de binomio al cuadrado y trinomio cuadrado perfecto (TCP) del Tema 6, 100
+  ejercicios de cada tema (10 al azar cada vez), una explicación breve de su importancia y un video por
+  tema. Se creó la página `matematicas-3/tema-06-binomio-al-cuadrado-y-tcp.html` y el bloque "Binomio al
+  cuadrado y TCP" de `tema-06-productos-notables-y-factorizacion.html` ya no dice "Próximamente": enlaza a
+  esa página ("Ver subtema →").
+- La página trae: "¿Por qué es importante?" (ahorra tiempo y errores, sirve para factorizar y resolver
+  ecuaciones, prepara completar el cuadrado, y la figura del cuadrado de lado a + b); luego "Binomio al
+  cuadrado" (explicación, video y ejercicios) y "Trinomio cuadrado perfecto" (explicación, cómo reconocerlo,
+  video y ejercicios); al final la rúbrica con la matriz de niveles.
+- **Ejercicios con revisión automática** (mismo estilo de los de binomios conjugados, con botones ², ³… y
+  fracciones apiladas): banco de 100 binomios al cuadrado para desarrollar (el alumno escribe el trinomio,
+  sin paréntesis) y banco de 100 TCP para factorizar (acepta (a ± b)^2 o (a ± b)(a ± b)). Los dos bancos
+  van de menor a mayor dificultad: letra ± número, con coeficiente, dos letras, potencias, primer término
+  negativo (sólo al desarrollar), varias letras, fracciones y decimales. La respuesta correcta y los
+  mensajes de error (olvida el doble producto, signo del término de en medio, signo del binomio…) salen
+  del cálculo, no de respuestas escritas a mano. Los bancos son listas de binomios dentro de la página.
+- **Videos** (≈3 min, estilo Compás, con la música de siempre): `materiales/tema-06-binomio-al-cuadrado.mp4`
+  (qué es, por qué (a + b)² no es a² + b², la figura del cuadrado de lado a + b, la regla, 3 ejemplos con
+  comprobación, errores comunes, "Ahora tú" y repaso) y `materiales/tema-06-trinomio-cuadrado-perfecto.mp4`
+  (qué es un TCP, cómo reconocerlo, los pasos, 3 ejemplos, un trinomio que no es TCP, errores comunes,
+  "Ahora tú" y repaso), con su portada. Generadores en `materiales-fuente/generar-video-binomio-al-cuadrado.html`
+  y `generar-video-trinomio-cuadrado-perfecto.html` (misma plantilla que los demás).
+- Rúbrica del subtema: actividad "binomioscuad" en `materiales-fuente/rubricas-por-actividad.json`
+  (Comunicación, Representación algebraica y Argumentación; Niveles 1 a 5 y nota del Nivel 0, con "Qué observar" de
+  esta actividad). Se regeneró la guía en Word `Escritorio\IEMS\Guia_para_evaluar_con_la_matriz.docx`.

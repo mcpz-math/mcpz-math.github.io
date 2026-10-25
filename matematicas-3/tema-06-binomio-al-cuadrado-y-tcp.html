@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binomio al cuadrado y TCP — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-06-productos-notables-y-factorizacion.html">← Tema 6</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 3 · Tema 6 · Subtema</div>
+    <h1>Binomio al cuadrado y TCP</h1>
+  </div>
+
+  <p class="section-label">¿Por qué es importante?</p>
+  <div class="prose">
+    <p>Un <strong>binomio al cuadrado</strong> es un binomio multiplicado por sí mismo, por ejemplo
+       <span style="font-family:'IBM Plex Mono',monospace; color:var(--forest); white-space:nowrap;">(x + 5)² = (x + 5)(x + 5)</span>.
+       Es un <strong>producto notable</strong>: tiene una regla que permite escribir el resultado directamente,
+       sin multiplicar término a término. Y como ese resultado siempre tiene la misma forma, también
+       podemos <strong>reconocerlo y volver atrás</strong>: ese es el <strong>trinomio cuadrado perfecto
+       (TCP)</strong>.</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
+      <li>(a + b)² = a² + 2ab + b²</li>
+      <li>(a − b)² = a² − 2ab + b²</li>
+    </ul>
+    <p>Esto es útil porque:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li><strong>Ahorra tiempo y errores:</strong> el cuadrado de un binomio se desarrolla en un solo paso.
+          Con la regla se evita el error más común, creer que <strong>(a + b)² es a² + b²</strong>: falta
+          el término de en medio, el doble producto 2ab.</li>
+      <li><strong>Sirve para factorizar:</strong> un trinomio cuadrado perfecto se escribe como un
+          binomio al cuadrado, y factorizar es la herramienta para <strong>resolver ecuaciones</strong> y
+          simplificar expresiones.</li>
+      <li><strong>Prepara temas que vienen:</strong> con estas ideas se <strong>completa el cuadrado</strong>,
+          que da la fórmula general de las ecuaciones de segundo grado y el vértice de una parábola.</li>
+      <li><strong>Tiene un significado geométrico:</strong> el área de un cuadrado de lado a + b se forma
+          con un cuadrado de área a², uno de área b² y dos rectángulos de área ab.</li>
+    </ul>
+    <figure style="margin:0 0 1rem; text-align:center;">
+      <svg viewBox="0 0 270 250" width="250" height="232" role="img" aria-label="Un cuadrado de lado a + b dividido en un cuadrado a al cuadrado, un cuadrado b al cuadrado y dos rectángulos ab" style="max-width:100%; height:auto;">
+        <rect x="30" y="30" width="150" height="150" fill="#c4e86b" stroke="#14301f" stroke-width="2.5"/>
+        <rect x="180" y="30" width="60" height="150" fill="#e4f1d3" stroke="#14301f" stroke-width="2.5"/>
+        <rect x="30" y="180" width="150" height="60" fill="#e4f1d3" stroke="#14301f" stroke-width="2.5"/>
+        <rect x="180" y="180" width="60" height="60" fill="#ffffff" stroke="#14301f" stroke-width="2.5"/>
+        <g font-family="IBM Plex Mono, monospace" font-size="22" fill="#14301f" text-anchor="middle" font-weight="700">
+          <text x="105" y="114">a²</text>
+          <text x="210" y="114">ab</text>
+          <text x="105" y="218">ab</text>
+          <text x="210" y="218">b²</text>
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="18" fill="#3f6b4a" text-anchor="middle">
+          <text x="105" y="22">a</text>
+          <text x="210" y="22">b</text>
+          <text x="16" y="110">a</text>
+          <text x="16" y="215">b</text>
+        </g>
+      </svg>
+      <figcaption style="font-size:0.9rem; color:var(--ink-soft);">Cuadrado de lado a + b: área (a + b)² = a² + 2ab + b²</figcaption>
+    </figure>
+  </div>
+
+  <p class="section-label" id="binomio-al-cuadrado">Binomio al cuadrado: cómo se desarrolla</p>
+  <div class="prose">
+    <p>Para desarrollar <strong>(a ± b)²</strong> escribimos <strong>tres términos</strong>:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li>el <strong>cuadrado del primer término</strong> (a²),</li>
+      <li>más o menos el <strong>doble producto</strong> del primero por el segundo (±2ab): lleva el signo
+          que une los términos del binomio,</li>
+      <li>más el <strong>cuadrado del segundo término</strong> (b²), siempre positivo.</li>
+    </ul>
+    <p>Ejemplos:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
+      <li>(x + 5)² = x² + 10x + 25</li>
+      <li>(3m − 4)² = 9m² − 24m + 16</li>
+    </ul>
+  </div>
+
+  <p class="section-label" id="video-binomio-al-cuadrado">Video: binomio al cuadrado</p>
+  <div class="video-embed">
+    <video controls preload="metadata" playsinline poster="materiales/tema-06-binomio-al-cuadrado-portada.jpg">
+      <source src="materiales/tema-06-binomio-al-cuadrado.mp4" type="video/mp4">
+      Tu navegador no puede reproducir este video.
+    </video>
+  </div>
+  <p class="video-embed-caption">Video: qué es un binomio al cuadrado, por qué (a + b)² no es a² + b²,
+     la regla paso a paso, tres ejemplos, errores comunes y un ejercicio para resolver.</p>
+
+  <p class="section-label" id="ejercicios-binomio-al-cuadrado">Ejercicios: binomio al cuadrado</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Desarrolla cada binomio al cuadrado y escribe el resultado <strong>sin paréntesis</strong> (un
+       trinomio). Después oprime <strong>Comprobar</strong> (o la tecla Enter). Recuerda la regla:
+       <strong>(a ± b)² = a² ± 2ab + b²</strong>.</p>
+    <p>Para un exponente usa el signo <strong>^</strong> (por ejemplo <strong>x^2</strong>) o los botones
+       <strong>²</strong>, <strong>³</strong>… que están debajo de cada cuadro. Las fracciones se escriben con
+       <strong>/</strong> (por ejemplo <strong>1/4</strong>) y los decimales con punto. No importa el orden
+       de los términos.</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Cuando termines,
+       oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="bc-grid"></div>
+  <p class="practice-score" id="bc-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="bc-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <p class="section-label" id="trinomio-cuadrado-perfecto">Trinomio cuadrado perfecto (TCP): cómo se factoriza</p>
+  <div class="prose">
+    <p>Un <strong>trinomio cuadrado perfecto</strong> es el resultado de elevar un binomio al cuadrado.
+       Para reconocerlo, revisa que:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li>el <strong>primer</strong> y el <strong>último</strong> término sean <strong>cuadrados perfectos</strong>
+          (positivos): saca su raíz cuadrada y obtienes a y b,</li>
+      <li>el término de en medio sea el <strong>doble producto 2ab</strong> (con el signo que sea).</li>
+    </ul>
+    <p>Si se cumple, se factoriza como <strong>(a + b)²</strong> cuando el término de en medio es positivo,
+       o como <strong>(a − b)²</strong> cuando es negativo:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
+      <li>x² + 10x + 25 = (x + 5)²</li>
+      <li>9m² − 24m + 16 = (3m − 4)²</li>
+    </ul>
+    <p>Cuidado: <span style="font-family:'IBM Plex Mono',monospace; color:var(--forest);">x² + 10x + 16</span>
+       <strong>no</strong> es un TCP: 16 es un cuadrado perfecto, pero 2 · x · 4 = 8x, no 10x.</p>
+  </div>
+
+  <p class="section-label" id="video-tcp">Video: trinomio cuadrado perfecto</p>
+  <div class="video-embed">
+    <video controls preload="metadata" playsinline poster="materiales/tema-06-trinomio-cuadrado-perfecto-portada.jpg">
+      <source src="materiales/tema-06-trinomio-cuadrado-perfecto.mp4" type="video/mp4">
+      Tu navegador no puede reproducir este video.
+    </video>
+  </div>
+  <p class="video-embed-caption">Video: cómo reconocer un trinomio cuadrado perfecto (dos cuadrados perfectos y
+     el doble producto), los pasos para factorizarlo, tres ejemplos, un trinomio que no es TCP, errores
+     comunes y un ejercicio para resolver.</p>
+
+  <p class="section-label" id="ejercicios-tcp">Ejercicios: trinomio cuadrado perfecto (TCP)</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Ahora al revés: <strong>factoriza</strong> cada trinomio cuadrado perfecto. Saca la raíz cuadrada del
+       primer y del último término, comprueba que el de en medio sea el doble producto y escribe un binomio
+       al cuadrado: <strong>a² ± 2ab + b² = (a ± b)²</strong>.</p>
+    <p>Escribe tu respuesta con paréntesis, por ejemplo <strong>(x + 5)^2</strong> o <strong>(x + 5)(x + 5)</strong>,
+       y oprime <strong>Comprobar</strong>. Para los exponentes usa <strong>^</strong> o los botones de abajo de
+       cada cuadro; las fracciones con <strong>/</strong>.</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Oprime
+       <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="tcp-grid"></div>
+  <p class="practice-score" id="tcp-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="tcp-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script src="../assets/practica-algebra.js"></script>
+  <script>
+  (function () {
+    var MINUS = '−', SUPD = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
+    var parse = Algebra.parse, padd = Algebra.padd, pmul = Algebra.pmul, same = Algebra.same;
+    function F(n, d) { return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>'; }
+    function sup(n) { return String(n).split('').map(function (c) { return SUPD[c]; }).join(''); }
+
+    // Cada ejercicio es el binomio "primer término, signo, segundo término", de menor a mayor dificultad.
+    // Las fracciones se escriben {n/d}; el exponente, ^n; el primer término puede empezar con -.
+    // Banco 1 (binomio al cuadrado): 1–15 letra ± número · 16–35 con coeficiente · 36–50 dos letras ·
+    //   51–62 potencias · 63–70 primer término negativo · 71–82 monomios de varias letras ·
+    //   83–94 fracciones · 95–100 decimales.
+    var BANK_BC = [
+      'x+8', 'y-6', 'a+11', 'n-9', 'p+4', 'm-12', 'b+7', 'k-5', 'z+13', 'c-3', 't+9', 'w-14', 'r+15', 'q-8', 'x-1',
+      '2x+3', '3y-4', '5a+1', '4m-5', '6n+7', '3p-2', '7b+2', '2k-9', '5z+4', '4c-1', '8t+3', '6w-5', '9r+2', '3q+10', '2x-7', '5y+6', '4a-3', '7m+1', '3n-8', '6p+5',
+      '2a+3b', '4x-5y', '3m-2n', '5p+q', '6r-7s', 'a+4b', '2c-d', '7u+3v', '3x-y', '8m+5n', '4p-9q', '5a+6b', 'x+10y', '9s-2t', '2h+11k',
+      'x^2+5', 'y^3-4', 'a^2+9', 'm^3-2', 'n^4+3', 'p^2-7', '3x^2+4', '2y^3-5', '4a^2+1', '5m^3-3', '3n^4+2', '2p^2-6',
+      '-x+6', '-3y+5', '-2a-7', '-5m-1', '-4n+3', '-6p-2', '-x-9', '-7b+4',
+      'xy+3', '3ab-2', '5xy+4z', '2mn-7', '3pq+5r', '4xy-3z^2', '2a^2b+5', '3x^2y-2z', '6mn^2+1', '5p^2q-4r^3', '2x^2y^3+3z', '7ab^2-2c^2',
+      'x+{1/2}', 'y-{1/3}', 'm+{3/2}', 'n-{2/5}', '{1/2}x+4', '{1/3}y-6', '{2/3}a+3', '{3/4}m-2', '{1/2}x+{1/3}', '{2/5}p-{1/2}', '{3/4}a+{2/3}b', '{1/2}x^2-{1/4}',
+      '0.5x+2', '0.3y-4', '0.2m+0.5', '1.5a-3', '0.4p+0.6q', '0.1x^2-0.5'
+    ];
+    // Banco 2 (TCP): se factoriza el trinomio que resulta de (primer término ± segundo término)².
+    //   1–15 letra ± número · 16–35 con coeficiente · 36–50 dos letras · 51–62 potencias ·
+    //   63–82 monomios de varias letras · 83–94 fracciones · 95–100 decimales.
+    var BANK_TCP = [
+      'x+6', 'y-4', 'a+9', 'm-10', 'n+12', 'p-2', 'b+3', 'k-7', 'z+5', 'c-8', 't+11', 'w-1', 'r+14', 'q-9', 'x+7',
+      '2x+5', '3y-2', '4a+3', '5m-4', '6n+1', '2p-9', '3b+7', '4k-5', '5z+2', '7c-3', '2t+11', '3w-8', '6r+5', '8q-1', '9x+4', '4y-7', '5a+6', '3m+10', '2n-3', '10p+1',
+      '3a+2b', '5x-3y', '2m-7n', '4p+5q', '7r-2s', 'a+6b', '3c-d', '2u+9v', '6x-5y', '4m+3n', '5p-8q', '9a+2b', 'x-12y', '8s+t', '3h-4k',
+      'x^2+3', 'y^3-6', 'a^2+8', 'm^3-1', 'n^4+5', 'p^2-10', '2x^2+3', '3y^3-2', '4a^2-5', '5m^3+1', '2n^4-7', '3p^2+4',
+      'xy+4', '2ab-5', '3xy+2z', '4mn-3', '5pq-2r', '2xy-7z^2', '3a^2b+1', '2x^2y-5z', '4mn^2+3', '3p^2q-2r^3', '5x^2y^3+z', '2ab^2-9c^2',
+      '6xy+1', '3mn-8', '2pq+9r', '4a^2b^2-3', 'x^2y+7', '5m^2n-2p', '3xy^2+4', '2ab+3c^2',
+      'x-{1/4}', 'y+{2/3}', 'm-{3/2}', 'n+{4/5}', '{1/2}x-6', '{1/3}y+9', '{3/2}a-2', '{2/3}m+4', '{1/2}x+{1/5}', '{3/5}p-{1/2}', '{2/3}a-{3/4}b', '{1/3}x^2+{1/2}',
+      '0.5x-4', '0.3y+2', '0.2m-0.5', '1.5a+3', '0.6p-0.4q', '0.1x^2+0.7'
+    ];
+
+    // ---------- texto del banco → pantalla y → lectura ----------
+    function fx(s) {
+      return s.replace(/\{(\d+)\/(\d+)\}/g, function (m, n, d) { return F(n, d); })
+              .replace(/\^(\d+)/g, function (m, e) { return sup(e); })
+              .replace(/^-/, MINUS);
+    }
+    function ps(s) { return s.replace(/\{(\d+)\/(\d+)\}/g, '$1/$2'); }
+    function split(str) {
+      var i = 1;
+      while (i < str.length && str.charAt(i) !== '+' && str.charAt(i) !== '-') i++;
+      return { A: str.slice(0, i), s: str.charAt(i), B: str.slice(i + 1) };
+    }
+    function build(str) {
+      var p = split(str), PA = parse(ps(p.A)).P, PB = parse(ps(p.B)).P, PBs = p.s === '-' ? padd({}, PB, -1) : PB;
+      var a2 = pmul(PA, PA), b2 = pmul(PB, PB), ab = pmul(PA, PBs), mid = pmul(ab, { '': [2, 1] });
+      return { A: p.A, B: p.B, s: p.s, sg: p.s === '-' ? MINUS : '+', dec: str.indexOf('.') >= 0,
+               PA: PA, PB: PB, a2: a2, b2: b2, ab: ab, mid: mid, tri: padd(padd(a2, mid, 1), b2, 1) };
+    }
+    // un término (polinomio de un solo término) → { neg, html }
+    function termHTML(P, dec) {
+      var k = Object.keys(P)[0], c = P[k], n = Math.abs(c[0]), d = c[1], vs = '', coef;
+      k.replace(/([a-z])(\d+)/g, function (m, v, e) { vs += v + (+e > 1 ? sup(e) : ''); return m; });
+      if (d === 1) coef = (n === 1 && vs) ? '' : String(n);
+      else coef = dec ? String(n / d) : F(n, d);
+      return { neg: c[0] < 0, html: coef + vs };
+    }
+    function triHTML(ex) {
+      return [ex.a2, ex.mid, ex.b2].map(function (P, i) {
+        var t = termHTML(P, ex.dec);
+        return (i === 0 ? '' : (t.neg ? ' ' + MINUS + ' ' : ' + ')) + t.html;
+      }).join('');
+    }
+
+    // ---------- tarjetas ----------
+    var KEYS_BC = ['²', '³', '⁴', '⁶', '⁸', '−', '/'], KEYS_TCP = ['(', ')', '²', '³', '⁴', '−', '/'];
+    function setup(id, list, kind) {
+      var BANK = list.map(build), N = 10, done = {};
+      var grid = document.getElementById(id + '-grid'), scoreEl = document.getElementById(id + '-score');
+      function score() {
+        var n = Object.keys(done).length;
+        scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
+      }
+      function pick() { // 10 al azar, ordenados de menor a mayor dificultad
+        var idx = BANK.map(function (e, i) { return i; });
+        for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+        return idx.slice(0, N).sort(function (p, q) { return p - q; }).map(function (i) { return BANK[i]; });
+      }
+      function factorOk(v, r, ex) { // un binomio al cuadrado, o dos binomios iguales
+        if (!same(r.P, ex.tri)) return false;
+        if (r.binos === 2 && r.others === 0) return true;
+        var m = /^\((.+)\)(?:\^2|²)$/.exec(v.replace(/\s+/g, ''));
+        if (!m) return false;
+        try { var q = parse(m[1]); return q.terms === 2 && same(pmul(q.P, q.P), ex.tri); } catch (e) { return false; }
+      }
+      function makeCard(ex, idx) {
+        var bin = '(' + fx(ex.A) + ' ' + ex.sg + ' ' + fx(ex.B) + ')²', sol, q, label;
+        if (kind === 'bc') {
+          q = bin; label = 'Tu desarrollo del ejercicio ' + (idx + 1);
+          sol = '<span style="white-space:nowrap;">' + bin + ' = (' + fx(ex.A) + ')² ' + ex.sg + ' 2(' + fx(ex.A) + ')(' + fx(ex.B) + ') + (' + fx(ex.B) + ')²</span><br>= <strong>' + triHTML(ex) + '</strong>';
+        } else {
+          q = triHTML(ex); label = 'Tu factorización del ejercicio ' + (idx + 1);
+          sol = '<span style="white-space:nowrap;">√(' + termHTML(ex.a2, ex.dec).html + ') = ' + fx(ex.A) + '</span> &nbsp;y&nbsp; <span style="white-space:nowrap;">√(' + termHTML(ex.b2, ex.dec).html + ') = ' + fx(ex.B) + '</span><br>' +
+                '<span style="white-space:nowrap;">Doble producto: 2(' + fx(ex.A) + ')(' + fx(ex.B) + ') = ' + termHTML(ex.mid, ex.dec).html + ' ✓</span><br>' +
+                '<strong>' + bin + '</strong>';
+        }
+        var keys = (kind === 'bc' ? KEYS_BC : KEYS_TCP).map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('');
+        var card = document.createElement('div');
+        card.className = 'practice-card';
+        card.innerHTML =
+          '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + q + '</span></div>' +
+          '<div class="practice-row"><span class="eq">=</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="' + label + '">' +
+          '<button type="button" class="practice-check">Comprobar</button></div>' +
+          '<div class="practice-keys">' + keys + '</div>' +
+          '<div class="practice-fb" aria-live="polite"></div>';
+        grid.appendChild(card);
+        var input = card.querySelector('input'), fb = card.querySelector('.practice-fb');
+        card.querySelectorAll('.practice-keys button').forEach(function (b) {
+          b.addEventListener('click', function () {
+            var s = input.selectionStart == null ? input.value.length : input.selectionStart, e = input.selectionEnd == null ? s : input.selectionEnd;
+            input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e);
+            input.focus(); input.setSelectionRange(s + 1, s + 1);
+          });
+        });
+        function check() {
+          var v = input.value.trim(), msg;
+          card.classList.remove('ok', 'bad');
+          if (!v) { fb.innerHTML = 'Escribe tu respuesta en el cuadro.'; return; }
+          var r;
+          try { r = parse(v); } catch (e) { r = null; }
+          if (!r) {
+            card.classList.add('bad');
+            fb.innerHTML = '<span class="no">No entendí lo que escribiste.</span> Escríbelo como, por ejemplo, ' +
+              (kind === 'bc' ? '<strong>x^2 + 10x + 25</strong> o <strong>4x² − 12x + 9</strong>.' : '<strong>(x + 5)^2</strong> o <strong>(3x − 2)²</strong>.');
+            return;
+          }
+          var good = kind === 'bc' ? (same(r.P, ex.tri) && r.terms === 3) : factorOk(v, r, ex);
+          if (good) {
+            card.classList.add('ok'); done[idx] = 1; score();
+            fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span><div class="sol">' + sol + '</div>';
+            return;
+          }
+          card.classList.add('bad'); delete done[idx]; score();
+          var ok = Algebra.vars(ex.tri), bad = Algebra.vars(r.P).filter(function (c) { return ok.indexOf(c) < 0; });
+          if (bad.length) msg = 'Revisa las letras: en este ejercicio sólo aparece' + (ok.length > 1 ? 'n ' : ' ') + '<strong>' + ok.join(', ') + '</strong>.';
+          else if (kind === 'bc') {
+            if (same(r.P, ex.tri)) msg = 'Es el mismo resultado, pero <strong>desarróllalo</strong>: escríbelo como un trinomio (tres términos), sin paréntesis.';
+            else if (same(r.P, padd(ex.a2, ex.b2, 1))) msg = 'Te faltó el <strong>doble producto</strong>: (a ± b)² <strong>no</strong> es a² ± b². Entre los dos cuadrados va el término <strong>2ab</strong>.';
+            else if (same(r.P, padd(padd(ex.a2, ex.mid, -1), ex.b2, 1))) msg = 'Revisa el <strong>signo del término de en medio</strong> (el doble producto 2ab): fíjate en el signo de a y en el de b.';
+            else if (same(r.P, padd(padd(ex.a2, ex.ab, 1), ex.b2, 1)) || same(r.P, padd(padd(ex.a2, ex.ab, -1), ex.b2, 1))) msg = 'El término de en medio es el <strong>doble</strong> producto: 2 · a · b, no sólo a · b.';
+            else msg = 'Eleva al cuadrado <strong>cada</strong> término (también el número que acompaña a la letra), y en medio escribe el doble producto <strong>2ab</strong>.';
+          } else {
+            var opp = pmul(padd(ex.PA, ex.PB, ex.s === '-' ? 1 : -1), padd(ex.PA, ex.PB, ex.s === '-' ? 1 : -1));
+            if (same(r.P, ex.tri) && r.terms > 1) msg = 'Eso es lo mismo que te dieron: hay que <strong>factorizar</strong>, es decir, escribirlo como un <strong>binomio al cuadrado</strong>.';
+            else if (same(r.P, ex.tri)) msg = 'Es equivalente, pero escríbelo como el cuadrado de un binomio: <strong>(… ± …)²</strong>.';
+            else if (same(r.P, opp)) msg = 'Revisa el <strong>signo</strong> del binomio: es el mismo signo del término de en medio.';
+            else msg = 'Saca la <strong>raíz cuadrada</strong> del primer y del último término, comprueba que el de en medio sea el doble producto <strong>2ab</strong> y escribe <strong>(a ± b)²</strong>.';
+          }
+          fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + msg + '<div class="sol">La respuesta correcta es:<br>' + sol + '</div>';
+        }
+        card.querySelector('.practice-check').addEventListener('click', check);
+        input.addEventListener('keydown', function (e) { if (e.key === 'Enter') check(); });
+      }
+      function newSet() {
+        grid.innerHTML = ''; done = {};
+        pick().forEach(makeCard);
+        score();
+      }
+      document.getElementById(id + '-new').addEventListener('click', function () {
+        newSet();
+        document.getElementById(kind === 'bc' ? 'ejercicios-binomio-al-cuadrado' : 'ejercicios-tcp').scrollIntoView({ behavior: 'smooth' });
+      });
+      newSet();
+    }
+    setup('bc', BANK_BC, 'bc');
+    setup('tcp', BANK_TCP, 'tcp');
+  })();
+  </script>
+
+  <p class="section-label no-caps" id="rubrica-binomio-al-cuadrado">Rúbrica · Binomio al cuadrado y TCP</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe cada binomio con paréntesis y el exponente 2, y el trinomio con los signos en su lugar.</li><li>Escribe a y b con su signo, coeficiente, exponentes, fracciones o decimales.</li><li>Sus pasos están en orden (a y b, cuadrados, doble producto, comprobación) y puede explicarlos con sus palabras.</li></ul></div></td>
+            <td>Escribe el binomio sin paréntesis o sin el exponente, deja términos sin signo o sin coeficiente (por ejemplo x² + 25 en lugar de x² + 10x + 25) y no se entiende su procedimiento. No usa ningún apoyo, como identificar a y b o la comprobación.</td>
+            <td colspan="2">Usa la simbología con limitaciones: se entiende lo que hizo, aunque a veces omite un paréntesis, un signo o la identificación de a y b. Repite la regla de manera mecánica y casi no la explica.</td>
+            <td>Escribe con la simbología correcta los binomios al cuadrado y las factorizaciones (a ± b)², con alguna deficiencia (por ejemplo, deja una fracción sin simplificar o un signo ambiguo). Explica con claridad qué hizo en cada paso.</td>
+            <td>Escribe todos los pasos con notación correcta (desarrollo y factorización) y explica por escrito u oralmente de dónde sale cada término del trinomio y cómo se obtiene el binomio, reconstruyendo el procedimiento en un ejercicio nuevo.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Identifica a y b con su signo, también cuando traen coeficiente, potencias, varias letras, fracciones o decimales.</li><li>Aplica (a ± b)² = a² ± 2ab + b² y reconoce el resultado como un trinomio cuadrado perfecto.</li><li>Reconoce un TCP: dos cuadrados perfectos y el doble producto en medio, y distingue uno que no lo es (x² + 10x + 16).</li></ul></div></td>
+            <td>Conoce la regla (a + b)² = a² + 2ab + b² sólo de memoria; escribe a² + b² (olvida el doble producto) o no eleva al cuadrado el coeficiente. No distingue el primer término del segundo ni reconoce un TCP.</td>
+            <td colspan="2">Hace un uso correcto de las expresiones: identifica a y b, y desarrolla y factoriza en casos sencillos ((x + 8)², x² + 6x + 9). Le fallan los casos con coeficientes, potencias, varias letras, fracciones o decimales, o el signo del doble producto.</td>
+            <td>Comprende y maneja las propiedades: eleva al cuadrado cada término, calcula el doble producto con su signo y simplifica; al factorizar, saca las raíces, verifica que el término de en medio sea 2ab y distingue un TCP de un trinomio que no lo es, incluso con varias letras, fracciones o decimales.</td>
+            <td>Dota de significado y generaliza: explica por qué (a ± b)² no es a² ± b² (aparece el doble producto 2ab, que en la figura son dos rectángulos) y generaliza la regla y su uso inverso para cualquier a y b, también con signos negativos.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué (a + b)² no es a² + b²: aparece el doble producto 2ab.</li><li>Explica de qué depende el signo del binomio al factorizar un TCP (el signo del término de en medio).</li><li>Comprueba multiplicando el binomio por sí mismo, término a término, y reduciendo los términos semejantes.</li><li>Distingue con ejemplos un TCP (x² + 10x + 25) de uno que no lo es (x² + 10x + 16).</li></ul></div></td>
+            <td>Defiende su resultado con frases como «así es la regla» o «así me salió». Reconoce intuitivamente que hay un procedimiento, pero no lo explica ni lo comprueba.</td>
+            <td>Explica con sus palabras («se eleva cada uno al cuadrado y se suma el doble del primero por el segundo») por qué sale un trinomio, o cómo reconoce un TCP, con pocos términos matemáticos.</td>
+            <td>Valida con ejemplos: multiplica varios binomios por sí mismos y comprueba que coinciden con la regla, y da ejemplos y no-ejemplos de TCP (x² + 10x + 25 sí; x² + 10x + 16 no).</td>
+            <td>Explica la estructura del argumento: la regla (a ± b)² = a² ± 2ab + b² es la hipótesis y el trinomio es la conclusión; para factorizar, que el término de en medio sea 2ab es lo que confirma que es un TCP. Justifica cada paso y verifica multiplicando (a ± b)(a ± b) hasta llegar al mismo trinomio.</td>
+            <td>Elabora una cadena de argumentos que generaliza: demuestra por qué (a ± b)² = a² ± 2ab + b² a partir de (a ± b)(a ± b), usa la figura del cuadrado de lado a + b y explica por qué un trinomio es un TCP si y sólo si su término de en medio es ±2ab. Distingue convencerse con ejemplos de demostrar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>
