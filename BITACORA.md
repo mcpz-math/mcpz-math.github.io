@@ -1346,3 +1346,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   "serie2cuad", con las respuestas en el campo "respuestas"; `generar-serie-binomio-cuadrado.ps1`).
 - No se pudo abrir en Word para revisar cómo se ve (Word no se deja automatizar en esta PC); sólo se
   comprobó que el XML es válido y que los 20 ejercicios salen en su lugar.
+
+## 2026-10-25 (ecuaciones ax² + b = 0: se acepta la raíz sin simplificar)
+- A pedido de Carmen, en los ejercicios de ecuaciones ax² + b = 0 con raíces imaginarias
+  (`matematicas-3/tema-06-binomios-conjugados.html`) una respuesta como ±√18 i ahora se marca
+  **correcta** aunque no esté simplificada. Antes decía "No es correcta, simplifica".
+- Cuando la respuesta no está simplificada, junto al "¡Correcto!" aparece un consejo para dejarla en su
+  forma más sencilla (±3√2 i). Siguen siendo incorrectas las respuestas sin i, con una sola raíz o con
+  un valor equivocado. La instrucción de la página se ajustó a esto.

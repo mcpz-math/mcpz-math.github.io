@@ -497,7 +497,8 @@
        coma (por ejemplo <strong>5i, −5i</strong>). Después oprime <strong>Comprobar</strong> (o la tecla Enter).</p>
     <p>La <strong>i</strong> se escribe con la letra i. Para una raíz cuadrada usa el botón <strong>√</strong>
        (por ejemplo <strong>±2√2 i</strong>) y para una fracción el signo <strong>/</strong> (por ejemplo
-       <strong>±3/2 i</strong>). Escribe siempre la raíz y la fracción <strong>simplificadas</strong>.</p>
+       <strong>±3/2 i</strong>). Puedes dejar la raíz y la fracción <strong>sin simplificar</strong> (±√18 i también es correcto),
+       aunque es mejor simplificarlas (±3√2 i).</p>
     <p>Todas son de la forma <strong>ax² + b = 0</strong> con a y b del mismo signo: son una suma de
        cuadrados, <strong>no se pueden factorizar como DCP</strong> y sus raíces son imaginarias.
        Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Oprime
@@ -645,8 +646,7 @@
       if (neg) return { kind: 'neg' };
       if (!magOk) return { kind: onlyK ? 'onlyK' : 'wrong' };
       if (!(signs['+'] && signs['-'])) return { kind: parts.length > 1 ? 'sameSign' : 'oneRoot' };
-      if (unsimp) return { kind: 'simplify' };
-      return { kind: 'ok' };
+      return { kind: 'ok', unsimp: unsimp };
     }
 
     // ---------- tarjetas ----------
@@ -669,7 +669,7 @@
       wrong: 'Revisa tu despeje: pasa b restando, divide entre a y saca la raíz cuadrada de <strong>−b/a</strong> (separando la i).',
       oneRoot: 'Falta una raíz: siempre son <strong>dos</strong>, una con <strong>+</strong> y otra con <strong>−</strong>. Puedes escribir ±.',
       sameSign: 'Una raíz va con <strong>+</strong> y la otra con <strong>−</strong>.',
-      simplify: 'Está bien, pero <strong>simplifica</strong>: saca del radical los cuadrados perfectos (√8 = 2√2) y reduce las fracciones.'
+      simplify: 'Tu respuesta es correcta. Si quieres dejarla en su forma más sencilla, saca del radical los cuadrados perfectos (√8 = 2√2) y reduce las fracciones.'
     };
     function makeCard(ab, idx) {
       var ex = build(ab);
@@ -699,7 +699,7 @@
         var r = analyze(v, ex);
         if (r.kind === 'ok') {
           card.classList.add('ok'); done[idx] = 1; score();
-          fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span><div class="sol">' + ex.sol + '</div>';
+          fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span>' + (r.unsimp ? ' ' + MSG.simplify : '') + '<div class="sol">' + ex.sol + '</div>';
           return;
         }
         card.classList.add('bad'); delete done[idx]; score();
