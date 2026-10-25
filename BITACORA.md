@@ -1541,3 +1541,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
 ## 2026-10-25 (título "En f(x) = (x − h)²" en minúsculas)
 - A pedido de Carmen, el encabezado del recuadro "Para recordar" de `matematicas-3/tema-05-x-menos-h-cuadrada.html` ("En f(x) = (x − h)²")
   ya no sale todo en mayúsculas (se le puso la clase `no-caps`), para que se lea bien la fórmula.
+
+## 2026-10-25 (la aplicación de f(x) = (x − h)² muestra el corte con el eje y)
+- A pedido de Carmen, la aplicación de `matematicas-3/tema-05-x-menos-h-cuadrada.html` ahora marca el punto donde la parábola corta al
+  eje y, **(0, h²)**, con un cuadro naranja y su etiqueta (con fracciones apiladas si h es fracción). Con h = 0 ese punto es el vértice.
+- Como h² puede llegar a 25, la escala del eje y se ajusta sola (1, 2 o 3 unidades por cuadrito) para que el punto siempre se vea; la nota
+  de debajo dice cuántas unidades vale cada cuadrito. En el cuadro de texto se agregó "Corte con el eje y" con la cuenta
+  f(0) = (0 − h)² = h², y en la explicación y en "Para recordar" se agregó que corta al eje y en (0, h²).
