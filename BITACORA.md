@@ -1381,3 +1381,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Rúbrica del subtema: actividad "binomioscuad" en `materiales-fuente/rubricas-por-actividad.json`
   (Comunicación, Representación algebraica y Argumentación; Niveles 1 a 5 y nota del Nivel 0, con "Qué observar" de
   esta actividad). Se regeneró la guía en Word `Escritorio\IEMS\Guia_para_evaluar_con_la_matriz.docx`.
+
+## 2026-10-25 (el video "de la ecuación general a la ordinaria" pasa a Matemáticas 2)
+- A pedido de Carmen, el video de pasar de la ecuación general (Ax + By + C = 0) a la ordinaria (y = mx + b) ya
+  no está en Matemáticas 3 (método gráfico): se movió a Matemáticas 2, en el subtema "Ecuación general de la
+  recta" del Tema 4. Archivos: `matematicas-2/materiales/tema-04-general-a-ordinaria.mp4` y su portada (antes
+  estaban en `matematicas-3/materiales/tema-01-general-a-ordinaria…`).
+- Matemáticas 2 tiene ahora la página `matematicas-2/tema-04-ecuacion-general-de-la-recta.html` (con el video y,
+  por ahora, "Próximamente" para el resto), enlazada desde el bloque "Ecuación general de la recta" de
+  `tema-04-la-recta.html`. Esa página trae una liga para volver al método gráfico de Matemáticas 3.
+- En `matematicas-3/tema-01-grafico.html` el lugar del video quedó con "Conocimiento previo · ¿Ya se te olvidó?" y la
+  liga "da clic aquí para repasarlo", que lleva directo al video en Matemáticas 2.
