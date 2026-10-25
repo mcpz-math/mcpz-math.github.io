@@ -1570,3 +1570,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   cada error (cómo se factoriza el TCP, el signo de a, el vértice con (x + k) = (x − (−k)), el corte f(0)).
 - Los números pueden escribirse como enteros, fracciones o decimales. Se revisó con 140 tarjetas de prueba (todas correctas) y los 100
   ejercicios son distintos.
+
+## 2026-10-25 (la aplicación y los ejercicios pasan a f(x) = a(x − h)²)
+- A pedido de Carmen se quitó el subtema "f(x) = (x − h)²" del temario de Matemáticas 3 (chip de `matematicas-3/index.html`) y de la lista del
+  Tema 5 (`tema-05-funciones-cuadraticas.html`). Todo lo que se había hecho para él (explicación, aplicación interactiva de h con corte con
+  el eje y y escala racional, y los 100 ejercicios) quedó en el subtema **f(x) = a(x − h)²**.
+- La página se renombró `matematicas-3/tema-05-a-x-menos-h-cuadrada.html` (antes `tema-05-x-menos-h-cuadrada.html`), con título y
+  encabezado "La función f(x) = a(x − h)²" y un párrafo de entrada: a decide hacia dónde abre y qué tan abierta es; h la mueve hacia los
+  lados; para ver bien qué hace h se toma primero a = 1. Los demás subtemas siguen igual.
