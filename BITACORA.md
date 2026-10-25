@@ -1532,3 +1532,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
   en palabras qué pasó con h (dirección del movimiento, la ecuación escrita con el signo correcto, vértice, forma y raíz).
   La parábola se mueve con una pequeña animación.
 - Las demás parábolas de ese tema (a(x − h)², a(x − h)² + b…) siguen en "Próximamente".
+
+## 2026-10-25 (se quita "Materiales y tareas" de Funciones cuadráticas)
+- A pedido de Carmen, en `matematicas-3/tema-05-funciones-cuadraticas.html` se quitó la sección "Materiales y tareas" (el cuadro
+  "Materiales" con la descarga "Clase 8. Funciones cuadráticas (PDF)" y el cuadro "Tarea"). El archivo
+  `matematicas-3/materiales/clase-08-funciones-cuadraticas.pdf` sigue guardado en el repositorio, pero ya no tiene liga en el sitio.
