@@ -1518,3 +1518,17 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, en el Ejemplo 1 del video `matematicas-3/materiales/tema-01-metodo-grafico.mp4` el Paso 5 (comprobación) se ve
   como en la página: dos columnas, "Ecuación 1" y "Ecuación 2", cada una con la ecuación, la sustitución, la operación y el
   resultado con ✓ (5 = 5 ✓ y 4 = 4 ✓), que aparecen renglón por renglón. Se quitó la frase final de esa escena. Dura igual (3:35).
+
+## 2026-10-25 (aplicación interactiva de f(x) = (x − h)²)
+- A pedido de Carmen se hizo una aplicación como la de f(x) = ax² + b, pero sólo para ver qué pasa con el parámetro **h** en
+  f(x) = (x − h)². Está en la página nueva `matematicas-3/tema-05-x-menos-h-cuadrada.html`, enlazada desde el bloque
+  "f(x) = (x − h)²" de `tema-05-funciones-cuadraticas.html` (que antes decía "Próximamente").
+- **Explicación:** qué hace h (h > 0 mueve la parábola a la derecha; h < 0, a la izquierda; h = 0 no la mueve), que sólo la mueve hacia
+  los lados (misma forma, siempre abre hacia arriba), vértice V(h, 0), eje de simetría x = h y raíz única x = h (repetida); un apartado
+  "¿Por qué parece al revés?" (el paréntesis vale 0 en x = h; (x + 5)² = (x − (−5))²) y un recuadro "Para recordar".
+- **Aplicación:** se escribe h (entero, fracción o decimal, entre −5 y 5) y se oprime "Graficar" (o uno de 8 botones rápidos). Muestra la
+  parábola azul punteada x² como referencia, flechas horizontales de cada punto de x² a su nueva posición, la parábola verde
+  (x − h)², los puntos con sus coordenadas (fracciones apiladas), el vértice V(h, 0) y un rombo en la raíz. Debajo, un cuadro dice
+  en palabras qué pasó con h (dirección del movimiento, la ecuación escrita con el signo correcto, vértice, forma y raíz).
+  La parábola se mueve con una pequeña animación.
+- Las demás parábolas de ese tema (a(x − h)², a(x − h)² + b…) siguen en "Próximamente".

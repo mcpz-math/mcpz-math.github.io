@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>f(x) = (x − h)² — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-05-funciones-cuadraticas.html">← Tema 5</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 3 · Tema 5 · Subtema</div>
+    <h1>La función f(x) = (x − h)²</h1>
+  </div>
+
+  <p class="section-label no-caps">¿Qué hace el número h?</p>
+  <div class="example-box">
+    <h2>El signo de h decide si la gráfica se mueve a la derecha o a la izquierda</h2>
+    <ul class="def-list">
+      <li><strong>h &gt; 0</strong> (positivo): la gráfica se mueve <strong>h unidades a la derecha</strong>. Por ejemplo,
+          en f(x) = (x − 3)² la parábola se mueve 3 a la derecha y el vértice queda en <span style="white-space:nowrap;">V(3, 0)</span>.</li>
+      <li><strong>h &lt; 0</strong> (negativo): la gráfica se mueve <strong>a la izquierda</strong>. Por ejemplo,
+          f(x) = (x + 2)² es lo mismo que f(x) = (x − (−2))²: h = −2, la parábola se mueve 2 a la izquierda y el vértice
+          queda en <span style="white-space:nowrap;">V(−2, 0)</span>.</li>
+      <li><strong>h = 0</strong>: la gráfica no se mueve; es f(x) = x² y el vértice se queda en <span style="white-space:nowrap;">V(0, 0)</span>.</li>
+    </ul>
+    <p>El número h sólo mueve la parábola <strong>hacia los lados</strong>: no cambia su forma (es igual de abierta que x²)
+       ni hacia dónde abre (siempre hacia arriba). El vértice siempre queda en <strong>V(h, 0)</strong>, el eje de simetría
+       es la recta <strong>x = h</strong> y la única raíz es <strong>x = h</strong>, porque (x − h)² = 0 sólo cuando x − h = 0.</p>
+  </div>
+
+  <p class="section-label no-caps">¿Por qué parece al revés?</p>
+  <div class="prose">
+    <p>Es común pensar que (x − 3)² se mueve a la izquierda, porque hay un signo menos. Pero fíjate en lo que
+       pasa con el vértice: en x² el valor mínimo, 0, se alcanza cuando x = 0. En (x − 3)² el paréntesis vale 0 cuando
+       <strong>x = 3</strong>, así que el mínimo ahora está en x = 3. Cada punto de x² se movió <strong>3 unidades a la derecha</strong>.</p>
+    <p>Por eso, para encontrar h, hay que mirar el número que <strong>se le resta a x</strong> dentro del paréntesis: en
+       (x + 5)² = (x − (−5))² ese número es −5, y la parábola se mueve 5 a la izquierda.</p>
+  </div>
+
+  <p class="section-label no-caps">Prueba tú: f(x) = (x − h)²</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Escribe un valor para <strong>h</strong> (por ejemplo <strong>3</strong>, <strong>−2</strong> o <strong>1/2</strong>), entre
+       <strong>−5</strong> y <strong>5</strong>, y oprime <strong>Graficar</strong>. También puedes usar los botones. Observa hacia dónde
+       se mueve la parábola azul punteada (x²) para convertirse en la verde, dónde queda el vértice V(h, 0) y qué pasa
+       con la forma de la parábola.</p>
+  </div>
+
+  <div class="graph-figure" id="h-lab">
+    <div class="pg-equation" id="h-eq">f(x) = x²</div>
+    <svg viewBox="0 0 480 380" width="480" height="380" id="h-svg" role="img" style="max-width:100%; height:auto;"
+         aria-label="Gráfica de f(x) = x² y de f(x) = (x − h)² con el valor de h que elijas">
+      <defs>
+        <clipPath id="h-clip"><rect x="24" y="24" width="432" height="342"/></clipPath>
+        <marker id="h-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#3f6b4a"/>
+        </marker>
+      </defs>
+      <g id="h-grid"></g>
+      <path id="h-ref" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="6 4" clip-path="url(#h-clip)"/>
+      <g id="h-arrows"></g>
+      <path id="h-curve" fill="none" stroke="#14301f" stroke-width="3" clip-path="url(#h-clip)"/>
+      <g id="h-refpts"></g>
+      <g id="h-pts"></g>
+      <g id="h-roots"></g>
+      <g id="h-labels"></g>
+    </svg>
+    <p class="pg-scale-note">Azul punteada: f(x) = x² (referencia) · Verde: f(x) = (x − h)² · Rombo: raíz (donde toca al eje x) · Cada cuadrito = 1 unidad</p>
+
+    <div class="pg-controls">
+      <div class="pg-field">
+        <label class="pg-field-label no-caps" for="h-in">Escribe h (ej. 3, −2, 1/2)</label>
+        <div class="pg-field-row" style="flex-wrap:wrap; justify-content:center;">
+          <span style="display:inline-flex; align-items:center; gap:0.4rem;"><span style="font-family:'IBM Plex Mono',monospace; font-size:1rem; font-weight:700; color:var(--forest); text-transform:none; white-space:nowrap;">h =</span>
+          <input type="text" id="h-in" class="pg-box wide" value="3" inputmode="text" autocomplete="off" style="width:70px;"></span>
+          <button class="pg-btn" id="h-go" type="button">Graficar</button>
+        </div>
+      </div>
+    </div>
+    <p id="h-error" style="text-align:center; color:#b3412e; font-weight:700; min-height:1.2em; margin:-0.6rem 0 0.6rem;"></p>
+    <div class="pg-actions" id="h-quick" aria-label="Valores rápidos de h"></div>
+
+    <div class="callout" style="width:auto; margin:1.2rem 0 1rem; text-align:left;" id="h-msg"></div>
+  </div>
+
+  <script>
+  (function () {
+    var NS = 'http://www.w3.org/2000/svg';
+    var UX = 27, UY = 30, OX = 240, OY = 330, XL = 8, YT = 10, YB = -1;
+    var XS = [-3, -2, -1, 0, 1, 2, 3];
+    var MINUS = '−', mono = 'IBM Plex Mono, monospace';
+    function sx(x) { return OX + x * UX; }
+    function sy(y) { return OY - y * UY; }
+    function el(tag, attrs, parent) {
+      var e = document.createElementNS(NS, tag);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      if (parent) parent.appendChild(e);
+      return e;
+    }
+    function clear(g) { while (g.firstChild) g.removeChild(g.firstChild); }
+
+    // ---------- fracciones ----------
+    function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = b; b = a % b; a = t; } return a || 1; }
+    function frac(n, d) { if (d < 0) { n = -n; d = -d; } var g = gcd(n, d); return { n: n / g, d: d / g }; }
+    function add(f, g) { return frac(f.n * g.d + g.n * f.d, f.d * g.d); }
+    function val(f) { return f.n / f.d; }
+    function absF(f) { return frac(Math.abs(f.n), f.d); }
+    function parseNum(txt, name) {
+      var s = String(txt).replace(/\s+/g, '').replace(/[−–—]/g, '-').replace(',', '.');
+      var m;
+      if ((m = s.match(/^([+-]?)(\d+)\/(\d+)$/))) {
+        var d = parseInt(m[3], 10);
+        if (d === 0) return { error: 'En ' + name + ', el denominador no puede ser 0.' };
+        return frac((m[1] === '-' ? -1 : 1) * parseInt(m[2], 10), d);
+      }
+      if ((m = s.match(/^([+-]?)(\d*)\.?(\d*)$/)) && (m[2] || m[3])) {
+        var dec = m[3] || '', p = Math.pow(10, dec.length);
+        return frac((m[1] === '-' ? -1 : 1) * parseInt((m[2] || '0') + dec, 10), p);
+      }
+      return { error: 'En ' + name + ', escribe un número o una fracción, por ejemplo 3, −2 o 1/2.' };
+    }
+    function fracHTML(f) {
+      var sign = f.n < 0 ? MINUS : '';
+      if (f.d === 1) return sign + Math.abs(f.n);
+      return sign + '<span class="frac frac-inline"><span class="num">' + Math.abs(f.n) +
+             '</span><span class="den">' + f.d + '</span></span>';
+    }
+
+    // ---------- cuadrícula ----------
+    var grid = document.getElementById('h-grid');
+    function drawGrid() {
+      clear(grid);
+      for (var i = -XL; i <= XL; i++) el('line', { x1: sx(i), y1: sy(YT), x2: sx(i), y2: sy(YB), stroke: '#dde2dc', 'stroke-width': 1 }, grid);
+      for (var j = YB; j <= YT; j++) el('line', { x1: sx(-XL), y1: sy(j), x2: sx(XL), y2: sy(j), stroke: '#dde2dc', 'stroke-width': 1 }, grid);
+      el('line', { x1: sx(-XL) - 8, y1: OY, x2: sx(XL) + 10, y2: OY, stroke: '#56604f', 'stroke-width': 1.5 }, grid);
+      el('line', { x1: OX, y1: sy(YT) - 8, x2: OX, y2: sy(YB) + 4, stroke: '#56604f', 'stroke-width': 1.5 }, grid);
+      el('text', { x: sx(XL) + 12, y: OY + 4, 'font-family': mono, 'font-size': 12, fill: '#14301f' }, grid).textContent = 'x';
+      el('text', { x: OX + 6, y: sy(YT) - 8, 'font-family': mono, 'font-size': 12, fill: '#14301f' }, grid).textContent = 'y';
+      for (i = -XL; i <= XL; i++) if (i) el('text', { x: sx(i), y: OY + 13, 'text-anchor': 'middle', 'font-family': mono, 'font-size': 9, fill: '#56604f' }, grid).textContent = String(i).replace('-', MINUS);
+      for (j = 2; j <= YT; j += 2) el('text', { x: OX - 5, y: sy(j) + 3, 'text-anchor': 'end', 'font-family': mono, 'font-size': 9, fill: '#56604f' }, grid).textContent = String(j);
+    }
+    drawGrid();
+
+    function parabola(h) {
+      var d = '';
+      for (var k = 0; k <= 240; k++) {
+        var x = -XL - 0.3 + k * (2 * XL + 0.6) / 240;
+        var y = Math.min(YT + 2, (x - h) * (x - h));
+        d += (k ? 'L' : 'M') + sx(x).toFixed(1) + ',' + sy(y).toFixed(1);
+      }
+      return d;
+    }
+    document.getElementById('h-ref').setAttribute('d', parabola(0));
+    var refpts = document.getElementById('h-refpts');
+    XS.forEach(function (x) { el('circle', { cx: sx(x), cy: sy(x * x), r: 4.5, fill: '#fff', stroke: '#2b6cb0', 'stroke-width': 1.8 }, refpts); });
+
+    // ---------- etiquetas "(x, y)" con fracciones apiladas ----------
+    var CW = 6.6; // ancho aproximado de un carácter (11px monoespaciada)
+    // partes: { t: 'texto' } o { n, d } (fracción apilada)
+    function labelSpec(xf, y, isV) {
+      var s = xf.n < 0 ? MINUS : '', parts = [{ t: (isV ? 'V' : '') + '(' + s + (xf.d === 1 ? Math.abs(xf.n) : '') }], w = parts[0].t.length * CW, hasFrac = false;
+      if (xf.d !== 1) {
+        var ns = String(Math.abs(xf.n)), ds = String(xf.d), fw = Math.max(ns.length, ds.length) * CW;
+        parts.push({ n: ns, d: ds, fw: fw }); w += fw + 2; hasFrac = true;
+      }
+      var tail = ', ' + y + ')'; parts.push({ t: tail }); w += tail.length * CW;
+      return { parts: parts, w: w, h: hasFrac ? 29 : 14 };
+    }
+    function drawLabel(g, sp, x0, yc) {
+      var grp = el('g', {}, g);
+      el('rect', { x: x0 - 2, y: yc - sp.h / 2, width: sp.w + 4, height: sp.h, rx: 3, fill: '#ffffff', opacity: 0.88 }, grp);
+      var base = { 'font-family': mono, 'font-size': 11, 'font-weight': 600, fill: '#14301f' };
+      function t(s, x, y, extra) { var a = Object.assign({}, base, extra || {}); a.x = x; a.y = y; el('text', a, grp).textContent = s; }
+      var cx = x0;
+      sp.parts.forEach(function (p) {
+        if (p.t !== undefined) { t(p.t, cx, yc + 4); cx += p.t.length * CW; return; }
+        t(p.n, cx + p.fw / 2, yc - 3, { 'text-anchor': 'middle' });
+        el('line', { x1: cx, y1: yc, x2: cx + p.fw, y2: yc, stroke: '#14301f', 'stroke-width': 1.2 }, grp);
+        t(p.d, cx + p.fw / 2, yc + 12, { 'text-anchor': 'middle' });
+        cx += p.fw + 2;
+      });
+    }
+    function overlaps(b, c) { return b.x < c.x + c.w && c.x < b.x + b.w && b.y < c.y + c.h && c.y < b.y + b.h; }
+    function placeLabels(g, items, extraTaken) {
+      var taken = items.map(function (it) { return { x: it.px - 6, y: it.py - 6, w: 12, h: 12 }; }).concat(extraTaken);
+      items.forEach(function (it) {
+        var sp = it.spec, px = it.px, py = it.py, cands = [];
+        var side = { right: { x: px + 9, yc: py }, left: { x: px - 11 - sp.w, yc: py },
+                     above: { x: px - sp.w / 2, yc: py - 9 - sp.h / 2 }, below: { x: px - sp.w / 2, yc: py + 9 + sp.h / 2 } };
+        it.order.forEach(function (k) { cands.push(side[k]); });
+        var pick = cands[0];
+        for (var i = 0; i < cands.length; i++) {
+          var c = cands[i], box = { x: c.x - 2, y: c.yc - sp.h / 2, w: sp.w + 4, h: sp.h };
+          var inside = box.x >= 24 && box.x + box.w <= 456 && box.y >= 24 && box.y + box.h <= 366;
+          if (inside && !taken.some(function (t) { return overlaps(box, t); })) { pick = c; break; }
+        }
+        taken.push({ x: pick.x - 2, y: pick.yc - sp.h / 2, w: sp.w + 4, h: sp.h });
+        drawLabel(g, sp, pick.x, pick.yc);
+      });
+    }
+
+    // ---------- dibujo ----------
+    var curve = document.getElementById('h-curve'), arrows = document.getElementById('h-arrows'),
+        pts = document.getElementById('h-pts'), rootsG = document.getElementById('h-roots'), labels = document.getElementById('h-labels');
+    function drawAt(h, final, H) {
+      curve.setAttribute('d', parabola(h));
+      clear(arrows); clear(pts); clear(labels); clear(rootsG);
+      var items = [], rootBoxes = [];
+      XS.forEach(function (x) {
+        var y = x * x, xn = x + h;
+        if (Math.abs(h) > 0.15) el('line', { x1: sx(x), y1: sy(y), x2: sx(xn), y2: sy(y), stroke: '#3f6b4a', 'stroke-width': 1.6, 'stroke-dasharray': '4 3', 'marker-end': 'url(#h-arrow)' }, arrows);
+        if (Math.abs(xn) <= XL) {
+          el('circle', { cx: sx(xn), cy: sy(y), r: 6, fill: '#c4e86b', stroke: '#14301f', 'stroke-width': 2 }, pts);
+          if (final) {
+            var right = xn > val(H);
+            items.push({ px: sx(xn), py: sy(y), spec: labelSpec(add(frac(x, 1), H), y, x === 0),
+                         order: x === 0 ? ['below', 'right', 'left', 'above'] : (right ? ['right', 'above', 'left', 'below'] : ['left', 'above', 'right', 'below']) });
+          }
+        }
+      });
+      // raíz: rombo sobre el eje x, justo en el vértice (h, 0)
+      var cx = sx(h), s = 8;
+      el('path', { d: 'M' + cx + ',' + (OY - s) + ' L' + (cx + s) + ',' + OY + ' L' + cx + ',' + (OY + s) + ' L' + (cx - s) + ',' + OY + ' z', fill: '#14301f', stroke: '#c4e86b', 'stroke-width': 1.5 }, rootsG);
+      rootBoxes.push({ x: cx - 9, y: OY - 9, w: 18, h: 18 });
+      if (final) {
+        items.sort(function (p, q) { return Math.abs(p.px - sx(h)) - Math.abs(q.px - sx(h)); });
+        placeLabels(labels, items, rootBoxes);
+      }
+    }
+
+    // ---------- texto: ecuación y mensaje ----------
+    var eqEl = document.getElementById('h-eq'), msgEl = document.getElementById('h-msg');
+    function describe(H) {
+      var h = val(H), hH = fracHTML(H), absH = fracHTML(absF(H)), lines = [];
+      if (H.n === 0) {
+        eqEl.innerHTML = 'f(x) = x²';
+        lines.push('<strong>h = 0:</strong> la parábola <strong>no se movió</strong>: es f(x) = x².');
+      } else if (h > 0) {
+        eqEl.innerHTML = 'f(x) = (x ' + MINUS + ' ' + absH + ')²';
+        lines.push('<strong>h = ' + hH + ' &gt; 0:</strong> la parábola se movió <strong>' + absH + ' ' + (absH === '1' ? 'unidad' : 'unidades') + ' a la DERECHA</strong>. En el paréntesis se resta h: <strong>(x ' + MINUS + ' ' + hH + ')²</strong>.');
+      } else {
+        eqEl.innerHTML = 'f(x) = (x + ' + absH + ')²';
+        lines.push('<strong>h = ' + hH + ' &lt; 0:</strong> la parábola se movió <strong>' + absH + ' ' + (absH === '1' ? 'unidad' : 'unidades') + ' a la IZQUIERDA</strong>. Como (x + ' + absH + ') = (x ' + MINUS + ' (' + hH + ')), se ve con signo <strong>más</strong>: <strong>(x + ' + absH + ')²</strong>.');
+      }
+      lines.push('<strong>Vértice:</strong> V(' + hH + ', 0), el punto más bajo de la parábola (un <strong>MÍNIMO</strong>). <strong>Eje de simetría:</strong> x = ' + hH + '.');
+      lines.push('<strong>Forma:</strong> abre <strong>hacia ARRIBA</strong> y es <strong>igual de abierta</strong> que x²: h sólo mueve la gráfica hacia los lados.');
+      lines.push('<strong>Raíz:</strong> (x ' + MINUS + (h < 0 ? ' (' + hH + ')' : ' ' + hH) + ')² = 0 → x ' + MINUS + (h < 0 ? ' (' + hH + ')' : ' ' + hH) + ' = 0 → <strong>x = ' + hH + '</strong>. Es una raíz real <strong>repetida</strong>: la parábola sólo toca al eje x en un punto.');
+      msgEl.innerHTML = '<div class="k no-caps">¿Qué pasa con h = ' + hH + '?</div>' + lines.map(function (l) { return '<p style="margin:0.35rem 0;">' + l + '</p>'; }).join('');
+    }
+
+    // ---------- animación ----------
+    var curH = 0, anim = null;
+    function go(H) {
+      var fh = curH, th = val(H), t0 = null;
+      if (anim) cancelAnimationFrame(anim);
+      describe(H);
+      function step(ts) {
+        if (t0 === null) t0 = ts;
+        var p = Math.min(1, (ts - t0) / 900), e = p * p * (3 - 2 * p);
+        curH = fh + (th - fh) * e;
+        drawAt(curH, p >= 1, H);
+        if (p < 1) anim = requestAnimationFrame(step);
+      }
+      anim = requestAnimationFrame(step);
+    }
+
+    var inH = document.getElementById('h-in'), errEl = document.getElementById('h-error');
+    function submit() {
+      var H = parseNum(inH.value, 'h');
+      inH.classList.remove('invalid');
+      function bad(input, msg) { errEl.textContent = msg; input.classList.add('invalid'); }
+      if (H.error) return bad(inH, H.error);
+      if (Math.abs(val(H)) > 5) return bad(inH, 'Elige un valor de h entre −5 y 5.');
+      if (H.d > 99) return bad(inH, 'Usa una fracción con denominador menor que 100.');
+      errEl.textContent = '';
+      go(H);
+    }
+    document.getElementById('h-go').addEventListener('click', submit);
+    inH.addEventListener('keydown', function (e) { if (e.key === 'Enter') submit(); });
+
+    var quick = document.getElementById('h-quick');
+    ['3', '-2', '0', '1', '-4', '5', '1/2', '-5/2'].forEach(function (v) {
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'pg-btn secondary';
+      btn.style.padding = '0.4rem 0.9rem';
+      btn.innerHTML = 'h = ' + fracHTML(parseNum(v));
+      btn.addEventListener('click', function () { inH.value = v.replace('-', MINUS); submit(); });
+      quick.appendChild(btn);
+    });
+
+    drawAt(0, false, frac(0, 1));
+    submit();
+  })();
+  </script>
+
+  <p class="section-label no-caps">Para recordar</p>
+  <div class="callout">
+    <div class="k">En f(x) = (x − h)²</div>
+    <p><strong>1.</strong> h es el número que <strong>se le resta a x</strong> dentro del paréntesis. Si ves (x + 4)², entonces h = −4.</p>
+    <p><strong>2.</strong> h &gt; 0 mueve la parábola a la <strong>derecha</strong>; h &lt; 0, a la <strong>izquierda</strong>; h = 0 la deja en su lugar.</p>
+    <p><strong>3.</strong> No cambia la forma ni hacia dónde abre: siempre es igual de abierta que x² y abre hacia arriba.</p>
+    <p><strong>4.</strong> El vértice es <strong>V(h, 0)</strong>, el eje de simetría es <strong>x = h</strong> y la única raíz es <strong>x = h</strong> (raíz repetida).</p>
+  </div>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>
