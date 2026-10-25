@@ -1442,3 +1442,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - En el método gráfico de Matemáticas 3 se dejó el repaso, ahora con el mismo estilo del recuadro "Repaso" de arriba (centrado,
   con botón): "¿Ya se te olvidó cómo pasar la ecuación general a la ordinaria? Lo viste en Matemáticas 2." y el botón
   "Ver el video en Matemáticas 2 →", que lleva directo al video.
+
+## 2026-10-25 (se quita la liga de regreso en la página del video de Matemáticas 2)
+- A pedido de Carmen, en `matematicas-2/tema-04-general-a-ordinaria.html` se quitó el recuadro "Más contenido" (versión anterior)
+  y la liga "← Volver al método gráfico (Matemáticas 3)". La página queda sólo con el video y su descripción.
