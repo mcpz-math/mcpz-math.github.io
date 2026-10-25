@@ -1428,3 +1428,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
   quitó la fila "Comprueba multiplicando" (por ejemplo (x + 6)(x + 6) = x² + 12x + 36). Cada ejemplo termina en el
   paso 4, con el binomio al cuadrado, como en "Ahora tú". El video dura 3:03 (antes 3:20). Generador actualizado en
   `materiales-fuente/generar-video-trinomio-cuadrado-perfecto.html`.
+
+## 2026-10-25 (subtítulos de sección más visibles en todo el sitio)
+- A pedido de Carmen, los subtítulos de sección que eran una etiqueta pequeña en mayúsculas (por ejemplo "TRINOMIO CUADRADO
+  PERFECTO (TCP): CÓMO SE FACTORIZA") y se perdían en el texto ahora son un **título con línea verde-lima debajo**: tipografía
+  Outfit, verde bosque, sin mayúsculas, un poco más grande y con más espacio arriba. Se cambió una sola regla (`.section-label`)
+  en `assets/style.css`, así que aplica a las ~160 etiquetas de las 49 páginas del sitio (portada, temarios, temas y subtemas).
