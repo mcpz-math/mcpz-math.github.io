@@ -1478,3 +1478,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   animación interactiva.
 - En el método gráfico de Matemáticas 3, los dos recuadros de repaso (animación y video) apuntan a la página de la ecuación
   ordinaria de Matemáticas 2 (el del video, directo a la sección del video).
+
+## 2026-10-25 (el video vuelve a "Ecuación general de la recta"; la ordinaria se queda con la animación)
+- A pedido de Carmen: son dos cosas distintas. **Ecuación general de la recta** (`matematicas-2/tema-04-ecuacion-general-de-la-recta.html`)
+  tiene otra vez el video que muestra cómo se transforma la ecuación general a la ordinaria para después graficar.
+  **Ecuación ordinaria de la recta y su gráfica** (`tema-04-ecuacion-ordinaria-y-grafica.html`) tiene sólo la animación de cómo se grafica
+  una recta dadas la pendiente y la ordenada. Los dos temas aparecen en el temario de Matemáticas 2 (lista de la recta y bloques de
+  `tema-04-la-recta.html`).
+- En el método gráfico de Matemáticas 3: el repaso de la animación lleva a la ecuación ordinaria y el del video, a la ecuación general.
