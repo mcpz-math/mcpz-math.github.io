@@ -1584,3 +1584,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
   equivoca al factorizar un trinomio cuadrado perfecto no se entendía. Ahora es "Cómo se factoriza:" en pasos cortos: (si hay un signo menos
   adelante, se saca como factor común), raíz del primer término, raíz del último término, doble producto comparado con el término de en
   medio, el signo de ese término como signo del binomio, y al final "Respuesta:" con la función factorizada.
+
+## 2026-10-25 (botones para escribir en los ejercicios de f(x) = a(x − h)²)
+- A pedido de Carmen: en los ejercicios de `matematicas-3/tema-05-a-x-menos-h-cuadrada.html` no había cómo escribir el binomio al cuadrado
+  (el teclado del celular o la tableta no tiene fácil el ^). Ahora, debajo de la casilla de la función factorizada hay botones
+  ( ) x ² + − , y debajo del vértice y del corte con el eje y hay botones − y / (se escribe en la casilla donde se esté escribiendo). Se
+  sigue aceptando ^2 con el teclado. Las instrucciones lo mencionan. Se probó tecleando sólo con los botones (6 trinomios, todos correctos).

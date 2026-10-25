@@ -369,8 +369,9 @@
     <div class="k">Instrucciones</div>
     <p>Algunas funciones vienen <strong>factorizadas</strong>, por ejemplo f(x) = (x − 3)², y otras vienen como un
        <strong>trinomio cuadrado perfecto</strong>, por ejemplo f(x) = x² − 6x + 9. En estas últimas, <strong>primero factoriza</strong>
-       (así encuentras h) y escribe la función factorizada con paréntesis, por ejemplo <strong>(x − 3)^2</strong> o
-       <strong>−(x + 2)^2</strong>.</p>
+       (así encuentras h) y escribe la función factorizada con paréntesis y el exponente 2, por ejemplo <strong>(x − 3)²</strong> o
+       <strong>−(x + 2)²</strong>. Debajo de cada casilla hay botones para escribir los paréntesis, la x, el ², los signos y la
+       fracción; también puedes usar <strong>^2</strong> con el teclado.</p>
     <p>Después contesta y oprime <strong>Comprobar</strong>:</p>
     <p><strong>•</strong> ¿Hacia dónde abre la parábola: <strong>arriba</strong> o <strong>abajo</strong>? (fíjate si hay un signo menos delante del paréntesis)<br>
        <strong>•</strong> ¿Tiene un <strong>máximo</strong> o un <strong>mínimo</strong>?<br>
@@ -474,6 +475,9 @@
       return '<input type="text" data-f="' + f + '" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" style="' + style + '" aria-label="' + label + '">';
     }
     var BOX = 'flex:0 1 5.5rem;';
+    function keysHTML(list, targets) { // botones bajo la casilla (o casillas) a las que escriben
+      return '<div class="practice-keys" data-t="' + targets + '">' + list.map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('') + '</div>';
+    }
     function makeCard(ex, idx) {
       var e = build(ex), chosen = {}, exp = e.forma === 'e', n = 0;
       function q() { n++; return n + '. '; }
@@ -481,20 +485,33 @@
       card.className = 'practice-card';
       card.innerHTML =
         '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + fxHTML(e) + '</span></div>' +
-        (exp ? '<div class="practice-ask">' + q() + 'Factoriza la función (escribe el binomio al cuadrado)</div>' +
-               '<div class="practice-row"><span class="eq">f(x) =</span>' + inputHTML('fac', 'Función factorizada del ejercicio ' + (idx + 1), 'flex:1 1 9rem;') + '</div>' : '') +
+        (exp ? '<div class="practice-ask">' + q() + 'Factoriza la función: escribe el binomio al cuadrado (usa los botones de abajo)</div>' +
+               '<div class="practice-row"><span class="eq">f(x) =</span>' + inputHTML('fac', 'Función factorizada del ejercicio ' + (idx + 1), 'flex:1 1 9rem;') + '</div>' +
+               keysHTML(['(', ')', 'x', '²', '+', '−'], 'fac') : '') +
         '<div class="practice-ask">' + q() + '¿Hacia dónde abre?</div>' + opts('abre', ['arriba', 'abajo']) +
         '<div class="practice-ask">' + q() + '¿Tiene un máximo o un mínimo?</div>' + opts('ext', ['maximo', 'minimo']) +
         '<div class="practice-ask">' + q() + '¿Dónde está su vértice?</div>' +
         '<div class="practice-row"><span class="eq">V(</span>' + inputHTML('vx', 'Coordenada x del vértice del ejercicio ' + (idx + 1), BOX) +
         '<span class="eq">,</span>' + inputHTML('vy', 'Coordenada y del vértice del ejercicio ' + (idx + 1), BOX) + '<span class="eq">)</span></div>' +
+        keysHTML(['−', '/'], 'vx,vy') +
         '<div class="practice-ask">' + q() + '¿Dónde corta al eje y?</div>' +
         '<div class="practice-row"><span class="eq">(0,</span>' + inputHTML('cy', 'Corte con el eje y del ejercicio ' + (idx + 1), BOX) + '<span class="eq">)</span></div>' +
+        keysHTML(['−', '/'], 'cy') +
         '<div class="practice-row" style="margin-top:0.7rem;"><button type="button" class="practice-check">Comprobar</button></div>' +
         '<div class="practice-fb" aria-live="polite"></div>';
       grid.appendChild(card);
       var fb = card.querySelector('.practice-fb'), inp = {};
-      card.querySelectorAll('input').forEach(function (i) { inp[i.dataset.f] = i; });
+      var lastIn = null;
+      card.querySelectorAll('input').forEach(function (i) { inp[i.dataset.f] = i; i.addEventListener('focus', function () { lastIn = i.dataset.f; }); });
+      // botones para escribir paréntesis, ², signos y fracciones en la casilla donde se esté escribiendo
+      card.querySelectorAll('.practice-keys button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var ts = b.parentNode.dataset.t.split(','), t = ts.indexOf(lastIn) >= 0 ? lastIn : ts[0], input = inp[t];
+          var s = input.selectionStart == null ? input.value.length : input.selectionStart, e2 = input.selectionEnd == null ? s : input.selectionEnd;
+          input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e2);
+          input.focus(); input.setSelectionRange(s + b.dataset.k.length, s + b.dataset.k.length);
+        });
+      });
       card.querySelectorAll('.practice-opts').forEach(function (g) {
         g.querySelectorAll('button').forEach(function (b) {
           b.addEventListener('click', function () {
