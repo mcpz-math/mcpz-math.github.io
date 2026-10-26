@@ -1613,3 +1613,12 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (el término sin x). Con botones para escribir x, ², signos y fracciones. Si hay errores, explica cada uno (por ejemplo "te faltó el doble
   producto" o "todavía falta multiplicar por a") y muestra los pasos con las cuentas.
 - La serie de a = 1 y a = −1 no tiene la pregunta de gorda o flaca (siempre sería "igual que x²"). Se probó con 140 tarjetas (todas correctas).
+
+## 2026-10-25 (rúbrica de f(x) = a(x − h)²)
+- A pedido de Carmen, `matematicas-3/tema-05-a-x-menos-h-cuadrada.html` tiene al final "Rúbrica · f(x) = a(x − h)²", **plegada** ("Ver rúbrica
+  por competencias": el lector la despliega si quiere verla). Usa la matriz de niveles (Niveles 1 a 5 y nota del Nivel 0) con cuatro
+  competencias: Comunicación, Representación geométrica, Representación algebraica y Argumentación, cada una con "Qué observar" y lo que se
+  ve en cada nivel en esta actividad (aplicación y las dos series de ejercicios: abre, máximo o mínimo, gorda o flaca, vértice, factorizar,
+  desarrollar el binomio, multiplicar por a y corte con el eje y).
+- Fuente: actividad "axhcuad" en `materiales-fuente/rubricas-por-actividad.json`; se generó con `generar-rubricas.ps1`, que también regeneró la guía
+  en Word `Escritorio\IEMS\Guia_para_evaluar_con_la_matriz.docx` (incluye esta actividad con evidencia por revisar y errores típicos).
