@@ -1761,3 +1761,5 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, en "Antes de empezar" de `matematicas-2/tema-01-operaciones-con-fracciones.html` hay un recuadro **Repaso** con un botón "Repasar mcm y MCD (Matemáticas 1) →"
   (MCD para simplificar, mcm para sumar y restar) que lleva a `matematicas-1/tema-06-divisibilidad.html`. **Pendiente:** en esa página el subtema "mcm y MCD" todavía dice "Próximamente";
   cuando Carmen comparta el contenido (o pida que se escriba) hay que preparar la clase de mcm y MCD (y, si queda en página propia, cambiar el enlace).
+- A pedido de Carmen, en `matematicas-1/tema-06-divisibilidad.html` (Divisibilidad: Primos y compuestos, Múltiplos y divisores, Criterios de divisibilidad, mcm y MCD, Problemas con mcm y MCD y
+  Algoritmo de Euclides) se quitó la etiqueta "Objetivo 2". Las demás páginas de Matemáticas 1 y 2 conservan las suyas.
