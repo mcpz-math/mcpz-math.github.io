@@ -1763,3 +1763,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
   cuando Carmen comparta el contenido (o pida que se escriba) hay que preparar la clase de mcm y MCD (y, si queda en página propia, cambiar el enlace).
 - A pedido de Carmen, en `matematicas-1/tema-06-divisibilidad.html` (Divisibilidad: Primos y compuestos, Múltiplos y divisores, Criterios de divisibilidad, mcm y MCD, Problemas con mcm y MCD y
   Algoritmo de Euclides) se quitó la etiqueta "Objetivo 2". Las demás páginas de Matemáticas 1 y 2 conservan las suyas.
+
+## 2026-10-30 (se quita "Materiales y tareas" de las páginas de tema)
+- A pedido de Carmen se quitó la sección **"Materiales y tareas"** (las tarjetas "Materiales: Próximamente…" y "Tarea: Próximamente…") de **20 páginas de tema**: 10 de Matemáticas 1
+  (temas 1 a 10), 5 de Matemáticas 2 (temas 1, 2, 3, 5 y 6) y 5 de Matemáticas 3 (temas 2, 7, 8, 9 y 10).
+- **No se tocaron** `matematicas-3/tema-03-valor-absoluto.html` y `matematicas-3/tema-04-funciones.html`, porque en "Materiales" tienen un PDF real de la clase
+  ("Clase 5. Valor absoluto" y "Clase 6. Funciones"). Falta que Carmen decida qué hacer con esos dos (quitar sólo la tarjeta "Tarea: Próximamente" y dejar el PDF, o dejarlas como están).
