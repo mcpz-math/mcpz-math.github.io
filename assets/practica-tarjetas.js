@@ -26,27 +26,30 @@
     },
     sameSet: function (a, b) { var x = a.slice().sort(function (p, q) { return p - q; }), y = b.slice().sort(function (p, q) { return p - q; }); return x.length === y.length && x.every(function (v, i) { return v === y[i]; }); },
     thin: function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); },   // 12 345 con espacio fino
-    // Tabla de descomposición simultánea (los números en fila, una barra y los primos a la derecha):
-    //   mode 'mcm': se divide entre el primo más pequeño que divida a alguno, hasta que todos sean 1 → mcm = producto de los primos
-    //   mode 'mcd': se divide sólo entre primos que dividen a todos a la vez, hasta que ya no haya uno → MCD = producto de los primos
+    // Tabla de descomposición simultánea (los números en fila, una barra y los primos a la derecha). En los dos casos se divide
+    // entre el primo más pequeño que divida a alguno, hasta que todos sean 1:
+    //   mode 'mcm': mcm = producto de todos los primos de la derecha
+    //   mode 'mcd': MCD = producto de los primos que dividieron a TODOS los números a la vez (se marcan en azul)
     dsimHTML: function (nums, mode) {
-      var cur = nums.slice(), rows = [cur.slice()], primes = [];
-      for (;;) {
-        var chosen = null, q;
-        if (mode === 'mcd') { for (q = 2; q <= Math.min.apply(null, cur); q++) if (h.isPrime(q) && cur.every(function (x) { return x % q === 0; })) { chosen = q; break; } }
-        else { if (cur.every(function (x) { return x === 1; })) break; for (q = 2; ; q++) if (h.isPrime(q) && cur.some(function (x) { return x % q === 0; })) { chosen = q; break; } }
-        if (!chosen) break;
-        cur = cur.map(function (x) { return x % chosen === 0 ? x / chosen : x; });
-        primes.push(chosen); rows.push(cur.slice());
+      var cur = nums.slice(), rows = [cur.slice()], primes = [], common = [];
+      while (!cur.every(function (x) { return x === 1; })) {
+        var q = null, c;   // en el MCD primero van los primos que dividen a todos (azules) y después los demás
+        if (mode === 'mcd') { for (c = 2; c <= Math.max.apply(null, cur); c++) if (h.isPrime(c) && cur.every(function (x) { return x % c === 0; })) { q = c; break; } }
+        if (q == null) { q = 2; while (!(h.isPrime(q) && cur.some(function (x) { return x % q === 0; }))) q++; }
+        var all = cur.every(function (x) { return x % q === 0; });
+        cur = cur.map(function (x) { return x % q === 0 ? x / q : x; });
+        primes.push(q); common.push(all); rows.push(cur.slice());
       }
-      var prod = primes.reduce(function (a, b) { return a * b; }, 1), label = mode === 'mcd' ? 'MCD' : 'mcm';
-      var res = '<td class="res" rowspan="' + rows.length + '">' + label + ' = ' + (primes.length ? primes.join(' · ') + ' = ' : '1 (no hay primo común) = ') + '<b>' + prod + '</b></td>';
+      var isMcd = mode === 'mcd', label = isMcd ? 'MCD' : 'mcm';
+      var used = isMcd ? primes.filter(function (p, i) { return common[i]; }) : primes, prod = used.reduce(function (a, b) { return a * b; }, 1);
+      var txt = label + ' = ' + (used.length ? used.join(' · ') + ' = ' : '1 (no hay primo común) = ') + '<b>' + prod + '</b>';
       var html = '<div class="dsim-wrap"><table class="dsim" aria-label="Tabla de descomposición simultánea para el ' + label + '">';
       rows.forEach(function (r, i) {
-        html += '<tr>' + r.map(function (x) { return '<td' + (x === 1 ? ' class="one"' : '') + '>' + x + '</td>'; }).join('') + '<td class="pr">' + (primes[i] || '') + '</td>' + (i === 0 ? res : '') + '</tr>';
+        var p = primes[i], pc = p == null ? '' : (isMcd ? (common[i] ? 'com' : 'no') : '');
+        html += '<tr>' + r.map(function (x) { return '<td' + (x === 1 ? ' class="one"' : '') + '>' + x + '</td>'; }).join('') +
+                '<td class="pr ' + pc + '">' + (p == null ? '' : '<span class="pill">' + p + '</span>') + '</td>' + (i === 0 ? '<td class="res" rowspan="' + rows.length + '">' + txt + '</td>' : '') + '</tr>';
       });
-      var cap = label + ' = ' + (primes.length ? primes.join(' · ') + ' = ' : '1 (no hay primo común) = ') + '<b>' + prod + '</b>';
-      return html + '</table><div class="dsim-cap">' + cap + '</div></div>';
+      return html + '</table><div class="dsim-cap">' + txt + '</div>' + (isMcd ? '<div class="dsim-leg"><span class="pill-leg">azul</span> primos que dividen a todos los números a la vez: con ellos se obtiene el MCD</div>' : '') + '</div>';
     },
     inputHTML: function (f, label, style, extra) {
       return '<input type="text" data-f="' + f + '" ' + (extra || '') + 'autocomplete="off" autocapitalize="off" spellcheck="false" style="' + (style || '') + '" aria-label="' + label + '">';

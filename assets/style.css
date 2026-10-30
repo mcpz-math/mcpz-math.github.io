@@ -1054,3 +1054,9 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
 
 /* "mcm" siempre en minúsculas, aunque el recuadro ponga todo en mayúsculas */
 .mcm { text-transform: none; }
+
+/* MCD: los primos que dividen a todos a la vez van en azul; los demás, atenuados */
+.dsim td.pr.com .pill { background: #2b6cb0; color: #fff; border-radius: 8px; padding: 0.05rem 0.55rem; }
+.dsim td.pr.no { color: #b3ae9c; font-weight: 500; }
+.dsim-leg { text-align: center; font-size: 0.88rem; color: var(--ink-soft); margin-top: 0.5rem; font-family: 'Karla', system-ui, sans-serif; }
+.pill-leg { background: #2b6cb0; color: #fff; border-radius: 8px; padding: 0 0.5rem; font-weight: 700; }

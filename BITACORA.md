@@ -1814,3 +1814,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, "mcm" se escribe siempre en minúsculas (y "MCD" en mayúsculas). Algunos recuadros de las clases ponen todo el texto en mayúsculas con los estilos y ahí se veía "MCM":
   se corrigió en `tema-06-mcm-y-mcd.html` ("★ mcm ★", el paso 3 y el ejemplo mcm(10, 15, 18)) y en `tema-06-problemas-con-mcm-y-mcd.html` ("¿mcm o MCD?" y "Ejemplo con mcm") con la clase `.mcm`
   (`assets/style.css`, `text-transform: none`). **Para escribir mcm dentro de un recuadro en mayúsculas:** `<span class="mcm">mcm</span>`. Ya no queda "MCM" en ningún archivo del sitio.
+- A pedido de Carmen, la **tabla del MCD** (`tema-06-mcm-y-mcd.html` y las soluciones de los ejercicios) ya no se detiene cuando no hay primo común: **se completa hasta llegar a 1** y los primos que
+  dividen a todos los números a la vez (los que forman el MCD) se marcan **en azul** (los demás quedan en gris). Primero van los azules y después los grises: 24, 36, 60 → 2, 2, 3 (azules) y 2, 3, 5 (grises);
+  MCD = 2 · 2 · 3 = 12. Debajo de la tabla hay una leyenda ("azul: primos que dividen a todos a la vez"). Se cambiaron los textos de los pasos 2 y 3 del MCD. Función `dsimHTML` en `assets/practica-tarjetas.js`;
+  estilos `.dsim td.pr.com` y `.dsim td.pr.no` en `assets/style.css`. Se probaron 600 tarjetas (el producto de los primos azules coincide con el MCD y la tabla termina en 1).
