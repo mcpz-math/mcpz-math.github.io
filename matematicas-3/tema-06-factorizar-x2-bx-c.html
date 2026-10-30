@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factorizar trinomios x² + bx + c — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-06-productos-notables-y-factorizacion.html">← Tema 6</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 3 · Tema 6 · Trinomio de la forma x² + bx + c</div>
+    <h1>Factorizar trinomios de la forma x² + bx + c</h1>
+  </div>
+
+  <p class="section-label">Conocimiento previo</p>
+  <div class="callout" style="text-align:center;">
+    <div class="k">Repaso</div>
+    <p>Un caso especial de estos trinomios es el trinomio cuadrado perfecto, como x² + 6x + 9 = (x + 3)². Si necesitas repasarlo,
+       o ver cómo se completa un TCP, está en el mismo tema.</p>
+    <p style="margin-top:0.9rem;">
+      <a class="pg-btn" href="tema-06-trinomio-x2-bx-c.html" style="text-decoration:none; display:inline-block;">
+        Completar el trinomio cuadrado perfecto →
+      </a>
+    </p>
+  </div>
+
+  <p class="section-label">¿Qué es un trinomio de la forma x² + bx + c?</p>
+  <div class="prose">
+    <p>Es un trinomio donde el término x² <strong>no tiene coeficiente</strong> (vale 1), el término con x tiene un número
+       <strong>b</strong> y el último término es un número <strong>c</strong>. Por ejemplo:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
+      <li>x² + 7x + 12 &nbsp;(b = 7, c = 12)</li>
+      <li>x² − 9x + 20 &nbsp;(b = −9, c = 20)</li>
+      <li>x² + 2x − 15 &nbsp;(b = 2, c = −15)</li>
+    </ul>
+    <p><strong>Factorizar</strong> es escribirlo como un producto de dos binomios, <strong>(x + p)(x + q)</strong>. Para saber cuáles son p y q,
+       primero hay que ver de dónde sale el trinomio.</p>
+  </div>
+
+  <p class="section-label" id="de-donde-sale">¿De dónde sale? Al multiplicar dos binomios</p>
+  <div class="prose">
+    <p>Multipliquemos (x + 3)(x + 4), término a término:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
+      <li>(x + 3)(x + 4) = x² + 4x + 3x + 12</li>
+      <li>= x² + <strong>7</strong>x + <strong>12</strong></li>
+    </ul>
+    <p>El 7 es la <strong>suma</strong> de 3 y 4 (4x + 3x = 7x) y el 12 es su <strong>producto</strong> (3 · 4). Pasa siempre:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
+      <li>(x + p)(x + q) = x² + (p + q)x + p · q</li>
+    </ul>
+    <figure style="margin:0 0 1rem; text-align:center;">
+      <svg viewBox="0 0 270 230" width="250" height="213" role="img" aria-label="Un rectángulo de lados x más 3 y x más 4 formado por x al cuadrado, un rectángulo de 4x, un rectángulo de 3x y un rectángulo de área 12" style="max-width:100%; height:auto;">
+        <rect x="30" y="30" width="130" height="130" fill="#c4e86b" stroke="#14301f" stroke-width="2.5"/>
+        <rect x="160" y="30" width="52" height="130" fill="#e4f1d3" stroke="#14301f" stroke-width="2.5"/>
+        <rect x="30" y="160" width="130" height="39" fill="#e4f1d3" stroke="#14301f" stroke-width="2.5"/>
+        <rect x="160" y="160" width="52" height="39" fill="#ffffff" stroke="#14301f" stroke-width="2.5"/>
+        <g font-family="IBM Plex Mono, monospace" font-size="21" fill="#14301f" text-anchor="middle" font-weight="700">
+          <text x="95" y="104">x²</text>
+          <text x="186" y="104">4x</text>
+          <text x="95" y="187">3x</text>
+          <text x="186" y="186" font-size="18">12</text>
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="18" fill="#3f6b4a" text-anchor="middle">
+          <text x="95" y="22">x</text>
+          <text x="186" y="22">4</text>
+          <text x="16" y="100">x</text>
+          <text x="16" y="186">3</text>
+        </g>
+      </svg>
+      <figcaption style="font-size:0.9rem; color:var(--ink-soft);">Rectángulo de lados x + 4 y x + 3: área x² + 4x + 3x + 12 = x² + 7x + 12</figcaption>
+    </figure>
+  </div>
+
+  <p class="section-label" id="como-se-factoriza">Al revés: cómo se factoriza x² + bx + c</p>
+  <div class="prose">
+    <p>Factorizar es volver atrás: dado x² + bx + c hay que encontrar <strong>dos números p y q</strong> tales que:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li>su <strong>producto</strong> sea <strong>c</strong>: p · q = c,</li>
+      <li>su <strong>suma</strong> sea <strong>b</strong>: p + q = b.</li>
+    </ul>
+    <p>Y entonces el trinomio se factoriza como <strong>(x + p)(x + q)</strong>.</p>
+    <p>Los pasos:</p>
+    <ol style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li>Revisa que x² no tenga coeficiente (que valga 1) e identifica <strong>b</strong> y <strong>c</strong>, con su signo.</li>
+      <li>Escribe los <strong>pares de números enteros cuyo producto es c</strong>.</li>
+      <li>Elige el par cuya <strong>suma es b</strong>.</li>
+      <li>Escribe <strong>(x + p)(x + q)</strong>, con el signo de cada número.</li>
+      <li><strong>Comprueba</strong> multiplicando los binomios: debe quedar el trinomio original.</li>
+    </ol>
+    <p><strong>Los signos ayudan a buscar:</strong></p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li>Si <strong>c es positivo</strong>, p y q tienen el <strong>mismo signo</strong> (el de b): los dos positivos si b es positivo; los dos negativos si b es negativo.</li>
+      <li>Si <strong>c es negativo</strong>, p y q tienen <strong>signos diferentes</strong>; el que tiene mayor valor absoluto lleva el signo de b.</li>
+    </ul>
+  </div>
+
+  <p class="section-label">Ejemplos</p>
+  <div class="example-box">
+    <h2>Cuatro ejemplos paso a paso</h2>
+    <ul class="def-list">
+      <li><strong>x² + 7x + 12</strong>: c = 12 es positivo y b = 7 es positivo, así que los dos números son positivos.
+          Pares con producto 12: 1 y 12 (suma 13), 2 y 6 (suma 8), <strong>3 y 4 (suma 7)</strong> ✓.
+          Queda <strong>(x + 3)(x + 4)</strong>.</li>
+      <li><strong>x² − 9x + 20</strong>: c = 20 es positivo y b = −9 es negativo, así que los dos números son negativos.
+          Pares con producto 20: −1 y −20 (suma −21), −2 y −10 (suma −12), <strong>−4 y −5 (suma −9)</strong> ✓.
+          Queda <strong>(x − 4)(x − 5)</strong>.</li>
+      <li><strong>x² + 2x − 15</strong>: c = −15 es negativo, así que los números tienen signos diferentes, y el mayor lleva el signo de b = 2 (positivo).
+          Pares: −1 y 15 (suma 14), <strong>−3 y 5 (suma 2)</strong> ✓.
+          Queda <strong>(x − 3)(x + 5)</strong>.</li>
+      <li><strong>x² − 5x − 14</strong>: c = −14 es negativo y b = −5 es negativo, así que el número mayor es el negativo.
+          Pares: 1 y −14 (suma −13), <strong>2 y −7 (suma −5)</strong> ✓.
+          Queda <strong>(x + 2)(x − 7)</strong>.</li>
+    </ul>
+    <p><strong>Comprobación del último:</strong> (x + 2)(x − 7) = x² − 7x + 2x − 14 = x² − 5x − 14 ✓.</p>
+  </div>
+
+  <p class="section-label">Casos especiales</p>
+  <div class="prose">
+    <ul style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li><strong>Los dos números son iguales (p = q):</strong> es un trinomio cuadrado perfecto. x² + 6x + 9: 3 y 3 → (x + 3)(x + 3) = <strong>(x + 3)²</strong>.</li>
+      <li><strong>Los dos números son opuestos (p = −q):</strong> no hay término con x (b = 0) y es una diferencia de cuadrados.
+          x² − 25: 5 y −5 → <strong>(x + 5)(x − 5)</strong>.</li>
+      <li><strong>No hay ningún par que sirva:</strong> el trinomio <strong>no se puede factorizar con números enteros</strong>.
+          En x² + 4x + 5 los pares con producto 5 son 1 y 5 (suma 6) y −1 y −5 (suma −6): ninguno suma 4.</li>
+    </ul>
+    <p><strong>Errores comunes:</strong> elegir un par que multiplicado da c pero que no suma b; olvidar el signo de uno de los números
+       (en x² − 5x − 14 el 7 es negativo y el 2 es positivo, no al revés); y escribir (x + 3)(x + 4) como si fuera x² + 12 o x² + 7:
+       hay que fijarse en <strong>las dos condiciones a la vez</strong>.</p>
+  </div>
+
+  <p class="section-label" id="ejercicios-factorizar-x2bxc">Ejercicios: factoriza x² + bx + c</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p><strong>Algunos de estos trinomios no se pueden factorizar con números enteros.</strong> Para cada uno, busca dos números cuyo
+       <strong>producto sea c</strong> y cuya <strong>suma sea b</strong>. Después oprime <strong>Sí se factoriza</strong> o <strong>No se factoriza</strong>.</p>
+    <p>Si no se puede, la página te explica por qué. <strong>Sólo si sí se puede</strong>, aparece un cuadro para escribir la factorización como dos binomios,
+       por ejemplo <strong>(x + 3)(x + 4)</strong>; no importa el orden de los binomios. Debajo de cada cuadro hay botones para escribir los paréntesis,
+       la letra y los signos. Cuando termines, oprime <strong>Comprobar</strong> (o la tecla Enter).</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Oprime
+       <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="fx-grid"></div>
+  <p class="practice-score" id="fx-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="fx-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script src="../assets/practica-algebra.js"></script>
+  <script>
+  (function () {
+    var MINUS = '−', parse = Algebra.parse, padd = Algebra.padd, pmul = Algebra.pmul, same = Algebra.same;
+    function sgn(n) { return n < 0 ? MINUS : '+'; }
+
+    // Banco de 100 ejercicios, de menor a mayor dificultad: [p, q] = el trinomio sí se factoriza como (x + p)(x + q);
+    // [b, c] con 'no' = no se factoriza con enteros. Después de cada 6 que sí se factorizan va uno que no.
+    //   A positivos (p y q > 0) · B negativos (p y q < 0) · C signos diferentes · D números más grandes
+    var A = [[1, 2], [1, 3], [2, 3], [1, 4], [2, 4], [3, 4], [1, 5], [2, 5], [3, 5], [1, 6], [2, 6], [3, 6], [4, 5], [1, 7], [2, 7], [3, 7], [4, 6], [1, 8], [2, 8], [5, 6], [3, 3], [2, 2], [4, 4], [5, 5], [6, 6]];
+    var B = [[-1, -3], [-2, -3], [-1, -4], [-3, -4], [-2, -5], [-1, -5], [-3, -5], [-2, -6], [-4, -5], [-1, -6], [-3, -6], [-2, -7], [-4, -6], [-1, -7], [-3, -7], [-5, -6], [-2, -8], [-4, -7], [-3, -8], [-1, -9], [-3, -3], [-2, -2], [-4, -4], [-5, -5], [-7, -7]];
+    var C = [[3, -2], [-3, 2], [5, -1], [-5, 1], [4, -2], [-4, 2], [6, -1], [-6, 1], [5, -2], [-5, 2], [7, -3], [-7, 3], [2, -1], [-2, 1], [4, -3], [-4, 3], [6, -4], [-6, 4], [8, -3], [-8, 3], [9, -2], [-9, 2], [7, -5], [-7, 5], [5, -5]];
+    var D = [[12, 3], [9, 4], [-12, -3], [-9, -4], [15, -4], [-15, 4], [11, -7], [-11, 7], [10, -8], [-10, 8]];
+    var NO = [[1, 1], [3, 1], [2, 3], [-2, 2], [4, 5], [-3, 4], [5, 7], [1, -1], [-3, -1], [2, -2], [6, 10], [-5, 8], [1, 5], [-4, -6], [7, 8]];
+    var SI = A.concat(B, C, D), BANK = [], nNo = 0, LETTERS = ['y', 'a', 'x', 'm', 'n', 'x', 'p', 't', 'z', 'w'];
+    function letter() { return BANK.length < 50 ? 'x' : LETTERS[BANK.length % LETTERS.length]; }
+    SI.forEach(function (pq, i) {
+      BANK.push({ L: letter(), p: pq[0], q: pq[1] });
+      if ((i + 1) % 6 === 0 && nNo < NO.length) { BANK.push({ L: letter(), no: true, b: NO[nNo][0], c: NO[nNo][1] }); nNo++; }
+    });
+    while (nNo < NO.length) { BANK.push({ L: letter(), no: true, b: NO[nNo][0], c: NO[nNo][1] }); nNo++; }
+
+    // pares de enteros con producto c que se prueban según los signos de b y de c (el mayor lleva el signo de b)
+    function pairs(b, c) {
+      var out = [], ac = Math.abs(c);
+      for (var d = 1; d * d <= ac; d++) {
+        if (ac % d) continue;
+        var e = ac / d, s = b < 0 ? -1 : 1;
+        if (c > 0) out.push([s * d, s * e]);
+        else out.push(b < 0 ? [d, -e] : [-d, e]);
+      }
+      return out;
+    }
+    function build(ex) {
+      var b = ex.no ? ex.b : ex.p + ex.q, c = ex.no ? ex.c : ex.p * ex.q, X = parse(ex.L).P;
+      if (ex.no) for (var d = -Math.abs(c); d <= Math.abs(c); d++) { if (d && c % d === 0 && d + c / d === b) throw new Error('Sí se factoriza: ' + b + ', ' + c); }
+      var constP = function (n) { return n === 0 ? {} : { '': [n, 1] }; };
+      ex.b = b; ex.c = c; ex.X = X;
+      ex.tri = padd(padd(pmul(X, X), pmul(constP(b), X), 1), constP(c), 1);
+      return ex;
+    }
+    BANK = BANK.map(build);
+
+    function triHTML(e) {
+      var s = e.L + '²';
+      if (e.b !== 0) s += ' ' + sgn(e.b) + ' ' + (Math.abs(e.b) === 1 ? '' : Math.abs(e.b)) + e.L;
+      return s + ' ' + sgn(e.c) + ' ' + Math.abs(e.c);
+    }
+    function binHTML(e, n) { return '(' + e.L + ' ' + sgn(n) + ' ' + Math.abs(n) + ')'; }
+    function pairText(pq) { return pq[0] + ' y ' + pq[1] + ' (suma ' + (pq[0] + pq[1]) + ')'; }
+    function fix(s) { return s.replace(/-(\d)/g, MINUS + '$1'); }
+
+    // la solución, explicada
+    function explainYes(e) {
+      var ps = pairs(e.b, e.c), hit = e.p + e.q === e.b ? [e.p, e.q] : null;
+      var lista = ps.map(function (pq) { var ok = pq[0] + pq[1] === e.b; return (ok ? '<strong>' : '') + fix(pairText(pq)) + (ok ? '</strong> ✓' : ''); }).join(', ');
+      var signos = e.c > 0 ? 'c = ' + fix(String(e.c)) + ' es positivo, así que los dos números tienen el signo de b = ' + fix(String(e.b)) + ' (' + (e.b < 0 ? 'negativo' : 'positivo') + ').'
+                           : 'c = ' + fix(String(e.c)) + ' es negativo, así que los números tienen signos diferentes' + (e.b === 0 ? ' (como b = 0, son opuestos).' : ' y el mayor lleva el signo de b = ' + fix(String(e.b)) + '.');
+      return signos + '<br>Pares con producto ' + fix(String(e.c)) + ': ' + lista + '.<br>Los números son ' + fix(String(hit[0])) + ' y ' + fix(String(hit[1])) + ', así que queda <strong>' + binHTML(e, e.p) + binHTML(e, e.q) + '</strong>.';
+    }
+    function explainNo(e) {
+      var ps = pairs(e.b, e.c).map(function (pq) { return fix(pairText(pq)); }).join(', ');
+      return 'Los pares de enteros con producto ' + fix(String(e.c)) + ' (con el signo que corresponde) son: ' + ps + '. Ninguno suma b = ' + fix(String(e.b)) + ', así que <strong>no se puede factorizar con números enteros</strong>.';
+    }
+    // x² + Bx + C → { B, C } de lo que escribió el alumno (o null si tiene otra forma)
+    function coefs(P, L) {
+      var o = { B: 0, C: 0 }, ok = true;
+      Object.keys(P).forEach(function (k) {
+        var v = P[k]; if (v[1] !== 1) { ok = false; return; }
+        if (k === L + '2') { if (v[0] !== 1) ok = false; } else if (k === L + '1') o.B = v[0]; else if (k === '') o.C = v[0]; else ok = false;
+      });
+      return ok ? o : null;
+    }
+    function factorOk(v, r, e) { // dos binomios, o un binomio al cuadrado si p = q
+      if (!same(r.P, e.tri)) return false;
+      if (r.binos === 2 && r.others === 0) return true;
+      if (e.p !== e.q) return false;
+      var m = /^\((.+)\)(?:\^2|²)$/.exec(v.replace(/\s+/g, '').replace(/[−–—]/g, '-'));
+      if (!m) return false;
+      try { var q = parse(m[1]); return q.terms === 2 && same(pmul(q.P, q.P), e.tri); } catch (x) { return false; }
+    }
+
+    // ---------- tarjetas ----------
+    var N = 10, done = {}, grid = document.getElementById('fx-grid'), scoreEl = document.getElementById('fx-score');
+    function score() {
+      var n = Object.keys(done).length;
+      scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
+    }
+    function pick() { // 10 al azar, ordenados como en el banco
+      var idx = BANK.map(function (e, i) { return i; });
+      for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+      return idx.slice(0, N).sort(function (p, q) { return p - q; }).map(function (i) { return BANK[i]; });
+    }
+    function makeCard(e, idx) {
+      var keys = ['(', ')', e.L, '+', MINUS].map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('');
+      var card = document.createElement('div');
+      card.className = 'practice-card';
+      card.innerHTML =
+        '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + triHTML(e) + '</span></div>' +
+        '<div class="practice-choice" style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.6rem;">' +
+        '<button type="button" class="pg-btn" data-c="si">Sí se factoriza</button><button type="button" class="pg-btn secondary" data-c="no">No se factoriza</button></div>' +
+        '<div class="practice-fact" hidden><div class="practice-row"><span class="eq">=</span>' +
+        '<input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tu factorización del ejercicio ' + (idx + 1) + '">' +
+        '<button type="button" class="practice-check">Comprobar</button></div><div class="practice-keys">' + keys + '</div></div>' +
+        '<div class="practice-fb" aria-live="polite"></div>';
+      grid.appendChild(card);
+      var input = card.querySelector('input'), fb = card.querySelector('.practice-fb'), factBox = card.querySelector('.practice-fact');
+      card.querySelectorAll('.practice-choice button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var sayYes = b.dataset.c === 'si';
+          card.classList.remove('ok', 'bad'); delete done[idx]; score(); factBox.hidden = true; input.value = '';
+          if (sayYes && !e.no) {
+            factBox.hidden = false; input.focus();
+            fb.innerHTML = '<span class="yes">¡Sí se factoriza!</span> Ahora escríbelo como <strong>dos binomios</strong> y oprime <strong>Comprobar</strong>.';
+          } else if (!sayYes && e.no) {
+            card.classList.add('ok'); done[idx] = 1; score();
+            fb.innerHTML = '<span class="yes">✓ ¡Correcto! No se factoriza.</span><div class="sol">' + explainNo(e) + '</div>';
+          } else {
+            card.classList.add('bad');
+            fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + (e.no ? 'Busca dos números con producto c y suma b: aquí no existen.' : 'Sí se factoriza: hay dos números con producto c y suma b.') +
+              '<div class="sol">' + (e.no ? explainNo(e) : explainYes(e)) + '</div>';
+          }
+        });
+      });
+      card.querySelectorAll('.practice-keys button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var s = input.selectionStart == null ? input.value.length : input.selectionStart, e2 = input.selectionEnd == null ? s : input.selectionEnd;
+          input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e2);
+          input.focus(); input.setSelectionRange(s + b.dataset.k.length, s + b.dataset.k.length);
+        });
+      });
+      function check() {
+        var v = input.value.trim(), msg = '';
+        card.classList.remove('ok', 'bad');
+        if (!v) { fb.innerHTML = 'Escribe tu respuesta en el cuadro.'; return; }
+        var r; try { r = parse(v); } catch (x) { r = null; }
+        if (!r) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí lo que escribiste.</span> Escríbelo como, por ejemplo, <strong>(x + 3)(x + 4)</strong> o <strong>(x − 2)(x + 5)</strong>.'; return; }
+        if (factorOk(v, r, e)) {
+          card.classList.add('ok'); done[idx] = 1; score();
+          fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span><div class="sol">' + triHTML(e) + ' = <strong>' + binHTML(e, e.p) + binHTML(e, e.q) + '</strong></div>';
+          return;
+        }
+        card.classList.add('bad'); delete done[idx]; score();
+        var twoBin = r.binos === 2 && r.others === 0, sq = e.p === e.q && /\^2|²/.test(v), co = coefs(r.P, e.L);
+        if (!twoBin && !sq) msg = 'Escribe <strong>dos binomios multiplicados</strong>, por ejemplo (x + 3)(x + 4).';
+        else if (!co) msg = 'Cada binomio debe ser de la forma (<strong>' + e.L + '</strong> ± un número), con la letra de este ejercicio.';
+        else if (co.B === -e.b && co.C === e.c && e.b !== 0) msg = 'Revisa los <strong>signos</strong>: tus números suman ' + fix(String(co.B)) + ' y deben sumar ' + fix(String(e.b)) + '. Cámbiales el signo.';
+        else if (co.C !== e.c) msg = 'El <strong>producto</strong> de tus dos números es ' + fix(String(co.C)) + ' y debe ser c = ' + fix(String(e.c)) + '.';
+        else msg = 'La <strong>suma</strong> de tus dos números es ' + fix(String(co.B)) + ' y debe ser b = ' + fix(String(e.b)) + '.';
+        fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + msg + '<div class="sol">La respuesta correcta es:<br>' + explainYes(e) + '</div>';
+      }
+      card.querySelector('.practice-check').addEventListener('click', check);
+      input.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') check(); });
+    }
+    function newSet() { grid.innerHTML = ''; done = {}; pick().forEach(makeCard); score(); }
+    document.getElementById('fx-new').addEventListener('click', function () {
+      newSet();
+      document.getElementById('ejercicios-factorizar-x2bxc').scrollIntoView({ behavior: 'smooth' });
+    });
+    newSet();
+  })();
+  </script>
+
+  <p class="section-label no-caps" id="rubrica-factorizar-x2-bx-c">Rúbrica · Factorizar x² + bx + c</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe la factorización con dos binomios entre paréntesis y con el signo de cada número: (x − 4)(x − 5).</li><li>Escribe los pares de números, sus productos y sus sumas en orden, con su signo.</li><li>Explica con sus palabras cómo eligió los números (producto c, suma b) y qué hizo con los signos.</li></ul></div></td>
+            <td>Escribe los binomios sin paréntesis o sin signo, o un solo binomio, y sus respuestas no se entienden. No usa ningún apoyo, como la lista de pares de números.</td>
+            <td colspan="2">Usa la simbología con limitaciones: escribe los dos binomios, pero a veces omite un signo o un paréntesis. Contesta sin explicar o sólo dice «busqué dos números».</td>
+            <td>Escribe con la simbología correcta los pares de números, la suma, el producto y los dos binomios, con alguna deficiencia (por ejemplo, un signo ambiguo en la lista). Explica con claridad qué hizo en cada paso.</td>
+            <td>Escribe y explica con notación correcta el procedimiento completo (b y c, pares, suma, producto, factorización y comprobación), por diferentes medios (con la regla, con la figura del rectángulo y con palabras), y reconstruye el procedimiento en un trinomio nuevo.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación geométrica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Relaciona (x + p)(x + q) con un rectángulo de lados x + p y x + q formado por x², dos rectángulos px y qx y un rectángulo de área pq.</li><li>Reconoce que los rectángulos px y qx forman el término bx, y que el área pq es el término c.</li></ul></div></td>
+            <td>Ve el trinomio como una suma de términos y no reconoce el rectángulo ni lo relaciona con los números p y q.</td>
+            <td colspan="2">Reconoce la figura del ejemplo (x + 3)(x + 4), pero no la generaliza a otros valores ni a números negativos.</td>
+            <td>Interpreta la figura: x², los dos rectángulos px y qx que suman bx, y el área pq; relaciona cada parte con un término del trinomio.</td>
+            <td>Dibuja el rectángulo para un trinomio nuevo y lo usa para justificar que p + q = b y p · q = c.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Identifica b y c con su signo en x² + bx + c, y los usa para buscar p y q (p · q = c, p + q = b).</li><li>Decide los signos de p y q a partir de los signos de b y de c.</li><li>Factoriza como (x + p)(x + q), distingue el caso del TCP (p = q) y reconoce cuando no se puede factorizar con enteros.</li></ul></div></td>
+            <td>Conoce la regla de memoria («dos números que...») pero confunde b con c, o busca números que sólo cumplen una de las dos condiciones.</td>
+            <td colspan="2">Factoriza los casos sencillos (b y c positivos). Le fallan los casos con signos negativos, c negativo o números grandes, o no distingue cuándo no se puede factorizar.</td>
+            <td>Comprende y maneja las propiedades: encuentra los dos números con producto c y suma b en cualquier caso de signos, factoriza, comprueba multiplicando y reconoce un trinomio que no se factoriza con enteros.</td>
+            <td>Explica que (x + p)(x + q) = x² + (p + q)x + pq, y por eso factorizar es buscar p y q; generaliza los signos, relaciona el caso p = q con el TCP y p = −q con la diferencia de cuadrados, y usa el desarrollo y la factorización como procesos inversos.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué los números buscados deben multiplicar c y sumar b: porque así se obtiene el trinomio al multiplicar los binomios.</li><li>Justifica los signos de p y q con los signos de b y de c.</li><li>Comprueba su resultado multiplicando los binomios y justifica por qué un trinomio no se puede factorizar con enteros (revisa todos los pares).</li></ul></div></td>
+            <td>Dice «así se hace» o «se buscan dos números» sin justificar. Factoriza pero no comprueba su resultado.</td>
+            <td>Defiende con una regla simple («producto c, suma b») con lenguaje matemático básico.</td>
+            <td>Valida con ejemplos: factoriza varios trinomios y comprueba cada uno multiplicando; da ejemplos y no-ejemplos de trinomios que sí y que no se factorizan.</td>
+            <td>Explica la estructura del argumento: que p · q = c y p + q = b son las condiciones y que (x + p)(x + q) es la conclusión; comprueba sus resultados y, cuando dice que no se factoriza, muestra que revisó todos los pares.</td>
+            <td>Elabora una cadena de argumentos que generaliza: demuestra con la multiplicación de binomios por qué factorizar x² + bx + c es buscar p y q con p + q = b y p · q = c, y relaciona los signos, el TCP y la diferencia de cuadrados con la regla.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>

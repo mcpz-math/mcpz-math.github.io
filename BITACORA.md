@@ -1669,3 +1669,19 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (los 100 de siempre y, al final del banco, 100 con raíces: 85 que sí son TCP y 15 que no). Salen 10 al azar de los 200, así que en cada tanda
   puede haber ejercicios con y sin raíces. El botón √ está en todos los cuadros de factorización de TCP.
 - Se actualizaron las instrucciones del TCP, la rúbrica ("binomioscuad") y la guía en Word. Se probaron 400 tarjetas del banco mezclado.
+
+## 2026-10-30 (nuevo subtema: factorizar trinomios de la forma x² + bx + c)
+- A pedido de Carmen, se escribió el subtema de los trinomios x² + bx + c y cómo se factorizan, en una página nueva:
+  `matematicas-3/tema-06-factorizar-x2-bx-c.html`. En el temario del Tema 6 (`tema-06-productos-notables-y-factorizacion.html`) el bloque
+  "Binomio factor común y trinomio de la forma x² + bx + c" ahora tiene dos enlaces: "Completar el TCP →" y "Factorizar x² + bx + c →".
+  La página de completar el TCP termina con un botón "Factorizar x² + bx + c →". "Binomio factor común" sigue "Próximamente".
+- Contenido: qué es un trinomio x² + bx + c (b y c con su signo); de dónde sale (multiplicar (x + 3)(x + 4) y la regla
+  (x + p)(x + q) = x² + (p + q)x + pq, con la figura del rectángulo de lados x + 4 y x + 3); al revés, cómo se factoriza (dos números con **producto c** y
+  **suma b**, en 5 pasos) con la ayuda de los signos (c positivo: mismo signo que b; c negativo: signos diferentes, el mayor lleva el signo de b);
+  cuatro ejemplos (x² + 7x + 12, x² − 9x + 20, x² + 2x − 15, x² − 5x − 14); casos especiales (p = q es un TCP, p = −q una diferencia de cuadrados y el
+  trinomio que no se factoriza con enteros) y errores comunes.
+- **100 ejercicios** con revisión automática (10 al azar cada vez): 85 que sí se factorizan (los dos números positivos, negativos, de signos diferentes y más
+  grandes; también TCP y x² − 25) y 15 que no se factorizan con enteros. Primero se elige "Sí se factoriza" o "No se factoriza"; si sí, se escribe
+  (x + p)(x + q) en cualquier orden. Si hay error, dice si falla el producto, la suma o los signos y muestra la lista de pares de números; si no se factoriza,
+  muestra todos los pares y sus sumas. Se probó con 400 tarjetas.
+- Rúbrica por competencias (plegada) al final de la página, actividad "factorizarxbc" en `rubricas-por-actividad.json`; se regeneró la guía en Word.
