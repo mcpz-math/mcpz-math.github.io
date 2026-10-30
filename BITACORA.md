@@ -1622,3 +1622,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
   desarrollar el binomio, multiplicar por a y corte con el eje y).
 - Fuente: actividad "axhcuad" en `materiales-fuente/rubricas-por-actividad.json`; se generó con `generar-rubricas.ps1`, que también regeneró la guía
   en Word `Escritorio\IEMS\Guia_para_evaluar_con_la_matriz.docx` (incluye esta actividad con evidencia por revisar y errores típicos).
+
+## 2026-10-30 (raíces: valor y clasificación en los ejercicios de f(x) = a(x − h)²)
+- A pedido de Carmen, las **dos series de ejercicios** de `matematicas-3/tema-05-a-x-menos-h-cuadrada.html` (a = 1 o −1, y otros valores de a)
+  preguntan ahora también por las **raíces de la curva**: (1) **su valor**, con dos casillas x₁ y x₂ (en esta función las dos son iguales a h), y
+  (2) **su clasificación**: reales y diferentes, reales y repetidas o imaginarias (la respuesta es siempre "reales y repetidas", porque el vértice
+  está sobre el eje x). Van después del vértice y antes del corte con el eje y; la serie 1 pasa de 4–5 a 6–7 preguntas y la serie 2 de 7 a 9
+  (se renumeraron los pasos). Si hay errores, explica cómo salen las raíces (a(x − h)² = 0 → x − h = 0) y por qué son repetidas y no
+  diferentes ni imaginarias.
+- Se actualizaron las instrucciones de ambas series, "Para recordar" (x₁ = x₂ = h, reales y repetidas) y la rúbrica (`rubricas-por-actividad.json`,
+  actividad "axhcuad": qué observar y errores típicos de las raíces); se regeneró la guía en Word `Escritorio\IEMS\Guia_para_evaluar_con_la_matriz.docx`.
+- Se probó con 120 tarjetas de la serie 1 y 100 de la serie 2 (respuestas correctas y con errores en las raíces).

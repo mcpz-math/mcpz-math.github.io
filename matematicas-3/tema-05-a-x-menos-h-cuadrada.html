@@ -380,7 +380,7 @@
     <p><strong>1.</strong> h es el número que <strong>se le resta a x</strong> dentro del paréntesis. Si ves (x + 4)², entonces h = −4.</p>
     <p><strong>2.</strong> h &gt; 0 mueve la parábola a la <strong>derecha</strong>; h &lt; 0, a la <strong>izquierda</strong>; h = 0 la deja en su lugar. h no cambia la forma ni hacia dónde abre.</p>
     <p><strong>3.</strong> a decide hacia dónde abre (a &gt; 0 arriba y mínimo; a &lt; 0 abajo y máximo) y qué tan abierta es (|a| &gt; 1 delgada; |a| &lt; 1 gorda).</p>
-    <p><strong>4.</strong> El vértice es <strong>V(h, 0)</strong>, el eje de simetría es <strong>x = h</strong> y la única raíz es <strong>x = h</strong> (raíz repetida). Corta al eje y en <strong>(0, a·h²)</strong>.</p>
+    <p><strong>4.</strong> El vértice es <strong>V(h, 0)</strong>, el eje de simetría es <strong>x = h</strong> y las dos raíces son iguales: <strong>x₁ = x₂ = h</strong>. Son raíces <strong>reales y repetidas</strong> (la parábola sólo toca al eje x). Corta al eje y en <strong>(0, a·h²)</strong>.</p>
   </div>
 
   <p class="section-label no-caps" id="ejercicios-x-menos-h">Ejercicios: analiza f(x) = a(x − h)² cuando a = 1 o a = −1</p>
@@ -395,6 +395,8 @@
     <p><strong>•</strong> ¿Hacia dónde abre la parábola: <strong>arriba</strong> o <strong>abajo</strong>? (fíjate si hay un signo menos delante del paréntesis)<br>
        <strong>•</strong> ¿Tiene un <strong>máximo</strong> o un <strong>mínimo</strong>?<br>
        <strong>•</strong> ¿Dónde está su <strong>vértice</strong>? Escribe las dos coordenadas en V(___, ___).<br>
+       <strong>•</strong> ¿Cuál es el <strong>valor de sus raíces</strong>? Escribe x₁ y x₂ (los valores de x donde f(x) = 0).<br>
+       <strong>•</strong> ¿Cómo son sus raíces: <strong>reales y diferentes</strong>, <strong>reales y repetidas</strong> o <strong>imaginarias</strong>?<br>
        <strong>•</strong> ¿Dónde <strong>corta al eje y</strong>? Escribe el número que falta en (0, ___).</p>
     <p>Los números pueden ser enteros, fracciones (por ejemplo <strong>5/2</strong>) o decimales, con signo si es negativo.</p>
     <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Cuando termines,
@@ -461,7 +463,8 @@
       return s + (c0.n > 0 ? ' + ' : ' ' + MINUS + ' ') + fracHTML(absF(c0));
     }
     function fxHTML(e) { return e.forma === 'e' ? expHTML(e) : 'f(x) = ' + factHTML(e); }
-    var LABEL = { arriba: 'Hacia arriba', abajo: 'Hacia abajo', minimo: 'Un mínimo', maximo: 'Un máximo' };
+    var LABEL = { arriba: 'Hacia arriba', abajo: 'Hacia abajo', minimo: 'Un mínimo', maximo: 'Un máximo',
+                  diferentes: 'Reales y diferentes', repetidas: 'Reales y repetidas', imaginarias: 'Imaginarias' };
 
     // ---------- ¿está factorizada como un binomio al cuadrado? ----------
     function factorOk(v, r, e) {
@@ -513,6 +516,11 @@
         '<div class="practice-row"><span class="eq">V(</span>' + inputHTML('vx', 'Coordenada x del vértice del ejercicio ' + (idx + 1), BOX) +
         '<span class="eq">,</span>' + inputHTML('vy', 'Coordenada y del vértice del ejercicio ' + (idx + 1), BOX) + '<span class="eq">)</span></div>' +
         keysHTML(['−', '/'], 'vx,vy') +
+        '<div class="practice-ask">' + q() + '¿Cuál es el valor de sus raíces?</div>' +
+        '<div class="practice-row"><span class="eq">x<sub>1</sub> =</span>' + inputHTML('r1', 'Primera raíz del ejercicio ' + (idx + 1), BOX) +
+        '<span class="eq">x<sub>2</sub> =</span>' + inputHTML('r2', 'Segunda raíz del ejercicio ' + (idx + 1), BOX) + '</div>' +
+        keysHTML(['−', '/'], 'r1,r2') +
+        '<div class="practice-ask">' + q() + '¿Cómo son sus raíces?</div>' + opts('raices', ['diferentes', 'repetidas', 'imaginarias']) +
         '<div class="practice-ask">' + q() + '¿Dónde corta al eje y?</div>' +
         '<div class="practice-row"><span class="eq">(0,</span>' + inputHTML('cy', 'Corte con el eje y del ejercicio ' + (idx + 1), BOX) + '<span class="eq">)</span></div>' +
         keysHTML(['−', '/'], 'cy') +
@@ -559,16 +567,21 @@
         ext: 'Abre hacia ' + e.abre + ', así que el vértice es el punto más ' + (e.a > 0 ? 'bajo' : 'alto') + ': tiene un <strong>' + (e.a > 0 ? 'mínimo' : 'máximo') + '</strong>.',
         v: 'En a(x ' + MINUS + ' h)² el vértice es V(h, 0). ' + (e.h.n < 0 ? 'Aquí ' + parenHTML(e) + ' = (x ' + MINUS + ' (' + hH + ')), así que h = ' + hH : 'Aquí h = ' + hH) +
            ': el vértice es <strong><span style="white-space:nowrap;">V(' + hH + ', 0)</span></strong>.',
+        raiz: 'Las raíces son los valores de x donde f(x) = 0. ' + (e.h.n === 0 ? 'x² = 0, así que x = 0' : '(x ' + MINUS + ' ' + (e.h.n < 0 ? '(' + hH + ')' : hH) + ')² = 0 → x ' + MINUS + ' ' + (e.h.n < 0 ? '(' + hH + ')' : hH) + ' = 0 → x = ' + hH) +
+              '. El paréntesis está al cuadrado, o sea que es el mismo factor dos veces: <strong>x<sub>1</sub> = x<sub>2</sub> = ' + hH + '</strong> (es la misma coordenada x del vértice).',
+        raices: 'Las dos raíces son iguales (x<sub>1</sub> = x<sub>2</sub> = ' + hH + '): el vértice está <strong>sobre el eje x</strong> y la parábola sólo lo toca en un punto, sin cruzarlo. Por eso son <strong>reales y repetidas</strong> ' +
+                '(no son diferentes porque sólo hay un punto de contacto, y no son imaginarias porque sí toca al eje x).',
         cy: 'El corte con el eje y es donde x = 0: f(0) = ' + neg + (e.h.n === 0 ? '0' : '(' + dif + ')') + '² = <strong>' + cyH + '</strong>' + (exp ? ' (es el término sin x)' : '') +
             ', así que corta en <strong><span style="white-space:nowrap;">(0, ' + cyH + ')</span></strong>.'
       };
       function check() {
         card.classList.remove('ok', 'bad');
         var vx = parseNum(inp.vx.value), vy = parseNum(inp.vy.value), cy = parseNum(inp.cy.value), fv = exp ? inp.fac.value.trim() : '';
-        if (!chosen.abre || !chosen.ext || !inp.vx.value.trim() || !inp.vy.value.trim() || !inp.cy.value.trim() || (exp && !fv)) {
+        var rr1 = parseNum(inp.r1.value), rr2 = parseNum(inp.r2.value);
+        if (!chosen.abre || !chosen.ext || !chosen.raices || !inp.vx.value.trim() || !inp.vy.value.trim() || !inp.cy.value.trim() || !inp.r1.value.trim() || !inp.r2.value.trim() || (exp && !fv)) {
           fb.innerHTML = 'Contesta <strong>todas</strong> las preguntas antes de comprobar.'; return;
         }
-        if (!vx || !vy || !cy) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí algún número.</span> Escribe enteros, fracciones o decimales, por ejemplo <strong>−3</strong>, <strong>5/2</strong> o <strong>0.5</strong>.'; return; }
+        if (!vx || !vy || !cy || !rr1 || !rr2) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí algún número.</span> Escribe enteros, fracciones o decimales, por ejemplo <strong>−3</strong>, <strong>5/2</strong> o <strong>0.5</strong>.'; return; }
         var wrong = [];
         if (exp) {
           var r = null; try { r = parse(fv); } catch (x) { r = null; }
@@ -578,12 +591,14 @@
         if (chosen.abre !== e.abre) wrong.push('abre');
         if (chosen.ext !== e.ext) wrong.push('ext');
         if (!eq(vx, e.h) || !eq(vy, frac(0, 1))) wrong.push('v');
+        if (!eq(rr1, e.h) || !eq(rr2, e.h)) wrong.push('raiz');
+        if (chosen.raices !== 'repetidas') wrong.push('raices');
         if (!eq(cy, e.cy)) wrong.push('cy');
-        var total = exp ? 5 : 4;
+        var total = exp ? 7 : 6;
         if (!wrong.length) {
           card.classList.add('ok'); done[idx] = 1; score();
           fb.innerHTML = '<span class="yes">✓ ¡Todo correcto!</span><div class="sol">' + (exp ? 'f(x) = ' + factHTML(e) + ' · ' : '') + 'abre hacia ' + e.abre + ' · ' + (e.a > 0 ? 'mínimo' : 'máximo') +
-                         ' · <span style="white-space:nowrap;">V(' + hH + ', 0)</span> · <span style="white-space:nowrap;">(0, ' + cyH + ')</span></div>';
+                         ' · <span style="white-space:nowrap;">V(' + hH + ', 0)</span> · x<sub>1</sub> = x<sub>2</sub> = ' + hH + ' (reales y repetidas) · <span style="white-space:nowrap;">(0, ' + cyH + ')</span></div>';
           return;
         }
         card.classList.add('bad'); delete done[idx]; score();
@@ -614,9 +629,11 @@
        <strong>2.</strong> ¿Tiene un máximo o un mínimo?<br>
        <strong>3.</strong> Comparada con x², ¿es <strong>gorda</strong> o <strong>flaca</strong>? (fíjate en |a|: mayor que 1 es flaca, menor que 1 es gorda)<br>
        <strong>4.</strong> ¿Dónde está su vértice? Escribe las dos coordenadas en V(___, ___).<br>
-       <strong>5.</strong> <strong>Desarrolla</strong> el binomio al cuadrado (x − h)² con la regla (a ± b)² = a² ± 2ab + b².<br>
-       <strong>6.</strong> <strong>Multiplica</strong> el resultado por a: así obtienes f(x) desarrollada.<br>
-       <strong>7.</strong> ¿Dónde <strong>corta al eje y</strong>? Es el valor de f(x) cuando x = 0, el término que no tiene x.</p>
+       <strong>5.</strong> ¿Cuál es el <strong>valor de sus raíces</strong>? Escribe x₁ y x₂ (los valores de x donde f(x) = 0).<br>
+       <strong>6.</strong> ¿Cómo son sus raíces: <strong>reales y diferentes</strong>, <strong>reales y repetidas</strong> o <strong>imaginarias</strong>?<br>
+       <strong>7.</strong> <strong>Desarrolla</strong> el binomio al cuadrado (x − h)² con la regla (a ± b)² = a² ± 2ab + b².<br>
+       <strong>8.</strong> <strong>Multiplica</strong> el resultado por a: así obtienes f(x) desarrollada.<br>
+       <strong>9.</strong> ¿Dónde <strong>corta al eje y</strong>? Es el valor de f(x) cuando x = 0, el término que no tiene x.</p>
     <p>Debajo de cada casilla hay botones para escribir x, ², los signos y la fracción; también puedes usar <strong>^2</strong> y <strong>/</strong> con el
        teclado, por ejemplo <strong>x^2 − 6x + 9</strong> o <strong>5/2</strong>.</p>
     <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Cuando termines,
@@ -678,7 +695,8 @@
     function trin(c2, c1, c0) { return termHTML(c2, 'x²', true) + termHTML(c1, 'x', false) + termHTML(c0, '', false); }
     function binHTML(e) { return '(x ' + (e.h.n > 0 ? MINUS : '+') + ' ' + fracHTML(absF(e.h)) + ')'; }
     function fxHTML(e) { return 'f(x) = ' + fracHTML(e.a) + binHTML(e) + '²'; }
-    var LABEL = { arriba: 'Hacia arriba', abajo: 'Hacia abajo', minimo: 'Un mínimo', maximo: 'Un máximo', gorda: 'Gorda', flaca: 'Flaca' };
+    var LABEL = { arriba: 'Hacia arriba', abajo: 'Hacia abajo', minimo: 'Un mínimo', maximo: 'Un máximo', gorda: 'Gorda', flaca: 'Flaca',
+                  diferentes: 'Reales y diferentes', repetidas: 'Reales y repetidas', imaginarias: 'Imaginarias' };
 
     // ---------- tarjetas ----------
     var N = 10;
@@ -716,11 +734,15 @@
         '<div class="practice-ask">4. ¿Dónde está su vértice?</div>' +
         '<div class="practice-row"><span class="eq">V(</span>' + inputHTML('vx', 'Coordenada x del vértice del ejercicio ' + n, BOX) + '<span class="eq">,</span>' + inputHTML('vy', 'Coordenada y del vértice del ejercicio ' + n, BOX) + '<span class="eq">)</span></div>' +
         keysHTML(NUM, 'vx,vy') +
-        '<div class="practice-ask">5. Desarrolla el binomio al cuadrado</div>' +
+        '<div class="practice-ask">5. ¿Cuál es el valor de sus raíces?</div>' +
+        '<div class="practice-row"><span class="eq">x<sub>1</sub> =</span>' + inputHTML('r1', 'Primera raíz del ejercicio ' + n, BOX) + '<span class="eq">x<sub>2</sub> =</span>' + inputHTML('r2', 'Segunda raíz del ejercicio ' + n, BOX) + '</div>' +
+        keysHTML(NUM, 'r1,r2') +
+        '<div class="practice-ask">6. ¿Cómo son sus raíces?</div>' + opts('raices', ['diferentes', 'repetidas', 'imaginarias']) +
+        '<div class="practice-ask">7. Desarrolla el binomio al cuadrado</div>' +
         '<div class="practice-row"><span class="eq">' + binHTML(e) + '² =</span>' + inputHTML('d1', 'Binomio desarrollado del ejercicio ' + n, 'flex:1 1 9rem;') + '</div>' + keysHTML(ALG, 'd1') +
-        '<div class="practice-ask">6. Multiplícalo por a = ' + fracHTML(e.a) + '</div>' +
+        '<div class="practice-ask">8. Multiplícalo por a = ' + fracHTML(e.a) + '</div>' +
         '<div class="practice-row"><span class="eq">f(x) =</span>' + inputHTML('d2', 'Función desarrollada del ejercicio ' + n, 'flex:1 1 9rem;') + '</div>' + keysHTML(ALG, 'd2') +
-        '<div class="practice-ask">7. ¿Dónde corta al eje y?</div>' +
+        '<div class="practice-ask">9. ¿Dónde corta al eje y?</div>' +
         '<div class="practice-row"><span class="eq">(0,</span>' + inputHTML('cy', 'Corte con el eje y del ejercicio ' + n, BOX) + '<span class="eq">)</span></div>' + keysHTML(NUM, 'cy') +
         '<div class="practice-row" style="margin-top:0.7rem;"><button type="button" class="practice-check">Comprobar</button></div>' +
         '<div class="practice-fb" aria-live="polite"></div>';
@@ -752,6 +774,10 @@
         forma: '<strong>|a| = ' + fracHTML(absF(e.a)) + '</strong> es ' + (e.forma === 'flaca' ? 'mayor' : 'menor') + ' que 1, así que la parábola es <strong>' + e.forma + '</strong> (más ' + (e.forma === 'flaca' ? 'cerrada' : 'abierta') + ' que x²).',
         v: 'En a(x ' + MINUS + ' h)² el vértice es V(h, 0). ' + (e.h.n < 0 ? 'Aquí ' + binHTML(e) + ' = (x ' + MINUS + ' (' + hH + ')), así que h = ' + hH : 'Aquí h = ' + hH) +
            ': el vértice es <strong><span style="white-space:nowrap;">V(' + hH + ', 0)</span></strong>.',
+        raiz: 'Las raíces son los valores de x donde f(x) = 0: ' + aH + '(x ' + MINUS + ' ' + (e.h.n < 0 ? '(' + hH + ')' : hH) + ')² = 0. Como a ≠ 0, el que vale cero es el paréntesis: x ' + MINUS + ' ' + (e.h.n < 0 ? '(' + hH + ')' : hH) + ' = 0 → x = ' + hH +
+              '. Al estar al cuadrado, ese factor aparece dos veces: <strong>x<sub>1</sub> = x<sub>2</sub> = ' + hH + '</strong> (a no cambia las raíces, sólo la forma de la parábola).',
+        raices: 'Las dos raíces son iguales (x<sub>1</sub> = x<sub>2</sub> = ' + hH + '): el vértice está <strong>sobre el eje x</strong> y la parábola sólo lo toca en un punto, sin cruzarlo. Por eso son <strong>reales y repetidas</strong> ' +
+                '(no son diferentes porque sólo hay un punto de contacto, y no son imaginarias porque sí toca al eje x).',
         d1: 'Usa la regla (x ' + sg + ' ' + hA + ')² = x² ' + sg + ' 2 · x · ' + hA + ' + (' + hA + ')². Queda: ' + binHTML(e) + '² = <strong>' + tb + '</strong>.',
         d2: 'Multiplica <strong>cada término</strong> por a = ' + aH + ': ' + aH + '(' + tb + ') = <strong>' + tf + '</strong>.',
         cy: 'El corte con el eje y es donde x = 0, y es el término sin x de la función desarrollada: a · h² = ' + aH + ' · ' + fracHTML(e.h2) + ' = <strong>' + cyH + '</strong>, así que corta en <strong><span style="white-space:nowrap;">(0, ' + cyH + ')</span></strong>.'
@@ -759,17 +785,20 @@
       function check() {
         card.classList.remove('ok', 'bad');
         var vx = parseNum(inp.vx.value), vy = parseNum(inp.vy.value), cy = parseNum(inp.cy.value), t1 = inp.d1.value.trim(), t2 = inp.d2.value.trim();
-        if (!chosen.abre || !chosen.ext || !chosen.forma || !inp.vx.value.trim() || !inp.vy.value.trim() || !inp.cy.value.trim() || !t1 || !t2) { fb.innerHTML = 'Contesta <strong>todas</strong> las preguntas antes de comprobar.'; return; }
-        if (!vx || !vy || !cy) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí algún número.</span> Escribe enteros, fracciones o decimales, por ejemplo <strong>−3</strong>, <strong>5/2</strong> o <strong>0.5</strong>.'; return; }
+        var rr1 = parseNum(inp.r1.value), rr2 = parseNum(inp.r2.value);
+        if (!chosen.abre || !chosen.ext || !chosen.forma || !chosen.raices || !inp.vx.value.trim() || !inp.vy.value.trim() || !inp.cy.value.trim() || !inp.r1.value.trim() || !inp.r2.value.trim() || !t1 || !t2) { fb.innerHTML = 'Contesta <strong>todas</strong> las preguntas antes de comprobar.'; return; }
+        if (!vx || !vy || !cy || !rr1 || !rr2) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí algún número.</span> Escribe enteros, fracciones o decimales, por ejemplo <strong>−3</strong>, <strong>5/2</strong> o <strong>0.5</strong>.'; return; }
         var r1 = null, r2 = null;
         try { r1 = parse(t1); } catch (x) { r1 = null; }
         try { r2 = parse(t2); } catch (x) { r2 = null; }
-        if (!r1 || !r2) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí lo que escribiste en el paso 4 o 5.</span> Escríbelo como, por ejemplo, <strong>x^2 − 6x + 9</strong> o <strong>2x² − 12x + 18</strong>.'; return; }
+        if (!r1 || !r2) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí lo que escribiste en el paso 7 u 8.</span> Escríbelo como, por ejemplo, <strong>x^2 − 6x + 9</strong> o <strong>2x² − 12x + 18</strong>.'; return; }
         var wrong = [], extra = {};
         if (chosen.abre !== e.abre) wrong.push('abre');
         if (chosen.ext !== e.ext) wrong.push('ext');
         if (chosen.forma !== e.forma) wrong.push('forma');
         if (!eq(vx, e.h) || !eq(vy, frac(0, 1))) wrong.push('v');
+        if (!eq(rr1, e.h) || !eq(rr2, e.h)) wrong.push('raiz');
+        if (chosen.raices !== 'repetidas') wrong.push('raices');
         if (!(same(r1.P, e.base) && r1.terms === 3)) {
           wrong.push('d1');
           if (same(r1.P, e.base)) extra.d1 = 'Es el mismo resultado, pero <strong>desarróllalo</strong>: escríbelo como un trinomio (tres términos), sin paréntesis.';
@@ -781,11 +810,11 @@
           else if (same(r2.P, e.P)) extra.d2 = 'Es equivalente, pero <strong>desarróllalo</strong>: escríbelo como un trinomio sin paréntesis.';
         }
         if (!eq(cy, e.cy)) wrong.push('cy');
-        var total = 7;
+        var total = 9;
         if (!wrong.length) {
           card.classList.add('ok'); done[idx] = 1; score();
           fb.innerHTML = '<span class="yes">✓ ¡Todo correcto!</span><div class="sol">Abre ' + e.abre.replace('arriba', 'hacia arriba').replace('abajo', 'hacia abajo') + ' · ' + (e.a.n > 0 ? 'mínimo' : 'máximo') + ' · ' + e.forma +
-                         ' · <span style="white-space:nowrap;">V(' + hH + ', 0)</span><br>' + binHTML(e) + '² = ' + tb + '<br>f(x) = ' + tf + ' → <span style="white-space:nowrap;">(0, ' + cyH + ')</span></div>';
+                         ' · <span style="white-space:nowrap;">V(' + hH + ', 0)</span> · x<sub>1</sub> = x<sub>2</sub> = ' + hH + ' (reales y repetidas)<br>' + binHTML(e) + '² = ' + tb + '<br>f(x) = ' + tf + ' → <span style="white-space:nowrap;">(0, ' + cyH + ')</span></div>';
           return;
         }
         card.classList.add('bad'); delete done[idx]; score();
@@ -825,14 +854,14 @@
         </thead>
         <tbody>
           <tr>
-            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe el vértice V(h, 0) y el corte (0, a·h²) con las coordenadas en orden, con paréntesis y con su signo.</li><li>Escribe la función factorizada con paréntesis y el exponente 2, y el desarrollo con los tres términos.</li><li>Explica con sus palabras qué hace h (mueve hacia los lados) y qué hace a (abre, voltea, gorda o flaca).</li></ul></div></td>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe el vértice V(h, 0), las raíces x₁ = x₂ = h y el corte (0, a·h²) con las coordenadas en orden, con paréntesis y con su signo.</li><li>Escribe la función factorizada con paréntesis y el exponente 2, y el desarrollo con los tres términos.</li><li>Explica con sus palabras qué hace h (mueve hacia los lados) y qué hace a (abre, voltea, gorda o flaca).</li></ul></div></td>
             <td>Escribe el vértice con las coordenadas invertidas o sin paréntesis, deja la función sin el exponente 2 o escribe un desarrollo con menos de tres términos. No usa ningún apoyo, como la regla del binomio al cuadrado, y sus respuestas no se entienden.</td>
             <td colspan="2">Usa la simbología con limitaciones: escribe V(h, 0) y los resultados, pero no siempre en la forma correcta (omite el signo de h o un paréntesis, o escribe el corte sin el factor a). Contesta sin explicar o sólo repite la regla.</td>
             <td>Escribe con la simbología correcta el vértice, el corte con el eje y, el binomio desarrollado y f(x) desarrollada, con alguna deficiencia (por ejemplo, una fracción sin simplificar). Explica con claridad qué hizo en cada paso.</td>
             <td>Escribe y explica con notación correcta a, h, V(h, 0), la factorización, el desarrollo y el corte (0, a·h²), por diferentes medios (con la fórmula, con la gráfica y con palabras), y reconstruye el análisis de una función nueva.</td>
           </tr>
           <tr>
-            <td class="crit"><strong>Representación geométrica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Dice hacia dónde abre la parábola, si el vértice es un máximo o un mínimo, y si es gorda o flaca comparada con x².</li><li>Ubica el vértice V(h, 0) y reconoce que h la mueve hacia la derecha o hacia la izquierda sin cambiar su forma.</li><li>Reconoce que la parábola sólo toca al eje x (raíz repetida) y ubica el corte con el eje y.</li></ul></div></td>
+            <td class="crit"><strong>Representación geométrica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Dice hacia dónde abre la parábola, si el vértice es un máximo o un mínimo, y si es gorda o flaca comparada con x².</li><li>Ubica el vértice V(h, 0) y reconoce que h la mueve hacia la derecha o hacia la izquierda sin cambiar su forma.</li><li>Encuentra el valor de las raíces (x₁ = x₂ = h), las clasifica como reales y repetidas porque la parábola sólo toca al eje x, y ubica el corte con el eje y.</li></ul></div></td>
             <td>Conoce la parábola básica x², pero no distingue hacia dónde se mueve al cambiar h ni dónde queda el vértice; confunde el movimiento de h con el de a o con el de b.</td>
             <td colspan="2">Describe las propiedades de la parábola: hacia dónde abre, si es gorda o flaca y dónde está el vértice en los casos sencillos (h entero, a = 1 o −1). Se equivoca con h negativo, con h fraccionario, con a fraccionaria o con a negativa.</td>
             <td>Clasifica la parábola (arriba o abajo, máximo o mínimo, gorda o flaca) e interpreta cómo a y h cambian la gráfica de x²: ubica el vértice V(h, 0), el eje de simetría x = h, la raíz repetida y el corte con el eje y, también con h y a fraccionarios.</td>
@@ -846,7 +875,7 @@
             <td>Explica que h mueve la parábola y a cambia su forma, y generaliza: el vértice es V(h, 0), la raíz es x = h y el corte con el eje y es (0, a·h²), para cualquier a y h. Usa el desarrollo y la factorización como procesos inversos.</td>
           </tr>
           <tr>
-            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué (x − 3)² se mueve a la derecha: el paréntesis vale 0 cuando x = 3, así que el vértice está en x = 3.</li><li>Justifica por qué la raíz es repetida y por qué el corte con el eje y es a·h² (sustituye x = 0).</li><li>Relaciona lo que concluye con la aplicación o con la gráfica y comprueba sus resultados.</li></ul></div></td>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué (x − 3)² se mueve a la derecha: el paréntesis vale 0 cuando x = 3, así que el vértice está en x = 3.</li><li>Justifica por qué las raíces son x₁ = x₂ = h (a(x − h)² = 0 sólo si x − h = 0, y el factor se repite) y por qué son reales y repetidas, y por qué el corte con el eje y es a·h² (sustituye x = 0).</li><li>Relaciona lo que concluye con la aplicación o con la gráfica y comprueba sus resultados.</li></ul></div></td>
             <td>Dice «se mueve a la izquierda porque hay un menos» o «así es la regla» sin justificar. Reconoce intuitivamente que h mueve la gráfica, pero no lo explica ni lo comprueba.</td>
             <td>Defiende con una regla simple («lo que se resta a x es h; si h es positivo, se va a la derecha») con lenguaje matemático básico.</td>
             <td>Valida con ejemplos: prueba varias parejas de a y h en la aplicación o en la tabla y compara; da ejemplos y no-ejemplos de cuándo la parábola se mueve a la derecha o a la izquierda.</td>

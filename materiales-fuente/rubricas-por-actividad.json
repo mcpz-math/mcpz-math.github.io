@@ -748,7 +748,7 @@
       "ocurrencia": 0,
       "evidencia": [
         "La exploración con la aplicación: lo que dice que pasa con la parábola al cambiar h y al cambiar a (con ejemplos propios).",
-        "Los ejercicios al azar de las dos series (a = 1 o −1, y otros valores de a), con el procedimiento: factorizar el trinomio, desarrollar el binomio, multiplicar por a y los cuatro resultados (abre, máximo o mínimo, vértice y corte con el eje y).",
+        "Los ejercicios al azar de las dos series (a = 1 o −1, y otros valores de a), con el procedimiento: factorizar el trinomio, desarrollar el binomio, multiplicar por a y los resultados (abre, máximo o mínimo, vértice, valor y clasificación de las raíces, y corte con el eje y).",
         "La explicación (oral o escrita) de por qué (x − 3)² se mueve a la derecha y de por qué el vértice es V(h, 0)."
       ],
       "errores": [
@@ -757,13 +757,15 @@
         "Confunde el signo de a con el de h: dice que −(x − 2)² abre hacia la derecha o que h decide hacia dónde abre.",
         "Al desarrollar (x − 4)² escribe x² − 16 o x² + 16 (olvida el doble producto) o x² − 4x + 16.",
         "Olvida multiplicar por a todo el trinomio (sólo el primer término) o se equivoca con el signo de a.",
-        "Dice que corta al eje y en (0, h) o en (0, h²) sin multiplicar por a; o dice que la parábola es gorda cuando |a| > 1."
+        "Dice que corta al eje y en (0, h) o en (0, h²) sin multiplicar por a; o dice que la parábola es gorda cuando |a| > 1.",
+        "Escribe la raíz de (x + 4)² como x = 4 (pierde el signo), o dice que las raíces son x = h y x = −h.",
+        "Dice que las raíces son reales y diferentes porque «tiene dos raíces», o imaginarias porque «no cruza el eje x», sin ver que x₁ = x₂ = h."
       ],
       "rows": [
         {
           "id": "COM",
           "observar": [
-            "Escribe el vértice V(h, 0) y el corte (0, a·h²) con las coordenadas en orden, con paréntesis y con su signo.",
+            "Escribe el vértice V(h, 0), las raíces x₁ = x₂ = h y el corte (0, a·h²) con las coordenadas en orden, con paréntesis y con su signo.",
             "Escribe la función factorizada con paréntesis y el exponente 2, y el desarrollo con los tres términos.",
             "Explica con sus palabras qué hace h (mueve hacia los lados) y qué hace a (abre, voltea, gorda o flaca)."
           ],
@@ -777,7 +779,7 @@
           "observar": [
             "Dice hacia dónde abre la parábola, si el vértice es un máximo o un mínimo, y si es gorda o flaca comparada con x².",
             "Ubica el vértice V(h, 0) y reconoce que h la mueve hacia la derecha o hacia la izquierda sin cambiar su forma.",
-            "Reconoce que la parábola sólo toca al eje x (raíz repetida) y ubica el corte con el eje y."
+            "Encuentra el valor de las raíces (x₁ = x₂ = h), las clasifica como reales y repetidas porque la parábola sólo toca al eje x, y ubica el corte con el eje y."
           ],
           "n1": "Conoce la parábola básica x², pero no distingue hacia dónde se mueve al cambiar h ni dónde queda el vértice; confunde el movimiento de h con el de a o con el de b.",
           "n23": "Describe las propiedades de la parábola: hacia dónde abre, si es gorda o flaca y dónde está el vértice en los casos sencillos (h entero, a = 1 o −1). Se equivoca con h negativo, con h fraccionario, con a fraccionaria o con a negativa.",
@@ -800,7 +802,7 @@
           "id": "ARG",
           "observar": [
             "Explica por qué (x − 3)² se mueve a la derecha: el paréntesis vale 0 cuando x = 3, así que el vértice está en x = 3.",
-            "Justifica por qué la raíz es repetida y por qué el corte con el eje y es a·h² (sustituye x = 0).",
+            "Justifica por qué las raíces son x₁ = x₂ = h (a(x − h)² = 0 sólo si x − h = 0, y el factor se repite) y por qué son reales y repetidas, y por qué el corte con el eje y es a·h² (sustituye x = 0).",
             "Relaciona lo que concluye con la aplicación o con la gráfica y comprueba sus resultados."
           ],
           "n1": "Dice «se mueve a la izquierda porque hay un menos» o «así es la regla» sin justificar. Reconoce intuitivamente que h mueve la gráfica, pero no lo explica ni lo comprueba.",
