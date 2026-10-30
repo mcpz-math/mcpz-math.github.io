@@ -1836,3 +1836,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - **Incidente corregido:** al editar la rúbrica de Euclides quedó una coma de más en `rubricas-por-actividad.json`, el generador falló y la guía de Word `IEMS\Guia_para_evaluar_con_la_matriz.docx` se regeneró casi vacía (1 KB). Se corrigió el JSON y se
   volvió a generar la guía completa (86 KB). Antes de regenerar la guía conviene comprobar que el JSON es válido (`ConvertFrom-Json`) y que el generador diga cuántas rúbricas actualizó.
 - Los scripts de ejercicios (`practica-tarjetas.js`) se piden con versión (`?v=20261030r`) para que los navegadores no usen una copia vieja.
+- A pedido de Carmen, en `matematicas-1/tema-06-algoritmo-de-euclides.html` se **quitó la sección "Todo en una tabla"** (la tabla de dividendo, divisor, cociente y residuo, con la comprobación con primos y la nota de "primos entre sí").
+  La página queda con: repaso, "La idea" (con el recuadro de pasos y el ejemplo MCD(252, 105) = 21) y los ejercicios. Se ajustaron la rúbrica y el bloque de Divisibilidad (ya no mencionan la tabla). Antes de regenerar la guía se comprobó
+  que el JSON era válido y que el generador actualizó las 18 rúbricas.

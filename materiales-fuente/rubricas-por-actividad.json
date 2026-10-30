@@ -1109,10 +1109,10 @@
             "Presenta las divisiones en orden hasta que el residuo es 0 y señala el MCD.",
             "Explica con sus palabras qué hace en cada paso."
           ],
-          "n1": "Escribe las divisiones sin orden o con la forma incorrecta y no se entiende su procedimiento. No usa ningún apoyo, como la tabla de dividendo, divisor, cociente y residuo.",
+          "n1": "Escribe las divisiones sin orden o con la forma incorrecta y no se entiende su procedimiento. No usa ningún apoyo, como escribir cada división con su cociente y su residuo.",
           "n23": "Escribe las divisiones pero omite alguna o no usa la forma a = b · q + r; repite el procedimiento de memoria y casi no lo explica.",
-          "n4": "Escribe correctamente todas las divisiones y la tabla, señala el MCD y explica con claridad qué hizo; puede tener alguna omisión menor.",
-          "n5": "Escribe y explica con notación correcta todo el algoritmo (divisiones, tabla y MCD), por diferentes medios (con las divisiones, con la tabla y con la descomposición en primos), y reconstruye el procedimiento en una pareja nueva."
+          "n4": "Escribe correctamente todas las divisiones, señala el MCD y explica con claridad qué hizo; puede tener alguna omisión menor.",
+          "n5": "Escribe y explica con notación correcta todo el algoritmo (divisiones y MCD), por diferentes medios (con las divisiones y con la descomposición en primos), y reconstruye el procedimiento en una pareja nueva."
         },
         {
           "id": "REP_ARI",
@@ -1123,7 +1123,7 @@
           "n1": "Conoce los pasos sólo de memoria y los usa de forma mecánica, sin relacionarlos con el MCD por primos.",
           "n23": "Comprende y describe el algoritmo y lo usa en casos sencillos (2 ó 3 divisiones). Se confunde con más pasos.",
           "n4": "Usa dos formas de obtener el MCD (algoritmo y primos) y las compara.",
-          "n5": "Combina varias representaciones (divisiones, tabla, primos) y elige la más adecuada según el tamaño de los números, justificando su elección."
+          "n5": "Combina varias representaciones (divisiones y primos) y elige la más adecuada según el tamaño de los números, justificando su elección."
         },
         {
           "id": "MOD",

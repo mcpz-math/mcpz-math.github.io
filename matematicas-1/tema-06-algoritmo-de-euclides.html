@@ -64,22 +64,6 @@
     </div>
   </div>
 
-  <p class="section-label">Todo en una tabla</p>
-  <div class="exp-wrap">
-    <table class="exp-table" aria-label="Algoritmo de Euclides con 252 y 105">
-      <tr><th>dividendo</th><th>divisor</th><th>cociente</th><th>residuo</th></tr>
-      <tr><td>252</td><td>105</td><td>2</td><td>42</td></tr>
-      <tr><td>105</td><td>42</td><td>2</td><td>21</td></tr>
-      <tr><td>42</td><td class="min">21</td><td>2</td><td class="max">0</td></tr>
-    </table>
-    <div class="exp-cap">Cuando el residuo es 0 (naranja), el divisor de esa fila (azul) es el MCD: <strong>21</strong>.</div>
-  </div>
-
-  <div class="prose">
-    <p><strong>Comprobación con primos:</strong> 252 = 2² · 3² · 7 y 105 = 3 · 5 · 7. Los primos comunes son 3 y 7, así que MCD = 3 · 7 = 21. Sale lo mismo.</p>
-    <p><strong>Si el último residuo distinto de 0 es 1</strong>, el MCD es 1 (los números no tienen divisores comunes, se dice que son <em>primos entre sí</em>).</p>
-  </div>
-
   <p class="section-label" id="ejercicios-euclides">Ejercicios: algoritmo de Euclides</p>
   <div class="callout">
     <div class="k">Instrucciones</div>
@@ -165,17 +149,17 @@
         <tbody>
           <tr>
             <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe cada división en la forma a = b · q + r, con los números en el lugar correcto.</li><li>Presenta las divisiones en orden hasta que el residuo es 0 y señala el MCD.</li><li>Explica con sus palabras qué hace en cada paso.</li></ul></div></td>
-            <td>Escribe las divisiones sin orden o con la forma incorrecta y no se entiende su procedimiento. No usa ningún apoyo, como la tabla de dividendo, divisor, cociente y residuo.</td>
+            <td>Escribe las divisiones sin orden o con la forma incorrecta y no se entiende su procedimiento. No usa ningún apoyo, como escribir cada división con su cociente y su residuo.</td>
             <td colspan="2">Escribe las divisiones pero omite alguna o no usa la forma a = b · q + r; repite el procedimiento de memoria y casi no lo explica.</td>
-            <td>Escribe correctamente todas las divisiones y la tabla, señala el MCD y explica con claridad qué hizo; puede tener alguna omisión menor.</td>
-            <td>Escribe y explica con notación correcta todo el algoritmo (divisiones, tabla y MCD), por diferentes medios (con las divisiones, con la tabla y con la descomposición en primos), y reconstruye el procedimiento en una pareja nueva.</td>
+            <td>Escribe correctamente todas las divisiones, señala el MCD y explica con claridad qué hizo; puede tener alguna omisión menor.</td>
+            <td>Escribe y explica con notación correcta todo el algoritmo (divisiones y MCD), por diferentes medios (con las divisiones y con la descomposición en primos), y reconstruye el procedimiento en una pareja nueva.</td>
           </tr>
           <tr>
             <td class="crit"><strong>Representación aritmética</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Representa cada paso con la división con residuo a = b · q + r.</li><li>Relaciona el algoritmo con el MCD por primos (obtiene el mismo resultado).</li></ul></div></td>
             <td>Conoce los pasos sólo de memoria y los usa de forma mecánica, sin relacionarlos con el MCD por primos.</td>
             <td colspan="2">Comprende y describe el algoritmo y lo usa en casos sencillos (2 ó 3 divisiones). Se confunde con más pasos.</td>
             <td>Usa dos formas de obtener el MCD (algoritmo y primos) y las compara.</td>
-            <td>Combina varias representaciones (divisiones, tabla, primos) y elige la más adecuada según el tamaño de los números, justificando su elección.</td>
+            <td>Combina varias representaciones (divisiones y primos) y elige la más adecuada según el tamaño de los números, justificando su elección.</td>
           </tr>
           <tr>
             <td class="crit"><strong>Modelación y resolución de problemas</strong><span class="crit-desc">Formulación del problema y sistematización · Matematización y análisis del sistema matemático · Interpretación, evaluación y validación.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Sigue el procedimiento completo hasta el residuo 0.</li><li>Obtiene el MCD correcto y lo comprueba con la descomposición en primos.</li><li>Encuentra y corrige sus errores.</li></ul></div></td>
