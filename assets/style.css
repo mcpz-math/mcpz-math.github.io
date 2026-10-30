@@ -941,3 +941,32 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
 /* Raíz cuadrada con barra (vínculo) que cubre todo el radicando */
 .rad { white-space: nowrap; }
 .radicand { border-top: 0.08em solid currentColor; padding: 0.08em 0.12em 0 0.14em; margin-left: -0.08em; }
+
+/* ===== Regla destacada: cuadro grande con la fórmula y sus pasos de colores ===== */
+.regla-box { width: min(100% - 3rem, 760px); margin: 1.6rem auto 2.4rem auto; border: 3px solid var(--forest); border-radius: 22px; overflow: hidden; background: var(--surface); box-shadow: 0 7px 0 var(--forest); }
+.regla-head { background: var(--forest); color: var(--lime); font-family: 'Outfit', system-ui, sans-serif; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; text-align: center; font-size: 1.05rem; padding: 0.55rem 1rem; }
+.regla-formula { background: var(--lime); color: var(--forest); text-align: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 500; font-size: clamp(1.1rem, 4.6vw, 2rem); line-height: 1.9; padding: 1rem 0.8rem; }
+.regla-formula .ig { opacity: 0.8; }
+.regla-chip { display: inline-block; padding: 0 0.4em; border-radius: 0.4em; color: #fff; font-weight: 700; line-height: 1.5; }
+.regla-chip.c1 { background: var(--forest); }
+.regla-chip.c2 { background: #d9650b; }
+.regla-chip.c3 { background: #2b6cb0; }
+.regla-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.9rem; padding: 1.1rem; }
+.regla-step { border: 3px solid; border-radius: 16px; padding: 0.8rem 0.9rem 1rem; text-align: center; position: relative; background: #fff; }
+.regla-step.c1 { border-color: var(--forest); }
+.regla-step.c2 { border-color: #d9650b; }
+.regla-step.c3 { border-color: #2b6cb0; }
+.regla-step .n { width: 2rem; height: 2rem; border-radius: 50%; color: #fff; font-family: 'Outfit', system-ui, sans-serif; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+.regla-step.c1 .n { background: var(--forest); }
+.regla-step.c2 .n { background: #d9650b; }
+.regla-step.c3 .n { background: #2b6cb0; }
+.regla-step .big { font-family: 'Outfit', system-ui, sans-serif; font-weight: 600; font-size: 1.9rem; line-height: 1.2; margin: 0.3rem 0 0.2rem; }
+.regla-step.c1 .big { color: var(--forest); }
+.regla-step.c2 .big { color: #d9650b; }
+.regla-step.c3 .big { color: #2b6cb0; }
+.regla-step .txt { font-size: 1.02rem; line-height: 1.4; color: var(--ink); }
+.regla-ejemplo { margin: 0 1.1rem 1.1rem; border-radius: 14px; background: var(--callout-bg); border: 2px dashed var(--moss); padding: 0.8rem 1rem; text-align: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: clamp(0.95rem, 3.6vw, 1.2rem); line-height: 2; color: var(--forest); }
+.regla-ejemplo .lbl { display: block; font-family: 'Karla', system-ui, sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); font-weight: 700; }
+.regla-signos { margin: 0 1.1rem 1.2rem; text-align: center; font-size: 1.02rem; }
+.regla-pill { display: inline-block; margin: 0.2rem 0.25rem; padding: 0.2rem 0.8rem; border-radius: 999px; background: var(--forest); color: #fff; font-weight: 700; }
+.regla-pill.neg { background: #fff; color: var(--forest); border: 2px solid var(--forest); }

@@ -1705,3 +1705,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Si Carmen se refería a otro tema con "binomio factor común" (por ejemplo, sacar un binomio como factor común, a(x + y) + b(x + y)), hay que agregarlo.
 - A pedido de Carmen, en `matematicas-3/tema-06-factorizar-x2-bx-c.html` el recuadro "Conocimiento previo" ahora manda **primero a "Binomio factor común"** (factorizar es
   deshacer la multiplicación (x + a)(x + b)) y después a "Completar el trinomio cuadrado perfecto", con el mismo orden que en el temario.
+- A pedido de Carmen, en `matematicas-3/tema-06-binomio-factor-comun.html` la regla (x + a)(x + b) = x² + (a + b)x + ab ahora está en un **cuadro grande y muy llamativo**
+  ("★ LA REGLA ★"): la fórmula en una franja verde-lima con cada parte de un color (x² verde oscuro, (a + b)x naranja, a · b azul), tres tarjetas con los pasos
+  más simples (1. x² "la letra por la letra"; 2. SUMA "suma los dos números y ponle la x"; 3. PRODUCTO "multiplica los dos números, sin x"), el ejemplo
+  (x + 3)(x + 4) con los mismos colores y la ayuda de signos (mismo signo → producto +, signos diferentes → producto −). Reemplaza la lista de pasos de antes.
+  Los estilos (`.regla-box` y demás) están en `assets/style.css` para poder usarlos en otras reglas del sitio.
