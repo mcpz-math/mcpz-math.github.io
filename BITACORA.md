@@ -1703,3 +1703,5 @@ Registro de lo que vamos haciendo, en orden cronológico.
   3. Factorizar x² + bx + c. La página de factorizar enlaza a la de binomio factor común y ésta termina con un botón a "Completar el TCP". Rúbrica nueva
   (actividad "binomiofactorcomun") y guía en Word regenerada.
 - Si Carmen se refería a otro tema con "binomio factor común" (por ejemplo, sacar un binomio como factor común, a(x + y) + b(x + y)), hay que agregarlo.
+- A pedido de Carmen, en `matematicas-3/tema-06-factorizar-x2-bx-c.html` el recuadro "Conocimiento previo" ahora manda **primero a "Binomio factor común"** (factorizar es
+  deshacer la multiplicación (x + a)(x + b)) y después a "Completar el trinomio cuadrado perfecto", con el mismo orden que en el temario.
