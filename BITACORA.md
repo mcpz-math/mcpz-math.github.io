@@ -1635,3 +1635,16 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Se probó con 120 tarjetas de la serie 1 y 100 de la serie 2 (respuestas correctas y con errores en las raíces).
 - Entre las instrucciones y las tarjetas de la primera serie de ejercicios de `tema-05-a-x-menos-h-cuadrada.html` hay un recuadro "Repaso" con un
   botón a `tema-06-binomio-al-cuadrado-y-tcp.html`, para quien ya olvidó cómo factorizar un trinomio cuadrado perfecto o desarrollar un binomio al cuadrado.
+
+## 2026-10-30 (raíces en los ejercicios de binomio al cuadrado y TCP)
+- A pedido de Carmen, en `matematicas-3/tema-06-binomio-al-cuadrado-y-tcp.html` la explicación de por qué **no** es un TCP ya no dice sólo
+  "el último término no es un cuadrado perfecto": ahora saca la raíz de cada extremo, **aunque sea con radical** (√(10y²) = √10 y), calcula el
+  doble producto (2√10 xy) y lo compara con el término de en medio (6xy). Lo que decide es el doble producto, no que la raíz sea exacta. Se agregó
+  esa aclaración (con el ejemplo x² − 6xy + 10y²) en la explicación del TCP. El ejercicio 2a² + 8a + 8 salió del banco, porque con radicales sí es un
+  TCP: (√2 a + 2√2)²; en su lugar quedó 2a² + 8a + 9.
+- **Dos series nuevas de ejercicios con raíces en el segundo término** (10 al azar cada vez): "binomio al cuadrado con raíces" (85 ejercicios:
+  (x + √5)², (x − 2√3)², (2x + 3√2)², (√2x + 3)², (a − √3 b)²…, con la ayuda (√n)² = n y (k√n)² = k² · n) y "trinomio cuadrado perfecto con raíces"
+  (100 ejercicios, 85 que sí son TCP, como x² + 2√5x + 5, y 15 que no, como x² + 3√5x + 5). Botón √ debajo de cada cuadro.
+- `assets/practica-algebra.js` ahora lee raíces (√5, √(12), sqrt(3), 2√5x) y las simplifica (√20 = 2√5; acepta √2, √3, √5, √7, √11 y √13 y sus
+  productos). También se subió un poco el interlineado de las soluciones (`.sol`) para que se vean bien las barras de las raíces.
+- Se actualizó la rúbrica (`rubricas-por-actividad.json`, "binomioscuad") y la guía en Word. Se probaron ida y vuelta las 4 series (más de 600 tarjetas).

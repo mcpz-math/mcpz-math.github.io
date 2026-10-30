@@ -10,8 +10,21 @@
 
   // ---------- polinomios: { "x2y1": [n, d], "": [n, d] } ----------
   function key(m) { return Object.keys(m).filter(function (v) { return m[v]; }).sort().map(function (v) { return v + m[v]; }).join(''); }
-  function unkey(k) { var m = {}, re = /([a-z])(\d+)/g, r; while ((r = re.exec(k))) m[r[1]] = +r[2]; return m; }
+  function unkey(k) { var m = {}, re = /([A-Za-z])(\d+)/g, r; while ((r = re.exec(k))) m[r[1]] = +r[2]; return m; }
   function clean(P) { var o = {}; for (var k in P) if (P[k][0] !== 0) o[k] = P[k]; return o; }
+
+  // ---------- raíces cuadradas: √2, √3, √5, √7, √11 y √13 son "letras" en mayúscula con A² = 2, B² = 3, C² = 5… ----------
+  var RADS = { 2: 'A', 3: 'B', 5: 'C', 7: 'D', 11: 'E', 13: 'F' }, RADP = { A: 2, B: 3, C: 5, D: 7, E: 11, F: 13 };
+  function radical(m) { // √m (m entero positivo) → polinomio: √12 = 2·√3
+    if (!(m >= 1) || m % 1 || m > 1000000) throw 0;
+    var s = 1, mono = {}, P = {};
+    [2, 3, 5, 7, 11, 13].forEach(function (p) {
+      var e = 0; while (m % p === 0) { m /= p; e++; }
+      s *= Math.pow(p, Math.floor(e / 2)); if (e % 2) mono[RADS[p]] = 1;
+    });
+    if (m !== 1) throw 0;
+    P[key(mono)] = [s, 1]; return P;
+  }
   function padd(P, Q, s) {
     var o = {}, k;
     for (k in P) o[k] = P[k];
@@ -23,7 +36,9 @@
     for (var a in P) for (var b in Q) {
       var m = unkey(a), n = unkey(b);
       for (var v in n) m[v] = (m[v] || 0) + n[v];
-      var k = key(m), c = fmul(P[a], Q[b]);
+      var c = fmul(P[a], Q[b]);
+      for (var w in m) if (RADP[w] && m[w] > 1) { c = fmul(c, [Math.pow(RADP[w], Math.floor(m[w] / 2)), 1]); m[w] %= 2; }
+      var k = key(m);
       o[k] = o[k] ? fadd(o[k], c) : c;
     }
     return clean(o);
@@ -35,9 +50,9 @@
   // ---------- lectura de lo que escribe el alumno ----------
   var SUP = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9' };
   function tokens(s) {
-    s = s.replace(/[−–—]/g, '-').replace(/[·×∙]/g, '*').replace(/,/g, '.').replace(/\s+/g, '').toLowerCase();
+    s = s.replace(/[−–—]/g, '-').replace(/[·×∙]/g, '*').replace(/,/g, '.').replace(/\s+/g, '').toLowerCase().replace(/sqrt/g, '√');
     s = s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, function (m) { return '^' + m.split('').map(function (c) { return SUP[c]; }).join(''); });
-    var t = [], re = /(\d+\.?\d*|\.\d+)|([a-z])|([+\-*/^()])/g, r, pos = 0;
+    var t = [], re = /(\d+\.?\d*|\.\d+)|([a-z])|([+\-*/^()√])/g, r, pos = 0;
     while ((r = re.exec(s))) {
       if (r.index !== pos) throw 0;
       pos = re.lastIndex;
@@ -71,7 +86,7 @@
           P = pmul(P, pconst(fr(Q[''][1], Q[''][0])));
           if (info) info.others++;
         }
-        else if (t[i].n || t[i].v || peek('(')) P = pmul(P, f());
+        else if (t[i].n || t[i].v || peek('(') || peek('√')) P = pmul(P, f());
         else break;
       }
       return P;
@@ -83,6 +98,16 @@
       else if (tk.v) { var m = {}; m[tk.v] = 1; P = {}; P[key(m)] = [1, 1]; }
       else if (tk.o === '(') { var sub = {}; P = expr(sub); if (!peek(')')) throw 0; i++; bino = sub.terms === 2; }
       else if (tk.o === '-') return { P: padd({}, factor().P, -1), bino: false };
+      else if (tk.o === '√') { // √5, √12 o √(5): el radicando debe ser un entero
+        var rd = t[i++], mm;
+        if (rd && rd.n && rd.n[1] === 1) mm = rd.n[0];
+        else if (rd && rd.o === '(') {
+          var Q = expr({}), ks = Object.keys(Q);
+          if (!peek(')') || ks.length !== 1 || ks[0] !== '' || Q[''][1] !== 1) throw 0;
+          i++; mm = Q[''][0];
+        } else throw 0;
+        P = radical(mm);
+      }
       else throw 0;
       if (peek('^')) {
         i++; var e = t[i++];
@@ -99,5 +124,5 @@
     return { P: P, terms: info.terms, binos: info.binos, others: info.others };
   }
 
-  window.Algebra = { parse: parse, padd: padd, pmul: pmul, same: same, vars: vars };
+  window.Algebra = { parse: parse, padd: padd, pmul: pmul, same: same, vars: vars, radical: radical, RADP: RADP };
 })();

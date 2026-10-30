@@ -821,6 +821,7 @@
       "evidencia": [
         "Los ejercicios al azar de las dos prácticas de la página (desarrollar un binomio al cuadrado y factorizar un trinomio cuadrado perfecto), resueltos en el cuaderno con el procedimiento (no sólo el resultado).",
         "Al menos un ejercicio de cada tipo, con a y b identificados con su signo, el doble producto y la comprobación.",
+        "Los ejercicios con raíces en el segundo término, por ejemplo (x + √5)² y x² + 2√5x + 5, con (√n)² = n y el doble producto con radical.",
         "La explicación (oral o escrita) de por qué (a + b)² no es a² + b² y de cómo se reconoce un TCP."
       ],
       "errores": [
@@ -829,7 +830,9 @@
         "Pierde el signo del término de en medio, o escribe ab en lugar de 2ab.",
         "Dice que x² + 10x + 16 es un TCP sin revisar que 2 · x · 4 no es 10x.",
         "Factoriza x² − 6x + 9 como (x + 3)² (el signo del binomio es el del término de en medio) o como (x² − 3)².",
-        "Con fracciones o decimales calcula mal el cuadrado de b o el doble producto, o no simplifica."
+        "Con fracciones o decimales calcula mal el cuadrado de b o el doble producto, o no simplifica.",
+        "Con raíces: escribe (x + √5)² = x² + 2√5x + √5 (deja la raíz en el último término) o x² + 5 (olvida el doble producto).",
+        "Dice que x² − 6xy + 10y² no es TCP «porque 10y² no tiene raíz», en lugar de comparar el doble producto 2√10 xy con 6xy."
       ],
       "rows": [
         {
@@ -849,7 +852,8 @@
           "observar": [
             "Identifica a y b con su signo, también cuando traen coeficiente, potencias, varias letras, fracciones o decimales.",
             "Aplica (a ± b)² = a² ± 2ab + b² y reconoce el resultado como un trinomio cuadrado perfecto.",
-            "Reconoce un TCP: dos cuadrados perfectos y el doble producto en medio, y distingue uno que no lo es (x² + 10x + 16)."
+            "Reconoce un TCP: dos cuadrados perfectos y el doble producto en medio, y distingue uno que no lo es (x² + 10x + 16).",
+            "Con raíces: escribe la raíz de un extremo con radical (√(10y²) = √10 y), calcula el doble producto con radical y lo compara con el término de en medio; sabe que (√n)² = n y que √12 = 2√3."
           ],
           "n1": "Conoce la regla (a + b)² = a² + 2ab + b² sólo de memoria; escribe a² + b² (olvida el doble producto) o no eleva al cuadrado el coeficiente. No distingue el primer término del segundo ni reconoce un TCP.",
           "n23": "Hace un uso correcto de las expresiones: identifica a y b, y desarrolla y factoriza en casos sencillos ((x + 8)², x² + 6x + 9). Le fallan los casos con coeficientes, potencias, varias letras, fracciones o decimales, o el signo del doble producto.",
