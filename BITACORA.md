@@ -1736,3 +1736,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Antes de la sección "Con exponentes y con fracciones" hay un recuadro **Repaso** con un botón a Matemáticas 2 ("Repasar operaciones con fracciones"), que lleva a
   `matematicas-2/tema-01-numeros-racionales.html`. **Pendiente:** el subtema "Operaciones" de ese tema todavía dice "Próximamente"; cuando Carmen comparta el contenido de operaciones con
   fracciones hay que escribirlo (y, si queda en una página propia, cambiar el enlace).
+- A pedido de Carmen, en `matematicas-2/tema-01-numeros-racionales.html` se quitaron las etiquetas "Objetivo 1" y "Objetivo 1 y 2" de los subtemas Racionales y fracciones, Orden, Operaciones y
+  Problemas (quedan sólo con "Próximamente: contenido de este subtema."). Las que dicen "Objetivo 2" en esa página no se tocaron. Otras páginas (por ejemplo los temas 1, 2 y 3 de Matemáticas 1) todavía
+  tienen "Objetivo 1" / "Objetivo 1 y 2": no se cambiaron porque Carmen mostró sólo esta página.
