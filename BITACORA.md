@@ -1729,3 +1729,5 @@ Registro de lo que vamos haciendo, en orden cronológico.
   +·− = −, −·+ = −, con ejemplos) y **Sumar** (mismo signo: se suman y se deja el signo; signos diferentes: se restan y gana el número más grande), con un enlace a
   "Leyes de los signos" de Matemáticas 1 (`matematicas-1/leyes-de-los-signos.html`) para repasarlo con más detalle. Los estilos (`.signos-box`) están en `assets/style.css`;
   las dos páginas piden la hoja de estilos con la versión `?v=20261030d`.
+- Ajuste al recordatorio de signos (a pedido de Carmen): la columna "Multiplicar" ahora es **"Multiplicar y dividir"**; cada fila muestra las dos operaciones, por ejemplo "(−) · (−) o (−) ÷ (−) = +", y los
+  ejemplos incluyen divisiones ((−12) ÷ (−3) = 4 y 12 ÷ (−3) = −4 en binomio factor común; (−20) ÷ (−4) = 5 y 20 ÷ (−4) = −5 en factorizar x² + bx + c). Cada ejemplo va en su propia línea.
