@@ -1811,3 +1811,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, la sección "descomponer en números primos" (la escalera de divisiones con 60 = 2² · 3 · 5) se **movió** de `matematicas-1/tema-06-mcm-y-mcd.html` a
   `matematicas-1/tema-06-primos-y-compuestos.html` (ahora es la sección "Descomponer en números primos", antes de los ejercicios, con el enlace a mcm y MCD). La clase de mcm y MCD ya no la tiene; su
   recuadro de Repaso manda a "Primos y descomposición en primos" (`tema-06-primos-y-compuestos.html#descomponer`) y a Múltiplos y divisores.
+- A pedido de Carmen, "mcm" se escribe siempre en minúsculas (y "MCD" en mayúsculas). Algunos recuadros de las clases ponen todo el texto en mayúsculas con los estilos y ahí se veía "MCM":
+  se corrigió en `tema-06-mcm-y-mcd.html` ("★ mcm ★", el paso 3 y el ejemplo mcm(10, 15, 18)) y en `tema-06-problemas-con-mcm-y-mcd.html` ("¿mcm o MCD?" y "Ejemplo con mcm") con la clase `.mcm`
+  (`assets/style.css`, `text-transform: none`). **Para escribir mcm dentro de un recuadro en mayúsculas:** `<span class="mcm">mcm</span>`. Ya no queda "MCM" en ningún archivo del sitio.

@@ -1051,3 +1051,6 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
 .dsim-cap { display: none; text-align: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.95rem; color: var(--forest); margin-top: 0.4rem; }
 .dsim-cap b { background: var(--lime); border-radius: 6px; padding: 0 0.4rem; }
 @media (max-width: 560px) { .dsim td.res { display: none; } .dsim-cap { display: block; } .dsim { font-size: 1.05rem; } }
+
+/* "mcm" siempre en minúsculas, aunque el recuadro ponga todo en mayúsculas */
+.mcm { text-transform: none; }

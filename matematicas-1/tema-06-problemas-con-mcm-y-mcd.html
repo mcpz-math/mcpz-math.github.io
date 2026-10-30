@@ -6,7 +6,7 @@
   <title>Problemas con mcm y MCD — Matemáticas 1</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
-  <link rel="stylesheet" href="../assets/style.css?v=20261030m">
+  <link rel="stylesheet" href="../assets/style.css?v=20261030n">
 </head>
 <body>
 
@@ -60,7 +60,7 @@
       <div class="regla-step c2">
         <div class="paso">Paso 2</div>
         <div class="big">decidir</div>
-        <div class="txt">¿mcm o MCD? usa las pistas</div>
+        <div class="txt">¿<span class="mcm">mcm</span> o MCD? usa las pistas</div>
       </div>
       <div class="regla-step c3">
         <div class="paso">Paso 3</div>
@@ -77,7 +77,7 @@
 
   <p class="section-label">Dos ejemplos resueltos</p>
   <div class="regla-box">
-    <div class="regla-head">★ Ejemplo con mcm ★</div>
+    <div class="regla-head">★ Ejemplo con <span class="mcm">mcm</span> ★</div>
     <div class="regla-ejemplo" style="margin-top:1rem; text-align:left;">
       <span class="lbl">Problema</span>
       <span class="nota">Dos autobuses salen juntos de la terminal. Uno sale cada 12 minutos y el otro cada 18 minutos. ¿Cada cuántos minutos vuelven a salir juntos?</span>
@@ -124,7 +124,7 @@
   (function () {
     var h = Practica.h;
     // 10 problemas con mcm y 10 con MCD; cada uno se usa con 5 parejas de números (de menores a mayores): 5 · 20 = 100
-    var MCM = [
+    var PROBLEMAS_COINCIDEN = [
       ['Dos autobuses salen de la misma terminal al mismo tiempo. Uno sale cada {a} minutos y el otro cada {b} minutos. ¿Cada cuántos minutos salen juntos otra vez?', 'minutos'],
       ['Una luz roja parpadea cada {a} segundos y una azul cada {b} segundos. Si acaban de parpadear juntas, ¿en cuántos segundos volverán a parpadear juntas?', 'segundos'],
       ['Ana toma una pastilla cada {a} horas y Luis otra cada {b} horas. Si las toman juntos ahora, ¿dentro de cuántas horas las tomarán juntos de nuevo?', 'horas'],
@@ -150,7 +150,7 @@
     ];
     var PM = [[6, 8], [10, 15], [12, 18], [20, 30], [24, 36]], PD = [[12, 18], [24, 36], [20, 30], [30, 45], [48, 72]], BANK = [];
     for (var g = 0; g < 5; g++) {
-      MCM.forEach(function (t) { BANK.push({ tipo: 'mcm', txt: t[0], unit: t[1], a: PM[g][0], b: PM[g][1] }); });
+      PROBLEMAS_COINCIDEN.forEach(function (t) { BANK.push({ tipo: 'mcm', txt: t[0], unit: t[1], a: PM[g][0], b: PM[g][1] }); });
       MCD.forEach(function (t) { BANK.push({ tipo: 'MCD', txt: t[0], unit: t[1], a: PD[g][0], b: PD[g][1] }); });
     }
     BANK.forEach(function (e) { e.ans = e.tipo === 'mcm' ? h.lcm(e.a, e.b) : h.gcd(e.a, e.b); e.text = e.txt.replace('{a}', e.a).replace('{b}', e.b); });
