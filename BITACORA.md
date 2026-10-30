@@ -1758,3 +1758,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Pendiente (opcional): un video de la clase (como los de otras páginas) y la serie en Word.
 - A pedido de Carmen, en `matematicas-2/tema-01-numeros-racionales.html` se quitó también la etiqueta "Objetivo 2" de los subtemas (Definición de racionales, Clasificación, Fracciones decimales y
   Jerarquía de operaciones): ya no hay etiquetas de objetivo en esa página. Las demás páginas de Matemáticas 1 y 2 conservan las suyas.
+- A pedido de Carmen, en "Antes de empezar" de `matematicas-2/tema-01-operaciones-con-fracciones.html` hay un recuadro **Repaso** con un botón "Repasar mcm y MCD (Matemáticas 1) →"
+  (MCD para simplificar, mcm para sumar y restar) que lleva a `matematicas-1/tema-06-divisibilidad.html`. **Pendiente:** en esa página el subtema "mcm y MCD" todavía dice "Próximamente";
+  cuando Carmen comparta el contenido (o pida que se escriba) hay que preparar la clase de mcm y MCD (y, si queda en página propia, cambiar el enlace).
