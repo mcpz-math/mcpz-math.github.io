@@ -1787,3 +1787,5 @@ Registro de lo que vamos haciendo, en orden cronológico.
   denominador del resultado sin simplificar (operando con el mcm y sin simplificar antes; también se acepta el MCD que sale al operar con el producto de los denominadores). Si falla, muestra la descomposición en primos
   y los factores comunes. Se probaron 400 tarjetas.
 - Estilos nuevos en `assets/style.css`: `.escalera` y `.exp-table` (tabla de exponentes, compacta en teléfono).
+- A pedido de Carmen, en `matematicas-2/tema-01-operaciones-con-fracciones.html` se quitó el cuadro "El mcm con números primos" con sus pasos y ejemplos; en su lugar queda **sólo un cuadro de Repaso**
+  con el botón "Repasar mcm y MCD (Matemáticas 1)" (`matematicas-1/tema-06-mcm-y-mcd.html`), donde sí está explicado.
