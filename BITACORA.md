@@ -1713,3 +1713,14 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Ajuste: a pedido de Carmen, el cuadro de la regla de `tema-06-binomio-factor-comun.html` quedó **más sencillo y con pocas palabras**: tres tarjetas "PASO 1", "PASO 2",
   "PASO 3" con lo que se escribe en cada una en grande (x² · (a + b)x · a · b) y una sola palabra debajo (letra · letra, suma, producto). Se quitó el texto largo de los
   signos: sólo quedan las dos etiquetas "mismo signo: +" y "signos diferentes: −". Se conservan la fórmula de colores y el ejemplo.
+
+## 2026-10-30 (binomio factor común con exponentes y con fracciones)
+- A pedido de Carmen, `matematicas-3/tema-06-binomio-factor-comun.html` tiene una sección nueva "Con exponentes y con fracciones": explica en dos líneas lo que cambia
+  (xⁿ · xⁿ = x²ⁿ, el término de en medio lleva xⁿ, y la suma y el producto de fracciones) con un ejemplo de colores, (x² + 1/2)(x² + 1/3) = x⁴ + 5/6 x² + 1/6, y un
+  **banco de 100 ejercicios** (10 al azar) donde la letra siempre tiene exponente distinto de 1 (2, 3, 4 o 5; letras x, y, a, m, n) y los números son fracciones
+  (positivas, negativas, de signos diferentes; algunas con suma 0). La revisión explica si falla el exponente, la suma, el producto o un signo, o si falta reducir. Se probaron
+  400 tarjetas (también con los términos en otro orden).
+- Carmen vio el cuadro de la regla sin estilos (texto suelto): su navegador conservaba la hoja de estilos anterior (GitHub Pages la guarda hasta 10 minutos). Para evitarlo, esta
+  página pide la hoja de estilos con una versión (`style.css?v=20261030c`); cuando se cambien estilos de una página nueva, conviene subir ese número. Las fracciones dentro de las
+  etiquetas de color tienen más espacio.
+- Se actualizó la rúbrica (actividad "binomiofactorcomun") y la guía en Word.

@@ -821,9 +821,12 @@
       "evidencia": [
         "Los ejercicios al azar de la página, resueltos en el cuaderno con el procedimiento: x², la suma de los dos números con su signo, el producto y el resultado reducido.",
         "Al menos un ejercicio con los dos números positivos, uno con los dos negativos y uno con signos diferentes.",
+        "Al menos un ejercicio de la serie con exponentes y fracciones, por ejemplo (x² + 1/2)(x² + 1/3) = x⁴ + 5/6 x² + 1/6, con la suma y el producto de las fracciones.",
         "La explicación (oral o escrita) de por qué el término de en medio es la suma de los números y el último término es su producto."
       ],
       "errores": [
+        "Con exponentes: escribe (x² + 3)(x² + 4) = x² + 7x + 12 (no multiplica x² · x² = x⁴ ni pone x² en el término de en medio) o x⁴ + 7x⁴ + 12.",
+        "Con fracciones: suma 1/2 + 1/3 como 2/5 (suma numeradores y denominadores) o deja la suma o el producto sin simplificar.",
         "Escribe (x + 3)(x + 4) = x² + 12 (sólo multiplica los números y olvida el término con x) o x² + 7x (olvida el producto).",
         "Pierde un signo: en (x − 2)(x − 5) escribe x² + 7x + 10, o en (x + 6)(x − 2) escribe x² + 4x + 12.",
         "Con signos diferentes pone el producto positivo, o suma los números sin respetar sus signos.",

@@ -978,3 +978,8 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
 .regla-step .big { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 500; font-size: clamp(1.6rem, 6vw, 2.2rem); margin: 0.5rem 0 0.1rem; }
 .regla-step .txt { font-size: 1rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
 .regla-signos { margin-top: -0.2rem; }
+/* etiquetas de color con fracciones adentro: más espacio y raya del mismo color que el texto */
+.regla-ejemplo { line-height: 2.7; }
+.regla-chip { vertical-align: middle; margin: 0.15em 0; }
+.regla-chip .frac { vertical-align: middle; margin: 0 0.1rem; }
+.regla-chip .frac .den { border-top-color: currentColor; }
