@@ -1739,3 +1739,20 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, en `matematicas-2/tema-01-numeros-racionales.html` se quitaron las etiquetas "Objetivo 1" y "Objetivo 1 y 2" de los subtemas Racionales y fracciones, Orden, Operaciones y
   Problemas (quedan sólo con "Próximamente: contenido de este subtema."). Las que dicen "Objetivo 2" en esa página no se tocaron. Otras páginas (por ejemplo los temas 1, 2 y 3 de Matemáticas 1) todavía
   tienen "Objetivo 1" / "Objetivo 1 y 2": no se cambiaron porque Carmen mostró sólo esta página.
+
+## 2026-10-30 (nueva clase: operaciones con fracciones, Matemáticas 2)
+- A pedido de Carmen se preparó la clase de **operaciones con fracciones** y se puso en su sección: Matemáticas 2 → Tema 1 "Números racionales" → subtema **Operaciones**
+  (`matematicas-2/tema-01-numeros-racionales.html`, que ahora tiene el bloque "Operaciones" con "Ver clase →"). La clase es la página nueva
+  `matematicas-2/tema-01-operaciones-con-fracciones.html`.
+- Contenido: antes de empezar (fracciones equivalentes, simplificar, un entero como fracción); **Sumar y restar** en un cuadro de colores (mismo denominador; distinto denominador con
+  Paso 1 mcm, Paso 2 convertir, Paso 3 operar y simplificar; ejemplos 1/2 + 1/3 = 5/6 y 3/4 − 1/6 = 7/12), las **barras de fracciones** que muestran 1/2 + 1/3 en sextos y cómo
+  se encuentra el mcm; **Multiplicar** (arriba · arriba, abajo · abajo, simplificar; 2/3 · 3/4 = 1/2); **Dividir** (invertir la segunda, multiplicar, simplificar; 2/3 ÷ 4/5 = 5/6);
+  errores comunes; y el recordatorio de las leyes de los signos (multiplicar y dividir / sumar y restar) para las fracciones negativas.
+- **100 ejercicios** con revisión automática (10 al azar), de menor a mayor dificultad: sumas y restas con el mismo denominador, con un denominador múltiplo del otro y con
+  denominadores distintos; multiplicaciones; divisiones; y 6 con signos negativos. Piden el resultado como fracción simplificada (si está bien pero sin simplificar, lo dice). Si falla, explica el
+  error típico (sumar denominadores, no buscar el denominador común, no invertir al dividir, el signo) y muestra el procedimiento. Se probaron 400 tarjetas y 570 resultados contra un cálculo
+  independiente.
+- El botón de repaso de fracciones de `matematicas-3/tema-06-binomio-factor-comun.html` ahora lleva directo a esta clase. Rúbrica nueva (actividad "fraccionesops") y guía en Word regenerada.
+- Estilos nuevos en `assets/style.css`: barras de fracciones (`.fbarras`, `.fbar`) y `.nota` dentro de los recuadros de ejemplo. Las fracciones de las explicaciones se escriben con `{n/d}` dentro de un
+  elemento `.fx` (un script las convierte en fracciones apiladas).
+- Pendiente (opcional): un video de la clase (como los de otras páginas) y la serie en Word.

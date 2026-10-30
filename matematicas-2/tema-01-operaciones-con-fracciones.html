@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operaciones con fracciones — Matemáticas 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css?v=20261030f">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-01-numeros-racionales.html">← Tema 1</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 2 · Tema 1 · Números racionales</div>
+    <h1>Operaciones con fracciones</h1>
+  </div>
+
+  <div class="fx">
+
+  <p class="section-label">Antes de empezar</p>
+  <div class="prose">
+    <p>Dos ideas que se usan en todas las operaciones:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li><strong>Fracciones equivalentes:</strong> si multiplicas (o divides) el numerador y el denominador por el mismo número, la fracción vale lo mismo.
+          {1/2} = {2/4} = {3/6}.</li>
+      <li><strong>Simplificar:</strong> divide arriba y abajo entre el mismo número hasta que ya no se pueda. {6/9} = {2/3} (÷ 3). El resultado de cada operación
+          se deja <strong>simplificado</strong>.</li>
+      <li><strong>Un entero es una fracción:</strong> 3 = {3/1}.</li>
+    </ul>
+  </div>
+
+  <!-- ===================== SUMAR Y RESTAR ===================== -->
+  <p class="section-label" id="sumar-y-restar">Sumar y restar</p>
+  <div class="regla-box">
+    <div class="regla-head">★ Sumar y restar ★</div>
+    <div class="regla-formula">
+      {a/c} + {b/c} <span class="ig">=</span> <span class="regla-chip c2">{a + b/c}</span>
+    </div>
+    <div class="regla-ejemplo" style="margin-top:1rem;">
+      <span class="lbl">Mismo denominador</span>
+      {2/7} + {3/7} = <span class="regla-chip c2">{5/7}</span><br>
+      <span class="nota">Se suman (o se restan) los numeradores. El denominador <strong>no cambia</strong>.</span>
+    </div>
+    <div class="regla-steps">
+      <div class="regla-step c1">
+        <div class="paso">Paso 1</div>
+        <div class="big">mcm</div>
+        <div class="txt">denominador común</div>
+      </div>
+      <div class="regla-step c2">
+        <div class="paso">Paso 2</div>
+        <div class="big">convertir</div>
+        <div class="txt">fracciones equivalentes</div>
+      </div>
+      <div class="regla-step c3">
+        <div class="paso">Paso 3</div>
+        <div class="big">operar</div>
+        <div class="txt">y simplificar</div>
+      </div>
+    </div>
+    <div class="regla-ejemplo">
+      <span class="lbl">Distinto denominador · ejemplo</span>
+      {1/2} + {1/3}<br>
+      <span class="regla-chip c1">mcm(2, 3) = 6</span>
+      → <span class="regla-chip c2">{3/6} + {2/6}</span>
+      → <span class="regla-chip c3">{5/6}</span>
+    </div>
+    <div class="regla-ejemplo" style="margin-top:-0.4rem;">
+      <span class="lbl">Resta · ejemplo</span>
+      {3/4} − {1/6}<br>
+      <span class="regla-chip c1">mcm(4, 6) = 12</span>
+      → <span class="regla-chip c2">{9/12} − {2/12}</span>
+      → <span class="regla-chip c3">{7/12}</span>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>Así se ve {1/2} + {1/3}: las dos fracciones se cortan en <strong>sextos</strong> para poder juntarlas.</p>
+  </div>
+  <div class="fbarras">
+    <div class="fbar-row"><div class="fbar-lbl">{1/2} = {3/6}</div><div class="fbar"><span class="a"></span><span class="a"></span><span class="a"></span><span></span><span></span><span></span></div></div>
+    <div class="fbar-row"><div class="fbar-lbl">{1/3} = {2/6}</div><div class="fbar"><span class="b"></span><span class="b"></span><span></span><span></span><span></span><span></span></div></div>
+    <div class="fbar-row"><div class="fbar-lbl">{5/6}</div><div class="fbar"><span class="a"></span><span class="a"></span><span class="a"></span><span class="b"></span><span class="b"></span><span></span></div></div>
+    <div class="fbar-cap">{3/6} + {2/6} = {5/6}</div>
+  </div>
+
+  <div class="prose">
+    <p><strong>¿Cómo se encuentra el mcm?</strong> Es el <strong>múltiplo común más pequeño</strong> de los denominadores. Para 4 y 6: múltiplos de 4 → 4, 8, <strong>12</strong>…;
+       múltiplos de 6 → 6, <strong>12</strong>… El primero que se repite es 12. Para convertir, multiplica arriba y abajo por lo que le falta al denominador para llegar a 12:
+       {3/4} = {3 · 3/4 · 3} = {9/12} y {1/6} = {1 · 2/6 · 2} = {2/12}.</p>
+  </div>
+
+  <!-- ===================== MULTIPLICAR ===================== -->
+  <p class="section-label" id="multiplicar">Multiplicar</p>
+  <div class="regla-box">
+    <div class="regla-head">★ Multiplicar ★</div>
+    <div class="regla-formula">
+      {a/b} · {c/d} <span class="ig">=</span> <span class="regla-chip c2">{a · c/b · d}</span>
+    </div>
+    <div class="regla-steps">
+      <div class="regla-step c1">
+        <div class="paso">Paso 1</div>
+        <div class="big">arriba</div>
+        <div class="txt">numerador · numerador</div>
+      </div>
+      <div class="regla-step c2">
+        <div class="paso">Paso 2</div>
+        <div class="big">abajo</div>
+        <div class="txt">denominador · denominador</div>
+      </div>
+      <div class="regla-step c3">
+        <div class="paso">Paso 3</div>
+        <div class="big">simplificar</div>
+        <div class="txt">el resultado</div>
+      </div>
+    </div>
+    <div class="regla-ejemplo">
+      <span class="lbl">Ejemplo</span>
+      {2/3} · {3/4}
+      = <span class="regla-chip c1">2 · 3</span> sobre <span class="regla-chip c2">3 · 4</span>
+      = {6/12}
+      = <span class="regla-chip c3">{1/2}</span>
+    </div>
+  </div>
+
+  <!-- ===================== DIVIDIR ===================== -->
+  <p class="section-label" id="dividir">Dividir</p>
+  <div class="regla-box">
+    <div class="regla-head">★ Dividir ★</div>
+    <div class="regla-formula">
+      {a/b} ÷ {c/d} <span class="ig">=</span> {a/b} · <span class="regla-chip c2">{d/c}</span>
+    </div>
+    <div class="regla-steps">
+      <div class="regla-step c1">
+        <div class="paso">Paso 1</div>
+        <div class="big">invertir</div>
+        <div class="txt">la segunda fracción</div>
+      </div>
+      <div class="regla-step c2">
+        <div class="paso">Paso 2</div>
+        <div class="big">multiplicar</div>
+        <div class="txt">como en la multiplicación</div>
+      </div>
+      <div class="regla-step c3">
+        <div class="paso">Paso 3</div>
+        <div class="big">simplificar</div>
+        <div class="txt">el resultado</div>
+      </div>
+    </div>
+    <div class="regla-ejemplo">
+      <span class="lbl">Ejemplo</span>
+      {2/3} ÷ {4/5}
+      = {2/3} · <span class="regla-chip c1">{5/4}</span>
+      = <span class="regla-chip c2">{10/12}</span>
+      = <span class="regla-chip c3">{5/6}</span>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p><strong>Errores comunes:</strong> sumar también los denominadores ({1/2} + {1/3} no es {2/5}); olvidar el denominador común antes de sumar o restar;
+       invertir la primera fracción (o ninguna) al dividir; y dejar el resultado sin simplificar.</p>
+  </div>
+
+  <p class="section-label" id="recordatorio-signos">Recuerda: las leyes de los signos</p>
+  <div class="signos-box">
+    <div class="signos-head">Con fracciones negativas</div>
+    <div class="signos-cols">
+      <div>
+        <div class="signos-t">Multiplicar y dividir</div>
+        <div class="signos-row pos"><span>(+) · (+) &nbsp;o&nbsp; (+) ÷ (+)</span><b>+</b></div>
+        <div class="signos-row pos"><span>(−) · (−) &nbsp;o&nbsp; (−) ÷ (−)</span><b>+</b></div>
+        <div class="signos-row neg"><span>(+) · (−) &nbsp;o&nbsp; (+) ÷ (−)</span><b>−</b></div>
+        <div class="signos-row neg"><span>(−) · (+) &nbsp;o&nbsp; (−) ÷ (+)</span><b>−</b></div>
+        <div class="signos-ej">(−2)(−5) = 10<br>6 · (−2) = −12<br>(−12) ÷ (−3) = 4<br>12 ÷ (−3) = −4</div>
+      </div>
+      <div>
+        <div class="signos-t">Sumar y restar</div>
+        <div class="signos-row txt"><strong>Mismo signo:</strong> se suman y se deja el signo</div>
+        <div class="signos-ej">(−2) + (−5) = −7</div>
+        <div class="signos-row txt"><strong>Signos diferentes:</strong> se restan y gana el número más grande (sin contar el signo)</div>
+        <div class="signos-ej">6 + (−2) = 4 &nbsp;·&nbsp; (−8) + 3 = −5</div>
+      </div>
+    </div>
+    <div class="signos-link">¿Quieres repasarlo con más detalle y practicar? <a href="../matematicas-1/leyes-de-los-signos.html">Leyes de los signos (Matemáticas 1) →</a></div>
+  </div>
+
+  </div><!-- /fx -->
+
+  <p class="section-label" id="ejercicios-fracciones">Ejercicios: operaciones con fracciones</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Resuelve cada operación y escribe el resultado <strong>como fracción simplificada</strong> (por ejemplo <strong>5/6</strong>) o como número entero.
+       Las fracciones negativas llevan el signo menos adelante (por ejemplo <strong>−1/6</strong>). Debajo de cada cuadro hay botones para el signo y la fracción.
+       Oprime <strong>Comprobar</strong> (o la tecla Enter).</p>
+    <p>Hay sumas, restas, multiplicaciones y divisiones, de las más sencillas a las más difíciles. Te tocan <strong>10 ejercicios al azar</strong> de un banco de
+       <strong>100</strong>. Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="fr-grid"></div>
+  <p class="practice-score" id="fr-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="fr-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script>
+  // Escribe las fracciones apiladas: {n/d} dentro de un elemento con clase "fx"
+  document.querySelectorAll('.fx').forEach(function (el) {
+    el.innerHTML = el.innerHTML.replace(/\{([^{}]+?)\/([^{}]+?)\}/g, function (m, n, d) {
+      return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>';
+    });
+  });
+  </script>
+
+  <script>
+  (function () {
+    var MINUS = '−';
+    function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = b; b = a % b; a = t; } return a || 1; }
+    function lcm(a, b) { return a / gcd(a, b) * b; }
+    function frac(n, d) { if (d < 0) { n = -n; d = -d; } var g = gcd(n, d); return { n: n / g, d: d / g }; }
+    function addF(f, g) { return frac(f.n * g.d + g.n * f.d, f.d * g.d); }
+    function mulF(f, g) { return frac(f.n * g.n, f.d * g.d); }
+    function negF(f) { return frac(-f.n, f.d); }
+    function invF(f) { return frac(f.d, f.n); }
+    function eqF(f, g) { return f.n * g.d === g.n * f.d; }
+    function parseNum(txt) { // "−3", "5/2", "0.25"…  →  fracción, o null si no se entiende
+      var s = String(txt).replace(/\s+/g, '').replace(/[−–—]/g, '-').replace(',', '.'), m;
+      if ((m = s.match(/^([+-]?)(\d+)\/(\d+)$/))) { var d = parseInt(m[3], 10); return d === 0 ? null : frac((m[1] === '-' ? -1 : 1) * parseInt(m[2], 10), d); }
+      if ((m = s.match(/^([+-]?)(\d*)\.?(\d*)$/)) && (m[2] || m[3])) {
+        var dec = m[3] || '', p = Math.pow(10, dec.length);
+        return frac((m[1] === '-' ? -1 : 1) * parseInt((m[2] || '0') + dec, 10), p);
+      }
+      return null;
+    }
+    function F(n, d) { return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>'; }
+    function U(n, d) { return (n < 0 ? MINUS : '') + (d === 1 ? Math.abs(n) : F(Math.abs(n), d)); }   // fracción tal cual (sin simplificar), con signo
+    function fracHTML(f) { return U(f.n, f.d); }
+    function pU(n, d) { return n < 0 ? '(' + U(n, d) + ')' : U(n, d); }
+    function pF(f) { return pU(f.n, f.d); }
+    function parseF(s) { return parseNum(s); }
+
+    // Banco de 100 ejercicios [operación, a, b], de menor a mayor dificultad:
+    //  1–10 sumas y 11–20 restas con el mismo denominador · 21–35 sumas y 36–50 restas (un denominador es múltiplo del otro) ·
+    //  51–60 sumas y 61–70 restas con denominadores distintos · 71–82 multiplicaciones · 83–94 divisiones · 95–100 con signos negativos
+    var BANK = [];
+    function add(op, list) { list.forEach(function (p) { BANK.push({ op: op, a: parseF(p[0]), b: parseF(p[1]) }); }); }
+    add('+', [['1/5', '2/5'], ['2/7', '3/7'], ['1/3', '1/3'], ['3/8', '1/8'], ['2/9', '4/9'], ['1/6', '3/6'], ['5/12', '1/12'], ['3/10', '4/10'], ['1/4', '2/4'], ['4/11', '5/11']]);
+    add(MINUS, [['4/5', '1/5'], ['5/7', '2/7'], ['7/8', '3/8'], ['5/9', '2/9'], ['5/6', '1/6'], ['9/10', '3/10'], ['7/12', '1/12'], ['3/4', '1/4'], ['8/11', '3/11'], ['2/3', '1/3']]);
+    add('+', [['1/2', '1/4'], ['1/3', '1/6'], ['2/5', '3/10'], ['1/4', '3/8'], ['5/6', '1/3'], ['1/2', '3/8'], ['2/3', '1/9'], ['3/4', '1/12'], ['1/5', '7/10'], ['3/8', '1/2'], ['5/12', '1/4'], ['1/6', '5/12'], ['2/9', '1/3'], ['1/10', '2/5'], ['3/14', '1/7']]);
+    add(MINUS, [['3/4', '1/2'], ['5/6', '1/3'], ['7/10', '1/5'], ['5/8', '1/4'], ['2/3', '1/6'], ['7/12', '1/4'], ['1/2', '3/10'], ['8/9', '1/3'], ['5/6', '5/12'], ['9/10', '2/5'], ['3/4', '5/8'], ['11/12', '1/6'], ['1/2', '1/8'], ['7/9', '1/3'], ['5/6', '1/2']]);
+    add('+', [['1/2', '1/3'], ['1/2', '1/5'], ['2/3', '1/4'], ['3/4', '1/5'], ['1/3', '2/5'], ['3/5', '1/2'], ['5/6', '1/4'], ['3/4', '5/6'], ['2/9', '5/6'], ['1/6', '3/8']]);
+    add(MINUS, [['1/2', '1/3'], ['3/4', '1/5'], ['2/3', '1/4'], ['4/5', '1/2'], ['5/6', '3/8'], ['7/8', '1/3'], ['3/4', '2/5'], ['5/6', '4/9'], ['2/3', '3/7'], ['7/10', '1/4']]);
+    add('·', [['1/2', '1/3'], ['2/3', '3/4'], ['3/5', '2/7'], ['4/5', '5/8'], ['3/4', '2/9'], ['5/6', '3/10'], ['2/5', '5/6'], ['7/8', '4/21'], ['3/7', '14/15'], ['9/10', '5/6'], ['4/9', '3/8'], ['5/12', '8/15']]);
+    add('÷', [['1/2', '1/4'], ['2/3', '1/3'], ['3/4', '3/8'], ['2/5', '4/15'], ['5/6', '5/12'], ['3/7', '9/14'], ['4/9', '2/3'], ['7/10', '14/15'], ['1/2', '3/5'], ['5/8', '10/3'], ['6/7', '3/14'], ['9/16', '3/4']]);
+    BANK.push({ op: '+', a: parseF('-1/2'), b: parseF('1/3') }, { op: MINUS, a: parseF('-3/4'), b: parseF('1/2') },
+              { op: '·', a: parseF('-2/3'), b: parseF('3/5') }, { op: '·', a: parseF('-3/4'), b: parseF('-8/9') },
+              { op: '÷', a: parseF('-1/2'), b: parseF('1/4') }, { op: '÷', a: parseF('2/3'), b: parseF('-4/9') });
+    BANK.forEach(function (e) {
+      e.r = e.op === '+' ? addF(e.a, e.b) : e.op === MINUS ? addF(e.a, negF(e.b)) : e.op === '·' ? mulF(e.a, e.b) : mulF(e.a, invF(e.b));
+    });
+
+    function solution(e) {
+      var a = e.a, b = e.b, r = e.r, line, red = '';
+      if (e.op === '+' || e.op === MINUS) {
+        var s = e.op === '+' ? 1 : -1, m = lcm(a.d, b.d), an = a.n * m / a.d, bn = b.n * m / b.d, sn = an + s * bn;
+        if (a.d === b.d) line = 'Mismo denominador: ' + pU(a.n, a.d) + ' ' + e.op + ' ' + pU(b.n, b.d) + ' = ' + U(sn, m);
+        else line = 'mcm(' + a.d + ', ' + b.d + ') = ' + m + '<br>' + pU(an, m) + ' ' + e.op + ' ' + pU(bn, m) + ' = ' + U(sn, m);
+        if (!(sn === r.n && m === r.d)) red = ' = ' + fracHTML(r);
+      } else if (e.op === '·') {
+        line = pF(a) + ' · ' + pF(b) + ' = ' + U(a.n * b.n, a.d * b.d);
+        if (!(a.n * b.n === r.n && a.d * b.d === r.d)) red = ' = ' + fracHTML(r);
+      } else {
+        var ib = invF(b), pn = a.n * ib.n, pd = a.d * ib.d;
+        line = 'Invierte la segunda: ' + pF(a) + ' · ' + pF(ib) + ' = ' + U(pn, pd);
+        if (!(pn === r.n && pd === r.d)) red = ' = ' + fracHTML(r);
+      }
+      return line + red + '<br>Resultado: <strong>' + fracHTML(r) + '</strong>';
+    }
+
+    // ---------- tarjetas ----------
+    var N = 10, done = {}, grid = document.getElementById('fr-grid'), scoreEl = document.getElementById('fr-score');
+    function score() {
+      var n = Object.keys(done).length;
+      scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
+    }
+    function pick() { // 10 al azar, ordenados como en el banco
+      var idx = BANK.map(function (e, i) { return i; });
+      for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+      return idx.slice(0, N).sort(function (p, q) { return p - q; }).map(function (i) { return BANK[i]; });
+    }
+    function makeCard(e, idx) {
+      var card = document.createElement('div');
+      card.className = 'practice-card';
+      card.innerHTML =
+        '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + pF(e.a) + ' ' + e.op + ' ' + pF(e.b) + '</span></div>' +
+        '<div class="practice-row"><span class="eq">=</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tu resultado del ejercicio ' + (idx + 1) + '" style="flex:0 1 8rem;">' +
+        '<button type="button" class="practice-check">Comprobar</button></div>' +
+        '<div class="practice-keys">' + [MINUS, '/'].map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('') + '</div>' +
+        '<div class="practice-fb" aria-live="polite"></div>';
+      grid.appendChild(card);
+      var input = card.querySelector('input'), fb = card.querySelector('.practice-fb');
+      card.querySelectorAll('.practice-keys button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var s = input.selectionStart == null ? input.value.length : input.selectionStart, e2 = input.selectionEnd == null ? s : input.selectionEnd;
+          input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e2);
+          input.focus(); input.setSelectionRange(s + 1, s + 1);
+        });
+      });
+      function check() {
+        var v = input.value.trim(), msg;
+        card.classList.remove('ok', 'bad');
+        if (!v) { fb.innerHTML = 'Escribe tu respuesta en el cuadro.'; return; }
+        var ans = parseNum(v);
+        if (!ans) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí lo que escribiste.</span> Escribe una fracción como <strong>5/6</strong> o <strong>−1/6</strong>, o un número entero.'; return; }
+        var m = v.replace(/\s+/g, '').replace(/[−–—]/g, '-').match(/^[+-]?(\d+)\/(\d+)$/), unreduced = m && gcd(parseInt(m[1], 10), parseInt(m[2], 10)) > 1;
+        if (eqF(ans, e.r)) {
+          if (unreduced) { card.classList.add('bad'); delete done[idx]; score(); fb.innerHTML = '<span class="no">Casi:</span> el resultado es correcto, pero <strong>falta simplificar</strong> la fracción (divide arriba y abajo entre el mismo número).'; return; }
+          card.classList.add('ok'); done[idx] = 1; score();
+          fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span><div class="sol">' + solution(e) + '</div>';
+          return;
+        }
+        card.classList.add('bad'); delete done[idx]; score();
+        if (e.op === '+' || e.op === MINUS) {
+          var sg = e.op === '+' ? 1 : -1;
+          if (eqF(ans, frac(e.a.n + sg * e.b.n, e.a.d + e.b.d)) || (e.a.d !== e.b.d && ans.d === e.a.d + e.b.d)) msg = 'No se suman (ni se restan) los <strong>denominadores</strong>: primero busca un denominador común.';
+          else if (eqF(ans, negF(e.r))) msg = 'Revisa el <strong>signo</strong> del resultado.';
+          else if (e.a.d !== e.b.d) msg = 'Busca el <strong>mcm</strong> de los denominadores, convierte las dos fracciones y después opera los numeradores.';
+          else msg = 'Con el mismo denominador, sólo se ' + (e.op === '+' ? 'suman' : 'restan') + ' los numeradores; el denominador se queda igual.';
+        } else if (e.op === '·') {
+          msg = eqF(ans, mulF(e.a, invF(e.b))) ? 'Al multiplicar <strong>no se invierte</strong> ninguna fracción.' : eqF(ans, negF(e.r)) ? 'Revisa el <strong>signo</strong>: signos iguales dan +, signos diferentes dan −.' : 'Multiplica numerador por numerador y denominador por denominador, y simplifica.';
+        } else {
+          msg = eqF(ans, mulF(e.a, e.b)) ? 'Te faltó <strong>invertir la segunda fracción</strong> antes de multiplicar.' : eqF(ans, mulF(invF(e.a), e.b)) ? 'Se invierte la <strong>segunda</strong> fracción, no la primera.' : eqF(ans, negF(e.r)) ? 'Revisa el <strong>signo</strong>: signos iguales dan +, signos diferentes dan −.' : 'Invierte la segunda fracción, multiplica y simplifica.';
+        }
+        fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + msg + '<div class="sol">La respuesta correcta es:<br>' + solution(e) + '</div>';
+      }
+      card.querySelector('.practice-check').addEventListener('click', check);
+      input.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') check(); });
+    }
+    function newSet() { grid.innerHTML = ''; done = {}; pick().forEach(makeCard); score(); }
+    document.getElementById('fr-new').addEventListener('click', function () {
+      newSet();
+      document.getElementById('ejercicios-fracciones').scrollIntoView({ behavior: 'smooth' });
+    });
+    newSet();
+  })();
+  </script>
+
+  <p class="section-label no-caps" id="rubrica-operaciones-fracciones">Rúbrica · Operaciones con fracciones</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe cada operación con las fracciones bien escritas (numerador arriba, denominador abajo, signo adelante) y los pasos en orden.</li><li>Escribe el denominador común, las fracciones equivalentes y el resultado simplificado.</li><li>Explica con sus palabras qué hizo en cada paso.</li></ul></div></td>
+            <td>Escribe las fracciones con errores que cambian el sentido (numerador y denominador invertidos, sin signo) y no se entiende su procedimiento. No usa ningún apoyo, como el dibujo de las barras o un ejemplo.</td>
+            <td colspan="2">Escribe las operaciones de forma limitada: se entiende lo que hace, aunque a veces omite pasos (el mcm o la fracción equivalente) o el signo. Repite la regla de memoria y casi no usa recursos para apoyarla.</td>
+            <td>Escribe correctamente casi todas las operaciones, con el denominador común, las fracciones equivalentes y el resultado simplificado; puede tener alguna deficiencia (por ejemplo, un paso intermedio sin escribir). Explica con claridad qué hizo.</td>
+            <td>Escribe todas las operaciones con notación correcta y los pasos en orden, y explica por escrito u oralmente por qué se necesita el denominador común y por qué dividir es multiplicar por la inversa, apoyándose en barras o ejemplos. Reconstruye la regla con sus palabras.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación aritmética</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Representa una fracción con una barra dividida en partes iguales y reconoce las fracciones equivalentes.</li><li>Relaciona la suma de fracciones con las barras: cortar en partes iguales (denominador común) para poder juntar.</li><li>Reconoce un entero como fracción (3 = 3/1) y el resultado simplificado como la misma fracción escrita de forma más sencilla.</li></ul></div></td>
+            <td>Conoce las reglas sólo de memoria y las usa de forma mecánica; no relaciona las fracciones con una representación (barras, partes de un entero). Comete errores como 1/2 + 1/3 = 2/5.</td>
+            <td colspan="2">Comprende y describe una forma de representar las fracciones (partes de un entero) y la usa en casos sencillos (mismo denominador). Se confunde con denominadores distintos o con fracciones equivalentes.</td>
+            <td>Usa al menos dos formas de representar las operaciones (la regla y las barras, o la fracción equivalente) y las compara: ve por qué 1/2 + 1/3 se calcula con sextos.</td>
+            <td>Combina varias representaciones (regla, barras, fracciones equivalentes, simplificación) y elige la más adecuada para cada operación, justificando su elección.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Modelación y resolución de problemas</strong><span class="crit-desc">Formulación del problema y sistematización · Matematización y análisis del sistema matemático · Interpretación, evaluación y validación.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Identifica qué operación es (suma, resta, multiplicación o división) y qué procedimiento le corresponde antes de resolver.</li><li>Obtiene el resultado con un procedimiento correcto, simplifica y revisa si el resultado tiene sentido (signo, tamaño).</li><li>Encuentra y corrige sus propios errores.</li></ul></div></td>
+            <td>Aplica las reglas al azar: usa la regla de la suma en un producto, o al revés. No distingue cuándo se necesita denominador común y se limita a copiar sin comprender.</td>
+            <td colspan="2">Reconoce qué hace cada operación y usa alguna regla para obtener resultados. Acierta en casos sencillos (mismo denominador, productos), pero falla con denominadores distintos, divisiones o fracciones negativas, y no revisa sus resultados.</td>
+            <td colspan="2">Identifica el tipo de operación y aplica el procedimiento correcto en cada caso (mcm, producto, inversa); obtiene resultados correctos y simplificados, y revisa si son razonables (por ejemplo, que una suma de fracciones positivas sea mayor que cada sumando). Detecta sus errores comunes y los corrige.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué se necesita un denominador común para sumar o restar.</li><li>Explica por qué al dividir se invierte la segunda fracción y se multiplica.</li><li>Comprueba sus resultados (por ejemplo, con barras, con decimales o con la operación inversa).</li></ul></div></td>
+            <td>Defiende su resultado con frases como «así es la regla» o «así me salió». Reconoce intuitivamente que hay una regla, pero no la explica ni la comprueba.</td>
+            <td>Explica con sus palabras o con una analogía (por ejemplo, «cortar la pizza en partes iguales») por qué se necesita un denominador común, con pocos términos matemáticos.</td>
+            <td>Valida la regla con ejemplos: muestra varias sumas con barras o con fracciones equivalentes, y distingue con ejemplos y contraejemplos la suma correcta (1/2 + 1/3 = 5/6) de la incorrecta (2/5).</td>
+            <td>Explica la estructura del argumento: sólo se pueden juntar partes del mismo tamaño (la hipótesis) y por eso se convierten a un denominador común (la conclusión). Justifica la división como multiplicar por la inversa y comprueba sus resultados.</td>
+            <td>Construye una cadena de argumentos que generaliza: demuestra con fracciones equivalentes por qué a/b + c/d = (ad + bc)/bd, y por qué (a/b) ÷ (c/d) = (a/b) · (d/c), y distingue convencerse con ejemplos de demostrar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>
