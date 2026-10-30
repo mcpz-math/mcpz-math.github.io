@@ -1731,3 +1731,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
   las dos páginas piden la hoja de estilos con la versión `?v=20261030d`.
 - Ajuste al recordatorio de signos (a pedido de Carmen): la columna "Multiplicar" ahora es **"Multiplicar y dividir"**; cada fila muestra las dos operaciones, por ejemplo "(−) · (−) o (−) ÷ (−) = +", y los
   ejemplos incluyen divisiones ((−12) ÷ (−3) = 4 y 12 ÷ (−3) = −4 en binomio factor común; (−20) ÷ (−4) = 5 y 20 ÷ (−4) = −5 en factorizar x² + bx + c). Cada ejemplo va en su propia línea.
+- A pedido de Carmen, en `tema-06-binomio-factor-comun.html` se **quitó la figura del rectángulo** ("Así se ve en un rectángulo"). Se ajustó la rúbrica de esa actividad: ya no tiene el criterio
+  de Representación geométrica y no menciona la figura (se regeneró la guía en Word). La figura sigue en la página de factorizar x² + bx + c y en la de completar el TCP.
+- Antes de la sección "Con exponentes y con fracciones" hay un recuadro **Repaso** con un botón a Matemáticas 2 ("Repasar operaciones con fracciones"), que lleva a
+  `matematicas-2/tema-01-numeros-racionales.html`. **Pendiente:** el subtema "Operaciones" de ese tema todavía dice "Próximamente"; cuando Carmen comparta el contenido de operaciones con
+  fracciones hay que escribirlo (y, si queda en una página propia, cambiar el enlace).

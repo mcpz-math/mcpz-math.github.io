@@ -844,18 +844,7 @@
           "n1": "Escribe el resultado sin el exponente, sin signos o sin el término de en medio, y sus respuestas no se entienden. No usa ningún apoyo, como escribir la suma y el producto de los números.",
           "n23": "Usa la simbología con limitaciones: escribe el trinomio, pero a veces omite un signo, un paréntesis o el exponente 2. Contesta sin explicar o sólo repite la regla.",
           "n4": "Escribe con la simbología correcta la suma, el producto y el trinomio reducido, con alguna deficiencia (por ejemplo, un signo ambiguo). Explica con claridad qué hizo en cada paso.",
-          "n5": "Escribe y explica con notación correcta el procedimiento completo (x², suma, producto y resultado reducido), por diferentes medios (con la regla, con la figura del rectángulo y con palabras), y reconstruye el procedimiento en un ejercicio nuevo."
-        },
-        {
-          "id": "REP_GEO",
-          "observar": [
-            "Relaciona (x + a)(x + b) con un rectángulo de lados x + a y x + b formado por x², dos rectángulos ax y bx y un rectángulo de área ab.",
-            "Reconoce que los rectángulos ax y bx forman el término (a + b)x."
-          ],
-          "n1": "Ve el producto de binomios como una operación sin relación con áreas, y no reconoce el rectángulo ni sus cuatro partes.",
-          "n23": "Reconoce la figura del ejemplo (x + 3)(x + 4), pero no la generaliza a otros valores ni a números negativos.",
-          "n4": "Interpreta la figura: x², los rectángulos ax y bx que suman (a + b)x, y el área ab; relaciona cada parte con un término del resultado.",
-          "n5": "Dibuja el rectángulo para un producto nuevo y lo usa para justificar que la suma de los números es el coeficiente de x y su producto es el último término."
+          "n5": "Escribe y explica con notación correcta el procedimiento completo (x², suma, producto y resultado reducido), por diferentes medios (con la regla y con palabras), y reconstruye el procedimiento en un ejercicio nuevo."
         },
         {
           "id": "REP_ALG",
@@ -874,12 +863,12 @@
           "observar": [
             "Explica por qué el término de en medio es la suma de los números: al multiplicar, los términos ax y bx son semejantes y se suman.",
             "Justifica el signo del producto con los signos de los números.",
-            "Comprueba su resultado con la figura o multiplicando término a término."
+            "Comprueba su resultado multiplicando término a término."
           ],
           "n1": "Dice «así es la regla» sin justificar. Hace la multiplicación pero no la comprueba ni la explica.",
           "n2": "Defiende con una regla simple («suma los números y multiplícalos») con lenguaje matemático básico.",
           "n3": "Valida con ejemplos: multiplica varios pares de binomios por la regla y por término a término, y compara los resultados; da ejemplos y no-ejemplos (como x² + 12).",
-          "n4": "Explica la estructura del argumento: que los binomios compartan el término x es la hipótesis y que el resultado sea x² + (a + b)x + ab es la conclusión; comprueba sus resultados con la figura o multiplicando término a término.",
+          "n4": "Explica la estructura del argumento: que los binomios compartan el término x es la hipótesis y que el resultado sea x² + (a + b)x + ab es la conclusión; comprueba sus resultados multiplicando término a término.",
           "n5": "Elabora una cadena de argumentos que generaliza: demuestra con la propiedad distributiva por qué (x + a)(x + b) = x² + (a + b)x + ab para cualquier a y b, y la relaciona con los casos especiales y con factorizar x² + bx + c."
         }
       ]
