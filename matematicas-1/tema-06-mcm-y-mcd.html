@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mcm y MCD — Matemáticas 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css?v=20261030i">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-06-divisibilidad.html">← Tema 6</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 1 · Tema 6 · Divisibilidad</div>
+    <h1>mcm y MCD</h1>
+  </div>
+
+  <p class="section-label">Antes de empezar: descomponer en números primos</p>
+  <div class="prose">
+    <p>Un <strong>número primo</strong> sólo se puede dividir entre 1 y entre sí mismo: 2, 3, 5, 7, 11, 13, 17, 19…
+       <strong>Descomponer</strong> un número es escribirlo como un producto de primos. Se divide entre el primo más pequeño que se pueda, una y otra vez, hasta llegar a 1:</p>
+  </div>
+  <table class="escalera" aria-label="Descomposición de 60 en números primos">
+    <tr><td>60</td><td>2</td></tr>
+    <tr><td>30</td><td>2</td></tr>
+    <tr><td>15</td><td>3</td></tr>
+    <tr><td>5</td><td>5</td></tr>
+    <tr><td>1</td><td></td></tr>
+  </table>
+  <div class="prose">
+    <p style="text-align:center;"><strong>60 = 2 · 2 · 3 · 5 = 2² · 3 · 5</strong> &nbsp;(los primos repetidos se escriben con exponente).</p>
+  </div>
+
+  <p class="section-label" id="mcd">MCD: máximo común divisor</p>
+  <div class="prose">
+    <p>Es el número <strong>más grande</strong> que divide a todos los números a la vez. Por ejemplo, el MCD de 12 y 18 es 6.</p>
+  </div>
+  <div class="regla-box">
+    <div class="regla-head">★ MCD ★</div>
+    <div class="regla-formula">MCD = <span class="regla-chip c2">primos comunes</span> · <span class="regla-chip c1">menor exponente</span></div>
+    <div class="regla-steps">
+      <div class="regla-step c1">
+        <div class="paso">Paso 1</div>
+        <div class="big">primos</div>
+        <div class="txt">descompón cada número</div>
+      </div>
+      <div class="regla-step c2">
+        <div class="paso">Paso 2</div>
+        <div class="big">comunes</div>
+        <div class="txt">sólo los primos que están en todos, con el menor exponente</div>
+      </div>
+      <div class="regla-step c3">
+        <div class="paso">Paso 3</div>
+        <div class="big">multiplicar</div>
+        <div class="txt">ése es el MCD</div>
+      </div>
+    </div>
+    <div class="regla-ejemplo">
+      <span class="lbl">Ejemplo · MCD(12, 18)</span>
+      12 = <span class="regla-chip c1">2²</span> · <span class="regla-chip c3">3</span><br>
+      18 = <span class="regla-chip c1">2</span> · <span class="regla-chip c3">3²</span><br>
+      MCD = <span class="regla-chip c1">2</span> · <span class="regla-chip c3">3</span> = <span class="regla-chip c2">6</span>
+    </div>
+  </div>
+
+  <p class="section-label" id="mcm">mcm: mínimo común múltiplo</p>
+  <div class="prose">
+    <p>Es el número <strong>más pequeño</strong> (distinto de cero) que es múltiplo de todos los números a la vez. Por ejemplo, el mcm de 12 y 18 es 36.</p>
+  </div>
+  <div class="regla-box">
+    <div class="regla-head">★ mcm ★</div>
+    <div class="regla-formula">mcm = <span class="regla-chip c2">todos los primos</span> · <span class="regla-chip c1">mayor exponente</span></div>
+    <div class="regla-steps">
+      <div class="regla-step c1">
+        <div class="paso">Paso 1</div>
+        <div class="big">primos</div>
+        <div class="txt">descompón cada número</div>
+      </div>
+      <div class="regla-step c2">
+        <div class="paso">Paso 2</div>
+        <div class="big">todos</div>
+        <div class="txt">todos los primos que aparezcan, con el mayor exponente</div>
+      </div>
+      <div class="regla-step c3">
+        <div class="paso">Paso 3</div>
+        <div class="big">multiplicar</div>
+        <div class="txt">ése es el mcm</div>
+      </div>
+    </div>
+    <div class="regla-ejemplo">
+      <span class="lbl">Ejemplo · mcm(12, 18)</span>
+      12 = <span class="regla-chip c1">2²</span> · 3<br>
+      18 = 2 · <span class="regla-chip c3">3²</span><br>
+      mcm = <span class="regla-chip c1">2²</span> · <span class="regla-chip c3">3²</span> = 4 · 9 = <span class="regla-chip c2">36</span>
+    </div>
+  </div>
+
+  <p class="section-label">Los dos juntos, en una tabla</p>
+  <div class="prose">
+    <p>Se escribe el <strong>exponente</strong> de cada primo en cada número (si el primo no está, el exponente es 0). El MCD toma el <strong>menor</strong> de cada columna y el mcm el <strong>mayor</strong>.</p>
+  </div>
+  <div class="exp-wrap">
+    <table class="exp-table" aria-label="Tabla de exponentes de 12 y 18">
+      <tr><th>primo</th><th>2</th><th>3</th></tr>
+      <tr><td class="lbl">12 = 2² · 3</td><td>2</td><td>1</td></tr>
+      <tr><td class="lbl">18 = 2 · 3²</td><td>1</td><td>2</td></tr>
+      <tr><td class="lbl">MCD · el menor</td><td class="min">1</td><td class="min">1</td></tr>
+      <tr><td class="lbl">mcm · el mayor</td><td class="max">2</td><td class="max">2</td></tr>
+    </table>
+    <div class="exp-cap">MCD = 2¹ · 3¹ = 6 &nbsp;·&nbsp; mcm = 2² · 3² = 36</div>
+  </div>
+  <div class="prose">
+    <p><strong>Si no hay primos comunes</strong> (por ejemplo, 8 y 15), el MCD es <strong>1</strong> y el mcm es el producto de los números (8 · 15 = 120).
+       <strong>Si un número es múltiplo del otro</strong> (por ejemplo, 4 y 12), el MCD es el menor (4) y el mcm el mayor (12).</p>
+    <p><strong>Comprobación con dos números:</strong> MCD · mcm = producto de los dos números. Con 12 y 18: 6 · 36 = 216 = 12 · 18.</p>
+  </div>
+
+  <p class="section-label">¿Para qué sirven?</p>
+  <div class="prose">
+    <ul style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li>El <strong>MCD</strong> sirve para <strong>simplificar fracciones</strong>: {{6/9}} se divide entre el MCD(6, 9) = 3.</li>
+      <li>El <strong>mcm</strong> sirve para <strong>sumar y restar fracciones</strong> con denominadores distintos: el denominador común es el mcm.</li>
+    </ul>
+    <p>Los verás en acción en <a href="../matematicas-2/tema-01-operaciones-con-fracciones.html" style="color:var(--forest); font-weight:700;">Operaciones con fracciones (Matemáticas 2)</a>.</p>
+  </div>
+
+  <p class="section-label" id="ejercicios-mcm-mcd">Ejercicios: mcm y MCD con números primos</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Para cada grupo de números:</p>
+    <p><strong>1.</strong> <strong>Descompón</strong> cada número en primos, por ejemplo <strong>2^2 · 3</strong> (también puedes usar los botones <strong>²</strong> y <strong>·</strong>).<br>
+       <strong>2.</strong> Escribe el <strong>MCD</strong>: los primos comunes con el menor exponente.<br>
+       <strong>3.</strong> Escribe el <strong>mcm</strong>: todos los primos con el mayor exponente.</p>
+    <p>Después oprime <strong>Comprobar</strong> (o la tecla Enter). Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>, de menos a más difíciles
+       (los últimos tienen tres números). Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="mm-grid"></div>
+  <p class="practice-score" id="mm-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="mm-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script>
+  // Fracciones apiladas: {{n/d}} en el texto de la página
+  document.querySelectorAll('.prose').forEach(function (el) {
+    el.innerHTML = el.innerHTML.replace(/\{\{(\d+)\/(\d+)\}\}/g, function (m, n, d) {
+      return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>';
+    });
+  });
+  </script>
+
+  <script>
+  (function () {
+    var SUPD = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' }, SUPR = {};
+    Object.keys(SUPD).forEach(function (k) { SUPR[SUPD[k]] = k; });
+    function sup(n) { return String(n).split('').map(function (c) { return SUPD[c]; }).join(''); }
+    function gcd(a, b) { while (b) { var t = b; b = a % b; a = t; } return a; }
+    function lcm(a, b) { return a / gcd(a, b) * b; }
+    function primeFactors(n) { var f = {}, d = 2; while (n > 1 && d * d <= n) { while (n % d === 0) { f[d] = (f[d] || 0) + 1; n /= d; } d++; } if (n > 1) f[n] = (f[n] || 0) + 1; return f; }
+    function isPrime(n) { if (n < 2) return false; for (var d = 2; d * d <= n; d++) if (n % d === 0) return false; return true; }
+    function sorted(f) { return Object.keys(f).map(Number).sort(function (x, y) { return x - y; }); }
+    function powText(p, k) { return p + (k > 1 ? sup(k) : ''); }
+    function primeText(n) { var f = primeFactors(n); return sorted(f).map(function (p) { return powText(p, f[p]); }).join(' · '); }
+
+    // Banco de 100 ejercicios, de menor a mayor dificultad: 90 de dos números y 10 de tres números
+    //  1–20 números pequeños · 21–35 uno es múltiplo del otro · 36–50 sin primos comunes · 51–75 números más grandes · 76–90 con potencias de primos · 91–100 tres números
+    var BANK = [
+      [4, 6], [6, 9], [8, 12], [10, 15], [12, 18], [9, 12], [6, 8], [10, 25], [14, 21], [15, 20], [8, 20], [12, 16], [18, 24], [20, 30], [16, 24], [9, 15], [14, 35], [21, 28], [25, 30], [16, 20],
+      [3, 12], [5, 15], [4, 16], [6, 18], [7, 21], [8, 24], [9, 27], [10, 40], [12, 36], [5, 25], [6, 30], [8, 32], [15, 45], [11, 33], [20, 60],
+      [4, 9], [8, 15], [7, 10], [9, 16], [5, 12], [14, 15], [8, 21], [10, 27], [11, 12], [13, 15], [16, 25], [9, 20], [6, 35], [22, 15], [18, 35],
+      [24, 36], [30, 45], [36, 48], [42, 63], [40, 60], [28, 42], [45, 75], [48, 72], [54, 90], [56, 84], [60, 90], [72, 108], [64, 80], [36, 60], [84, 126], [100, 150], [90, 120], [75, 100], [96, 144], [66, 99], [50, 75], [44, 66], [52, 78], [81, 108], [120, 180],
+      [32, 48], [27, 45], [49, 63], [121, 33], [16, 40], [18, 30], [24, 40], [63, 84], [60, 100], [72, 96], [28, 98], [45, 50], [80, 100], [56, 70], [88, 110],
+      [6, 8, 12], [4, 6, 10], [12, 18, 30], [10, 15, 25], [8, 12, 20], [9, 15, 21], [18, 24, 36], [30, 45, 60], [14, 21, 35], [24, 36, 60]
+    ].map(function (nums) {
+      return { nums: nums, g: nums.reduce(gcd), l: nums.reduce(lcm), prod: nums.reduce(function (a, b) { return a * b; }, 1) };
+    });
+
+    // lo que escribe el alumno: 2^2 · 3, 2²*3, 2·2·3 …  →  { value, composite } o null si no se entiende
+    function parseDecomp(s) {
+      s = s.replace(/\s+/g, '').replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, function (m) { return '^' + m.split('').map(function (c) { return SUPR[c]; }).join(''); }).replace(/[·×x*•]/g, '*');
+      if (!s) return null;
+      var value = 1, composite = null, parts = s.split('*');
+      for (var i = 0; i < parts.length; i++) {
+        var m = /^(\d+)(?:\^(\d+))?$/.exec(parts[i]);
+        if (!m) return null;
+        var p = parseInt(m[1], 10), k = m[2] ? parseInt(m[2], 10) : 1;
+        if (k > 12 || p > 100000) return null;
+        if (!isPrime(p) && composite == null) composite = p;
+        value *= Math.pow(p, k);
+      }
+      return { value: value, composite: composite };
+    }
+    function solution(e) {
+      var fs = e.nums.map(primeFactors), all = {}, mcdParts = [], mcmParts = [];
+      fs.forEach(function (f) { Object.keys(f).forEach(function (p) { all[p] = 1; }); });
+      sorted(all).forEach(function (p) {
+        var ks = fs.map(function (f) { return f[p] || 0; }), mn = Math.min.apply(null, ks), mx = Math.max.apply(null, ks);
+        if (mn > 0) mcdParts.push(powText(p, mn));
+        mcmParts.push(powText(p, mx));
+      });
+      var out = e.nums.map(function (n, i) { return n + ' = ' + primeText(n); }).join('<br>') + '<br>';
+      out += 'MCD (primos comunes, menor exponente) = ' + (mcdParts.join(' · ') || '1 (no hay primos comunes)') + ' = <strong>' + e.g + '</strong><br>';
+      out += 'mcm (todos los primos, mayor exponente) = ' + mcmParts.join(' · ') + ' = <strong>' + e.l + '</strong>';
+      if (e.nums.length === 2) out += '<br>Comprobación: MCD · mcm = ' + e.g + ' · ' + e.l + ' = ' + (e.g * e.l) + ' = ' + e.nums[0] + ' · ' + e.nums[1];
+      return out;
+    }
+
+    // ---------- tarjetas ----------
+    var N = 10, done = {}, grid = document.getElementById('mm-grid'), scoreEl = document.getElementById('mm-score');
+    function score() {
+      var n = Object.keys(done).length;
+      scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
+    }
+    function pick() { // 10 al azar, ordenados como en el banco
+      var idx = BANK.map(function (e, i) { return i; });
+      for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+      return idx.slice(0, N).sort(function (p, q) { return p - q; }).map(function (i) { return BANK[i]; });
+    }
+    function inputHTML(f, label, style) {
+      return '<input type="text" data-f="' + f + '" autocomplete="off" autocapitalize="off" spellcheck="false" style="' + style + '" aria-label="' + label + '">';
+    }
+    function makeCard(e, idx) {
+      var n = idx + 1, card = document.createElement('div'), dTargets = e.nums.map(function (x, i) { return 'd' + i; }).join(',');
+      card.className = 'practice-card';
+      card.innerHTML =
+        '<div class="practice-head"><span class="enum">' + n + '</span><span class="practice-q">' + e.nums.join(', ') + '</span></div>' +
+        '<div class="practice-ask">1. Descompón cada número en primos</div>' +
+        e.nums.map(function (x, i) { return '<div class="practice-row"><span class="eq">' + x + ' =</span>' + inputHTML('d' + i, 'Descomposición de ' + x + ' del ejercicio ' + n, 'flex:1 1 7rem;') + '</div>'; }).join('') +
+        '<div class="practice-keys" data-t="' + dTargets + '">' + ['·', '²', '³', '⁴', '⁵'].map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('') + '</div>' +
+        '<div class="practice-ask">2. ¿Cuánto vale el MCD?</div>' +
+        '<div class="practice-row"><span class="eq">MCD =</span>' + inputHTML('g', 'MCD del ejercicio ' + n, 'flex:0 1 6rem;') + '</div>' +
+        '<div class="practice-ask">3. ¿Cuánto vale el mcm?</div>' +
+        '<div class="practice-row"><span class="eq">mcm =</span>' + inputHTML('l', 'mcm del ejercicio ' + n, 'flex:0 1 6rem;') + '</div>' +
+        '<div class="practice-row" style="margin-top:0.7rem;"><button type="button" class="practice-check">Comprobar</button></div>' +
+        '<div class="practice-fb" aria-live="polite"></div>';
+      grid.appendChild(card);
+      var fb = card.querySelector('.practice-fb'), inp = {}, lastIn = null;
+      card.querySelectorAll('input').forEach(function (i) { inp[i.dataset.f] = i; i.addEventListener('focus', function () { lastIn = i.dataset.f; }); });
+      card.querySelectorAll('.practice-keys button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var ts = b.parentNode.dataset.t.split(','), t = ts.indexOf(lastIn) >= 0 ? lastIn : ts[0], input = inp[t];
+          var s = input.selectionStart == null ? input.value.length : input.selectionStart, e2 = input.selectionEnd == null ? s : input.selectionEnd;
+          input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e2);
+          input.focus(); input.setSelectionRange(s + b.dataset.k.length, s + b.dataset.k.length);
+        });
+      });
+      function check() {
+        card.classList.remove('ok', 'bad');
+        var empty = Object.keys(inp).some(function (k) { return !inp[k].value.trim(); });
+        if (empty) { fb.innerHTML = 'Contesta <strong>todas</strong> las preguntas antes de comprobar.'; return; }
+        var wrong = [], msgs = [], total = e.nums.length + 2;
+        e.nums.forEach(function (x, i) {
+          var r = parseDecomp(inp['d' + i].value);
+          if (!r) { wrong.push('d' + i); msgs.push('No entendí la descomposición de <strong>' + x + '</strong>: escríbela como, por ejemplo, <strong>2^2 · 3</strong>.'); }
+          else if (r.composite != null) { wrong.push('d' + i); msgs.push('En la descomposición de <strong>' + x + '</strong>, el <strong>' + r.composite + '</strong> no es primo: se puede dividir más (' + r.composite + ' = ' + primeText(r.composite) + ').'); }
+          else if (r.value !== x) { wrong.push('d' + i); msgs.push('El producto de tu descomposición de <strong>' + x + '</strong> da ' + r.value + ', no ' + x + '. Divide otra vez entre primos hasta llegar a 1: ' + x + ' = ' + primeText(x) + '.'); }
+        });
+        var gv = /^\d+$/.test(inp.g.value.trim()) ? parseInt(inp.g.value.trim(), 10) : null, lv = /^\d+$/.test(inp.l.value.trim()) ? parseInt(inp.l.value.trim(), 10) : null;
+        if (gv !== e.g) {
+          wrong.push('g');
+          msgs.push(gv === e.l ? 'Parece que intercambiaste el MCD y el mcm: el <strong>MCD</strong> es el <strong>más pequeño</strong> (primos comunes, menor exponente).'
+                    : e.g === 1 ? 'Si no hay primos comunes, el <strong>MCD es 1</strong>.'
+                    : 'El <strong>MCD</strong> sólo usa los primos que están en <strong>todos</strong> los números, con el <strong>menor</strong> exponente.');
+        }
+        if (lv !== e.l) {
+          wrong.push('l');
+          msgs.push(lv === e.g ? 'Parece que intercambiaste el MCD y el mcm: el <strong>mcm</strong> es el <strong>más grande</strong> (todos los primos, mayor exponente).'
+                    : (lv === e.prod && e.prod !== e.l) ? 'No basta multiplicar los números: el <strong>mcm</strong> usa cada primo <strong>una sola vez</strong>, con su mayor exponente.'
+                    : 'El <strong>mcm</strong> usa <strong>todos</strong> los primos que aparezcan, con el <strong>mayor</strong> exponente.');
+        }
+        if (!wrong.length) {
+          card.classList.add('ok'); done[idx] = 1; score();
+          fb.innerHTML = '<span class="yes">✓ ¡Todo correcto!</span><div class="sol">' + solution(e) + '</div>';
+          return;
+        }
+        card.classList.add('bad'); delete done[idx]; score();
+        fb.innerHTML = '<span class="no">✗ Tienes ' + (total - wrong.length) + ' de ' + total + ' bien.</span> ' + msgs.map(function (m) { return '<div class="sol" style="font-family:inherit;">' + m + '</div>'; }).join('') +
+                       '<div class="sol">La respuesta correcta es:<br>' + solution(e) + '</div>';
+      }
+      card.querySelector('.practice-check').addEventListener('click', check);
+      card.querySelectorAll('input').forEach(function (i) { i.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') check(); }); });
+    }
+    function newSet() { grid.innerHTML = ''; done = {}; pick().forEach(makeCard); score(); }
+    document.getElementById('mm-new').addEventListener('click', function () {
+      newSet();
+      document.getElementById('ejercicios-mcm-mcd').scrollIntoView({ behavior: 'smooth' });
+    });
+    newSet();
+  })();
+  </script>
+
+  <p class="section-label no-caps" id="rubrica-mcm-mcd">Rúbrica · mcm y MCD</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe cada número como producto de primos con exponentes (2² · 3) y no como producto de números compuestos (4 · 3).</li><li>Presenta en orden la descomposición, los primos comunes, el MCD y el mcm, con el símbolo = y las operaciones.</li><li>Explica con sus palabras qué hizo en cada paso.</li></ul></div></td>
+            <td>Escribe las descomposiciones con errores de notación (sin exponentes, con factores compuestos) y no se entiende su procedimiento. No usa ningún apoyo, como la escalera de divisiones o la tabla de exponentes.</td>
+            <td colspan="2">Escribe las descomposiciones y los resultados de forma limitada: se entiende lo que hace, aunque omite pasos (la tabla, los primos comunes) o los exponentes. Repite la regla de memoria y casi no la explica.</td>
+            <td>Escribe correctamente la descomposición en primos, con exponentes, y presenta el MCD y el mcm con los primos elegidos; puede tener alguna deficiencia (por ejemplo, no escribir un paso). Explica con claridad qué hizo.</td>
+            <td>Escribe todos los pasos con notación correcta (primos con exponentes, tabla, MCD, mcm y comprobación) y explica por escrito u oralmente por qué el MCD usa el menor exponente y el mcm el mayor, apoyándose en la tabla de exponentes. Reconstruye el procedimiento en ejercicios nuevos.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación aritmética</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Representa un número como producto de primos (escalera de divisiones) y reconoce que es única.</li><li>Usa la tabla de exponentes para ver el MCD (el menor de cada columna) y el mcm (el mayor).</li><li>Relaciona el MCD y el mcm con los múltiplos y divisores comunes.</li></ul></div></td>
+            <td>Conoce el MCD y el mcm sólo de memoria («el más grande que divide», «el más pequeño que es múltiplo») y los busca por tanteo, sin relacionarlos con la descomposición en primos.</td>
+            <td colspan="2">Comprende y describe una forma de obtener el MCD y el mcm (los primos o la lista de múltiplos y divisores) y la usa en casos sencillos. Se confunde con tres números o con exponentes mayores que 1.</td>
+            <td>Usa al menos dos representaciones (la descomposición en primos y la tabla de exponentes, o las listas de divisores y múltiplos) y las compara; ve en la tabla que el MCD toma el menor exponente y el mcm el mayor.</td>
+            <td>Combina varias representaciones (primos con exponentes, tabla, listas y la relación MCD · mcm = producto) y elige la más adecuada para cada caso, justificando su elección.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Modelación y resolución de problemas</strong><span class="crit-desc">Formulación del problema y sistematización · Matematización y análisis del sistema matemático · Interpretación, evaluación y validación.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Identifica si necesita el MCD (lo que se reparte o se simplifica) o el mcm (lo que se junta o se repite) antes de calcular.</li><li>Obtiene el MCD y el mcm con un procedimiento correcto y comprueba el resultado (MCD · mcm = producto con dos números).</li><li>Encuentra y corrige sus propios errores.</li></ul></div></td>
+            <td>Aplica los pasos al azar: usa el menor exponente para el mcm o multiplica los números sin descomponer. No revisa su resultado.</td>
+            <td colspan="2">Reconoce qué hace cada operación y obtiene el MCD y el mcm en casos sencillos (números pequeños, uno múltiplo del otro). Falla con exponentes mayores, con tres números o cuando no hay primos comunes, y no comprueba sus resultados.</td>
+            <td colspan="2">Descompone correctamente, elige los primos y exponentes que corresponden a cada caso, obtiene el MCD y el mcm (también con tres números o sin primos comunes) y los comprueba, por ejemplo con MCD · mcm = producto. Detecta sus errores comunes y los corrige.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué el MCD usa los primos comunes con el menor exponente y el mcm todos los primos con el mayor exponente.</li><li>Justifica por qué el MCD de dos números sin primos comunes es 1 y su mcm es el producto.</li><li>Comprueba sus resultados y explica por qué MCD · mcm = producto de dos números.</li></ul></div></td>
+            <td>Defiende su resultado con frases como «así es la regla» o «así me salió». Reconoce intuitivamente que hay un procedimiento, pero no lo explica ni lo comprueba.</td>
+            <td>Explica con sus palabras (por ejemplo, «el MCD es lo que comparten, el mcm es lo que junta a los dos») por qué el MCD es menor y el mcm mayor, con pocos términos matemáticos.</td>
+            <td>Valida el procedimiento con ejemplos: calcula varios MCD y mcm y los comprueba con listas de divisores y múltiplos; da ejemplos y contraejemplos (por ejemplo, 4 · 6 = 24 no es el mcm de 4 y 6).</td>
+            <td>Explica la estructura del argumento: un divisor común sólo puede usar los primos que están en todos los números (con a lo más el menor exponente) y un múltiplo común debe contener todos los primos (con al menos el mayor exponente). Comprueba sus resultados.</td>
+            <td>Construye una cadena de argumentos que generaliza: justifica con los exponentes por qué MCD · mcm = producto de dos números (min + max = suma de exponentes) y distingue convencerse con ejemplos de demostrar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>

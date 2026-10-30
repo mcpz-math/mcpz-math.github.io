@@ -814,6 +814,75 @@
       ]
     },
     {
+      "id": "mcmmcd",
+      "titulo": "Matemáticas 1 · Tema 6 · mcm y MCD",
+      "file": "matematicas-1/tema-06-mcm-y-mcd.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página, resueltos en el cuaderno con el procedimiento: la descomposición de cada número en primos, la tabla de exponentes (o los primos comunes), el MCD y el mcm.",
+        "Al menos un ejercicio de dos números sin primos comunes (MCD = 1), uno donde un número es múltiplo del otro y uno de tres números.",
+        "La comprobación MCD · mcm = producto de los dos números, y la explicación de por qué el MCD usa los primos comunes con el menor exponente y el mcm todos los primos con el mayor."
+      ],
+      "errores": [
+        "Descompone mal: deja un factor que no es primo (12 = 3 · 4) o el producto no da el número.",
+        "Intercambia el MCD y el mcm (usa el mayor exponente para el MCD o el menor para el mcm).",
+        "En el MCD toma también los primos que no son comunes, o en el mcm olvida un primo que sólo aparece en un número.",
+        "Multiplica los números para obtener el mcm (4 · 6 = 24 en lugar de 12) o suma los exponentes en lugar de tomar el mayor.",
+        "Cuando no hay primos comunes escribe MCD = 0 o deja la respuesta vacía en lugar de 1.",
+        "Con tres números toma el MCD o el mcm sólo de dos de ellos."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe cada número como producto de primos con exponentes (2² · 3) y no como producto de números compuestos (4 · 3).",
+            "Presenta en orden la descomposición, los primos comunes, el MCD y el mcm, con el símbolo = y las operaciones.",
+            "Explica con sus palabras qué hizo en cada paso."
+          ],
+          "n1": "Escribe las descomposiciones con errores de notación (sin exponentes, con factores compuestos) y no se entiende su procedimiento. No usa ningún apoyo, como la escalera de divisiones o la tabla de exponentes.",
+          "n23": "Escribe las descomposiciones y los resultados de forma limitada: se entiende lo que hace, aunque omite pasos (la tabla, los primos comunes) o los exponentes. Repite la regla de memoria y casi no la explica.",
+          "n4": "Escribe correctamente la descomposición en primos, con exponentes, y presenta el MCD y el mcm con los primos elegidos; puede tener alguna deficiencia (por ejemplo, no escribir un paso). Explica con claridad qué hizo.",
+          "n5": "Escribe todos los pasos con notación correcta (primos con exponentes, tabla, MCD, mcm y comprobación) y explica por escrito u oralmente por qué el MCD usa el menor exponente y el mcm el mayor, apoyándose en la tabla de exponentes. Reconstruye el procedimiento en ejercicios nuevos."
+        },
+        {
+          "id": "REP_ARI",
+          "observar": [
+            "Representa un número como producto de primos (escalera de divisiones) y reconoce que es única.",
+            "Usa la tabla de exponentes para ver el MCD (el menor de cada columna) y el mcm (el mayor).",
+            "Relaciona el MCD y el mcm con los múltiplos y divisores comunes."
+          ],
+          "n1": "Conoce el MCD y el mcm sólo de memoria («el más grande que divide», «el más pequeño que es múltiplo») y los busca por tanteo, sin relacionarlos con la descomposición en primos.",
+          "n23": "Comprende y describe una forma de obtener el MCD y el mcm (los primos o la lista de múltiplos y divisores) y la usa en casos sencillos. Se confunde con tres números o con exponentes mayores que 1.",
+          "n4": "Usa al menos dos representaciones (la descomposición en primos y la tabla de exponentes, o las listas de divisores y múltiplos) y las compara; ve en la tabla que el MCD toma el menor exponente y el mcm el mayor.",
+          "n5": "Combina varias representaciones (primos con exponentes, tabla, listas y la relación MCD · mcm = producto) y elige la más adecuada para cada caso, justificando su elección."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Identifica si necesita el MCD (lo que se reparte o se simplifica) o el mcm (lo que se junta o se repite) antes de calcular.",
+            "Obtiene el MCD y el mcm con un procedimiento correcto y comprueba el resultado (MCD · mcm = producto con dos números).",
+            "Encuentra y corrige sus propios errores."
+          ],
+          "n1": "Aplica los pasos al azar: usa el menor exponente para el mcm o multiplica los números sin descomponer. No revisa su resultado.",
+          "n23": "Reconoce qué hace cada operación y obtiene el MCD y el mcm en casos sencillos (números pequeños, uno múltiplo del otro). Falla con exponentes mayores, con tres números o cuando no hay primos comunes, y no comprueba sus resultados.",
+          "n45": "Descompone correctamente, elige los primos y exponentes que corresponden a cada caso, obtiene el MCD y el mcm (también con tres números o sin primos comunes) y los comprueba, por ejemplo con MCD · mcm = producto. Detecta sus errores comunes y los corrige."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué el MCD usa los primos comunes con el menor exponente y el mcm todos los primos con el mayor exponente.",
+            "Justifica por qué el MCD de dos números sin primos comunes es 1 y su mcm es el producto.",
+            "Comprueba sus resultados y explica por qué MCD · mcm = producto de dos números."
+          ],
+          "n1": "Defiende su resultado con frases como «así es la regla» o «así me salió». Reconoce intuitivamente que hay un procedimiento, pero no lo explica ni lo comprueba.",
+          "n2": "Explica con sus palabras (por ejemplo, «el MCD es lo que comparten, el mcm es lo que junta a los dos») por qué el MCD es menor y el mcm mayor, con pocos términos matemáticos.",
+          "n3": "Valida el procedimiento con ejemplos: calcula varios MCD y mcm y los comprueba con listas de divisores y múltiplos; da ejemplos y contraejemplos (por ejemplo, 4 · 6 = 24 no es el mcm de 4 y 6).",
+          "n4": "Explica la estructura del argumento: un divisor común sólo puede usar los primos que están en todos los números (con a lo más el menor exponente) y un múltiplo común debe contener todos los primos (con al menos el mayor exponente). Comprueba sus resultados.",
+          "n5": "Construye una cadena de argumentos que generaliza: justifica con los exponentes por qué MCD · mcm = producto de dos números (min + max = suma de exponentes) y distingue convencerse con ejemplos de demostrar."
+        }
+      ]
+    },
+    {
       "id": "fraccionesops",
       "titulo": "Matemáticas 2 · Tema 1 · Operaciones con fracciones",
       "file": "matematicas-2/tema-01-operaciones-con-fracciones.html",

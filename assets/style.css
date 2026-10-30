@@ -1011,3 +1011,21 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
 /* frases dentro del recuadro de ejemplo, y fracciones más grandes en la fórmula de la regla */
 .regla-ejemplo .nota { font-family: 'Karla', system-ui, sans-serif; font-size: 1rem; line-height: 1.6; display: inline-block; }
 .regla-formula .frac.frac-inline { font-size: 0.85em; }
+
+/* ===== Descomposición en primos: escalera de divisiones y tabla de exponentes ===== */
+.escalera { border-collapse: collapse; margin: 0.4rem auto 1rem; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 1.1rem; color: var(--forest); }
+.escalera td { padding: 0.12rem 0.9rem; }
+.escalera td:first-child { text-align: right; border-right: 3px solid var(--forest); }
+.escalera td:last-child { color: #d9650b; font-weight: 700; }
+.exp-wrap { width: min(100% - 3rem, 760px); margin: 0 auto 1.6rem auto; overflow-x: auto; }
+.exp-table { border-collapse: separate; border-spacing: 5px; margin: 0.4rem auto; font-family: 'IBM Plex Mono', ui-monospace, monospace; text-align: center; font-size: 1rem; }
+.exp-table th, .exp-table td { padding: 0.4rem 1rem; border-radius: 9px; background: var(--callout-bg); color: var(--forest); }
+.exp-table th { background: var(--forest); color: var(--lime); font-weight: 500; }
+.exp-table td.lbl { background: transparent; text-align: left; font-weight: 700; white-space: nowrap; }
+.exp-table td.min { background: #2b6cb0; color: #fff; font-weight: 700; }
+.exp-table td.max { background: #d9650b; color: #fff; font-weight: 700; }
+.exp-cap { text-align: center; font-size: 0.9rem; color: var(--ink-soft); }
+@media (max-width: 480px) {
+  .exp-table { font-size: 0.85rem; border-spacing: 3px; }
+  .exp-table th, .exp-table td { padding: 0.3rem 0.5rem; }
+}

@@ -6,7 +6,7 @@
   <title>Operaciones con fracciones — Matemáticas 2</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
-  <link rel="stylesheet" href="../assets/style.css?v=20261030g">
+  <link rel="stylesheet" href="../assets/style.css?v=20261030i">
 </head>
 <body>
 
@@ -38,7 +38,7 @@
     <p>Para <strong>simplificar</strong> se usa el <strong>MCD</strong> (máximo común divisor) y para <strong>sumar y restar</strong> se usa el <strong>mcm</strong> (mínimo común múltiplo).
        ¿Ya se te olvidaron? Lo viste en Matemáticas 1.</p>
     <p style="margin-top:0.9rem;">
-      <a class="pg-btn" href="../matematicas-1/tema-06-divisibilidad.html" style="text-decoration:none; display:inline-block;">
+      <a class="pg-btn" href="../matematicas-1/tema-06-mcm-y-mcd.html" style="text-decoration:none; display:inline-block;">
         Repasar mcm y MCD (Matemáticas 1) →
       </a>
     </p>
@@ -131,7 +131,7 @@
     </div>
     <div class="regla-signos">
       ¿No recuerdas cómo se descompone un número en primos o qué es el mcm? Lo estudiaste en Matemáticas 1:<br>
-      <a class="pg-btn" href="../matematicas-1/tema-06-divisibilidad.html" style="text-decoration:none; display:inline-block; margin-top:0.5rem;">Repasar mcm y MCD (Matemáticas 1) →</a>
+      <a class="pg-btn" href="../matematicas-1/tema-06-mcm-y-mcd.html" style="text-decoration:none; display:inline-block; margin-top:0.5rem;">Repasar mcm y MCD (Matemáticas 1) →</a>
     </div>
   </div>
 
@@ -237,6 +237,8 @@
     <p>Resuelve cada operación y escribe el resultado <strong>como fracción simplificada</strong> (por ejemplo <strong>5/6</strong>) o como número entero.
        Las fracciones negativas llevan el signo menos adelante (por ejemplo <strong>−1/6</strong>). Debajo de cada cuadro hay botones para el signo y la fracción.
        Oprime <strong>Comprobar</strong> (o la tecla Enter).</p>
+    <p>Cuando el resultado <strong>se puede simplificar</strong>, también te pedimos el <strong>MCD</strong> (máximo común divisor) del numerador y el denominador del resultado sin simplificar:
+       opera con el mcm y <strong>sin simplificar antes</strong>, descompón los dos números en primos y multiplica los factores comunes.</p>
     <p>Hay sumas, restas, multiplicaciones y divisiones, de las más sencillas a las más difíciles. Te tocan <strong>10 ejercicios al azar</strong> de un banco de
        <strong>100</strong>. Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
   </div>
@@ -299,8 +301,31 @@
     BANK.push({ op: '+', a: parseF('-1/2'), b: parseF('1/3') }, { op: MINUS, a: parseF('-3/4'), b: parseF('1/2') },
               { op: '·', a: parseF('-2/3'), b: parseF('3/5') }, { op: '·', a: parseF('-3/4'), b: parseF('-8/9') },
               { op: '÷', a: parseF('-1/2'), b: parseF('1/4') }, { op: '÷', a: parseF('2/3'), b: parseF('-4/9') });
+    var SUPD = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
+    function sup(n) { return String(n).split('').map(function (c) { return SUPD[c]; }).join(''); }
+    function primeFactors(n) { var f = {}, d = 2; while (n > 1 && d * d <= n) { while (n % d === 0) { f[d] = (f[d] || 0) + 1; n /= d; } d++; } if (n > 1) f[n] = (f[n] || 0) + 1; return f; }
+    function sortedPrimes(f) { return Object.keys(f).map(Number).sort(function (x, y) { return x - y; }); }
+    function primeText(n) { if (n === 1) return '1'; var f = primeFactors(n); return sortedPrimes(f).map(function (p) { return p + (f[p] > 1 ? sup(f[p]) : ''); }).join(' · '); }
+    function commonText(x, y) {   // factores primos comunes, cada uno con el menor exponente
+      var fx = primeFactors(x), fy = primeFactors(y), parts = [];
+      sortedPrimes(fx).forEach(function (p) { if (fy[p]) { var k = Math.min(fx[p], fy[p]); parts.push(p + (k > 1 ? sup(k) : '')); } });
+      return parts.join(' · ') || '1';
+    }
+    function rawOf(e) {   // el resultado sin simplificar, operando con el mcm (suma y resta), sin simplificar antes
+      var a = e.a, b = e.b;
+      if (e.op === '+' || e.op === MINUS) { var s = e.op === '+' ? 1 : -1, m = lcm(a.d, b.d); return { n: a.n * m / a.d + s * b.n * m / b.d, d: m }; }
+      if (e.op === '·') return { n: a.n * b.n, d: a.d * b.d };
+      var ib = invF(b); return { n: a.n * ib.n, d: a.d * ib.d };
+    }
     BANK.forEach(function (e) {
       e.r = e.op === '+' ? addF(e.a, e.b) : e.op === MINUS ? addF(e.a, negF(e.b)) : e.op === '·' ? mulF(e.a, e.b) : mulF(e.a, invF(e.b));
+      e.raw = rawOf(e); e.g = gcd(Math.abs(e.raw.n), e.raw.d);
+      e.needMcd = e.g > 1;   // sólo se pide el MCD cuando el resultado se puede simplificar
+      e.okMcd = [e.g];
+      if (e.needMcd && (e.op === '+' || e.op === MINUS) && e.a.d !== e.b.d) {   // también vale operar con el producto de los denominadores
+        var s2 = e.op === '+' ? 1 : -1, g2 = gcd(Math.abs(e.a.n * e.b.d + s2 * e.b.n * e.a.d), e.a.d * e.b.d);
+        if (g2 > 1 && e.okMcd.indexOf(g2) < 0) e.okMcd.push(g2);
+      }
     });
 
     function solution(e) {
@@ -318,7 +343,14 @@
         line = 'Invierte la segunda: ' + pF(a) + ' · ' + pF(ib) + ' = ' + U(pn, pd);
         if (!(pn === r.n && pd === r.d)) red = ' = ' + fracHTML(r);
       }
-      return line + red + '<br>Resultado: <strong>' + fracHTML(r) + '</strong>';
+      var mcd = '';
+      if (e.needMcd) {
+        var an2 = Math.abs(e.raw.n), dd = e.raw.d;
+        mcd = '<br>Para simplificar: MCD(' + an2 + ', ' + dd + ')<br>' + an2 + ' = ' + primeText(an2) + ' &nbsp;·&nbsp; ' + dd + ' = ' + primeText(dd) +
+              '<br>factores primos comunes: ' + commonText(an2, dd) + ' → MCD = <strong>' + e.g + '</strong>' + (e.okMcd.length > 1 ? ' (si operas con el producto de los denominadores, tu MCD será otro y también se acepta)' : '') +
+              '<br>' + U(e.raw.n, dd) + ' = ' + fracHTML(r) + ' (arriba y abajo ÷ ' + e.g + ')';
+      }
+      return line + red + mcd + '<br>Resultado: <strong>' + fracHTML(r) + '</strong>';
     }
 
     // ---------- tarjetas ----------
@@ -337,12 +369,15 @@
       card.className = 'practice-card';
       card.innerHTML =
         '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + pF(e.a) + ' ' + e.op + ' ' + pF(e.b) + '</span></div>' +
-        '<div class="practice-row"><span class="eq">=</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tu resultado del ejercicio ' + (idx + 1) + '" style="flex:0 1 8rem;">' +
-        '<button type="button" class="practice-check">Comprobar</button></div>' +
+        (e.needMcd ? '<div class="practice-ask">1. Resultado simplificado</div>' : '') +
+        '<div class="practice-row"><span class="eq">=</span><input type="text" data-f="res" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tu resultado del ejercicio ' + (idx + 1) + '" style="flex:0 1 8rem;"></div>' +
         '<div class="practice-keys">' + [MINUS, '/'].map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('') + '</div>' +
+        (e.needMcd ? '<div class="practice-ask">2. Para simplificar, ¿cuánto vale el MCD del numerador y el denominador? (opera con el mcm y sin simplificar antes)</div>' +
+                     '<div class="practice-row"><span class="eq">MCD =</span><input type="text" data-f="mcd" inputmode="numeric" autocomplete="off" spellcheck="false" aria-label="MCD del ejercicio ' + (idx + 1) + '" style="flex:0 1 6rem;"></div>' : '') +
+        '<div class="practice-row" style="margin-top:0.7rem;"><button type="button" class="practice-check">Comprobar</button></div>' +
         '<div class="practice-fb" aria-live="polite"></div>';
       grid.appendChild(card);
-      var input = card.querySelector('input'), fb = card.querySelector('.practice-fb');
+      var input = card.querySelector('input[data-f=res]'), mcdIn = card.querySelector('input[data-f=mcd]'), fb = card.querySelector('.practice-fb');
       card.querySelectorAll('.practice-keys button').forEach(function (b) {
         b.addEventListener('click', function () {
           var s = input.selectionStart == null ? input.value.length : input.selectionStart, e2 = input.selectionEnd == null ? s : input.selectionEnd;
@@ -353,12 +388,20 @@
       function check() {
         var v = input.value.trim(), msg;
         card.classList.remove('ok', 'bad');
-        if (!v) { fb.innerHTML = 'Escribe tu respuesta en el cuadro.'; return; }
+        if (!v || (e.needMcd && !mcdIn.value.trim())) { fb.innerHTML = e.needMcd ? 'Contesta <strong>las dos</strong> preguntas antes de comprobar.' : 'Escribe tu respuesta en el cuadro.'; return; }
+        var mcdOk = true, mcdMsg = '';
+        if (e.needMcd) {
+          var mv = mcdIn.value.trim();
+          if (!/^\d+$/.test(mv)) { card.classList.add('bad'); fb.innerHTML = '<span class="no">El MCD es un número entero positivo,</span> por ejemplo <strong>35</strong>.'; return; }
+          mcdOk = e.okMcd.indexOf(parseInt(mv, 10)) >= 0;
+          if (!mcdOk) mcdMsg = 'Revisa el <strong>MCD</strong>: es el número <strong>más grande</strong> que divide al numerador y al denominador del resultado sin simplificar (' + U(e.raw.n, e.raw.d) + '). Descompón los dos en números primos y multiplica los factores comunes.';
+        }
         var ans = parseNum(v);
         if (!ans) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí lo que escribiste.</span> Escribe una fracción como <strong>5/6</strong> o <strong>−1/6</strong>, o un número entero.'; return; }
         var m = v.replace(/\s+/g, '').replace(/[−–—]/g, '-').match(/^[+-]?(\d+)\/(\d+)$/), unreduced = m && gcd(parseInt(m[1], 10), parseInt(m[2], 10)) > 1;
         if (eqF(ans, e.r)) {
-          if (unreduced) { card.classList.add('bad'); delete done[idx]; score(); fb.innerHTML = '<span class="no">Casi:</span> el resultado es correcto, pero <strong>falta simplificar</strong> la fracción (divide arriba y abajo entre el mismo número).'; return; }
+          if (unreduced) { card.classList.add('bad'); delete done[idx]; score(); fb.innerHTML = '<span class="no">Casi:</span> el resultado es correcto, pero <strong>falta simplificar</strong> la fracción (divide arriba y abajo entre el MCD).' + (mcdMsg ? '<br>' + mcdMsg : ''); return; }
+          if (!mcdOk) { card.classList.add('bad'); delete done[idx]; score(); fb.innerHTML = '<span class="no">✗ Tienes 1 de 2 bien.</span> El resultado está bien. ' + mcdMsg + '<div class="sol">' + solution(e) + '</div>'; return; }
           card.classList.add('ok'); done[idx] = 1; score();
           fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span><div class="sol">' + solution(e) + '</div>';
           return;
@@ -375,10 +418,10 @@
         } else {
           msg = eqF(ans, mulF(e.a, e.b)) ? 'Te faltó <strong>invertir la segunda fracción</strong> antes de multiplicar.' : eqF(ans, mulF(invF(e.a), e.b)) ? 'Se invierte la <strong>segunda</strong> fracción, no la primera.' : eqF(ans, negF(e.r)) ? 'Revisa el <strong>signo</strong>: signos iguales dan +, signos diferentes dan −.' : 'Invierte la segunda fracción, multiplica y simplifica.';
         }
-        fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + msg + '<div class="sol">La respuesta correcta es:<br>' + solution(e) + '</div>';
+        fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + msg + (mcdMsg ? '<br>' + mcdMsg : '') + '<div class="sol">La respuesta correcta es:<br>' + solution(e) + '</div>';
       }
       card.querySelector('.practice-check').addEventListener('click', check);
-      input.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') check(); });
+      card.querySelectorAll('input').forEach(function (i) { i.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') check(); }); });
     }
     function newSet() { grid.innerHTML = ''; done = {}; pick().forEach(makeCard); score(); }
     document.getElementById('fr-new').addEventListener('click', function () {

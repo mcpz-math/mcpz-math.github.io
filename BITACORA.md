@@ -1773,3 +1773,17 @@ Registro de lo que vamos haciendo, en orden cronológico.
   primos ★": Paso 1 descomponer cada denominador en primos, Paso 2 tomar cada primo con su mayor exponente, Paso 3 multiplicar. Ejemplo mcm(4, 6): 4 = 2², 6 = 2 · 3, mcm = 2² · 3 = 12, y cómo convertir
   3/4 = 9/12 y 1/6 = 2/12. Termina con el botón "Repasar mcm y MCD (Matemáticas 1)" (Divisibilidad). **Pendiente:** el subtema "mcm y MCD" de Matemáticas 1 todavía no está escrito.
   El texto de los pasos de las reglas se reduce un poco en pantallas muy angostas.
+
+## 2026-10-30 (clase de mcm y MCD en Matemáticas 1, y casilla del MCD en los ejercicios de fracciones)
+- A pedido de Carmen se **desarrolló el subtema "mcm y MCD"** de Matemáticas 1 (Tema 6, Divisibilidad): página nueva `matematicas-1/tema-06-mcm-y-mcd.html`, enlazada desde el bloque "mcm y MCD" de
+  `matematicas-1/tema-06-divisibilidad.html` ("Ver clase →"). Todo se explica con la **descomposición en números primos**:
+  antes de empezar (qué es un primo y la escalera de divisiones, 60 = 2² · 3 · 5); **MCD** (Paso 1 primos, Paso 2 los comunes con el menor exponente, Paso 3 multiplicar; MCD(12, 18) = 6);
+  **mcm** (Paso 1 primos, Paso 2 todos con el mayor exponente, Paso 3 multiplicar; mcm(12, 18) = 36); una **tabla de exponentes** (el MCD es el menor de cada columna, azul, y el mcm el mayor, naranja);
+  casos especiales (sin primos comunes: MCD = 1; uno múltiplo del otro) y la comprobación MCD · mcm = producto de los dos números; y para qué sirven (simplificar y sumar fracciones).
+- **100 ejercicios** con revisión automática (10 al azar): 90 de dos números y 10 de tres, de menos a más difíciles. Cada uno pide la descomposición en primos de cada número (acepta 2^2 · 3, 2²*3, 2·2·3),
+  el MCD y el mcm. Si falla: avisa si un factor no es primo, si el producto no da el número, si se intercambiaron MCD y mcm, si se multiplicaron los números en lugar de usar el mayor exponente, y muestra la solución
+  con la tabla de primos. Se probaron 400 tarjetas. Rúbrica nueva (actividad "mcmmcd") y guía en Word regenerada. Los botones de repaso de las clases de fracciones (Matemáticas 2) ahora llevan a esta clase.
+- En los ejercicios de `matematicas-2/tema-01-operaciones-con-fracciones.html`, cuando el resultado **se puede simplificar** (casi la mitad de los ejercicios) se pide además **cuánto vale el MCD** del numerador y el
+  denominador del resultado sin simplificar (operando con el mcm y sin simplificar antes; también se acepta el MCD que sale al operar con el producto de los denominadores). Si falla, muestra la descomposición en primos
+  y los factores comunes. Se probaron 400 tarjetas.
+- Estilos nuevos en `assets/style.css`: `.escalera` y `.exp-table` (tabla de exponentes, compacta en teléfono).
