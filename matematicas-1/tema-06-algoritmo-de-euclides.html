@@ -80,54 +80,83 @@
     <button type="button" class="pg-btn" id="eu-new">Otros 10 ejercicios (volver a intentar)</button>
   </p>
 
+  <p class="section-label" id="ejercicios-euclides-2">Ejercicios: algoritmo de Euclides sin pistas</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Ahora sólo te damos <strong>la primera división</strong>. Las demás casillas están en blanco: tú decides <strong>qué números se dividen</strong> en cada paso.</p>
+    <p><strong>1.</strong> En cada fila completa el <strong>dividendo</strong>, el <strong>divisor</strong>, el <strong>cociente</strong> y el <strong>residuo</strong> (<strong>dividendo = divisor · cociente + residuo</strong>).
+       Recuerda: el divisor de una fila pasa a ser el dividendo de la siguiente, y el residuo pasa a ser el nuevo divisor.<br>
+       <strong>2.</strong> Escribe el <strong>MCD</strong> (el último divisor, cuando el residuo es 0).</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong> parejas distintas a las de la serie anterior. Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="eu2-grid"></div>
+  <p class="practice-score" id="eu2-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="eu2-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
   <script src="../assets/practica-tarjetas.js?v=20261030r"></script>
   <script>
   (function () {
     var h = Practica.h;
     function euclid(a, b) { var rows = []; while (b) { var q = Math.floor(a / b), r = a % b; rows.push({ A: a, B: b, q: q, r: r }); a = b; b = r; } return rows; }
-    // Banco de 100 parejas (a > b) con 2 a 6 divisiones, ordenadas de menos a más pasos y de números menores a mayores
-    var seed = 77031, seen = {}, BANK = [];
-    function rnd() { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; }
-    for (var tries = 0; BANK.length < 100 && tries < 100000; tries++) {
-      var a = 24 + Math.floor(rnd() * 460), b = 8 + Math.floor(rnd() * (a - 8)), key = a + ',' + b;
-      if (b >= a || a % b === 0 || seen[key]) continue;
-      var rows = euclid(a, b);
-      if (rows.length < 2 || rows.length > 6) continue;
-      seen[key] = 1; BANK.push({ a: a, b: b, rows: rows, g: rows[rows.length - 1].B });
+    // Bancos de 100 parejas (a > b) con 2 a 6 divisiones, ordenadas de menos a más pasos y de números menores a mayores.
+    // La serie 2 usa otras parejas (no se repite ninguna de la serie 1).
+    var seen = {};
+    function makeBank(seedStart, maxA) {
+      var seed = seedStart, bank = [];
+      function rnd() { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; }
+      for (var tries = 0; bank.length < 100 && tries < 200000; tries++) {
+        var a = 24 + Math.floor(rnd() * (maxA - 24)), b = 8 + Math.floor(rnd() * (a - 8)), key = a + ',' + b;
+        if (b >= a || a % b === 0 || seen[key]) continue;
+        var rows = euclid(a, b);
+        if (rows.length < 2 || rows.length > 6) continue;
+        seen[key] = 1; bank.push({ a: a, b: b, rows: rows, g: rows[rows.length - 1].B });
+      }
+      return bank.sort(function (x, y) { return (x.rows.length - y.rows.length) || (x.a - y.a); });
     }
-    BANK.sort(function (x, y) { return (x.rows.length - y.rows.length) || (x.a - y.a); });
+    var BANK = makeBank(77031, 484), BANK2 = makeBank(31102, 720);
 
-    Practica.setup({
-      id: 'eu', bank: BANK, anchor: 'ejercicios-euclides',
-      card: function (e, n) {
+    // blank = false: cada fila ya trae el dividendo y el divisor (sólo se completan el cociente y el residuo)
+    // blank = true : sólo la primera fila trae sus números; en las demás se escriben dividendo, divisor, cociente y residuo
+    function card(blank) {
+      return function (e, n) {
+        var num = 'inputmode="numeric" ';
         var rowsHTML = e.rows.map(function (r, i) {
-          return '<div class="practice-row"><span class="eq">' + r.A + ' = ' + r.B + ' ·</span>' + h.inputHTML('q' + i, 'Cociente de la división ' + (i + 1) + ', ejercicio ' + n, 'flex:0 1 4.5rem;', 'inputmode="numeric" ') +
-                 '<span class="eq">+</span>' + h.inputHTML('r' + i, 'Residuo de la división ' + (i + 1) + ', ejercicio ' + n, 'flex:0 1 4.5rem;', 'inputmode="numeric" ') + '</div>';
+          var cr = h.inputHTML('q' + i, 'Cociente de la división ' + (i + 1) + ', ejercicio ' + n, 'flex:0 1 4.2rem;', num) + '<span class="eq">+</span>' + h.inputHTML('r' + i, 'Residuo de la división ' + (i + 1) + ', ejercicio ' + n, 'flex:0 1 4.2rem;', num);
+          if (!blank || i === 0) return '<div class="practice-row"><span class="eq">' + r.A + ' = ' + r.B + ' ·</span>' + cr + '</div>';
+          return '<div class="practice-row">' + h.inputHTML('A' + i, 'Dividendo de la división ' + (i + 1) + ', ejercicio ' + n, 'flex:0 1 4.2rem;', num) + '<span class="eq">=</span>' +
+                 h.inputHTML('B' + i, 'Divisor de la división ' + (i + 1) + ', ejercicio ' + n, 'flex:0 1 4.2rem;', num) + '<span class="eq">·</span>' + cr + '</div>';
         }).join('');
         var solRows = e.rows.map(function (r) { return r.A + ' = ' + r.B + ' · ' + r.q + ' + ' + r.r; }).join('<br>');
         return {
           head: 'MCD(' + e.a + ', ' + e.b + ')',
-          body: '<div class="practice-ask">1. Completa cada división (cociente y residuo)</div>' + rowsHTML +
-                '<div class="practice-ask">2. ¿Cuánto vale el MCD?</div><div class="practice-row"><span class="eq">MCD =</span>' + h.inputHTML('g', 'MCD del ejercicio ' + n, 'flex:0 1 6rem;', 'inputmode="numeric" ') + '</div>',
+          body: '<div class="practice-ask">1. Completa cada división' + (blank ? ' (dividendo, divisor, cociente y residuo)' : ' (cociente y residuo)') + '</div>' + rowsHTML +
+                '<div class="practice-ask">2. ¿Cuánto vale el MCD?</div><div class="practice-row"><span class="eq">MCD =</span>' + h.inputHTML('g', 'MCD del ejercicio ' + n, 'flex:0 1 6rem;', num) + '</div>',
           check: function (ctx) {
             var empty = Object.keys(ctx.inp).some(function (k) { return !ctx.inp[k].value.trim(); });
             if (empty) return { msg: 'Contesta <strong>todas</strong> las casillas antes de comprobar.' };
             var wrong = [], msgs = [];
             for (var i = 0; i < e.rows.length; i++) {
-              var r = e.rows[i], q = h.parseNat(ctx.inp['q' + i].value), s = h.parseNat(ctx.inp['r' + i].value);
-              if (q == null || s == null) return { bad: true, msg: '<span class="no">Los cocientes y los residuos son números enteros,</span> por ejemplo <strong>2</strong> o <strong>0</strong>.' };
+              var r = e.rows[i], q = h.parseNat(ctx.inp['q' + i].value), s = h.parseNat(ctx.inp['r' + i].value), A = r.A, B = r.B, okAB = true;
+              if (blank && i > 0) { A = h.parseNat(ctx.inp['A' + i].value); B = h.parseNat(ctx.inp['B' + i].value); okAB = A === r.A && B === r.B; }
+              if (q == null || s == null || A == null || B == null) return { bad: true, msg: '<span class="no">Todas las casillas son números enteros,</span> por ejemplo <strong>2</strong> o <strong>0</strong>.' };
+              if (!okAB) { wrong.push('n' + i); msgs.push('División ' + (i + 1) + ': el <strong>dividendo</strong> es el divisor de la fila anterior (' + r.A + ') y el <strong>divisor</strong> es el residuo de la fila anterior (' + r.B + ').'); }
               if (q !== r.q || s !== r.r) { wrong.push('d' + i); msgs.push('División ' + (i + 1) + ': ' + r.A + ' ÷ ' + r.B + ' da cociente <strong>' + r.q + '</strong> (' + r.B + ' · ' + r.q + ' = ' + (r.B * r.q) + ') y residuo <strong>' + r.r + '</strong> (' + r.A + ' − ' + (r.B * r.q) + ').'); }
             }
             var g = h.parseNat(ctx.inp.g.value);
             if (g == null) return { bad: true, msg: '<span class="no">El MCD es un número entero.</span>' };
             if (g !== e.g) { wrong.push('g'); msgs.push('El <strong>MCD</strong> es el <strong>último divisor</strong>: el de la fila en la que el residuo es 0 (' + e.g + ').'); }
-            return { wrong: wrong, msgs: msgs, total: e.rows.length + 1 };
+            return { wrong: wrong, msgs: msgs, total: (blank ? 2 * e.rows.length - 1 : e.rows.length) + 1 };
           },
           sol: solRows + '<br>Residuo 0 → MCD = <strong>' + e.g + '</strong>' +
                '<br>Con primos: ' + e.a + ' = ' + h.primeText(e.a) + ' &nbsp;·&nbsp; ' + e.b + ' = ' + h.primeText(e.b)
         };
-      }
-    });
+      };
+    }
+    Practica.setup({ id: 'eu', bank: BANK, anchor: 'ejercicios-euclides', card: card(false) });
+    Practica.setup({ id: 'eu2', bank: BANK2, anchor: 'ejercicios-euclides-2', card: card(true) });
   })();
   </script>
 

@@ -1093,6 +1093,7 @@
       "evidencia": [
         "Los ejercicios al azar de la página, resueltos en el cuaderno con todas las divisiones (dividendo, divisor, cociente y residuo).",
         "Al menos un ejercicio con 2 divisiones y uno con 5 ó 6.",
+        "Al menos un ejercicio de la serie sin pistas, donde el alumno decide qué números se dividen en cada paso (el divisor pasa a ser dividendo y el residuo a ser divisor).",
         "La comprobación de un resultado con la descomposición en primos."
       ],
       "errores": [

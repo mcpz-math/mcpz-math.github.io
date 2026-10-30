@@ -1839,3 +1839,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, en `matematicas-1/tema-06-algoritmo-de-euclides.html` se **quitó la sección "Todo en una tabla"** (la tabla de dividendo, divisor, cociente y residuo, con la comprobación con primos y la nota de "primos entre sí").
   La página queda con: repaso, "La idea" (con el recuadro de pasos y el ejemplo MCD(252, 105) = 21) y los ejercicios. Se ajustaron la rúbrica y el bloque de Divisibilidad (ya no mencionan la tabla). Antes de regenerar la guía se comprobó
   que el JSON era válido y que el generador actualizó las 18 rúbricas.
+- A pedido de Carmen, `matematicas-1/tema-06-algoritmo-de-euclides.html` tiene una **segunda serie de 100 ejercicios "sin pistas"** (10 al azar): sólo se da la **primera división** y en las demás filas las casillas están en blanco:
+  el alumno escribe el **dividendo, el divisor, el cociente y el residuo** (el divisor pasa a ser dividendo y el residuo pasa a ser divisor) y al final el MCD. Son otras 100 parejas (ninguna repite las de la serie 1, números hasta 720). Si falla, dice qué
+  números van en esa fila y muestra todas las divisiones. La serie 1 queda igual (con los números de cada fila ya puestos). Se probaron 800 tarjetas. Se actualizaron la rúbrica ("euclides"), el bloque de Divisibilidad y la guía en Word
+  (antes de regenerarla se comprobó que el JSON fuera válido y que se actualizaran las 18 rúbricas).
