@@ -97,8 +97,22 @@
   <div class="prose">
     <p><strong>Truco:</strong> no hace falta probar con todos los números. Basta con los <strong>primos</strong> que no pasan de la <strong>raíz cuadrada</strong> del número:
        si un número tiene un divisor mayor que su raíz, también tiene uno menor.</p>
-    <p>Todo número compuesto se puede escribir como un <strong>producto de primos</strong> (por ejemplo 60 = 2² · 3 · 5). Eso se llama <strong>descomposición en números primos</strong> y es la base
-       para calcular el MCD y el mcm: lo verás en <a href="tema-06-mcm-y-mcd.html" style="color:var(--forest); font-weight:700;">mcm y MCD</a>.</p>
+  </div>
+
+  <p class="section-label" id="descomponer">Descomponer en números primos</p>
+  <div class="prose">
+    <p><strong>Descomponer</strong> un número compuesto es escribirlo como un producto de primos. Se divide entre el primo más pequeño que se pueda, una y otra vez, hasta llegar a 1:</p>
+  </div>
+  <table class="escalera" aria-label="Descomposición de 60 en números primos">
+    <tr><td>60</td><td>2</td></tr>
+    <tr><td>30</td><td>2</td></tr>
+    <tr><td>15</td><td>3</td></tr>
+    <tr><td>5</td><td>5</td></tr>
+    <tr><td>1</td><td></td></tr>
+  </table>
+  <div class="prose">
+    <p style="text-align:center;"><strong>60 = 2 · 2 · 3 · 5 = 2² · 3 · 5</strong> &nbsp;(los primos repetidos se escriben con exponente).</p>
+    <p>Esta descomposición es la base para calcular el <a href="tema-06-mcm-y-mcd.html" style="color:var(--forest); font-weight:700;">MCD y el mcm</a>.</p>
   </div>
 
   <p class="section-label" id="ejercicios-primos">Ejercicios: primos y compuestos</p>

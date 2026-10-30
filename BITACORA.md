@@ -1808,3 +1808,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Código nuevo compartido: `assets/practica-tarjetas.js` (motor de tarjetas de ejercicios: opciones, casillas, botones, 10 al azar y la tabla de descomposición simultánea `dsimHTML`) y estilos en `assets/style.css`
   (criba, tabla de criterios, tabla de exponentes, escalera de divisiones, `.dsim`). Se probaron 600 tarjetas de cada subtema (excepto mcm y MCD, 300). Cinco rúbricas nuevas ("primoscomp", "multiplosdiv", "criteriosdiv",
   "problemasmcmmcd", "euclides") y la guía en Word regenerada.
+- A pedido de Carmen, la sección "descomponer en números primos" (la escalera de divisiones con 60 = 2² · 3 · 5) se **movió** de `matematicas-1/tema-06-mcm-y-mcd.html` a
+  `matematicas-1/tema-06-primos-y-compuestos.html` (ahora es la sección "Descomponer en números primos", antes de los ejercicios, con el enlace a mcm y MCD). La clase de mcm y MCD ya no la tiene; su
+  recuadro de Repaso manda a "Primos y descomposición en primos" (`tema-06-primos-y-compuestos.html#descomponer`) y a Múltiplos y divisores.
