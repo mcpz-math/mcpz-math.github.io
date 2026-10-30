@@ -114,31 +114,6 @@
     <button type="button" class="pg-btn" id="bc-new">Otros 10 ejercicios (volver a intentar)</button>
   </p>
 
-  <p class="section-label" id="ejercicios-binomio-raices">Ejercicios: binomio al cuadrado con raíces</p>
-  <div class="callout">
-    <div class="k">Instrucciones</div>
-    <p>Ahora uno de los términos del binomio trae una <strong>raíz cuadrada</strong>, por ejemplo (x + <span class='rad'>√<span class='radicand'>3</span></span>)².
-       La regla es la misma, <strong>(a ± b)² = a² ± 2ab + b²</strong>, y sólo hay que recordar que
-       <strong>(√n)² = n</strong> y que <strong>(k√n)² = k² · n</strong>. Por ejemplo:</p>
-    <ul style="margin:0.4rem 0 0.4rem; padding-left:1.4rem; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
-      <li>(x + <span class='rad'>√<span class='radicand'>5</span></span>)² = x² + 2<span class='rad'>√<span class='radicand'>5</span></span>x + 5</li>
-      <li>(x − 2<span class='rad'>√<span class='radicand'>3</span></span>)² = x² − 4<span class='rad'>√<span class='radicand'>3</span></span>x + 12</li>
-      <li>(<span class='rad'>√<span class='radicand'>2</span></span>x + 3)² = 2x² + 6<span class='rad'>√<span class='radicand'>2</span></span>x + 9</li>
-    </ul>
-    <p>Escribe el resultado <strong>sin paréntesis</strong> y oprime <strong>Comprobar</strong>. La raíz se escribe con el botón
-       <strong>√</strong> que está debajo de cada cuadro (o con el teclado, <strong>sqrt</strong>): por ejemplo,
-       <strong>2√5x</strong> es 2 · √5 · x. También se acepta una raíz sin simplificar (√20 en lugar de 2√5).
-       Para el exponente usa <strong>^</strong> o el botón <strong>²</strong>.</p>
-    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>85</strong>. Oprime
-       <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
-  </div>
-
-  <div class="practice-grid" id="bcr-grid"></div>
-  <p class="practice-score" id="bcr-score"></p>
-  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
-    <button type="button" class="pg-btn" id="bcr-new">Otros 10 ejercicios (volver a intentar)</button>
-  </p>
-
   <p class="section-label" id="trinomio-cuadrado-perfecto">Trinomio cuadrado perfecto (TCP): cómo se factoriza</p>
   <div class="prose">
     <p>Un <strong>trinomio cuadrado perfecto</strong> es el resultado de elevar un binomio al cuadrado.
@@ -161,7 +136,7 @@
        el último término tiene raíz: √(10y²) = <span class='rad'>√<span class='radicand'>10</span></span> y. Entonces el doble producto es
        2 · x · <span class='rad'>√<span class='radicand'>10</span></span> y = 2<span class='rad'>√<span class='radicand'>10</span></span> xy, que no es 6xy.
        Por eso <strong>no</strong> es un TCP: lo que decide es que el término de en medio sea el doble producto 2ab.
-       Más abajo hay ejercicios con raíces en el segundo término.</p>
+       Entre los ejercicios de TCP de abajo también hay con raíces.</p>
   </div>
 
   <p class="section-label" id="video-tcp">Video: trinomio cuadrado perfecto</p>
@@ -186,7 +161,13 @@
        Escribe tu respuesta con paréntesis, por ejemplo <strong>(x + 5)^2</strong> o <strong>(x + 5)(x + 5)</strong>,
        y oprime <strong>Comprobar</strong>. Para los exponentes usa <strong>^</strong> o los botones de abajo de
        cada cuadro; las fracciones con <strong>/</strong>.</p>
-    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Oprime
+    <p>Los últimos ejercicios del banco traen una <strong>raíz cuadrada</strong>, por ejemplo
+       x² + 2<span class='rad'>√<span class='radicand'>5</span></span>x + 5. La raíz de un extremo puede no ser exacta, pero se escribe con radical:
+       <span class='rad'>√<span class='radicand'>5</span></span> es la raíz de 5, y <span class='rad'>√<span class='radicand'>12</span></span> = 2<span class='rad'>√<span class='radicand'>3</span></span>.
+       Haz lo de siempre: saca la raíz del primer y del último término, calcula el doble producto 2ab y compáralo con el término de en medio.
+       Si es un TCP, escribe la raíz con el botón <strong>√</strong> (o con <strong>sqrt</strong>), por ejemplo <strong>(x + √5)^2</strong>;
+       <strong>2√5x</strong> es 2 · √5 · x.</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>200</strong>. Oprime
        <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
   </div>
 
@@ -194,27 +175,6 @@
   <p class="practice-score" id="tcp-score"></p>
   <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
     <button type="button" class="pg-btn" id="tcp-new">Otros 10 ejercicios (volver a intentar)</button>
-  </p>
-
-  <p class="section-label" id="ejercicios-tcp-raices">Ejercicios: trinomio cuadrado perfecto con raíces</p>
-  <div class="callout">
-    <div class="k">Instrucciones</div>
-    <p>Ahora el término de en medio (y a veces un extremo) trae una <strong>raíz cuadrada</strong>, por ejemplo
-       x² + 2<span class='rad'>√<span class='radicand'>5</span></span>x + 5. Aquí la raíz de un extremo puede no ser exacta, pero se escribe con radical:
-       <span class='rad'>√<span class='radicand'>5</span></span> es la raíz de 5, y <span class='rad'>√<span class='radicand'>12</span></span> = 2<span class='rad'>√<span class='radicand'>3</span></span>.
-       Haz lo de siempre: saca la raíz del primer y del último término (a y b), calcula el <strong>doble producto 2ab</strong> y compáralo con el
-       término de en medio. Después oprime <strong>Sí es un TCP</strong> o <strong>No es un TCP</strong>.</p>
-    <p>Si no lo es, la página te explica por qué. <strong>Sólo si sí lo es</strong>, aparece un cuadro para <strong>factorizarlo</strong>:
-       <strong>a² ± 2ab + b² = (a ± b)²</strong>, por ejemplo <strong>(x + √5)^2</strong>. La raíz se escribe con el botón <strong>√</strong>
-       (o con <strong>sqrt</strong>): <strong>2√5x</strong> es 2 · √5 · x.</p>
-    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Oprime
-       <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
-  </div>
-
-  <div class="practice-grid" id="tcpr-grid"></div>
-  <p class="practice-score" id="tcpr-score"></p>
-  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
-    <button type="button" class="pg-btn" id="tcpr-new">Otros 10 ejercicios (volver a intentar)</button>
   </p>
 
   <script src="../assets/practica-algebra.js"></script>
@@ -256,10 +216,10 @@
       'x-{1/4}', 'y+{2/3}', '!x^2+{1/2}x+{1/4}', 'm-{3/2}', 'n+{4/5}', '{1/2}x-6', '{1/3}y+9', '{3/2}a-2', '{2/3}m+4', '!{1/4}y^2-y+{1/2}', '{1/2}x+{1/5}', '{3/5}p-{1/2}',
       '0.5x-4', '0.3y+2', '!0.04x^2+0.4x+0.25', '0.2m-0.5', '1.5a+3', '!0.09p^2-0.6p+0.4'
     ];
-    // Banco 3 (con raíces): el binomio tiene una raíz cuadrada (√n se escribe con el signo √; n sin factores cuadrados).
-    //   1–15 letra ± √n · 16–30 letra ± k√n · 31–45 coeficiente·letra ± √n · 46–60 coeficiente·letra ± k√n ·
-    //   61–72 dos letras · 73–85 el primer término también lleva raíz.
-    var BANK_BCR = [
+    // Banco 3 (TCP con raíces): 85 que sí son TCP (el binomio con una raíz cuadrada que se eleva al cuadrado; √n con n sin factores
+    // cuadrados) y 15 que no lo son, ver abajo. 1–15 letra ± √n · 16–30 letra ± k√n · 31–45 coeficiente·letra ± √n ·
+    // 46–60 coeficiente·letra ± k√n · 61–72 dos letras · 73–85 el primer término también lleva raíz.
+    var BANK_TCPR_SI = [
       'x+√2', 'y-√3', 'a+√5', 'm-√7', 'n+√6', 'p+√10', 'b-√11', 'k+√3', 'z-√5', 'c+√2', 't-√6', 'w+√7', 'r-√10', 'q+√11', 'x-√2',
       'x+2√2', 'y-2√3', 'a+3√2', 'm-2√5', 'n+4√2', 'p-3√3', 'b+2√7', 'k-5√2', 'z+3√5', 'c-2√6', 't+2√10', 'w-4√3', 'r+3√7', 'q-6√2', 'x+2√11',
       '2x+√3', '3y-√2', '4a+√5', '5m-√7', '2n+√6', '3p-√10', '7b+√2', '2k-√3', '5z+√5', '4c-√11', '3t+√7', '6w-√2', '2r+√10', '3q-√6', '9x+√3',
@@ -267,18 +227,18 @@
       'x+√2y', 'a-√3b', 'm+√5n', 'p-√7q', '2x+√3y', '3a-√2b', '4m+√5n', '2p-√6q', 'x+2√3y', 'a-3√2b', '2m+2√5n', '3p-2√3q',
       '√2x+3', '√3y-1', '√5a+2', '√2m-4', '√3n+5', '√7p-1', '√2x+√3', '√3y-√2', '√5a+√2', '√2m-√5', '2√2x+1', '2√3y-1', '3√2a+2'
     ];
-    // Banco 4 (TCP con raíces): 85 que sí son TCP (como el binomio que se eleva al cuadrado, igual que arriba) y 15 que no
-    // lo son (con "!", escritos completos): en todos, el término de en medio no es el doble producto de las raíces de los extremos.
+    // Los 15 que no son TCP (con "!", escritos completos): en todos, el término de en medio no es el doble producto de las raíces de los extremos.
     var NO_TCPR = [
       '!x^2+3√5x+5', '!x^2+√2x+2', '!x^2-4√3x+3', '!x^2+2√3x+9', '!x^2-2√5x+25', '!4x^2+4√3x+9', '!9y^2-5√2y+2', '!a^2+4√2a+4',
       '!m^2-2√6m+9', '!x^2+6√2x+16', '!3x^2+6x+5', '!5y^2-6√5y+4', '!x^2y^2+2√7xy+5', '!4a^2-3√5a+5', '!x^2-8√2x+8'
     ];
     var BANK_TCPR = [], nNo = 0;   // un "no" después de cada 6 que sí; el que sobre va al final
-    BANK_BCR.forEach(function (s, i) {
+    BANK_TCPR_SI.forEach(function (s, i) {
       BANK_TCPR.push(s);
       if ((i + 1) % 6 === 0 && nNo < NO_TCPR.length) BANK_TCPR.push(NO_TCPR[nNo++]);
     });
     while (nNo < NO_TCPR.length) BANK_TCPR.push(NO_TCPR[nNo++]);
+    BANK_TCP = BANK_TCP.concat(BANK_TCPR);   // los de raíces son los últimos (101–200) del banco de TCP
 
     // ---------- texto del banco → pantalla y → lectura ----------
     function radHTML(n) { return "<span class='rad'>√<span class='radicand'>" + n + '</span></span>'; }
@@ -298,7 +258,7 @@
       if (str.charAt(0) === '!') return buildNo(str.slice(1));
       var p = split(str), PA = parse(ps(p.A)).P, PB = parse(ps(p.B)).P, PBs = p.s === '-' ? padd({}, PB, -1) : PB;
       var a2 = pmul(PA, PA), b2 = pmul(PB, PB), ab = pmul(PA, PBs), mid = pmul(ab, { '': [2, 1] });
-      return { isTCP: true, A: p.A, B: p.B, s: p.s, sg: p.s === '-' ? MINUS : '+', dec: str.indexOf('.') >= 0, rad: str.indexOf('√') >= 0,
+      return { isTCP: true, A: p.A, B: p.B, s: p.s, sg: p.s === '-' ? MINUS : '+', dec: str.indexOf('.') >= 0,
                PA: PA, PB: PB, a2: a2, b2: b2, ab: ab, mid: mid, tri: padd(padd(a2, mid, 1), b2, 1) };
     }
     // un término (polinomio de un solo término) → { neg, html }
@@ -352,9 +312,8 @@
     }
 
     // ---------- tarjetas ----------
-    var KEYS_BC = ['²', '³', '⁴', '⁶', '⁸', '−', '/'], KEYS_TCP = ['(', ')', '²', '³', '⁴', '−', '/'];
-    function setup(id, list, kind, opt) {
-      opt = opt || {};
+    var KEYS_BC = ['²', '³', '⁴', '⁶', '⁸', '−', '/'], KEYS_TCP = ['(', ')', '²', '³', '⁴', '√', '−', '/'];
+    function setup(id, list, kind) {
       var BANK = list.map(build), N = 10, done = {};
       var grid = document.getElementById(id + '-grid'), scoreEl = document.getElementById(id + '-score');
       function score() {
@@ -377,8 +336,7 @@
         var bin = ex.isTCP ? '(' + fx(ex.A) + ' ' + ex.sg + ' ' + fx(ex.B) + ')²' : '', sol, q, label;
         if (kind === 'bc') {
           q = bin; label = 'Tu desarrollo del ejercicio ' + (idx + 1);
-          sol = '<span style="white-space:nowrap;">' + bin + ' = (' + fx(ex.A) + ')² ' + ex.sg + ' 2(' + fx(ex.A) + ')(' + fx(ex.B) + ') + (' + fx(ex.B) + ')²</span><br>= <strong>' + triHTML(ex) + '</strong>' +
-                (ex.rad ? '<br>Recuerda: (√n)² = n y (k√n)² = k² · n.' : '');
+          sol = '<span style="white-space:nowrap;">' + bin + ' = (' + fx(ex.A) + ')² ' + ex.sg + ' 2(' + fx(ex.A) + ')(' + fx(ex.B) + ') + (' + fx(ex.B) + ')²</span><br>= <strong>' + triHTML(ex) + '</strong>';
         } else {
           q = triHTML(ex); label = 'Tu factorización del ejercicio ' + (idx + 1);
           sol = !ex.isTCP ? '<strong>No es un TCP.</strong><br>' + ex.why :
@@ -386,7 +344,7 @@
                 '<span style="white-space:nowrap;">Doble producto: 2(' + fx(ex.A) + ')(' + fx(ex.B) + ') = ' + termHTML(ex.mid, ex.dec).html + ' ✓</span><br>' +
                 '<strong>Sí es un TCP: ' + bin + '</strong>';
         }
-        var keys = (opt.keys || (kind === 'bc' ? KEYS_BC : KEYS_TCP)).map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('');
+        var keys = (kind === 'bc' ? KEYS_BC : KEYS_TCP).map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('');
         var card = document.createElement('div');
         card.className = 'practice-card';
         var choice = kind === 'tcp' ?
@@ -436,7 +394,7 @@
           if (!r) {
             card.classList.add('bad');
             fb.innerHTML = '<span class="no">No entendí lo que escribiste.</span> Escríbelo como, por ejemplo, ' +
-              (kind === 'bc' ? '<strong>x^2 + 10x + 25</strong> o <strong>4x² − 12x + 9</strong>.' : '<strong>(x + 5)^2</strong> o <strong>(3x − 2)²</strong>' + (opt.keys && opt.keys.indexOf('√') >= 0 ? ' (la raíz con el botón √: <strong>(x + √5)^2</strong>)' : '') + '.');
+              (kind === 'bc' ? '<strong>x^2 + 10x + 25</strong> o <strong>4x² − 12x + 9</strong>.' : '<strong>(x + 5)^2</strong> o <strong>(3x − 2)²</strong>' + ' (si hay una raíz, usa el botón √: <strong>(x + √5)^2</strong>).');
             return;
           }
           var good = kind === 'bc' ? (same(r.P, ex.tri) && r.terms === 3) : factorOk(v, r, ex);
@@ -453,7 +411,6 @@
             else if (same(r.P, padd(ex.a2, ex.b2, 1))) msg = 'Te faltó el <strong>doble producto</strong>: (a ± b)² <strong>no</strong> es a² ± b². Entre los dos cuadrados va el término <strong>2ab</strong>.';
             else if (same(r.P, padd(padd(ex.a2, ex.mid, -1), ex.b2, 1))) msg = 'Revisa el <strong>signo del término de en medio</strong> (el doble producto 2ab): fíjate en el signo de a y en el de b.';
             else if (same(r.P, padd(padd(ex.a2, ex.ab, 1), ex.b2, 1)) || same(r.P, padd(padd(ex.a2, ex.ab, -1), ex.b2, 1))) msg = 'El término de en medio es el <strong>doble</strong> producto: 2 · a · b, no sólo a · b.';
-            else if (ex.rad && same(r.P, padd(padd(ex.a2, ex.mid, 1), ex.PB, 1))) msg = 'Al elevar al cuadrado una raíz, la raíz desaparece: <strong>(√n)² = n</strong>. El último término ya no lleva √.';
             else msg = 'Eleva al cuadrado <strong>cada</strong> término (también el número que acompaña a la letra o a la raíz), y en medio escribe el doble producto <strong>2ab</strong>.';
           } else {
             var opp = pmul(padd(ex.PA, ex.PB, ex.s === '-' ? 1 : -1), padd(ex.PA, ex.PB, ex.s === '-' ? 1 : -1));
@@ -474,14 +431,12 @@
       }
       document.getElementById(id + '-new').addEventListener('click', function () {
         newSet();
-        document.getElementById(opt.anchor || (kind === 'bc' ? 'ejercicios-binomio-al-cuadrado' : 'ejercicios-tcp')).scrollIntoView({ behavior: 'smooth' });
+        document.getElementById(kind === 'bc' ? 'ejercicios-binomio-al-cuadrado' : 'ejercicios-tcp').scrollIntoView({ behavior: 'smooth' });
       });
       newSet();
     }
     setup('bc', BANK_BC, 'bc');
     setup('tcp', BANK_TCP, 'tcp');
-    setup('bcr', BANK_BCR, 'bc', { keys: ['²', '√', '+', '−'], anchor: 'ejercicios-binomio-raices' });
-    setup('tcpr', BANK_TCPR, 'tcp', { keys: ['(', ')', '²', '√', '+', '−'], anchor: 'ejercicios-tcp-raices' });
   })();
   </script>
 

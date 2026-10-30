@@ -1661,3 +1661,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   término, el término de en medio, con las dos respuestas posibles + o −, y la factorización con el signo elegido). Explica cada error (por ejemplo "hay
   que elevar al cuadrado b ÷ 2, no b" o "revisa el signo del binomio"). Se probó con 250 tarjetas de cada serie.
 - Rúbrica por competencias (plegada) al final de la página, actividad "completartcp" en `rubricas-por-actividad.json`; se regeneró la guía en Word.
+
+## 2026-10-30 (ajuste: las raíces van mezcladas en el banco de TCP, no en binomios al cuadrado)
+- A pedido de Carmen, en `matematicas-3/tema-06-binomio-al-cuadrado-y-tcp.html` se **quitó** la serie "binomio al cuadrado con raíces": la sección de
+  binomio al cuadrado quedó como antes (banco de 100, sin raíces).
+- Los ejercicios de **TCP con raíces** ya no son una sección aparte: se **mezclaron con el banco de 100 de TCP**, que ahora tiene **200 ejercicios**
+  (los 100 de siempre y, al final del banco, 100 con raíces: 85 que sí son TCP y 15 que no). Salen 10 al azar de los 200, así que en cada tanda
+  puede haber ejercicios con y sin raíces. El botón √ está en todos los cuadros de factorización de TCP.
+- Se actualizaron las instrucciones del TCP, la rúbrica ("binomioscuad") y la guía en Word. Se probaron 400 tarjetas del banco mezclado.
