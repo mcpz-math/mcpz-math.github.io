@@ -1724,3 +1724,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
   página pide la hoja de estilos con una versión (`style.css?v=20261030c`); cuando se cambien estilos de una página nueva, conviene subir ese número. Las fracciones dentro de las
   etiquetas de color tienen más espacio.
 - Se actualizó la rúbrica (actividad "binomiofactorcomun") y la guía en Word.
+- A pedido de Carmen, se agregó un **recordatorio de las leyes de los signos** justo antes de los ejercicios en `tema-06-binomio-factor-comun.html` y en
+  `tema-06-factorizar-x2-bx-c.html` (en las dos hay que decidir signos de números y de productos). Es un recuadro "Antes de empezar" en dos columnas: **Multiplicar** (+·+ = +, −·− = +,
+  +·− = −, −·+ = −, con ejemplos) y **Sumar** (mismo signo: se suman y se deja el signo; signos diferentes: se restan y gana el número más grande), con un enlace a
+  "Leyes de los signos" de Matemáticas 1 (`matematicas-1/leyes-de-los-signos.html`) para repasarlo con más detalle. Los estilos (`.signos-box`) están en `assets/style.css`;
+  las dos páginas piden la hoja de estilos con la versión `?v=20261030d`.
