@@ -1648,3 +1648,16 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - `assets/practica-algebra.js` ahora lee raíces (√5, √(12), sqrt(3), 2√5x) y las simplifica (√20 = 2√5; acepta √2, √3, √5, √7, √11 y √13 y sus
   productos). También se subió un poco el interlineado de las soluciones (`.sol`) para que se vean bien las barras de las raíces.
 - Se actualizó la rúbrica (`rubricas-por-actividad.json`, "binomioscuad") y la guía en Word. Se probaron ida y vuelta las 4 series (más de 600 tarjetas).
+
+## 2026-10-30 (nuevo subtema: completar el trinomio cuadrado perfecto)
+- A pedido de Carmen, se agregó el tema **completar trinomios cuadrados perfectos** en la sección "Binomio factor común y trinomio de la forma
+  x² + bx + c" del Tema 6. Es una página nueva, `matematicas-3/tema-06-trinomio-x2-bx-c.html`, enlazada ("Ver subtema →") desde el bloque de esa
+  sección en `tema-06-productos-notables-y-factorizacion.html`. El resto de la sección (binomio factor común y factorizar x² + bx + c) sigue "Próximamente".
+- La página tiene: un recuadro de **Repaso** que enlaza a "Binomio al cuadrado y TCP"; qué significa completar, con la figura del cuadrado de lado
+  x + 3 al que le falta la esquina (9); los pasos (b, b ÷ 2, (b ÷ 2)², factorizar) con fracciones apiladas; cuatro ejemplos (b = 8, −10, 5 y −1); los
+  errores comunes; y un ejemplo de para qué sirve (x² + 6x = 7).
+- **Dos series de ejercicios con revisión automática** (10 al azar cada vez): (1) "falta el último término" (banco de 100: b par, negativo, impar,
+  fracción y decimal; 3 pasos: b ÷ 2, el término que falta y la factorización) y (2) "falta el término de en medio" (banco de 50: raíz del último
+  término, el término de en medio, con las dos respuestas posibles + o −, y la factorización con el signo elegido). Explica cada error (por ejemplo "hay
+  que elevar al cuadrado b ÷ 2, no b" o "revisa el signo del binomio"). Se probó con 250 tarjetas de cada serie.
+- Rúbrica por competencias (plegada) al final de la página, actividad "completartcp" en `rubricas-por-actividad.json`; se regeneró la guía en Word.

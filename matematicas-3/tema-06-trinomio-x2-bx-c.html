@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Completar el trinomio cuadrado perfecto — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-06-productos-notables-y-factorizacion.html">← Tema 6</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 3 · Tema 6 · Trinomio de la forma x² + bx + c</div>
+    <h1>Completar el trinomio cuadrado perfecto</h1>
+  </div>
+
+  <p class="section-label">Conocimiento previo</p>
+  <div class="callout" style="text-align:center;">
+    <div class="k">Repaso</div>
+    <p>Completar un trinomio cuadrado perfecto usa lo que ya viste: el binomio al cuadrado (a ± b)² = a² ± 2ab + b² y cómo se factoriza un TCP.
+       Si ya se te olvidó, repásalo antes de empezar.</p>
+    <p style="margin-top:0.9rem;">
+      <a class="pg-btn" href="tema-06-binomio-al-cuadrado-y-tcp.html" style="text-decoration:none; display:inline-block;">
+        Repasar binomio al cuadrado y TCP →
+      </a>
+    </p>
+  </div>
+
+  <p class="section-label">¿Qué significa «completar»?</p>
+  <div class="prose">
+    <p>Mira el trinomio <span style="font-family:'IBM Plex Mono',monospace; color:var(--forest); white-space:nowrap;">x² + 6x + ___</span>.
+       Le falta el último término. Si ese término es el correcto, el trinomio será un <strong>trinomio cuadrado perfecto
+       (TCP)</strong>: un binomio al cuadrado. Como (x + 3)² = x² + 6x + <strong>9</strong>, el término que falta es <strong>9</strong>.</p>
+    <p>Se le llama <strong>completar el cuadrado</strong> porque se puede ver como un cuadrado al que le falta una esquina:
+       x² y dos rectángulos de 3 · x forman casi un cuadrado de lado x + 3, y la esquina que falta es un cuadradito de 3 · 3 = 9.</p>
+    <figure style="margin:0 0 1rem; text-align:center;">
+      <svg viewBox="0 0 270 250" width="250" height="232" role="img" aria-label="Un cuadrado de lado x más 3 formado por un cuadrado x al cuadrado, dos rectángulos 3x y una esquina que falta de área 9" style="max-width:100%; height:auto;">
+        <rect x="30" y="30" width="150" height="150" fill="#c4e86b" stroke="#14301f" stroke-width="2.5"/>
+        <rect x="180" y="30" width="60" height="150" fill="#e4f1d3" stroke="#14301f" stroke-width="2.5"/>
+        <rect x="30" y="180" width="150" height="60" fill="#e4f1d3" stroke="#14301f" stroke-width="2.5"/>
+        <rect x="180" y="180" width="60" height="60" fill="#ffffff" stroke="#14301f" stroke-width="2.5" stroke-dasharray="7 5"/>
+        <g font-family="IBM Plex Mono, monospace" font-size="22" fill="#14301f" text-anchor="middle" font-weight="700">
+          <text x="105" y="114">x²</text>
+          <text x="210" y="114">3x</text>
+          <text x="105" y="218">3x</text>
+          <text x="210" y="218">9</text>
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="18" fill="#3f6b4a" text-anchor="middle">
+          <text x="105" y="22">x</text>
+          <text x="210" y="22">3</text>
+          <text x="16" y="110">x</text>
+          <text x="16" y="215">3</text>
+        </g>
+      </svg>
+      <figcaption style="font-size:0.9rem; color:var(--ink-soft);">x² + 6x le falta la esquina punteada (9) para ser el cuadrado de lado x + 3</figcaption>
+    </figure>
+  </div>
+
+  <p class="section-label" id="como-se-completa">Cómo se completa un TCP: x² + bx + ___</p>
+  <div class="prose">
+    <p>En <strong>x² + bx + ___</strong>, el número <strong>b</strong> es el que acompaña a la x, con su signo. Para saber qué término falta:</p>
+    <ol style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li><strong>Identifica b</strong> (con su signo).</li>
+      <li><strong>Divídelo entre 2</strong>:
+          <span class="frac frac-inline"><span class="num">b</span><span class="den">2</span></span>.</li>
+      <li><strong>Elévalo al cuadrado</strong>:
+          (<span class="frac frac-inline"><span class="num">b</span><span class="den">2</span></span>)². Ése es el término que falta, y siempre es <strong>positivo</strong>.</li>
+      <li>Escribe el trinomio completo y <strong>factorízalo</strong>: el binomio es
+          (x + <span class="frac frac-inline"><span class="num">b</span><span class="den">2</span></span>)², con el signo de b.</li>
+    </ol>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
+      <li>x² + bx + (<span class="frac frac-inline"><span class="num">b</span><span class="den">2</span></span>)² = (x + <span class="frac frac-inline"><span class="num">b</span><span class="den">2</span></span>)²</li>
+    </ul>
+    <p>Esto es lo mismo que la regla del TCP al revés: el término de en medio es el doble producto 2ab con a = x, así que
+       <strong>b = 2 · (el número del binomio)</strong>. Por eso el número del binomio es la mitad de b, y el último término es ese número al cuadrado.</p>
+  </div>
+
+  <p class="section-label">Ejemplos</p>
+  <div class="example-box">
+    <h2>Cuatro ejemplos paso a paso</h2>
+    <ul class="def-list">
+      <li><strong>x² + 8x + ___</strong>: b = 8 → b ÷ 2 = 4 → 4² = <strong>16</strong>.
+          Queda x² + 8x + 16 = <strong>(x + 4)²</strong>.</li>
+      <li><strong>x² − 10x + ___</strong>: b = −10 → b ÷ 2 = −5 → (−5)² = <strong>25</strong> (positivo).
+          Queda x² − 10x + 25 = <strong>(x − 5)²</strong>.</li>
+      <li><strong>x² + 5x + ___</strong>: b = 5 → b ÷ 2 =
+          <span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span> → (<span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span>)² =
+          <strong><span class="frac frac-inline"><span class="num">25</span><span class="den">4</span></span></strong>.
+          Queda x² + 5x + <span class="frac frac-inline"><span class="num">25</span><span class="den">4</span></span> = <strong>(x + <span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span>)²</strong>.</li>
+      <li><strong>x² − x + ___</strong>: b = −1 → b ÷ 2 = −<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> →
+          (−<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>)² = <strong><span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span></strong>.
+          Queda x² − x + <span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span> = <strong>(x − <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>)²</strong>.</li>
+    </ul>
+    <p><strong>Errores comunes:</strong> usar b² en lugar de (b ÷ 2)² (x² + 6x + 36 <strong>no</strong> es un TCP); sumar b ÷ 2 sin elevarlo
+       al cuadrado; y poner el signo de b en el último término (siempre es positivo: el signo de b va en el <strong>binomio</strong>).</p>
+  </div>
+
+  <p class="section-label">¿Para qué sirve?</p>
+  <div class="prose">
+    <p>Completar el cuadrado permite resolver ecuaciones que no se factorizan a simple vista. Por ejemplo, en
+       <span style="font-family:'IBM Plex Mono',monospace; color:var(--forest); white-space:nowrap;">x² + 6x = 7</span> sumamos 9 en los dos lados
+       (el término que completa el TCP) y queda:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
+      <li>x² + 6x + 9 = 7 + 9</li>
+      <li>(x + 3)² = 16</li>
+      <li>x + 3 = ±4 → x = 1 o x = −7</li>
+    </ul>
+    <p>También es la idea que da la fórmula general de las ecuaciones de segundo grado y el vértice de una parábola.</p>
+  </div>
+
+  <p class="section-label" id="ejercicios-completar-tcp">Ejercicios: completa el TCP (falta el último término)</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>A cada trinomio x² + bx + ___ le falta el último término. Contesta los tres pasos y oprime <strong>Comprobar</strong> (o la tecla Enter):</p>
+    <p><strong>1.</strong> ¿Cuánto vale <strong>b ÷ 2</strong>? (b es el número que acompaña a la letra, con su signo)<br>
+       <strong>2.</strong> ¿Qué <strong>término falta</strong>? Es (b ÷ 2)² y siempre es positivo.<br>
+       <strong>3.</strong> <strong>Factoriza</strong> el trinomio completo: escribe el binomio al cuadrado, por ejemplo <strong>(x + 3)^2</strong>.</p>
+    <p>Los números pueden ser enteros, fracciones (por ejemplo <strong>5/2</strong>) o decimales. Debajo de cada casilla hay botones para escribir
+       la letra, los paréntesis, el ², el signo menos y la fracción; también puedes usar <strong>^2</strong> con el teclado.</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Cuando termines, oprime
+       <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="ct1-grid"></div>
+  <p class="practice-score" id="ct1-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="ct1-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <p class="section-label" id="ejercicios-completar-medio">Ejercicios: completa el TCP (falta el término de en medio)</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Ahora el que falta es el <strong>término de en medio</strong>, por ejemplo x² + ___ + 49. Contesta los tres pasos y oprime <strong>Comprobar</strong>:</p>
+    <p><strong>1.</strong> ¿Cuánto vale la <strong>raíz cuadrada</strong> del último término?<br>
+       <strong>2.</strong> ¿Qué <strong>término de en medio</strong> falta? Es el doble producto 2 · x · (la raíz). Hay <strong>dos respuestas posibles</strong>, con signo + o con
+       signo −: escribe una, por ejemplo <strong>14x</strong> o <strong>−14x</strong>.<br>
+       <strong>3.</strong> <strong>Factoriza</strong> el trinomio que formaste: <strong>(x + 7)^2</strong> si elegiste +14x, o <strong>(x − 7)^2</strong> si elegiste −14x.</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>50</strong>. Oprime
+       <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="ct2-grid"></div>
+  <p class="practice-score" id="ct2-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="ct2-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script src="../assets/practica-algebra.js"></script>
+  <script>
+  (function () {
+    var MINUS = '−', parse = Algebra.parse, padd = Algebra.padd, pmul = Algebra.pmul, same = Algebra.same;
+    function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = b; b = a % b; a = t; } return a || 1; }
+    function frac(n, d) { if (d < 0) { n = -n; d = -d; } var g = gcd(n, d); return { n: n / g, d: d / g }; }
+    function absF(f) { return frac(Math.abs(f.n), f.d); }
+    function eq(f, g) { return f.n * g.d === g.n * f.d; }
+    function parseNum(txt) { // "−3", "5/2", "0.25", "+4"…  →  fracción, o null si no se entiende
+      var s = String(txt).replace(/\s+/g, '').replace(/[−–—]/g, '-').replace(',', '.'), m;
+      if ((m = s.match(/^([+-]?)(\d+)\/(\d+)$/))) { var d = parseInt(m[3], 10); return d === 0 ? null : frac((m[1] === '-' ? -1 : 1) * parseInt(m[2], 10), d); }
+      if ((m = s.match(/^([+-]?)(\d*)\.?(\d*)$/)) && (m[2] || m[3])) {
+        var dec = m[3] || '', p = Math.pow(10, dec.length);
+        return frac((m[1] === '-' ? -1 : 1) * parseInt((m[2] || '0') + dec, 10), p);
+      }
+      return null;
+    }
+    function F(n, d) { return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>'; }
+    function numHTML(f, dec) { // número con su signo; fracción apilada (o decimal si el ejercicio es decimal)
+      var a = absF(f), s = f.n < 0 ? MINUS : '';
+      return a.d === 1 ? s + a.n : s + (dec ? String(a.n / a.d) : F(a.n, a.d));
+    }
+    function coefHTML(f, dec) { var a = absF(f); return (a.n === 1 && a.d === 1) ? '' : numHTML(a, dec); }
+    function isqrtF(f) { var n = Math.round(Math.sqrt(f.n)), d = Math.round(Math.sqrt(f.d)); return (n * n === f.n && d * d === f.d) ? frac(n, d) : null; }
+    function pc(f) { return { '': [f.n, f.d] }; }
+    var BLANK = '<span style="display:inline-block; min-width:2.4rem; border-bottom:2px solid currentColor;">&nbsp;</span>';
+    var BOX = 'flex:0 1 5.5rem;';
+
+    // ---------- Banco 1: x² + bx + ___ ----------  [letra, b]  (de menor a mayor dificultad)
+    //   1–15 b par positivo · 16–30 b par negativo · 31–50 b impar · 51–65 b fracción · 66–80 b decimal · 81–100 mezclados
+    var B1 = [];
+    function add1(bs) { bs.forEach(function (b) { var i = B1.length, L = i < 30 ? 'x' : ['y', 'a', 'x', 'm', 'n', 'x', 'p', 't', 'z', 'w'][i % 10]; B1.push([L, b]); }); }
+    add1(['6', '8', '4', '10', '2', '12', '14', '16', '18', '20', '22', '24', '26', '30', '40']);
+    add1(['-6', '-8', '-4', '-10', '-2', '-12', '-14', '-16', '-18', '-20', '-22', '-24', '-26', '-30', '-40']);
+    add1(['3', '-5', '7', '-3', '1', '-1', '9', '-7', '5', '-9', '11', '-11', '13', '-13', '15', '-15', '17', '-17', '19', '-21']);
+    add1(['1/2', '-1/2', '3/2', '-3/2', '5/2', '-5/2', '1/3', '-1/3', '2/3', '-2/3', '4/3', '-4/3', '3/4', '-3/4', '5/4']);
+    add1(['0.6', '-0.6', '0.4', '-0.4', '1.2', '-1.2', '0.8', '-0.8', '2.4', '-2.4', '1.6', '-1.6', '0.2', '-0.2', '3.2']);
+    add1(['5', '-7', '9', '-3', '2', '-12', '11', '-4', '7', '-15', '13', '-8', '3', '-9', '17', '-6', '1', '-5', '-1', '21']);
+    function build1(ex) {
+      var L = ex[0], b = parseNum(ex[1]), h = frac(b.n, b.d * 2), c = frac(h.n * h.n, h.d * h.d), X = parse(L).P;
+      return { L: L, b: b, h: h, c: c, dec: ex[1].indexOf('.') >= 0,
+               tri: padd(padd(pmul(X, X), pmul(pc(b), X), 1), pc(c), 1) };
+    }
+    // ---------- Banco 2: x² + ___ + c ----------  [letra, c]
+    //   1–15 c entero · 16–30 c entero (otras letras) · 31–40 c fracción · 41–50 c decimal
+    var B2 = [];
+    function add2(cs, others) { cs.forEach(function (c, i) { B2.push([others ? ['y', 'a', 'm', 'n', 'p', 't', 'z', 'w', 'k', 'r'][i % 10] : 'x', c]); }); }
+    add2(['4', '9', '16', '25', '36', '49', '64', '81', '100', '121', '144', '169', '196', '225', '1'], false);
+    add2(['1', '9', '25', '49', '81', '121', '169', '225', '4', '16', '36', '64', '100', '144', '196'], true);
+    add2(['1/4', '9/4', '1/9', '4/9', '25/4', '1/16', '9/16', '25/9', '49/4', '1/25'], true);
+    add2(['0.25', '0.09', '0.36', '0.49', '0.64', '0.01', '0.81', '2.25', '1.44', '0.04'], true);
+    function build2(ex) {
+      var L = ex[0], c = parseNum(ex[1]), r = isqrtF(c);
+      if (!r) throw new Error('El último término no es un cuadrado perfecto: ' + ex[1]);
+      var m = frac(2 * r.n, r.d), X = parse(L).P;
+      function tri(s) { return padd(padd(pmul(X, X), pmul(pc(frac(s * m.n, m.d)), X), 1), pc(c), 1); }
+      return { L: L, c: c, r: r, m: m, dec: ex[1].indexOf('.') >= 0, X: X, triP: tri(1), triN: tri(-1) };
+    }
+    function midHTML(e, s) { return (s < 0 ? MINUS : '') + coefHTML(e.m, e.dec) + e.L; }
+    function expr(e, mid, last) { return e.L + '² ' + mid + ' ' + last; }
+
+    // ---------- ¿está factorizada como un binomio al cuadrado? ----------
+    function factorOk(v, r, tri) {
+      if (!same(r.P, tri)) return false;
+      if (r.binos === 2 && r.others === 0) return true;
+      var m = /^\((.+)\)(?:\^2|²)$/.exec(v.replace(/\s+/g, '').replace(/[−–—]/g, '-'));
+      if (!m) return false;
+      try { var q = parse(m[1]); return q.terms === 2 && same(pmul(q.P, q.P), tri); } catch (x) { return false; }
+    }
+
+    // ---------- tarjetas ----------
+    var N = 10;
+    function inputHTML(f, label, style) {
+      return '<input type="text" data-f="' + f + '" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" style="' + style + '" aria-label="' + label + '">';
+    }
+    function keysHTML(list, target) { return '<div class="practice-keys" data-t="' + target + '">' + list.map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('') + '</div>'; }
+    function setup(id, bank, build, makeBody, scrollId) {
+      var BANK = bank.map(build), grid = document.getElementById(id + '-grid'), scoreEl = document.getElementById(id + '-score'), done = {};
+      function score() {
+        var n = Object.keys(done).length;
+        scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
+      }
+      function pick() { // 10 al azar, ordenados como en el banco
+        var idx = BANK.map(function (e, i) { return i; });
+        for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+        return idx.slice(0, N).sort(function (p, q) { return p - q; }).map(function (i) { return BANK[i]; });
+      }
+      function makeCard(e, idx) {
+        var n = idx + 1, spec = makeBody(e, n), card = document.createElement('div');
+        card.className = 'practice-card';
+        card.innerHTML = '<div class="practice-head"><span class="enum">' + n + '</span><span class="practice-q">' + spec.head + '</span></div>' + spec.body +
+          '<div class="practice-row" style="margin-top:0.7rem;"><button type="button" class="practice-check">Comprobar</button></div>' +
+          '<div class="practice-fb" aria-live="polite"></div>';
+        grid.appendChild(card);
+        var fb = card.querySelector('.practice-fb'), inp = {}, lastIn = null;
+        card.querySelectorAll('input').forEach(function (i) { inp[i.dataset.f] = i; i.addEventListener('focus', function () { lastIn = i.dataset.f; }); });
+        card.querySelectorAll('.practice-keys button').forEach(function (b) {
+          b.addEventListener('click', function () {
+            var ts = b.parentNode.dataset.t.split(','), t = ts.indexOf(lastIn) >= 0 ? lastIn : ts[0], input = inp[t];
+            var s = input.selectionStart == null ? input.value.length : input.selectionStart, e2 = input.selectionEnd == null ? s : input.selectionEnd;
+            input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e2);
+            input.focus(); input.setSelectionRange(s + b.dataset.k.length, s + b.dataset.k.length);
+          });
+        });
+        function check() {
+          card.classList.remove('ok', 'bad');
+          var res = spec.check(inp);
+          if (res.msg) { if (res.bad) card.classList.add('bad'); fb.innerHTML = res.msg; return; }
+          if (!res.wrong.length) {
+            card.classList.add('ok'); done[idx] = 1; score();
+            fb.innerHTML = '<span class="yes">✓ ¡Todo correcto!</span><div class="sol">' + spec.ok + '</div>';
+            return;
+          }
+          card.classList.add('bad'); delete done[idx]; score();
+          fb.innerHTML = '<span class="no">✗ Tienes ' + (3 - res.wrong.length) + ' de 3 bien.</span> Revisa: ' +
+            res.wrong.map(function (k) { return '<div class="sol" style="font-family:inherit;">' + (res.extra[k] ? res.extra[k] + '<br>' : '') + spec.why[k] + '</div>'; }).join('');
+        }
+        card.querySelector('.practice-check').addEventListener('click', check);
+        card.querySelectorAll('input').forEach(function (i) { i.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') check(); }); });
+      }
+      function newSet() { grid.innerHTML = ''; done = {}; pick().forEach(makeCard); score(); }
+      document.getElementById(id + '-new').addEventListener('click', function () {
+        newSet();
+        document.getElementById(scrollId).scrollIntoView({ behavior: 'smooth' });
+      });
+      newSet();
+    }
+    function readNum(i) { return i.value.trim() ? parseNum(i.value) : undefined; }
+    var NOT_UNDERSTOOD = { bad: true, msg: '<span class="no">No entendí algún número o la factorización.</span> Escribe enteros, fracciones o decimales, por ejemplo <strong>−3</strong>, <strong>5/2</strong> o <strong>0.5</strong>, y la factorización como <strong>(x + 3)^2</strong>.' };
+
+    // ---------- serie 1: falta el último término ----------
+    setup('ct1', B1, build1, function (e, n) {
+      var bH = numHTML(e.b, e.dec), hH = numHTML(e.h, e.dec), cH = numHTML(e.c, e.dec), hA = numHTML(absF(e.h), e.dec);
+      var mid = (e.b.n < 0 ? MINUS : '+') + ' ' + coefHTML(e.b, e.dec) + e.L;
+      var full = expr(e, mid, '+ ' + cH), fact = '(' + e.L + ' ' + (e.h.n < 0 ? MINUS : '+') + ' ' + hA + ')²';
+      return {
+        head: expr(e, mid, '+ ' + BLANK),
+        body:
+          '<div class="practice-ask">1. ¿Cuánto vale b ÷ 2?</div>' +
+          '<div class="practice-row"><span class="eq">b ÷ 2 =</span>' + inputHTML('h', 'Valor de b entre 2 del ejercicio ' + n, BOX) + '</div>' + keysHTML([MINUS, '/'], 'h') +
+          '<div class="practice-ask">2. ¿Qué término falta?</div>' +
+          '<div class="practice-row"><span class="eq">falta:</span>' + inputHTML('c', 'Término que falta del ejercicio ' + n, BOX) + '</div>' + keysHTML([MINUS, '/'], 'c') +
+          '<div class="practice-ask">3. Factoriza el trinomio completo</div>' +
+          '<div class="practice-row"><span class="eq">=</span>' + inputHTML('f', 'Factorización del ejercicio ' + n, 'flex:1 1 9rem;') + '</div>' + keysHTML(['(', ')', e.L, '²', '+', MINUS, '/'], 'f'),
+        ok: full + ' = <strong>' + fact + '</strong>',
+        why: {
+          h: 'b es el número que acompaña a ' + e.L + ', con su signo: b = ' + bH + '. Se divide entre 2: ' + bH + ' ÷ 2 = <strong>' + hH + '</strong>.',
+          c: 'El término que falta es (b ÷ 2)² = (' + hH + ')² = <strong>' + cH + '</strong>. Un cuadrado siempre es positivo' + (e.h.n < 0 ? ', aunque b ÷ 2 sea negativo' : '') + '.',
+          f: 'El trinomio completo es ' + full + '. Se factoriza como un binomio al cuadrado: la letra, el signo de b (' + (e.b.n < 0 ? 'menos' : 'más') + ') y b ÷ 2 sin signo: <strong>' + fact + '</strong>.'
+        },
+        check: function (inp) {
+          var h = readNum(inp.h), c = readNum(inp.c), fv = inp.f.value.trim();
+          if (h === undefined || c === undefined || !fv) return { msg: 'Contesta <strong>todas</strong> las preguntas antes de comprobar.' };
+          var r = null; try { r = parse(fv); } catch (x) { r = null; }
+          if (!h || !c || !r) return NOT_UNDERSTOOD;
+          var wrong = [], extra = {};
+          if (!eq(h, e.h)) wrong.push('h');
+          if (!eq(c, e.c)) {
+            wrong.push('c');
+            if (eq(c, absF(e.b)) || eq(c, e.b) || eq(c, frac(e.b.n * e.b.n, e.b.d * e.b.d))) extra.c = 'Hay que elevar al cuadrado <strong>b ÷ 2</strong>, no b ni b².';
+            else if (eq(c, e.h)) extra.c = 'Falta <strong>elevar al cuadrado</strong>: ' + hH + ' es b ÷ 2, y el término que falta es su cuadrado.';
+            else if (eq(c, frac(-e.c.n, e.c.d))) extra.c = 'El término que falta siempre es <strong>positivo</strong>: es un cuadrado.';
+          }
+          if (!factorOk(fv, r, e.tri)) {
+            wrong.push('f');
+            if (same(r.P, e.tri) && r.terms > 1) extra.f = 'Eso es el trinomio completo: hay que <strong>factorizarlo</strong>, es decir, escribirlo como un binomio al cuadrado.';
+            else if (same(r.P, e.tri)) extra.f = 'Es equivalente, pero escríbelo como el cuadrado de un binomio: <strong>(… ± …)²</strong>.';
+            else {
+              var opp = padd(parse(e.L).P, pc(e.h), e.b.n > 0 ? -1 : 1);
+              if (same(r.P, pmul(opp, opp))) extra.f = 'Revisa el <strong>signo</strong> del binomio: es el signo de b (' + (e.b.n < 0 ? 'menos' : 'más') + ').';
+            }
+          }
+          return { wrong: wrong, extra: extra };
+        }
+      };
+    }, 'ejercicios-completar-tcp');
+
+    // ---------- serie 2: falta el término de en medio ----------
+    setup('ct2', B2, build2, function (e, n) {
+      var cH = numHTML(e.c, e.dec), rH = numHTML(e.r, e.dec), mH = coefHTML(e.m, e.dec);
+      var fP = '(' + e.L + ' + ' + rH + ')²', fN = '(' + e.L + ' ' + MINUS + ' ' + rH + ')²';
+      return {
+        head: e.L + '² + ' + BLANK + ' + ' + cH,
+        body:
+          '<div class="practice-ask">1. ¿Cuánto vale la raíz cuadrada del último término?</div>' +
+          '<div class="practice-row"><span class="eq">√(' + cH + ') =</span>' + inputHTML('r', 'Raíz del último término del ejercicio ' + n, BOX) + '</div>' + keysHTML(['/'], 'r') +
+          '<div class="practice-ask">2. ¿Qué término de en medio falta? (puede ser + o −)</div>' +
+          '<div class="practice-row"><span class="eq">' + e.L + '² +</span>' + inputHTML('m', 'Término de en medio del ejercicio ' + n, BOX) + '<span class="eq">+ ' + cH + '</span></div>' + keysHTML([e.L, MINUS, '/'], 'm') +
+          '<div class="practice-ask">3. Factoriza el trinomio que formaste</div>' +
+          '<div class="practice-row"><span class="eq">=</span>' + inputHTML('f', 'Factorización del ejercicio ' + n, 'flex:1 1 9rem;') + '</div>' + keysHTML(['(', ')', e.L, '²', '+', MINUS, '/'], 'f'),
+        ok: e.L + '² + ' + mH + e.L + ' + ' + cH + ' = <strong>' + fP + '</strong><br>' + e.L + '² ' + MINUS + ' ' + mH + e.L + ' + ' + cH + ' = <strong>' + fN + '</strong>',
+        why: {
+          r: 'La raíz cuadrada de ' + cH + ' es <strong>' + rH + '</strong>, porque (' + rH + ')² = ' + cH + '.',
+          m: 'El término de en medio es el doble producto 2 · ' + e.L + ' · ' + rH + ' = <strong>' + mH + e.L + '</strong>; también sirve <strong>' + MINUS + mH + e.L + '</strong>. Los dos funcionan.',
+          f: 'Con +' + mH + e.L + ' queda <strong>' + fP + '</strong>; con ' + MINUS + mH + e.L + ' queda <strong>' + fN + '</strong>. El signo del binomio es el del término de en medio.'
+        },
+        check: function (inp) {
+          var r0 = readNum(inp.r), mv = inp.m.value.trim(), fv = inp.f.value.trim();
+          if (r0 === undefined || !mv || !fv) return { msg: 'Contesta <strong>todas</strong> las preguntas antes de comprobar.' };
+          var mr = null, fr = null; try { mr = parse(mv); } catch (x) { mr = null; } try { fr = parse(fv); } catch (x) { fr = null; }
+          if (!r0 || !mr || !fr) return NOT_UNDERSTOOD;
+          var wrong = [], extra = {}, pos = pmul(pc(e.m), e.X), s = same(mr.P, pos) ? 1 : (same(mr.P, padd({}, pos, -1)) ? -1 : 0);
+          if (!eq(r0, e.r)) wrong.push('r');
+          if (!s) {
+            wrong.push('m');
+            if (same(mr.P, pmul(pc(e.r), e.X)) || same(mr.P, padd({}, pmul(pc(e.r), e.X), -1))) extra.m = 'Falta el <strong>doble</strong> producto: es 2 · ' + e.L + ' · ' + rH + ', no sólo ' + e.L + ' · ' + rH + '.';
+            else if (Object.keys(mr.P).length === 1 && !Object.keys(mr.P)[0]) extra.m = 'El término de en medio lleva la letra <strong>' + e.L + '</strong>.';
+          }
+          var okF = (s > 0 && factorOk(fv, fr, e.triP)) || (s < 0 && factorOk(fv, fr, e.triN)) || (!s && (factorOk(fv, fr, e.triP) || factorOk(fv, fr, e.triN)));
+          if (!okF) {
+            wrong.push('f');
+            if (s && (same(fr.P, s > 0 ? e.triP : e.triN)) && fr.terms > 1) extra.f = 'Eso es el trinomio completo: hay que <strong>factorizarlo</strong> como un binomio al cuadrado.';
+            else if (s && (factorOk(fv, fr, s > 0 ? e.triN : e.triP))) extra.f = 'El signo del binomio debe ser el del término de en medio que elegiste (' + (s > 0 ? 'más' : 'menos') + ').';
+          }
+          return { wrong: wrong, extra: extra };
+        }
+      };
+    }, 'ejercicios-completar-medio');
+  })();
+  </script>
+
+  <p class="section-label no-caps" id="rubrica-completar-tcp">Rúbrica · Completar el trinomio cuadrado perfecto</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe b, b ÷ 2 y el término que falta con su signo, con fracciones o decimales bien escritos.</li><li>Escribe la factorización con paréntesis y el exponente 2: (x − 5)².</li><li>Explica con sus palabras los pasos: identificar b, dividir entre 2, elevar al cuadrado y factorizar.</li></ul></div></td>
+            <td>Escribe el término que falta sin relación con b, deja la factorización sin paréntesis o sin el exponente 2, y sus respuestas no se entienden. No usa ningún apoyo, como los pasos b, b ÷ 2 y (b ÷ 2)².</td>
+            <td colspan="2">Usa la simbología con limitaciones: escribe los resultados, pero no siempre en la forma correcta (omite el signo de b ÷ 2, un paréntesis o el exponente 2). Contesta sin explicar o sólo repite los pasos.</td>
+            <td>Escribe con la simbología correcta b ÷ 2, el término que falta y el binomio al cuadrado, con alguna deficiencia (por ejemplo, una fracción sin simplificar). Explica con claridad qué hizo en cada paso.</td>
+            <td>Escribe y explica con notación correcta el procedimiento completo (b, b ÷ 2, (b ÷ 2)², factorización), por diferentes medios (con la fórmula, con la figura y con palabras), y reconstruye el procedimiento en un ejercicio nuevo.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación geométrica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Relaciona x² + bx con un cuadrado de lado x y dos rectángulos de lados x y b ÷ 2, al que le falta una esquina.</li><li>Reconoce que la esquina que falta es un cuadrado de lado b ÷ 2, y por eso su área (b ÷ 2)² es positiva.</li></ul></div></td>
+            <td>Ve x² + bx como una suma de términos y no reconoce la figura del cuadrado con una esquina faltante, ni la relaciona con el término que falta.</td>
+            <td colspan="2">Reconoce la figura del cuadrado de lado x + 3 en el ejemplo, pero no la generaliza a otros valores de b ni a fracciones.</td>
+            <td>Interpreta la figura: x² y los dos rectángulos de lados x y b ÷ 2, y la esquina que falta como un cuadrado de lado b ÷ 2, también cuando b es impar o fraccionario.</td>
+            <td>Dibuja la figura para un b nuevo y la usa para justificar que el término que falta es (b ÷ 2)² y que el trinomio completo es el cuadrado de lado x + b ÷ 2.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Completa x² + bx + ___ con (b ÷ 2)², también con b negativo, impar, fraccionario o decimal.</li><li>Completa x² + ___ + c sacando la raíz de c y calculando el doble producto 2 · x · (la raíz), y sabe que hay dos respuestas (+ o −).</li><li>Factoriza el trinomio completo como (x + b ÷ 2)² con el signo de b.</li></ul></div></td>
+            <td>Conoce la regla sólo de memoria: escribe b² o b ÷ 2 como término que falta, o no distingue el término de en medio del último. No factoriza el trinomio completo.</td>
+            <td colspan="2">Completa el trinomio en los casos sencillos (b par y positivo). Le fallan los casos con b negativo, b impar, fracciones o decimales, el signo del binomio o el 2 del doble producto.</td>
+            <td>Comprende y maneja las propiedades: obtiene (b ÷ 2)² con cualquier b (también con fracciones y decimales), halla el término de en medio con el doble producto, y factoriza con el signo correcto.</td>
+            <td>Explica por qué el término que falta es (b ÷ 2)² a partir de (x + b ÷ 2)² = x² + bx + (b ÷ 2)², usa el desarrollo y la factorización como procesos inversos y generaliza para cualquier b.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué el término que falta es (b ÷ 2)²: porque el término de en medio debe ser el doble producto 2ab con a = x.</li><li>Justifica por qué el último término es siempre positivo y por qué el signo del binomio es el de b.</li><li>Comprueba su resultado desarrollando (x + b ÷ 2)² y comparándolo con el trinomio.</li></ul></div></td>
+            <td>Dice «así es la regla» o «se divide entre 2» sin justificar. Completa el trinomio pero no lo comprueba ni lo explica.</td>
+            <td>Defiende con una regla simple («la mitad de b, al cuadrado») con lenguaje matemático básico.</td>
+            <td>Valida con ejemplos: completa varios trinomios y comprueba cada uno desarrollando el binomio; da ejemplos y no-ejemplos de trinomios que sí y que no son cuadrados perfectos.</td>
+            <td>Explica la estructura del argumento: que el término de en medio sea 2ab es la hipótesis y que el último término sea (b ÷ 2)² es la conclusión; comprueba sus resultados desarrollando el binomio.</td>
+            <td>Elabora una cadena de argumentos que generaliza para cualquier b: demuestra con (x + b ÷ 2)² = x² + bx + (b ÷ 2)² por qué completar el cuadrado funciona, y lo relaciona con la figura y con la resolución de ecuaciones como x² + 6x = 7.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
+  <p class="section-label no-caps">Próximamente en este subtema</p>
+  <div class="callout">
+    <p>Binomio factor común y factorización de trinomios de la forma x² + bx + c que no son cuadrados perfectos.</p>
+  </div>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>

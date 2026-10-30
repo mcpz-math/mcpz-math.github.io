@@ -814,6 +814,75 @@
       ]
     },
     {
+      "id": "completartcp",
+      "titulo": "Matemáticas 3 · Tema 6 · Completar el trinomio cuadrado perfecto",
+      "file": "matematicas-3/tema-06-trinomio-x2-bx-c.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de las dos series de la página (falta el último término y falta el término de en medio), resueltos en el cuaderno con el procedimiento: b, b ÷ 2, (b ÷ 2)² y la factorización.",
+        "Al menos un ejercicio con b negativo, uno con b impar (fracción) y uno con decimales o fracciones.",
+        "La explicación (oral o escrita) de por qué el término que falta es (b ÷ 2)² y de por qué siempre es positivo."
+      ],
+      "errores": [
+        "Escribe b² en lugar de (b ÷ 2)²: completa x² + 6x con 36 en lugar de 9.",
+        "Suma b ÷ 2 sin elevarlo al cuadrado: completa x² + 6x con 3.",
+        "Pone el signo de b en el último término: x² − 10x − 25 (el término que falta siempre es positivo).",
+        "Factoriza x² − 10x + 25 como (x + 5)² (el signo del binomio es el de b) o como (x − 25)².",
+        "Con b impar o fraccionario se equivoca al dividir entre 2 o al elevar la fracción al cuadrado ((5/2)² = 25/2).",
+        "Cuando falta el término de en medio, olvida el 2 del doble producto: completa x² + ___ + 49 con 7x en lugar de 14x."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe b, b ÷ 2 y el término que falta con su signo, con fracciones o decimales bien escritos.",
+            "Escribe la factorización con paréntesis y el exponente 2: (x − 5)².",
+            "Explica con sus palabras los pasos: identificar b, dividir entre 2, elevar al cuadrado y factorizar."
+          ],
+          "n1": "Escribe el término que falta sin relación con b, deja la factorización sin paréntesis o sin el exponente 2, y sus respuestas no se entienden. No usa ningún apoyo, como los pasos b, b ÷ 2 y (b ÷ 2)².",
+          "n23": "Usa la simbología con limitaciones: escribe los resultados, pero no siempre en la forma correcta (omite el signo de b ÷ 2, un paréntesis o el exponente 2). Contesta sin explicar o sólo repite los pasos.",
+          "n4": "Escribe con la simbología correcta b ÷ 2, el término que falta y el binomio al cuadrado, con alguna deficiencia (por ejemplo, una fracción sin simplificar). Explica con claridad qué hizo en cada paso.",
+          "n5": "Escribe y explica con notación correcta el procedimiento completo (b, b ÷ 2, (b ÷ 2)², factorización), por diferentes medios (con la fórmula, con la figura y con palabras), y reconstruye el procedimiento en un ejercicio nuevo."
+        },
+        {
+          "id": "REP_GEO",
+          "observar": [
+            "Relaciona x² + bx con un cuadrado de lado x y dos rectángulos de lados x y b ÷ 2, al que le falta una esquina.",
+            "Reconoce que la esquina que falta es un cuadrado de lado b ÷ 2, y por eso su área (b ÷ 2)² es positiva."
+          ],
+          "n1": "Ve x² + bx como una suma de términos y no reconoce la figura del cuadrado con una esquina faltante, ni la relaciona con el término que falta.",
+          "n23": "Reconoce la figura del cuadrado de lado x + 3 en el ejemplo, pero no la generaliza a otros valores de b ni a fracciones.",
+          "n4": "Interpreta la figura: x² y los dos rectángulos de lados x y b ÷ 2, y la esquina que falta como un cuadrado de lado b ÷ 2, también cuando b es impar o fraccionario.",
+          "n5": "Dibuja la figura para un b nuevo y la usa para justificar que el término que falta es (b ÷ 2)² y que el trinomio completo es el cuadrado de lado x + b ÷ 2."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Completa x² + bx + ___ con (b ÷ 2)², también con b negativo, impar, fraccionario o decimal.",
+            "Completa x² + ___ + c sacando la raíz de c y calculando el doble producto 2 · x · (la raíz), y sabe que hay dos respuestas (+ o −).",
+            "Factoriza el trinomio completo como (x + b ÷ 2)² con el signo de b."
+          ],
+          "n1": "Conoce la regla sólo de memoria: escribe b² o b ÷ 2 como término que falta, o no distingue el término de en medio del último. No factoriza el trinomio completo.",
+          "n23": "Completa el trinomio en los casos sencillos (b par y positivo). Le fallan los casos con b negativo, b impar, fracciones o decimales, el signo del binomio o el 2 del doble producto.",
+          "n4": "Comprende y maneja las propiedades: obtiene (b ÷ 2)² con cualquier b (también con fracciones y decimales), halla el término de en medio con el doble producto, y factoriza con el signo correcto.",
+          "n5": "Explica por qué el término que falta es (b ÷ 2)² a partir de (x + b ÷ 2)² = x² + bx + (b ÷ 2)², usa el desarrollo y la factorización como procesos inversos y generaliza para cualquier b."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué el término que falta es (b ÷ 2)²: porque el término de en medio debe ser el doble producto 2ab con a = x.",
+            "Justifica por qué el último término es siempre positivo y por qué el signo del binomio es el de b.",
+            "Comprueba su resultado desarrollando (x + b ÷ 2)² y comparándolo con el trinomio."
+          ],
+          "n1": "Dice «así es la regla» o «se divide entre 2» sin justificar. Completa el trinomio pero no lo comprueba ni lo explica.",
+          "n2": "Defiende con una regla simple («la mitad de b, al cuadrado») con lenguaje matemático básico.",
+          "n3": "Valida con ejemplos: completa varios trinomios y comprueba cada uno desarrollando el binomio; da ejemplos y no-ejemplos de trinomios que sí y que no son cuadrados perfectos.",
+          "n4": "Explica la estructura del argumento: que el término de en medio sea 2ab es la hipótesis y que el último término sea (b ÷ 2)² es la conclusión; comprueba sus resultados desarrollando el binomio.",
+          "n5": "Elabora una cadena de argumentos que generaliza para cualquier b: demuestra con (x + b ÷ 2)² = x² + bx + (b ÷ 2)² por qué completar el cuadrado funciona, y lo relaciona con la figura y con la resolución de ecuaciones como x² + 6x = 7."
+        }
+      ]
+    },
+    {
       "id": "binomioscuad",
       "titulo": "Matemáticas 3 · Tema 6 · Binomio al cuadrado y TCP",
       "file": "matematicas-3/tema-06-binomio-al-cuadrado-y-tcp.html",
