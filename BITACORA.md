@@ -1829,3 +1829,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   También se actualizó el bloque de Divisibilidad ("mcm y MCD con la tabla…") y la rúbrica "mcmmcd" (ya no habla de la tabla de exponentes). Se probaron 400 tarjetas.
 - Las palabras grandes de los pasos ("multiplicar", "simplificar"…) se salían de su tarjeta en algunas pantallas: ahora son un poco más pequeñas (`.regla-step .big`, máx. 1.6 rem) y se ajustan al ancho de la tarjeta; se revisaron 185 pasos en 5 anchos de pantalla (320 a 1200 px) sin desbordes.
   Las páginas piden la hoja de estilos con la versión `?v=20261030q`.
+- A pedido de Carmen, el **algoritmo de Euclides** (`tema-06-algoritmo-de-euclides.html`) es sólo para hallar el **MCD**: se quitó el párrafo "Y el mcm", la pregunta del mcm de los ejercicios (ahora: completar cada división y escribir el MCD) y lo que
+  mencionaba el mcm en su rúbrica.
+- A pedido de Carmen, en los ejercicios de `tema-06-mcm-y-mcd.html` ya **no se pide descomponer** cada número (la descomposición se practica en Primos y compuestos): sólo se escriben el mcm y el MCD con la tabla de descomposición en el cuaderno,
+  y la solución muestra las dos tablas. Si hay un solo primo, la tabla dice "MCD = 3" (no "3 = 3"); si no hay primo común, "MCD = 1 (no hay primo común)".
+- **Incidente corregido:** al editar la rúbrica de Euclides quedó una coma de más en `rubricas-por-actividad.json`, el generador falló y la guía de Word `IEMS\Guia_para_evaluar_con_la_matriz.docx` se regeneró casi vacía (1 KB). Se corrigió el JSON y se
+  volvió a generar la guía completa (86 KB). Antes de regenerar la guía conviene comprobar que el JSON es válido (`ConvertFrom-Json`) y que el generador diga cuántas rúbricas actualizó.
+- Los scripts de ejercicios (`practica-tarjetas.js`) se piden con versión (`?v=20261030r`) para que los navegadores no usen una copia vieja.

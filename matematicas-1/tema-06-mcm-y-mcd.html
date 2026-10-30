@@ -102,10 +102,9 @@
   <p class="section-label" id="ejercicios-mcm-mcd">Ejercicios: mcm y MCD con números primos</p>
   <div class="callout">
     <div class="k">Instrucciones</div>
-    <p>Para cada grupo de números:</p>
-    <p><strong>1.</strong> <strong>Descompón</strong> cada número en primos, por ejemplo <strong>2^2 · 3</strong> (también puedes usar los botones <strong>²</strong> y <strong>·</strong>).<br>
-       <strong>2.</strong> Escribe el <strong>mcm</strong> (con la tabla: se divide hasta que todos sean 1 y se multiplican todos los primos).<br>
-       <strong>3.</strong> Escribe el <strong>MCD</strong> (con la misma tabla: sólo los primos que dividen a todos a la vez). Al comprobar verás las dos tablas.</p>
+    <p>Para cada grupo de números, usa la <strong>tabla de descomposición</strong> (en tu cuaderno) y escribe:</p>
+    <p><strong>1.</strong> El <strong>mcm</strong>: se divide hasta que todos sean 1 y se multiplican todos los primos de la derecha.<br>
+       <strong>2.</strong> El <strong>MCD</strong>: con la misma tabla, sólo se multiplican los primos que dividen a todos los números a la vez. Al comprobar verás las dos tablas.</p>
     <p>Después oprime <strong>Comprobar</strong> (o la tecla Enter). Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>, de menos a más difíciles
        (los últimos tienen tres números). Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
   </div>
@@ -116,7 +115,7 @@
     <button type="button" class="pg-btn" id="mm-new">Otros 10 ejercicios (volver a intentar)</button>
   </p>
 
-  <script src="../assets/practica-tarjetas.js"></script>
+  <script src="../assets/practica-tarjetas.js?v=20261030r"></script>
   <script>
   // Tablas de descomposición simultánea de los ejemplos
   document.querySelectorAll('.dsim-host').forEach(function (el) {
@@ -176,8 +175,8 @@
     }
     function solution(e) {
       var H = Practica.h;
-      var out = e.nums.map(function (n) { return n + ' = ' + primeText(n); }).join('<br>');
-      out += '<br><strong>mcm</strong> (hasta que todos sean 1):' + H.dsimHTML(e.nums, 'mcm');
+      var out = '';
+      out += '<strong>mcm</strong> (hasta que todos sean 1):' + H.dsimHTML(e.nums, 'mcm');
       out += '<strong>MCD</strong> (primos que dividen a todos a la vez):' + H.dsimHTML(e.nums, 'mcd');
       if (e.nums.length === 2) out += 'Comprobación: mcm · MCD = ' + e.l + ' · ' + e.g + ' = ' + (e.g * e.l) + ' = ' + e.nums[0] + ' · ' + e.nums[1];
       return out;
@@ -202,12 +201,9 @@
       card.className = 'practice-card';
       card.innerHTML =
         '<div class="practice-head"><span class="enum">' + n + '</span><span class="practice-q">' + e.nums.join(', ') + '</span></div>' +
-        '<div class="practice-ask">1. Descompón cada número en primos</div>' +
-        e.nums.map(function (x, i) { return '<div class="practice-row"><span class="eq">' + x + ' =</span>' + inputHTML('d' + i, 'Descomposición de ' + x + ' del ejercicio ' + n, 'flex:1 1 7rem;') + '</div>'; }).join('') +
-        '<div class="practice-keys" data-t="' + dTargets + '">' + ['·', '²', '³', '⁴', '⁵'].map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('') + '</div>' +
-        '<div class="practice-ask">2. ¿Cuánto vale el mcm?</div>' +
+        '<div class="practice-ask">1. ¿Cuánto vale el mcm?</div>' +
         '<div class="practice-row"><span class="eq">mcm =</span>' + inputHTML('l', 'mcm del ejercicio ' + n, 'flex:0 1 6rem;') + '</div>' +
-        '<div class="practice-ask">3. ¿Cuánto vale el MCD?</div>' +
+        '<div class="practice-ask">2. ¿Cuánto vale el MCD?</div>' +
         '<div class="practice-row"><span class="eq">MCD =</span>' + inputHTML('g', 'MCD del ejercicio ' + n, 'flex:0 1 6rem;') + '</div>' +
         '<div class="practice-row" style="margin-top:0.7rem;"><button type="button" class="practice-check">Comprobar</button></div>' +
         '<div class="practice-fb" aria-live="polite"></div>';
@@ -226,13 +222,7 @@
         card.classList.remove('ok', 'bad');
         var empty = Object.keys(inp).some(function (k) { return !inp[k].value.trim(); });
         if (empty) { fb.innerHTML = 'Contesta <strong>todas</strong> las preguntas antes de comprobar.'; return; }
-        var wrong = [], msgs = [], total = e.nums.length + 2;
-        e.nums.forEach(function (x, i) {
-          var r = parseDecomp(inp['d' + i].value);
-          if (!r) { wrong.push('d' + i); msgs.push('No entendí la descomposición de <strong>' + x + '</strong>: escríbela como, por ejemplo, <strong>2^2 · 3</strong>.'); }
-          else if (r.composite != null) { wrong.push('d' + i); msgs.push('En la descomposición de <strong>' + x + '</strong>, el <strong>' + r.composite + '</strong> no es primo: se puede dividir más (' + r.composite + ' = ' + primeText(r.composite) + ').'); }
-          else if (r.value !== x) { wrong.push('d' + i); msgs.push('El producto de tu descomposición de <strong>' + x + '</strong> da ' + r.value + ', no ' + x + '. Divide otra vez entre primos hasta llegar a 1: ' + x + ' = ' + primeText(x) + '.'); }
-        });
+        var wrong = [], msgs = [], total = 2;
         var gv = /^\d+$/.test(inp.g.value.trim()) ? parseInt(inp.g.value.trim(), 10) : null, lv = /^\d+$/.test(inp.l.value.trim()) ? parseInt(inp.l.value.trim(), 10) : null;
         if (lv !== e.l) {
           wrong.push('l');

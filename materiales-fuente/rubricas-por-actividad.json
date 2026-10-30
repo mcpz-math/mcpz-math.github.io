@@ -1092,15 +1092,14 @@
       "ocurrencia": 0,
       "evidencia": [
         "Los ejercicios al azar de la página, resueltos en el cuaderno con todas las divisiones (dividendo, divisor, cociente y residuo).",
-        "Al menos un ejercicio con 2 divisiones y uno con 5 ó 6, y el cálculo del mcm con MCD · mcm = producto.",
+        "Al menos un ejercicio con 2 divisiones y uno con 5 ó 6.",
         "La comprobación de un resultado con la descomposición en primos."
       ],
       "errores": [
         "Divide el menor entre el mayor, o no cambia los papeles (el divisor no pasa a ser dividendo).",
         "Calcula mal el cociente o el residuo (confunde cociente con residuo o se pasa del divisor).",
         "Se detiene antes de llegar a residuo 0, o da como MCD el último residuo (el 0) en lugar del último divisor.",
-        "Da como MCD el penúltimo residuo en lugar del último divisor distinto de cero.",
-        "Calcula el mcm multiplicando los números sin dividir entre el MCD."
+        "Da como MCD el penúltimo residuo en lugar del último divisor distinto de cero."
       ],
       "rows": [
         {
@@ -1113,30 +1112,29 @@
           "n1": "Escribe las divisiones sin orden o con la forma incorrecta y no se entiende su procedimiento. No usa ningún apoyo, como la tabla de dividendo, divisor, cociente y residuo.",
           "n23": "Escribe las divisiones pero omite alguna o no usa la forma a = b · q + r; repite el procedimiento de memoria y casi no lo explica.",
           "n4": "Escribe correctamente todas las divisiones y la tabla, señala el MCD y explica con claridad qué hizo; puede tener alguna omisión menor.",
-          "n5": "Escribe y explica con notación correcta todo el algoritmo (divisiones, tabla, MCD y mcm), por diferentes medios (con las divisiones, con la tabla y con la descomposición en primos), y reconstruye el procedimiento en una pareja nueva."
+          "n5": "Escribe y explica con notación correcta todo el algoritmo (divisiones, tabla y MCD), por diferentes medios (con las divisiones, con la tabla y con la descomposición en primos), y reconstruye el procedimiento en una pareja nueva."
         },
         {
           "id": "REP_ARI",
           "observar": [
             "Representa cada paso con la división con residuo a = b · q + r.",
-            "Relaciona el algoritmo con el MCD por primos (obtiene el mismo resultado).",
-            "Usa MCD · mcm = producto para obtener el mcm."
+            "Relaciona el algoritmo con el MCD por primos (obtiene el mismo resultado)."
           ],
           "n1": "Conoce los pasos sólo de memoria y los usa de forma mecánica, sin relacionarlos con el MCD por primos.",
           "n23": "Comprende y describe el algoritmo y lo usa en casos sencillos (2 ó 3 divisiones). Se confunde con más pasos.",
-          "n4": "Usa dos formas de obtener el MCD (algoritmo y primos) y las compara; obtiene el mcm con MCD · mcm = producto.",
-          "n5": "Combina varias representaciones (divisiones, tabla, primos, la relación MCD · mcm) y elige la más adecuada según el tamaño de los números, justificando su elección."
+          "n4": "Usa dos formas de obtener el MCD (algoritmo y primos) y las compara.",
+          "n5": "Combina varias representaciones (divisiones, tabla, primos) y elige la más adecuada según el tamaño de los números, justificando su elección."
         },
         {
           "id": "MOD",
           "observar": [
             "Sigue el procedimiento completo hasta el residuo 0.",
-            "Obtiene el MCD y el mcm correctos y los comprueba (con primos o con la relación MCD · mcm).",
+            "Obtiene el MCD correcto y lo comprueba con la descomposición en primos.",
             "Encuentra y corrige sus errores."
           ],
           "n1": "No sigue el procedimiento (se detiene o cambia números sin criterio) y no revisa.",
           "n23": "Sigue el procedimiento en casos de 2 ó 3 divisiones, pero se pierde con más pasos o con residuos grandes, y no comprueba sus resultados.",
-          "n45": "Sigue el algoritmo completo en cualquier caso (hasta 6 divisiones), obtiene el MCD y el mcm correctos y los comprueba con otro método. Detecta y corrige sus errores."
+          "n45": "Sigue el algoritmo completo en cualquier caso (hasta 6 divisiones), obtiene el MCD correcto y lo comprueba con otro método (la descomposición en primos). Detecta y corrige sus errores."
         },
         {
           "id": "ARG",

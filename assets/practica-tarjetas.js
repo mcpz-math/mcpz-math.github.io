@@ -42,7 +42,7 @@
       }
       var isMcd = mode === 'mcd', label = isMcd ? 'MCD' : 'mcm';
       var used = isMcd ? primes.filter(function (p, i) { return common[i]; }) : primes, prod = used.reduce(function (a, b) { return a * b; }, 1);
-      var txt = label + ' = ' + (used.length ? used.join(' · ') + ' = ' : '1 (no hay primo común) = ') + '<b>' + prod + '</b>';
+      var txt = label + ' = ' + (used.length === 0 ? '<b>1</b> (no hay primo común)' : (used.length > 1 ? used.join(' · ') + ' = ' : '') + '<b>' + prod + '</b>');
       var html = '<div class="dsim-wrap"><table class="dsim" aria-label="Tabla de descomposición simultánea para el ' + label + '">';
       rows.forEach(function (r, i) {
         var p = primes[i], pc = p == null ? '' : (isMcd ? (common[i] ? 'com' : 'no') : '');

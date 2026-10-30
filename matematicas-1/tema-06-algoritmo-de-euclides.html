@@ -77,7 +77,6 @@
 
   <div class="prose">
     <p><strong>Comprobación con primos:</strong> 252 = 2² · 3² · 7 y 105 = 3 · 5 · 7. Los primos comunes son 3 y 7, así que MCD = 3 · 7 = 21. Sale lo mismo.</p>
-    <p><strong>Y el mcm:</strong> con el MCD se obtiene fácil, porque MCD · mcm = producto de los dos números. Entonces mcm = 252 · 105 ÷ 21 = <strong>1 260</strong>.</p>
     <p><strong>Si el último residuo distinto de 0 es 1</strong>, el MCD es 1 (los números no tienen divisores comunes, se dice que son <em>primos entre sí</em>).</p>
   </div>
 
@@ -86,8 +85,7 @@
     <div class="k">Instrucciones</div>
     <p>Aplica el algoritmo de Euclides a cada pareja de números:</p>
     <p><strong>1.</strong> Completa <strong>cada división</strong> con su cociente y su residuo. (Los números de cada fila ya están puestos, para que sigas el camino correcto.)<br>
-       <strong>2.</strong> Escribe el <strong>MCD</strong> (el último divisor, cuando el residuo es 0).<br>
-       <strong>3.</strong> Escribe el <strong>mcm</strong>: producto de los números ÷ MCD.</p>
+       <strong>2.</strong> Escribe el <strong>MCD</strong> (el último divisor, cuando el residuo es 0).</p>
     <p>Después oprime <strong>Comprobar</strong> (o la tecla Enter). Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>, con menos pasos y números más pequeños primero.
        Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
   </div>
@@ -98,7 +96,7 @@
     <button type="button" class="pg-btn" id="eu-new">Otros 10 ejercicios (volver a intentar)</button>
   </p>
 
-  <script src="../assets/practica-tarjetas.js"></script>
+  <script src="../assets/practica-tarjetas.js?v=20261030r"></script>
   <script>
   (function () {
     var h = Practica.h;
@@ -111,7 +109,7 @@
       if (b >= a || a % b === 0 || seen[key]) continue;
       var rows = euclid(a, b);
       if (rows.length < 2 || rows.length > 6) continue;
-      seen[key] = 1; BANK.push({ a: a, b: b, rows: rows, g: rows[rows.length - 1].B, l: a / rows[rows.length - 1].B * b });
+      seen[key] = 1; BANK.push({ a: a, b: b, rows: rows, g: rows[rows.length - 1].B });
     }
     BANK.sort(function (x, y) { return (x.rows.length - y.rows.length) || (x.a - y.a); });
 
@@ -126,8 +124,7 @@
         return {
           head: 'MCD(' + e.a + ', ' + e.b + ')',
           body: '<div class="practice-ask">1. Completa cada división (cociente y residuo)</div>' + rowsHTML +
-                '<div class="practice-ask">2. ¿Cuánto vale el MCD?</div><div class="practice-row"><span class="eq">MCD =</span>' + h.inputHTML('g', 'MCD del ejercicio ' + n, 'flex:0 1 6rem;', 'inputmode="numeric" ') + '</div>' +
-                '<div class="practice-ask">3. ¿Cuánto vale el mcm? (' + e.a + ' · ' + e.b + ' ÷ MCD)</div><div class="practice-row"><span class="eq">mcm =</span>' + h.inputHTML('l', 'mcm del ejercicio ' + n, 'flex:0 1 7rem;', 'inputmode="numeric" ') + '</div>',
+                '<div class="practice-ask">2. ¿Cuánto vale el MCD?</div><div class="practice-row"><span class="eq">MCD =</span>' + h.inputHTML('g', 'MCD del ejercicio ' + n, 'flex:0 1 6rem;', 'inputmode="numeric" ') + '</div>',
           check: function (ctx) {
             var empty = Object.keys(ctx.inp).some(function (k) { return !ctx.inp[k].value.trim(); });
             if (empty) return { msg: 'Contesta <strong>todas</strong> las casillas antes de comprobar.' };
@@ -137,13 +134,12 @@
               if (q == null || s == null) return { bad: true, msg: '<span class="no">Los cocientes y los residuos son números enteros,</span> por ejemplo <strong>2</strong> o <strong>0</strong>.' };
               if (q !== r.q || s !== r.r) { wrong.push('d' + i); msgs.push('División ' + (i + 1) + ': ' + r.A + ' ÷ ' + r.B + ' da cociente <strong>' + r.q + '</strong> (' + r.B + ' · ' + r.q + ' = ' + (r.B * r.q) + ') y residuo <strong>' + r.r + '</strong> (' + r.A + ' − ' + (r.B * r.q) + ').'); }
             }
-            var g = h.parseNat(ctx.inp.g.value), l = h.parseNat(ctx.inp.l.value);
-            if (g == null || l == null) return { bad: true, msg: '<span class="no">El MCD y el mcm son números enteros.</span>' };
+            var g = h.parseNat(ctx.inp.g.value);
+            if (g == null) return { bad: true, msg: '<span class="no">El MCD es un número entero.</span>' };
             if (g !== e.g) { wrong.push('g'); msgs.push('El <strong>MCD</strong> es el <strong>último divisor</strong>: el de la fila en la que el residuo es 0 (' + e.g + ').'); }
-            if (l !== e.l) { wrong.push('l'); msgs.push(l === e.a * e.b && e.g !== 1 ? 'Falta dividir el producto entre el MCD: ' + e.a + ' · ' + e.b + ' ÷ ' + e.g + ' = <strong>' + e.l + '</strong>.' : 'El <strong>mcm</strong> es ' + e.a + ' · ' + e.b + ' ÷ ' + e.g + ' = <strong>' + e.l + '</strong>.'); }
-            return { wrong: wrong, msgs: msgs, total: e.rows.length + 2 };
+            return { wrong: wrong, msgs: msgs, total: e.rows.length + 1 };
           },
-          sol: solRows + '<br>Residuo 0 → MCD = <strong>' + e.g + '</strong><br>mcm = ' + e.a + ' · ' + e.b + ' ÷ ' + e.g + ' = <strong>' + e.l + '</strong>' +
+          sol: solRows + '<br>Residuo 0 → MCD = <strong>' + e.g + '</strong>' +
                '<br>Con primos: ' + e.a + ' = ' + h.primeText(e.a) + ' &nbsp;·&nbsp; ' + e.b + ' = ' + h.primeText(e.b)
         };
       }
@@ -172,20 +168,20 @@
             <td>Escribe las divisiones sin orden o con la forma incorrecta y no se entiende su procedimiento. No usa ningún apoyo, como la tabla de dividendo, divisor, cociente y residuo.</td>
             <td colspan="2">Escribe las divisiones pero omite alguna o no usa la forma a = b · q + r; repite el procedimiento de memoria y casi no lo explica.</td>
             <td>Escribe correctamente todas las divisiones y la tabla, señala el MCD y explica con claridad qué hizo; puede tener alguna omisión menor.</td>
-            <td>Escribe y explica con notación correcta todo el algoritmo (divisiones, tabla, MCD y mcm), por diferentes medios (con las divisiones, con la tabla y con la descomposición en primos), y reconstruye el procedimiento en una pareja nueva.</td>
+            <td>Escribe y explica con notación correcta todo el algoritmo (divisiones, tabla y MCD), por diferentes medios (con las divisiones, con la tabla y con la descomposición en primos), y reconstruye el procedimiento en una pareja nueva.</td>
           </tr>
           <tr>
-            <td class="crit"><strong>Representación aritmética</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Representa cada paso con la división con residuo a = b · q + r.</li><li>Relaciona el algoritmo con el MCD por primos (obtiene el mismo resultado).</li><li>Usa MCD · mcm = producto para obtener el mcm.</li></ul></div></td>
+            <td class="crit"><strong>Representación aritmética</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Representa cada paso con la división con residuo a = b · q + r.</li><li>Relaciona el algoritmo con el MCD por primos (obtiene el mismo resultado).</li></ul></div></td>
             <td>Conoce los pasos sólo de memoria y los usa de forma mecánica, sin relacionarlos con el MCD por primos.</td>
             <td colspan="2">Comprende y describe el algoritmo y lo usa en casos sencillos (2 ó 3 divisiones). Se confunde con más pasos.</td>
-            <td>Usa dos formas de obtener el MCD (algoritmo y primos) y las compara; obtiene el mcm con MCD · mcm = producto.</td>
-            <td>Combina varias representaciones (divisiones, tabla, primos, la relación MCD · mcm) y elige la más adecuada según el tamaño de los números, justificando su elección.</td>
+            <td>Usa dos formas de obtener el MCD (algoritmo y primos) y las compara.</td>
+            <td>Combina varias representaciones (divisiones, tabla, primos) y elige la más adecuada según el tamaño de los números, justificando su elección.</td>
           </tr>
           <tr>
-            <td class="crit"><strong>Modelación y resolución de problemas</strong><span class="crit-desc">Formulación del problema y sistematización · Matematización y análisis del sistema matemático · Interpretación, evaluación y validación.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Sigue el procedimiento completo hasta el residuo 0.</li><li>Obtiene el MCD y el mcm correctos y los comprueba (con primos o con la relación MCD · mcm).</li><li>Encuentra y corrige sus errores.</li></ul></div></td>
+            <td class="crit"><strong>Modelación y resolución de problemas</strong><span class="crit-desc">Formulación del problema y sistematización · Matematización y análisis del sistema matemático · Interpretación, evaluación y validación.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Sigue el procedimiento completo hasta el residuo 0.</li><li>Obtiene el MCD correcto y lo comprueba con la descomposición en primos.</li><li>Encuentra y corrige sus errores.</li></ul></div></td>
             <td>No sigue el procedimiento (se detiene o cambia números sin criterio) y no revisa.</td>
             <td colspan="2">Sigue el procedimiento en casos de 2 ó 3 divisiones, pero se pierde con más pasos o con residuos grandes, y no comprueba sus resultados.</td>
-            <td colspan="2">Sigue el algoritmo completo en cualquier caso (hasta 6 divisiones), obtiene el MCD y el mcm correctos y los comprueba con otro método. Detecta y corrige sus errores.</td>
+            <td colspan="2">Sigue el algoritmo completo en cualquier caso (hasta 6 divisiones), obtiene el MCD correcto y lo comprueba con otro método (la descomposición en primos). Detecta y corrige sus errores.</td>
           </tr>
           <tr>
             <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué el MCD no cambia al reemplazar los números por el menor y el residuo.</li><li>Explica por qué el último divisor (antes del residuo 0) es el MCD.</li><li>Compara con el resultado por primos.</li></ul></div></td>
