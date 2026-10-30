@@ -819,14 +819,14 @@
       "file": "matematicas-1/tema-06-primos-y-compuestos.html",
       "ocurrencia": 0,
       "evidencia": [
-        "Los ejercicios al azar de la página, resueltos en el cuaderno con la lista de divisores de cada número (no sólo la clasificación).",
+        "Los ejercicios al azar de la página, resueltos en el cuaderno con la descomposición en números primos de cada número (no sólo la clasificación) y, si se pide, la lista de sus divisores.",
         "Al menos un número primo, uno compuesto que parece primo (como 91 o 119) y el 1, con la razón de cada clasificación.",
         "La criba de Eratóstenes o la lista de los primos hasta 100 y la explicación de por qué sólo hace falta probar primos hasta la raíz del número."
       ],
       "errores": [
         "Dice que el 1 es primo o que es compuesto.",
         "Dice que el 2 no es primo porque es par, o que todos los impares son primos (9, 15, 21, 91…).",
-        "Escribe una lista de divisores a la que le faltan el 1 o el propio número, o parejas completas (en 36: 1, 2, 3, 4, 6, 12, 18, 36 sin el 9).",
+        "Descompone mal: deja un factor que no es primo (12 = 3 · 4 o 36 = 4 · 9) o la descomposición no da el número; o escribe una lista de divisores a la que le faltan el 1, el propio número o parejas completas.",
         "Para decidir si un número es primo, prueba sólo con 2, 3 y 5 y se le escapan los compuestos como 49 o 77.",
         "Confunde divisor con múltiplo (escribe 12, 18, 24 como divisores de 6)."
       ],
@@ -834,7 +834,7 @@
         {
           "id": "COM",
           "observar": [
-            "Escribe la lista de divisores de un número en orden, separados con comas, con el 1 y el propio número.",
+            "Escribe un número como producto de primos con exponentes (2² · 3) y, cuando se pide, la lista de divisores en orden con el 1 y el propio número.",
             "Usa el vocabulario correcto (divisor, primo, compuesto) y justifica la clasificación con el número de divisores.",
             "Explica con sus palabras por qué el 1 no es primo ni compuesto."
           ],

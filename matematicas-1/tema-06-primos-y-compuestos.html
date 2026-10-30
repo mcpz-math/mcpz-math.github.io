@@ -120,7 +120,8 @@
     <div class="k">Instrucciones</div>
     <p>Para cada número:</p>
     <p><strong>1.</strong> Elige si es <strong>primo</strong>, <strong>compuesto</strong> o <strong>ninguno de los dos</strong>.<br>
-       <strong>2.</strong> Escribe <strong>todos sus divisores</strong>, separados con comas, por ejemplo <strong>1, 2, 3, 6</strong>. Con ellos puedes comprobar tu respuesta del paso 1.</p>
+       <strong>2.</strong> Escribe su <strong>descomposición en números primos</strong>, por ejemplo <strong>2^2 · 3</strong> (también puedes usar los botones <strong>²</strong> y <strong>·</strong>). Si el número es primo, escribe el mismo número;
+       el 1 no se descompone: escribe 1. La descomposición te ayuda a comprobar tu respuesta del paso 1: un número es primo si sólo se puede escribir como él mismo.</p>
     <p>Después oprime <strong>Comprobar</strong> (o la tecla Enter). Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>, de los más sencillos a los más difíciles.
        Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
   </div>
@@ -147,34 +148,55 @@
       .map(function (n) { var d = h.divisors(n); return { n: n, div: d, tipo: n === 1 ? 'ninguno' : (d.length === 2 ? 'primo' : 'compuesto') }; });
     var NOMBRE = { primo: 'primo', compuesto: 'compuesto', ninguno: 'ninguno de los dos' };
 
+    // lo que escribe el alumno: 2^2 · 3, 2²*3, 2·2·3 …  →  { value, composite } o null si no se entiende
+    var SUPR = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9' };
+    function parseDecomp(s) {
+      s = s.replace(/\s+/g, '').replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, function (m) { return '^' + m.split('').map(function (c) { return SUPR[c]; }).join(''); }).replace(/[·×x*•]/g, '*');
+      if (!s) return null;
+      var value = 1, composite = null, parts = s.split('*');
+      for (var i = 0; i < parts.length; i++) {
+        var m = /^(\d+)(?:\^(\d+))?$/.exec(parts[i]);
+        if (!m) return null;
+        var p = parseInt(m[1], 10), k = m[2] ? parseInt(m[2], 10) : 1;
+        if (k > 12 || p > 100000) return null;
+        if (!h.isPrime(p) && composite == null) composite = p;
+        value *= Math.pow(p, k);
+      }
+      return { value: value, composite: composite };
+    }
+
     Practica.setup({
       id: 'pc', bank: BANK, anchor: 'ejercicios-primos',
       card: function (e, n) {
-        var sol = 'Divisores de ' + e.n + ': <strong>' + e.div.join(', ') + '</strong> (' + e.div.length + ' divisor' + (e.div.length === 1 ? '' : 'es') + ')<br>' +
-                  (e.tipo === 'primo' ? 'Sólo tiene 2 divisores (el 1 y él mismo): es <strong>primo</strong>.'
+        var desc = e.n === 1 ? '1 (el 1 no se descompone)' : e.n + ' = ' + h.primeText(e.n);
+        var sol = '<strong>' + desc + '</strong><br>Divisores de ' + e.n + ': ' + e.div.join(', ') + ' (' + e.div.length + ' divisor' + (e.div.length === 1 ? '' : 'es') + ')<br>' +
+                  (e.tipo === 'primo' ? 'Sólo tiene 2 divisores (el 1 y él mismo) y no se puede descomponer más: es <strong>primo</strong>.'
                   : e.tipo === 'ninguno' ? 'El 1 tiene un solo divisor: <strong>no es primo ni compuesto</strong>.'
-                  : 'Tiene más de 2 divisores: es <strong>compuesto</strong>. Por ejemplo, ' + e.n + ' = ' + e.div[1] + ' · ' + (e.n / e.div[1]) + (h.primeText(e.n).indexOf('·') > 0 || h.primeText(e.n).indexOf('²') > 0 ? ', y en primos: ' + e.n + ' = ' + h.primeText(e.n) : '') + '.');
+                  : 'Se descompone en varios primos y tiene más de 2 divisores: es <strong>compuesto</strong>.');
         return {
           head: 'Número: ' + e.n,
           body: '<div class="practice-ask">1. ¿Es primo, compuesto o ninguno de los dos?</div>' +
                 h.optsHTML('tipo', [['primo', 'Primo'], ['compuesto', 'Compuesto'], ['ninguno', 'Ninguno de los dos']]) +
-                '<div class="practice-ask">2. Escribe todos sus divisores</div>' +
-                '<div class="practice-row"><span class="eq">divisores:</span>' + h.inputHTML('d', 'Divisores de ' + e.n + ', ejercicio ' + n, 'flex:1 1 9rem;') + '</div>',
+                '<div class="practice-ask">2. Escribe su descomposición en números primos</div>' +
+                '<div class="practice-row"><span class="eq">' + e.n + ' =</span>' + h.inputHTML('d', 'Descomposición de ' + e.n + ', ejercicio ' + n, 'flex:1 1 9rem;') + '</div>' +
+                h.keysHTML(['·', '²', '³', '⁴', '⁵'], 'd'),
           check: function (ctx) {
-            var dv = h.parseList(ctx.inp.d.value);
             if (!ctx.chosen.tipo || !ctx.inp.d.value.trim()) return { msg: 'Contesta <strong>las dos</strong> preguntas antes de comprobar.' };
-            if (!dv) return { bad: true, msg: '<span class="no">No entendí los divisores.</span> Escribe números separados con comas, por ejemplo <strong>1, 2, 3, 6</strong>.' };
+            var r = parseDecomp(ctx.inp.d.value);
+            if (!r) return { bad: true, msg: '<span class="no">No entendí la descomposición.</span> Escríbela como, por ejemplo, <strong>2^2 · 3</strong> o <strong>7</strong>.' };
             var wrong = [], msgs = [];
             if (ctx.chosen.tipo !== e.tipo) {
               wrong.push('tipo');
-              msgs.push(e.tipo === 'primo' ? 'Revisa los divisores: ' + e.n + ' sólo se divide entre 1 y entre sí mismo, así que es <strong>primo</strong>.'
+              msgs.push(e.tipo === 'primo' ? e.n + ' sólo se divide entre 1 y entre sí mismo: es <strong>primo</strong>.'
                       : e.tipo === 'ninguno' ? 'El 1 es un caso especial: tiene un solo divisor, así que <strong>no es primo ni compuesto</strong>.'
-                      : e.n + ' se divide también entre ' + e.div[1] + ': tiene más de dos divisores, así que es <strong>compuesto</strong>.');
+                      : e.n + ' se divide también entre ' + e.div[1] + ' (' + e.n + ' = ' + e.div[1] + ' · ' + (e.n / e.div[1]) + '): tiene más de dos divisores, así que es <strong>compuesto</strong>.');
             }
-            if (!h.sameSet(dv, e.div)) {
+            var okD = e.n === 1 ? (r.value === 1 && ctx.inp.d.value.replace(/\s+/g, '') === '1') : (r.composite == null && r.value === e.n);
+            if (!okD) {
               wrong.push('d');
-              var falta = e.div.filter(function (x) { return dv.indexOf(x) < 0; }), sobra = dv.filter(function (x) { return e.div.indexOf(x) < 0; });
-              msgs.push((falta.length ? 'Te faltan divisores (por ejemplo el <strong>' + falta[0] + '</strong>). ' : '') + (sobra.length ? 'El <strong>' + sobra[0] + '</strong> no divide exacto a ' + e.n + '. ' : '') + 'Recuerda que siempre van el 1 y el propio número.');
+              if (e.n === 1) msgs.push('El 1 no se descompone en primos: escribe <strong>1</strong>.');
+              else if (r.composite != null) msgs.push('El <strong>' + r.composite + '</strong> no es primo: se puede descomponer más (' + r.composite + ' = ' + h.primeText(r.composite) + '). Sigue dividiendo entre primos hasta llegar a 1.');
+              else msgs.push('El producto de tu descomposición da ' + r.value + ', no ' + e.n + '. Divide entre primos, uno por uno, hasta llegar a 1: ' + (e.tipo === 'primo' ? e.n + ' es primo, así que se queda igual.' : e.n + ' = ' + h.primeText(e.n) + '.'));
             }
             return { wrong: wrong, msgs: msgs, total: 2 };
           },
@@ -202,7 +224,7 @@
         </thead>
         <tbody>
           <tr>
-            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe la lista de divisores de un número en orden, separados con comas, con el 1 y el propio número.</li><li>Usa el vocabulario correcto (divisor, primo, compuesto) y justifica la clasificación con el número de divisores.</li><li>Explica con sus palabras por qué el 1 no es primo ni compuesto.</li></ul></div></td>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe un número como producto de primos con exponentes (2² · 3) y, cuando se pide, la lista de divisores en orden con el 1 y el propio número.</li><li>Usa el vocabulario correcto (divisor, primo, compuesto) y justifica la clasificación con el número de divisores.</li><li>Explica con sus palabras por qué el 1 no es primo ni compuesto.</li></ul></div></td>
             <td>Escribe listas de divisores desordenadas o incompletas y las clasificaciones no se entienden; mezcla divisor con múltiplo. No usa ningún apoyo (parejas de factores, tabla de primos).</td>
             <td colspan="2">Escribe los divisores y la clasificación, pero con omisiones (el 1, el número, una pareja) y casi no justifica; repite la definición de memoria.</td>
             <td>Escribe correctamente los divisores y la clasificación con vocabulario adecuado y la justifica con el número de divisores; puede tener alguna omisión menor. Explica con claridad qué hizo.</td>
