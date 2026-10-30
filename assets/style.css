@@ -1060,3 +1060,6 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
 .dsim td.pr.no { color: #b3ae9c; font-weight: 500; }
 .dsim-leg { text-align: center; font-size: 0.88rem; color: var(--ink-soft); margin-top: 0.5rem; font-family: 'Karla', system-ui, sans-serif; }
 .pill-leg { background: #2b6cb0; color: #fff; border-radius: 8px; padding: 0 0.5rem; font-weight: 700; }
+
+/* pasos con frases completas (en vez de mayúsculas y letra espaciada) */
+.regla-steps.claro .txt { text-transform: none; letter-spacing: 0; font-weight: 400; font-size: 1.02rem; line-height: 1.45; color: var(--ink); }

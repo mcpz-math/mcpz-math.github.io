@@ -1818,3 +1818,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
   dividen a todos los números a la vez (los que forman el MCD) se marcan **en azul** (los demás quedan en gris). Primero van los azules y después los grises: 24, 36, 60 → 2, 2, 3 (azules) y 2, 3, 5 (grises);
   MCD = 2 · 2 · 3 = 12. Debajo de la tabla hay una leyenda ("azul: primos que dividen a todos a la vez"). Se cambiaron los textos de los pasos 2 y 3 del MCD. Función `dsimHTML` en `assets/practica-tarjetas.js`;
   estilos `.dsim td.pr.com` y `.dsim td.pr.no` en `assets/style.css`. Se probaron 600 tarjetas (el producto de los primos azules coincide con el MCD y la tabla termina en 1).
+- A pedido de Carmen, en `matematicas-1/tema-06-primos-y-compuestos.html` los pasos de "¿Es primo?" se reescribieron con **frases completas** (antes decían "si ninguno hasta la raíz divide, es primo" en mayúsculas y letra espaciada):
+  Paso 1 "Divide el número entre los primos, en orden: 2, 3, 5, 7…"; Paso 2 "Si alguna división sale exacta, el número es compuesto y ya terminaste."; Paso 3 (√n) "No pruebes con primos mayores que la raíz cuadrada del número.
+  Si ninguno lo divide, el número es primo." Se agregó el modificador `.regla-steps.claro` (`assets/style.css`) para que el texto de los pasos salga en minúsculas normales; se puede usar en otros recuadros de pasos.
