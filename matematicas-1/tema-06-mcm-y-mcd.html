@@ -6,7 +6,7 @@
   <title>mcm y MCD — Matemáticas 1</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
-  <link rel="stylesheet" href="../assets/style.css?v=20261030o">
+  <link rel="stylesheet" href="../assets/style.css?v=20261030q">
 </head>
 <body>
 
@@ -30,6 +30,35 @@
     </p>
   </div>
 
+
+  <p class="section-label" id="mcm">mcm: mínimo común múltiplo</p>
+  <div class="prose">
+    <p>Es el número <strong>más pequeño</strong> (distinto de cero) que es múltiplo de todos los números a la vez. Por ejemplo, el mcm de 12 y 18 es 36.</p>
+  </div>
+  <div class="regla-box">
+    <div class="regla-head">★ <span class="mcm">mcm</span> ★</div>
+    <div class="regla-steps">
+      <div class="regla-step c1">
+        <div class="paso">Paso 1</div>
+        <div class="big">tabla</div>
+        <div class="txt">escribe los números en fila y una barra a la derecha</div>
+      </div>
+      <div class="regla-step c2">
+        <div class="paso">Paso 2</div>
+        <div class="big">dividir</div>
+        <div class="txt">entre el primo más pequeño que divida a <strong>alguno</strong>; los demás se bajan igual</div>
+      </div>
+      <div class="regla-step c3">
+        <div class="paso">Paso 3</div>
+        <div class="big">multiplicar</div>
+        <div class="txt">cuando todos sean 1, los primos de la derecha son el <span class="mcm">mcm</span></div>
+      </div>
+    </div>
+    <div class="regla-ejemplo">
+      <span class="lbl">Ejemplo · <span class="mcm">mcm</span>(10, 15, 18)</span>
+      <div class="dsim-host" data-nums="10,15,18" data-mode="mcm"></div>
+    </div>
+  </div>
 
   <p class="section-label" id="mcd">MCD: máximo común divisor</p>
   <div class="prose">
@@ -61,60 +90,11 @@
     </div>
   </div>
 
-  <p class="section-label" id="mcm">mcm: mínimo común múltiplo</p>
-  <div class="prose">
-    <p>Es el número <strong>más pequeño</strong> (distinto de cero) que es múltiplo de todos los números a la vez. Por ejemplo, el mcm de 12 y 18 es 36.</p>
-  </div>
-  <div class="regla-box">
-    <div class="regla-head">★ <span class="mcm">mcm</span> ★</div>
-    <div class="regla-steps">
-      <div class="regla-step c1">
-        <div class="paso">Paso 1</div>
-        <div class="big">tabla</div>
-        <div class="txt">escribe los números en fila y una barra a la derecha</div>
-      </div>
-      <div class="regla-step c2">
-        <div class="paso">Paso 2</div>
-        <div class="big">dividir</div>
-        <div class="txt">entre el primo más pequeño que divida a <strong>alguno</strong>; los demás se bajan igual</div>
-      </div>
-      <div class="regla-step c3">
-        <div class="paso">Paso 3</div>
-        <div class="big">multiplicar</div>
-        <div class="txt">cuando todos sean 1, los primos de la derecha son el <span class="mcm">mcm</span></div>
-      </div>
-    </div>
-    <div class="regla-ejemplo">
-      <span class="lbl">Ejemplo · <span class="mcm">mcm</span>(10, 15, 18)</span>
-      <div class="dsim-host" data-nums="10,15,18" data-mode="mcm"></div>
-    </div>
-  </div>
-
-  <p class="section-label">Otra forma de verlo: con exponentes</p>
-  <div class="prose">
-    <p>Se escribe el <strong>exponente</strong> de cada primo en cada número (si el primo no está, el exponente es 0). El MCD toma el <strong>menor</strong> de cada columna y el mcm el <strong>mayor</strong>.</p>
-  </div>
-  <div class="exp-wrap">
-    <table class="exp-table" aria-label="Tabla de exponentes de 12 y 18">
-      <tr><th>primo</th><th>2</th><th>3</th></tr>
-      <tr><td class="lbl">12 = 2² · 3</td><td>2</td><td>1</td></tr>
-      <tr><td class="lbl">18 = 2 · 3²</td><td>1</td><td>2</td></tr>
-      <tr><td class="lbl">MCD · el menor</td><td class="min">1</td><td class="min">1</td></tr>
-      <tr><td class="lbl">mcm · el mayor</td><td class="max">2</td><td class="max">2</td></tr>
-    </table>
-    <div class="exp-cap">MCD = 2¹ · 3¹ = 6 &nbsp;·&nbsp; mcm = 2² · 3² = 36</div>
-  </div>
-  <div class="prose">
-    <p><strong>Si no hay primos comunes</strong> (por ejemplo, 8 y 15), el MCD es <strong>1</strong> y el mcm es el producto de los números (8 · 15 = 120).
-       <strong>Si un número es múltiplo del otro</strong> (por ejemplo, 4 y 12), el MCD es el menor (4) y el mcm el mayor (12).</p>
-    <p><strong>Comprobación con dos números:</strong> MCD · mcm = producto de los dos números. Con 12 y 18: 6 · 36 = 216 = 12 · 18.</p>
-  </div>
-
   <p class="section-label">¿Para qué sirven?</p>
   <div class="prose">
     <ul style="margin:0 0 1rem; padding-left:1.4rem;">
-      <li>El <strong>MCD</strong> sirve para <strong>simplificar fracciones</strong>: {{6/9}} se divide entre el MCD(6, 9) = 3.</li>
       <li>El <strong>mcm</strong> sirve para <strong>sumar y restar fracciones</strong> con denominadores distintos: el denominador común es el mcm.</li>
+      <li>El <strong>MCD</strong> sirve para <strong>simplificar fracciones</strong>: {{6/9}} se divide entre el MCD(6, 9) = 3.</li>
     </ul>
     <p>Los verás en acción en <a href="../matematicas-2/tema-01-operaciones-con-fracciones.html" style="color:var(--forest); font-weight:700;">Operaciones con fracciones (Matemáticas 2)</a>.</p>
   </div>
@@ -124,8 +104,8 @@
     <div class="k">Instrucciones</div>
     <p>Para cada grupo de números:</p>
     <p><strong>1.</strong> <strong>Descompón</strong> cada número en primos, por ejemplo <strong>2^2 · 3</strong> (también puedes usar los botones <strong>²</strong> y <strong>·</strong>).<br>
-       <strong>2.</strong> Escribe el <strong>MCD</strong> (con la tabla: sólo los primos que dividen a todos a la vez).<br>
-       <strong>3.</strong> Escribe el <strong>mcm</strong> (con la tabla: hasta que todos sean 1). Al comprobar verás las dos tablas.</p>
+       <strong>2.</strong> Escribe el <strong>mcm</strong> (con la tabla: se divide hasta que todos sean 1 y se multiplican todos los primos).<br>
+       <strong>3.</strong> Escribe el <strong>MCD</strong> (con la misma tabla: sólo los primos que dividen a todos a la vez). Al comprobar verás las dos tablas.</p>
     <p>Después oprime <strong>Comprobar</strong> (o la tecla Enter). Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>, de menos a más difíciles
        (los últimos tienen tres números). Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
   </div>
@@ -197,9 +177,9 @@
     function solution(e) {
       var H = Practica.h;
       var out = e.nums.map(function (n) { return n + ' = ' + primeText(n); }).join('<br>');
-      out += '<br><strong>MCD</strong> (primos que dividen a todos a la vez):' + H.dsimHTML(e.nums, 'mcd');
-      out += '<strong>mcm</strong> (hasta que todos sean 1):' + H.dsimHTML(e.nums, 'mcm');
-      if (e.nums.length === 2) out += 'Comprobación: MCD · mcm = ' + e.g + ' · ' + e.l + ' = ' + (e.g * e.l) + ' = ' + e.nums[0] + ' · ' + e.nums[1];
+      out += '<br><strong>mcm</strong> (hasta que todos sean 1):' + H.dsimHTML(e.nums, 'mcm');
+      out += '<strong>MCD</strong> (primos que dividen a todos a la vez):' + H.dsimHTML(e.nums, 'mcd');
+      if (e.nums.length === 2) out += 'Comprobación: mcm · MCD = ' + e.l + ' · ' + e.g + ' = ' + (e.g * e.l) + ' = ' + e.nums[0] + ' · ' + e.nums[1];
       return out;
     }
 
@@ -225,10 +205,10 @@
         '<div class="practice-ask">1. Descompón cada número en primos</div>' +
         e.nums.map(function (x, i) { return '<div class="practice-row"><span class="eq">' + x + ' =</span>' + inputHTML('d' + i, 'Descomposición de ' + x + ' del ejercicio ' + n, 'flex:1 1 7rem;') + '</div>'; }).join('') +
         '<div class="practice-keys" data-t="' + dTargets + '">' + ['·', '²', '³', '⁴', '⁵'].map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('') + '</div>' +
-        '<div class="practice-ask">2. ¿Cuánto vale el MCD?</div>' +
-        '<div class="practice-row"><span class="eq">MCD =</span>' + inputHTML('g', 'MCD del ejercicio ' + n, 'flex:0 1 6rem;') + '</div>' +
-        '<div class="practice-ask">3. ¿Cuánto vale el mcm?</div>' +
+        '<div class="practice-ask">2. ¿Cuánto vale el mcm?</div>' +
         '<div class="practice-row"><span class="eq">mcm =</span>' + inputHTML('l', 'mcm del ejercicio ' + n, 'flex:0 1 6rem;') + '</div>' +
+        '<div class="practice-ask">3. ¿Cuánto vale el MCD?</div>' +
+        '<div class="practice-row"><span class="eq">MCD =</span>' + inputHTML('g', 'MCD del ejercicio ' + n, 'flex:0 1 6rem;') + '</div>' +
         '<div class="practice-row" style="margin-top:0.7rem;"><button type="button" class="practice-check">Comprobar</button></div>' +
         '<div class="practice-fb" aria-live="polite"></div>';
       grid.appendChild(card);
@@ -254,17 +234,17 @@
           else if (r.value !== x) { wrong.push('d' + i); msgs.push('El producto de tu descomposición de <strong>' + x + '</strong> da ' + r.value + ', no ' + x + '. Divide otra vez entre primos hasta llegar a 1: ' + x + ' = ' + primeText(x) + '.'); }
         });
         var gv = /^\d+$/.test(inp.g.value.trim()) ? parseInt(inp.g.value.trim(), 10) : null, lv = /^\d+$/.test(inp.l.value.trim()) ? parseInt(inp.l.value.trim(), 10) : null;
-        if (gv !== e.g) {
-          wrong.push('g');
-          msgs.push(gv === e.l ? 'Parece que intercambiaste el MCD y el mcm: el <strong>MCD</strong> es el <strong>más pequeño</strong> (primos comunes, menor exponente).'
-                    : e.g === 1 ? 'Si no hay primos comunes, el <strong>MCD es 1</strong>.'
-                    : 'El <strong>MCD</strong> sólo usa los primos que están en <strong>todos</strong> los números, con el <strong>menor</strong> exponente.');
-        }
         if (lv !== e.l) {
           wrong.push('l');
-          msgs.push(lv === e.g ? 'Parece que intercambiaste el MCD y el mcm: el <strong>mcm</strong> es el <strong>más grande</strong> (todos los primos, mayor exponente).'
+          msgs.push(lv === e.g ? 'Parece que intercambiaste el mcm y el MCD: el <strong>mcm</strong> es el <strong>más grande</strong> (todos los primos, mayor exponente).'
                     : (lv === e.prod && e.prod !== e.l) ? 'No basta multiplicar los números: el <strong>mcm</strong> usa cada primo <strong>una sola vez</strong>, con su mayor exponente.'
                     : 'El <strong>mcm</strong> usa <strong>todos</strong> los primos que aparezcan, con el <strong>mayor</strong> exponente.');
+        }
+        if (gv !== e.g) {
+          wrong.push('g');
+          msgs.push(gv === e.l ? 'Parece que intercambiaste el mcm y el MCD: el <strong>MCD</strong> es el <strong>más pequeño</strong> (primos comunes, menor exponente).'
+                    : e.g === 1 ? 'Si no hay primos comunes, el <strong>MCD es 1</strong>.'
+                    : 'El <strong>MCD</strong> sólo usa los primos que están en <strong>todos</strong> los números, con el <strong>menor</strong> exponente.');
         }
         if (!wrong.length) {
           card.classList.add('ok'); done[idx] = 1; score();
@@ -305,16 +285,16 @@
         <tbody>
           <tr>
             <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe cada número como producto de primos con exponentes (2² · 3) y no como producto de números compuestos (4 · 3).</li><li>Presenta en orden la descomposición, los primos comunes, el MCD y el mcm, con el símbolo = y las operaciones.</li><li>Explica con sus palabras qué hizo en cada paso.</li></ul></div></td>
-            <td>Escribe las descomposiciones con errores de notación (sin exponentes, con factores compuestos) y no se entiende su procedimiento. No usa ningún apoyo, como la escalera de divisiones o la tabla de exponentes.</td>
+            <td>Escribe las descomposiciones con errores de notación (sin exponentes, con factores compuestos) y no se entiende su procedimiento. No usa ningún apoyo, como la escalera de divisiones o la tabla de descomposición.</td>
             <td colspan="2">Escribe las descomposiciones y los resultados de forma limitada: se entiende lo que hace, aunque omite pasos (la tabla, los primos comunes) o los exponentes. Repite la regla de memoria y casi no la explica.</td>
             <td>Escribe correctamente la descomposición en primos, con exponentes, y presenta el MCD y el mcm con los primos elegidos; puede tener alguna deficiencia (por ejemplo, no escribir un paso). Explica con claridad qué hizo.</td>
-            <td>Escribe todos los pasos con notación correcta (primos con exponentes, tabla, MCD, mcm y comprobación) y explica por escrito u oralmente por qué el MCD usa el menor exponente y el mcm el mayor, apoyándose en la tabla de exponentes. Reconstruye el procedimiento en ejercicios nuevos.</td>
+            <td>Escribe todos los pasos con notación correcta (primos con exponentes, tabla de descomposición, mcm y MCD) y explica por escrito u oralmente por qué el MCD usa el menor exponente y el mcm el mayor, apoyándose en la tabla de descomposición. Reconstruye el procedimiento en ejercicios nuevos.</td>
           </tr>
           <tr>
-            <td class="crit"><strong>Representación aritmética</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Representa un número como producto de primos (escalera de divisiones) y reconoce que es única.</li><li>Usa la tabla de exponentes para ver el MCD (el menor de cada columna) y el mcm (el mayor).</li><li>Relaciona el MCD y el mcm con los múltiplos y divisores comunes.</li></ul></div></td>
+            <td class="crit"><strong>Representación aritmética</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Representa un número como producto de primos (escalera de divisiones) y reconoce que es única.</li><li>Usa la tabla de descomposición simultánea: el mcm es el producto de todos los primos de la derecha y el MCD el de los primos que dividen a todos a la vez (los azules).</li><li>Relaciona el MCD y el mcm con los múltiplos y divisores comunes.</li></ul></div></td>
             <td>Conoce el MCD y el mcm sólo de memoria («el más grande que divide», «el más pequeño que es múltiplo») y los busca por tanteo, sin relacionarlos con la descomposición en primos.</td>
             <td colspan="2">Comprende y describe una forma de obtener el MCD y el mcm (los primos o la lista de múltiplos y divisores) y la usa en casos sencillos. Se confunde con tres números o con exponentes mayores que 1.</td>
-            <td>Usa al menos dos representaciones (la descomposición en primos y la tabla de exponentes, o las listas de divisores y múltiplos) y las compara; ve en la tabla que el MCD toma el menor exponente y el mcm el mayor.</td>
+            <td>Usa al menos dos representaciones (la tabla de descomposición simultánea y la descomposición en primos con exponentes, o las listas de divisores y múltiplos) y las compara; ve en la tabla que el MCD toma el menor exponente y el mcm el mayor.</td>
             <td>Combina varias representaciones (primos con exponentes, tabla, listas y la relación MCD · mcm = producto) y elige la más adecuada para cada caso, justificando su elección.</td>
           </tr>
           <tr>

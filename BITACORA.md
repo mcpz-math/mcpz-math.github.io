@@ -1824,3 +1824,8 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, en los ejercicios de `matematicas-1/tema-06-primos-y-compuestos.html` la pregunta 2 ya no pide "todos sus divisores": ahora pide la **descomposición en números primos**
   (acepta 2^2 · 3, 2²·3 o 2·2·3; si el número es primo se escribe el mismo número; el 1 no se descompone y se escribe 1). Si falla, avisa cuando un factor no es primo (por ejemplo, 4 = 2²) o cuando el producto no da el número;
   la solución sigue mostrando la descomposición y la lista de divisores. Botones ², ³, ⁴, ⁵ y · debajo de la casilla. Se actualizaron las instrucciones, la rúbrica ("primoscomp") y la guía en Word. Se probaron 600 tarjetas.
+- Ajustes a pedido de Carmen en `matematicas-1/tema-06-mcm-y-mcd.html`: (1) se **quitó** la sección "Otra forma de verlo: con exponentes" (la tabla de exponentes y los párrafos de casos especiales y comprobación);
+  (2) ahora se ve **primero el mcm y después el MCD**: las secciones, el repaso "¿Para qué sirven?", las instrucciones, las preguntas de los ejercicios (2. mcm, 3. MCD) y las soluciones (primero la tabla del mcm y luego la del MCD).
+  También se actualizó el bloque de Divisibilidad ("mcm y MCD con la tabla…") y la rúbrica "mcmmcd" (ya no habla de la tabla de exponentes). Se probaron 400 tarjetas.
+- Las palabras grandes de los pasos ("multiplicar", "simplificar"…) se salían de su tarjeta en algunas pantallas: ahora son un poco más pequeñas (`.regla-step .big`, máx. 1.6 rem) y se ajustan al ancho de la tarjeta; se revisaron 185 pasos en 5 anchos de pantalla (320 a 1200 px) sin desbordes.
+  Las páginas piden la hoja de estilos con la versión `?v=20261030q`.

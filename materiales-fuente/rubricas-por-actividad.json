@@ -1159,7 +1159,7 @@
       "file": "matematicas-1/tema-06-mcm-y-mcd.html",
       "ocurrencia": 0,
       "evidencia": [
-        "Los ejercicios al azar de la página, resueltos en el cuaderno con el procedimiento: la descomposición de cada número en primos, la tabla de exponentes (o los primos comunes), el MCD y el mcm.",
+        "Los ejercicios al azar de la página, resueltos en el cuaderno con el procedimiento: la descomposición de cada número en primos, la tabla de descomposición simultánea (la barra con los primos a la derecha), el mcm y el MCD.",
         "Al menos un ejercicio de dos números sin primos comunes (MCD = 1), uno donde un número es múltiplo del otro y uno de tres números.",
         "La comprobación MCD · mcm = producto de los dos números, y la explicación de por qué el MCD usa los primos comunes con el menor exponente y el mcm todos los primos con el mayor."
       ],
@@ -1179,21 +1179,21 @@
             "Presenta en orden la descomposición, los primos comunes, el MCD y el mcm, con el símbolo = y las operaciones.",
             "Explica con sus palabras qué hizo en cada paso."
           ],
-          "n1": "Escribe las descomposiciones con errores de notación (sin exponentes, con factores compuestos) y no se entiende su procedimiento. No usa ningún apoyo, como la escalera de divisiones o la tabla de exponentes.",
+          "n1": "Escribe las descomposiciones con errores de notación (sin exponentes, con factores compuestos) y no se entiende su procedimiento. No usa ningún apoyo, como la escalera de divisiones o la tabla de descomposición.",
           "n23": "Escribe las descomposiciones y los resultados de forma limitada: se entiende lo que hace, aunque omite pasos (la tabla, los primos comunes) o los exponentes. Repite la regla de memoria y casi no la explica.",
           "n4": "Escribe correctamente la descomposición en primos, con exponentes, y presenta el MCD y el mcm con los primos elegidos; puede tener alguna deficiencia (por ejemplo, no escribir un paso). Explica con claridad qué hizo.",
-          "n5": "Escribe todos los pasos con notación correcta (primos con exponentes, tabla, MCD, mcm y comprobación) y explica por escrito u oralmente por qué el MCD usa el menor exponente y el mcm el mayor, apoyándose en la tabla de exponentes. Reconstruye el procedimiento en ejercicios nuevos."
+          "n5": "Escribe todos los pasos con notación correcta (primos con exponentes, tabla de descomposición, mcm y MCD) y explica por escrito u oralmente por qué el MCD usa el menor exponente y el mcm el mayor, apoyándose en la tabla de descomposición. Reconstruye el procedimiento en ejercicios nuevos."
         },
         {
           "id": "REP_ARI",
           "observar": [
             "Representa un número como producto de primos (escalera de divisiones) y reconoce que es única.",
-            "Usa la tabla de exponentes para ver el MCD (el menor de cada columna) y el mcm (el mayor).",
+            "Usa la tabla de descomposición simultánea: el mcm es el producto de todos los primos de la derecha y el MCD el de los primos que dividen a todos a la vez (los azules).",
             "Relaciona el MCD y el mcm con los múltiplos y divisores comunes."
           ],
           "n1": "Conoce el MCD y el mcm sólo de memoria («el más grande que divide», «el más pequeño que es múltiplo») y los busca por tanteo, sin relacionarlos con la descomposición en primos.",
           "n23": "Comprende y describe una forma de obtener el MCD y el mcm (los primos o la lista de múltiplos y divisores) y la usa en casos sencillos. Se confunde con tres números o con exponentes mayores que 1.",
-          "n4": "Usa al menos dos representaciones (la descomposición en primos y la tabla de exponentes, o las listas de divisores y múltiplos) y las compara; ve en la tabla que el MCD toma el menor exponente y el mcm el mayor.",
+          "n4": "Usa al menos dos representaciones (la tabla de descomposición simultánea y la descomposición en primos con exponentes, o las listas de divisores y múltiplos) y las compara; ve en la tabla que el MCD toma el menor exponente y el mcm el mayor.",
           "n5": "Combina varias representaciones (primos con exponentes, tabla, listas y la relación MCD · mcm = producto) y elige la más adecuada para cada caso, justificando su elección."
         },
         {

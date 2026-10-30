@@ -1063,3 +1063,7 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
 
 /* pasos con frases completas (en vez de mayúsculas y letra espaciada) */
 .regla-steps.claro .txt { text-transform: none; letter-spacing: 0; font-weight: 400; font-size: 1.02rem; line-height: 1.45; color: var(--ink); }
+
+/* palabras grandes de los pasos: que siempre quepan dentro de su tarjeta */
+.regla-step { min-width: 0; }
+.regla-step .big { font-size: clamp(1.2rem, 5vw, 1.6rem); overflow-wrap: anywhere; max-width: 100%; }
