@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binomio factor común: (x + a)(x + b) — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-06-productos-notables-y-factorizacion.html">← Tema 6</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 3 · Tema 6 · Binomio factor común y trinomio x² + bx + c</div>
+    <h1>Binomio factor común: (x + a)(x + b)</h1>
+  </div>
+
+  <p class="section-label">Conocimiento previo</p>
+  <div class="callout" style="text-align:center;">
+    <div class="k">Repaso</div>
+    <p>Multiplicar binomios usa la propiedad distributiva (cada término del primero por cada término del segundo). El binomio al cuadrado,
+       (x + 3)² = (x + 3)(x + 3), es el caso en que los dos binomios son iguales. Si ya se te olvidó, repásalo antes de empezar.</p>
+    <p style="margin-top:0.9rem;">
+      <a class="pg-btn" href="tema-06-binomio-al-cuadrado-y-tcp.html" style="text-decoration:none; display:inline-block;">
+        Repasar binomio al cuadrado y TCP →
+      </a>
+    </p>
+  </div>
+
+  <p class="section-label">¿Qué es?</p>
+  <div class="prose">
+    <p>Son dos binomios que <strong>comparten un término</strong>, la letra x, y se distinguen por el número que se le suma o resta:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
+      <li>(x + 3)(x + 4)</li>
+      <li>(x − 2)(x − 5)</li>
+      <li>(x + 6)(x − 2)</li>
+    </ul>
+    <p>En general, <strong>(x + a)(x + b)</strong>, donde a y b son números con su signo. El resultado es siempre un trinomio de la forma
+       <strong>x² + bx + c</strong>, el mismo que después aprenderemos a factorizar.</p>
+  </div>
+
+  <p class="section-label" id="regla">La regla: no hace falta multiplicar término a término</p>
+  <div class="prose">
+    <p>Multipliquemos (x + 3)(x + 4) término a término:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
+      <li>(x + 3)(x + 4) = x² + 4x + 3x + 12</li>
+      <li>= x² + <strong>7</strong>x + <strong>12</strong></li>
+    </ul>
+    <p>El 7 es la <strong>suma</strong> de 3 y 4 (4x + 3x = 7x) y el 12 es su <strong>producto</strong> (3 · 4). Pasa siempre:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
+      <li>(x + a)(x + b) = x² + (a + b)x + a · b</li>
+    </ul>
+    <figure style="margin:0 0 1rem; text-align:center;">
+      <svg viewBox="0 0 270 230" width="250" height="213" role="img" aria-label="Un rectángulo de lados x más 3 y x más 4 formado por x al cuadrado, un rectángulo de 4x, un rectángulo de 3x y un rectángulo de área 12" style="max-width:100%; height:auto;">
+        <rect x="30" y="30" width="130" height="130" fill="#c4e86b" stroke="#14301f" stroke-width="2.5"/>
+        <rect x="160" y="30" width="52" height="130" fill="#e4f1d3" stroke="#14301f" stroke-width="2.5"/>
+        <rect x="30" y="160" width="130" height="39" fill="#e4f1d3" stroke="#14301f" stroke-width="2.5"/>
+        <rect x="160" y="160" width="52" height="39" fill="#ffffff" stroke="#14301f" stroke-width="2.5"/>
+        <g font-family="IBM Plex Mono, monospace" font-size="21" fill="#14301f" text-anchor="middle" font-weight="700">
+          <text x="95" y="104">x²</text>
+          <text x="186" y="104">4x</text>
+          <text x="95" y="187">3x</text>
+          <text x="186" y="186" font-size="18">12</text>
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="18" fill="#3f6b4a" text-anchor="middle">
+          <text x="95" y="22">x</text>
+          <text x="186" y="22">4</text>
+          <text x="16" y="100">x</text>
+          <text x="16" y="186">3</text>
+        </g>
+      </svg>
+      <figcaption style="font-size:0.9rem; color:var(--ink-soft);">Rectángulo de lados x + 4 y x + 3: área x² + 4x + 3x + 12 = x² + 7x + 12</figcaption>
+    </figure>
+    <p>Los pasos para multiplicar con la regla:</p>
+    <ol style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li>Escribe <strong>x²</strong> (la letra por la letra).</li>
+      <li>Suma los dos números, <strong>con su signo</strong>, y ponle la letra: <strong>(a + b)x</strong>.</li>
+      <li>Multiplica los dos números: <strong>a · b</strong>. Es positivo si los dos tienen el mismo signo y negativo si tienen signos diferentes.</li>
+    </ol>
+  </div>
+
+  <p class="section-label">Ejemplos</p>
+  <div class="example-box">
+    <h2>Cuatro ejemplos paso a paso</h2>
+    <ul class="def-list">
+      <li><strong>(x + 3)(x + 4)</strong>: suma 3 + 4 = 7; producto 3 · 4 = 12.
+          Queda <strong>x² + 7x + 12</strong>.</li>
+      <li><strong>(x − 2)(x − 5)</strong>: suma (−2) + (−5) = −7; producto (−2)(−5) = 10 (mismo signo, positivo).
+          Queda <strong>x² − 7x + 10</strong>.</li>
+      <li><strong>(x + 6)(x − 2)</strong>: suma 6 + (−2) = 4; producto 6 · (−2) = −12 (signos diferentes, negativo).
+          Queda <strong>x² + 4x − 12</strong>.</li>
+      <li><strong>(x − 8)(x + 3)</strong>: suma (−8) + 3 = −5; producto (−8) · 3 = −24.
+          Queda <strong>x² − 5x − 24</strong>.</li>
+    </ul>
+    <p><strong>Casos especiales:</strong> si los dos números son iguales, es un binomio al cuadrado: (x + 3)(x + 3) = x² + 6x + 9 = (x + 3)².
+       Si son opuestos, la suma es 0 y desaparece el término con x: (x + 5)(x − 5) = x² − 25 (binomios conjugados).</p>
+    <p><strong>Errores comunes:</strong> escribir (x + 3)(x + 4) = x² + 12 (falta el término con x); sumar mal los signos
+       (en (x − 2)(x − 5) la suma es −7, no 7); o poner un producto positivo cuando los números tienen signos diferentes.</p>
+  </div>
+
+  <p class="section-label">¿Para qué sirve?</p>
+  <div class="prose">
+    <p>Esta multiplicación se puede hacer <strong>al revés</strong>: si tenemos x² + 7x + 12, buscamos dos números cuya suma sea 7 y cuyo producto sea 12 (3 y 4) y
+       lo escribimos como (x + 3)(x + 4). Eso es <strong>factorizar un trinomio de la forma x² + bx + c</strong>, que veremos más adelante en esta sección.</p>
+  </div>
+
+  <p class="section-label" id="ejercicios-binomio-termino-comun">Ejercicios: multiplica (x + a)(x + b)</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Multiplica los dos binomios con la regla <strong>(x + a)(x + b) = x² + (a + b)x + a · b</strong> y escribe el resultado
+       <strong>sin paréntesis</strong>, con los términos ya reducidos. Después oprime <strong>Comprobar</strong> (o la tecla Enter).</p>
+    <p>Para el exponente usa el signo <strong>^</strong> (por ejemplo <strong>x^2</strong>) o el botón <strong>²</strong>. No importa el orden de los términos.
+       Si falla, la página te dice si el problema está en el término de en medio (la suma), en el último término (el producto) o en los signos.</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Cuando termines, oprime
+       <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="bt-grid"></div>
+  <p class="practice-score" id="bt-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="bt-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script src="../assets/practica-algebra.js"></script>
+  <script>
+  (function () {
+    var MINUS = '−', parse = Algebra.parse, padd = Algebra.padd, pmul = Algebra.pmul, same = Algebra.same;
+    function sgn(n) { return n < 0 ? MINUS : '+'; }
+
+    // Banco de 100 ejercicios {p, q}: (x + p)(x + q), de menor a mayor dificultad
+    //   1–25 los dos números positivos · 26–50 los dos negativos · 51–75 signos diferentes · 76–85 números más grandes ·
+    //   86–100 números opuestos (b = 0) y números iguales o más grandes
+    var A = [[1, 2], [1, 3], [2, 3], [1, 4], [2, 4], [3, 4], [1, 5], [2, 5], [3, 5], [1, 6], [2, 6], [3, 6], [4, 5], [1, 7], [2, 7], [3, 7], [4, 6], [1, 8], [2, 8], [5, 6], [3, 3], [2, 2], [4, 4], [5, 5], [6, 6]];
+    var B = [[-1, -3], [-2, -3], [-1, -4], [-3, -4], [-2, -5], [-1, -5], [-3, -5], [-2, -6], [-4, -5], [-1, -6], [-3, -6], [-2, -7], [-4, -6], [-1, -7], [-3, -7], [-5, -6], [-2, -8], [-4, -7], [-3, -8], [-1, -9], [-3, -3], [-2, -2], [-4, -4], [-5, -5], [-7, -7]];
+    var C = [[3, -2], [-3, 2], [5, -1], [-5, 1], [4, -2], [-4, 2], [6, -1], [-6, 1], [5, -2], [-5, 2], [7, -3], [-7, 3], [2, -1], [-2, 1], [4, -3], [-4, 3], [6, -4], [-6, 4], [8, -3], [-8, 3], [9, -2], [-9, 2], [7, -5], [-7, 5], [5, -5]];
+    var D = [[12, 3], [9, 4], [-12, -3], [-9, -4], [15, -4], [-15, 4], [11, -7], [-11, 7], [10, -8], [-10, 8]];
+    var E = [[1, -1], [2, -2], [3, -3], [4, -4], [6, -6], [7, -7], [8, -8], [9, -9], [10, -10], [10, 2], [-10, -2], [12, -5], [-12, 5], [11, 3], [-11, -3]];
+    var LETTERS = ['y', 'a', 'x', 'm', 'n', 'x', 'p', 't', 'z', 'w'];
+    var BANK = A.concat(B, C, D, E).map(function (pq, i) {
+      var L = i < 50 ? 'x' : LETTERS[i % LETTERS.length], b = pq[0] + pq[1], c = pq[0] * pq[1], X = parse(L).P;
+      var constP = function (n) { return n === 0 ? {} : { '': [n, 1] }; };
+      return { L: L, p: pq[0], q: pq[1], b: b, c: c,
+               tri: padd(padd(pmul(X, X), pmul(constP(b), X), 1), constP(c), 1), nTerms: b === 0 ? 2 : 3 };
+    });
+
+    function pN(n) { return n < 0 ? '(' + MINUS + Math.abs(n) + ')' : String(n); }
+    function binHTML(e, n) { return '(' + e.L + ' ' + sgn(n) + ' ' + Math.abs(n) + ')'; }
+    function triHTML(e) {
+      var s = e.L + '²';
+      if (e.b !== 0) s += ' ' + sgn(e.b) + ' ' + (Math.abs(e.b) === 1 ? '' : Math.abs(e.b)) + e.L;
+      return s + ' ' + sgn(e.c) + ' ' + Math.abs(e.c);
+    }
+    function fix(n) { return n < 0 ? MINUS + Math.abs(n) : String(n); }
+    function solution(e) {
+      return '<span style="white-space:nowrap;">' + binHTML(e, e.p) + binHTML(e, e.q) + ' = ' + e.L + '² + (' + pN(e.p) + ' + ' + pN(e.q) + ')' + e.L + ' + ' + pN(e.p) + ' · ' + pN(e.q) + '</span><br>' +
+             'suma: ' + pN(e.p) + ' + ' + pN(e.q) + ' = ' + fix(e.b) + ' &nbsp;·&nbsp; producto: ' + pN(e.p) + ' · ' + pN(e.q) + ' = ' + fix(e.c) + '<br>= <strong>' + triHTML(e) + '</strong>';
+    }
+    // x² + Bx + C de lo que escribió el alumno (o null si tiene otra forma)
+    function coefs(P, L) {
+      var o = { B: 0, C: 0 }, ok = true;
+      Object.keys(P).forEach(function (k) {
+        var v = P[k]; if (v[1] !== 1) { ok = false; return; }
+        if (k === L + '2') { if (v[0] !== 1) ok = false; } else if (k === L + '1') o.B = v[0]; else if (k === '') o.C = v[0]; else ok = false;
+      });
+      return ok ? o : null;
+    }
+
+    // ---------- tarjetas ----------
+    var N = 10, done = {}, grid = document.getElementById('bt-grid'), scoreEl = document.getElementById('bt-score');
+    function score() {
+      var n = Object.keys(done).length;
+      scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
+    }
+    function pick() { // 10 al azar, ordenados como en el banco
+      var idx = BANK.map(function (e, i) { return i; });
+      for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+      return idx.slice(0, N).sort(function (p, q) { return p - q; }).map(function (i) { return BANK[i]; });
+    }
+    function makeCard(e, idx) {
+      var keys = [e.L, '²', '+', MINUS].map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('');
+      var card = document.createElement('div');
+      card.className = 'practice-card';
+      card.innerHTML =
+        '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + binHTML(e, e.p) + binHTML(e, e.q) + '</span></div>' +
+        '<div class="practice-row"><span class="eq">=</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tu resultado del ejercicio ' + (idx + 1) + '">' +
+        '<button type="button" class="practice-check">Comprobar</button></div><div class="practice-keys">' + keys + '</div>' +
+        '<div class="practice-fb" aria-live="polite"></div>';
+      grid.appendChild(card);
+      var input = card.querySelector('input'), fb = card.querySelector('.practice-fb');
+      card.querySelectorAll('.practice-keys button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var s = input.selectionStart == null ? input.value.length : input.selectionStart, e2 = input.selectionEnd == null ? s : input.selectionEnd;
+          input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e2);
+          input.focus(); input.setSelectionRange(s + b.dataset.k.length, s + b.dataset.k.length);
+        });
+      });
+      function check() {
+        var v = input.value.trim(), msg;
+        card.classList.remove('ok', 'bad');
+        if (!v) { fb.innerHTML = 'Escribe tu respuesta en el cuadro.'; return; }
+        var r; try { r = parse(v); } catch (x) { r = null; }
+        if (!r) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí lo que escribiste.</span> Escríbelo como, por ejemplo, <strong>x^2 + 7x + 12</strong> o <strong>x² − 5x − 14</strong>.'; return; }
+        if (same(r.P, e.tri) && r.terms === e.nTerms) {
+          card.classList.add('ok'); done[idx] = 1; score();
+          fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span><div class="sol">' + solution(e) + '</div>';
+          return;
+        }
+        card.classList.add('bad'); delete done[idx]; score();
+        var co = coefs(r.P, e.L), X = parse(e.L).P;
+        if (same(r.P, e.tri)) msg = r.terms > e.nTerms ? '<strong>Reduce los términos semejantes</strong>: escribe el resultado como un trinomio' + (e.b === 0 ? ' sin término con ' + e.L : '') + ', sin paréntesis.'
+                                                          : 'Es el mismo resultado, pero escríbelo <strong>sin paréntesis</strong>, con los términos reducidos.';
+        else if (!co) msg = 'Multiplica cada término por cada término: ' + e.L + ' · ' + e.L + ' = ' + e.L + '², y el resultado debe tener la forma ' + e.L + '² + (suma)' + e.L + ' + (producto).';
+        else if (co.B === 0 && e.b !== 0) msg = 'Te faltó el <strong>término de en medio</strong>: es la <strong>suma</strong> de los dos números por ' + e.L + ', (' + pN(e.p) + ' + ' + pN(e.q) + ')' + e.L + '. Los binomios no se multiplican como ' + e.L + '² + ' + fix(e.c) + '.';
+        else if (co.B === -e.b && co.C === e.c) msg = 'Revisa el <strong>signo de la suma</strong>: ' + pN(e.p) + ' + ' + pN(e.q) + ' = ' + fix(e.b) + '.';
+        else if (co.B === e.b && co.C === -e.c) msg = 'Revisa el <strong>signo del producto</strong>: ' + pN(e.p) + ' · ' + pN(e.q) + ' = ' + fix(e.c) + ' (mismo signo, positivo; signos diferentes, negativo).';
+        else if (co.C !== e.c && co.B !== e.b) msg = 'Revisa los dos: el término de en medio es la <strong>suma</strong> (' + pN(e.p) + ' + ' + pN(e.q) + ') y el último término es el <strong>producto</strong> (' + pN(e.p) + ' · ' + pN(e.q) + ').';
+        else if (co.C !== e.c) msg = 'El último término es el <strong>producto</strong> de los dos números: ' + pN(e.p) + ' · ' + pN(e.q) + ' = ' + fix(e.c) + '.';
+        else msg = 'El término de en medio es la <strong>suma</strong> de los dos números, por ' + e.L + ': ' + pN(e.p) + ' + ' + pN(e.q) + ' = ' + fix(e.b) + '.';
+        fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + msg + '<div class="sol">La respuesta correcta es:<br>' + solution(e) + '</div>';
+      }
+      card.querySelector('.practice-check').addEventListener('click', check);
+      input.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') check(); });
+    }
+    function newSet() { grid.innerHTML = ''; done = {}; pick().forEach(makeCard); score(); }
+    document.getElementById('bt-new').addEventListener('click', function () {
+      newSet();
+      document.getElementById('ejercicios-binomio-termino-comun').scrollIntoView({ behavior: 'smooth' });
+    });
+    newSet();
+  })();
+  </script>
+
+  <p class="section-label no-caps" id="rubrica-binomio-factor-comun">Rúbrica · Binomio factor común (x + a)(x + b)</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe el resultado como un trinomio sin paréntesis, con cada término con su signo, su coeficiente y su exponente: x² − 7x + 10.</li><li>Escribe la suma y el producto de los números con paréntesis en los negativos: (−2) + (−5), (−2)(−5).</li><li>Explica con sus palabras cómo obtuvo cada término del resultado.</li></ul></div></td>
+            <td>Escribe el resultado sin el exponente, sin signos o sin el término de en medio, y sus respuestas no se entienden. No usa ningún apoyo, como escribir la suma y el producto de los números.</td>
+            <td colspan="2">Usa la simbología con limitaciones: escribe el trinomio, pero a veces omite un signo, un paréntesis o el exponente 2. Contesta sin explicar o sólo repite la regla.</td>
+            <td>Escribe con la simbología correcta la suma, el producto y el trinomio reducido, con alguna deficiencia (por ejemplo, un signo ambiguo). Explica con claridad qué hizo en cada paso.</td>
+            <td>Escribe y explica con notación correcta el procedimiento completo (x², suma, producto y resultado reducido), por diferentes medios (con la regla, con la figura del rectángulo y con palabras), y reconstruye el procedimiento en un ejercicio nuevo.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación geométrica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Relaciona (x + a)(x + b) con un rectángulo de lados x + a y x + b formado por x², dos rectángulos ax y bx y un rectángulo de área ab.</li><li>Reconoce que los rectángulos ax y bx forman el término (a + b)x.</li></ul></div></td>
+            <td>Ve el producto de binomios como una operación sin relación con áreas, y no reconoce el rectángulo ni sus cuatro partes.</td>
+            <td colspan="2">Reconoce la figura del ejemplo (x + 3)(x + 4), pero no la generaliza a otros valores ni a números negativos.</td>
+            <td>Interpreta la figura: x², los rectángulos ax y bx que suman (a + b)x, y el área ab; relaciona cada parte con un término del resultado.</td>
+            <td>Dibuja el rectángulo para un producto nuevo y lo usa para justificar que la suma de los números es el coeficiente de x y su producto es el último término.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Multiplica (x + a)(x + b) y obtiene x² + (a + b)x + ab con la regla, también con números negativos.</li><li>Decide el signo del producto (mismo signo, positivo; signos diferentes, negativo) y suma con signo.</li><li>Reconoce los casos especiales: números iguales (binomio al cuadrado) y números opuestos (binomios conjugados).</li></ul></div></td>
+            <td>Conoce el producto de binomios sólo de memoria: escribe x² + ab o x² + (a + b), o multiplica sólo los números. Confunde la suma con el producto.</td>
+            <td colspan="2">Aplica la regla en los casos sencillos (los dos números positivos). Le fallan los casos con números negativos, con signos diferentes o con números opuestos, y los signos de la suma y del producto.</td>
+            <td>Comprende y maneja las propiedades: aplica la regla en cualquier caso de signos, reduce términos semejantes y reconoce los casos especiales (p = q y p = −q).</td>
+            <td>Explica que (x + a)(x + b) = x² + (a + b)x + ab, por qué sale la suma y por qué sale el producto, y generaliza los signos y los casos especiales; usa el producto como paso previo para factorizar x² + bx + c.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué el término de en medio es la suma de los números: al multiplicar, los términos ax y bx son semejantes y se suman.</li><li>Justifica el signo del producto con los signos de los números.</li><li>Comprueba su resultado con la figura o multiplicando término a término.</li></ul></div></td>
+            <td>Dice «así es la regla» sin justificar. Hace la multiplicación pero no la comprueba ni la explica.</td>
+            <td>Defiende con una regla simple («suma los números y multiplícalos») con lenguaje matemático básico.</td>
+            <td>Valida con ejemplos: multiplica varios pares de binomios por la regla y por término a término, y compara los resultados; da ejemplos y no-ejemplos (como x² + 12).</td>
+            <td>Explica la estructura del argumento: que los binomios compartan el término x es la hipótesis y que el resultado sea x² + (a + b)x + ab es la conclusión; comprueba sus resultados con la figura o multiplicando término a término.</td>
+            <td>Elabora una cadena de argumentos que generaliza: demuestra con la propiedad distributiva por qué (x + a)(x + b) = x² + (a + b)x + ab para cualquier a y b, y la relaciona con los casos especiales y con factorizar x² + bx + c.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
+  <p class="section-label no-caps">Sigue en este subtema</p>
+  <div class="callout" style="text-align:center;">
+    <div class="k">Siguiente</div>
+    <p>Ahora veamos cómo se completa un trinomio cuadrado perfecto, y después cómo se factoriza al revés un trinomio x² + bx + c.</p>
+    <p style="margin-top:0.9rem;">
+      <a class="pg-btn" href="tema-06-trinomio-x2-bx-c.html" style="text-decoration:none; display:inline-block;">
+        Completar el trinomio cuadrado perfecto →
+      </a>
+    </p>
+  </div>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>

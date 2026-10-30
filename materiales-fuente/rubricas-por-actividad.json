@@ -814,6 +814,74 @@
       ]
     },
     {
+      "id": "binomiofactorcomun",
+      "titulo": "Matemáticas 3 · Tema 6 · Binomio factor común (x + a)(x + b)",
+      "file": "matematicas-3/tema-06-binomio-factor-comun.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página, resueltos en el cuaderno con el procedimiento: x², la suma de los dos números con su signo, el producto y el resultado reducido.",
+        "Al menos un ejercicio con los dos números positivos, uno con los dos negativos y uno con signos diferentes.",
+        "La explicación (oral o escrita) de por qué el término de en medio es la suma de los números y el último término es su producto."
+      ],
+      "errores": [
+        "Escribe (x + 3)(x + 4) = x² + 12 (sólo multiplica los números y olvida el término con x) o x² + 7x (olvida el producto).",
+        "Pierde un signo: en (x − 2)(x − 5) escribe x² + 7x + 10, o en (x + 6)(x − 2) escribe x² + 4x + 12.",
+        "Con signos diferentes pone el producto positivo, o suma los números sin respetar sus signos.",
+        "No reduce los términos semejantes: deja x² + 4x + 3x + 12.",
+        "Con (x + 5)(x − 5) escribe x² + 0x − 25 sin entender que la suma es 0, o x² + 25."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe el resultado como un trinomio sin paréntesis, con cada término con su signo, su coeficiente y su exponente: x² − 7x + 10.",
+            "Escribe la suma y el producto de los números con paréntesis en los negativos: (−2) + (−5), (−2)(−5).",
+            "Explica con sus palabras cómo obtuvo cada término del resultado."
+          ],
+          "n1": "Escribe el resultado sin el exponente, sin signos o sin el término de en medio, y sus respuestas no se entienden. No usa ningún apoyo, como escribir la suma y el producto de los números.",
+          "n23": "Usa la simbología con limitaciones: escribe el trinomio, pero a veces omite un signo, un paréntesis o el exponente 2. Contesta sin explicar o sólo repite la regla.",
+          "n4": "Escribe con la simbología correcta la suma, el producto y el trinomio reducido, con alguna deficiencia (por ejemplo, un signo ambiguo). Explica con claridad qué hizo en cada paso.",
+          "n5": "Escribe y explica con notación correcta el procedimiento completo (x², suma, producto y resultado reducido), por diferentes medios (con la regla, con la figura del rectángulo y con palabras), y reconstruye el procedimiento en un ejercicio nuevo."
+        },
+        {
+          "id": "REP_GEO",
+          "observar": [
+            "Relaciona (x + a)(x + b) con un rectángulo de lados x + a y x + b formado por x², dos rectángulos ax y bx y un rectángulo de área ab.",
+            "Reconoce que los rectángulos ax y bx forman el término (a + b)x."
+          ],
+          "n1": "Ve el producto de binomios como una operación sin relación con áreas, y no reconoce el rectángulo ni sus cuatro partes.",
+          "n23": "Reconoce la figura del ejemplo (x + 3)(x + 4), pero no la generaliza a otros valores ni a números negativos.",
+          "n4": "Interpreta la figura: x², los rectángulos ax y bx que suman (a + b)x, y el área ab; relaciona cada parte con un término del resultado.",
+          "n5": "Dibuja el rectángulo para un producto nuevo y lo usa para justificar que la suma de los números es el coeficiente de x y su producto es el último término."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Multiplica (x + a)(x + b) y obtiene x² + (a + b)x + ab con la regla, también con números negativos.",
+            "Decide el signo del producto (mismo signo, positivo; signos diferentes, negativo) y suma con signo.",
+            "Reconoce los casos especiales: números iguales (binomio al cuadrado) y números opuestos (binomios conjugados)."
+          ],
+          "n1": "Conoce el producto de binomios sólo de memoria: escribe x² + ab o x² + (a + b), o multiplica sólo los números. Confunde la suma con el producto.",
+          "n23": "Aplica la regla en los casos sencillos (los dos números positivos). Le fallan los casos con números negativos, con signos diferentes o con números opuestos, y los signos de la suma y del producto.",
+          "n4": "Comprende y maneja las propiedades: aplica la regla en cualquier caso de signos, reduce términos semejantes y reconoce los casos especiales (p = q y p = −q).",
+          "n5": "Explica que (x + a)(x + b) = x² + (a + b)x + ab, por qué sale la suma y por qué sale el producto, y generaliza los signos y los casos especiales; usa el producto como paso previo para factorizar x² + bx + c."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué el término de en medio es la suma de los números: al multiplicar, los términos ax y bx son semejantes y se suman.",
+            "Justifica el signo del producto con los signos de los números.",
+            "Comprueba su resultado con la figura o multiplicando término a término."
+          ],
+          "n1": "Dice «así es la regla» sin justificar. Hace la multiplicación pero no la comprueba ni la explica.",
+          "n2": "Defiende con una regla simple («suma los números y multiplícalos») con lenguaje matemático básico.",
+          "n3": "Valida con ejemplos: multiplica varios pares de binomios por la regla y por término a término, y compara los resultados; da ejemplos y no-ejemplos (como x² + 12).",
+          "n4": "Explica la estructura del argumento: que los binomios compartan el término x es la hipótesis y que el resultado sea x² + (a + b)x + ab es la conclusión; comprueba sus resultados con la figura o multiplicando término a término.",
+          "n5": "Elabora una cadena de argumentos que generaliza: demuestra con la propiedad distributiva por qué (x + a)(x + b) = x² + (a + b)x + ab para cualquier a y b, y la relaciona con los casos especiales y con factorizar x² + bx + c."
+        }
+      ]
+    },
+    {
       "id": "completartcp",
       "titulo": "Matemáticas 3 · Tema 6 · Completar el trinomio cuadrado perfecto",
       "file": "matematicas-3/tema-06-trinomio-x2-bx-c.html",

@@ -1689,3 +1689,17 @@ Registro de lo que vamos haciendo, en orden cronológico.
   antes del espacio. **2 de cada 5 traen el signo menos escrito** (x² − ___ + 121) y los demás el más. Con el signo − ya escrito, el alumno escribe sólo el número
   con la letra (16x) y el trinomio queda x² − 16x + 64 = (x − 8)²; con el signo +, sigue habiendo dos respuestas posibles (16x o −16x). La revisión toma en cuenta
   el signo escrito (si pone −16x en el espacio con −, queda +16x y el binomio debe ser (x + 8)²). Se actualizaron las instrucciones y se probaron 300 tarjetas.
+
+## 2026-10-30 (la sección x² + bx + c empieza con "Binomio factor común")
+- A pedido de Carmen, la sección "Binomio factor común y trinomio de la forma x² + bx + c" del Tema 6 ahora **empieza con binomio factor común**. Se entendió como
+  el producto de dos binomios que comparten un término, **(x + a)(x + b) = x² + (a + b)x + ab**, que es el producto que después se factoriza al revés. Es la
+  página nueva `matematicas-3/tema-06-binomio-factor-comun.html`: qué es, la regla (con la figura del rectángulo y los 3 pasos), cuatro ejemplos con signos
+  (x² + 7x + 12, x² − 7x + 10, x² + 4x − 12, x² − 5x − 24), casos especiales (números iguales → binomio al cuadrado; opuestos → binomios conjugados) y errores
+  comunes, y "¿para qué sirve?" (factorizar al revés).
+- **100 ejercicios** con revisión automática (10 al azar): multiplicar (x + a)(x + b) con los dos números positivos, los dos negativos, de signos diferentes, más
+  grandes, iguales y opuestos. Si falla, dice si el error está en la suma (término de en medio), en el producto (último término), en un signo, si falta el
+  término con x o si faltó reducir. Se probaron 400 tarjetas.
+- El bloque del temario (`tema-06-productos-notables-y-factorizacion.html`) tiene ahora tres enlaces en orden: 1. Binomio factor común, 2. Completar el TCP,
+  3. Factorizar x² + bx + c. La página de factorizar enlaza a la de binomio factor común y ésta termina con un botón a "Completar el TCP". Rúbrica nueva
+  (actividad "binomiofactorcomun") y guía en Word regenerada.
+- Si Carmen se refería a otro tema con "binomio factor común" (por ejemplo, sacar un binomio como factor común, a(x + y) + b(x + y)), hay que agregarlo.
