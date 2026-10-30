@@ -1756,3 +1756,5 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Estilos nuevos en `assets/style.css`: barras de fracciones (`.fbarras`, `.fbar`) y `.nota` dentro de los recuadros de ejemplo. Las fracciones de las explicaciones se escriben con `{n/d}` dentro de un
   elemento `.fx` (un script las convierte en fracciones apiladas).
 - Pendiente (opcional): un video de la clase (como los de otras páginas) y la serie en Word.
+- A pedido de Carmen, en `matematicas-2/tema-01-numeros-racionales.html` se quitó también la etiqueta "Objetivo 2" de los subtemas (Definición de racionales, Clasificación, Fracciones decimales y
+  Jerarquía de operaciones): ya no hay etiquetas de objetivo en esa página. Las demás páginas de Matemáticas 1 y 2 conservan las suyas.
