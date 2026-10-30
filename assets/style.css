@@ -975,7 +975,7 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
 .regla-step.c1 .paso { background: var(--forest); }
 .regla-step.c2 .paso { background: #d9650b; }
 .regla-step.c3 .paso { background: #2b6cb0; }
-.regla-step .big { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 500; font-size: clamp(1.6rem, 6vw, 2.2rem); margin: 0.5rem 0 0.1rem; }
+.regla-step .big { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 500; font-size: clamp(1.25rem, 5.4vw, 2.2rem); margin: 0.5rem 0 0.1rem; }
 .regla-step .txt { font-size: 1rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
 .regla-signos { margin-top: -0.2rem; }
 /* etiquetas de color con fracciones adentro: más espacio y raya del mismo color que el texto */

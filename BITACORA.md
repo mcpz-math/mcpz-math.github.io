@@ -1769,3 +1769,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (temas 1 a 10), 5 de Matemáticas 2 (temas 1, 2, 3, 5 y 6) y 5 de Matemáticas 3 (temas 2, 7, 8, 9 y 10).
 - **No se tocaron** `matematicas-3/tema-03-valor-absoluto.html` y `matematicas-3/tema-04-funciones.html`, porque en "Materiales" tienen un PDF real de la clase
   ("Clase 5. Valor absoluto" y "Clase 6. Funciones"). Falta que Carmen decida qué hacer con esos dos (quitar sólo la tarjeta "Tarea: Próximamente" y dejar el PDF, o dejarlas como están).
+- A pedido de Carmen, en `matematicas-2/tema-01-operaciones-con-fracciones.html` se quitó la explicación del mcm con listas de múltiplos y se puso en su lugar un cuadro "★ El mcm con números
+  primos ★": Paso 1 descomponer cada denominador en primos, Paso 2 tomar cada primo con su mayor exponente, Paso 3 multiplicar. Ejemplo mcm(4, 6): 4 = 2², 6 = 2 · 3, mcm = 2² · 3 = 12, y cómo convertir
+  3/4 = 9/12 y 1/6 = 2/12. Termina con el botón "Repasar mcm y MCD (Matemáticas 1)" (Divisibilidad). **Pendiente:** el subtema "mcm y MCD" de Matemáticas 1 todavía no está escrito.
+  El texto de los pasos de las reglas se reduce un poco en pantallas muy angostas.

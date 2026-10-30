@@ -6,7 +6,7 @@
   <title>Operaciones con fracciones — Matemáticas 2</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
-  <link rel="stylesheet" href="../assets/style.css?v=20261030f">
+  <link rel="stylesheet" href="../assets/style.css?v=20261030g">
 </head>
 <body>
 
@@ -99,10 +99,40 @@
     <div class="fbar-cap">{3/6} + {2/6} = {5/6}</div>
   </div>
 
-  <div class="prose">
-    <p><strong>¿Cómo se encuentra el mcm?</strong> Es el <strong>múltiplo común más pequeño</strong> de los denominadores. Para 4 y 6: múltiplos de 4 → 4, 8, <strong>12</strong>…;
-       múltiplos de 6 → 6, <strong>12</strong>… El primero que se repite es 12. Para convertir, multiplica arriba y abajo por lo que le falta al denominador para llegar a 12:
-       {3/4} = {3 · 3/4 · 3} = {9/12} y {1/6} = {1 · 2/6 · 2} = {2/12}.</p>
+  <div class="regla-box">
+    <div class="regla-head">★ El mcm con números primos ★</div>
+    <div class="regla-steps">
+      <div class="regla-step c1">
+        <div class="paso">Paso 1</div>
+        <div class="big">primos</div>
+        <div class="txt">descompón cada denominador</div>
+      </div>
+      <div class="regla-step c2">
+        <div class="paso">Paso 2</div>
+        <div class="big">mayores</div>
+        <div class="txt">cada primo con su mayor exponente</div>
+      </div>
+      <div class="regla-step c3">
+        <div class="paso">Paso 3</div>
+        <div class="big">multiplicar</div>
+        <div class="txt">ése es el mcm</div>
+      </div>
+    </div>
+    <div class="regla-ejemplo">
+      <span class="lbl">Ejemplo · mcm(4, 6)</span>
+      4 = 2 · 2 = <span class="regla-chip c1">2²</span><br>
+      6 = <span class="regla-chip c1">2</span> · <span class="regla-chip c3">3</span><br>
+      mcm = <span class="regla-chip c1">2²</span> · <span class="regla-chip c3">3</span> = 4 · 3 = <span class="regla-chip c2">12</span>
+    </div>
+    <div class="regla-ejemplo" style="margin-top:-0.4rem;">
+      <span class="lbl">Convertir a denominador 12</span>
+      12 ÷ 4 = 3 → {3/4} = {3 · 3/4 · 3} = {9/12}<br>
+      12 ÷ 6 = 2 → {1/6} = {1 · 2/6 · 2} = {2/12}
+    </div>
+    <div class="regla-signos">
+      ¿No recuerdas cómo se descompone un número en primos o qué es el mcm? Lo estudiaste en Matemáticas 1:<br>
+      <a class="pg-btn" href="../matematicas-1/tema-06-divisibilidad.html" style="text-decoration:none; display:inline-block; margin-top:0.5rem;">Repasar mcm y MCD (Matemáticas 1) →</a>
+    </div>
   </div>
 
   <!-- ===================== MULTIPLICAR ===================== -->
