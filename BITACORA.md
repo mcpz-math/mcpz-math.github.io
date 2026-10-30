@@ -1633,3 +1633,5 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Se actualizaron las instrucciones de ambas series, "Para recordar" (x₁ = x₂ = h, reales y repetidas) y la rúbrica (`rubricas-por-actividad.json`,
   actividad "axhcuad": qué observar y errores típicos de las raíces); se regeneró la guía en Word `Escritorio\IEMS\Guia_para_evaluar_con_la_matriz.docx`.
 - Se probó con 120 tarjetas de la serie 1 y 100 de la serie 2 (respuestas correctas y con errores en las raíces).
+- Entre las instrucciones y las tarjetas de la primera serie de ejercicios de `tema-05-a-x-menos-h-cuadrada.html` hay un recuadro "Repaso" con un
+  botón a `tema-06-binomio-al-cuadrado-y-tcp.html`, para quien ya olvidó cómo factorizar un trinomio cuadrado perfecto o desarrollar un binomio al cuadrado.
