@@ -1710,3 +1710,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
   más simples (1. x² "la letra por la letra"; 2. SUMA "suma los dos números y ponle la x"; 3. PRODUCTO "multiplica los dos números, sin x"), el ejemplo
   (x + 3)(x + 4) con los mismos colores y la ayuda de signos (mismo signo → producto +, signos diferentes → producto −). Reemplaza la lista de pasos de antes.
   Los estilos (`.regla-box` y demás) están en `assets/style.css` para poder usarlos en otras reglas del sitio.
+- Ajuste: a pedido de Carmen, el cuadro de la regla de `tema-06-binomio-factor-comun.html` quedó **más sencillo y con pocas palabras**: tres tarjetas "PASO 1", "PASO 2",
+  "PASO 3" con lo que se escribe en cada una en grande (x² · (a + b)x · a · b) y una sola palabra debajo (letra · letra, suma, producto). Se quitó el texto largo de los
+  signos: sólo quedan las dos etiquetas "mismo signo: +" y "signos diferentes: −". Se conservan la fórmula de colores y el ejemplo.
