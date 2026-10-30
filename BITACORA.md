@@ -1685,3 +1685,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (x + p)(x + q) en cualquier orden. Si hay error, dice si falla el producto, la suma o los signos y muestra la lista de pares de números; si no se factoriza,
   muestra todos los pares y sus sumas. Se probó con 400 tarjetas.
 - Rúbrica por competencias (plegada) al final de la página, actividad "factorizarxbc" en `rubricas-por-actividad.json`; se regeneró la guía en Word.
+- Ajuste en `matematicas-3/tema-06-trinomio-x2-bx-c.html` (serie "falta el término de en medio"), a pedido de Carmen: ya no todos los ejercicios traen el signo más
+  antes del espacio. **2 de cada 5 traen el signo menos escrito** (x² − ___ + 121) y los demás el más. Con el signo − ya escrito, el alumno escribe sólo el número
+  con la letra (16x) y el trinomio queda x² − 16x + 64 = (x − 8)²; con el signo +, sigue habiendo dos respuestas posibles (16x o −16x). La revisión toma en cuenta
+  el signo escrito (si pone −16x en el espacio con −, queda +16x y el binomio debe ser (x + 8)²). Se actualizaron las instrucciones y se probaron 300 tarjetas.

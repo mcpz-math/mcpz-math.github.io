@@ -136,11 +136,12 @@
   <p class="section-label" id="ejercicios-completar-medio">Ejercicios: completa el TCP (falta el término de en medio)</p>
   <div class="callout">
     <div class="k">Instrucciones</div>
-    <p>Ahora el que falta es el <strong>término de en medio</strong>, por ejemplo x² + ___ + 49. Contesta los tres pasos y oprime <strong>Comprobar</strong>:</p>
+    <p>Ahora el que falta es el <strong>término de en medio</strong>, por ejemplo x² + ___ + 49 o x² − ___ + 49. Contesta los tres pasos y oprime <strong>Comprobar</strong>:</p>
     <p><strong>1.</strong> ¿Cuánto vale la <strong>raíz cuadrada</strong> del último término?<br>
-       <strong>2.</strong> ¿Qué <strong>término de en medio</strong> falta? Es el doble producto 2 · x · (la raíz). Hay <strong>dos respuestas posibles</strong>, con signo + o con
-       signo −: escribe una, por ejemplo <strong>14x</strong> o <strong>−14x</strong>.<br>
-       <strong>3.</strong> <strong>Factoriza</strong> el trinomio que formaste: <strong>(x + 7)^2</strong> si elegiste +14x, o <strong>(x − 7)^2</strong> si elegiste −14x.</p>
+       <strong>2.</strong> ¿Qué <strong>término de en medio</strong> falta? Es el doble producto 2 · x · (la raíz).
+       Si antes del espacio está el signo <strong>+</strong>, hay <strong>dos respuestas posibles</strong>: escribe una, por ejemplo <strong>14x</strong> o <strong>−14x</strong>.
+       Si ya está escrito el signo <strong>−</strong> (x² − ___ + 49), escribe sólo el número con la letra: <strong>14x</strong>, y el trinomio queda x² − 14x + 49.<br>
+       <strong>3.</strong> <strong>Factoriza</strong> el trinomio que formaste: <strong>(x + 7)^2</strong> si el término de en medio quedó +14x, o <strong>(x − 7)^2</strong> si quedó −14x.</p>
     <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>50</strong>. Oprime
        <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
   </div>
@@ -197,7 +198,13 @@
     // ---------- Banco 2: x² + ___ + c ----------  [letra, c]
     //   1–15 c entero · 16–30 c entero (otras letras) · 31–40 c fracción · 41–50 c decimal
     var B2 = [];
-    function add2(cs, others) { cs.forEach(function (c, i) { B2.push([others ? ['y', 'a', 'm', 'n', 'p', 't', 'z', 'w', 'k', 'r'][i % 10] : 'x', c]); }); }
+    // el tercer dato es el signo que ya está escrito antes del espacio: algunos ejercicios traen − (2 de cada 5) y los demás +
+    function add2(cs, others) {
+      cs.forEach(function (c, i) {
+        var k = B2.length % 5;
+        B2.push([others ? ['y', 'a', 'm', 'n', 'p', 't', 'z', 'w', 'k', 'r'][i % 10] : 'x', c, (k === 1 || k === 3) ? -1 : 1]);
+      });
+    }
     add2(['4', '9', '16', '25', '36', '49', '64', '81', '100', '121', '144', '169', '196', '225', '1'], false);
     add2(['1', '9', '25', '49', '81', '121', '169', '225', '4', '16', '36', '64', '100', '144', '196'], true);
     add2(['1/4', '9/4', '1/9', '4/9', '25/4', '1/16', '9/16', '25/9', '49/4', '1/25'], true);
@@ -207,7 +214,7 @@
       if (!r) throw new Error('El último término no es un cuadrado perfecto: ' + ex[1]);
       var m = frac(2 * r.n, r.d), X = parse(L).P;
       function tri(s) { return padd(padd(pmul(X, X), pmul(pc(frac(s * m.n, m.d)), X), 1), pc(c), 1); }
-      return { L: L, c: c, r: r, m: m, dec: ex[1].indexOf('.') >= 0, X: X, triP: tri(1), triN: tri(-1) };
+      return { L: L, c: c, r: r, m: m, sg: ex[2], dec: ex[1].indexOf('.') >= 0, X: X, triP: tri(1), triN: tri(-1) };
     }
     function midHTML(e, s) { return (s < 0 ? MINUS : '') + coefHTML(e.m, e.dec) + e.L; }
     function expr(e, mid, last) { return e.L + '² ' + mid + ' ' + last; }
@@ -332,27 +339,33 @@
     setup('ct2', B2, build2, function (e, n) {
       var cH = numHTML(e.c, e.dec), rH = numHTML(e.r, e.dec), mH = coefHTML(e.m, e.dec);
       var fP = '(' + e.L + ' + ' + rH + ')²', fN = '(' + e.L + ' ' + MINUS + ' ' + rH + ')²';
+      var neg = e.sg < 0, sg = neg ? MINUS : '+';   // signo que ya está escrito antes del espacio
       return {
-        head: e.L + '² + ' + BLANK + ' + ' + cH,
+        head: e.L + '² ' + sg + ' ' + BLANK + ' + ' + cH,
         body:
           '<div class="practice-ask">1. ¿Cuánto vale la raíz cuadrada del último término?</div>' +
           '<div class="practice-row"><span class="eq">√(' + cH + ') =</span>' + inputHTML('r', 'Raíz del último término del ejercicio ' + n, BOX) + '</div>' + keysHTML(['/'], 'r') +
-          '<div class="practice-ask">2. ¿Qué término de en medio falta? (puede ser + o −)</div>' +
-          '<div class="practice-row"><span class="eq">' + e.L + '² +</span>' + inputHTML('m', 'Término de en medio del ejercicio ' + n, BOX) + '<span class="eq">+ ' + cH + '</span></div>' + keysHTML([e.L, MINUS, '/'], 'm') +
+          '<div class="practice-ask">' + (neg ? '2. ¿Qué término de en medio falta? (el signo − ya está escrito)' : '2. ¿Qué término de en medio falta? (puede ser + o −)') + '</div>' +
+          '<div class="practice-row"><span class="eq">' + e.L + '² ' + sg + '</span>' + inputHTML('m', 'Término de en medio del ejercicio ' + n, BOX) + '<span class="eq">+ ' + cH + '</span></div>' + keysHTML([e.L, MINUS, '/'], 'm') +
           '<div class="practice-ask">3. Factoriza el trinomio que formaste</div>' +
           '<div class="practice-row"><span class="eq">=</span>' + inputHTML('f', 'Factorización del ejercicio ' + n, 'flex:1 1 9rem;') + '</div>' + keysHTML(['(', ')', e.L, '²', '+', MINUS, '/'], 'f'),
-        ok: e.L + '² + ' + mH + e.L + ' + ' + cH + ' = <strong>' + fP + '</strong><br>' + e.L + '² ' + MINUS + ' ' + mH + e.L + ' + ' + cH + ' = <strong>' + fN + '</strong>',
+        ok: neg ? e.L + '² ' + MINUS + ' ' + mH + e.L + ' + ' + cH + ' = <strong>' + fN + '</strong>'
+                : e.L + '² + ' + mH + e.L + ' + ' + cH + ' = <strong>' + fP + '</strong><br>' + e.L + '² ' + MINUS + ' ' + mH + e.L + ' + ' + cH + ' = <strong>' + fN + '</strong>',
         why: {
           r: 'La raíz cuadrada de ' + cH + ' es <strong>' + rH + '</strong>, porque (' + rH + ')² = ' + cH + '.',
-          m: 'El término de en medio es el doble producto 2 · ' + e.L + ' · ' + rH + ' = <strong>' + mH + e.L + '</strong>; también sirve <strong>' + MINUS + mH + e.L + '</strong>. Los dos funcionan.',
-          f: 'Con +' + mH + e.L + ' queda <strong>' + fP + '</strong>; con ' + MINUS + mH + e.L + ' queda <strong>' + fN + '</strong>. El signo del binomio es el del término de en medio.'
+          m: neg ? 'El término de en medio es el doble producto 2 · ' + e.L + ' · ' + rH + ' = ' + mH + e.L + '. Como ya está escrito el signo −, escribe <strong>' + mH + e.L + '</strong> y queda ' + MINUS + mH + e.L + '.'
+                 : 'El término de en medio es el doble producto 2 · ' + e.L + ' · ' + rH + ' = <strong>' + mH + e.L + '</strong>; también sirve <strong>' + MINUS + mH + e.L + '</strong>. Los dos funcionan.',
+          f: neg ? 'Con el signo − y ' + mH + e.L + ' el término de en medio es ' + MINUS + mH + e.L + ': ' + e.L + '² ' + MINUS + ' ' + mH + e.L + ' + ' + cH + ' = <strong>' + fN + '</strong>. El signo del binomio es el del término de en medio.'
+                 : 'Con +' + mH + e.L + ' queda <strong>' + fP + '</strong>; con ' + MINUS + mH + e.L + ' queda <strong>' + fN + '</strong>. El signo del binomio es el del término de en medio.'
         },
         check: function (inp) {
           var r0 = readNum(inp.r), mv = inp.m.value.trim(), fv = inp.f.value.trim();
           if (r0 === undefined || !mv || !fv) return { msg: 'Contesta <strong>todas</strong> las preguntas antes de comprobar.' };
           var mr = null, fr = null; try { mr = parse(mv); } catch (x) { mr = null; } try { fr = parse(fv); } catch (x) { fr = null; }
           if (!r0 || !mr || !fr) return NOT_UNDERSTOOD;
-          var wrong = [], extra = {}, pos = pmul(pc(e.m), e.X), s = same(mr.P, pos) ? 1 : (same(mr.P, padd({}, pos, -1)) ? -1 : 0);
+          // el término que queda en el trinomio: lo que escribió, con el signo que ya estaba escrito antes del espacio
+          var actual = neg ? padd({}, mr.P, -1) : mr.P;
+          var wrong = [], extra = {}, pos = pmul(pc(e.m), e.X), s = same(actual, pos) ? 1 : (same(actual, padd({}, pos, -1)) ? -1 : 0);
           if (!eq(r0, e.r)) wrong.push('r');
           if (!s) {
             wrong.push('m');
