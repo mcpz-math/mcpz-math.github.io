@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primos y compuestos — Matemáticas 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css?v=20261030m">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-06-divisibilidad.html">← Tema 6</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 1 · Tema 6 · Divisibilidad</div>
+    <h1>Primos y compuestos</h1>
+  </div>
+
+  <p class="section-label">Divisores de un número</p>
+  <div class="prose">
+    <p>Un <strong>divisor</strong> de un número es otro número que lo divide <strong>exactamente</strong> (sin residuo). Los divisores de 6 son 1, 2, 3 y 6.
+       Todo número mayor que 1 tiene al menos dos divisores: el 1 y él mismo. Según cuántos divisores tienen, los números se clasifican:</p>
+  </div>
+
+  <div class="regla-box">
+    <div class="regla-head">★ Primos y compuestos ★</div>
+    <div class="regla-steps">
+      <div class="regla-step c1">
+        <div class="paso">Primo</div>
+        <div class="big">2 divisores</div>
+        <div class="txt">sólo el 1 y él mismo</div>
+        <div class="txt" style="margin-top:0.4rem; text-transform:none; letter-spacing:0; font-family:'IBM Plex Mono',monospace;">2, 3, 5, 7, 11, 13…</div>
+      </div>
+      <div class="regla-step c2">
+        <div class="paso">Compuesto</div>
+        <div class="big">más de 2</div>
+        <div class="txt">tiene otros divisores</div>
+        <div class="txt" style="margin-top:0.4rem; text-transform:none; letter-spacing:0; font-family:'IBM Plex Mono',monospace;">4, 6, 8, 9, 10, 12…</div>
+      </div>
+      <div class="regla-step c3">
+        <div class="paso">El 1</div>
+        <div class="big">1 divisor</div>
+        <div class="txt">no es primo ni compuesto</div>
+      </div>
+    </div>
+    <div class="regla-ejemplo">
+      <span class="lbl">Ejemplos</span>
+      Divisores de 7: 1, 7 → <span class="regla-chip c1">primo</span><br>
+      Divisores de 12: 1, 2, 3, 4, 6, 12 → <span class="regla-chip c2">compuesto</span><br>
+      Divisores de 1: 1 → <span class="regla-chip c3">ninguno de los dos</span>
+    </div>
+    <div class="regla-signos">El <strong>2</strong> es el <strong>único primo par</strong>: todos los demás números pares se pueden dividir entre 2, así que son compuestos.</div>
+  </div>
+
+  <p class="section-label">Los primos del 1 al 100</p>
+  <div class="prose">
+    <p>Los números en verde son primos. En esta tabla (la <strong>criba de Eratóstenes</strong>) se tachan los múltiplos de 2, de 3, de 5 y de 7 (sin tachar al propio 2, 3, 5 ó 7), y lo que queda son los primos.</p>
+  </div>
+  <div class="criba" id="criba" aria-label="Tabla del 1 al 100 con los números primos resaltados"></div>
+  <p class="exp-cap" style="margin-bottom:1.6rem;"><span style="background:var(--lime); padding:0 0.5rem; border-radius:5px;">primo</span> &nbsp;<span style="background:var(--callout-bg); padding:0 0.5rem; border-radius:5px;">compuesto</span> &nbsp;<span style="background:#d9d6c9; padding:0 0.5rem; border-radius:5px;">el 1</span></p>
+
+  <p class="section-label" id="como-saber">¿Cómo saber si un número es primo?</p>
+  <div class="regla-box">
+    <div class="regla-head">★ ¿Es primo? ★</div>
+    <div class="regla-steps">
+      <div class="regla-step c1">
+        <div class="paso">Paso 1</div>
+        <div class="big">probar</div>
+        <div class="txt">divide entre 2, 3, 5, 7…</div>
+      </div>
+      <div class="regla-step c2">
+        <div class="paso">Paso 2</div>
+        <div class="big">residuo 0</div>
+        <div class="txt">si alguno divide exacto, es compuesto</div>
+      </div>
+      <div class="regla-step c3">
+        <div class="paso">Paso 3</div>
+        <div class="big">√n</div>
+        <div class="txt">si ninguno hasta la raíz divide, es primo</div>
+      </div>
+    </div>
+    <div class="regla-ejemplo">
+      <span class="lbl">Ejemplo · 91</span>
+      91 ÷ 2, ÷ 3, ÷ 5 no son exactas; 91 ÷ 7 = <span class="regla-chip c2">13</span><br>
+      91 = 7 · 13 → <span class="regla-chip c2">compuesto</span>
+    </div>
+    <div class="regla-ejemplo" style="margin-top:-0.4rem;">
+      <span class="lbl">Ejemplo · 37</span>
+      √37 ≈ 6.1: sólo se prueban 2, 3 y 5 (los primos menores que 6.1)<br>
+      ninguno divide a 37 → <span class="regla-chip c1">primo</span>
+    </div>
+  </div>
+  <div class="prose">
+    <p><strong>Truco:</strong> no hace falta probar con todos los números. Basta con los <strong>primos</strong> que no pasan de la <strong>raíz cuadrada</strong> del número:
+       si un número tiene un divisor mayor que su raíz, también tiene uno menor.</p>
+    <p>Todo número compuesto se puede escribir como un <strong>producto de primos</strong> (por ejemplo 60 = 2² · 3 · 5). Eso se llama <strong>descomposición en números primos</strong> y es la base
+       para calcular el MCD y el mcm: lo verás en <a href="tema-06-mcm-y-mcd.html" style="color:var(--forest); font-weight:700;">mcm y MCD</a>.</p>
+  </div>
+
+  <p class="section-label" id="ejercicios-primos">Ejercicios: primos y compuestos</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Para cada número:</p>
+    <p><strong>1.</strong> Elige si es <strong>primo</strong>, <strong>compuesto</strong> o <strong>ninguno de los dos</strong>.<br>
+       <strong>2.</strong> Escribe <strong>todos sus divisores</strong>, separados con comas, por ejemplo <strong>1, 2, 3, 6</strong>. Con ellos puedes comprobar tu respuesta del paso 1.</p>
+    <p>Después oprime <strong>Comprobar</strong> (o la tecla Enter). Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>, de los más sencillos a los más difíciles.
+       Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="pc-grid"></div>
+  <p class="practice-score" id="pc-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="pc-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script src="../assets/practica-tarjetas.js"></script>
+  <script>
+  (function () {
+    var h = Practica.h;
+    // criba del 1 al 100
+    var cr = document.getElementById('criba');
+    for (var i = 1; i <= 100; i++) { var s = document.createElement('span'); s.textContent = i; s.className = i === 1 ? 'u' : (h.isPrime(i) ? 'p' : ''); cr.appendChild(s); }
+
+    // Banco de 100 números, de menor a mayor dificultad: 2–26 · 27–50 y el 1 · impares hasta 99 · de 101 a 169 (con compuestos que parecen primos)
+    var BANK = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+                27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 1,
+                51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99,
+                101, 103, 105, 107, 109, 111, 113, 115, 119, 121, 123, 127, 129, 131, 133, 137, 139, 143, 147, 149, 151, 157, 161, 163, 169]
+      .map(function (n) { var d = h.divisors(n); return { n: n, div: d, tipo: n === 1 ? 'ninguno' : (d.length === 2 ? 'primo' : 'compuesto') }; });
+    var NOMBRE = { primo: 'primo', compuesto: 'compuesto', ninguno: 'ninguno de los dos' };
+
+    Practica.setup({
+      id: 'pc', bank: BANK, anchor: 'ejercicios-primos',
+      card: function (e, n) {
+        var sol = 'Divisores de ' + e.n + ': <strong>' + e.div.join(', ') + '</strong> (' + e.div.length + ' divisor' + (e.div.length === 1 ? '' : 'es') + ')<br>' +
+                  (e.tipo === 'primo' ? 'Sólo tiene 2 divisores (el 1 y él mismo): es <strong>primo</strong>.'
+                  : e.tipo === 'ninguno' ? 'El 1 tiene un solo divisor: <strong>no es primo ni compuesto</strong>.'
+                  : 'Tiene más de 2 divisores: es <strong>compuesto</strong>. Por ejemplo, ' + e.n + ' = ' + e.div[1] + ' · ' + (e.n / e.div[1]) + (h.primeText(e.n).indexOf('·') > 0 || h.primeText(e.n).indexOf('²') > 0 ? ', y en primos: ' + e.n + ' = ' + h.primeText(e.n) : '') + '.');
+        return {
+          head: 'Número: ' + e.n,
+          body: '<div class="practice-ask">1. ¿Es primo, compuesto o ninguno de los dos?</div>' +
+                h.optsHTML('tipo', [['primo', 'Primo'], ['compuesto', 'Compuesto'], ['ninguno', 'Ninguno de los dos']]) +
+                '<div class="practice-ask">2. Escribe todos sus divisores</div>' +
+                '<div class="practice-row"><span class="eq">divisores:</span>' + h.inputHTML('d', 'Divisores de ' + e.n + ', ejercicio ' + n, 'flex:1 1 9rem;') + '</div>',
+          check: function (ctx) {
+            var dv = h.parseList(ctx.inp.d.value);
+            if (!ctx.chosen.tipo || !ctx.inp.d.value.trim()) return { msg: 'Contesta <strong>las dos</strong> preguntas antes de comprobar.' };
+            if (!dv) return { bad: true, msg: '<span class="no">No entendí los divisores.</span> Escribe números separados con comas, por ejemplo <strong>1, 2, 3, 6</strong>.' };
+            var wrong = [], msgs = [];
+            if (ctx.chosen.tipo !== e.tipo) {
+              wrong.push('tipo');
+              msgs.push(e.tipo === 'primo' ? 'Revisa los divisores: ' + e.n + ' sólo se divide entre 1 y entre sí mismo, así que es <strong>primo</strong>.'
+                      : e.tipo === 'ninguno' ? 'El 1 es un caso especial: tiene un solo divisor, así que <strong>no es primo ni compuesto</strong>.'
+                      : e.n + ' se divide también entre ' + e.div[1] + ': tiene más de dos divisores, así que es <strong>compuesto</strong>.');
+            }
+            if (!h.sameSet(dv, e.div)) {
+              wrong.push('d');
+              var falta = e.div.filter(function (x) { return dv.indexOf(x) < 0; }), sobra = dv.filter(function (x) { return e.div.indexOf(x) < 0; });
+              msgs.push((falta.length ? 'Te faltan divisores (por ejemplo el <strong>' + falta[0] + '</strong>). ' : '') + (sobra.length ? 'El <strong>' + sobra[0] + '</strong> no divide exacto a ' + e.n + '. ' : '') + 'Recuerda que siempre van el 1 y el propio número.');
+            }
+            return { wrong: wrong, msgs: msgs, total: 2 };
+          },
+          sol: sol
+        };
+      }
+    });
+  })();
+  </script>
+
+  <p class="section-label no-caps" id="rubrica-primos">Rúbrica · Primos y compuestos</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe la lista de divisores de un número en orden, separados con comas, con el 1 y el propio número.</li><li>Usa el vocabulario correcto (divisor, primo, compuesto) y justifica la clasificación con el número de divisores.</li><li>Explica con sus palabras por qué el 1 no es primo ni compuesto.</li></ul></div></td>
+            <td>Escribe listas de divisores desordenadas o incompletas y las clasificaciones no se entienden; mezcla divisor con múltiplo. No usa ningún apoyo (parejas de factores, tabla de primos).</td>
+            <td colspan="2">Escribe los divisores y la clasificación, pero con omisiones (el 1, el número, una pareja) y casi no justifica; repite la definición de memoria.</td>
+            <td>Escribe correctamente los divisores y la clasificación con vocabulario adecuado y la justifica con el número de divisores; puede tener alguna omisión menor. Explica con claridad qué hizo.</td>
+            <td>Escribe y explica con notación correcta divisores, clasificación y casos especiales (1 y 2), apoyándose en parejas de factores y en la criba, y reconstruye el procedimiento en un número nuevo.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación aritmética</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Ubica los primos en la tabla del 1 al 100 y reconoce el patrón (no hay primos pares después del 2).</li><li>Representa un compuesto como producto de dos números (parejas de factores).</li><li>Relaciona la clasificación con la cantidad de divisores (2, más de 2, 1).</li></ul></div></td>
+            <td>Conoce la definición sólo de memoria y clasifica por intuición («si es impar, es primo»); no relaciona la clasificación con la cantidad de divisores.</td>
+            <td colspan="2">Comprende y usa una forma de representar los números (lista de divisores o tabla de primos) en casos sencillos. Se equivoca con compuestos impares como 21, 49 o 91.</td>
+            <td>Usa al menos dos formas (lista de divisores y criba, o parejas de factores) y las compara; clasifica correctamente también números como 91 o 143.</td>
+            <td>Combina varias representaciones (divisores, parejas, criba, raíz cuadrada) y elige la más adecuada para cada número, justificando su elección.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Modelación y resolución de problemas</strong><span class="crit-desc">Formulación del problema y sistematización · Matematización y análisis del sistema matemático · Interpretación, evaluación y validación.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Sigue un procedimiento ordenado para decidir si un número es primo (probar primos hasta su raíz).</li><li>Obtiene la lista completa de divisores por parejas y comprueba que no falte ninguno.</li><li>Encuentra y corrige sus propios errores.</li></ul></div></td>
+            <td>Prueba con divisores al azar y se detiene en el primero que no divide; no revisa su lista.</td>
+            <td colspan="2">Sigue un procedimiento en casos sencillos (números pequeños), pero falla con compuestos que no se dividen entre 2, 3 ni 5 y no comprueba sus listas.</td>
+            <td colspan="2">Aplica un procedimiento correcto (parejas de factores o primos hasta la raíz), obtiene listas completas de divisores y clasificaciones correctas, y revisa sus resultados (por ejemplo, contando las parejas). Detecta y corrige sus errores.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Justifica la clasificación con los divisores: «tiene sólo dos, es primo».</li><li>Explica por qué basta probar los primos hasta la raíz cuadrada.</li><li>Da un ejemplo y un contraejemplo (91 parece primo y no lo es).</li></ul></div></td>
+            <td>Defiende su respuesta con frases como «así lo recuerdo» o «termina en 7, entonces es primo» sin justificar.</td>
+            <td>Explica con sus palabras («sólo se divide entre 1 y entre sí mismo») por qué un número es primo, con pocos términos matemáticos.</td>
+            <td>Valida con ejemplos y contraejemplos: muestra la lista de divisores de varios números y distingue los que parecen primos de los que lo son.</td>
+            <td>Explica la estructura del argumento: encontrar un divisor distinto de 1 y del número basta para concluir que es compuesto; para concluir que es primo hay que revisar todos los primos hasta la raíz.</td>
+            <td>Construye una cadena de argumentos que generaliza: justifica por qué un divisor mayor que la raíz siempre tiene una pareja menor, y distingue convencerse con ejemplos de demostrar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>

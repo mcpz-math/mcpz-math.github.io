@@ -814,6 +814,346 @@
       ]
     },
     {
+      "id": "primoscomp",
+      "titulo": "Matemáticas 1 · Tema 6 · Primos y compuestos",
+      "file": "matematicas-1/tema-06-primos-y-compuestos.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página, resueltos en el cuaderno con la lista de divisores de cada número (no sólo la clasificación).",
+        "Al menos un número primo, uno compuesto que parece primo (como 91 o 119) y el 1, con la razón de cada clasificación.",
+        "La criba de Eratóstenes o la lista de los primos hasta 100 y la explicación de por qué sólo hace falta probar primos hasta la raíz del número."
+      ],
+      "errores": [
+        "Dice que el 1 es primo o que es compuesto.",
+        "Dice que el 2 no es primo porque es par, o que todos los impares son primos (9, 15, 21, 91…).",
+        "Escribe una lista de divisores a la que le faltan el 1 o el propio número, o parejas completas (en 36: 1, 2, 3, 4, 6, 12, 18, 36 sin el 9).",
+        "Para decidir si un número es primo, prueba sólo con 2, 3 y 5 y se le escapan los compuestos como 49 o 77.",
+        "Confunde divisor con múltiplo (escribe 12, 18, 24 como divisores de 6)."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe la lista de divisores de un número en orden, separados con comas, con el 1 y el propio número.",
+            "Usa el vocabulario correcto (divisor, primo, compuesto) y justifica la clasificación con el número de divisores.",
+            "Explica con sus palabras por qué el 1 no es primo ni compuesto."
+          ],
+          "n1": "Escribe listas de divisores desordenadas o incompletas y las clasificaciones no se entienden; mezcla divisor con múltiplo. No usa ningún apoyo (parejas de factores, tabla de primos).",
+          "n23": "Escribe los divisores y la clasificación, pero con omisiones (el 1, el número, una pareja) y casi no justifica; repite la definición de memoria.",
+          "n4": "Escribe correctamente los divisores y la clasificación con vocabulario adecuado y la justifica con el número de divisores; puede tener alguna omisión menor. Explica con claridad qué hizo.",
+          "n5": "Escribe y explica con notación correcta divisores, clasificación y casos especiales (1 y 2), apoyándose en parejas de factores y en la criba, y reconstruye el procedimiento en un número nuevo."
+        },
+        {
+          "id": "REP_ARI",
+          "observar": [
+            "Ubica los primos en la tabla del 1 al 100 y reconoce el patrón (no hay primos pares después del 2).",
+            "Representa un compuesto como producto de dos números (parejas de factores).",
+            "Relaciona la clasificación con la cantidad de divisores (2, más de 2, 1)."
+          ],
+          "n1": "Conoce la definición sólo de memoria y clasifica por intuición («si es impar, es primo»); no relaciona la clasificación con la cantidad de divisores.",
+          "n23": "Comprende y usa una forma de representar los números (lista de divisores o tabla de primos) en casos sencillos. Se equivoca con compuestos impares como 21, 49 o 91.",
+          "n4": "Usa al menos dos formas (lista de divisores y criba, o parejas de factores) y las compara; clasifica correctamente también números como 91 o 143.",
+          "n5": "Combina varias representaciones (divisores, parejas, criba, raíz cuadrada) y elige la más adecuada para cada número, justificando su elección."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Sigue un procedimiento ordenado para decidir si un número es primo (probar primos hasta su raíz).",
+            "Obtiene la lista completa de divisores por parejas y comprueba que no falte ninguno.",
+            "Encuentra y corrige sus propios errores."
+          ],
+          "n1": "Prueba con divisores al azar y se detiene en el primero que no divide; no revisa su lista.",
+          "n23": "Sigue un procedimiento en casos sencillos (números pequeños), pero falla con compuestos que no se dividen entre 2, 3 ni 5 y no comprueba sus listas.",
+          "n45": "Aplica un procedimiento correcto (parejas de factores o primos hasta la raíz), obtiene listas completas de divisores y clasificaciones correctas, y revisa sus resultados (por ejemplo, contando las parejas). Detecta y corrige sus errores."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Justifica la clasificación con los divisores: «tiene sólo dos, es primo».",
+            "Explica por qué basta probar los primos hasta la raíz cuadrada.",
+            "Da un ejemplo y un contraejemplo (91 parece primo y no lo es)."
+          ],
+          "n1": "Defiende su respuesta con frases como «así lo recuerdo» o «termina en 7, entonces es primo» sin justificar.",
+          "n2": "Explica con sus palabras («sólo se divide entre 1 y entre sí mismo») por qué un número es primo, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos y contraejemplos: muestra la lista de divisores de varios números y distingue los que parecen primos de los que lo son.",
+          "n4": "Explica la estructura del argumento: encontrar un divisor distinto de 1 y del número basta para concluir que es compuesto; para concluir que es primo hay que revisar todos los primos hasta la raíz.",
+          "n5": "Construye una cadena de argumentos que generaliza: justifica por qué un divisor mayor que la raíz siempre tiene una pareja menor, y distingue convencerse con ejemplos de demostrar."
+        }
+      ]
+    },
+    {
+      "id": "multiplosdiv",
+      "titulo": "Matemáticas 1 · Tema 6 · Múltiplos y divisores",
+      "file": "matematicas-1/tema-06-multiplos-y-divisores.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página (múltiplos, «¿es múltiplo?» y divisores), resueltos en el cuaderno con las divisiones o multiplicaciones que lo justifican.",
+        "Al menos un ejercicio de cada tipo, con las parejas de factores en los divisores.",
+        "La explicación de por qué «a es múltiplo de b» es lo mismo que «b es divisor de a»."
+      ],
+      "errores": [
+        "Confunde múltiplo con divisor (escribe 1, 2, 3, 6 como múltiplos de 6).",
+        "Empieza los múltiplos en un valor equivocado o se salta uno (6, 12, 24…).",
+        "Dice que un número es múltiplo de otro si «cabe más o menos» sin ver que el residuo no es 0.",
+        "En los divisores olvida la pareja de un divisor (en 24 pone 1, 2, 3, 4, 6, 8, 24 y le falta el 12).",
+        "Escribe el residuo mal (confunde residuo con cociente)."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe las listas de múltiplos y de divisores en orden y separadas con comas.",
+            "Escribe la división que justifica «es múltiplo» (a ÷ b = k, residuo 0) o «no lo es» (con su residuo).",
+            "Explica con sus palabras la diferencia entre múltiplo y divisor."
+          ],
+          "n1": "Escribe listas desordenadas o mezcla múltiplos con divisores, y no se entiende su procedimiento. No usa ningún apoyo, como las divisiones o las parejas.",
+          "n23": "Escribe las listas con omisiones y justifica «es múltiplo» sólo con el resultado, sin la división. Repite las definiciones de memoria.",
+          "n4": "Escribe correctamente listas y divisiones con el vocabulario adecuado y justifica sus respuestas; puede tener alguna omisión menor.",
+          "n5": "Escribe y explica con notación correcta múltiplos, divisores y su relación (a = b · k), y reconstruye el procedimiento en ejercicios nuevos, apoyándose en parejas de factores."
+        },
+        {
+          "id": "REP_ARI",
+          "observar": [
+            "Representa los múltiplos como una tabla de multiplicar (n · 1, n · 2…) y los divisores como parejas (a · b = n).",
+            "Relaciona «múltiplo de» con «divisor de» y con la división exacta.",
+            "Reconoce que los múltiplos son infinitos y los divisores son finitos."
+          ],
+          "n1": "Conoce las palabras sólo de memoria y no las relaciona con la multiplicación o la división.",
+          "n23": "Representa los múltiplos con una tabla de multiplicar y los divisores con la lista, en casos sencillos. Se confunde con números grandes o con la relación entre múltiplo y divisor.",
+          "n4": "Usa dos representaciones (tabla de múltiplos y parejas de factores) y las relaciona con la división exacta; también con números grandes.",
+          "n5": "Combina varias representaciones (multiplicación, división exacta, parejas) y justifica por qué los múltiplos son infinitos y los divisores finitos."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Decide qué hacer según la pregunta (multiplicar para los múltiplos, dividir para decidir y para los divisores).",
+            "Obtiene todos los divisores por parejas y comprueba que no falte ninguno.",
+            "Encuentra y corrige sus errores."
+          ],
+          "n1": "Aplica una operación al azar (suma en lugar de multiplicar) y no revisa su resultado.",
+          "n23": "Elige la operación adecuada en casos sencillos, pero obtiene listas incompletas de divisores y no las revisa.",
+          "n45": "Elige el procedimiento adecuado en cada tipo de ejercicio, obtiene listas completas, calcula bien el residuo y revisa sus resultados (por ejemplo, multiplicando las parejas). Detecta y corrige sus errores."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Justifica que «a es múltiplo de b» con la división exacta o con a = b · k.",
+            "Explica por qué la lista de divisores está completa (parejas, hasta la raíz).",
+            "Da un ejemplo y un contraejemplo de múltiplo."
+          ],
+          "n1": "Defiende sus respuestas con «así me salió» o «cabe más o menos».",
+          "n2": "Explica con sus palabras («es múltiplo porque está en la tabla del 7») por qué un número es múltiplo, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: comprueba con la división o con la tabla de multiplicar, y da ejemplos y contraejemplos.",
+          "n4": "Explica la estructura del argumento: dividir y obtener residuo 0 es la hipótesis y que sea múltiplo (y divisor) es la conclusión; justifica que la lista de divisores está completa.",
+          "n5": "Construye una cadena de argumentos que generaliza (cada divisor tiene una pareja, a = b · k para algún entero k) y distingue convencerse con ejemplos de demostrar."
+        }
+      ]
+    },
+    {
+      "id": "criteriosdiv",
+      "titulo": "Matemáticas 1 · Tema 6 · Criterios de divisibilidad",
+      "file": "matematicas-1/tema-06-criterios-de-divisibilidad.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página, resueltos en el cuaderno con la razón de cada criterio (la suma de cifras, las últimas cifras…).",
+        "Al menos un número de cada tipo: divisible entre 2, 3, 4, 5, 6, 8, 9, 10 y 11 y uno que no lo sea entre ninguno.",
+        "La explicación de por qué el criterio del 6 usa el 2 y el 3, y de cuál criterio incluye a otro (9 incluye a 3)."
+      ],
+      "errores": [
+        "Aplica el criterio del 3 al 4 (suma de cifras en lugar de las dos últimas cifras).",
+        "Dice que un número es divisible entre 6 porque es par (olvida el 3) o porque suma un múltiplo de 3 (olvida el 2).",
+        "Usa las dos últimas cifras para el 8 (son las tres últimas).",
+        "Suma sin alternar en el criterio del 11, o alterna pero no reconoce el 0 y los múltiplos de 11 como resultado válido.",
+        "Dice que si es divisible entre 3 también lo es entre 9 (al revés: si es entre 9, lo es entre 3)."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe la cuenta que justifica cada criterio (2 + 5 + 4 + 1 = 12, 24 ÷ 4 = 6).",
+            "Usa el vocabulario correcto (divisible, múltiplo, cifras, suma de cifras, últimas cifras).",
+            "Explica con sus palabras qué hace cada criterio."
+          ],
+          "n1": "Marca respuestas sin escribir las cuentas y no se entiende cómo decidió. No usa ningún apoyo, como la tabla de criterios.",
+          "n23": "Escribe algunas cuentas (la suma de cifras) pero omite otras; repite las reglas de memoria y casi no las explica.",
+          "n4": "Escribe las cuentas de casi todos los criterios con el vocabulario adecuado y explica con claridad qué hizo; puede tener alguna omisión menor.",
+          "n5": "Escribe todas las cuentas con notación correcta y explica por escrito u oralmente por qué funciona cada criterio, apoyándose en la tabla, y reconstruye el procedimiento en números nuevos."
+        },
+        {
+          "id": "REP_ARI",
+          "observar": [
+            "Separa las cifras de un número y trabaja con ellas (suma, últimas cifras, alternancia).",
+            "Relaciona los criterios con la división exacta y con los múltiplos.",
+            "Reconoce las relaciones entre criterios (6 = 2 y 3; 9 incluye 3; 10 incluye 2 y 5)."
+          ],
+          "n1": "Conoce algunos criterios de memoria y los mezcla; no los relaciona con la división exacta.",
+          "n23": "Usa los criterios sencillos (2, 5, 10, 3) y se equivoca con los de las últimas cifras (4, 8) y con el 11.",
+          "n4": "Usa todos los criterios y los comprueba con la división; reconoce las relaciones entre ellos.",
+          "n5": "Combina varios criterios para decidir con rapidez y justifica las relaciones (por qué 9 incluye 3, por qué el 6 pide dos criterios)."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Elige el criterio que corresponde a cada divisor y lo aplica en orden.",
+            "Obtiene el conjunto completo de divisores del número entre los nueve que se piden.",
+            "Revisa sus respuestas y corrige sus errores."
+          ],
+          "n1": "Marca al azar o aplica el mismo criterio a todos los divisores; no revisa.",
+          "n23": "Aplica correctamente los criterios sencillos, pero falla con el 4, el 8, el 11 o con los compuestos (6), y no revisa.",
+          "n45": "Aplica el criterio correcto a cada divisor, obtiene el conjunto completo y lo revisa (por ejemplo, con una división o con la relación entre criterios). Detecta y corrige sus errores."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué un número cumple o no un criterio con las cifras del número.",
+            "Explica relaciones entre criterios y da ejemplos y contraejemplos (12 es divisible entre 3 y no entre 9).",
+            "Comprueba con la división."
+          ],
+          "n1": "Defiende con «así dice la regla» o «me parece» sin usar las cifras.",
+          "n2": "Explica con sus palabras («termina en cero») por qué cumple un criterio sencillo, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos y contraejemplos: comprueba criterios con la división y da números que cumplen y que no cumplen.",
+          "n4": "Explica la estructura del argumento: la cuenta con las cifras es la hipótesis y la divisibilidad es la conclusión; justifica las relaciones entre criterios.",
+          "n5": "Construye una cadena de argumentos que generaliza (por ejemplo, por qué la suma de cifras decide el 3 y el 9, con 10 ≡ 1) y distingue convencerse con ejemplos de demostrar."
+        }
+      ]
+    },
+    {
+      "id": "problemasmcmmcd",
+      "titulo": "Matemáticas 1 · Tema 6 · Problemas con mcm y MCD",
+      "file": "matematicas-1/tema-06-problemas-con-mcm-y-mcd.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los problemas al azar de la página, resueltos en el cuaderno con los cuatro pasos: leer, decidir (mcm o MCD), calcular con primos y responder con una frase y su unidad.",
+        "Al menos un problema que se resuelve con mcm y uno con MCD, justificando la elección con las pistas del enunciado.",
+        "Un problema nuevo inventado por el alumno para cada herramienta."
+      ],
+      "errores": [
+        "Usa el mcm en un problema de repartir o cortar (o el MCD en uno de coincidencias).",
+        "Calcula el mcm o el MCD correcto pero no responde la pregunta (no escribe la frase ni la unidad).",
+        "Multiplica los dos números en lugar de buscar el mcm.",
+        "Responde con el MCD cuando piden cuántas piezas salen, o al revés, sin releer la pregunta.",
+        "No revisa si la respuesta tiene sentido (un trozo de cuerda más largo que la cuerda)."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Identifica y escribe los datos y lo que se pide.",
+            "Escribe la descomposición en primos y el cálculo del mcm o del MCD en orden.",
+            "Responde con una frase completa y su unidad."
+          ],
+          "n1": "No escribe los datos ni el procedimiento; da sólo un número, sin unidad y sin decir qué significa.",
+          "n23": "Escribe algunos datos y el resultado del cálculo, pero la respuesta no está en una frase ni tiene unidad, o falta la elección mcm/MCD.",
+          "n4": "Escribe los datos, la herramienta elegida, el cálculo y una respuesta con unidad; puede tener alguna omisión menor. Explica con claridad qué hizo.",
+          "n5": "Presenta todos los pasos en orden con notación correcta y explica por qué eligió el mcm o el MCD, redactando la respuesta como una frase que responde la pregunta."
+        },
+        {
+          "id": "REP_ARI",
+          "observar": [
+            "Representa la situación (una línea de tiempo con coincidencias, un corte de la cuerda en trozos iguales, un reparto).",
+            "Relaciona «coincidir» con múltiplos comunes y «repartir» con divisores comunes.",
+            "Usa la descomposición en primos para calcular."
+          ],
+          "n1": "No representa la situación; usa los números del problema sin saber qué significan.",
+          "n23": "Representa la situación en casos sencillos (una recta del tiempo o una lista de múltiplos) pero no la relaciona con el mcm o el MCD.",
+          "n4": "Representa la situación con un dibujo o una lista y la relaciona con múltiplos o divisores comunes; calcula con primos.",
+          "n5": "Combina varias representaciones (dibujo, listas de múltiplos o divisores, primos) y justifica por qué la situación pide el menor múltiplo común o el mayor divisor común."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Traduce el problema al lenguaje matemático (qué se calcula con qué números).",
+            "Decide con las pistas (cada cierto tiempo, lo más grande, que no sobre) entre mcm y MCD.",
+            "Comprueba que la respuesta tiene sentido en el problema."
+          ],
+          "n1": "No distingue qué piden y elige la herramienta al azar, o aplica operaciones con los números sin sentido.",
+          "n23": "Reconoce algunas pistas (repartir, coincidir) y elige bien en problemas sencillos, pero falla en los que no usan esas palabras, y no revisa si la respuesta tiene sentido.",
+          "n45": "Traduce el problema, elige correctamente entre mcm y MCD con las pistas del texto, calcula y verifica que la respuesta tiene sentido (por ejemplo, que los trozos quepan un número exacto de veces). Reconoce y corrige sus errores."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué usó el mcm o el MCD con las palabras del problema.",
+            "Comprueba su respuesta (los trozos caben exacto; las coincidencias ocurren en ese tiempo).",
+            "Da un problema parecido que se resuelve con la otra herramienta."
+          ],
+          "n1": "Defiende su respuesta con «porque sí» o «así sale».",
+          "n2": "Explica con sus palabras («es mcm porque se juntan») por qué eligió la herramienta, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: comprueba su respuesta con la lista de múltiplos o de divisores, y da un problema parecido con la otra herramienta.",
+          "n4": "Explica la estructura del argumento: lo que dice el problema (coincidir, repartir, lo menor, lo mayor) es la hipótesis y la herramienta es la conclusión; comprueba su resultado.",
+          "n5": "Construye una cadena de argumentos que generaliza: justifica por qué el menor múltiplo común resuelve las coincidencias y el mayor divisor común resuelve los repartos, y distingue convencerse con ejemplos de demostrar."
+        }
+      ]
+    },
+    {
+      "id": "euclides",
+      "titulo": "Matemáticas 1 · Tema 6 · Algoritmo de Euclides",
+      "file": "matematicas-1/tema-06-algoritmo-de-euclides.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página, resueltos en el cuaderno con todas las divisiones (dividendo, divisor, cociente y residuo).",
+        "Al menos un ejercicio con 2 divisiones y uno con 5 ó 6, y el cálculo del mcm con MCD · mcm = producto.",
+        "La comprobación de un resultado con la descomposición en primos."
+      ],
+      "errores": [
+        "Divide el menor entre el mayor, o no cambia los papeles (el divisor no pasa a ser dividendo).",
+        "Calcula mal el cociente o el residuo (confunde cociente con residuo o se pasa del divisor).",
+        "Se detiene antes de llegar a residuo 0, o da como MCD el último residuo (el 0) en lugar del último divisor.",
+        "Da como MCD el penúltimo residuo en lugar del último divisor distinto de cero.",
+        "Calcula el mcm multiplicando los números sin dividir entre el MCD."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe cada división en la forma a = b · q + r, con los números en el lugar correcto.",
+            "Presenta las divisiones en orden hasta que el residuo es 0 y señala el MCD.",
+            "Explica con sus palabras qué hace en cada paso."
+          ],
+          "n1": "Escribe las divisiones sin orden o con la forma incorrecta y no se entiende su procedimiento. No usa ningún apoyo, como la tabla de dividendo, divisor, cociente y residuo.",
+          "n23": "Escribe las divisiones pero omite alguna o no usa la forma a = b · q + r; repite el procedimiento de memoria y casi no lo explica.",
+          "n4": "Escribe correctamente todas las divisiones y la tabla, señala el MCD y explica con claridad qué hizo; puede tener alguna omisión menor.",
+          "n5": "Escribe y explica con notación correcta todo el algoritmo (divisiones, tabla, MCD y mcm), por diferentes medios (con las divisiones, con la tabla y con la descomposición en primos), y reconstruye el procedimiento en una pareja nueva."
+        },
+        {
+          "id": "REP_ARI",
+          "observar": [
+            "Representa cada paso con la división con residuo a = b · q + r.",
+            "Relaciona el algoritmo con el MCD por primos (obtiene el mismo resultado).",
+            "Usa MCD · mcm = producto para obtener el mcm."
+          ],
+          "n1": "Conoce los pasos sólo de memoria y los usa de forma mecánica, sin relacionarlos con el MCD por primos.",
+          "n23": "Comprende y describe el algoritmo y lo usa en casos sencillos (2 ó 3 divisiones). Se confunde con más pasos.",
+          "n4": "Usa dos formas de obtener el MCD (algoritmo y primos) y las compara; obtiene el mcm con MCD · mcm = producto.",
+          "n5": "Combina varias representaciones (divisiones, tabla, primos, la relación MCD · mcm) y elige la más adecuada según el tamaño de los números, justificando su elección."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Sigue el procedimiento completo hasta el residuo 0.",
+            "Obtiene el MCD y el mcm correctos y los comprueba (con primos o con la relación MCD · mcm).",
+            "Encuentra y corrige sus errores."
+          ],
+          "n1": "No sigue el procedimiento (se detiene o cambia números sin criterio) y no revisa.",
+          "n23": "Sigue el procedimiento en casos de 2 ó 3 divisiones, pero se pierde con más pasos o con residuos grandes, y no comprueba sus resultados.",
+          "n45": "Sigue el algoritmo completo en cualquier caso (hasta 6 divisiones), obtiene el MCD y el mcm correctos y los comprueba con otro método. Detecta y corrige sus errores."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué el MCD no cambia al reemplazar los números por el menor y el residuo.",
+            "Explica por qué el último divisor (antes del residuo 0) es el MCD.",
+            "Compara con el resultado por primos."
+          ],
+          "n1": "Defiende su resultado con «así es el método» o «así me salió».",
+          "n2": "Explica con sus palabras («cada vez los números son más chicos») por qué el procedimiento termina, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: calcula el MCD de varias parejas con el algoritmo y con primos y compara los resultados.",
+          "n4": "Explica la estructura del argumento: un divisor común de a y b también divide al residuo, por eso MCD(a, b) = MCD(b, r); y por eso el último divisor es el MCD.",
+          "n5": "Construye una cadena de argumentos que generaliza: demuestra que MCD(a, b) = MCD(b, r) para cualquier a y b, y que el algoritmo termina porque los residuos disminuyen, distinguiendo convencerse con ejemplos de demostrar."
+        }
+      ]
+    },
+    {
       "id": "mcmmcd",
       "titulo": "Matemáticas 1 · Tema 6 · mcm y MCD",
       "file": "matematicas-1/tema-06-mcm-y-mcd.html",

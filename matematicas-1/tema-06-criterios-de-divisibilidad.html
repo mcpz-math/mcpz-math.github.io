@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criterios de divisibilidad — Matemáticas 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css?v=20261030m">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-06-divisibilidad.html">← Tema 6</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 1 · Tema 6 · Divisibilidad</div>
+    <h1>Criterios de divisibilidad</h1>
+  </div>
+
+  <p class="section-label">¿Para qué sirven?</p>
+  <div class="prose">
+    <p>Un <strong>criterio de divisibilidad</strong> es una regla que permite saber si un número se divide exacto entre otro <strong>sin hacer la división</strong>. Sirven para
+       descomponer números en <a href="tema-06-primos-y-compuestos.html" style="color:var(--forest); font-weight:700;">primos</a>, para simplificar fracciones y para encontrar el
+       <a href="tema-06-mcm-y-mcd.html" style="color:var(--forest); font-weight:700;">mcm y el MCD</a>.</p>
+  </div>
+
+  <div class="regla-box">
+    <div class="regla-head">★ Tres formas de revisar ★</div>
+    <div class="regla-steps">
+      <div class="regla-step c1">
+        <div class="paso">Tipo 1</div>
+        <div class="big">últimas cifras</div>
+        <div class="txt">entre 2, 4, 5, 8 y 10</div>
+      </div>
+      <div class="regla-step c2">
+        <div class="paso">Tipo 2</div>
+        <div class="big">suma de cifras</div>
+        <div class="txt">entre 3 y 9</div>
+      </div>
+      <div class="regla-step c3">
+        <div class="paso">Tipo 3</div>
+        <div class="big">combinar</div>
+        <div class="txt">entre 6 (2 y 3) y entre 11 (cifras alternadas)</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label" id="reglas">Las reglas</p>
+  <table class="crit-table" aria-label="Criterios de divisibilidad">
+    <tr><td>2</td><td>Termina en <strong>0, 2, 4, 6 u 8</strong> (es par).</td><td>3 746 ✓ &nbsp; 3 745 ✗</td></tr>
+    <tr><td>3</td><td>La <strong>suma de sus cifras</strong> es múltiplo de 3.</td><td>2 541: 2+5+4+1 = 12 ✓</td></tr>
+    <tr><td>4</td><td>Sus <strong>dos últimas cifras</strong> forman un múltiplo de 4 (o son 00).</td><td>1 324: 24 ÷ 4 = 6 ✓</td></tr>
+    <tr><td>5</td><td>Termina en <strong>0 o 5</strong>.</td><td>7 835 ✓ &nbsp; 7 834 ✗</td></tr>
+    <tr><td>6</td><td>Es divisible entre <strong>2 y entre 3</strong> a la vez.</td><td>4 722: par y 4+7+2+2 = 15 ✓</td></tr>
+    <tr><td>8</td><td>Sus <strong>tres últimas cifras</strong> forman un múltiplo de 8 (o son 000).</td><td>5 120: 120 ÷ 8 = 15 ✓</td></tr>
+    <tr><td>9</td><td>La <strong>suma de sus cifras</strong> es múltiplo de 9.</td><td>4 635: 4+6+3+5 = 18 ✓</td></tr>
+    <tr><td>10</td><td>Termina en <strong>0</strong>.</td><td>9 360 ✓ &nbsp; 9 365 ✗</td></tr>
+    <tr><td>11</td><td>Sumas y restas <strong>alternadas</strong> de sus cifras (de derecha a izquierda) dan 0 o múltiplo de 11.</td><td>2 728: 8−2+7−2 = 11 ✓</td></tr>
+  </table>
+
+  <div class="prose">
+    <p><strong>Cuidado:</strong> el 6 necesita <strong>los dos</strong> criterios (el del 2 y el del 3). Un número puede ser divisible entre 3 sin ser divisible entre 9
+       (por ejemplo 12: 1+2 = 3 es múltiplo de 3 pero no de 9). Y si es divisible entre 9, también lo es entre 3.</p>
+  </div>
+
+  <p class="section-label" id="ejercicios-criterios">Ejercicios: criterios de divisibilidad</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Para cada número, <strong>marca todos</strong> los números entre los que se puede dividir exacto (2, 3, 4, 5, 6, 8, 9, 10 y 11), usando los criterios, <strong>sin hacer la división</strong>.
+       Si no es divisible entre ninguno, marca <strong>Ninguno</strong>. Después oprime <strong>Comprobar</strong>.</p>
+    <p>Si te equivocas, la página te muestra la razón de cada criterio con las cifras de tu número. Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>
+       (los primeros tienen 3 cifras y los últimos 5). Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="cd-grid"></div>
+  <p class="practice-score" id="cd-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="cd-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script src="../assets/practica-tarjetas.js"></script>
+  <script>
+  (function () {
+    var h = Practica.h, DIV = [2, 3, 4, 5, 6, 8, 9, 10, 11];
+    // Banco de 100 números: 3 cifras (1–30), 4 cifras (31–70) y 5 cifras (71–100). Algunos son múltiplos de varios de los números y otros no.
+    var seed = 20261030;
+    function rnd() { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; }
+    var BANK = [], seen = {}, mults = [2, 3, 4, 5, 6, 8, 9, 10, 11, 7];
+    for (var i = 0; BANK.length < 100; i++) {
+      var m = mults[i % 10], digits = BANK.length < 30 ? 3 : (BANK.length < 70 ? 4 : 5), lo = Math.pow(10, digits - 1), hi = Math.pow(10, digits) - 1;
+      var k = Math.floor(lo / m) + Math.floor(rnd() * ((hi - lo) / m)), n = k * m;
+      if (i % 3 === 2) n += 1 + Math.floor(rnd() * (m - 1));
+      if (n < lo || n > hi || seen[n]) continue;
+      seen[n] = 1; BANK.push(n);
+    }
+    BANK = BANK.map(function (n) { return { n: n, yes: DIV.filter(function (d) { return n % d === 0; }) }; });
+
+    function pad(x, w) { var s = String(x); while (s.length < w) s = '0' + s; return s; }
+    function why(n, d) { // la razón de cada criterio con las cifras del número
+      var ds = String(n).split('').map(Number), sum = ds.reduce(function (a, b) { return a + b; }, 0), rev = ds.slice().reverse();
+      var alt = rev.reduce(function (a, x, i) { return a + (i % 2 ? -x : x); }, 0), altTxt = rev.map(function (x, i) { return (i === 0 ? '' : (i % 2 ? ' − ' : ' + ')) + x; }).join('');
+      var l = n % 10, l2 = n % 100, l3 = n % 1000, ok = n % d === 0;
+      var t = {
+        2: 'termina en ' + l + (l % 2 === 0 ? ' (par)' : ' (impar)'),
+        3: 'las cifras suman ' + ds.join(' + ') + ' = ' + sum + (sum % 3 === 0 ? ', que es múltiplo de 3' : ', que no es múltiplo de 3'),
+        4: 'las dos últimas cifras son ' + pad(l2, 2) + ' y ' + l2 + ' ÷ 4 ' + (l2 % 4 === 0 ? 'es exacta' : 'no es exacta'),
+        5: 'termina en ' + l + (l === 0 || l === 5 ? ' (0 o 5)' : ' (no es 0 ni 5)'),
+        6: (n % 2 === 0 ? 'es par' : 'es impar') + ' y ' + (n % 3 === 0 ? 'es divisible entre 3' : 'no es divisible entre 3'),
+        8: 'las tres últimas cifras son ' + pad(l3, 3) + ' y ' + l3 + ' ÷ 8 ' + (l3 % 8 === 0 ? 'es exacta' : 'no es exacta'),
+        9: 'las cifras suman ' + sum + (sum % 9 === 0 ? ', que es múltiplo de 9' : ', que no es múltiplo de 9'),
+        10: 'termina en ' + l + (l === 0 ? ' (0)' : ' (no es 0)'),
+        11: 'alternando de derecha a izquierda: ' + altTxt + ' = ' + alt + (alt % 11 === 0 ? ', que es múltiplo de 11' : ', que no es múltiplo de 11')
+      };
+      return '<strong>÷ ' + d + ':</strong> ' + (ok ? 'sí' : 'no') + ' — ' + t[d];
+    }
+
+    Practica.setup({
+      id: 'cd', bank: BANK, anchor: 'ejercicios-criterios',
+      card: function (e, nn) {
+        return {
+          head: h.thin(e.n),
+          body: '<div class="practice-ask">Marca todos los números entre los que es divisible</div>' +
+                h.optsHTML('d', DIV.map(function (d) { return [d, '÷ ' + d]; }).concat([['ninguno', 'Ninguno']]), true),
+          check: function (ctx) {
+            var sel = ctx.multi.d || [];
+            if (!sel.length) return { msg: 'Marca los números entre los que es divisible, o <strong>Ninguno</strong>.' };
+            if (sel.indexOf('ninguno') >= 0 && sel.length > 1) return { bad: true, msg: '<span class="no">Marcaste «Ninguno» y otros números a la vez.</span> Quita uno de los dos.' };
+            var chosen = sel.filter(function (x) { return x !== 'ninguno'; }).map(Number), wrong = [], msgs = [];
+            DIV.forEach(function (d) {
+              var yes = e.yes.indexOf(d) >= 0, said = chosen.indexOf(d) >= 0;
+              if (yes !== said) { wrong.push(d); msgs.push((said ? 'Marcaste el ' + d + ' pero no se puede: ' : 'Te faltó el ' + d + ': ') + why(e.n, d)); }
+            });
+            return { wrong: wrong, msgs: msgs, total: DIV.length };
+          },
+          sol: '<strong>' + h.thin(e.n) + '</strong> es divisible entre: <strong>' + (e.yes.length ? e.yes.join(', ') : 'ninguno de ellos') + '</strong><br>' +
+               DIV.map(function (d) { return why(e.n, d); }).join('<br>')
+        };
+      }
+    });
+  })();
+  </script>
+
+  <p class="section-label no-caps" id="rubrica-criterios">Rúbrica · Criterios de divisibilidad</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe la cuenta que justifica cada criterio (2 + 5 + 4 + 1 = 12, 24 ÷ 4 = 6).</li><li>Usa el vocabulario correcto (divisible, múltiplo, cifras, suma de cifras, últimas cifras).</li><li>Explica con sus palabras qué hace cada criterio.</li></ul></div></td>
+            <td>Marca respuestas sin escribir las cuentas y no se entiende cómo decidió. No usa ningún apoyo, como la tabla de criterios.</td>
+            <td colspan="2">Escribe algunas cuentas (la suma de cifras) pero omite otras; repite las reglas de memoria y casi no las explica.</td>
+            <td>Escribe las cuentas de casi todos los criterios con el vocabulario adecuado y explica con claridad qué hizo; puede tener alguna omisión menor.</td>
+            <td>Escribe todas las cuentas con notación correcta y explica por escrito u oralmente por qué funciona cada criterio, apoyándose en la tabla, y reconstruye el procedimiento en números nuevos.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación aritmética</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Separa las cifras de un número y trabaja con ellas (suma, últimas cifras, alternancia).</li><li>Relaciona los criterios con la división exacta y con los múltiplos.</li><li>Reconoce las relaciones entre criterios (6 = 2 y 3; 9 incluye 3; 10 incluye 2 y 5).</li></ul></div></td>
+            <td>Conoce algunos criterios de memoria y los mezcla; no los relaciona con la división exacta.</td>
+            <td colspan="2">Usa los criterios sencillos (2, 5, 10, 3) y se equivoca con los de las últimas cifras (4, 8) y con el 11.</td>
+            <td>Usa todos los criterios y los comprueba con la división; reconoce las relaciones entre ellos.</td>
+            <td>Combina varios criterios para decidir con rapidez y justifica las relaciones (por qué 9 incluye 3, por qué el 6 pide dos criterios).</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Modelación y resolución de problemas</strong><span class="crit-desc">Formulación del problema y sistematización · Matematización y análisis del sistema matemático · Interpretación, evaluación y validación.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Elige el criterio que corresponde a cada divisor y lo aplica en orden.</li><li>Obtiene el conjunto completo de divisores del número entre los nueve que se piden.</li><li>Revisa sus respuestas y corrige sus errores.</li></ul></div></td>
+            <td>Marca al azar o aplica el mismo criterio a todos los divisores; no revisa.</td>
+            <td colspan="2">Aplica correctamente los criterios sencillos, pero falla con el 4, el 8, el 11 o con los compuestos (6), y no revisa.</td>
+            <td colspan="2">Aplica el criterio correcto a cada divisor, obtiene el conjunto completo y lo revisa (por ejemplo, con una división o con la relación entre criterios). Detecta y corrige sus errores.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué un número cumple o no un criterio con las cifras del número.</li><li>Explica relaciones entre criterios y da ejemplos y contraejemplos (12 es divisible entre 3 y no entre 9).</li><li>Comprueba con la división.</li></ul></div></td>
+            <td>Defiende con «así dice la regla» o «me parece» sin usar las cifras.</td>
+            <td>Explica con sus palabras («termina en cero») por qué cumple un criterio sencillo, con pocos términos matemáticos.</td>
+            <td>Valida con ejemplos y contraejemplos: comprueba criterios con la división y da números que cumplen y que no cumplen.</td>
+            <td>Explica la estructura del argumento: la cuenta con las cifras es la hipótesis y la divisibilidad es la conclusión; justifica las relaciones entre criterios.</td>
+            <td>Construye una cadena de argumentos que generaliza (por ejemplo, por qué la suma de cifras decide el 3 y el 9, con 10 ≡ 1) y distingue convencerse con ejemplos de demostrar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>

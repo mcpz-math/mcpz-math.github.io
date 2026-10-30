@@ -6,7 +6,7 @@
   <title>mcm y MCD — Matemáticas 1</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
-  <link rel="stylesheet" href="../assets/style.css?v=20261030i">
+  <link rel="stylesheet" href="../assets/style.css?v=20261030m">
 </head>
 <body>
 
@@ -18,6 +18,16 @@
   <div class="course-header">
     <div class="k">Matemáticas 1 · Tema 6 · Divisibilidad</div>
     <h1>mcm y MCD</h1>
+  </div>
+
+  <p class="section-label">Conocimiento previo</p>
+  <div class="callout" style="text-align:center;">
+    <div class="k">Repaso</div>
+    <p>Para calcular el MCD y el mcm hay que reconocer los números primos y saber cuáles son múltiplos y divisores de un número.</p>
+    <p style="margin-top:0.9rem;">
+      <a class="pg-btn" href="tema-06-primos-y-compuestos.html" style="text-decoration:none; display:inline-block;">Primos y compuestos →</a>
+      <a class="pg-btn secondary" href="tema-06-multiplos-y-divisores.html" style="text-decoration:none; display:inline-block; margin-top:0.4rem;">Múltiplos y divisores →</a>
+    </p>
   </div>
 
   <p class="section-label">Antes de empezar: descomponer en números primos</p>
@@ -42,29 +52,27 @@
   </div>
   <div class="regla-box">
     <div class="regla-head">★ MCD ★</div>
-    <div class="regla-formula">MCD = <span class="regla-chip c2">primos comunes</span> · <span class="regla-chip c1">menor exponente</span></div>
     <div class="regla-steps">
       <div class="regla-step c1">
         <div class="paso">Paso 1</div>
-        <div class="big">primos</div>
-        <div class="txt">descompón cada número</div>
+        <div class="big">tabla</div>
+        <div class="txt">escribe los números en fila y una barra a la derecha</div>
       </div>
       <div class="regla-step c2">
         <div class="paso">Paso 2</div>
-        <div class="big">comunes</div>
-        <div class="txt">sólo los primos que están en todos, con el menor exponente</div>
+        <div class="big">dividir</div>
+        <div class="txt">entre un primo que divida a <strong>todos</strong>; los cocientes van abajo</div>
       </div>
       <div class="regla-step c3">
         <div class="paso">Paso 3</div>
         <div class="big">multiplicar</div>
-        <div class="txt">ése es el MCD</div>
+        <div class="txt">cuando ya no haya primo común, los primos de la derecha son el MCD</div>
       </div>
     </div>
     <div class="regla-ejemplo">
-      <span class="lbl">Ejemplo · MCD(12, 18)</span>
-      12 = <span class="regla-chip c1">2²</span> · <span class="regla-chip c3">3</span><br>
-      18 = <span class="regla-chip c1">2</span> · <span class="regla-chip c3">3²</span><br>
-      MCD = <span class="regla-chip c1">2</span> · <span class="regla-chip c3">3</span> = <span class="regla-chip c2">6</span>
+      <span class="lbl">Ejemplo · MCD(24, 36, 60)</span>
+      <div class="dsim-host" data-nums="24,36,60" data-mode="mcd"></div>
+      <span class="nota">Ya no hay un primo que divida a 2, 3 y 5 a la vez: se termina.</span>
     </div>
   </div>
 
@@ -74,33 +82,30 @@
   </div>
   <div class="regla-box">
     <div class="regla-head">★ mcm ★</div>
-    <div class="regla-formula">mcm = <span class="regla-chip c2">todos los primos</span> · <span class="regla-chip c1">mayor exponente</span></div>
     <div class="regla-steps">
       <div class="regla-step c1">
         <div class="paso">Paso 1</div>
-        <div class="big">primos</div>
-        <div class="txt">descompón cada número</div>
+        <div class="big">tabla</div>
+        <div class="txt">escribe los números en fila y una barra a la derecha</div>
       </div>
       <div class="regla-step c2">
         <div class="paso">Paso 2</div>
-        <div class="big">todos</div>
-        <div class="txt">todos los primos que aparezcan, con el mayor exponente</div>
+        <div class="big">dividir</div>
+        <div class="txt">entre el primo más pequeño que divida a <strong>alguno</strong>; los demás se bajan igual</div>
       </div>
       <div class="regla-step c3">
         <div class="paso">Paso 3</div>
         <div class="big">multiplicar</div>
-        <div class="txt">ése es el mcm</div>
+        <div class="txt">cuando todos sean 1, los primos de la derecha son el mcm</div>
       </div>
     </div>
     <div class="regla-ejemplo">
-      <span class="lbl">Ejemplo · mcm(12, 18)</span>
-      12 = <span class="regla-chip c1">2²</span> · 3<br>
-      18 = 2 · <span class="regla-chip c3">3²</span><br>
-      mcm = <span class="regla-chip c1">2²</span> · <span class="regla-chip c3">3²</span> = 4 · 9 = <span class="regla-chip c2">36</span>
+      <span class="lbl">Ejemplo · mcm(10, 15, 18)</span>
+      <div class="dsim-host" data-nums="10,15,18" data-mode="mcm"></div>
     </div>
   </div>
 
-  <p class="section-label">Los dos juntos, en una tabla</p>
+  <p class="section-label">Otra forma de verlo: con exponentes</p>
   <div class="prose">
     <p>Se escribe el <strong>exponente</strong> de cada primo en cada número (si el primo no está, el exponente es 0). El MCD toma el <strong>menor</strong> de cada columna y el mcm el <strong>mayor</strong>.</p>
   </div>
@@ -134,8 +139,8 @@
     <div class="k">Instrucciones</div>
     <p>Para cada grupo de números:</p>
     <p><strong>1.</strong> <strong>Descompón</strong> cada número en primos, por ejemplo <strong>2^2 · 3</strong> (también puedes usar los botones <strong>²</strong> y <strong>·</strong>).<br>
-       <strong>2.</strong> Escribe el <strong>MCD</strong>: los primos comunes con el menor exponente.<br>
-       <strong>3.</strong> Escribe el <strong>mcm</strong>: todos los primos con el mayor exponente.</p>
+       <strong>2.</strong> Escribe el <strong>MCD</strong> (con la tabla: sólo los primos que dividen a todos a la vez).<br>
+       <strong>3.</strong> Escribe el <strong>mcm</strong> (con la tabla: hasta que todos sean 1). Al comprobar verás las dos tablas.</p>
     <p>Después oprime <strong>Comprobar</strong> (o la tecla Enter). Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>, de menos a más difíciles
        (los últimos tienen tres números). Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
   </div>
@@ -145,6 +150,14 @@
   <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
     <button type="button" class="pg-btn" id="mm-new">Otros 10 ejercicios (volver a intentar)</button>
   </p>
+
+  <script src="../assets/practica-tarjetas.js"></script>
+  <script>
+  // Tablas de descomposición simultánea de los ejemplos
+  document.querySelectorAll('.dsim-host').forEach(function (el) {
+    el.innerHTML = Practica.h.dsimHTML(el.dataset.nums.split(',').map(Number), el.dataset.mode);
+  });
+  </script>
 
   <script>
   // Fracciones apiladas: {{n/d}} en el texto de la página
@@ -197,17 +210,11 @@
       return { value: value, composite: composite };
     }
     function solution(e) {
-      var fs = e.nums.map(primeFactors), all = {}, mcdParts = [], mcmParts = [];
-      fs.forEach(function (f) { Object.keys(f).forEach(function (p) { all[p] = 1; }); });
-      sorted(all).forEach(function (p) {
-        var ks = fs.map(function (f) { return f[p] || 0; }), mn = Math.min.apply(null, ks), mx = Math.max.apply(null, ks);
-        if (mn > 0) mcdParts.push(powText(p, mn));
-        mcmParts.push(powText(p, mx));
-      });
-      var out = e.nums.map(function (n, i) { return n + ' = ' + primeText(n); }).join('<br>') + '<br>';
-      out += 'MCD (primos comunes, menor exponente) = ' + (mcdParts.join(' · ') || '1 (no hay primos comunes)') + ' = <strong>' + e.g + '</strong><br>';
-      out += 'mcm (todos los primos, mayor exponente) = ' + mcmParts.join(' · ') + ' = <strong>' + e.l + '</strong>';
-      if (e.nums.length === 2) out += '<br>Comprobación: MCD · mcm = ' + e.g + ' · ' + e.l + ' = ' + (e.g * e.l) + ' = ' + e.nums[0] + ' · ' + e.nums[1];
+      var H = Practica.h;
+      var out = e.nums.map(function (n) { return n + ' = ' + primeText(n); }).join('<br>');
+      out += '<br><strong>MCD</strong> (primos que dividen a todos a la vez):' + H.dsimHTML(e.nums, 'mcd');
+      out += '<strong>mcm</strong> (hasta que todos sean 1):' + H.dsimHTML(e.nums, 'mcm');
+      if (e.nums.length === 2) out += 'Comprobación: MCD · mcm = ' + e.g + ' · ' + e.l + ' = ' + (e.g * e.l) + ' = ' + e.nums[0] + ' · ' + e.nums[1];
       return out;
     }
 

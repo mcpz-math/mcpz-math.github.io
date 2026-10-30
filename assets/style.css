@@ -1029,3 +1029,25 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
   .exp-table { font-size: 0.85rem; border-spacing: 3px; }
   .exp-table th, .exp-table td { padding: 0.3rem 0.5rem; }
 }
+
+/* ===== Criba de Eratóstenes (1 a 100) y tablas de criterios ===== */
+.criba { display: grid; grid-template-columns: repeat(10, 1fr); gap: 3px; width: min(100% - 3rem, 440px); margin: 0.6rem auto 0.4rem; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.85rem; }
+.criba span { text-align: center; padding: 0.3rem 0; border-radius: 6px; background: var(--callout-bg); color: var(--ink-soft); }
+.criba span.p { background: var(--lime); color: var(--forest); font-weight: 700; }
+.criba span.u { background: #d9d6c9; color: #6b6b60; }
+.crit-table { width: min(100% - 3rem, 760px); margin: 0.4rem auto 1.4rem; border-collapse: separate; border-spacing: 0 6px; font-size: 0.98rem; }
+.crit-table td { padding: 0.55rem 0.8rem; background: var(--callout-bg); }
+.crit-table td:first-child { background: var(--forest); color: var(--lime); font-family: 'Outfit', system-ui, sans-serif; font-weight: 600; font-size: 1.15rem; text-align: center; width: 4.5rem; border-radius: 10px 0 0 10px; }
+.crit-table td:last-child { border-radius: 0 10px 10px 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.88rem; color: var(--forest); }
+
+/* ===== Tabla de descomposición simultánea (mcm y MCD) ===== */
+.dsim-wrap { overflow-x: auto; margin: 0.4rem 0 0.8rem; }
+.dsim { border-collapse: collapse; margin: 0 auto; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 1.15rem; color: var(--forest); }
+.dsim td { padding: 0.12rem 0.7rem; text-align: right; }
+.dsim td.one { color: var(--ink-soft); }
+.dsim td.pr { border-left: 3px solid var(--forest); text-align: left; min-width: 2.2rem; padding-left: 0.8rem; color: #d9650b; font-weight: 700; }
+.dsim td.res { text-align: left; padding-left: 1.2rem; vertical-align: middle; font-size: 1rem; white-space: nowrap; }
+.dsim td.res b { color: var(--forest); background: var(--lime); border-radius: 6px; padding: 0 0.4rem; }
+.dsim-cap { display: none; text-align: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.95rem; color: var(--forest); margin-top: 0.4rem; }
+.dsim-cap b { background: var(--lime); border-radius: 6px; padding: 0 0.4rem; }
+@media (max-width: 560px) { .dsim td.res { display: none; } .dsim-cap { display: block; } .dsim { font-size: 1.05rem; } }

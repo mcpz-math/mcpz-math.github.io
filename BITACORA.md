@@ -1789,3 +1789,22 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Estilos nuevos en `assets/style.css`: `.escalera` y `.exp-table` (tabla de exponentes, compacta en teléfono).
 - A pedido de Carmen, en `matematicas-2/tema-01-operaciones-con-fracciones.html` se quitó el cuadro "El mcm con números primos" con sus pasos y ejemplos; en su lugar queda **sólo un cuadro de Repaso**
   con el botón "Repasar mcm y MCD (Matemáticas 1)" (`matematicas-1/tema-06-mcm-y-mcd.html`), donde sí está explicado.
+
+## 2026-10-30 (se desarrollan los subtemas de Divisibilidad, Matemáticas 1 Tema 6)
+- A pedido de Carmen se escribieron los **cinco subtemas que faltaban** de `matematicas-1/tema-06-divisibilidad.html`, con el mismo formato de las demás clases (recuadros de colores con Paso 1, 2 y 3,
+  ejemplos, **100 ejercicios** con revisión automática de los que salen 10 al azar, rúbrica por competencias plegada y enlace "Ver clase →" en el bloque de cada subtema). Los seis subtemas quedan enlazados:
+  - **Primos y compuestos** (`tema-06-primos-y-compuestos.html`): primo (2 divisores), compuesto (más de 2), el 1 y el 2; la **criba de Eratóstenes** del 1 al 100 (primos en verde); cómo saber si un
+    número es primo (probar primos hasta la raíz). Ejercicios: clasificar (primo, compuesto, ninguno) y escribir todos los divisores (números del 1 al 169, con compuestos que parecen primos como 91 o 119).
+  - **Múltiplos y divisores** (`tema-06-multiplos-y-divisores.html`): "a es múltiplo de b = b es divisor de a"; múltiplos (n · 1, n · 2…); divisores por parejas (36 = 1 · 36 = 2 · 18…). Ejercicios: primeros 5 múltiplos (30),
+    "¿es múltiplo?" con el residuo (30) y todos los divisores (40).
+  - **Criterios de divisibilidad** (`tema-06-criterios-de-divisibilidad.html`): tabla con las reglas del 2, 3, 4, 5, 6, 8, 9, 10 y 11 y ejemplos. Ejercicios: marcar los números entre los que es divisible (de 3 a 5 cifras); si falla, muestra la razón de cada criterio
+    con las cifras del número.
+  - **mcm y MCD** (`tema-06-mcm-y-mcd.html`, ya hecho antes): ahora el cálculo se ve con la **tabla de descomposición simultánea** (los números en fila, la barra y los primos a la derecha; mcm = 2 · 3 · 3 · 5 = 90 con 10, 15 y 18), a pedido
+    de Carmen. Para el **MCD** sólo se divide entre primos que dividen a todos a la vez (24, 36, 60 → 2 · 2 · 3 = 12). Las soluciones de los ejercicios muestran las dos tablas. En teléfono, el resultado queda debajo de la tabla.
+  - **Problemas con mcm y MCD** (`tema-06-problemas-con-mcm-y-mcd.html`): las pistas para decidir (MCD: repartir o cortar lo más grande; mcm: coincidir o lo más pequeño), cuatro pasos (leer, decidir, calcular, responder) y dos ejemplos.
+    100 problemas (50 con mcm y 50 con MCD, 20 enunciados con 5 parejas de números cada uno): eligen mcm o MCD y escriben la respuesta.
+  - **Algoritmo de Euclides** (`tema-06-algoritmo-de-euclides.html`): divisiones sucesivas hasta residuo 0 (MCD(252, 105) = 21), tabla de dividendo, divisor, cociente y residuo, y el mcm con MCD · mcm = producto.
+    100 parejas con 2 a 6 divisiones: se completa cada división (cociente y residuo), el MCD y el mcm.
+- Código nuevo compartido: `assets/practica-tarjetas.js` (motor de tarjetas de ejercicios: opciones, casillas, botones, 10 al azar y la tabla de descomposición simultánea `dsimHTML`) y estilos en `assets/style.css`
+  (criba, tabla de criterios, tabla de exponentes, escalera de divisiones, `.dsim`). Se probaron 600 tarjetas de cada subtema (excepto mcm y MCD, 300). Cinco rúbricas nuevas ("primoscomp", "multiplosdiv", "criteriosdiv",
+  "problemasmcmmcd", "euclides") y la guía en Word regenerada.

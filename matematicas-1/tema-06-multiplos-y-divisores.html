@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Múltiplos y divisores — Matemáticas 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css?v=20261030m">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-06-divisibilidad.html">← Tema 6</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 1 · Tema 6 · Divisibilidad</div>
+    <h1>Múltiplos y divisores</h1>
+  </div>
+
+  <p class="section-label">Dos caras de la misma idea</p>
+  <div class="prose">
+    <p>Como 3 · 4 = 12, decimos que <strong>12 es múltiplo de 3</strong> y que <strong>3 es divisor de 12</strong>. Es lo mismo visto desde dos lados:</p>
+  </div>
+  <div class="regla-box">
+    <div class="regla-head">★ Múltiplos y divisores ★</div>
+    <div class="regla-formula">
+      <span class="regla-chip c2">a es múltiplo de b</span> = <span class="regla-chip c3">b es divisor de a</span>
+    </div>
+    <div class="regla-ejemplo" style="margin-top:1rem;">
+      <span class="lbl">Cómo saberlo</span>
+      a ÷ b da un número entero, sin residuo<br>
+      <span class="regla-chip c1">36 ÷ 9 = 4</span> → 36 es múltiplo de 9 y 9 es divisor de 36<br>
+      <span class="regla-chip c2">36 ÷ 8 = 4 con residuo 4</span> → 36 <strong>no</strong> es múltiplo de 8
+    </div>
+  </div>
+
+  <p class="section-label" id="multiplos">Múltiplos</p>
+  <div class="prose">
+    <p>Los múltiplos de un número se obtienen multiplicándolo por 1, 2, 3, 4, 5… Hay <strong>infinitos</strong> y el primero es el propio número.</p>
+  </div>
+  <div class="regla-box">
+    <div class="regla-head">★ Múltiplos ★</div>
+    <div class="regla-formula">n · 1, &nbsp;n · 2, &nbsp;n · 3, &nbsp;n · 4…</div>
+    <div class="regla-ejemplo" style="margin-top:1rem;">
+      <span class="lbl">Ejemplo · múltiplos de 7</span>
+      7 · 1 = <span class="regla-chip c1">7</span>,
+      7 · 2 = <span class="regla-chip c1">14</span>,
+      7 · 3 = <span class="regla-chip c1">21</span>,
+      7 · 4 = <span class="regla-chip c1">28</span>,
+      7 · 5 = <span class="regla-chip c1">35</span>…
+    </div>
+  </div>
+
+  <p class="section-label" id="divisores">Divisores</p>
+  <div class="prose">
+    <p>Los divisores de un número son los que lo dividen exacto. Hay <strong>pocos</strong> (los más grandes son el propio número). Se encuentran por <strong>parejas</strong> que multiplican el número:</p>
+  </div>
+  <div class="regla-box">
+    <div class="regla-head">★ Divisores por parejas ★</div>
+    <div class="regla-steps">
+      <div class="regla-step c1">
+        <div class="paso">Paso 1</div>
+        <div class="big">1 · n</div>
+        <div class="txt">la primera pareja siempre existe</div>
+      </div>
+      <div class="regla-step c2">
+        <div class="paso">Paso 2</div>
+        <div class="big">2, 3, 4…</div>
+        <div class="txt">prueba cuáles dividen exacto y escribe su pareja</div>
+      </div>
+      <div class="regla-step c3">
+        <div class="paso">Paso 3</div>
+        <div class="big">parar</div>
+        <div class="txt">cuando las parejas se repiten (o llegas a la raíz)</div>
+      </div>
+    </div>
+    <div class="regla-ejemplo">
+      <span class="lbl">Ejemplo · divisores de 36</span>
+      36 = <span class="regla-chip c1">1</span> · <span class="regla-chip c3">36</span>
+      = <span class="regla-chip c1">2</span> · <span class="regla-chip c3">18</span>
+      = <span class="regla-chip c1">3</span> · <span class="regla-chip c3">12</span>
+      = <span class="regla-chip c1">4</span> · <span class="regla-chip c3">9</span>
+      = <span class="regla-chip c1">6</span> · <span class="regla-chip c3">6</span><br>
+      Divisores: 1, 2, 3, 4, 6, 9, 12, 18, 36
+    </div>
+  </div>
+
+  <div class="prose">
+    <ul style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li>El <strong>1</strong> es divisor de todos los números, y todo número es divisor de sí mismo.</li>
+      <li>Si un número tiene sólo dos divisores (1 y él mismo) es <a href="tema-06-primos-y-compuestos.html" style="color:var(--forest); font-weight:700;">primo</a>.</li>
+      <li>Los múltiplos <strong>comunes</strong> de dos números dan el <a href="tema-06-mcm-y-mcd.html" style="color:var(--forest); font-weight:700;">mcm</a> y los divisores <strong>comunes</strong> dan el
+          <a href="tema-06-mcm-y-mcd.html" style="color:var(--forest); font-weight:700;">MCD</a>.</li>
+    </ul>
+  </div>
+
+  <p class="section-label" id="ejercicios-multiplos">Ejercicios: múltiplos y divisores</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Hay tres tipos de ejercicios (de los más sencillos a los más difíciles):</p>
+    <p><strong>•</strong> <strong>Múltiplos:</strong> escribe los primeros 5 múltiplos de un número, separados con comas, por ejemplo <strong>7, 14, 21, 28, 35</strong>.<br>
+       <strong>•</strong> <strong>Sí o no:</strong> decide si un número es múltiplo de otro (y escribe el residuo de la división).<br>
+       <strong>•</strong> <strong>Divisores:</strong> escribe todos los divisores de un número, por ejemplo <strong>1, 2, 3, 6</strong>.</p>
+    <p>Después oprime <strong>Comprobar</strong> (o la tecla Enter). Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Oprime
+       <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="md-grid"></div>
+  <p class="practice-score" id="md-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="md-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script src="../assets/practica-tarjetas.js"></script>
+  <script>
+  (function () {
+    var h = Practica.h;
+    // Banco de 100: 1–30 primeros múltiplos · 31–60 ¿es múltiplo? · 61–100 divisores
+    var BANK = [];
+    [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 30, 35, 40, 45, 50, 60, 75].forEach(function (n) { BANK.push({ t: 'M', n: n }); });
+    [[24, 6], [25, 6], [35, 7], [36, 7], [48, 8], [50, 8], [54, 9], [56, 9], [60, 12], [62, 12], [75, 15], [80, 15], [91, 13], [95, 13], [102, 17], [100, 17], [84, 14], [85, 14],
+     [111, 37], [110, 37], [120, 24], [130, 24], [133, 19], [135, 19], [144, 16], [150, 16], [161, 23], [160, 23], [225, 25], [230, 25]].forEach(function (p) { BANK.push({ t: 'S', a: p[0], b: p[1] }); });
+    [6, 8, 9, 10, 12, 14, 15, 16, 18, 20, 21, 24, 25, 27, 28, 30, 32, 35, 36, 40, 42, 45, 48, 49, 50, 54, 56, 60, 63, 64, 72, 75, 80, 81, 84, 90, 96, 100, 120, 144].forEach(function (n) { BANK.push({ t: 'D', n: n, div: h.divisors(n) }); });
+
+    Practica.setup({
+      id: 'md', bank: BANK, anchor: 'ejercicios-multiplos',
+      card: function (e, n) {
+        if (e.t === 'M') {
+          var mult = [1, 2, 3, 4, 5].map(function (k) { return e.n * k; });
+          return {
+            head: 'Primeros 5 múltiplos de ' + e.n,
+            body: '<div class="practice-ask">Escribe los primeros 5 múltiplos</div><div class="practice-row">' + h.inputHTML('m', 'Múltiplos de ' + e.n + ', ejercicio ' + n, 'flex:1 1 9rem;') + '</div>',
+            check: function (ctx) {
+              if (!ctx.inp.m.value.trim()) return { msg: 'Escribe tu respuesta en el cuadro.' };
+              var l = h.parseList(ctx.inp.m.value);
+              if (!l) return { bad: true, msg: '<span class="no">No entendí la lista.</span> Escribe números separados con comas, por ejemplo <strong>7, 14, 21, 28, 35</strong>.' };
+              if (h.sameSet(l, mult)) return { wrong: [], total: 1 };
+              var msg = l.length !== 5 ? 'Son <strong>5</strong> múltiplos.' : 'Multiplica ' + e.n + ' por 1, 2, 3, 4 y 5.';
+              if (l.some(function (x) { return x % e.n !== 0; })) msg = 'El <strong>' + l.filter(function (x) { return x % e.n !== 0; })[0] + '</strong> no es múltiplo de ' + e.n + '. ' + msg;
+              else if (l.indexOf(e.n) < 0) msg = 'El primer múltiplo es el propio número (' + e.n + ' · 1). ' + msg;
+              return { wrong: ['m'], msgs: [msg], total: 1 };
+            },
+            sol: e.n + ' · 1, ' + e.n + ' · 2, ' + e.n + ' · 3, ' + e.n + ' · 4, ' + e.n + ' · 5 = <strong>' + mult.join(', ') + '</strong>'
+          };
+        }
+        if (e.t === 'S') {
+          var si = e.a % e.b === 0, q = Math.floor(e.a / e.b), r = e.a % e.b;
+          return {
+            head: '¿' + e.a + ' es múltiplo de ' + e.b + '?',
+            body: '<div class="practice-ask">1. ¿Es múltiplo?</div>' + h.optsHTML('s', [['si', 'Sí'], ['no', 'No']]) +
+                  '<div class="practice-ask">2. Divide ' + e.a + ' ÷ ' + e.b + ': ¿cuál es el residuo?</div><div class="practice-row"><span class="eq">residuo =</span>' + h.inputHTML('r', 'Residuo del ejercicio ' + n, 'flex:0 1 6rem;') + '</div>',
+            check: function (ctx) {
+              if (!ctx.chosen.s || !ctx.inp.r.value.trim()) return { msg: 'Contesta <strong>las dos</strong> preguntas antes de comprobar.' };
+              var rv = h.parseNat(ctx.inp.r.value);
+              if (rv == null) return { bad: true, msg: '<span class="no">El residuo es un número entero,</span> por ejemplo <strong>0</strong> o <strong>3</strong>.' };
+              var wrong = [], msgs = [];
+              if ((ctx.chosen.s === 'si') !== si) { wrong.push('s'); msgs.push(si ? e.a + ' ÷ ' + e.b + ' es exacta (residuo 0), así que sí es múltiplo.' : e.a + ' ÷ ' + e.b + ' no es exacta (sobran ' + r + '), así que no es múltiplo.'); }
+              if (rv !== r) { wrong.push('r'); msgs.push('El residuo de ' + e.a + ' ÷ ' + e.b + ' es <strong>' + r + '</strong> (' + e.b + ' · ' + q + ' = ' + (e.b * q) + ' y sobran ' + r + ').'); }
+              return { wrong: wrong, msgs: msgs, total: 2 };
+            },
+            sol: e.a + ' ÷ ' + e.b + ' = ' + q + (r ? ' con residuo ' + r : ' exacto') + ' → ' + (si ? '<strong>sí</strong> es múltiplo (' + e.b + ' · ' + q + ' = ' + e.a + ')' : '<strong>no</strong> es múltiplo')
+          };
+        }
+        var d = e.div, pares = [];
+        for (var i = 0; i < d.length / 2; i++) pares.push(d[i] + ' · ' + d[d.length - 1 - i]);
+        return {
+          head: 'Divisores de ' + e.n,
+          body: '<div class="practice-ask">Escribe todos los divisores</div><div class="practice-row">' + h.inputHTML('d', 'Divisores de ' + e.n + ', ejercicio ' + n, 'flex:1 1 9rem;') + '</div>',
+          check: function (ctx) {
+            if (!ctx.inp.d.value.trim()) return { msg: 'Escribe tu respuesta en el cuadro.' };
+            var l = h.parseList(ctx.inp.d.value);
+            if (!l) return { bad: true, msg: '<span class="no">No entendí la lista.</span> Escribe números separados con comas, por ejemplo <strong>1, 2, 3, 6</strong>.' };
+            if (h.sameSet(l, d)) return { wrong: [], total: 1 };
+            var falta = d.filter(function (x) { return l.indexOf(x) < 0; }), sobra = l.filter(function (x) { return d.indexOf(x) < 0; });
+            var msg = (falta.length ? 'Te faltan ' + falta.length + ' divisor' + (falta.length > 1 ? 'es' : '') + ' (busca la pareja de cada divisor: por ejemplo ' + falta[0] + ' · ' + (e.n / falta[0]) + ' = ' + e.n + '). ' : '') +
+                      (sobra.length ? 'El <strong>' + sobra[0] + '</strong> no divide exacto a ' + e.n + '.' : '');
+            return { wrong: ['d'], msgs: [msg], total: 1 };
+          },
+          sol: e.n + ' = ' + pares.join(' = ') + '<br>Divisores: <strong>' + d.join(', ') + '</strong>'
+        };
+      }
+    });
+  })();
+  </script>
+
+  <p class="section-label no-caps" id="rubrica-multiplos">Rúbrica · Múltiplos y divisores</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe las listas de múltiplos y de divisores en orden y separadas con comas.</li><li>Escribe la división que justifica «es múltiplo» (a ÷ b = k, residuo 0) o «no lo es» (con su residuo).</li><li>Explica con sus palabras la diferencia entre múltiplo y divisor.</li></ul></div></td>
+            <td>Escribe listas desordenadas o mezcla múltiplos con divisores, y no se entiende su procedimiento. No usa ningún apoyo, como las divisiones o las parejas.</td>
+            <td colspan="2">Escribe las listas con omisiones y justifica «es múltiplo» sólo con el resultado, sin la división. Repite las definiciones de memoria.</td>
+            <td>Escribe correctamente listas y divisiones con el vocabulario adecuado y justifica sus respuestas; puede tener alguna omisión menor.</td>
+            <td>Escribe y explica con notación correcta múltiplos, divisores y su relación (a = b · k), y reconstruye el procedimiento en ejercicios nuevos, apoyándose en parejas de factores.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación aritmética</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Representa los múltiplos como una tabla de multiplicar (n · 1, n · 2…) y los divisores como parejas (a · b = n).</li><li>Relaciona «múltiplo de» con «divisor de» y con la división exacta.</li><li>Reconoce que los múltiplos son infinitos y los divisores son finitos.</li></ul></div></td>
+            <td>Conoce las palabras sólo de memoria y no las relaciona con la multiplicación o la división.</td>
+            <td colspan="2">Representa los múltiplos con una tabla de multiplicar y los divisores con la lista, en casos sencillos. Se confunde con números grandes o con la relación entre múltiplo y divisor.</td>
+            <td>Usa dos representaciones (tabla de múltiplos y parejas de factores) y las relaciona con la división exacta; también con números grandes.</td>
+            <td>Combina varias representaciones (multiplicación, división exacta, parejas) y justifica por qué los múltiplos son infinitos y los divisores finitos.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Modelación y resolución de problemas</strong><span class="crit-desc">Formulación del problema y sistematización · Matematización y análisis del sistema matemático · Interpretación, evaluación y validación.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Decide qué hacer según la pregunta (multiplicar para los múltiplos, dividir para decidir y para los divisores).</li><li>Obtiene todos los divisores por parejas y comprueba que no falte ninguno.</li><li>Encuentra y corrige sus errores.</li></ul></div></td>
+            <td>Aplica una operación al azar (suma en lugar de multiplicar) y no revisa su resultado.</td>
+            <td colspan="2">Elige la operación adecuada en casos sencillos, pero obtiene listas incompletas de divisores y no las revisa.</td>
+            <td colspan="2">Elige el procedimiento adecuado en cada tipo de ejercicio, obtiene listas completas, calcula bien el residuo y revisa sus resultados (por ejemplo, multiplicando las parejas). Detecta y corrige sus errores.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Justifica que «a es múltiplo de b» con la división exacta o con a = b · k.</li><li>Explica por qué la lista de divisores está completa (parejas, hasta la raíz).</li><li>Da un ejemplo y un contraejemplo de múltiplo.</li></ul></div></td>
+            <td>Defiende sus respuestas con «así me salió» o «cabe más o menos».</td>
+            <td>Explica con sus palabras («es múltiplo porque está en la tabla del 7») por qué un número es múltiplo, con pocos términos matemáticos.</td>
+            <td>Valida con ejemplos: comprueba con la división o con la tabla de multiplicar, y da ejemplos y contraejemplos.</td>
+            <td>Explica la estructura del argumento: dividir y obtener residuo 0 es la hipótesis y que sea múltiplo (y divisor) es la conclusión; justifica que la lista de divisores está completa.</td>
+            <td>Construye una cadena de argumentos que generaliza (cada divisor tiene una pareja, a = b · k para algún entero k) y distingue convencerse con ejemplos de demostrar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>
