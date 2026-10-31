@@ -1876,3 +1876,12 @@ Registro de lo que vamos haciendo, en orden cronológico.
   `matematicas-2/tema-01-operaciones-con-fracciones.html` se dejó igual (ahí sí se dividen fracciones).
 - A pedido de Carmen, en los ejercicios de `matematicas-3/tema-06-factorizar-x2-bx-c.html` el botón **"No se factoriza"** dice ahora **"No se puede factorizar con números enteros"** (el botón ocupa más espacio y se acomoda en dos renglones),
   el mensaje de acierto dice "¡Correcto! No se puede factorizar con números enteros." y las instrucciones usan el mismo texto. El botón "Sí se factoriza" no cambió.
+- A pedido de Carmen, en `matematicas-3/tema-06-factorizar-x2-bx-c.html` se agregó, **después de los ejercicios de factorizar**, la sección **"¿Y si no hay números enteros que sirvan? La fórmula general"**:
+  (1) por qué hace falta la fórmula (buscar pares es probar y adivinar, sólo da soluciones enteras y no dice si de verdad no hay solución; x² + 4x + 1 no tiene soluciones enteras pero sí −2 ± √3);
+  (2) la fórmula x = (−b ± √(b² − 4ac)) / 2a (con a = 1 en esta página) y de dónde sale (completar el cuadrado, con enlace a esa página);
+  (3) el discriminante Δ y qué dice (cuadrado perfecto: sí se factoriza con enteros; Δ = 0: TCP; Δ > 0 no cuadrado: raíces reales con √; Δ < 0: soluciones imaginarias con i);
+  (4) los pasos y **cinco ejemplos** (x² + 4x + 1, x² + 3x + 1, x² − 2x − 7, x² + 4x + 5 y x² + 7x + 12 para comparar), con la factorización (x − x₁)(x − x₂) y los errores comunes;
+  (5) **ejercicios con revisión automática**: banco de **100** ecuaciones x² + bx + c = 0 sin soluciones enteras, de menor a mayor dificultad (10 al azar). Se escribe Δ y las dos soluciones en cualquier orden; acepta formas equivalentes
+  (−2 + √3, (−4 + 2√3)/2, 2√3/2, −2 + i…) con botones para √, i, paréntesis y signos, y da pistas (signo de −b, dividir entre 2 todo el numerador, Δ mal calculado) y la solución completa con fracciones apiladas.
+  Las instrucciones de los ejercicios de arriba ahora enlazan a esta sección. La rúbrica de la página ("Factorizar x² + bx + c y fórmula general") se actualizó con la matriz de niveles (entrada "factorizarxbc" de `rubricas-por-actividad.json`) y la
+  guía en Word `IEMS\Guia_para_evaluar_con_la_matriz.docx` se regeneró (se actualizaron las 18 rúbricas; el JSON se validó antes). También se mencionó la fórmula general en la descripción del subtema en `tema-06-productos-notables-y-factorizacion.html`.

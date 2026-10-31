@@ -1421,14 +1421,16 @@
     },
     {
       "id": "factorizarxbc",
-      "titulo": "Matemáticas 3 · Tema 6 · Factorizar trinomios x² + bx + c",
+      "titulo": "Matemáticas 3 · Tema 6 · Factorizar trinomios x² + bx + c y fórmula general",
       "file": "matematicas-3/tema-06-factorizar-x2-bx-c.html",
       "ocurrencia": 0,
       "evidencia": [
         "Los ejercicios al azar de la página, resueltos en el cuaderno con el procedimiento: b y c con su signo, los pares de números con producto c, el par con suma b y la factorización.",
         "Al menos un ejercicio con c positivo (b positivo y b negativo), uno con c negativo y uno que no se puede factorizar con enteros.",
         "La comprobación: multiplicar los dos binomios y obtener el trinomio original.",
-        "La explicación (oral o escrita) de por qué los números deben tener producto c y suma b, y de cómo se eligen sus signos."
+        "La explicación (oral o escrita) de por qué los números deben tener producto c y suma b, y de cómo se eligen sus signos.",
+        "Los ejercicios al azar de la fórmula general, resueltos en el cuaderno: b y c con su signo, el discriminante Δ = b² − 4c, la sustitución en la fórmula, la raíz simplificada y las dos soluciones (con i cuando Δ es negativo).",
+        "La explicación (oral o escrita) de por qué hace falta la fórmula general: los pares sólo dan soluciones enteras y la fórmula siempre funciona; y de qué dice el discriminante sobre las soluciones."
       ],
       "errores": [
         "Elige dos números que multiplicados dan c pero no suman b (en x² + 7x + 12 escribe (x + 2)(x + 6)).",
@@ -1436,7 +1438,11 @@
         "Pierde un signo: factoriza x² − 5x − 14 como (x − 2)(x + 7) o x² − 9x + 20 como (x + 4)(x + 5).",
         "Con c negativo pone los dos números del mismo signo, o le pone el signo de b al número menor en lugar del mayor.",
         "Dice que x² + 4x + 5 se factoriza como (x + 1)(x + 5) sin comprobar la suma, o que ningún trinomio con c primo se puede factorizar.",
-        "No comprueba multiplicando los binomios, por lo que no detecta sus errores."
+        "No comprueba multiplicando los binomios, por lo que no detecta sus errores.",
+        "Con la fórmula general: pierde el signo de −b (con b = −2 usa −2 en lugar de 2) o calcula (−2)² como −4.",
+        "Con la fórmula general: en x² − 2x − 7 calcula Δ = 4 − 28 en lugar de 4 + 28 (no ve que −4c suma cuando c es negativo).",
+        "Divide entre 2 sólo un término del numerador, deja √12 sin simplificar u olvida el ± y escribe una sola solución.",
+        "Con Δ negativo escribe «no hay solución» o una raíz de un número negativo sin pasar a la i."
       ],
       "rows": [
         {
@@ -1444,12 +1450,13 @@
           "observar": [
             "Escribe la factorización con dos binomios entre paréntesis y con el signo de cada número: (x − 4)(x − 5).",
             "Escribe los pares de números, sus productos y sus sumas en orden, con su signo.",
-            "Explica con sus palabras cómo eligió los números (producto c, suma b) y qué hizo con los signos."
+            "Explica con sus palabras cómo eligió los números (producto c, suma b) y qué hizo con los signos.",
+            "Con la fórmula general, escribe Δ, la sustitución, la raíz simplificada y las dos soluciones con la notación correcta (√, i, ±, fracciones)."
           ],
-          "n1": "Escribe los binomios sin paréntesis o sin signo, o un solo binomio, y sus respuestas no se entienden. No usa ningún apoyo, como la lista de pares de números.",
-          "n23": "Usa la simbología con limitaciones: escribe los dos binomios, pero a veces omite un signo o un paréntesis. Contesta sin explicar o sólo dice «busqué dos números».",
-          "n4": "Escribe con la simbología correcta los pares de números, la suma, el producto y los dos binomios, con alguna deficiencia (por ejemplo, un signo ambiguo en la lista). Explica con claridad qué hizo en cada paso.",
-          "n5": "Escribe y explica con notación correcta el procedimiento completo (b y c, pares, suma, producto, factorización y comprobación), por diferentes medios (con la regla, con la figura del rectángulo y con palabras), y reconstruye el procedimiento en un trinomio nuevo."
+          "n1": "Escribe los binomios sin paréntesis o sin signo, o un solo binomio, y sus respuestas no se entienden. No usa ningún apoyo, como la lista de pares de números. Con la fórmula general sólo escribe un resultado suelto, sin Δ ni sustitución.",
+          "n23": "Usa la simbología con limitaciones: escribe los dos binomios, pero a veces omite un signo o un paréntesis. Contesta sin explicar o sólo dice «busqué dos números». Con la fórmula general escribe Δ y las soluciones, pero omite el ± o la i, o no simplifica la raíz.",
+          "n4": "Escribe con la simbología correcta los pares de números, la suma, el producto y los dos binomios, con alguna deficiencia (por ejemplo, un signo ambiguo en la lista). Explica con claridad qué hizo en cada paso. Con la fórmula general escribe Δ, la sustitución, la raíz simplificada y las dos soluciones con √, i y fracciones, con alguna deficiencia.",
+          "n5": "Escribe y explica con notación correcta el procedimiento completo (b y c, pares, suma, producto, factorización y comprobación), por diferentes medios (con la regla, con la figura del rectángulo y con palabras), y reconstruye el procedimiento en un trinomio nuevo. Con la fórmula general presenta todo el procedimiento con notación correcta y lo explica con sus palabras, y escribe la factorización con las soluciones: (x − x₁)(x − x₂)."
         },
         {
           "id": "REP_GEO",
@@ -1467,25 +1474,27 @@
           "observar": [
             "Identifica b y c con su signo en x² + bx + c, y los usa para buscar p y q (p · q = c, p + q = b).",
             "Decide los signos de p y q a partir de los signos de b y de c.",
-            "Factoriza como (x + p)(x + q), distingue el caso del TCP (p = q) y reconoce cuando no se puede factorizar con enteros."
+            "Factoriza como (x + p)(x + q), distingue el caso del TCP (p = q) y reconoce cuando no se puede factorizar con enteros.",
+            "Cuando no se puede factorizar con enteros, resuelve x² + bx + c = 0 con la fórmula general: calcula Δ = b² − 4c, sustituye, simplifica la raíz y escribe las dos soluciones (con i si Δ < 0)."
           ],
-          "n1": "Conoce la regla de memoria («dos números que...») pero confunde b con c, o busca números que sólo cumplen una de las dos condiciones.",
-          "n23": "Factoriza los casos sencillos (b y c positivos). Le fallan los casos con signos negativos, c negativo o números grandes, o no distingue cuándo no se puede factorizar.",
-          "n4": "Comprende y maneja las propiedades: encuentra los dos números con producto c y suma b en cualquier caso de signos, factoriza, comprueba multiplicando y reconoce un trinomio que no se factoriza con enteros.",
-          "n5": "Explica que (x + p)(x + q) = x² + (p + q)x + pq, y por eso factorizar es buscar p y q; generaliza los signos, relaciona el caso p = q con el TCP y p = −q con la diferencia de cuadrados, y usa el desarrollo y la factorización como procesos inversos."
+          "n1": "Conoce la regla de memoria («dos números que...») pero confunde b con c, o busca números que sólo cumplen una de las dos condiciones. Conoce la fórmula general de memoria, pero la sustituye mal (confunde b con c o pierde el signo de −b).",
+          "n23": "Factoriza los casos sencillos (b y c positivos). Le fallan los casos con signos negativos, c negativo o números grandes, o no distingue cuándo no se puede factorizar. Con la fórmula general resuelve los casos sencillos (b par, Δ positivo); le fallan los signos, simplificar la raíz o los casos con Δ negativo.",
+          "n4": "Comprende y maneja las propiedades: encuentra los dos números con producto c y suma b en cualquier caso de signos, factoriza, comprueba multiplicando y reconoce un trinomio que no se factoriza con enteros. Con la fórmula general calcula bien Δ, sustituye, simplifica la raíz y escribe las dos soluciones, reales o con i, y usa Δ para saber qué clase de soluciones hay.",
+          "n5": "Explica que (x + p)(x + q) = x² + (p + q)x + pq, y por eso factorizar es buscar p y q; generaliza los signos, relaciona el caso p = q con el TCP y p = −q con la diferencia de cuadrados, y usa el desarrollo y la factorización como procesos inversos. Relaciona la fórmula general con completar el cuadrado y el discriminante con el tipo de soluciones (Δ cuadrado perfecto: sí se factoriza con enteros; Δ = 0: TCP; Δ < 0: soluciones imaginarias)."
         },
         {
           "id": "ARG",
           "observar": [
             "Explica por qué los números buscados deben multiplicar c y sumar b: porque así se obtiene el trinomio al multiplicar los binomios.",
             "Justifica los signos de p y q con los signos de b y de c.",
-            "Comprueba su resultado multiplicando los binomios y justifica por qué un trinomio no se puede factorizar con enteros (revisa todos los pares)."
+            "Comprueba su resultado multiplicando los binomios y justifica por qué un trinomio no se puede factorizar con enteros (revisa todos los pares).",
+            "Explica por qué hace falta la fórmula general (los pares sólo dan soluciones enteras y no se sabe si «faltó probar un par») y qué dice el discriminante sobre las soluciones."
           ],
-          "n1": "Dice «así se hace» o «se buscan dos números» sin justificar. Factoriza pero no comprueba su resultado.",
-          "n2": "Defiende con una regla simple («producto c, suma b») con lenguaje matemático básico.",
-          "n3": "Valida con ejemplos: factoriza varios trinomios y comprueba cada uno multiplicando; da ejemplos y no-ejemplos de trinomios que sí y que no se factorizan.",
-          "n4": "Explica la estructura del argumento: que p · q = c y p + q = b son las condiciones y que (x + p)(x + q) es la conclusión; comprueba sus resultados y, cuando dice que no se factoriza, muestra que revisó todos los pares.",
-          "n5": "Elabora una cadena de argumentos que generaliza: demuestra con la multiplicación de binomios por qué factorizar x² + bx + c es buscar p y q con p + q = b y p · q = c, y relaciona los signos, el TCP y la diferencia de cuadrados con la regla."
+          "n1": "Dice «así se hace» o «se buscan dos números» sin justificar. Factoriza pero no comprueba su resultado. Dice que usa la fórmula «porque la maestra lo pidió», sin explicar para qué sirve.",
+          "n2": "Defiende con una regla simple («producto c, suma b») con lenguaje matemático básico. Dice que la fórmula sirve «cuando no se puede factorizar».",
+          "n3": "Valida con ejemplos: factoriza varios trinomios y comprueba cada uno multiplicando; da ejemplos y no-ejemplos de trinomios que sí y que no se factorizan. Con la fórmula general verifica con un ejemplo que da lo mismo que los pares (x² + 7x + 12).",
+          "n4": "Explica la estructura del argumento: que p · q = c y p + q = b son las condiciones y que (x + p)(x + q) es la conclusión; comprueba sus resultados y, cuando dice que no se factoriza, muestra que revisó todos los pares. Explica que la fórmula siempre funciona, y que si Δ es cuadrado perfecto las soluciones son enteras y el trinomio sí se factoriza con enteros.",
+          "n5": "Elabora una cadena de argumentos que generaliza: demuestra con la multiplicación de binomios por qué factorizar x² + bx + c es buscar p y q con p + q = b y p · q = c, y relaciona los signos, el TCP y la diferencia de cuadrados con la regla. Deduce la fórmula general completando el cuadrado y justifica con el discriminante cuándo hay soluciones enteras, reales con raíz o imaginarias."
         }
       ]
     },

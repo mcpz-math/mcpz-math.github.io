@@ -171,7 +171,7 @@
     <div class="k">Instrucciones</div>
     <p><strong>Algunos de estos trinomios no se pueden factorizar con números enteros.</strong> Para cada uno, busca dos números cuyo
        <strong>producto dé el tercer término (c)</strong> y cuya <strong>suma sea el coeficiente del segundo término (b)</strong>. Después oprime <strong>Sí se factoriza</strong> o <strong>No se puede factorizar con números enteros</strong>.</p>
-    <p>Si no se puede, la página te explica por qué. <strong>Sólo si sí se puede</strong>, aparece un cuadro para escribir la factorización como dos binomios,
+    <p>Si no se puede, la página te explica por qué (y más abajo aprenderás a encontrar sus soluciones con la <a href="#formula-general" style="color:var(--forest); font-weight:700;">fórmula general</a>). <strong>Sólo si sí se puede</strong>, aparece un cuadro para escribir la factorización como dos binomios,
        por ejemplo <strong>(x + 3)(x + 4)</strong>; no importa el orden de los binomios. Debajo de cada cuadro hay botones para escribir los paréntesis,
        la letra y los signos. Cuando termines, oprime <strong>Comprobar</strong> (o la tecla Enter).</p>
     <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Oprime
@@ -347,7 +347,312 @@
   })();
   </script>
 
-  <p class="section-label no-caps" id="rubrica-factorizar-x2-bx-c">Rúbrica · Factorizar x² + bx + c</p>
+  <p class="section-label" id="formula-general">¿Y si no hay números enteros que sirvan? La fórmula general</p>
+  <div class="prose">
+    <p>Buscar dos números p y q (con p · q = c y p + q = b) <strong>sólo encuentra números enteros</strong>, y no siempre existen.
+       Mira x² + 4x + 1: los pares con producto 1 son 1 y 1 (suma 2) y −1 y −1 (suma −2); ninguno suma 4, así que
+       <strong>no se puede factorizar con números enteros</strong>.</p>
+    <p>¿Quiere decir que la ecuación x² + 4x + 1 = 0 no tiene solución? <strong>No.</strong> Sí la tiene, pero no son números enteros:
+       x = −2 + √3 ≈ −0.27 y x = −2 − √3 ≈ −3.73. Y hay trinomios, como x² + 4x + 5, cuyas soluciones ni siquiera son números reales (usan la <strong>i</strong>).</p>
+    <p><strong>¿Por qué necesitamos una fórmula?</strong></p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li>Buscar pares es <strong>probar y adivinar</strong>. Si no encuentras ninguno, no sabes si de verdad no hay solución o si te faltó probar un par
+          (con un c grande, como 360, hay muchísimos pares).</li>
+      <li>Los pares sólo dan <strong>soluciones enteras</strong>. Las soluciones con raíz (√) o con i no se pueden «adivinar» buscando números.</li>
+      <li>Necesitamos un método que <strong>siempre funcione</strong>, con cualquier b y c, y que además nos diga <strong>qué clase de soluciones hay</strong>.
+          Ese método es la <strong>fórmula general</strong>.</li>
+    </ul>
+  </div>
+
+  <p class="section-label">La fórmula general</p>
+  <div class="callout" style="text-align:center;">
+    <div class="k">Fórmula general</div>
+    <p>Las soluciones de <strong>ax² + bx + c = 0</strong> son</p>
+    <p style="font-family:'IBM Plex Mono',monospace; font-size:1.2rem; margin:0.2rem 0 0.9rem;">
+      x = <span class="frac"><span class="num">−b ± √(b² − 4ac)</span><span class="den">2a</span></span>
+    </p>
+    <p>En esta página a = 1 (x² no tiene coeficiente), así que queda
+       <span style="font-family:'IBM Plex Mono',monospace; white-space:nowrap;">x = <span class="frac frac-inline"><span class="num">−b ± √(b² − 4c)</span><span class="den">2</span></span></span>.</p>
+  </div>
+
+  <div class="prose">
+    <p><strong>¿De dónde sale?</strong> De completar el cuadrado (si no lo recuerdas, repásalo en
+       <a href="tema-06-trinomio-x2-bx-c.html" style="color:var(--forest); font-weight:700;">Completar el trinomio cuadrado perfecto</a>). Con a = 1:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem; font-family:'IBM Plex Mono',monospace; color:var(--forest); line-height:2.1;">
+      <li>x² + bx + c = 0</li>
+      <li>x² + bx = −c &nbsp;<span style="font-family:'Karla',sans-serif;">(pasamos c al otro lado)</span></li>
+      <li>x² + bx + <span class="frac frac-inline"><span class="num">b²</span><span class="den">4</span></span> = <span class="frac frac-inline"><span class="num">b²</span><span class="den">4</span></span> − c &nbsp;<span style="font-family:'Karla',sans-serif;">(sumamos lo que completa el TCP)</span></li>
+      <li>(x + <span class="frac frac-inline"><span class="num">b</span><span class="den">2</span></span>)² = <span class="frac frac-inline"><span class="num">b² − 4c</span><span class="den">4</span></span> &nbsp;<span style="font-family:'Karla',sans-serif;">(factorizamos el TCP)</span></li>
+      <li>x + <span class="frac frac-inline"><span class="num">b</span><span class="den">2</span></span> = ± <span class="frac frac-inline"><span class="num">√(b² − 4c)</span><span class="den">2</span></span> &nbsp;<span style="font-family:'Karla',sans-serif;">(raíz cuadrada de los dos lados)</span></li>
+      <li>x = <span class="frac frac-inline"><span class="num">−b ± √(b² − 4c)</span><span class="den">2</span></span></li>
+    </ul>
+  </div>
+
+  <p class="section-label">El discriminante: ¿qué clase de soluciones hay?</p>
+  <div class="prose">
+    <p>Lo que está debajo de la raíz se llama <strong>discriminante</strong>: <strong>Δ = b² − 4ac</strong> (en esta página, Δ = b² − 4c).
+       Antes de terminar la cuenta ya te dice qué esperar:</p>
+    <ul style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li><strong>Δ es un cuadrado perfecto</strong> (1, 4, 9, 16, 25…): √Δ es un número entero y las soluciones son enteras. El trinomio <strong>sí se factoriza con números enteros</strong>
+          (son los ejercicios de arriba en los que sí encontraste el par p y q).</li>
+      <li><strong>Δ = 0:</strong> una sola solución, repetida. Es un trinomio cuadrado perfecto, como x² + 6x + 9 (Δ = 36 − 36 = 0).</li>
+      <li><strong>Δ &gt; 0 pero no es cuadrado perfecto</strong> (2, 3, 5, 8, 12…): dos soluciones reales con raíz (√). El trinomio
+          <strong>no se puede factorizar con números enteros</strong>.</li>
+      <li><strong>Δ &lt; 0:</strong> dos soluciones imaginarias, con i: √(−n) = √n · i. La parábola de y = x² + bx + c no corta el eje x.</li>
+    </ul>
+    <p>Por eso, cuando en los ejercicios de arriba oprimes <strong>«No se puede factorizar con números enteros»</strong>, la fórmula general es la que te da las soluciones.</p>
+  </div>
+
+  <p class="section-label">Los pasos con la fórmula general</p>
+  <div class="prose">
+    <ol style="margin:0 0 1rem; padding-left:1.4rem;">
+      <li>Escribe la ecuación <strong>x² + bx + c = 0</strong> e identifica <strong>b</strong> y <strong>c</strong>, con su signo (a = 1).</li>
+      <li>Calcula el discriminante: <strong>Δ = b² − 4c</strong>. Recuerda que b² nunca es negativo, aunque b lo sea, y que si c es negativo, −4c <strong>suma</strong>.</li>
+      <li>Sustituye en <strong>x = (−b ± √Δ) ÷ 2</strong>. Cuidado con el signo de −b: si b = −6, entonces −b = 6.</li>
+      <li><strong>Simplifica la raíz:</strong> busca el cuadrado perfecto más grande que divida a Δ (√12 = √(4 · 3) = 2√3). Si Δ es negativo, √(−n) = √n · i.</li>
+      <li>Divide <strong>los dos términos</strong> del numerador entre 2 (si se puede) y escribe las dos soluciones, x₁ (con +) y x₂ (con −).</li>
+    </ol>
+  </div>
+
+  <div class="example-box">
+    <h2>Cinco ejemplos paso a paso</h2>
+    <ul class="def-list">
+      <li><strong>x² + 4x + 1 = 0</strong> (b = 4, c = 1). Δ = 4² − 4(1)(1) = 16 − 4 = <strong>12</strong>, positivo y no es cuadrado perfecto.
+          x = <span class="frac frac-inline"><span class="num">−4 ± √12</span><span class="den">2</span></span>.
+          Simplificamos: √12 = √(4 · 3) = 2√3, y queda <span class="frac frac-inline"><span class="num">−4 ± 2√3</span><span class="den">2</span></span> = <strong>−2 ± √3</strong>.
+          Soluciones: <strong>x₁ = −2 + √3 ≈ −0.27</strong> y <strong>x₂ = −2 − √3 ≈ −3.73</strong>.</li>
+      <li><strong>x² + 3x + 1 = 0</strong> (b = 3, c = 1). Δ = 3² − 4(1)(1) = 9 − 4 = <strong>5</strong>. √5 ya no se simplifica y 3 es impar, así que
+          x = <span class="frac frac-inline"><span class="num">−3 ± √5</span><span class="den">2</span></span>.
+          Soluciones: <strong>x₁ = <span class="frac frac-inline"><span class="num">−3 + √5</span><span class="den">2</span></span> ≈ −0.38</strong> y
+          <strong>x₂ = <span class="frac frac-inline"><span class="num">−3 − √5</span><span class="den">2</span></span> ≈ −2.62</strong>.</li>
+      <li><strong>x² − 2x − 7 = 0</strong> (b = −2, c = −7). Cuidado con los signos: Δ = (−2)² − 4(1)(−7) = 4 + 28 = <strong>32</strong>, y −b = −(−2) = 2.
+          x = <span class="frac frac-inline"><span class="num">2 ± √32</span><span class="den">2</span></span>.
+          √32 = √(16 · 2) = 4√2, y queda <span class="frac frac-inline"><span class="num">2 ± 4√2</span><span class="den">2</span></span> = <strong>1 ± 2√2</strong>.
+          Soluciones: <strong>x₁ = 1 + 2√2</strong> y <strong>x₂ = 1 − 2√2</strong>.</li>
+      <li><strong>x² + 4x + 5 = 0</strong> (b = 4, c = 5). Δ = 4² − 4(1)(5) = 16 − 20 = <strong>−4</strong>, negativo: las soluciones son imaginarias.
+          x = <span class="frac frac-inline"><span class="num">−4 ± √(−4)</span><span class="den">2</span></span>, y √(−4) = √4 · i = 2i, así que
+          x = <span class="frac frac-inline"><span class="num">−4 ± 2i</span><span class="den">2</span></span> = <strong>−2 ± i</strong>.
+          Soluciones: <strong>x₁ = −2 + i</strong> y <strong>x₂ = −2 − i</strong>.</li>
+      <li><strong>x² + 7x + 12 = 0</strong> (para comparar con lo de arriba). Δ = 7² − 4(1)(12) = 49 − 48 = <strong>1</strong>, un cuadrado perfecto.
+          x = <span class="frac frac-inline"><span class="num">−7 ± 1</span><span class="den">2</span></span>: <strong>x₁ = −3</strong> y <strong>x₂ = −4</strong>.
+          Son los mismos números que encontramos con los pares: (x + 3)(x + 4). La fórmula funciona <strong>siempre</strong>, y Δ cuadrado perfecto avisa que sí se factoriza con enteros.</li>
+    </ul>
+    <p><strong>Con las soluciones también se factoriza:</strong> x² + bx + c = (x − x₁)(x − x₂). Por ejemplo,
+       x² + 4x + 1 = (x − (−2 + √3))(x − (−2 − √3)) = <strong>(x + 2 − √3)(x + 2 + √3)</strong>.</p>
+  </div>
+
+  <div class="prose">
+    <p><strong>Errores comunes:</strong> olvidar el signo de −b (si b = −2, −b = 2); calcular (−2)² como −4 (es 4); restar en lugar de sumar cuando c es negativo
+       (−4 · 1 · (−7) = +28); dividir entre 2 sólo un término del numerador (en <span class="frac frac-inline"><span class="num">2 ± 4√2</span><span class="den">2</span></span> se dividen el 2 <strong>y</strong> el 4); dejar √12 sin simplificar;
+       olvidar el ± (son <strong>dos</strong> soluciones); y, cuando Δ es negativo, olvidar la i.</p>
+  </div>
+
+  <p class="section-label" id="ejercicios-formula-general">Ejercicios: resuelve con la fórmula general</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Estos trinomios <strong>no se pueden factorizar con números enteros</strong> (Δ no es un cuadrado perfecto). Resuelve cada ecuación <strong>x² + bx + c = 0</strong> con la fórmula general
+       y contesta en las tres casillas:</p>
+    <p><strong>1.</strong> Escribe el discriminante <strong>Δ = b² − 4c</strong>.<br>
+       <strong>2.</strong> Escribe las <strong>dos soluciones</strong>, ya simplificadas y en cualquier orden. Si Δ es negativo, usa la <strong>i</strong>.</p>
+    <p>Escribe la raíz con el botón <strong>√</strong> (por ejemplo <strong>−2 + √3</strong> o <strong>2√2</strong>) y las fracciones con <strong>/</strong> (por ejemplo <strong>(−3 + √5)/2</strong>);
+       con i: <strong>−2 + i</strong>. Debajo de las casillas hay botones para escribir la raíz, la i, los paréntesis y los signos. Oprime <strong>Comprobar</strong> (o la tecla Enter).</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="fg-grid"></div>
+  <p class="practice-score" id="fg-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="fg-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script>
+  (function () {
+    var MINUS = '−', N = 10;
+
+    // ---------- números complejos y evaluador de lo que escribe el alumno (con √ e i) ----------
+    function C(re, im) { return { re: re, im: im || 0 }; }
+    function cmul(a, b) { return C(a.re * b.re - a.im * b.im, a.re * b.im + a.im * b.re); }
+    function cdiv(a, b) { var d = b.re * b.re + b.im * b.im; if (!d) throw new Error('÷0'); return C((a.re * b.re + a.im * b.im) / d, (a.im * b.re - a.re * b.im) / d); }
+    function close(a, b) { return Math.abs(a.re - b.re) < 1e-9 && Math.abs(a.im - b.im) < 1e-9; }
+    function parseExpr(str) {
+      var s = str.replace(/\s+/g, '').replace(/[−–—]/g, '-').replace(/[·×]/g, '*').replace(/÷/g, '/').replace(/sqrt|raiz|raíz/gi, '√').replace(/,/g, '.').replace(/I/g, 'i'), pos = 0;
+      function fail() { throw new Error('no entendido'); }
+      function peek() { return s.charAt(pos); }
+      function num() { var m = /^(\d+(\.\d+)?|\.\d+)/.exec(s.slice(pos)); if (!m) fail(); pos += m[0].length; return C(parseFloat(m[0])); }
+      function paren() { pos++; var v = expr(); if (peek() !== ')') fail(); pos++; return v; }
+      function root(z) { if (z.im) fail(); return z.re >= 0 ? C(Math.sqrt(z.re)) : C(0, Math.sqrt(-z.re)); }
+      function atom() {
+        var ch = peek();
+        if (ch === '(') return paren();
+        if (ch === 'i') { pos++; return C(0, 1); }
+        if (ch === '√') { pos++; return root(peek() === '(' ? paren() : num()); }
+        return num();
+      }
+      function unary() {
+        var ch = peek();
+        if (ch === '-') { pos++; var v = unary(); return C(-v.re, -v.im); }
+        if (ch === '+') { pos++; return unary(); }
+        return atom();
+      }
+      function term() {
+        var v = unary();
+        for (;;) {
+          var ch = peek();
+          if (ch === '*') { pos++; v = cmul(v, unary()); }
+          else if (ch === '/') { pos++; v = cdiv(v, unary()); }
+          else if (ch && /[(i√\d.]/.test(ch)) v = cmul(v, atom()); // multiplicación sin signo: 2√3, 3i, √3i
+          else return v;
+        }
+      }
+      function expr() {
+        var v = term();
+        for (;;) {
+          var ch = peek();
+          if (ch === '+') { pos++; var t = term(); v = C(v.re + t.re, v.im + t.im); }
+          else if (ch === '-') { pos++; var u = term(); v = C(v.re - u.re, v.im - u.im); }
+          else return v;
+        }
+      }
+      var r = expr(); if (pos !== s.length) fail(); return r;
+    }
+
+    // ---------- banco de 100 ejercicios: x² + bx + c = 0 sin soluciones enteras, de menor a mayor dificultad ----------
+    function isSq(n) { var r = Math.round(Math.sqrt(n)); return r * r === n; }
+    function simp(n) { var k = 1, m = n; for (var d = 2; d * d <= m; d++) { while (m % (d * d) === 0) { m /= d * d; k *= d; } } return [k, m]; } // n = k²·m
+    var cand = [], LETTERS = ['x', 'y', 'a', 'x', 'm', 'n', 'x', 'p', 't', 'z'], BANK = [];
+    for (var b = -10; b <= 10; b++) {
+      for (var c = -12; c <= 20; c++) {
+        var D = b * b - 4 * c;
+        if (D === 0 || (D > 0 && isSq(D))) continue;
+        var sm = simp(Math.abs(D));
+        cand.push({ b: b, c: c, D: D, k: sm[0], m: sm[1], score: Math.abs(b) + Math.abs(c) / 2 + (b % 2 ? 4 : 0) + (sm[0] > 1 ? 2 : 0) + (D < 0 ? 1 : 0) });
+      }
+    }
+    cand.sort(function (p, q) { return p.score - q.score || Math.abs(p.b) - Math.abs(q.b) || p.c - q.c; });
+    for (var i = 0; i < 100; i++) { var ex = cand[Math.floor(i * cand.length / 100)]; ex.L = i < 50 ? 'x' : LETTERS[i % LETTERS.length]; BANK.push(ex); }
+
+    function roots(e) {
+      var sd = e.D > 0 ? C(Math.sqrt(e.D)) : C(0, Math.sqrt(-e.D));
+      return [C((-e.b + sd.re) / 2, sd.im / 2), C((-e.b - sd.re) / 2, -sd.im / 2)];
+    }
+
+    // ---------- cómo se escribe la solución ----------
+    function sg(n) { return String(n).replace('-', MINUS); }
+    function frac(n, d) { return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>'; }
+    function radTxt(e, k) { // k√m (con la i si Δ < 0): 2√3, √3 i, 2i, i
+      var t = (k > 1 ? k : '') + (e.m > 1 ? '√' + e.m : '');
+      if (e.D < 0) t += (e.m > 1 ? ' ' : '') + 'i';
+      return t;
+    }
+    function rootHTML(e, sign) {
+      var op = sign > 0 ? '+' : MINUS;
+      if (e.b % 2 === 0) { // b par: se simplifica todo
+        var rad = radTxt(e, e.k / 2), re = -e.b / 2;
+        return re === 0 ? (sign > 0 ? '' : MINUS) + rad : sg(re) + ' ' + op + ' ' + rad;
+      }
+      return frac(sg(-e.b) + ' ' + op + ' ' + radTxt(e, e.k), 2);
+    }
+    function ecHTML(e) { // x² + bx + c = 0
+      var s = e.L + '²';
+      if (e.b !== 0) s += ' ' + (e.b < 0 ? MINUS : '+') + ' ' + (Math.abs(e.b) === 1 ? '' : Math.abs(e.b)) + e.L;
+      return s + ' ' + (e.c < 0 ? MINUS : '+') + ' ' + Math.abs(e.c) + ' = 0';
+    }
+    function explain(e) {
+      var b = e.b, c = e.c, D = e.D, t = [];
+      t.push('a = 1, b = ' + sg(b) + ', c = ' + sg(c));
+      t.push('Δ = b² − 4ac = (' + sg(b) + ')² − 4(1)(' + sg(c) + ') = ' + (b * b) + ' ' + (c > 0 ? MINUS + ' ' + 4 * c : '+ ' + (-4 * c)) + ' = <strong>' + sg(D) + '</strong>');
+      t.push(e.L + ' = ' + frac(MINUS + '(' + sg(b) + ') ± √' + (D < 0 ? '(' + sg(D) + ')' : D), 2));
+      if (D > 0 && e.k > 1) t.push('√' + D + ' = √(' + (e.k * e.k) + ' · ' + e.m + ') = ' + e.k + '√' + e.m);
+      if (D < 0) t.push('√(' + sg(D) + ') = √' + (-D) + ' · i' + ((e.k > 1 || e.m === 1) ? ' = ' + radTxt(e, e.k) : ''));
+      t.push(e.L + ' = ' + frac(sg(-b) + ' ± ' + radTxt(e, e.k), 2) + (b % 2 === 0 ? ' = ' + (b === 0 ? '±' : sg(-b / 2) + ' ±') + ' ' + radTxt(e, e.k / 2) : ''));
+      var r = roots(e), ap = D > 0 ? ' ≈ ' + sg(r[0].re.toFixed(2)) : '', ap2 = D > 0 ? ' ≈ ' + sg(r[1].re.toFixed(2)) : '';
+      t.push('<strong>' + e.L + '<sub>1</sub> = ' + rootHTML(e, 1) + '</strong>' + ap + ' &nbsp;y&nbsp; <strong>' + e.L + '<sub>2</sub> = ' + rootHTML(e, -1) + '</strong>' + ap2);
+      return t.join('<br>');
+    }
+
+    // ---------- tarjetas ----------
+    var grid = document.getElementById('fg-grid'), scoreEl = document.getElementById('fg-score'), done = {};
+    function score() {
+      var n = Object.keys(done).length;
+      scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
+    }
+    function pick() { // 10 al azar, ordenados como en el banco
+      var idx = BANK.map(function (e, i) { return i; });
+      for (var i = idx.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+      return idx.slice(0, N).sort(function (p, q) { return p - q; }).map(function (i) { return BANK[i]; });
+    }
+    function inputHTML(f, label, style) {
+      return '<input type="text" data-f="' + f + '" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" style="' + style + '" aria-label="' + label + '">';
+    }
+    var NOT_UNDERSTOOD = '<span class="no">No entendí lo que escribiste.</span> Usa números, <strong>√</strong>, <strong>i</strong>, paréntesis y <strong>/</strong> para las fracciones, por ejemplo <strong>−2 + √3</strong>, <strong>(−3 + √5)/2</strong> o <strong>−2 + i</strong>.';
+    function makeCard(e, idx) {
+      var n = idx + 1, card = document.createElement('div'), BOX = 'flex:1 1 9rem;', R = roots(e);
+      var keys = ['√', '(', ')', '+', MINUS, '/', 'i'].map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('');
+      card.className = 'practice-card';
+      card.innerHTML = '<div class="practice-head"><span class="enum">' + n + '</span><span class="practice-q">' + ecHTML(e) + '</span></div>' +
+        '<div class="practice-ask">1. Discriminante</div>' +
+        '<div class="practice-row"><span class="eq">Δ =</span>' + inputHTML('d', 'Discriminante del ejercicio ' + n, 'flex:0 1 6rem;') + '</div>' +
+        '<div class="practice-ask">2. Las dos soluciones (en cualquier orden)</div>' +
+        '<div class="practice-row"><span class="eq">' + e.L + '<sub>1</sub> =</span>' + inputHTML('r1', 'Primera solución del ejercicio ' + n, BOX) + '</div>' +
+        '<div class="practice-row" style="margin-top:0.4rem;"><span class="eq">' + e.L + '<sub>2</sub> =</span>' + inputHTML('r2', 'Segunda solución del ejercicio ' + n, BOX) + '</div>' +
+        '<div class="practice-keys">' + keys + '</div>' +
+        '<div class="practice-row" style="margin-top:0.7rem;"><button type="button" class="practice-check">Comprobar</button></div>' +
+        '<div class="practice-fb" aria-live="polite"></div>';
+      grid.appendChild(card);
+      var fb = card.querySelector('.practice-fb'), inp = {}, lastIn = 'd';
+      card.querySelectorAll('input').forEach(function (i) { inp[i.dataset.f] = i; i.addEventListener('focus', function () { lastIn = i.dataset.f; }); });
+      card.querySelectorAll('.practice-keys button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var input = inp[lastIn === 'd' ? 'r1' : lastIn];
+          var s = input.selectionStart == null ? input.value.length : input.selectionStart, e2 = input.selectionEnd == null ? s : input.selectionEnd;
+          input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e2);
+          input.focus(); input.setSelectionRange(s + b.dataset.k.length, s + b.dataset.k.length);
+        });
+      });
+      function matchHint(v) { // pistas cuando una solución no coincide
+        for (var q = 0; q < 2; q++) {
+          if (close(v, C(-R[q].re, -R[q].im))) return 'Revisa el <strong>signo de −b</strong>: tu solución es la opuesta de una correcta.';
+          if (close(v, C(2 * R[q].re, 2 * R[q].im))) return 'Recuerda <strong>dividir entre 2 todo el numerador</strong> (los dos términos).';
+        }
+        return 'Revisa la sustitución en x = (−b ± √Δ) ÷ 2, la simplificación de la raíz y la división entre 2.';
+      }
+      function check() {
+        card.classList.remove('ok', 'bad');
+        var vd = inp.d.value.trim(), v1 = inp.r1.value.trim(), v2 = inp.r2.value.trim();
+        if (!vd && !v1 && !v2) { fb.innerHTML = 'Escribe tus respuestas en las casillas.'; return; }
+        var d, s1, s2;
+        try { d = vd ? parseExpr(vd) : null; s1 = v1 ? parseExpr(v1) : null; s2 = v2 ? parseExpr(v2) : null; }
+        catch (x) { card.classList.add('bad'); fb.innerHTML = NOT_UNDERSTOOD; return; }
+        if (!d || !s1 || !s2) { fb.innerHTML = 'Faltan casillas: escribe el discriminante y las dos soluciones.'; return; }
+        var dOk = close(d, C(e.D)), ok1 = close(s1, R[0]) || close(s1, R[1]), ok2 = close(s2, R[0]) || close(s2, R[1]);
+        if (ok1 && ok2 && close(s1, s2)) ok2 = false; // las dos casillas dicen lo mismo
+        if (dOk && ok1 && ok2) {
+          card.classList.add('ok'); done[idx] = 1; score();
+          fb.innerHTML = '<span class="yes">✓ ¡Todo correcto!</span><div class="sol">' + e.L + '<sub>1</sub> = ' + rootHTML(e, 1) + ' &nbsp;y&nbsp; ' + e.L + '<sub>2</sub> = ' + rootHTML(e, -1) + '</div>';
+          return;
+        }
+        card.classList.add('bad'); delete done[idx]; score();
+        var why = [];
+        if (!dOk) why.push('<strong>Δ:</strong> Δ = b² − 4ac con a = 1. Cuidado: b² nunca es negativo, y si c es negativo, −4c suma.');
+        if (!ok1) why.push('<strong>' + e.L + '<sub>1</sub>:</strong> ' + (dOk ? matchHint(s1) : 'Primero corrige Δ y vuelve a sustituir.'));
+        if (!ok2) why.push('<strong>' + e.L + '<sub>2</sub>:</strong> ' + (close(s1, s2) ? 'Es la misma que la primera: el ± da <strong>dos</strong> soluciones distintas.' : (dOk ? matchHint(s2) : 'Primero corrige Δ y vuelve a sustituir.')));
+        fb.innerHTML = '<span class="no">✗ Tienes ' + ((dOk ? 1 : 0) + (ok1 ? 1 : 0) + (ok2 ? 1 : 0)) + ' de 3 bien.</span> ' +
+          why.map(function (w) { return '<div class="sol" style="font-family:inherit;">' + w + '</div>'; }).join('') +
+          '<div class="sol">La solución completa:<br>' + explain(e) + '</div>';
+      }
+      card.querySelector('.practice-check').addEventListener('click', check);
+      card.querySelectorAll('input').forEach(function (i) { i.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') check(); }); });
+    }
+    function newSet() { grid.innerHTML = ''; done = {}; pick().forEach(makeCard); score(); }
+    document.getElementById('fg-new').addEventListener('click', function () {
+      newSet();
+      document.getElementById('ejercicios-formula-general').scrollIntoView({ behavior: 'smooth' });
+    });
+    newSet();
+  })();
+  </script>
+
+  <p class="section-label no-caps" id="rubrica-factorizar-x2-bx-c">Rúbrica · Factorizar x² + bx + c y fórmula general</p>
   <details class="rubric rubric-matriz">
     <summary>Ver rúbrica por competencias</summary>
     <div class="table-scroll">
@@ -364,11 +669,11 @@
         </thead>
         <tbody>
           <tr>
-            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe la factorización con dos binomios entre paréntesis y con el signo de cada número: (x − 4)(x − 5).</li><li>Escribe los pares de números, sus productos y sus sumas en orden, con su signo.</li><li>Explica con sus palabras cómo eligió los números (producto c, suma b) y qué hizo con los signos.</li></ul></div></td>
-            <td>Escribe los binomios sin paréntesis o sin signo, o un solo binomio, y sus respuestas no se entienden. No usa ningún apoyo, como la lista de pares de números.</td>
-            <td colspan="2">Usa la simbología con limitaciones: escribe los dos binomios, pero a veces omite un signo o un paréntesis. Contesta sin explicar o sólo dice «busqué dos números».</td>
-            <td>Escribe con la simbología correcta los pares de números, la suma, el producto y los dos binomios, con alguna deficiencia (por ejemplo, un signo ambiguo en la lista). Explica con claridad qué hizo en cada paso.</td>
-            <td>Escribe y explica con notación correcta el procedimiento completo (b y c, pares, suma, producto, factorización y comprobación), por diferentes medios (con la regla, con la figura del rectángulo y con palabras), y reconstruye el procedimiento en un trinomio nuevo.</td>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe la factorización con dos binomios entre paréntesis y con el signo de cada número: (x − 4)(x − 5).</li><li>Escribe los pares de números, sus productos y sus sumas en orden, con su signo.</li><li>Explica con sus palabras cómo eligió los números (producto c, suma b) y qué hizo con los signos.</li><li>Con la fórmula general, escribe Δ, la sustitución, la raíz simplificada y las dos soluciones con la notación correcta (√, i, ±, fracciones).</li></ul></div></td>
+            <td>Escribe los binomios sin paréntesis o sin signo, o un solo binomio, y sus respuestas no se entienden. No usa ningún apoyo, como la lista de pares de números. Con la fórmula general sólo escribe un resultado suelto, sin Δ ni sustitución.</td>
+            <td colspan="2">Usa la simbología con limitaciones: escribe los dos binomios, pero a veces omite un signo o un paréntesis. Contesta sin explicar o sólo dice «busqué dos números». Con la fórmula general escribe Δ y las soluciones, pero omite el ± o la i, o no simplifica la raíz.</td>
+            <td>Escribe con la simbología correcta los pares de números, la suma, el producto y los dos binomios, con alguna deficiencia (por ejemplo, un signo ambiguo en la lista). Explica con claridad qué hizo en cada paso. Con la fórmula general escribe Δ, la sustitución, la raíz simplificada y las dos soluciones con √, i y fracciones, con alguna deficiencia.</td>
+            <td>Escribe y explica con notación correcta el procedimiento completo (b y c, pares, suma, producto, factorización y comprobación), por diferentes medios (con la regla, con la figura del rectángulo y con palabras), y reconstruye el procedimiento en un trinomio nuevo. Con la fórmula general presenta todo el procedimiento con notación correcta y lo explica con sus palabras, y escribe la factorización con las soluciones: (x − x₁)(x − x₂).</td>
           </tr>
           <tr>
             <td class="crit"><strong>Representación geométrica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Relaciona (x + p)(x + q) con un rectángulo de lados x + p y x + q formado por x², dos rectángulos px y qx y un rectángulo de área pq.</li><li>Reconoce que los rectángulos px y qx forman el término bx, y que el área pq es el término c.</li></ul></div></td>
@@ -378,19 +683,19 @@
             <td>Dibuja el rectángulo para un trinomio nuevo y lo usa para justificar que p + q = b y p · q = c.</td>
           </tr>
           <tr>
-            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Identifica b y c con su signo en x² + bx + c, y los usa para buscar p y q (p · q = c, p + q = b).</li><li>Decide los signos de p y q a partir de los signos de b y de c.</li><li>Factoriza como (x + p)(x + q), distingue el caso del TCP (p = q) y reconoce cuando no se puede factorizar con enteros.</li></ul></div></td>
-            <td>Conoce la regla de memoria («dos números que...») pero confunde b con c, o busca números que sólo cumplen una de las dos condiciones.</td>
-            <td colspan="2">Factoriza los casos sencillos (b y c positivos). Le fallan los casos con signos negativos, c negativo o números grandes, o no distingue cuándo no se puede factorizar.</td>
-            <td>Comprende y maneja las propiedades: encuentra los dos números con producto c y suma b en cualquier caso de signos, factoriza, comprueba multiplicando y reconoce un trinomio que no se factoriza con enteros.</td>
-            <td>Explica que (x + p)(x + q) = x² + (p + q)x + pq, y por eso factorizar es buscar p y q; generaliza los signos, relaciona el caso p = q con el TCP y p = −q con la diferencia de cuadrados, y usa el desarrollo y la factorización como procesos inversos.</td>
+            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Identifica b y c con su signo en x² + bx + c, y los usa para buscar p y q (p · q = c, p + q = b).</li><li>Decide los signos de p y q a partir de los signos de b y de c.</li><li>Factoriza como (x + p)(x + q), distingue el caso del TCP (p = q) y reconoce cuando no se puede factorizar con enteros.</li><li>Cuando no se puede factorizar con enteros, resuelve x² + bx + c = 0 con la fórmula general: calcula Δ = b² − 4c, sustituye, simplifica la raíz y escribe las dos soluciones (con i si Δ &lt; 0).</li></ul></div></td>
+            <td>Conoce la regla de memoria («dos números que...») pero confunde b con c, o busca números que sólo cumplen una de las dos condiciones. Conoce la fórmula general de memoria, pero la sustituye mal (confunde b con c o pierde el signo de −b).</td>
+            <td colspan="2">Factoriza los casos sencillos (b y c positivos). Le fallan los casos con signos negativos, c negativo o números grandes, o no distingue cuándo no se puede factorizar. Con la fórmula general resuelve los casos sencillos (b par, Δ positivo); le fallan los signos, simplificar la raíz o los casos con Δ negativo.</td>
+            <td>Comprende y maneja las propiedades: encuentra los dos números con producto c y suma b en cualquier caso de signos, factoriza, comprueba multiplicando y reconoce un trinomio que no se factoriza con enteros. Con la fórmula general calcula bien Δ, sustituye, simplifica la raíz y escribe las dos soluciones, reales o con i, y usa Δ para saber qué clase de soluciones hay.</td>
+            <td>Explica que (x + p)(x + q) = x² + (p + q)x + pq, y por eso factorizar es buscar p y q; generaliza los signos, relaciona el caso p = q con el TCP y p = −q con la diferencia de cuadrados, y usa el desarrollo y la factorización como procesos inversos. Relaciona la fórmula general con completar el cuadrado y el discriminante con el tipo de soluciones (Δ cuadrado perfecto: sí se factoriza con enteros; Δ = 0: TCP; Δ &lt; 0: soluciones imaginarias).</td>
           </tr>
           <tr>
-            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué los números buscados deben multiplicar c y sumar b: porque así se obtiene el trinomio al multiplicar los binomios.</li><li>Justifica los signos de p y q con los signos de b y de c.</li><li>Comprueba su resultado multiplicando los binomios y justifica por qué un trinomio no se puede factorizar con enteros (revisa todos los pares).</li></ul></div></td>
-            <td>Dice «así se hace» o «se buscan dos números» sin justificar. Factoriza pero no comprueba su resultado.</td>
-            <td>Defiende con una regla simple («producto c, suma b») con lenguaje matemático básico.</td>
-            <td>Valida con ejemplos: factoriza varios trinomios y comprueba cada uno multiplicando; da ejemplos y no-ejemplos de trinomios que sí y que no se factorizan.</td>
-            <td>Explica la estructura del argumento: que p · q = c y p + q = b son las condiciones y que (x + p)(x + q) es la conclusión; comprueba sus resultados y, cuando dice que no se factoriza, muestra que revisó todos los pares.</td>
-            <td>Elabora una cadena de argumentos que generaliza: demuestra con la multiplicación de binomios por qué factorizar x² + bx + c es buscar p y q con p + q = b y p · q = c, y relaciona los signos, el TCP y la diferencia de cuadrados con la regla.</td>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué los números buscados deben multiplicar c y sumar b: porque así se obtiene el trinomio al multiplicar los binomios.</li><li>Justifica los signos de p y q con los signos de b y de c.</li><li>Comprueba su resultado multiplicando los binomios y justifica por qué un trinomio no se puede factorizar con enteros (revisa todos los pares).</li><li>Explica por qué hace falta la fórmula general (los pares sólo dan soluciones enteras y no se sabe si «faltó probar un par») y qué dice el discriminante sobre las soluciones.</li></ul></div></td>
+            <td>Dice «así se hace» o «se buscan dos números» sin justificar. Factoriza pero no comprueba su resultado. Dice que usa la fórmula «porque la maestra lo pidió», sin explicar para qué sirve.</td>
+            <td>Defiende con una regla simple («producto c, suma b») con lenguaje matemático básico. Dice que la fórmula sirve «cuando no se puede factorizar».</td>
+            <td>Valida con ejemplos: factoriza varios trinomios y comprueba cada uno multiplicando; da ejemplos y no-ejemplos de trinomios que sí y que no se factorizan. Con la fórmula general verifica con un ejemplo que da lo mismo que los pares (x² + 7x + 12).</td>
+            <td>Explica la estructura del argumento: que p · q = c y p + q = b son las condiciones y que (x + p)(x + q) es la conclusión; comprueba sus resultados y, cuando dice que no se factoriza, muestra que revisó todos los pares. Explica que la fórmula siempre funciona, y que si Δ es cuadrado perfecto las soluciones son enteras y el trinomio sí se factoriza con enteros.</td>
+            <td>Elabora una cadena de argumentos que generaliza: demuestra con la multiplicación de binomios por qué factorizar x² + bx + c es buscar p y q con p + q = b y p · q = c, y relaciona los signos, el TCP y la diferencia de cuadrados con la regla. Deduce la fórmula general completando el cuadrado y justifica con el discriminante cuándo hay soluciones enteras, reales con raíz o imaginarias.</td>
           </tr>
         </tbody>
       </table>
