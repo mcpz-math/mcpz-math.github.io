@@ -170,7 +170,7 @@
   <div class="callout">
     <div class="k">Instrucciones</div>
     <p><strong>Algunos de estos trinomios no se pueden factorizar con números enteros.</strong> Para cada uno, busca dos números cuyo
-       <strong>producto dé el tercer término (c)</strong> y cuya <strong>suma sea el coeficiente del segundo término (b)</strong>. Después oprime <strong>Sí se factoriza</strong> o <strong>No se factoriza</strong>.</p>
+       <strong>producto dé el tercer término (c)</strong> y cuya <strong>suma sea el coeficiente del segundo término (b)</strong>. Después oprime <strong>Sí se factoriza</strong> o <strong>No se puede factorizar con números enteros</strong>.</p>
     <p>Si no se puede, la página te explica por qué. <strong>Sólo si sí se puede</strong>, aparece un cuadro para escribir la factorización como dos binomios,
        por ejemplo <strong>(x + 3)(x + 4)</strong>; no importa el orden de los binomios. Debajo de cada cuadro hay botones para escribir los paréntesis,
        la letra y los signos. Cuando termines, oprime <strong>Comprobar</strong> (o la tecla Enter).</p>
@@ -284,7 +284,7 @@
       card.innerHTML =
         '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + triHTML(e) + '</span></div>' +
         '<div class="practice-choice" style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.6rem;">' +
-        '<button type="button" class="pg-btn" data-c="si">Sí se factoriza</button><button type="button" class="pg-btn secondary" data-c="no">No se factoriza</button></div>' +
+        '<button type="button" class="pg-btn" data-c="si">Sí se factoriza</button><button type="button" class="pg-btn secondary" data-c="no" style="flex:1 1 12rem; border-radius:1.2rem; line-height:1.25;">No se puede factorizar con números enteros</button></div>' +
         '<div class="practice-fact" hidden><div class="practice-row"><span class="eq">=</span>' +
         '<input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tu factorización del ejercicio ' + (idx + 1) + '">' +
         '<button type="button" class="practice-check">Comprobar</button></div><div class="practice-keys">' + keys + '</div></div>' +
@@ -300,7 +300,7 @@
             fb.innerHTML = '<span class="yes">¡Sí se factoriza!</span> Ahora escríbelo como <strong>dos binomios</strong> y oprime <strong>Comprobar</strong>.';
           } else if (!sayYes && e.no) {
             card.classList.add('ok'); done[idx] = 1; score();
-            fb.innerHTML = '<span class="yes">✓ ¡Correcto! No se factoriza.</span><div class="sol">' + explainNo(e) + '</div>';
+            fb.innerHTML = '<span class="yes">✓ ¡Correcto! No se puede factorizar con números enteros.</span><div class="sol">' + explainNo(e) + '</div>';
           } else {
             card.classList.add('bad');
             fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + (e.no ? 'Busca dos números con producto c y suma b: aquí no existen.' : 'Sí se factoriza: hay dos números con producto c y suma b.') +

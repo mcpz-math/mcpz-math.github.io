@@ -1874,3 +1874,5 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, en el recuadro "Recuerda: las leyes de los signos" de `matematicas-3/tema-06-factorizar-x2-bx-c.html` y `matematicas-3/tema-06-binomio-factor-comun.html` la columna **"Multiplicar y dividir" pasó a "Multiplicar"**:
   se quitaron la división (÷) de las cuatro filas y los **ejemplos con números**; en su lugar dice **"Signos iguales dan más (+); signos contrarios dan menos (−)."** La columna "Sumar" no se tocó. El mismo recuadro en
   `matematicas-2/tema-01-operaciones-con-fracciones.html` se dejó igual (ahí sí se dividen fracciones).
+- A pedido de Carmen, en los ejercicios de `matematicas-3/tema-06-factorizar-x2-bx-c.html` el botón **"No se factoriza"** dice ahora **"No se puede factorizar con números enteros"** (el botón ocupa más espacio y se acomoda en dos renglones),
+  el mensaje de acierto dice "¡Correcto! No se puede factorizar con números enteros." y las instrucciones usan el mismo texto. El botón "Sí se factoriza" no cambió.
