@@ -19,6 +19,7 @@
 <canvas id="c" width="1280" height="720"></canvas>
 <script type="module">
 import { Muxer, ArrayBufferTarget } from 'https://cdn.jsdelivr.net/npm/mp4-muxer@5.1.3/build/mp4-muxer.mjs';
+import { cargarVoz, mezclar } from './voz-video.mjs';
 
 const W = 1280, H = 720, FPS = 30;
 const C = { forest:'#14301f', cream:'#f6f3ea', lime:'#c4e86b', blue:'#2f6db5', orange:'#c2621b', red:'#b3261e',
@@ -358,6 +359,8 @@ escena(11, tt => {
   withAlpha(fade(tt, 8), () => txt('Y comprueba siempre en las dos ecuaciones', W / 2, 630, 30, C.forest, { w: 700, f: FM, align: 'center' }));
 });
 
+// voz en off (guion en voz/cramer.json): alarga las escenas para que alcance a hablar
+const VOZ = await cargarVoz('cramer', ESC);
 const TOTAL = ESC.reduce((s, e) => s + e.dur, 0);
 const FADE = .35;
 function dibujarEn(T) {
@@ -393,12 +396,8 @@ async function hacerVideo(nombre = 'video.mp4', opc = {}) {
   const ac = new AudioContext({ sampleRate: SR });
   const src = await ac.decodeAudioData(await (await fetch('/matematicas-1/materiales/jerarquia-de-operaciones.mp4')).arrayBuffer());
   const N = Math.round(DUR * SR), ch = [src.getChannelData(0), src.getChannelData(1)];
-  const pcm = [new Float32Array(N), new Float32Array(N)];
-  for (let c = 0; c < 2; c++) for (let i = 0; i < N; i++) {
-    let g = 1; const s = i / SR;
-    if (s > DUR - 3) g = Math.max(0, (DUR - s) / 3);
-    pcm[c][i] = (i < ch[c].length ? ch[c][i] : 0) * g;
-  }
+  const pcm = mezclar(DUR, ch, VOZ ? VOZ.pistas : []); // música en bucle + voz (la música baja al hablar)
+
   const muxer = new Muxer({ target: new ArrayBufferTarget(), fastStart: 'in-memory',
     video: { codec: 'avc', width: W, height: H, frameRate: FPS }, audio: { codec: 'aac', numberOfChannels: 2, sampleRate: SR } });
   const ve = new VideoEncoder({ output: (c, m) => muxer.addVideoChunk(c, m), error: e => { window.estado = 'error video ' + e; } });

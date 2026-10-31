@@ -1,0 +1,72 @@
+{
+  "video": "general-a-ordinaria",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.4, "texto": "De la ecuación general a la ordinaria." },
+      { "s": 2.6, "texto": "Para graficar con la pendiente y la ordenada al origen." }
+    ] },
+    { "n": 1, "voz": [
+      { "s": 0.8,  "texto": "La forma general es: a x más be ye más ce, igual a cero." },
+      { "s": 3.2,  "texto": "La forma ordinaria es: ye igual a eme x más be." },
+      { "s": 5.6,  "texto": "Eme es la pendiente: qué tanto sube o baja la recta." },
+      { "s": 8,    "texto": "Be es la ordenada al origen: donde la recta corta al eje ye, en el punto cero, be." },
+      { "s": 10.4, "texto": "Aquí eme es dos: avanza uno, sube dos." }
+    ] },
+    { "n": 2, "voz": [
+      { "s": 1.2,  "texto": "Paso uno: pasa a x y ce al otro lado; cambian de signo." },
+      { "s": 4.6,  "texto": "Paso dos: divide todo entre el coeficiente de ye." },
+      { "s": 8,    "texto": "Paso tres: acomoda e identifica eme y be." },
+      { "s": 10.6, "texto": "Eme acompaña a x; be es el término sin x." }
+    ] },
+    { "n": 3, "voz": [
+      { "s": 1,  "texto": "La pendiente es una fracción: ye entre x. Ye, arriba, es cuánto subes o bajas; x, abajo, cuánto avanzas." },
+      { "s": 6,  "texto": "Por ejemplo, eme igual a tres entre dos: avanza dos en x y sube tres en ye." },
+      { "s": 11, "texto": "Si eme no es una fracción, escribe uno en el denominador: dos es dos entre uno." }
+    ] },
+    { "n": 4, "voz": [
+      { "s": 1.2,  "texto": "Ejemplo uno. Paso uno: pasamos dos x y menos cinco al otro lado: menos ye es igual a menos dos x más cinco." },
+      { "s": 5.6,  "texto": "Paso dos: dividimos todo entre menos uno, y todo cambia de signo: ye es igual a dos x menos cinco." },
+      { "s": 10.4, "texto": "Paso tres: la pendiente eme es dos, y la ordenada be es menos cinco." }
+    ] },
+    { "n": 5, "voz": [
+      { "s": 2,    "texto": "Be es menos cinco: marcamos el punto cero, menos cinco, donde la recta cruza el eje ye." },
+      { "s": 6,    "texto": "Eme es dos, que es dos entre uno: subimos dos y avanzamos uno, para el segundo punto." },
+      { "s": 11,   "texto": "Unimos los puntos con la regla y prolongamos la recta hacia los dos lados." },
+      { "s": 15.5, "texto": "Ésta es la gráfica de ye igual a dos x menos cinco." }
+    ] },
+    { "n": 6, "voz": [
+      { "s": 1.2,  "texto": "Ejemplo dos. Paso uno: pasamos cuatro x y menos tres al otro lado: dos ye es igual a menos cuatro x más tres." },
+      { "s": 5.6,  "texto": "Paso dos: dividimos cada término entre dos." },
+      { "s": 10.6, "texto": "Paso tres: simplificamos: ye es igual a menos dos x más tres medios." },
+      { "s": 16,   "texto": "Paso cuatro: eme es menos dos, y be es tres medios." }
+    ] },
+    { "n": 7, "voz": [
+      { "s": 2,    "texto": "Be es tres medios: el denominador es dos, así que dividimos cada unidad en dos partes iguales." },
+      { "s": 7,    "texto": "La escala es de medios: un medio, uno, tres medios, dos. Cada cuadrito vale un medio." },
+      { "s": 12,   "texto": "Marcamos el punto cero, tres medios: subimos tres cuadritos desde el origen." },
+      { "s": 18,   "texto": "Eme es menos dos entre uno: bajamos cuatro cuadritos y avanzamos dos." },
+      { "s": 23,   "texto": "Unimos los puntos con la regla y prolongamos la recta." },
+      { "s": 27.4, "texto": "El denominador de be dictó la escala." }
+    ] },
+    { "n": 8, "voz": [
+      { "s": 1, "texto": "Cuidado. Primero: al pasar un término al otro lado, cambia de signo." },
+      { "s": 5, "texto": "Segundo: divide todos los términos entre dos, también el tres." },
+      { "s": 9, "texto": "Tercero: ye debe quedar sola y positiva: ye igual a eme x más be." }
+    ] },
+    { "n": 9, "pausa": 11, "voz": [
+      { "s": 0.8,  "texto": "Ahora tú. Pausa el video y pasa a la forma ye igual a eme x más be: seis x más tres ye menos nueve igual a cero." },
+      { "s": 11.3, "texto": "Paso uno: pasamos seis x y menos nueve: tres ye es igual a menos seis x más nueve." },
+      { "s": 14.3, "texto": "Paso dos: dividimos entre tres: ye es igual a menos dos x más tres." },
+      { "s": 17.3, "texto": "Paso tres: eme es menos dos, y be es tres." },
+      { "s": 19.6, "texto": "Paso cuatro: grafica. Marca el punto cero, tres; avanza uno y baja dos." }
+    ] },
+    { "n": 10, "voz": [
+      { "s": 0.8,  "texto": "Para recordar. Uno: pasa los términos con x y los números al otro lado; cambian de signo." },
+      { "s": 7.4,  "texto": "Dos: divide todo entre el coeficiente de ye." },
+      { "s": 11.8, "texto": "Tres: queda ye igual a eme x más be. Eme acompaña a x, y be es el término sin x." },
+      { "s": 18.2, "texto": "Para graficar: marca be en el eje ye. Desde ahí avanza, y sube o baja según eme. Une los puntos con la regla." },
+      { "s": 27,   "texto": "Si be es una fracción, su denominador dicta la escala." }
+    ] }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "video": "metodo-grafico",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.4, "texto": "Sistemas de ecuaciones. Método gráfico: los cinco pasos, con tres ejemplos." }
+    ] },
+    { "n": 1, "voz": [
+      { "s": 1,  "texto": "Un sistema de dos por dos puede tener solución única: las rectas se cruzan en un solo punto." },
+      { "s": 5,  "texto": "Puede tener infinitas soluciones: las rectas son coincidentes, es la misma recta." },
+      { "s": 9,  "texto": "O no tener solución: las rectas son paralelas y nunca se cruzan." },
+      { "s": 13, "texto": "La gráfica nos dice cuál de los tres casos es." }
+    ] },
+    { "n": 2, "voz": [
+      { "s": 1,    "texto": "Paso uno: observa las ecuaciones. Deben tener la forma ye igual a eme x más be. Si no, transfórmalas." },
+      { "s": 4.2,  "texto": "Paso dos: grafica cada recta, usando la pendiente eme y la ordenada be. Si hace falta, busca una escala." },
+      { "s": 7.4,  "texto": "Paso tres: a partir de la gráfica, determina si hay solución única, si no hay solución, o si hay infinitas." },
+      { "s": 10.6, "texto": "Paso cuatro: si hay solución única, encuentra la coordenada de intersección, y el valor de x y de ye." },
+      { "s": 13.8, "texto": "Paso cinco: comprueba, sustituyendo los valores en las dos ecuaciones." }
+    ] },
+    { "n": 3, "voz": [
+      { "s": 1.2,  "texto": "Ejemplo uno. Paso uno: ¿tienen la forma ye igual a eme x más be? No, hay que transformarlas." },
+      { "s": 5,    "texto": "Despejamos ye en la primera: ye igual a dos x menos cinco." },
+      { "s": 9,    "texto": "Y en la segunda: ye igual a menos tres medios de x, más dos." },
+      { "s": 13,   "texto": "Pendientes y ordenadas: eme es dos y be es menos cinco; eme es menos tres medios y be es dos." },
+      { "s": 16.5, "texto": "Las ordenadas son enteras: no hace falta una escala especial." }
+    ] },
+    { "n": 4, "voz": [
+      { "s": 1.2,  "texto": "Paso dos. Recta uno: ye igual a dos x menos cinco. Marcamos el punto cero, menos cinco." },
+      { "s": 4.6,  "texto": "La pendiente es dos: subimos dos y avanzamos uno." },
+      { "s": 11,   "texto": "Recta dos: ye igual a menos tres medios de x, más dos. Marcamos el punto cero, dos." },
+      { "s": 14,   "texto": "La pendiente es menos tres medios: bajamos tres y avanzamos dos." },
+      { "s": 21,   "texto": "Ya están las dos rectas. ¿Dónde se cruzan?" }
+    ] },
+    { "n": 5, "voz": [
+      { "s": 1.6,  "texto": "Paso tres: las rectas se cruzan en un solo punto. Solución única." },
+      { "s": 6.5,  "texto": "Paso cuatro: leemos la coordenada de intersección: x es dos, ye es menos uno." },
+      { "s": 11,   "texto": "Paso cinco: comprobamos en las dos ecuaciones." },
+      { "s": 13.2, "texto": "Ecuación uno: dos por dos, menos menos uno, es cuatro más uno, cinco. Se cumple." },
+      { "s": 19.8, "texto": "Ecuación dos: tres por dos, más dos por menos uno, es seis menos dos, cuatro. También se cumple." }
+    ] },
+    { "n": 6, "voz": [
+      { "s": 0.3,  "texto": "Ejemplo dos. Paso uno: despejamos ye en las dos ecuaciones." },
+      { "s": 5,    "texto": "Sale ye igual a dos x menos uno, y ye igual a dos x menos tres. Paso dos: grafica. Las dos tienen eme igual a dos, la misma inclinación, con ordenadas menos uno y menos tres." },
+      { "s": 13.5, "texto": "Paso tres: las rectas son paralelas, nunca se cruzan. No tiene solución." },
+      { "s": 18.5, "texto": "Como no hay solución única, no hay pasos cuatro y cinco." }
+    ] },
+    { "n": 7, "voz": [
+      { "s": 0.3, "texto": "Ejemplo tres. Paso uno: despejamos ye en las dos ecuaciones." },
+      { "s": 6,   "texto": "En las dos sale ye igual a menos x más tres: ¡son la misma ecuación! Paso dos: grafica. Las dos rectas salen encimadas." },
+      { "s": 14,  "texto": "Paso tres: son coincidentes, la misma recta. Hay infinitas soluciones." },
+      { "s": 19,  "texto": "Cada punto de la recta es una solución." }
+    ] },
+    { "n": 8, "voz": [
+      { "s": 1, "texto": "Cuidado. Primero: al despejar ye, cuida los signos." },
+      { "s": 5, "texto": "Segundo: primero va x, el eje horizontal, y luego ye, el eje vertical." },
+      { "s": 9, "texto": "Tercero: sustituye en las dos ecuaciones. Si una sola falla, el punto no es la solución." }
+    ] },
+    { "n": 9, "pausa": 12, "voz": [
+      { "s": 0.8,  "texto": "Ahora tú. Pausa el video y resuélvelo en tu cuaderno: x más ye igual a cinco, y x menos ye igual a uno." },
+      { "s": 12.3, "texto": "Paso uno: despejamos ye. Ye igual a menos x más cinco, y ye igual a x menos uno." },
+      { "s": 14.8, "texto": "Pasos dos y tres: graficamos. Las rectas se cruzan en un punto. Solución única." },
+      { "s": 17.8, "texto": "Paso cuatro: la coordenada de intersección es tres, dos." },
+      { "s": 20.8, "texto": "Paso cinco: comprobamos. Tres más dos es cinco, y tres menos dos es uno." }
+    ] },
+    { "n": 10, "voz": [
+      { "s": 0.8,  "texto": "Para recordar. Uno: pon las dos ecuaciones en la forma ye igual a eme x más be." },
+      { "s": 7.6,  "texto": "Dos: grafica cada recta con eme y be, con una escala si hace falta." },
+      { "s": 13.4, "texto": "Tres: mira la gráfica. ¿Se cruzan, son paralelas, o son la misma recta?" },
+      { "s": 19.4, "texto": "Cuatro: si se cruzan, lee la coordenada de intersección." },
+      { "s": 24.6, "texto": "Cinco: comprueba sustituyendo en las dos ecuaciones." },
+      { "s": 29.4, "texto": "Tres casos: si se cruzan, solución única. Si son paralelas, no hay solución. Si son coincidentes, hay infinitas." },
+      { "s": 38,   "texto": "Practica abajo con los ejercicios del método gráfico." }
+    ] }
+  ]
+}

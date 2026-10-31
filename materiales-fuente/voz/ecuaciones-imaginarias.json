@@ -1,0 +1,70 @@
+{
+  "video": "ecuaciones-imaginarias",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.4, "texto": "Ecuaciones con raíces imaginarias, paso a paso." }
+    ] },
+    { "n": 1, "voz": [
+      { "s": 0.8,  "texto": "¿Se puede factorizar como de ce pe? Una resta de cuadrados, como x al cuadrado menos nueve, sí: x más tres por x menos tres." },
+      { "s": 5.2,  "texto": "Sus raíces son menos tres y tres: raíces reales." },
+      { "s": 8,    "texto": "Una suma de cuadrados, como x al cuadrado más nueve, no se factoriza así." },
+      { "s": 12.2, "texto": "Ningún número real al cuadrado da un negativo: son raíces imaginarias." },
+      { "s": 14.8, "texto": "La regla: si a y be tienen el mismo signo, es una suma de cuadrados, y las raíces son imaginarias." }
+    ] },
+    { "n": 2, "voz": [
+      { "s": 0.8, "texto": "El número imaginario i es la raíz cuadrada de menos uno. Entonces, i al cuadrado es menos uno." },
+      { "s": 4.4, "texto": "Raíz de menos cuatro es raíz de cuatro por i: dos i." },
+      { "s": 6.6, "texto": "Raíz de menos veinticinco: cinco i." },
+      { "s": 8.8, "texto": "En general, raíz de menos k es raíz de k por i." }
+    ] },
+    { "n": 3, "voz": [
+      { "s": 1.2, "texto": "Paso uno: despeja x al cuadrado." },
+      { "s": 3.2, "texto": "Paso dos: saca la raíz cuadrada, con más y menos." },
+      { "s": 5.2, "texto": "Paso tres: separa la i." },
+      { "s": 7.2, "texto": "Paso cuatro: simplifica y escribe las dos raíces." }
+    ] },
+    { "n": 4, "voz": [
+      { "s": 1.2,  "texto": "Ejemplo uno. Paso uno: restamos veinticinco en ambos lados. x al cuadrado es igual a menos veinticinco." },
+      { "s": 5.2,  "texto": "Paso dos: sacamos la raíz cuadrada, con más y menos." },
+      { "s": 9.6,  "texto": "Paso tres: separamos la i. Raíz de veinticinco es cinco: x es más menos cinco i." },
+      { "s": 14.4, "texto": "Paso cuatro: las dos raíces son cinco i, y menos cinco i." },
+      { "s": 19.4, "texto": "Comprobamos: cinco i, al cuadrado, es veinticinco por menos uno, menos veinticinco. Más veinticinco da cero." }
+    ] },
+    { "n": 5, "voz": [
+      { "s": 1.2,  "texto": "Ejemplo dos: cuatro x al cuadrado más cuarenta y nueve. Paso uno: restamos cuarenta y nueve en ambos lados." },
+      { "s": 5.4,  "texto": "Paso dos: dividimos entre cuatro. x al cuadrado es menos cuarenta y nueve cuartos." },
+      { "s": 10.2, "texto": "Paso tres: sacamos la raíz cuadrada, con más y menos." },
+      { "s": 15,   "texto": "Paso cuatro: separamos la i. Raíz de cuarenta y nueve es siete, y raíz de cuatro es dos. x es más menos siete medios de i." },
+      { "s": 20.6, "texto": "Paso cinco: las raíces son siete medios de i, y menos siete medios de i." }
+    ] },
+    { "n": 6, "voz": [
+      { "s": 1.2,  "texto": "Ejemplo tres: tres x al cuadrado más veinticuatro. Paso uno: restamos veinticuatro en ambos lados." },
+      { "s": 5,    "texto": "Paso dos: dividimos entre tres. x al cuadrado es menos ocho." },
+      { "s": 8.8,  "texto": "Paso tres: sacamos la raíz cuadrada, con más y menos." },
+      { "s": 12.6, "texto": "Paso cuatro: separamos la i: raíz de ocho, por i." },
+      { "s": 16.6, "texto": "Paso cinco: simplificamos la raíz de ocho. Es raíz de cuatro por raíz de dos, igual a dos raíz de dos." },
+      { "s": 22.4, "texto": "Paso seis: las raíces son dos raíz de dos i, y menos dos raíz de dos i." }
+    ] },
+    { "n": 7, "voz": [
+      { "s": 1,   "texto": "Cuidado. Primero: no olvides la i. Ningún número real al cuadrado da menos veinticinco." },
+      { "s": 4.6, "texto": "Segundo: siempre son dos raíces, una con más y otra con menos." },
+      { "s": 8.2, "texto": "Tercero: recuerda que i al cuadrado es menos uno, no uno." }
+    ] },
+    { "n": 8, "pausa": 10, "voz": [
+      { "s": 0.8,  "texto": "Ahora tú. Pausa el video y resuélvela en tu cuaderno: dos x al cuadrado más treinta y dos igual a cero." },
+      { "s": 10.3, "texto": "Paso uno: despejamos x al cuadrado: es menos dieciséis." },
+      { "s": 12.3, "texto": "Paso dos: raíz cuadrada, con más y menos." },
+      { "s": 14.3, "texto": "Paso tres: separamos la i. Raíz de dieciséis es cuatro: x es más menos cuatro i." },
+      { "s": 16.3, "texto": "Paso cuatro: las raíces son cuatro i, y menos cuatro i." }
+    ] },
+    { "n": 9, "voz": [
+      { "s": 0.8,  "texto": "Para recordar. Uno: despeja x al cuadrado. Pasa be restando y divide entre a." },
+      { "s": 6.6,  "texto": "Dos: saca la raíz cuadrada de los dos lados, con más y menos." },
+      { "s": 11.4, "texto": "Tres: como queda un número negativo, separa la i." },
+      { "s": 16,   "texto": "Cuatro: simplifica y escribe las dos raíces, una con más y otra con menos." },
+      { "s": 21.6, "texto": "Si a y be tienen el mismo signo, es una suma de cuadrados: no es de ce pe, y las raíces son imaginarias." },
+      { "s": 30.6, "texto": "Practica abajo: son cien ejercicios, y te tocan diez al azar." }
+    ] }
+  ]
+}

@@ -1851,3 +1851,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   (2) `materiales-fuente/generar-voz.ps1 -Video <video>` crea las frases en .wav (esos .wav no se suben a GitHub); (3) `materiales-fuente/voz-video.mjs` las mezcla con la música y **estira cada escena** lo necesario para que la frase termine antes de la siguiente
   (las escenas marcadas `"fijo": true`, como la de la cuenta regresiva, no se estiran); (4) el generador del video (`generar-video-binomio-al-cuadrado.html`) llama a `cargarVoz` y `mezclar`. Para el resto de los videos falta copiar esas dos llamadas y escribir su guion.
 - En la escena "Ahora tú" y en "Para recordar" se ajustaron los tiempos de las tarjetas para que alcance la voz. El video pesa 11 MB.
+
+## 2026-10-31 (voz en los otros cinco videos con generador)
+- A pedido de Carmen, **todos los videos que tienen generador en el repositorio ya llevan voz** (Microsoft Sabina, español de México), en el orden: Cramer, método gráfico, ecuaciones con raíces imaginarias,
+  de la ecuación general a la ordinaria y trinomio cuadrado perfecto. Junto con binomio al cuadrado (la primera prueba) son 6 videos con voz. Duraciones nuevas: Cramer 5:48, método gráfico 6:30, raíces imaginarias 5:39,
+  general a ordinaria 5:12, trinomio cuadrado perfecto ≈ 5:08 (todos pesan entre 11 y 14 MB). Los videos de Matemáticas 1, los de inecuaciones, valor absoluto y los de ax²+b (tema 5) **no tienen generador** en el repositorio y siguen sin voz.
+- Cada video tiene su guion en `materiales-fuente/voz/<video>.json` (cramer, metodo-grafico, ecuaciones-imaginarias, general-a-ordinaria, trinomio-cuadrado-perfecto). La letra y se dice "ye" para que no suene como la "y" de "y" (conjunción).
+  `voz-video.mjs` ahora entiende `"pausa": N` en una escena: hasta el segundo N (la cuenta regresiva de "Ahora tú") no se estira y lo que viene después sí. En "Para recordar" (y "Ahora tú" de binomio) se movieron los tiempos de las tarjetas para que alcance la voz.
+- Las páginas de cada tema piden el video con `?v=20261031` (para que el navegador no use la copia vieja) y el pie dice "Video con voz".

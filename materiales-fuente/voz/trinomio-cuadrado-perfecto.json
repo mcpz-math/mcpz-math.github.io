@@ -1,0 +1,69 @@
+{
+  "video": "trinomio-cuadrado-perfecto",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.4, "texto": "Trinomio cuadrado perfecto. Cómo reconocerlo y factorizarlo, paso a paso." }
+    ] },
+    { "n": 1, "voz": [
+      { "s": 1,   "texto": "Es lo que se obtiene al elevar un binomio al cuadrado: x más cinco, al cuadrado, da x al cuadrado más diez x más veinticinco." },
+      { "s": 6.5, "texto": "Factorizar un te ce pe es ir al revés: del trinomio, al binomio al cuadrado." }
+    ] },
+    { "n": 2, "voz": [
+      { "s": 2,    "texto": "Uno: el primer término es un cuadrado perfecto. La raíz de x al cuadrado es x." },
+      { "s": 6.2,  "texto": "Dos: el último término también. La raíz de veinticinco es cinco." },
+      { "s": 10.4, "texto": "Tres: el de en medio es el doble producto, dos a be: dos por x por cinco, igual a diez x." },
+      { "s": 15,   "texto": "¡Es un te ce pe! Es x más cinco, al cuadrado." }
+    ] },
+    { "n": 3, "voz": [
+      { "s": 1.2, "texto": "Paso uno: la raíz del primer término." },
+      { "s": 3.2, "texto": "Paso dos: la raíz del último término." },
+      { "s": 5.2, "texto": "Paso tres: comprueba que el de en medio sea dos a be." },
+      { "s": 7.2, "texto": "Paso cuatro: escribe el binomio al cuadrado." },
+      { "s": 9.6, "texto": "El signo es el del término de en medio." }
+    ] },
+    { "n": 4, "voz": [
+      { "s": 1.2, "texto": "Ejemplo uno. Paso uno: la raíz del primero es x." },
+      { "s": 4.2, "texto": "Paso dos: la raíz del último, treinta y seis, es seis." },
+      { "s": 7.2, "texto": "Paso tres: comprobamos el doble producto: dos por x por seis es doce x." },
+      { "s": 11,  "texto": "Paso cuatro: el de en medio es más doce x, una suma. Entonces es x más seis, al cuadrado." }
+    ] },
+    { "n": 5, "voz": [
+      { "s": 1.2,  "texto": "Ejemplo dos. Paso uno: la raíz de nueve eme al cuadrado es tres eme." },
+      { "s": 4.4,  "texto": "Paso dos: la raíz de dieciséis es cuatro." },
+      { "s": 7.6,  "texto": "Paso tres: dos por tres eme por cuatro es veinticuatro eme." },
+      { "s": 11.6, "texto": "Paso cuatro: el de en medio es menos veinticuatro eme, una resta. Entonces es tres eme menos cuatro, al cuadrado." }
+    ] },
+    { "n": 6, "voz": [
+      { "s": 1.2,  "texto": "Ejemplo tres. Paso uno: la raíz de cuatro a al cuadrado es dos a." },
+      { "s": 4.4,  "texto": "Paso dos: la raíz de nueve be al cuadrado es tres be." },
+      { "s": 7.6,  "texto": "Paso tres: dos por dos a por tres be es doce a be." },
+      { "s": 11.6, "texto": "Paso cuatro: el de en medio es más doce a be, una suma. Entonces es dos a más tres be, al cuadrado." }
+    ] },
+    { "n": 7, "voz": [
+      { "s": 1,    "texto": "¿Y si no es un te ce pe? Veamos x al cuadrado más diez x más dieciséis." },
+      { "s": 4.4,  "texto": "La raíz del primero es x, y la del último es cuatro." },
+      { "s": 7.2,  "texto": "Dos por x por cuatro es ocho x, no diez x." },
+      { "s": 10.6, "texto": "No es un te ce pe: no se factoriza como un binomio al cuadrado. Se factoriza de otra forma, en otro subtema." }
+    ] },
+    { "n": 8, "voz": [
+      { "s": 1, "texto": "Cuidado. Primero: el signo del binomio es el del término de en medio." },
+      { "s": 5, "texto": "Segundo: saca la raíz del número y de la letra. La raíz de nueve x al cuadrado es tres x." },
+      { "s": 9, "texto": "Tercero: antes de factorizar, comprueba el doble producto." }
+    ] },
+    { "n": 9, "pausa": 10, "voz": [
+      { "s": 0.8,  "texto": "Ahora tú. Pausa el video y factoriza en tu cuaderno: dieciséis x al cuadrado más cuarenta x más veinticinco." },
+      { "s": 10.3, "texto": "Paso uno: la raíz de dieciséis x al cuadrado es cuatro x, y la de veinticinco es cinco." },
+      { "s": 12.3, "texto": "Paso dos: dos por cuatro x por cinco es cuarenta x." },
+      { "s": 14.3, "texto": "Paso tres: es una suma. Entonces es cuatro x más cinco, al cuadrado." }
+    ] },
+    { "n": 10, "voz": [
+      { "s": 0.8,  "texto": "Para recordar. Uno: un te ce pe tiene dos términos que son cuadrados perfectos." },
+      { "s": 7.4,  "texto": "Dos: el de en medio es el doble producto de las dos raíces, dos a be." },
+      { "s": 13.2, "texto": "Tres: se factoriza como un binomio al cuadrado: a más menos be, al cuadrado." },
+      { "s": 19.4, "texto": "Cuatro: el signo del binomio es el signo del término de en medio." },
+      { "s": 25,   "texto": "La regla: a al cuadrado más dos a be más be al cuadrado es a más be, al cuadrado. Y con resta, es a menos be, al cuadrado." },
+      { "s": 36,   "texto": "Practica abajo: son cien ejercicios, y te tocan diez al azar." }
+    ] }
+  ]
+}

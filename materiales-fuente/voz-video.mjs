@@ -2,7 +2,8 @@
 //  - cargarVoz(video, ESC): lee voz/<video>.json y los .wav que crea generar-voz.ps1, y alarga cada
 //    escena lo necesario para que cada frase termine antes de que empiece la siguiente (la escena
 //    se estira de forma pareja, así lo que se ve sigue el ritmo de la voz). Las escenas marcadas
-//    "fijo" no se estiran (por ejemplo, la que tiene cuenta regresiva): sólo se alargan al final.
+//    "fijo" no se estiran: sólo se alargan al final. Las que tienen cuenta regresiva llevan "pausa": N
+//    (el segundo donde termina la cuenta): hasta ahí no se estira y lo que viene después sí.
 //  - mezclar(...): junta la música (en bucle, con fundido de salida) y la voz; la música baja de
 //    volumen mientras se habla.
 const SR = 48000, HUECO = .35, COLA = .8;
@@ -13,11 +14,13 @@ export async function cargarVoz(video, ESC, base = '/materiales-fuente/voz/') {
   const guion = await r.json();
   const ac = new AudioContext({ sampleRate: SR });
   const frases = []; // { escena, s, datos }
+  const pausa = {};  // escena -> segundo hasta donde NO se estira (cuenta regresiva)
   for (const e of guion.escenas) {
+    pausa[e.n] = e.fijo ? Infinity : (e.pausa || 0);
     for (let j = 0; j < e.voz.length; j++) {
       const nom = `e${String(e.n).padStart(2, '0')}-${j}.wav`;
       const buf = await ac.decodeAudioData(await (await fetch(`${base}${video}/${nom}`)).arrayBuffer());
-      frases.push({ escena: e.n, s: e.voz[j].s, datos: buf.getChannelData(0), fijo: !!e.fijo });
+      frases.push({ escena: e.n, s: e.voz[j].s, datos: buf.getChannelData(0) });
     }
   }
   const aviso = [];
@@ -25,24 +28,35 @@ export async function cargarVoz(video, ESC, base = '/materiales-fuente/voz/') {
   ESC.forEach((esc, n) => {
     const fs = frases.filter(f => f.escena === n);
     if (!fs.length) return;
-    const dur = f => f.datos.length / SR;
+    const p = pausa[n], dur = f => f.datos.length / SR;
+    const antes = fs.filter(f => f.s < p), desp = fs.filter(f => f.s >= p);
+    // lo que va antes de la pausa no se estira: sólo se avisa si las frases se pisan
+    for (let i = 1; i < antes.length; i++) if (dur(antes[i - 1]) + HUECO > antes[i].s - antes[i - 1].s) aviso.push(`escena ${n}: la frase ${i - 1} se pisa con la ${i}`);
+    const fin0 = antes.length ? antes[antes.length - 1].s + dur(antes[antes.length - 1]) + HUECO : 0;
+    if (p !== Infinity && p > 0 && fin0 > p && desp.length) aviso.push(`escena ${n}: la voz de antes de la pausa pasa de ${p} s`);
     let kk = 1;
-    for (let i = 1; i < fs.length; i++) {
-      const sep = fs[i].s - fs[i - 1].s;
-      if (fs[i].fijo) { if (dur(fs[i - 1]) + HUECO > sep) aviso.push(`escena ${n}: la frase ${i - 1} se pisa con la ${i}`); }
-      else kk = Math.max(kk, (dur(fs[i - 1]) + HUECO) / sep);
+    const o = p === Infinity ? 0 : p; // las frases de después se miden desde la pausa
+    if (desp.length) {
+      kk = Math.max(kk, (fin0 - o) / Math.max(.01, desp[0].s - o));
+      for (let i = 1; i < desp.length; i++) kk = Math.max(kk, (dur(desp[i - 1]) + HUECO) / (desp[i].s - desp[i - 1].s));
     }
     const u = fs[fs.length - 1];
-    if (u.fijo) esc.dur = Math.max(esc.dur, u.s + dur(u) + COLA);
-    else kk = Math.max(kk, (dur(u) + COLA) / (esc.dur - u.s));
+    if (p === Infinity) esc.dur = Math.max(esc.dur, u.s + dur(u) + COLA);
+    else if (desp.length) kk = Math.max(kk, (dur(u) + COLA) / (esc.dur - u.s));
+    else esc.dur = Math.max(esc.dur, u.s + dur(u) + COLA);
+    if (p === Infinity || !desp.length) return;
     k[n] = Math.max(1, kk);
     if (k[n] > 1) {
       const dibujar = esc.draw, kn = k[n];
-      esc.dur *= kn; esc.draw = tt => dibujar(tt / kn);
+      esc.dur = o + (esc.dur - o) * kn;
+      esc.draw = tt => dibujar(tt < o ? tt : o + (tt - o) / kn);
     }
   });
   let ini = 0; const inicios = ESC.map(e => { const a = ini; ini += e.dur; return a; });
-  const pistas = frases.map(f => ({ inicio: inicios[f.escena] + f.s * k[f.escena], datos: f.datos }));
+  const pistas = frases.map(f => {
+    const p = pausa[f.escena] === Infinity ? Infinity : pausa[f.escena], kn = k[f.escena];
+    return { inicio: inicios[f.escena] + (f.s < p ? f.s : p + (f.s - p) * kn), datos: f.datos };
+  });
   console.log('voz: estiramiento por escena', k.map(x => x.toFixed(2)).join(' '), aviso);
   return { pistas, k, aviso };
 }

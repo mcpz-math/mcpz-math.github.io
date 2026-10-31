@@ -1,0 +1,67 @@
+{
+  "video": "cramer",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.4, "texto": "Método de Cramer. Resolver un sistema de dos por dos con determinantes, paso a paso." }
+    ] },
+    { "n": 1, "voz": [
+      { "s": 0.5,  "texto": "Este es el determinante de una matriz dos por dos: a, b, c, d." },
+      { "s": 3,    "texto": "Se multiplica la diagonal principal: a por d." },
+      { "s": 7,    "texto": "Y se le resta el producto de la otra diagonal: b por c." },
+      { "s": 10.4, "texto": "Por ejemplo: siete por menos dos, menos cuatro por cinco, es menos catorce menos veinte, igual a menos treinta y cuatro." }
+    ] },
+    { "n": 2, "voz": [
+      { "s": 0.5, "texto": "Tenemos un sistema de dos ecuaciones con dos incógnitas." },
+      { "s": 2,   "texto": "El determinante principal, delta, usa los coeficientes de x y de ye." },
+      { "s": 6,   "texto": "Para delta x, cambiamos la columna de x por los términos independientes." },
+      { "s": 10,  "texto": "Y para delta ye, cambiamos la columna de ye." },
+      { "s": 13,  "texto": "Entonces x es delta x entre delta, y ye es delta ye entre delta, siempre que delta sea distinto de cero." }
+    ] },
+    { "n": 3, "voz": [
+      { "s": 0.8, "texto": "Uno: ordena las ecuaciones." },
+      { "s": 2.6, "texto": "Dos: calcula el determinante principal." },
+      { "s": 4.4, "texto": "Tres: si delta no es cero, calcula delta x y delta ye." },
+      { "s": 6.2, "texto": "Cuatro: divide entre delta." },
+      { "s": 8,   "texto": "Cinco: comprueba." }
+    ] },
+    { "n": 4, "voz": [
+      { "s": 1.4, "texto": "Ejemplo uno. Paso uno: delta es siete por menos dos, menos cuatro por cinco, igual a menos treinta y cuatro." },
+      { "s": 7.4, "texto": "Paso dos: para delta x, cambiamos la columna de x. Trece por menos dos, menos cuatro por diecinueve, igual a menos ciento dos." },
+      { "s": 14,  "texto": "Paso tres: para delta ye, cambiamos la columna de ye. Siete por diecinueve, menos trece por cinco, igual a sesenta y ocho." },
+      { "s": 21,  "texto": "Paso cuatro: dividimos entre delta. x es menos ciento dos entre menos treinta y cuatro, igual a tres. Y ye es sesenta y ocho entre menos treinta y cuatro, igual a menos dos." },
+      { "s": 28,  "texto": "Paso cinco: comprobamos. Siete por tres, más cuatro por menos dos, es trece. Y cinco por tres, menos dos por menos dos, es diecinueve." }
+    ] },
+    { "n": 5, "voz": [
+      { "s": 1.4,  "texto": "Ejemplo dos, con números negativos. Paso uno: delta es dos por cinco, menos menos tres por tres. Menos con menos es más: diez más nueve, igual a diecinueve." },
+      { "s": 8,    "texto": "Paso dos: delta x es trece por cinco, menos menos tres por menos nueve. Sesenta y cinco menos veintisiete, igual a treinta y ocho." },
+      { "s": 14.6, "texto": "Paso tres: delta ye es dos por menos nueve, menos trece por tres. Menos dieciocho menos treinta y nueve, igual a menos cincuenta y siete." },
+      { "s": 21.6, "texto": "Paso cuatro: x es treinta y ocho entre diecinueve, igual a dos. Y ye es menos cincuenta y siete entre diecinueve, igual a menos tres." },
+      { "s": 28.6, "texto": "Paso cinco: comprobamos. Dos por dos, menos tres por menos tres, es trece. Y tres por dos, más cinco por menos tres, es menos nueve." }
+    ] },
+    { "n": 6, "voz": [
+      { "s": 0.4, "texto": "¿Y si el determinante es cero?" },
+      { "s": 2,   "texto": "El determinante principal es uno por dos, menos uno por dos, igual a cero." },
+      { "s": 6,   "texto": "Si delta es cero, no se puede aplicar Cramer." },
+      { "s": 10,  "texto": "El sistema no tiene solución, o tiene infinitas. Se revisa con otro método, por ejemplo el gráfico." }
+    ] },
+    { "n": 7, "voz": [
+      { "s": 1,   "texto": "Cuidado con estos errores. Primero: delta es a d menos b c. Se restan los productos de las diagonales." },
+      { "s": 4.6, "texto": "Segundo: en delta x se cambia la columna de x, la primera, no la de ye." },
+      { "s": 8.2, "texto": "Tercero: siempre divide entre el determinante principal, delta." }
+    ] },
+    { "n": 8, "pausa": 11.5, "voz": [
+      { "s": 0.8,  "texto": "Ahora tú. Pausa el video y resuelve este sistema por el método de Cramer: tres x más dos ye igual a ocho, y x menos ye igual a uno." },
+      { "s": 11.8, "texto": "Paso uno: delta es tres por menos uno, menos dos por uno, igual a menos cinco." },
+      { "s": 14.2, "texto": "Paso dos: delta x es menos diez, y delta ye es menos cinco." },
+      { "s": 17.2, "texto": "Paso tres: x es menos diez entre menos cinco, igual a dos. Y ye es menos cinco entre menos cinco, igual a uno." }
+    ] },
+    { "n": 9, "voz": [
+      { "s": 0.8, "texto": "Para recordar. Uno: delta es a d menos b c." },
+      { "s": 2.4, "texto": "Dos: si delta es cero, no se puede aplicar Cramer." },
+      { "s": 4,   "texto": "Tres: delta x cambia la columna de x, y delta ye cambia la columna de ye." },
+      { "s": 5.8, "texto": "La solución: x es delta x entre delta, y ye es delta ye entre delta." },
+      { "s": 8,   "texto": "Y comprueba siempre en las dos ecuaciones." }
+    ] }
+  ]
+}
