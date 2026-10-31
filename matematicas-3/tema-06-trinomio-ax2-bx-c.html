@@ -52,7 +52,8 @@
     <ul style="margin:0 0 1rem; padding-left:1.4rem;">
       <li><strong>a puede ser negativo</strong> (como en −x² + 4x − 1): sustitúyelo con su signo. Si el denominador queda negativo, cambia el signo del numerador y del denominador.</li>
       <li>El discriminante ahora usa a: <strong>Δ = b² − 4ac</strong>. Si a y c tienen el mismo signo, −4ac <strong>resta</strong>; si tienen signos diferentes, <strong>suma</strong>.</li>
-      <li>Al final <strong>se simplifica la fracción</strong>: si todos los términos del numerador y el denominador se pueden dividir entre el mismo número, se divide.</li>
+      <li><strong>No hace falta simplificar la raíz</strong>: √24 se puede dejar así. Lo que sí conviene hacer, cuando se puede, es simplificar la fracción: si todos los términos del numerador y el denominador se pueden dividir entre el mismo número, se divide
+          (por ejemplo, (−2 ± 2i) ÷ 4 = (−1 ± i) ÷ 2).</li>
       <li>Si <strong>Δ es un cuadrado perfecto</strong>, las soluciones son <strong>fracciones o enteros</strong> (sin raíz) y el trinomio sí se factoriza con coeficientes enteros.
           Si <strong>Δ = 0</strong>, hay <strong>una sola solución</strong>, repetida. Si Δ no es cuadrado perfecto, hay raíces; si Δ &lt; 0, las soluciones llevan i.</li>
     </ul>
@@ -65,22 +66,21 @@
       Tu navegador no puede reproducir este video.
     </video>
   </div>
-  <p class="video-embed-caption">Video con voz: cómo se obtienen a, b y c cuando a no es 1 (también negativa), cómo se sustituyen en la fórmula, cómo se hacen las operaciones y se simplifica la fracción,
+  <p class="video-embed-caption">Video con voz: cómo se obtienen a, b y c cuando a no es 1 (también negativa), cómo se sustituyen en la fórmula, cómo se hacen las operaciones y cómo se llega a x₁ y x₂,
      con un ejemplo de soluciones reales (2x² − 4x − 1 = 0) y uno de soluciones imaginarias (3x² + 2x + 1 = 0).</p>
 
   <div class="prose">
     <p><strong>Errores comunes:</strong> dividir entre 2 en lugar de entre <strong>2a</strong> (en 2x² + 5x + 2 el denominador es 4, no 2); olvidar a en −4ac; perder el signo de a o de c;
-       simplificar sólo un término del numerador (en <span class="frac frac-inline"><span class="num">2 ± 2√7</span><span class="den">6</span></span> se divide el 2 <strong>y</strong> el 2√7, y también el 6);
+       dividir sólo un término del numerador cuando se simplifica la fracción (en <span class="frac frac-inline"><span class="num">−2 ± 2i</span><span class="den">4</span></span> se dividen el 2, el 2i <strong>y</strong> el 4);
        y, cuando Δ = 0, escribir dos soluciones diferentes.</p>
   </div>
 
   <p class="section-label" id="ejercicios-formula-general-a">Ejercicios: fórmula general con a distinta de 1</p>
   <div class="callout">
     <div class="k">Instrucciones</div>
-    <p>Resuelve cada ecuación <strong>ax² + bx + c = 0</strong> con la fórmula general y contesta en las tres casillas:</p>
-    <p><strong>1.</strong> Escribe el discriminante <strong>Δ = b² − 4ac</strong>.<br>
-       <strong>2.</strong> Escribe las <strong>dos soluciones</strong>, ya simplificadas y en cualquier orden. Si Δ = 0, escribe <strong>la misma solución en las dos casillas</strong>. Si Δ es negativo, usa la <strong>i</strong>.</p>
-    <p>Las fracciones se escriben con <strong>/</strong> (por ejemplo <strong>−1/2</strong> o <strong>(1 + √7)/3</strong>) y la raíz con el botón <strong>√</strong> (por ejemplo <strong>2 + √3</strong>).
+    <p>Resuelve cada ecuación <strong>ax² + bx + c = 0</strong> con la fórmula general (haz el cálculo de Δ en tu cuaderno) y escribe las <strong>dos soluciones</strong>, en cualquier orden.
+       <strong>No hace falta simplificar la raíz</strong>: √24 se puede dejar así. Si Δ = 0, escribe <strong>la misma solución en las dos casillas</strong>. Si Δ es negativo, usa la <strong>i</strong>.</p>
+    <p>Las fracciones se escriben con <strong>/</strong> (por ejemplo <strong>−1/2</strong> o <strong>(4 + √24)/4</strong>) y la raíz con el botón <strong>√</strong> (por ejemplo <strong>(4 + √24)/4</strong>).
        Si Δ es un cuadrado perfecto, las soluciones son números enteros o fracciones, sin raíz. Oprime <strong>Comprobar</strong> (o la tecla Enter).</p>
     <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
   </div>
@@ -126,18 +126,17 @@
       var g = gcd(n, d); n /= g; d /= g; if (d < 0) { n = -n; d = -d; }
       return d === 1 ? sg(n) : (n < 0 ? MINUS : '') + frac(Math.abs(n), d);
     }
-    function radTxt(e, k) { // k√m (con la i si Δ < 0): 2√3, √3 i, 2i, i
-      var t = (k > 1 ? k : '') + (e.m > 1 ? '√' + e.m : '');
-      if (e.D < 0) t += (e.m > 1 ? ' ' : '') + 'i';
-      return t;
+    function numer(B, sign, rad) { // −3 + √5, o sólo ±√5 si B = 0
+      return B === 0 ? (sign > 0 ? '' : MINUS) + rad : sg(B) + ' ' + (sign > 0 ? '+' : MINUS) + ' ' + rad;
     }
-    function rootHTML(e, sign) { // sign +1: la solución con +, −1: la solución con −
-      var s = e.a < 0 ? -1 : 1, bb = e.b * s, A2 = 2 * Math.abs(e.a), op = sign > 0 ? '+' : MINUS;
+    function rootHTML(e, sign) { // sign +1: la solución con +, −1: la solución con −  (la raíz no se simplifica)
+      var s = e.a < 0 ? -1 : 1, bb = e.b * s, A2 = 2 * Math.abs(e.a);
       if (e.kind === 'cero') return ratHTML(-e.b, 2 * e.a);
       if (e.kind === 'rac') return ratHTML(-bb + sign * e.k, A2);
-      var g = gcd(gcd(bb, e.k), A2), B = -bb / g, K = e.k / g, Dn = A2 / g, rad = radTxt(e, K);
-      if (Dn === 1) return B === 0 ? (sign > 0 ? '' : MINUS) + rad : sg(B) + ' ' + op + ' ' + rad;
-      return frac((B === 0 ? (sign > 0 ? '' : MINUS) : sg(B) + ' ' + op + ' ') + rad, Dn);
+      if (e.kind === 'irr') return frac(numer(-bb, sign, '√' + e.D), A2);
+      if (e.m > 1) return frac(numer(-bb, sign, '√' + (-e.D) + ' i'), A2);
+      var g = gcd(gcd(bb, e.k), A2), K = e.k / g, Dn = A2 / g, rad = (K > 1 ? K : '') + 'i'; // |Δ| cuadrado perfecto: 2i, i…
+      return Dn === 1 ? numer(-bb / g, sign, rad) : frac(numer(-bb / g, sign, rad), Dn);
     }
     function ecHTML(e) { // ax² + bx + c = 0
       var s = (e.a < 0 ? MINUS : '') + (Math.abs(e.a) === 1 ? '' : Math.abs(e.a)) + e.L + '²';
@@ -145,26 +144,22 @@
       return s + ' ' + (e.c < 0 ? MINUS : '+') + ' ' + Math.abs(e.c) + ' = 0';
     }
     function explain(e) {
-      var a = e.a, b = e.b, c = e.c, D = e.D, t = [], ac4 = 4 * a * c, den = sg(2 * a);
+      var a = e.a, b = e.b, c = e.c, D = e.D, t = [], ac4 = 4 * a * c, den = sg(2 * a), rd = '√' + (D < 0 ? '(' + sg(D) + ')' : D);
       t.push('a = ' + sg(a) + ', b = ' + sg(b) + ', c = ' + sg(c));
       t.push('Δ = b² − 4ac = (' + sg(b) + ')² − 4(' + sg(a) + ')(' + sg(c) + ') = ' + (b * b) + ' ' + (ac4 > 0 ? MINUS + ' ' + ac4 : '+ ' + (-ac4)) + ' = <strong>' + sg(D) + '</strong>');
       if (e.kind === 'cero') {
-        t.push('Como Δ = 0 no hay raíz que sumar ni restar: ' + e.L + ' = ' + frac(MINUS + '(' + sg(b) + ')', 2 + '(' + sg(a) + ')') + ' = <strong>' + rootHTML(e, 1) + '</strong> (una sola solución, repetida)');
+        t.push('Como Δ = 0 no hay raíz que sumar ni restar: ' + e.L + ' = ' + frac(MINUS + '(' + sg(b) + ')', '2(' + sg(a) + ')') + ' = <strong>' + rootHTML(e, 1) + '</strong> (una sola solución, repetida)');
         return t.join('<br>');
       }
-      t.push(e.L + ' = ' + frac(MINUS + '(' + sg(b) + ') ± √' + (D < 0 ? '(' + sg(D) + ')' : D), 2 + '(' + sg(a) + ')') + ' = ' + frac(sg(-b) + ' ± √' + (D < 0 ? '(' + sg(D) + ')' : D), den));
+      t.push(e.L + ' = ' + frac(MINUS + '(' + sg(b) + ') ± ' + rd, '2(' + sg(a) + ')') + ' = ' + frac(sg(-b) + ' ± ' + rd, den));
       if (e.kind === 'rac') {
         t.push('√' + D + ' = ' + e.k);
         t.push(e.L + '<sub>1</sub> = ' + frac(sg(-b) + ' + ' + e.k, den) + ' = ' + ratHTML(-b + e.k, 2 * a) + ' &nbsp;y&nbsp; ' + e.L + '<sub>2</sub> = ' + frac(sg(-b) + ' − ' + e.k, den) + ' = ' + ratHTML(-b - e.k, 2 * a));
         return t.join('<br>');
       }
-      if (D > 0 && e.k > 1) t.push('√' + D + ' = √(' + (e.k * e.k) + ' · ' + e.m + ') = ' + e.k + '√' + e.m);
-      if (D < 0) t.push('√(' + sg(D) + ') = √' + (-D) + ' · i' + ((e.k > 1 || e.m === 1) ? ' = ' + radTxt(e, e.k) : ''));
-      t.push(e.L + ' = ' + frac(sg(-b) + ' ± ' + radTxt(e, e.k), den));
-      if (a < 0) t.push('El denominador es negativo: dividimos numerador y denominador entre ' + sg(-1) + ' (el ± se vuelve ∓) y queda ' + frac(sg(b) + ' ∓ ' + radTxt(e, e.k), 2 * -a));
-      var bb = b * (a < 0 ? -1 : 1), g = gcd(gcd(bb, e.k), 2 * Math.abs(a));
-      if (g > 1) t.push('Dividimos todos los términos entre ' + g + ' (numerador y denominador): ' + fracI(sg(-bb / g) + ' ± ' + radTxt(e, e.k / g), 2 * Math.abs(a) / g));
-      var r = roots(e); if (a < 0) r = [r[1], r[0]]; // x₁ es la solución con +, que con a negativo es la otra
+      if (D < 0) t.push('√(' + sg(D) + ') = √' + (-D) + ' · i' + (e.m === 1 ? ' = ' + (e.k > 1 ? e.k : '') + 'i' : ''));
+      if (a < 0) t.push('El denominador es negativo: dividimos numerador y denominador entre ' + sg(-1) + ' (el ± se vuelve ∓).');
+      var r = roots(e); if (a < 0) r = [r[1], r[0]]; // x₁ es la solución con +, que con a negativa es la otra
       t.push('<strong>' + e.L + '<sub>1</sub> = ' + rootHTML(e, 1) + '</strong> &nbsp;y&nbsp; <strong>' + e.L + '<sub>2</sub> = ' + rootHTML(e, -1) + '</strong>' + (D > 0 ? ' &nbsp;(≈ ' + sg(r[0].re.toFixed(2)) + ' y ' + sg(r[1].re.toFixed(2)) + ')' : ''));
       return t.join('<br>');
     }
@@ -183,26 +178,24 @@
     function inputHTML(f, label, style) {
       return '<input type="text" data-f="' + f + '" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" style="' + style + '" aria-label="' + label + '">';
     }
-    var NOT_UNDERSTOOD = '<span class="no">No entendí lo que escribiste.</span> Usa números, <strong>√</strong>, <strong>i</strong>, paréntesis y <strong>/</strong> para las fracciones, por ejemplo <strong>−1/2</strong>, <strong>(1 + √7)/3</strong> o <strong>(−1 + i)/2</strong>.';
+    var NOT_UNDERSTOOD = '<span class="no">No entendí lo que escribiste.</span> Usa números, <strong>√</strong>, <strong>i</strong>, paréntesis y <strong>/</strong> para las fracciones, por ejemplo <strong>−1/2</strong>, <strong>(4 + √24)/4</strong> o <strong>(−1 + i)/2</strong>.';
     function makeCard(e, idx) {
       var n = idx + 1, card = document.createElement('div'), BOX = 'flex:1 1 9rem;', R = roots(e);
       var keys = ['√', '(', ')', '+', MINUS, '/', 'i'].map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('');
       card.className = 'practice-card';
       card.innerHTML = '<div class="practice-head"><span class="enum">' + n + '</span><span class="practice-q">' + ecHTML(e) + '</span></div>' +
-        '<div class="practice-ask">1. Discriminante</div>' +
-        '<div class="practice-row"><span class="eq">Δ =</span>' + inputHTML('d', 'Discriminante del ejercicio ' + n, 'flex:0 1 6rem;') + '</div>' +
-        '<div class="practice-ask">2. Las dos soluciones (en cualquier orden)</div>' +
+        '<div class="practice-ask">Las dos soluciones (en cualquier orden)</div>' +
         '<div class="practice-row"><span class="eq">' + e.L + '<sub>1</sub> =</span>' + inputHTML('r1', 'Primera solución del ejercicio ' + n, BOX) + '</div>' +
         '<div class="practice-row" style="margin-top:0.4rem;"><span class="eq">' + e.L + '<sub>2</sub> =</span>' + inputHTML('r2', 'Segunda solución del ejercicio ' + n, BOX) + '</div>' +
         '<div class="practice-keys">' + keys + '</div>' +
         '<div class="practice-row" style="margin-top:0.7rem;"><button type="button" class="practice-check">Comprobar</button></div>' +
         '<div class="practice-fb" aria-live="polite"></div>';
       grid.appendChild(card);
-      var fb = card.querySelector('.practice-fb'), inp = {}, lastIn = 'd';
+      var fb = card.querySelector('.practice-fb'), inp = {}, lastIn = 'r1';
       card.querySelectorAll('input').forEach(function (i) { inp[i.dataset.f] = i; i.addEventListener('focus', function () { lastIn = i.dataset.f; }); });
       card.querySelectorAll('.practice-keys button').forEach(function (b) {
         b.addEventListener('click', function () {
-          var input = inp[lastIn === 'd' ? 'r1' : lastIn];
+          var input = inp[lastIn];
           var s = input.selectionStart == null ? input.value.length : input.selectionStart, e2 = input.selectionEnd == null ? s : input.selectionEnd;
           input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e2);
           input.focus(); input.setSelectionRange(s + b.dataset.k.length, s + b.dataset.k.length);
@@ -213,29 +206,28 @@
           if (close(v, C(-R[q].re, -R[q].im))) return 'Revisa el <strong>signo de −b</strong> (y el signo de a): tu solución es la opuesta de una correcta.';
           if (close(v, C(e.a * R[q].re, e.a * R[q].im))) return 'Recuerda que el denominador es <strong>2a</strong>, no sólo 2.';
         }
-        return 'Revisa la sustitución en x = (−b ± √Δ) ÷ 2a, la simplificación de la raíz y de la fracción.';
+        return 'Revisa la sustitución en x = (−b ± √Δ) ÷ 2a: Δ = b² − 4ac (con los signos de a y de c), el signo de −b y el denominador 2a.';
       }
       function check() {
         card.classList.remove('ok', 'bad');
-        var vd = inp.d.value.trim(), v1 = inp.r1.value.trim(), v2 = inp.r2.value.trim();
-        if (!vd && !v1 && !v2) { fb.innerHTML = 'Escribe tus respuestas en las casillas.'; return; }
-        var d, s1, s2;
-        try { d = vd ? parseExpr(vd) : null; s1 = v1 ? parseExpr(v1) : null; s2 = v2 ? parseExpr(v2) : null; }
+        var v1 = inp.r1.value.trim(), v2 = inp.r2.value.trim();
+        if (!v1 && !v2) { fb.innerHTML = 'Escribe tus respuestas en las casillas.'; return; }
+        var s1, s2;
+        try { s1 = v1 ? parseExpr(v1) : null; s2 = v2 ? parseExpr(v2) : null; }
         catch (x) { card.classList.add('bad'); fb.innerHTML = NOT_UNDERSTOOD; return; }
-        if (!d || !s1 || !s2) { fb.innerHTML = 'Faltan casillas: escribe el discriminante y las dos soluciones.'; return; }
-        var dOk = close(d, C(e.D)), ok1 = close(s1, R[0]) || close(s1, R[1]), ok2 = close(s2, R[0]) || close(s2, R[1]);
+        if (!s1 || !s2) { fb.innerHTML = 'Faltan casillas: escribe las dos soluciones.'; return; }
+        var ok1 = close(s1, R[0]) || close(s1, R[1]), ok2 = close(s2, R[0]) || close(s2, R[1]);
         if (e.kind !== 'cero' && ok1 && ok2 && close(s1, s2)) ok2 = false; // las dos casillas dicen lo mismo
-        if (dOk && ok1 && ok2) {
+        if (ok1 && ok2) {
           card.classList.add('ok'); done[idx] = 1; score();
-          fb.innerHTML = '<span class="yes">✓ ¡Todo correcto!</span><div class="sol">' + (e.kind === 'cero' ? e.L + ' = ' + rootHTML(e, 1) + ' (solución repetida)' : e.L + '<sub>1</sub> = ' + rootHTML(e, 1) + ' &nbsp;y&nbsp; ' + e.L + '<sub>2</sub> = ' + rootHTML(e, -1)) + '</div>';
+          fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span><div class="sol">' + (e.kind === 'cero' ? e.L + ' = ' + rootHTML(e, 1) + ' (solución repetida)' : e.L + '<sub>1</sub> = ' + rootHTML(e, 1) + ' &nbsp;y&nbsp; ' + e.L + '<sub>2</sub> = ' + rootHTML(e, -1)) + '</div>';
           return;
         }
         card.classList.add('bad'); delete done[idx]; score();
         var why = [];
-        if (!dOk) why.push('<strong>Δ:</strong> Δ = b² − 4ac. Cuidado: b² nunca es negativo, y 4ac lleva los signos de a y de c (si a y c tienen signos diferentes, −4ac suma).');
-        if (!ok1) why.push('<strong>' + e.L + '<sub>1</sub>:</strong> ' + (dOk ? matchHint(s1) : 'Primero corrige Δ y vuelve a sustituir.'));
-        if (!ok2) why.push('<strong>' + e.L + '<sub>2</sub>:</strong> ' + (e.kind !== 'cero' && close(s1, s2) ? 'Es la misma que la primera: el ± da <strong>dos</strong> soluciones distintas.' : (dOk ? matchHint(s2) : 'Primero corrige Δ y vuelve a sustituir.')));
-        fb.innerHTML = '<span class="no">✗ Tienes ' + ((dOk ? 1 : 0) + (ok1 ? 1 : 0) + (ok2 ? 1 : 0)) + ' de 3 bien.</span> ' +
+        if (!ok1) why.push('<strong>' + e.L + '<sub>1</sub>:</strong> ' + matchHint(s1));
+        if (!ok2) why.push('<strong>' + e.L + '<sub>2</sub>:</strong> ' + (e.kind !== 'cero' && close(s1, s2) ? 'Es la misma que la primera: el ± da <strong>dos</strong> soluciones distintas.' : matchHint(s2)));
+        fb.innerHTML = '<span class="no">✗ Tienes ' + ((ok1 ? 1 : 0) + (ok2 ? 1 : 0)) + ' de 2 bien.</span> ' +
           why.map(function (w) { return '<div class="sol" style="font-family:inherit;">' + w + '</div>'; }).join('') +
           '<div class="sol">La solución completa:<br>' + explain(e) + '</div>';
       }
@@ -268,16 +260,16 @@
         </thead>
         <tbody>
           <tr>
-            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe a, b y c con su signo, el discriminante, la sustitución, la raíz simplificada y las dos soluciones con la notación correcta (√, i, ±, fracciones).</li><li>Escribe las operaciones del discriminante paso a paso (b², 4ac y su resta), con los signos.</li><li>Explica con sus palabras cómo obtuvo a, b y c y por qué el denominador es 2a.</li></ul></div></td>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe a, b y c con su signo, el discriminante, la sustitución y las dos soluciones con la notación correcta (√, i, ±, fracciones).</li><li>Escribe las operaciones del discriminante paso a paso (b², 4ac y su resta), con los signos.</li><li>Explica con sus palabras cómo obtuvo a, b y c y por qué el denominador es 2a.</li></ul></div></td>
             <td>Escribe sólo un resultado suelto, sin Δ ni sustitución, o con la fórmula mal copiada (sin la raíz o sin el denominador). No usa ningún apoyo.</td>
-            <td colspan="2">Usa la simbología con limitaciones: escribe Δ y las soluciones, pero omite el ±, la i o el 2a del denominador, o no simplifica la raíz o la fracción. Contesta sin explicar.</td>
-            <td>Escribe con la simbología correcta a, b y c, el discriminante con sus operaciones, la sustitución, la raíz y la fracción simplificadas y las dos soluciones, con alguna deficiencia (por ejemplo, un signo ambiguo). Explica con claridad cada paso.</td>
-            <td>Escribe y explica con notación correcta todo el procedimiento (a, b y c, Δ, sustitución, simplificación de la raíz y de la fracción, x₁ y x₂, con i si Δ &lt; 0), por diferentes medios (con la fórmula, con el video y con palabras), y reconstruye el procedimiento en una ecuación nueva.</td>
+            <td colspan="2">Usa la simbología con limitaciones: escribe Δ y las soluciones, pero omite el ±, la i o el 2a del denominador, o no simplifica la fracción cuando se puede. Contesta sin explicar.</td>
+            <td>Escribe con la simbología correcta a, b y c, el discriminante con sus operaciones, la sustitución y las dos soluciones, con alguna deficiencia (por ejemplo, un signo ambiguo). Explica con claridad cada paso.</td>
+            <td>Escribe y explica con notación correcta todo el procedimiento (a, b y c, Δ, sustitución, simplificación de la fracción cuando se puede, x₁ y x₂, con i si Δ &lt; 0), por diferentes medios (con la fórmula, con el video y con palabras), y reconstruye el procedimiento en una ecuación nueva.</td>
           </tr>
           <tr>
-            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Identifica a, b y c con su signo en ax² + bx + c = 0, también con a negativa.</li><li>Calcula Δ = b² − 4ac y la usa para decidir si las soluciones son enteras o fracciones, reales con raíz, una sola repetida o imaginarias.</li><li>Sustituye en x = (−b ± √Δ) ÷ 2a, simplifica la raíz y la fracción y escribe x₁ y x₂.</li></ul></div></td>
+            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Identifica a, b y c con su signo en ax² + bx + c = 0, también con a negativa.</li><li>Calcula Δ = b² − 4ac y la usa para decidir si las soluciones son enteras o fracciones, reales con raíz, una sola repetida o imaginarias.</li><li>Sustituye en x = (−b ± √Δ) ÷ 2a, simplifica la fracción cuando se puede y escribe x₁ y x₂.</li></ul></div></td>
             <td>Conoce la fórmula de memoria, pero confunde a, b y c o la sustituye mal (pierde el signo de −b, usa 2 en lugar de 2a).</td>
-            <td colspan="2">Resuelve los casos sencillos (a positiva, b par, Δ positivo). Le fallan los signos, simplificar la raíz o la fracción, o los casos con Δ negativo o Δ = 0.</td>
+            <td colspan="2">Resuelve los casos sencillos (a positiva, b par, Δ positivo). Le fallan los signos, simplificar la fracción, o los casos con Δ negativo o Δ = 0.</td>
             <td>Comprende y maneja las propiedades: identifica a, b y c en cualquier caso de signos, calcula bien Δ, sustituye con 2a, simplifica y escribe las dos soluciones (reales, repetida o con i), y usa Δ para saber qué clase de soluciones hay.</td>
             <td>Explica que la fórmula resuelve cualquier ecuación cuadrática, relaciona Δ con el tipo de soluciones (cuadrado perfecto: enteras o fracciones y sí se factoriza; Δ = 0: trinomio cuadrado perfecto; Δ &lt; 0: imaginarias) y generaliza el caso a = 1 al caso a distinta de 1.</td>
           </tr>

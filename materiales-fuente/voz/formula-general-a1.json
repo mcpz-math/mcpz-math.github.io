@@ -20,21 +20,22 @@
     { "n": 3, "voz": [
       { "s": 1.2,  "texto": "Ejemplo uno, con soluciones reales: x al cuadrado más cuatro x más uno igual a cero. Paso uno: identificamos a, be y ce. a es uno, be es cuatro y ce es uno." },
       { "s": 6.5,  "texto": "Paso dos: calculamos el discriminante, delta igual a be al cuadrado menos cuatro a ce. Sustituimos: cuatro al cuadrado, menos cuatro por uno por uno." },
-      { "s": 12.5, "texto": "Paso tres: hacemos las operaciones. Cuatro al cuadrado es dieciséis, y cuatro por uno por uno es cuatro. Dieciséis menos cuatro es doce." },
-      { "s": 19,   "texto": "Delta es doce. Es positivo, así que las dos soluciones son reales." }
+      { "s": 12.5, "texto": "Paso tres: hacemos las operaciones. Cuatro al cuadrado es dieciséis, y cuatro por uno por uno es cuatro." },
+      { "s": 17.5, "texto": "Entonces, delta es dieciséis menos cuatro, que es doce." },
+      { "s": 22,   "texto": "Delta es doce. Es positivo, así que las dos soluciones son reales." }
     ] },
     { "n": 4, "voz": [
-      { "s": 1,  "texto": "Paso cuatro: sustituimos en la fórmula. Menos cuatro, más menos raíz de doce, entre dos por uno." },
-      { "s": 8,  "texto": "Paso cinco: simplificamos la raíz. Doce es cuatro por tres, y la raíz de cuatro es dos. Entonces, raíz de doce es dos raíz de tres." },
-      { "s": 15, "texto": "Paso seis: dividimos entre dos. Menos cuatro entre dos es menos dos, y dos raíz de tres entre dos es raíz de tres. Queda menos dos, más menos raíz de tres." },
-      { "s": 23, "texto": "Paso siete: las dos soluciones. x uno es menos dos más raíz de tres, y x dos es menos dos menos raíz de tres." },
-      { "s": 28, "texto": "Aproximadamente, menos cero punto veintisiete y menos tres punto setenta y tres." }
+      { "s": 1,  "texto": "Paso cuatro: sustituimos en la fórmula. Menos cuatro, más menos raíz de doce, entre dos por uno, que es dos." },
+      { "s": 8,  "texto": "Paso cinco: las dos soluciones. Con el más: x uno es menos cuatro más raíz de doce, entre dos. Con el menos: x dos es menos cuatro menos raíz de doce, entre dos." },
+      { "s": 15, "texto": "Aproximadamente, menos cero punto veintisiete y menos tres punto setenta y tres." },
+      { "s": 18, "texto": "No hace falta simplificar la raíz de doce: se puede dejar así." }
     ] },
     { "n": 5, "voz": [
       { "s": 1.2,  "texto": "Ejemplo dos, con soluciones imaginarias: x al cuadrado más cuatro x más cinco igual a cero. Paso uno: a es uno, be es cuatro y ce es cinco." },
       { "s": 6.5,  "texto": "Paso dos: sustituimos en el discriminante. Cuatro al cuadrado, menos cuatro por uno por cinco." },
-      { "s": 12.5, "texto": "Paso tres: cuatro al cuadrado es dieciséis, y cuatro por cinco es veinte. Dieciséis menos veinte es menos cuatro." },
-      { "s": 19,   "texto": "Delta es menos cuatro. Es negativo, así que las soluciones son imaginarias: llevan i." }
+      { "s": 12.5, "texto": "Paso tres: hacemos las operaciones. Cuatro al cuadrado es dieciséis, y cuatro por uno por cinco es veinte." },
+      { "s": 17.5, "texto": "Entonces, delta es dieciséis menos veinte, que es menos cuatro." },
+      { "s": 22,   "texto": "Delta es menos cuatro. Es negativo, así que las soluciones son imaginarias: llevan i." }
     ] },
     { "n": 6, "voz": [
       { "s": 1,  "texto": "Paso cuatro: sustituimos en la fórmula. Menos cuatro, más menos raíz de menos cuatro, entre dos por uno." },
@@ -45,7 +46,7 @@
     { "n": 7, "voz": [
       { "s": 0.8,  "texto": "Para recordar. Uno: identifica a, be y ce con su signo; a es uno aunque no se escriba." },
       { "s": 4.2,  "texto": "Dos: calcula el discriminante, be al cuadrado menos cuatro a ce." },
-      { "s": 7.6,  "texto": "Tres: sustituye en la fórmula y simplifica la raíz." },
+      { "s": 7.6,  "texto": "Tres: sustituye en la fórmula y haz las operaciones." },
       { "s": 11,   "texto": "Cuatro: escribe las dos soluciones, x uno con más y x dos con menos." },
       { "s": 15,   "texto": "Si delta es positivo, las dos soluciones son reales. Si delta es negativo, son imaginarias, con i." }
     ] }
