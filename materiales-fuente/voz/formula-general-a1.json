@@ -1,0 +1,53 @@
+{
+  "video": "formula-general-a1",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.5, "texto": "Fórmula general. Cómo resolver una ecuación de segundo grado, con soluciones reales e imaginarias." }
+    ] },
+    { "n": 1, "voz": [
+      { "s": 0.6, "texto": "Para resolver a x al cuadrado más be x más ce igual a cero, usamos la fórmula general." },
+      { "s": 9,   "texto": "x es igual a menos be, más menos raíz de be al cuadrado menos cuatro a ce, todo entre dos a." },
+      { "s": 14,  "texto": "La fórmula necesita tres números, los coeficientes. a es el coeficiente de x al cuadrado." },
+      { "s": 18,  "texto": "Be es el coeficiente de x." },
+      { "s": 22,  "texto": "Y ce es el número solo, el que no tiene x." }
+    ] },
+    { "n": 2, "voz": [
+      { "s": 1,  "texto": "Veamos cómo se obtienen. En x al cuadrado más cuatro x más uno igual a cero: a es uno, aunque no se escriba; be es cuatro; y ce es uno." },
+      { "s": 9,  "texto": "Con signos: x al cuadrado menos dos x menos siete. a es uno, be es menos dos y ce es menos siete. El signo siempre se queda con el número." },
+      { "s": 17, "texto": "Y en x al cuadrado más cuatro x más cinco: a es uno, be es cuatro y ce es cinco." }
+    ] },
+    { "n": 3, "voz": [
+      { "s": 1.2,  "texto": "Ejemplo uno, con soluciones reales: x al cuadrado más cuatro x más uno igual a cero. Paso uno: identificamos a, be y ce. a es uno, be es cuatro y ce es uno." },
+      { "s": 6.5,  "texto": "Paso dos: calculamos el discriminante, delta igual a be al cuadrado menos cuatro a ce. Sustituimos: cuatro al cuadrado, menos cuatro por uno por uno." },
+      { "s": 12.5, "texto": "Paso tres: hacemos las operaciones. Cuatro al cuadrado es dieciséis, y cuatro por uno por uno es cuatro. Dieciséis menos cuatro es doce." },
+      { "s": 19,   "texto": "Delta es doce. Es positivo, así que las dos soluciones son reales." }
+    ] },
+    { "n": 4, "voz": [
+      { "s": 1,  "texto": "Paso cuatro: sustituimos en la fórmula. Menos cuatro, más menos raíz de doce, entre dos por uno." },
+      { "s": 8,  "texto": "Paso cinco: simplificamos la raíz. Doce es cuatro por tres, y la raíz de cuatro es dos. Entonces, raíz de doce es dos raíz de tres." },
+      { "s": 15, "texto": "Paso seis: dividimos entre dos. Menos cuatro entre dos es menos dos, y dos raíz de tres entre dos es raíz de tres. Queda menos dos, más menos raíz de tres." },
+      { "s": 23, "texto": "Paso siete: las dos soluciones. x uno es menos dos más raíz de tres, y x dos es menos dos menos raíz de tres." },
+      { "s": 28, "texto": "Aproximadamente, menos cero punto veintisiete y menos tres punto setenta y tres." }
+    ] },
+    { "n": 5, "voz": [
+      { "s": 1.2,  "texto": "Ejemplo dos, con soluciones imaginarias: x al cuadrado más cuatro x más cinco igual a cero. Paso uno: a es uno, be es cuatro y ce es cinco." },
+      { "s": 6.5,  "texto": "Paso dos: sustituimos en el discriminante. Cuatro al cuadrado, menos cuatro por uno por cinco." },
+      { "s": 12.5, "texto": "Paso tres: cuatro al cuadrado es dieciséis, y cuatro por cinco es veinte. Dieciséis menos veinte es menos cuatro." },
+      { "s": 19,   "texto": "Delta es menos cuatro. Es negativo, así que las soluciones son imaginarias: llevan i." }
+    ] },
+    { "n": 6, "voz": [
+      { "s": 1,  "texto": "Paso cuatro: sustituimos en la fórmula. Menos cuatro, más menos raíz de menos cuatro, entre dos por uno." },
+      { "s": 8,  "texto": "Paso cinco: sacamos la i de la raíz. Raíz de menos cuatro es raíz de cuatro por i, que es dos i." },
+      { "s": 15, "texto": "Paso seis: dividimos entre dos. Menos cuatro entre dos es menos dos, y dos i entre dos es i. Queda menos dos, más menos i." },
+      { "s": 22, "texto": "Paso siete: las dos soluciones. x uno es menos dos más i, y x dos es menos dos menos i." }
+    ] },
+    { "n": 7, "voz": [
+      { "s": 0.8,  "texto": "Para recordar. Uno: identifica a, be y ce con su signo; a es uno aunque no se escriba." },
+      { "s": 4.2,  "texto": "Dos: calcula el discriminante, be al cuadrado menos cuatro a ce." },
+      { "s": 7.6,  "texto": "Tres: sustituye en la fórmula y simplifica la raíz." },
+      { "s": 11,   "texto": "Cuatro: escribe las dos soluciones, x uno con más y x dos con menos." },
+      { "s": 15,   "texto": "Si delta es positivo, las dos soluciones son reales. Si delta es negativo, son imaginarias, con i." }
+    ] }
+  ]
+}

@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Generador de los videos de la fórmula general</title>
+<!--
+  Genera dos videos de matematicas-3/materiales/:
+    ?v=a1  →  tema-06-formula-general.mp4      (a = 1: cómo obtener a, b y c, sustituir en la fórmula y llegar a x₁ y x₂; soluciones reales e imaginarias)
+    ?v=a2  →  tema-06-formula-general-ax2.mp4  (a distinta de 1, también con soluciones reales e imaginarias)
+  dibujando cada cuadro en un <canvas> (1280×720, 30 cuadros por segundo, estilo "Compás"),
+  lo codifica con WebCodecs (H.264 + AAC) y lo empaqueta en MP4 con mp4-muxer. La voz sale de
+  voz/formula-general-a1.json y voz/formula-general-a2.json (ver generar-voz.ps1 y voz-video.mjs); la música es la de los otros videos.
+  Uso: abrir esta página desde un servidor local (http://localhost:…/materiales-fuente/generar-video-formula-general.html?v=a1) y, en la consola,
+  llamar  await hacerVideo('nombre.mp4', {hw:'prefer-software', br:500000})  o  guardarCuadro(segundos, 'portada.jpg', 'image/jpeg')  para el cartel.
+-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Karla:wght@400;700&display=swap">
+<style>body{margin:0;background:#222}canvas{width:960px;height:540px;display:block}</style>
+</head>
+<body>
+<canvas id="c" width="1280" height="720"></canvas>
+<script type="module">
+import { Muxer, ArrayBufferTarget } from 'https://cdn.jsdelivr.net/npm/mp4-muxer@5.1.3/build/mp4-muxer.mjs';
+import { cargarVoz, mezclar } from './voz-video.mjs';
+
+const W = 1280, H = 720, FPS = 30;
+const ceder = () => new Promise(r => { const c = new MessageChannel(); c.port1.onmessage = () => { c.port1.close(); r(); }; c.port2.postMessage(0); }); // sin temporizadores (el panel oculto los frena)
+const C = { forest:'#14301f', cream:'#f6f3ea', lime:'#c4e86b', blue:'#2f6db5', orange:'#c2621b', red:'#b3261e',
+            green:'#2f7d3b', plum:'#7b3fa0', mute:'#3a6b4a', line:'#d7d2c2', white:'#ffffff' };
+const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+const FM = 'Outfit, "DejaVu Sans", "Segoe UI", sans-serif', FT = 'Karla, "Segoe UI", sans-serif';
+const MINUS = '−', PM = '±', DOT = '·';
+
+// ---------- motor de fórmulas: texto, superíndice, subíndice, fracción apilada y raíz ----------
+const t = (s, c) => ({ t: s, c }), sup = (n, c) => ({ sup: n, c }), sub = (n, c) => ({ sub: n, c });
+const fr = (n, d) => ({ fr: [n, d] }), sq = n => ({ sq: n });
+const bl = s => t(s, C.blue), or = s => t(s, C.orange), pl = s => t(s, C.plum), rd = s => t(s, C.red), gr = s => t(s, C.green);
+const arr = n => Array.isArray(n) ? n : [n];
+let FW = 600;
+function setFont(sz) { ctx.font = `${FW} ${sz}px ${FM}`; }
+function meas(nodes, sz) {
+  let w = 0, asc = sz * .78, desc = 0;
+  for (const n of arr(nodes)) { const r = measOne(n, sz); w += r.w; asc = Math.max(asc, r.asc); desc = Math.max(desc, r.desc); }
+  return { w, asc, desc };
+}
+function measOne(n, sz) {
+  if (Array.isArray(n)) return meas(n, sz);
+  if (typeof n === 'string') n = { t: n };
+  if (n.t !== undefined) { setFont(sz); return { w: ctx.measureText(n.t).width, asc: sz * .78, desc: 0 }; }
+  if (n.sup) { const s = sz * .62, r = meas(n.sup, s); return { w: r.w + sz * .03, asc: sz * .42 + r.asc, desc: 0 }; }
+  if (n.sub) { const s = sz * .62, r = meas(n.sub, s); return { w: r.w + sz * .03, asc: sz * .78, desc: sz * .2 + r.desc }; }
+  if (n.fr) {
+    const s = sz * .85, a = meas(n.fr[0], s), b = meas(n.fr[1], s);
+    return { w: Math.max(a.w, b.w) + sz * .2, asc: sz * .42 + a.asc, desc: Math.max(0, b.asc + b.desc - sz * .18) };
+  }
+  if (n.sq) { const r = meas(n.sq, sz); return { w: r.w + sz * .52, asc: r.asc + sz * .16, desc: Math.max(r.desc, sz * .08) }; }
+  return { w: 0, asc: 0, desc: 0 };
+}
+function drawSeq(nodes, x, y, sz, col) {
+  let w = 0;
+  for (const n of arr(nodes)) w += drawOne(n, x + w, y, sz, col);
+  return w;
+}
+function drawOne(n, x, y, sz, col) {
+  if (Array.isArray(n)) return drawSeq(n, x, y, sz, col);
+  if (typeof n === 'string') n = { t: n };
+  const c = n.c || col;
+  if (n.t !== undefined) { setFont(sz); ctx.fillStyle = c; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; ctx.fillText(n.t, x, y); return ctx.measureText(n.t).width; }
+  if (n.sup) return drawSeq(n.sup, x, y - sz * .42, sz * .62, c) + sz * .03;
+  if (n.sub) return drawSeq(n.sub, x, y + sz * .18, sz * .62, c) + sz * .03;
+  if (n.fr) {
+    const s = sz * .85, a = meas(n.fr[0], s), b = meas(n.fr[1], s), Wd = Math.max(a.w, b.w), x0 = x + sz * .1, axis = y - sz * .3;
+    drawSeq(n.fr[0], x0 + (Wd - a.w) / 2, axis - sz * .12, s, c);
+    drawSeq(n.fr[1], x0 + (Wd - b.w) / 2, axis + sz * .12 + b.asc, s, c);
+    ctx.strokeStyle = c; ctx.lineWidth = Math.max(3, sz * .08); ctx.lineCap = 'butt';
+    ctx.beginPath(); ctx.moveTo(x0 - sz * .04, axis); ctx.lineTo(x0 + Wd + sz * .04, axis); ctx.stroke();
+    return Wd + sz * .2;
+  }
+  if (n.sq) {
+    const inn = meas(n.sq, sz), top = y - inn.asc - sz * .08, bot = y + sz * .06;
+    ctx.strokeStyle = c; ctx.lineWidth = Math.max(2, sz * .06); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(x + sz * .02, y - sz * .28); ctx.lineTo(x + sz * .1, y - sz * .33); ctx.lineTo(x + sz * .22, bot);
+    ctx.lineTo(x + sz * .38, top); ctx.lineTo(x + sz * .42 + inn.w + sz * .08, top); ctx.stroke();
+    drawSeq(n.sq, x + sz * .42, y, sz, c);
+    return inn.w + sz * .52;
+  }
+  return 0;
+}
+// dibuja las fórmulas centradas / alineadas
+function mathAt(nodes, x, y, sz, col = C.forest, align = 'left') {
+  const m = meas(nodes, sz);
+  const x0 = align === 'center' ? x - m.w / 2 : align === 'right' ? x - m.w : x;
+  drawSeq(nodes, x0, y, sz, col);
+  return m;
+}
+function mathMid(nodes, x, ymid, sz, col, align) { // centra verticalmente
+  const m = meas(nodes, sz);
+  mathAt(nodes, x, ymid + (m.asc - m.desc) / 2, sz, col, align);
+  return m;
+}
+
+// ---------- utilidades de dibujo ----------
+const ease = x => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x);
+const fade = (tt, at, d = .6) => ease((tt - at) / d);
+function rr(x, y, w, h, r, fill, stroke, lw = 1.5) {
+  ctx.beginPath(); ctx.roundRect(x, y, w, h, r);
+  if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lw; ctx.stroke(); }
+}
+function txt(s, x, y, sz, col, o = {}) {
+  ctx.font = `${o.w || 400} ${sz}px ${o.f || FT}`; ctx.fillStyle = col; ctx.textAlign = o.align || 'left'; ctx.textBaseline = 'alphabetic';
+  ctx.fillText(s, x, y); return ctx.measureText(s).width;
+}
+function withAlpha(a, fn) { if (a <= 0) return; ctx.save(); ctx.globalAlpha = Math.min(1, a); fn(); ctx.restore(); }
+
+function fondo() {
+  ctx.fillStyle = C.cream; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = 'rgba(196,232,107,.55)'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(150, 0); ctx.lineTo(0, 130); ctx.fill();
+  ctx.fillStyle = 'rgba(196,232,107,.38)'; ctx.beginPath(); ctx.arc(1230, 745, 135, 0, Math.PI * 2); ctx.fill();
+  rr(936, 682, 330, 32, 16, 'rgba(20,48,31,.88)');
+  ctx.fillStyle = C.lime; ctx.beginPath(); ctx.arc(953, 698, 4.5, 0, Math.PI * 2); ctx.fill();
+  txt('DTI. Maria del Carmen Pérez Zarate', 964, 704, 16, '#eef3e6', { w: 700 });
+}
+function titulo(tt, s, y = 72, sz = 44) { withAlpha(fade(tt, .1), () => txt(s, W / 2, y, sz, C.forest, { w: 600, f: FM, align: 'center' })); }
+
+// fila de un paso: tarjeta con explicación a la izquierda y fórmula a la derecha
+function fila(tt, at, y, h, n, expl, math, o = {}) {
+  withAlpha(fade(tt, at), () => {
+    rr(60, y, 1160, h, 14, o.fill || C.white, o.stroke || C.line, o.lw || 1.5);
+    let x = 88;
+    if (n) x += txt(n, x, y + h / 2 + 8, 22, o.lab || C.mute, { w: 600, f: FM }) + 16;
+    txt(expl, x, y + h / 2 + 8, 24, C.forest, { w: o.lime ? 700 : 400 });
+  });
+  if (math) withAlpha(fade(tt, at + 1.3), () => mathMid(math, 1196, y + h / 2, o.sz || 40, C.forest, 'right'));
+}
+const iI = pl('i');
+
+// ---------- cuál de los dos videos se dibuja ----------
+const VIDEO = new URLSearchParams(location.search).get('v') === 'a2' ? 'formula-general-a2' : 'formula-general-a1';
+const ES_A2 = VIDEO.endsWith('a2');
+
+// ---------- escenas ----------
+const ESC = [];
+function escena(dur, draw) { ESC.push({ dur, draw }); }
+const LIME = { fill: C.lime, stroke: C.lime, lime: true };
+const a_ = bl('a'), b_ = pl('b'), c_ = or('c');
+const na = s => bl(s), nb = s => pl(s), nc = s => or(s);   // números de a (azul), de b (morado) y de c (naranja)
+const x1 = ['x', sub('1')], x2 = ['x', sub('2')];
+const FORMULA = ['x = ', fr([MINUS, b_, ' ± ', sq([b_, sup('2', C.plum), ' ' + MINUS + ' 4', a_, c_])], ['2', a_])];
+const ECUACION = [a_, 'x', sup('2'), ' + ', b_, 'x + ', c_, ' = 0'];
+
+// portada
+function portada(sub1, sub2) {
+  escena(6, tt => {
+    withAlpha(fade(tt, .2), () => txt('MATEMÁTICAS 3  ·  TEMA 6', W / 2, 170, 22, C.mute, { w: 700, align: 'center' }));
+    withAlpha(fade(tt, .5), () => txt('Fórmula general', W / 2, 270, 78, C.forest, { w: 700, f: FM, align: 'center' }));
+    withAlpha(fade(tt, 1.2), () => txt(sub1, W / 2, 346, 36, C.forest, { w: 600, f: FM, align: 'center' }));
+    withAlpha(fade(tt, 1.8), () => { ctx.fillStyle = C.lime; ctx.fillRect(W / 2 - 130, 380, 260, 6); });
+    withAlpha(fade(tt, 2.4), () => mathAt(FORMULA, W / 2, 520, 56, C.forest, 'center'));
+    withAlpha(fade(tt, 3.4), () => txt(sub2, W / 2, 640, 28, C.forest, { align: 'center' }));
+  });
+}
+
+// fila: ecuación → valores de a, b y c
+function filaABC(tt, at, y, eq, a, b, c, nota) {
+  withAlpha(fade(tt, at), () => {
+    rr(60, y, 1160, 150, 16, C.white, C.line);
+    mathMid(eq, 96, y + 56, 46, C.forest);
+    txt('→', 520, y + 70, 40, C.mute, { w: 600, f: FM });
+  });
+  withAlpha(fade(tt, at + 1.4), () => mathMid([a_, ' = ', na(a), '      ', b_, ' = ', nb(b), '      ', c_, ' = ', nc(c)], 590, y + 56, 42, C.forest));
+  if (nota) withAlpha(fade(tt, at + 3), () => txt(nota, 96, y + 122, 24, C.mute, { w: 700 }));
+}
+
+// recuadro de conclusión (verde)
+function aviso(tt, at, y, h, t1, t2) {
+  withAlpha(fade(tt, at), () => {
+    rr(60, y, 1160, h, 18, C.lime);
+    txt(t1, W / 2, y + 44, 34, C.forest, { w: 700, f: FM, align: 'center' });
+    if (t2) txt(t2, W / 2, y + 82, 26, C.forest, { align: 'center' });
+  });
+}
+
+// "Para recordar"
+function recordar(puntos, regla1, regla2) {
+  escena(24, tt => {
+    titulo(tt, 'Para recordar');
+    puntos.forEach((p, k) => withAlpha(fade(tt, .8 + k * 3.4), () => {
+      const y = 104 + k * 80;
+      rr(60, y, 1160, 68, 14, C.white, C.line);
+      ctx.fillStyle = C.forest; ctx.beginPath(); ctx.arc(104, y + 34, 21, 0, Math.PI * 2); ctx.fill();
+      txt(String(k + 1), 104, y + 43, 24, C.lime, { w: 700, f: FM, align: 'center' });
+      txt(p, 148, y + 43, 26, C.forest);
+    }));
+    withAlpha(fade(tt, 15), () => {
+      rr(60, 440, 1160, 190, 18, C.lime);
+      txt('EL DISCRIMINANTE Δ = b² − 4ac', 96, 480, 20, C.forest, { w: 700 });
+      txt(regla1, 96, 540, 32, C.forest, { w: 700, f: FM });
+      txt(regla2, 96, 590, 32, C.forest, { w: 700, f: FM });
+    });
+  });
+}
+
+if (!ES_A2) {
+  // ============================ VIDEO 1: a = 1, valores reales e imaginarios ============================
+  portada('Valores reales e imaginarios', 'Cómo obtener a, b y c, sustituir y llegar a x₁ y x₂');
+
+  // 1. ¿Qué necesitamos?
+  escena(28, tt => {
+    titulo(tt, 'Resolver ax² + bx + c = 0');
+    withAlpha(fade(tt, .6), () => mathAt(ECUACION, W / 2, 190, 64, C.forest, 'center'));
+    withAlpha(fade(tt, 9), () => mathAt(FORMULA, W / 2, 360, 60, C.forest, 'center'));
+    const tarjeta = (at, x, col, letra, texto) => withAlpha(fade(tt, at), () => {
+      rr(x, 470, 360, 130, 16, C.white, col, 3);
+      txt(letra, x + 30, 540, 56, col, { w: 700, f: FM });
+      txt(texto[0], x + 90, 524, 24, C.forest, { w: 700 }); txt(texto[1], x + 90, 556, 24, C.forest);
+    });
+    tarjeta(14, 60, C.blue, 'a', ['coeficiente', 'de x²']);
+    tarjeta(18, 460, C.plum, 'b', ['coeficiente', 'de x']);
+    tarjeta(22, 860, C.orange, 'c', ['número solo', '(sin x)']);
+  });
+
+  // 2. Cómo se obtienen a, b y c
+  escena(26, tt => {
+    titulo(tt, 'Cómo se obtienen a, b y c');
+    filaABC(tt, 1, 110, ['x', sup('2'), ' + 4x + 1 = 0'], '1', '4', '1', 'a = 1: el coeficiente de x² es 1 aunque no se escriba');
+    filaABC(tt, 9, 275, ['x', sup('2'), ' ' + MINUS + ' 2x ' + MINUS + ' 7 = 0'], '1', MINUS + '2', MINUS + '7', 'el signo se queda con el número');
+    filaABC(tt, 17, 440, ['x', sup('2'), ' + 4x + 5 = 0'], '1', '4', '5', null);
+  });
+
+  // 3. Ejemplo 1 (reales), parte 1
+  escena(26, tt => {
+    titulo(tt, 'Ejemplo 1 · soluciones reales', 60, 34);
+    withAlpha(fade(tt, .3), () => mathAt(['x', sup('2'), ' + ', nb('4'), 'x + ', nc('1'), ' = 0'], W / 2, 150, 60, C.forest, 'center'));
+    const o = { sz: 38 }, h = 92, y0 = 190, g = 12;
+    fila(tt, 1.2, y0, h, 'Paso 1.', 'Identifica a, b y c:', [a_, ' = ', na('1'), '      ', b_, ' = ', nb('4'), '      ', c_, ' = ', nc('1')], o);
+    fila(tt, 6.5, y0 + (h + g), h, 'Paso 2.', 'Sustituye en Δ = b² − 4ac:', ['Δ = (', nb('4'), ')', sup('2'), ' ' + MINUS + ' 4(', na('1'), ')(', nc('1'), ')'], o);
+    fila(tt, 12.5, y0 + 2 * (h + g), h, 'Paso 3.', 'Haz las operaciones:', ['Δ = 16 ' + MINUS + ' 4 = 12'], o);
+    aviso(tt, 19, 520, 110, 'Δ = 12 es positivo', 'tiene dos soluciones reales');
+  });
+
+  // 4. Ejemplo 1 (reales), parte 2
+  escena(34, tt => {
+    titulo(tt, 'Ejemplo 1 · x² + 4x + 1 = 0', 56, 34);
+    const o = { sz: 36 }, h = 104, y0 = 90, g = 8;
+    fila(tt, 1, y0, h, 'Paso 4.', 'Sustituye en la fórmula:', ['x = ', fr([MINUS + '(', nb('4'), ') ± ', sq(['12'])], ['2(', na('1'), ')'])], o);
+    fila(tt, 8, y0 + (h + g), h, 'Paso 5.', 'Simplifica la raíz:', [sq(['12']), ' = ', sq(['4 ' + DOT + ' 3']), ' = 2', sq(['3'])], o);
+    fila(tt, 15, y0 + 2 * (h + g), h, 'Paso 6.', 'Divide entre 2:', ['x = ', fr([MINUS + '4 ± 2', sq(['3'])], ['2']), ' = ', MINUS + '2 ± ', sq(['3'])], o);
+    fila(tt, 23, y0 + 3 * (h + g), h + 20, 'Paso 7.', 'Las dos soluciones:', [x1, ' = ', MINUS + '2 + ', sq(['3']), '       ', x2, ' = ', MINUS + '2 − ', sq(['3'])], Object.assign({}, o, LIME));
+    withAlpha(fade(tt, 28), () => txt('x₁ ≈ −0.27     x₂ ≈ −3.73', W / 2, 620, 28, C.mute, { w: 700, align: 'center' }));
+  });
+
+  // 5. Ejemplo 2 (imaginarias), parte 1
+  escena(26, tt => {
+    titulo(tt, 'Ejemplo 2 · soluciones imaginarias', 60, 34);
+    withAlpha(fade(tt, .3), () => mathAt(['x', sup('2'), ' + ', nb('4'), 'x + ', nc('5'), ' = 0'], W / 2, 150, 60, C.forest, 'center'));
+    const o = { sz: 38 }, h = 92, y0 = 190, g = 12;
+    fila(tt, 1.2, y0, h, 'Paso 1.', 'Identifica a, b y c:', [a_, ' = ', na('1'), '      ', b_, ' = ', nb('4'), '      ', c_, ' = ', nc('5')], o);
+    fila(tt, 6.5, y0 + (h + g), h, 'Paso 2.', 'Sustituye en Δ = b² − 4ac:', ['Δ = (', nb('4'), ')', sup('2'), ' ' + MINUS + ' 4(', na('1'), ')(', nc('5'), ')'], o);
+    fila(tt, 12.5, y0 + 2 * (h + g), h, 'Paso 3.', 'Haz las operaciones:', ['Δ = 16 ' + MINUS + ' 20 = ' + MINUS + '4'], o);
+    aviso(tt, 19, 520, 110, 'Δ = −4 es negativo', 'las soluciones son imaginarias (llevan i)');
+  });
+
+  // 6. Ejemplo 2 (imaginarias), parte 2
+  escena(34, tt => {
+    titulo(tt, 'Ejemplo 2 · x² + 4x + 5 = 0', 56, 34);
+    const o = { sz: 36 }, h = 104, y0 = 90, g = 8;
+    fila(tt, 1, y0, h, 'Paso 4.', 'Sustituye en la fórmula:', ['x = ', fr([MINUS + '(', nb('4'), ') ± ', sq([MINUS + '4'])], ['2(', na('1'), ')'])], o);
+    fila(tt, 8, y0 + (h + g), h, 'Paso 5.', 'Saca la i de la raíz:', [sq([MINUS + '4']), ' = ', sq(['4']), ' ' + DOT + ' ', iI, ' = 2', iI], o);
+    fila(tt, 15, y0 + 2 * (h + g), h, 'Paso 6.', 'Divide entre 2:', ['x = ', fr([MINUS + '4 ± 2', iI], ['2']), ' = ', MINUS + '2 ± ', iI], o);
+    fila(tt, 22, y0 + 3 * (h + g), h + 20, 'Paso 7.', 'Las dos soluciones:', [x1, ' = ', MINUS + '2 + ', iI, '       ', x2, ' = ', MINUS + '2 − ', iI], Object.assign({}, o, LIME));
+  });
+
+  recordar(['Identifica a, b y c con su signo (a = 1 aunque no se escriba).', 'Calcula el discriminante: Δ = b² − 4ac.', 'Sustituye en x = (−b ± √Δ) ÷ 2a y simplifica la raíz.', 'Escribe las dos soluciones, x₁ (con +) y x₂ (con −).'],
+    'Δ > 0  →  dos soluciones reales', 'Δ < 0  →  dos soluciones imaginarias (con i)');
+} else {
+  // ============================ VIDEO 2: a distinta de 1, valores reales e imaginarios ============================
+  portada('Cuando a no es 1', 'Cómo obtener a, b y c, sustituir y llegar a x₁ y x₂');
+
+  // 1. Lo que cambia
+  escena(24, tt => {
+    titulo(tt, '¿Qué cambia cuando a no es 1?');
+    withAlpha(fade(tt, .6), () => mathAt(FORMULA, W / 2, 210, 70, C.forest, 'center'));
+    const p = (at, y, n, texto) => withAlpha(fade(tt, at), () => {
+      rr(60, y, 1160, 84, 14, C.white, C.line);
+      ctx.fillStyle = C.forest; ctx.beginPath(); ctx.arc(106, y + 42, 22, 0, Math.PI * 2); ctx.fill();
+      txt(String(n), 106, y + 51, 25, C.lime, { w: 700, f: FM, align: 'center' });
+      txt(texto, 148, y + 52, 27, C.forest);
+    });
+    p(4, 310, 1, 'a puede ser distinta de 1, y hasta negativa.');
+    p(9, 410, 2, 'El denominador es 2a (no sólo 2).');
+    p(14, 510, 3, 'Al final se simplifica la fracción.');
+  });
+
+  // 2. Cómo se obtienen a, b y c
+  escena(30, tt => {
+    titulo(tt, 'Cómo se obtienen a, b y c');
+    filaABC(tt, 1, 110, ['2x', sup('2'), ' ' + MINUS + ' 4x ' + MINUS + ' 1 = 0'], '2', MINUS + '4', MINUS + '1', 'a es el número que multiplica a x²');
+    filaABC(tt, 10, 275, ['3x', sup('2'), ' + 2x + 1 = 0'], '3', '2', '1', 'el signo se queda con el número');
+    filaABC(tt, 19, 440, [MINUS + 'x', sup('2'), ' + 4x ' + MINUS + ' 1 = 0'], MINUS + '1', '4', MINUS + '1', 'el signo menos delante de x² es a = −1');
+  });
+
+  // 3. Ejemplo 1 (reales), parte 1
+  escena(34, tt => {
+    titulo(tt, 'Ejemplo 1 · soluciones reales', 60, 34);
+    withAlpha(fade(tt, .3), () => mathAt([na('2'), 'x', sup('2'), ' ' + MINUS + ' ', nb('4'), 'x ' + MINUS + ' ', nc('1'), ' = 0'], W / 2, 150, 60, C.forest, 'center'));
+    const o = { sz: 36 }, h = 92, y0 = 190, g = 12;
+    fila(tt, 1.2, y0, h, 'Paso 1.', 'Identifica a, b y c:', [a_, ' = ', na('2'), '     ', b_, ' = ', nb(MINUS + '4'), '     ', c_, ' = ', nc(MINUS + '1')], o);
+    fila(tt, 7, y0 + (h + g), h, 'Paso 2.', 'Sustituye en Δ = b² − 4ac:', ['Δ = (', nb(MINUS + '4'), ')', sup('2'), ' ' + MINUS + ' 4(', na('2'), ')(', nc(MINUS + '1'), ')'], o);
+    fila(tt, 15, y0 + 2 * (h + g), h, 'Paso 3.', 'Haz las operaciones:', ['Δ = 16 + 8 = 24'], o);
+    aviso(tt, 24, 520, 110, 'Δ = 24 es positivo', 'tiene dos soluciones reales');
+  });
+
+  // 4. Ejemplo 1 (reales), parte 2
+  escena(46, tt => {
+    titulo(tt, 'Ejemplo 1 · 2x² − 4x − 1 = 0', 52, 32);
+    const o = { sz: 32 }, h = 100, y0 = 84, g = 6;
+    fila(tt, 1, y0, h, 'Paso 4.', 'Sustituye en la fórmula:', ['x = ', fr([MINUS + '(', nb(MINUS + '4'), ') ± ', sq(['24'])], ['2(', na('2'), ')']), ' = ', fr(['4 ± ', sq(['24'])], ['4'])], o);
+    fila(tt, 9, y0 + (h + g), h, 'Paso 5.', 'Simplifica la raíz:', [sq(['24']), ' = ', sq(['4 ' + DOT + ' 6']), ' = 2', sq(['6'])], o);
+    fila(tt, 16, y0 + 2 * (h + g), h, 'Paso 6.', 'Escribe la raíz simplificada:', ['x = ', fr(['4 ± 2', sq(['6'])], ['4'])], o);
+    fila(tt, 23, y0 + 3 * (h + g), h, 'Paso 7.', 'Divide numerador y denominador entre 2:', ['x = ', fr(['2 ± ', sq(['6'])], ['2'])], o);
+    fila(tt, 31, y0 + 4 * (h + g), h + 24, 'Paso 8.', 'Las dos soluciones:', [x1, ' = ', fr(['2 + ', sq(['6'])], ['2']), '      ', x2, ' = ', fr(['2 − ', sq(['6'])], ['2'])], Object.assign({}, o, LIME));
+    withAlpha(fade(tt, 36), () => txt('x₁ ≈ 2.22     x₂ ≈ −0.22', W / 2, 680, 24, C.mute, { w: 700, align: 'center' }));
+  });
+
+  // 5. Ejemplo 2 (imaginarias), parte 1
+  escena(30, tt => {
+    titulo(tt, 'Ejemplo 2 · soluciones imaginarias', 60, 34);
+    withAlpha(fade(tt, .3), () => mathAt([na('3'), 'x', sup('2'), ' + ', nb('2'), 'x + ', nc('1'), ' = 0'], W / 2, 150, 60, C.forest, 'center'));
+    const o = { sz: 36 }, h = 92, y0 = 190, g = 12;
+    fila(tt, 1.2, y0, h, 'Paso 1.', 'Identifica a, b y c:', [a_, ' = ', na('3'), '     ', b_, ' = ', nb('2'), '     ', c_, ' = ', nc('1')], o);
+    fila(tt, 7, y0 + (h + g), h, 'Paso 2.', 'Sustituye en Δ = b² − 4ac:', ['Δ = (', nb('2'), ')', sup('2'), ' ' + MINUS + ' 4(', na('3'), ')(', nc('1'), ')'], o);
+    fila(tt, 14, y0 + 2 * (h + g), h, 'Paso 3.', 'Haz las operaciones:', ['Δ = 4 ' + MINUS + ' 12 = ' + MINUS + '8'], o);
+    aviso(tt, 21, 520, 110, 'Δ = −8 es negativo', 'las soluciones son imaginarias (llevan i)');
+  });
+
+  // 6. Ejemplo 2 (imaginarias), parte 2
+  escena(46, tt => {
+    titulo(tt, 'Ejemplo 2 · 3x² + 2x + 1 = 0', 52, 32);
+    const o = { sz: 32 }, h = 100, y0 = 84, g = 6;
+    fila(tt, 1, y0, h, 'Paso 4.', 'Sustituye en la fórmula:', ['x = ', fr([MINUS + '(', nb('2'), ') ± ', sq([MINUS + '8'])], ['2(', na('3'), ')']), ' = ', fr([MINUS + '2 ± ', sq([MINUS + '8'])], ['6'])], o);
+    fila(tt, 9, y0 + (h + g), h, 'Paso 5.', 'Saca la i de la raíz:', [sq([MINUS + '8']), ' = ', sq(['4 ' + DOT + ' 2']), ' ' + DOT + ' ', iI, ' = 2', sq(['2']), ' ', iI], o);
+    fila(tt, 17, y0 + 2 * (h + g), h, 'Paso 6.', 'Escribe la raíz simplificada:', ['x = ', fr([MINUS + '2 ± 2', sq(['2']), ' ', iI], ['6'])], o);
+    fila(tt, 24, y0 + 3 * (h + g), h, 'Paso 7.', 'Divide numerador y denominador entre 2:', ['x = ', fr([MINUS + '1 ± ', sq(['2']), ' ', iI], ['3'])], o);
+    fila(tt, 32, y0 + 4 * (h + g), h + 24, 'Paso 8.', 'Las dos soluciones:', [x1, ' = ', fr([MINUS + '1 + ', sq(['2']), ' ', iI], ['3']), '     ', x2, ' = ', fr([MINUS + '1 − ', sq(['2']), ' ', iI], ['3'])], Object.assign({}, o, LIME));
+  });
+
+  recordar(['Identifica a, b y c con su signo (a es el número que multiplica a x²).', 'Calcula el discriminante: Δ = b² − 4ac.', 'Sustituye en x = (−b ± √Δ) ÷ 2a; el denominador es 2a.', 'Simplifica la raíz y la fracción, y escribe x₁ y x₂.'],
+    'Δ > 0  →  dos soluciones reales', 'Δ < 0  →  dos soluciones imaginarias (con i)');
+}
+
+// voz en off (guion en voz/<video>.json): alarga las escenas para que alcance a hablar
+const VOZ = await cargarVoz(VIDEO, ESC);
+const TOTAL = ESC.reduce((s, e) => s + e.dur, 0);
+const FADE = .35;
+function dibujarEn(T) {
+  T = Math.max(0, Math.min(T, TOTAL - 1e-6));
+  let a = 0, i = 0;
+  while (i < ESC.length - 1 && T >= a + ESC[i].dur) { a += ESC[i].dur; i++; }
+  const tt = T - a, d = ESC[i].dur;
+  fondo(); ctx.save(); ESC[i].draw(tt); ctx.restore();
+  const o = Math.max(1 - tt / FADE, 1 - (d - tt) / FADE, 0);
+  if (o > 0) { ctx.fillStyle = `rgba(246,243,234,${Math.min(1, o)})`; ctx.fillRect(0, 0, W, H); }
+}
+function inicioDeEscena(n) { let a = 0; for (let i = 0; i < n; i++) a += ESC[i].dur; return a; }
+
+async function cargarFuentes() {
+  await Promise.all([
+    document.fonts.load('600 40px Outfit', 'x²−±√áéíóú·→'), document.fonts.load('700 40px Outfit', 'x²−±√áéíóú'),
+    document.fonts.load('400 24px Karla', 'x²−±√áéíóú'), document.fonts.load('700 24px Karla', 'x²−±√áéíóú')
+  ]);
+}
+async function subir(nombre, blob) { await fetch('/subir/' + nombre, { method: 'POST', body: blob }); }
+async function guardarCuadro(T, nombre, tipo = 'image/png') {
+  dibujarEn(T);
+  const b = await new Promise(r => cv.toBlob(r, tipo, .92));
+  await subir(nombre, b);
+}
+
+// ---------- codificación ----------
+async function hacerVideo(nombre = 'video.mp4', opc = {}) {
+  const DUR = opc.seg || TOTAL, QP = opc.qp || 0, HW = opc.hw || 'no-preference';
+  await cargarFuentes();
+  window.estado = 'cargando audio';
+  const SR = 48000;
+  const ac = new AudioContext({ sampleRate: SR });
+  const src = await ac.decodeAudioData(await (await fetch('/materiales-fuente/musica-bach.mp4')).arrayBuffer());
+  const N = Math.round(DUR * SR), ch = [src.getChannelData(0), src.getChannelData(1)];
+  const pcm = mezclar(DUR, ch, VOZ ? VOZ.pistas : []); // música en bucle + voz (la música baja al hablar)
+
+  const muxer = new Muxer({ target: new ArrayBufferTarget(), fastStart: 'in-memory',
+    video: { codec: 'avc', width: W, height: H, frameRate: FPS }, audio: { codec: 'aac', numberOfChannels: 2, sampleRate: SR } });
+  const ve = new VideoEncoder({ output: (c, m) => muxer.addVideoChunk(c, m), error: e => { window.estado = 'error video ' + e; } });
+  ve.configure({ codec: 'avc1.640028', width: W, height: H, bitrate: opc.br || 700000, bitrateMode: opc.mode || 'variable', framerate: FPS, hardwareAcceleration: HW });
+  const ae = new AudioEncoder({ output: (c, m) => muxer.addAudioChunk(c, m), error: e => { window.estado = 'error audio ' + e; } });
+  ae.configure({ codec: 'mp4a.40.2', sampleRate: SR, numberOfChannels: 2, bitrate: 96000 });
+  const NF = Math.round(DUR * FPS);
+  for (let f = 0; f < NF; f++) {
+    dibujarEn(f / FPS);
+    const bm = await createImageBitmap(cv); // copia fija del cuadro ya dibujado
+    const vf = new VideoFrame(bm, { timestamp: Math.round(f * 1e6 / FPS), duration: Math.round(1e6 / FPS) }); bm.close();
+    ve.encode(vf, QP ? { keyFrame: f % 150 === 0, avc: { quantizer: QP } } : { keyFrame: f % 150 === 0 }); vf.close();
+    while (ve.encodeQueueSize > 12) await ceder();
+    if (f % 150 === 0) { window.estado = 'video ' + f + '/' + NF; await new Promise(r => setTimeout(r, 0)); }
+  }
+  window.estado = 'audio';
+  const CH = SR; // 1 s por bloque
+  for (let s = 0; s < N; s += CH) {
+    const n = Math.min(CH, N - s), data = new Float32Array(n * 2);
+    data.set(pcm[0].subarray(s, s + n), 0); data.set(pcm[1].subarray(s, s + n), n);
+    const ad = new AudioData({ format: 'f32-planar', sampleRate: SR, numberOfFrames: n, numberOfChannels: 2, timestamp: Math.round(s * 1e6 / SR), data });
+    ae.encode(ad); ad.close();
+  }
+  await ve.flush(); await ae.flush(); muxer.finalize();
+  const buf = muxer.target.buffer;
+  window.estado = 'subiendo ' + buf.byteLength;
+  await subir(nombre, new Blob([buf], { type: 'video/mp4' }));
+  window.estado = 'listo ' + buf.byteLength;
+  return buf.byteLength;
+}
+
+Object.assign(window, { dibujarEn, guardarCuadro, hacerVideo, cargarFuentes, TOTAL, inicioDeEscena, ESC });
+await cargarFuentes();
+dibujarEn(0);
+window.listo = true;
+</script>
+</body>
+</html>

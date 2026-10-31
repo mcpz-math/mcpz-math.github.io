@@ -1429,7 +1429,7 @@
         "Al menos un ejercicio con c positivo (b positivo y b negativo), uno con c negativo y uno que no se puede factorizar con enteros.",
         "La comprobación: multiplicar los dos binomios y obtener el trinomio original.",
         "La explicación (oral o escrita) de por qué los números deben tener producto c y suma b, y de cómo se eligen sus signos.",
-        "Los ejercicios al azar de la fórmula general (primero con a = 1 y después con a distinta de 1), resueltos en el cuaderno: a, b y c con su signo, el discriminante Δ = b² − 4ac, la sustitución en la fórmula, la raíz y la fracción simplificadas y las dos soluciones (con i cuando Δ es negativo).",
+        "Los ejercicios al azar de la fórmula general (con a = 1), resueltos en el cuaderno: b y c con su signo, el discriminante Δ = b² − 4c, la sustitución en la fórmula, la raíz simplificada y las dos soluciones (con i cuando Δ es negativo).",
         "La explicación (oral o escrita) de por qué hace falta la fórmula general: los pares sólo dan soluciones enteras y la fórmula siempre funciona; y de qué dice el discriminante sobre las soluciones."
       ],
       "errores": [
@@ -1441,7 +1441,7 @@
         "No comprueba multiplicando los binomios, por lo que no detecta sus errores.",
         "Con la fórmula general: pierde el signo de −b (con b = −2 usa −2 en lugar de 2) o calcula (−2)² como −4.",
         "Con la fórmula general: en x² − 2x − 7 calcula Δ = 4 − 28 en lugar de 4 + 28 (no ve que −4c suma cuando c es negativo).",
-        "Divide entre 2 sólo un término del numerador, deja √12 sin simplificar u olvida el ± y escribe una sola solución. Con a distinta de 1 divide entre 2 en lugar de entre 2a, olvida la a en −4ac o no simplifica la fracción.",
+        "Divide entre 2 sólo un término del numerador, deja √12 sin simplificar u olvida el ± y escribe una sola solución.",
         "Con Δ negativo escribe «no hay solución» o una raíz de un número negativo sin pasar a la i."
       ],
       "rows": [
@@ -1475,7 +1475,7 @@
             "Identifica b y c con su signo en x² + bx + c, y los usa para buscar p y q (p · q = c, p + q = b).",
             "Decide los signos de p y q a partir de los signos de b y de c.",
             "Factoriza como (x + p)(x + q), distingue el caso del TCP (p = q) y reconoce cuando no se puede factorizar con enteros.",
-            "Cuando no se puede factorizar con enteros, resuelve ax² + bx + c = 0 con la fórmula general (primero con a = 1 y después con a distinta de 1, incluso negativa): calcula Δ = b² − 4ac, sustituye con el denominador 2a, simplifica la raíz y la fracción y escribe las dos soluciones (con i si Δ < 0; una sola si Δ = 0)."
+            "Cuando no se puede factorizar con enteros, resuelve x² + bx + c = 0 con la fórmula general (a = 1): calcula Δ = b² − 4c, sustituye, simplifica la raíz y escribe las dos soluciones (con i si Δ < 0)."
           ],
           "n1": "Conoce la regla de memoria («dos números que...») pero confunde b con c, o busca números que sólo cumplen una de las dos condiciones. Conoce la fórmula general de memoria, pero la sustituye mal (confunde b con c o pierde el signo de −b).",
           "n23": "Factoriza los casos sencillos (b y c positivos). Le fallan los casos con signos negativos, c negativo o números grandes, o no distingue cuándo no se puede factorizar. Con la fórmula general resuelve los casos sencillos (b par, Δ positivo); le fallan los signos, simplificar la raíz o los casos con Δ negativo.",
@@ -1495,6 +1495,65 @@
           "n3": "Valida con ejemplos: factoriza varios trinomios y comprueba cada uno multiplicando; da ejemplos y no-ejemplos de trinomios que sí y que no se factorizan. Con la fórmula general verifica con un ejemplo que da lo mismo que los pares (x² + 7x + 12).",
           "n4": "Explica la estructura del argumento: que p · q = c y p + q = b son las condiciones y que (x + p)(x + q) es la conclusión; comprueba sus resultados y, cuando dice que no se factoriza, muestra que revisó todos los pares. Explica que la fórmula siempre funciona, y que si Δ es cuadrado perfecto las soluciones son enteras y el trinomio sí se factoriza con enteros.",
           "n5": "Elabora una cadena de argumentos que generaliza: demuestra con la multiplicación de binomios por qué factorizar x² + bx + c es buscar p y q con p + q = b y p · q = c, y relaciona los signos, el TCP y la diferencia de cuadrados con la regla. Deduce la fórmula general completando el cuadrado y justifica con el discriminante cuándo hay soluciones enteras, reales con raíz o imaginarias."
+        }
+      ]
+    },
+    {
+      "id": "trinomioaxbc",
+      "titulo": "Matemáticas 3 · Tema 6 · Trinomio ax² + bx + c: fórmula general",
+      "file": "matematicas-3/tema-06-trinomio-ax2-bx-c.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página, resueltos en el cuaderno con el procedimiento: a, b y c con su signo, Δ = b² − 4ac con sus operaciones, la sustitución con el denominador 2a, la raíz simplificada, la fracción simplificada y las dos soluciones.",
+        "Al menos un ejercicio con Δ cuadrado perfecto (soluciones enteras o fracciones), uno con raíz, uno con Δ negativo (con i), uno con a negativa y uno con Δ = 0.",
+        "La explicación (oral o escrita) de qué cambia cuando a no es 1 (el denominador es 2a, a puede ser negativa, se simplifica la fracción) y de qué dice el discriminante sobre las soluciones."
+      ],
+      "errores": [
+        "Divide entre 2 en lugar de entre 2a (en 2x² + 5x + 2 usa 2 como denominador).",
+        "Olvida la a en −4ac y calcula Δ = b² − 4c.",
+        "Pierde el signo de a, b o c: con −x² + 4x − 1 toma a = 1, o calcula −4ac con el signo equivocado (con a y c de signos diferentes, resta en lugar de sumar).",
+        "Calcula (−4)² como −16, o pierde el signo de −b (con b = −4 usa −4 en lugar de 4).",
+        "Simplifica sólo un término del numerador: escribe (4 ± 2√6) ÷ 4 como 1 ± 2√6, o no divide también el denominador.",
+        "Con Δ = 0 escribe dos soluciones diferentes.",
+        "Con Δ negativo escribe «no hay solución» o deja una raíz de un número negativo sin pasar a la i."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe a, b y c con su signo, el discriminante, la sustitución, la raíz simplificada y las dos soluciones con la notación correcta (√, i, ±, fracciones).",
+            "Escribe las operaciones del discriminante paso a paso (b², 4ac y su resta), con los signos.",
+            "Explica con sus palabras cómo obtuvo a, b y c y por qué el denominador es 2a."
+          ],
+          "n1": "Escribe sólo un resultado suelto, sin Δ ni sustitución, o con la fórmula mal copiada (sin la raíz o sin el denominador). No usa ningún apoyo.",
+          "n23": "Usa la simbología con limitaciones: escribe Δ y las soluciones, pero omite el ±, la i o el 2a del denominador, o no simplifica la raíz o la fracción. Contesta sin explicar.",
+          "n4": "Escribe con la simbología correcta a, b y c, el discriminante con sus operaciones, la sustitución, la raíz y la fracción simplificadas y las dos soluciones, con alguna deficiencia (por ejemplo, un signo ambiguo). Explica con claridad cada paso.",
+          "n5": "Escribe y explica con notación correcta todo el procedimiento (a, b y c, Δ, sustitución, simplificación de la raíz y de la fracción, x₁ y x₂, con i si Δ < 0), por diferentes medios (con la fórmula, con el video y con palabras), y reconstruye el procedimiento en una ecuación nueva."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Identifica a, b y c con su signo en ax² + bx + c = 0, también con a negativa.",
+            "Calcula Δ = b² − 4ac y la usa para decidir si las soluciones son enteras o fracciones, reales con raíz, una sola repetida o imaginarias.",
+            "Sustituye en x = (−b ± √Δ) ÷ 2a, simplifica la raíz y la fracción y escribe x₁ y x₂."
+          ],
+          "n1": "Conoce la fórmula de memoria, pero confunde a, b y c o la sustituye mal (pierde el signo de −b, usa 2 en lugar de 2a).",
+          "n23": "Resuelve los casos sencillos (a positiva, b par, Δ positivo). Le fallan los signos, simplificar la raíz o la fracción, o los casos con Δ negativo o Δ = 0.",
+          "n4": "Comprende y maneja las propiedades: identifica a, b y c en cualquier caso de signos, calcula bien Δ, sustituye con 2a, simplifica y escribe las dos soluciones (reales, repetida o con i), y usa Δ para saber qué clase de soluciones hay.",
+          "n5": "Explica que la fórmula resuelve cualquier ecuación cuadrática, relaciona Δ con el tipo de soluciones (cuadrado perfecto: enteras o fracciones y sí se factoriza; Δ = 0: trinomio cuadrado perfecto; Δ < 0: imaginarias) y generaliza el caso a = 1 al caso a distinta de 1."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué el denominador es 2a y por qué la fórmula siempre funciona (a diferencia de buscar pares de números).",
+            "Justifica, con Δ, qué clase de soluciones tiene la ecuación antes de terminar la cuenta.",
+            "Comprueba sus soluciones sustituyéndolas en la ecuación."
+          ],
+          "n1": "Dice «así se hace» o «porque la maestra lo pidió» sin justificar. No comprueba sus soluciones.",
+          "n2": "Defiende con una regla simple («Δ positivo: reales; Δ negativo: imaginarias») con lenguaje matemático básico.",
+          "n3": "Valida con ejemplos: resuelve varias ecuaciones y comprueba al menos una sustituyendo; da ejemplos de cada tipo de solución.",
+          "n4": "Explica la estructura del argumento: Δ decide el tipo de soluciones y la fórmula las calcula; comprueba sus resultados y explica por qué cambia el denominador cuando a no es 1.",
+          "n5": "Elabora una cadena de argumentos que generaliza: relaciona la fórmula con completar el cuadrado y con la factorización (x − x₁)(x − x₂), y justifica con Δ cuándo un trinomio ax² + bx + c se factoriza con números enteros."
         }
       ]
     },
