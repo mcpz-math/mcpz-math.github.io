@@ -1,0 +1,71 @@
+{
+  "video": "binomio-al-cuadrado",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.4, "texto": "Binomio al cuadrado. Cómo se desarrolla, paso a paso." }
+    ] },
+    { "n": 1, "voz": [
+      { "s": 0.8, "texto": "Un binomio al cuadrado es un binomio multiplicado por sí mismo." },
+      { "s": 4,   "texto": "Su resultado siempre tiene tres términos y sigue una regla." },
+      { "s": 7.5, "texto": "Veamos cuál es la regla." }
+    ] },
+    { "n": 2, "voz": [
+      { "s": 0.3, "texto": "¿Es lo mismo? Probemos con x igual a uno." },
+      { "s": 2,   "texto": "El valor verdadero es uno más cinco, al cuadrado: seis al cuadrado, treinta y seis." },
+      { "s": 5.4, "texto": "Con x al cuadrado más veinticinco sale veintiséis. No coincide." },
+      { "s": 8.8, "texto": "Con la regla sale uno más diez más veinticinco, treinta y seis. Sí coincide." },
+      { "s": 12,  "texto": "Cuidado: a más b, al cuadrado, no es a al cuadrado más b al cuadrado. Falta el doble producto, el término de en medio." }
+    ] },
+    { "n": 3, "voz": [
+      { "s": 0.8,  "texto": "Éstas son las dos reglas, una para la suma y otra para la resta." },
+      { "s": 5,    "texto": "Primero, el cuadrado del primer término: a al cuadrado." },
+      { "s": 7.6,  "texto": "Segundo, el doble producto, con el signo del binomio." },
+      { "s": 10.2, "texto": "Tercero, el cuadrado del segundo término, que siempre es positivo: b al cuadrado." }
+    ] },
+    { "n": 4, "voz": [
+      { "s": 1.2,  "texto": "Ejemplo uno: x más cinco, al cuadrado. Paso uno: a es x, y b es cinco." },
+      { "s": 4.6,  "texto": "Paso dos: el cuadrado del primero, x al cuadrado." },
+      { "s": 8,    "texto": "Paso tres: el doble producto, dos por x por cinco, que es diez x." },
+      { "s": 11.4, "texto": "Paso cuatro: el cuadrado del segundo, cinco al cuadrado, veinticinco." },
+      { "s": 14.8, "texto": "Paso cinco: juntamos los tres términos: x al cuadrado, más diez x, más veinticinco." },
+      { "s": 19.4, "texto": "Comprobamos con x igual a uno: uno más cinco, al cuadrado, es treinta y seis, y uno más diez más veinticinco también es treinta y seis." }
+    ] },
+    { "n": 5, "voz": [
+      { "s": 1.2,  "texto": "Ejemplo dos: tres m menos cuatro, al cuadrado. Paso uno: a es tres m, y b es cuatro." },
+      { "s": 4.8,  "texto": "Paso dos: el cuadrado del primero. Tres m al cuadrado es nueve m al cuadrado." },
+      { "s": 8.8,  "texto": "Paso tres: el doble producto lleva signo menos. Dos por tres m por cuatro es veinticuatro m, con signo menos." },
+      { "s": 13.2, "texto": "Paso cuatro: el cuadrado del segundo, cuatro al cuadrado, es dieciséis. Siempre es positivo." },
+      { "s": 17.2, "texto": "Paso cinco: nueve m al cuadrado, menos veinticuatro m, más dieciséis." },
+      { "s": 22.2, "texto": "Comprobamos con m igual a uno: tres menos cuatro, al cuadrado, es uno, y nueve menos veinticuatro más dieciséis también es uno." }
+    ] },
+    { "n": 6, "voz": [
+      { "s": 1.2,  "texto": "Ejemplo tres: dos a más tres b, al cuadrado. Paso uno: a es dos a, y b es tres b." },
+      { "s": 4.8,  "texto": "Paso dos: el cuadrado del primero. Dos a al cuadrado es cuatro a al cuadrado." },
+      { "s": 8.8,  "texto": "Paso tres: el doble producto. Dos por dos a por tres b es doce a b." },
+      { "s": 13.2, "texto": "Paso cuatro: el cuadrado del segundo. Tres b al cuadrado es nueve b al cuadrado." },
+      { "s": 17.2, "texto": "Paso cinco: cuatro a al cuadrado, más doce a b, más nueve b al cuadrado." },
+      { "s": 22.2, "texto": "Comprobamos con a y b iguales a uno: dos más tres, al cuadrado, es veinticinco, y cuatro más doce más nueve también es veinticinco." }
+    ] },
+    { "n": 7, "voz": [
+      { "s": 1, "texto": "Cuidado con estos errores. Primero: no olvides el doble producto, dos a b." },
+      { "s": 5, "texto": "Segundo: eleva al cuadrado el número y también la letra. Tres x al cuadrado es nueve x al cuadrado." },
+      { "s": 9, "texto": "Tercero: el cuadrado del segundo término siempre es positivo." }
+    ] },
+    { "n": 8, "fijo": true, "voz": [
+      { "s": 0.8,  "texto": "Ahora tú. Pausa el video y desarrolla, en tu cuaderno, cuatro x menos uno, al cuadrado." },
+      { "s": 10.3, "texto": "Paso uno: a es cuatro x, y b es uno." },
+      { "s": 14.2, "texto": "Paso dos: los dos cuadrados. Dieciséis x al cuadrado, y uno." },
+      { "s": 19.5, "texto": "Paso tres: el doble producto, con signo menos: menos ocho x." },
+      { "s": 24.5, "texto": "Paso cuatro: el resultado. Dieciséis x al cuadrado, menos ocho x, más uno." }
+    ] },
+    { "n": 9, "voz": [
+      { "s": 0.8,  "texto": "Para recordar. Uno: el cuadrado de un binomio tiene tres términos." },
+      { "s": 5.6,  "texto": "Dos: cuadrado del primero, doble producto y cuadrado del segundo." },
+      { "s": 10,   "texto": "Tres: el doble producto lleva el signo del binomio, y el último término es siempre positivo." },
+      { "s": 15.2, "texto": "Cuatro: si dudas, comprueba con un número, por ejemplo x igual a uno." },
+      { "s": 20.2, "texto": "La regla: a más b, al cuadrado, es a al cuadrado, más dos a b, más b al cuadrado. Con resta, el doble producto lleva signo menos." },
+      { "s": 29.4, "texto": "Practica abajo: son cien ejercicios, y te tocan diez al azar." }
+    ] }
+  ]
+}

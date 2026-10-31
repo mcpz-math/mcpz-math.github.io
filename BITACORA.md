@@ -1843,3 +1843,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   el alumno escribe el **dividendo, el divisor, el cociente y el residuo** (el divisor pasa a ser dividendo y el residuo pasa a ser divisor) y al final el MCD. Son otras 100 parejas (ninguna repite las de la serie 1, números hasta 720). Si falla, dice qué
   números van en esa fila y muestra todas las divisiones. La serie 1 queda igual (con los números de cada fila ya puestos). Se probaron 800 tarjetas. Se actualizaron la rúbrica ("euclides"), el bloque de Divisibilidad y la guía en Word
   (antes de regenerarla se comprobó que el JSON fuera válido y que se actualizaran las 18 rúbricas).
+
+## 2026-10-31 (voz en los videos: primera prueba con binomio al cuadrado)
+- A pedido de Carmen, se probó **ponerle voz a los videos**. Primer video: `matematicas-3/materiales/tema-06-binomio-al-cuadrado.mp4` (ahora con voz; dura 5:27, antes 3:02 y sin voz).
+  La voz es **Microsoft Sabina** (español de México, ya viene en Windows, no necesita internet). La música de Bach baja de volumen mientras se habla y se repite (con cruce suave) para cubrir la duración nueva.
+- Cómo funciona (para repetirlo en otros videos): (1) el guion va en `materiales-fuente/voz/<video>.json` (una frase por momento de cada escena, escrita como se dice en voz alta: "x al cuadrado más diez x");
+  (2) `materiales-fuente/generar-voz.ps1 -Video <video>` crea las frases en .wav (esos .wav no se suben a GitHub); (3) `materiales-fuente/voz-video.mjs` las mezcla con la música y **estira cada escena** lo necesario para que la frase termine antes de la siguiente
+  (las escenas marcadas `"fijo": true`, como la de la cuenta regresiva, no se estiran); (4) el generador del video (`generar-video-binomio-al-cuadrado.html`) llama a `cargarVoz` y `mezclar`. Para el resto de los videos falta copiar esas dos llamadas y escribir su guion.
+- En la escena "Ahora tú" y en "Para recordar" se ajustaron los tiempos de las tarjetas para que alcance la voz. El video pesa 11 MB.
