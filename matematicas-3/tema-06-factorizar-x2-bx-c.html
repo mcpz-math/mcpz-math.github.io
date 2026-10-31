@@ -244,6 +244,11 @@
                            : 'c = ' + fix(String(e.c)) + ' es negativo, así que los números tienen signos diferentes' + (e.b === 0 ? ' (como b = 0, son opuestos).' : ' y el mayor lleva el signo de b = ' + fix(String(e.b)) + '.');
       return signos + '<br>Pares con producto ' + fix(String(e.c)) + ': ' + lista + '.<br>Los números son ' + fix(String(hit[0])) + ' y ' + fix(String(hit[1])) + ', así que queda <strong>' + binHTML(e, e.p) + binHTML(e, e.q) + '</strong>.';
     }
+    // lo que se muestra cuando el trinomio sí se factoriza y el alumno no lo logró
+    var SIGNOS_AYUDAN = '<div class="sol" style="font-family:inherit;"><strong>Los signos ayudan a buscar:</strong>' +
+      '<ul style="margin:0.3rem 0 0; padding-left:1.2rem;">' +
+      '<li>Si <strong>c es positivo</strong>, p y q tienen el <strong>mismo signo</strong> (el de b): los dos positivos si b es positivo; los dos negativos si b es negativo.</li>' +
+      '<li>Si <strong>c es negativo</strong>, p y q tienen <strong>signos diferentes</strong>; el que tiene mayor valor absoluto lleva el signo de b.</li></ul></div>';
     function explainNo(e) {
       var ps = pairs(e.b, e.c).map(function (pq) { return fix(pairText(pq)); }).join(', ');
       return 'Los pares de enteros con producto ' + fix(String(e.c)) + ' (con el signo que corresponde) son: ' + ps + '. Ninguno suma b = ' + fix(String(e.b)) + ', así que <strong>no se puede factorizar con números enteros</strong>.';
@@ -303,8 +308,8 @@
             fb.innerHTML = '<span class="yes">✓ ¡Correcto! No se puede factorizar con números enteros.</span><div class="sol">' + explainNo(e) + '</div>';
           } else {
             card.classList.add('bad');
-            fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + (e.no ? 'Busca dos números con producto c y suma b: aquí no existen.' : 'Sí se factoriza: hay dos números con producto c y suma b.') +
-              '<div class="sol">' + (e.no ? explainNo(e) : explainYes(e)) + '</div>';
+            fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + (e.no ? 'Busca dos números con producto c y suma b: aquí no existen.' : 'Sí se factoriza: hay dos números con producto c y suma b.') + (e.no ? '' : SIGNOS_AYUDAN) +
+              '<div class="sol">' + (e.no ? '' : 'La respuesta correcta es:<br>') + (e.no ? explainNo(e) : explainYes(e)) + '</div>';
           }
         });
       });
@@ -330,9 +335,7 @@
         var twoBin = r.binos === 2 && r.others === 0, sq = e.p === e.q && /\^2|²/.test(v), co = coefs(r.P, e.L);
         if (!twoBin && !sq) msg = 'Escribe <strong>dos binomios multiplicados</strong>, por ejemplo (x + 3)(x + 4).';
         else if (!co) msg = 'Cada binomio debe ser de la forma (<strong>' + e.L + '</strong> ± un número), con la letra de este ejercicio.';
-        else if (co.B === -e.b && co.C === e.c && e.b !== 0) msg = 'Revisa los <strong>signos</strong>: tus números suman ' + fix(String(co.B)) + ' y deben sumar ' + fix(String(e.b)) + '. Cámbiales el signo.';
-        else if (co.C !== e.c) msg = 'El <strong>producto</strong> de tus dos números es ' + fix(String(co.C)) + ' y debe ser c = ' + fix(String(e.c)) + '.';
-        else msg = 'La <strong>suma</strong> de tus dos números es ' + fix(String(co.B)) + ' y debe ser b = ' + fix(String(e.b)) + '.';
+        else msg = SIGNOS_AYUDAN;
         fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + msg + '<div class="sol">La respuesta correcta es:<br>' + explainYes(e) + '</div>';
       }
       card.querySelector('.practice-check').addEventListener('click', check);
