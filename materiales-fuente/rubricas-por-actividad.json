@@ -1429,7 +1429,7 @@
         "Al menos un ejercicio con c positivo (b positivo y b negativo), uno con c negativo y uno que no se puede factorizar con enteros.",
         "La comprobación: multiplicar los dos binomios y obtener el trinomio original.",
         "La explicación (oral o escrita) de por qué los números deben tener producto c y suma b, y de cómo se eligen sus signos.",
-        "Los ejercicios al azar de la fórmula general, resueltos en el cuaderno: b y c con su signo, el discriminante Δ = b² − 4c, la sustitución en la fórmula, la raíz simplificada y las dos soluciones (con i cuando Δ es negativo).",
+        "Los ejercicios al azar de la fórmula general (primero con a = 1 y después con a distinta de 1), resueltos en el cuaderno: a, b y c con su signo, el discriminante Δ = b² − 4ac, la sustitución en la fórmula, la raíz y la fracción simplificadas y las dos soluciones (con i cuando Δ es negativo).",
         "La explicación (oral o escrita) de por qué hace falta la fórmula general: los pares sólo dan soluciones enteras y la fórmula siempre funciona; y de qué dice el discriminante sobre las soluciones."
       ],
       "errores": [
@@ -1441,7 +1441,7 @@
         "No comprueba multiplicando los binomios, por lo que no detecta sus errores.",
         "Con la fórmula general: pierde el signo de −b (con b = −2 usa −2 en lugar de 2) o calcula (−2)² como −4.",
         "Con la fórmula general: en x² − 2x − 7 calcula Δ = 4 − 28 en lugar de 4 + 28 (no ve que −4c suma cuando c es negativo).",
-        "Divide entre 2 sólo un término del numerador, deja √12 sin simplificar u olvida el ± y escribe una sola solución.",
+        "Divide entre 2 sólo un término del numerador, deja √12 sin simplificar u olvida el ± y escribe una sola solución. Con a distinta de 1 divide entre 2 en lugar de entre 2a, olvida la a en −4ac o no simplifica la fracción.",
         "Con Δ negativo escribe «no hay solución» o una raíz de un número negativo sin pasar a la i."
       ],
       "rows": [
@@ -1475,7 +1475,7 @@
             "Identifica b y c con su signo en x² + bx + c, y los usa para buscar p y q (p · q = c, p + q = b).",
             "Decide los signos de p y q a partir de los signos de b y de c.",
             "Factoriza como (x + p)(x + q), distingue el caso del TCP (p = q) y reconoce cuando no se puede factorizar con enteros.",
-            "Cuando no se puede factorizar con enteros, resuelve x² + bx + c = 0 con la fórmula general: calcula Δ = b² − 4c, sustituye, simplifica la raíz y escribe las dos soluciones (con i si Δ < 0)."
+            "Cuando no se puede factorizar con enteros, resuelve ax² + bx + c = 0 con la fórmula general (primero con a = 1 y después con a distinta de 1, incluso negativa): calcula Δ = b² − 4ac, sustituye con el denominador 2a, simplifica la raíz y la fracción y escribe las dos soluciones (con i si Δ < 0; una sola si Δ = 0)."
           ],
           "n1": "Conoce la regla de memoria («dos números que...») pero confunde b con c, o busca números que sólo cumplen una de las dos condiciones. Conoce la fórmula general de memoria, pero la sustituye mal (confunde b con c o pierde el signo de −b).",
           "n23": "Factoriza los casos sencillos (b y c positivos). Le fallan los casos con signos negativos, c negativo o números grandes, o no distingue cuándo no se puede factorizar. Con la fórmula general resuelve los casos sencillos (b par, Δ positivo); le fallan los signos, simplificar la raíz o los casos con Δ negativo.",
