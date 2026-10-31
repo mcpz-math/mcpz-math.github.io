@@ -1900,3 +1900,4 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, la **fórmula general** de `matematicas-3/tema-06-factorizar-x2-bx-c.html` se escribe ahora como en un libro: x = (−b ± √(b² − 4ac)) sobre 2a, en grande, con la **barra de la raíz** cubriendo todo el radicando (clase `.rad`/`.radicand`)
   y la **raya de la fracción** cubriendo todo el numerador. Para eso se cambió `assets/style.css`: en `.frac`, el denominador se estira al ancho del numerador (esto también mejora cualquier otra fracción con numerador más ancho que el denominador).
   La página pide la hoja de estilos con `?v=20261031a`.
+- A pedido de Carmen, en la sección "La fórmula general cuando a no es 1" se **quitó la explicación "¿De dónde sale?"** (la deducción dividiendo entre a). Quedan la fórmula, "Cosas nuevas que cuidar", los ejemplos, los errores comunes y los ejercicios.
