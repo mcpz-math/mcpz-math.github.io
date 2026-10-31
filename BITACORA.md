@@ -1902,3 +1902,4 @@ Registro de lo que vamos haciendo, en orden cronológico.
   La página pide la hoja de estilos con `?v=20261031a`.
 - A pedido de Carmen, en la sección "La fórmula general cuando a no es 1" se **quitó la explicación "¿De dónde sale?"** (la deducción dividiendo entre a). Quedan la fórmula, "Cosas nuevas que cuidar", los ejemplos, los errores comunes y los ejercicios.
 - A pedido de Carmen, en `matematicas-3/tema-06-factorizar-x2-bx-c.html` ya no se dice que "x² no tiene coeficiente": ahora dice que **el coeficiente de x² es 1, pero casi nunca se escribe** (en la definición del trinomio, en el paso 1 de los pasos para factorizar y en la fórmula general con a = 1).
+- A pedido de Carmen, el título de la sección en `matematicas-3/tema-06-factorizar-x2-bx-c.html` ahora dice **"¿Y si no hay números enteros que sirvan? Entonces usamos la fórmula general"**.
