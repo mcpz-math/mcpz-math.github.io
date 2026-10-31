@@ -1871,3 +1871,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Las páginas piden cada video con `?v=20261031` y su pie dice "Video con voz".
 - A pedido de Carmen, en `matematicas-3/tema-06-factorizar-x2-bx-c.html` la explicación de cómo se factoriza x² + bx + c dice ahora que el **producto de los dos números nos dé el tercer término (c)** y que su **suma sea el coeficiente del segundo término (b)**
   (antes: "su producto sea c… su suma sea b"). Se igualó también el texto de las instrucciones de los ejercicios.
+- A pedido de Carmen, en el recuadro "Recuerda: las leyes de los signos" de `matematicas-3/tema-06-factorizar-x2-bx-c.html` y `matematicas-3/tema-06-binomio-factor-comun.html` la columna **"Multiplicar y dividir" pasó a "Multiplicar"**:
+  se quitaron la división (÷) de las cuatro filas y los **ejemplos con números**; en su lugar dice **"Signos iguales dan más (+); signos contrarios dan menos (−)."** La columna "Sumar" no se tocó. El mismo recuadro en
+  `matematicas-2/tema-01-operaciones-con-fracciones.html` se dejó igual (ahí sí se dividen fracciones).
