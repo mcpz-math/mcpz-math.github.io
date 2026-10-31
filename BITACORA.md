@@ -1893,3 +1893,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, en los ejercicios de factorizar de `matematicas-3/tema-06-factorizar-x2-bx-c.html`, cuando el trinomio **sí se puede factorizar** y la respuesta no es correcta (la factorización está mal, o se oprimió «No se puede factorizar con números enteros»),
   la página ahora muestra el texto **«Los signos ayudan a buscar:»** (si c es positivo, p y q tienen el mismo signo, el de b; si c es negativo, tienen signos diferentes y el de mayor valor absoluto lleva el signo de b) y **la respuesta correcta** explicada.
   Se quitaron las pistas sueltas de «revisa los signos / el producto es… / la suma es…». Si la respuesta está mal escrita (no son dos binomios o la letra no es la del ejercicio), se conserva el aviso de cómo escribirla.
+- A pedido de Carmen, en el Tema 6 (`tema-06-productos-notables-y-factorizacion.html`) se **cambió el orden** de los temas del subtema "Binomio factor común y trinomio x² + bx + c":
+  ahora es **1. Binomio factor común → 2. Factorizar x² + bx + c → 3. Completar el TCP** (antes 2 era Completar el TCP y 3 era Factorizar). Para que la secuencia tenga sentido se ajustaron los enlaces "Siguiente":
+  el de Binomio factor común lleva a Factorizar x² + bx + c; Factorizar x² + bx + c tiene un nuevo "Siguiente" hacia Completar el TCP (y su "Conocimiento previo" ya sólo pide el Binomio factor común);
+  Completar el TCP termina con un enlace a "La fórmula general" (la idea de la que sale). También se reordenó la descripción del subtema.
