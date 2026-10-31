@@ -1,0 +1,29 @@
+{
+  "video": "tema-05-ax-cuadrada-mas-b",
+  "fuente": "matematicas-3/materiales/tema-05-ax-cuadrada-mas-b.mp4",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.3, "texto": "Funciones cuadráticas: f de x igual a a x al cuadrado más be. ¿Qué le pasa a la parábola cuando cambiamos a? ¿Y cuando cambiamos be?" },
+      { "s": 4.2, "texto": "Esta es la parábola con a igual a uno y be igual a dos. Su vértice está en cero, dos, es un mínimo, y abre hacia arriba." },
+      { "s": 7.2, "texto": "Primero movemos a. Si a aumenta a tres, la parábola se cierra: se hace más angosta." },
+      { "s": 11.8, "texto": "Si a se acerca a cero, por ejemplo cero punto tres, la parábola se abre: se hace más ancha." },
+      { "s": 16.3, "texto": "Cuando a es cero, cuidado: f de x es igual a dos, una recta horizontal. Ya no es cuadrática, por eso a debe ser distinta de cero." },
+      { "s": 20.9, "texto": "Si a es negativa, como menos uno, la parábola abre hacia abajo, y el vértice es un máximo." },
+      { "s": 25.8, "texto": "Con a igual a menos tres, abre hacia abajo y es más angosta. En todos los casos, el vértice sigue en cero, dos: a no lo mueve." },
+      { "s": 30.8, "texto": "Ahora movemos be, con a igual a uno." },
+      { "s": 35.3, "texto": "Si be sube a cuatro, la parábola sube cuatro unidades, y el vértice queda en cero, cuatro. No cambia su forma." },
+      { "s": 39.8, "texto": "Si be baja a menos cuatro, la parábola baja, y el vértice queda en cero, menos cuatro. Ahora corta al eje x en dos y en menos dos: raíces reales y diferentes." },
+      { "s": 45.9, "texto": "Con be igual a cero, el vértice queda en el origen, y la raíz es cero, repetida." }
+,
+      { "s": 51.2, "texto": "En resumen: f de x igual a a x al cuadrado más be." },
+      { "s": 52, "texto": "a es igual que en a x al cuadrado: el signo dice hacia dónde abre, y su valor absoluto, qué tan abierta es." },
+      { "s": 52.7, "texto": "Si a es mayor que cero, el vértice es un mínimo; si es menor que cero, es un máximo." },
+      { "s": 53.4, "texto": "Be sube o baja la parábola, sin cambiar su forma: sube si be es positivo, baja si es negativo." },
+      { "s": 54.1, "texto": "El vértice es cero, be, y el eje de simetría es x igual a cero." },
+      { "s": 54.8, "texto": "Raíces: si be es cero, hay una raíz repetida; si a y be tienen signos distintos, son reales y diferentes." },
+      { "s": 55.5, "texto": "Si a y be tienen el mismo signo, son imaginarias: la parábola no corta al eje x." },
+      { "s": 56.4, "texto": "Recuerda: a es distinta de cero. Si a es cero, f de x igual a be es una recta horizontal, y ya no es cuadrática." }
+    ] }
+  ]
+}

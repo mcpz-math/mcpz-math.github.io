@@ -1,0 +1,32 @@
+{
+  "video": "medianas-y-baricentro",
+  "fuente": "matematicas-1/materiales/medianas-y-baricentro.mp4",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.3, "texto": "Medianas y baricentro." },
+      { "s": 5.8, "texto": "Matemáticas uno: rectas y puntos notables del triángulo." },
+      { "s": 8.5, "texto": "Vamos a hacer la construcción con regla y compás." },
+      { "s": 10.6, "texto": "¿Qué es una mediana?" },
+      { "s": 13.8, "texto": "Es el segmento que une un vértice con el punto medio del lado opuesto." },
+      { "s": 22, "texto": "Todo triángulo tiene tres medianas, una por cada vértice." },
+      { "s": 28.4, "texto": "Usaremos un triángulo escaleno: sus tres lados son diferentes." },
+      { "s": 34.6, "texto": "Necesitas compás, regla y lápiz. La regla sólo sirve para trazar rectas, no para medir." },
+      { "s": 41, "texto": "Construcción paso a paso." },
+      { "s": 44.1, "texto": "Paso uno: dibuja el triángulo A B C." },
+      { "s": 51.4, "texto": "Paso dos: para hallar el punto medio de B C, abre el compás más de la mitad del lado, traza arcos desde B y desde C, y une los cruces. Donde esa recta corta B C está el punto medio, M a." },
+      { "s": 65.7, "texto": "Paso tres: une A con M a. Es la primera mediana." },
+      { "s": 75, "texto": "Paso cuatro: haz lo mismo con el lado A C para hallar M be, y une B con M be." },
+      { "s": 87.3, "texto": "Paso cinco: haz lo mismo con el lado A B para hallar M ce, y une C con M ce." },
+      { "s": 99.6, "texto": "Paso seis: las tres medianas se cortan en un solo punto: el baricentro, G." },
+      { "s": 108.5, "texto": "¿Qué tiene de especial?" },
+      { "s": 111.7, "texto": "El baricentro siempre queda dentro del triángulo." },
+      { "s": 119.4, "texto": "Divide cada mediana en dos partes: la parte que llega al vértice es el doble de la otra. A G es igual a dos por G M a." },
+      { "s": 130.7, "texto": "Es el centro de gravedad: si recortas el triángulo en cartón, se equilibra sobre la punta de un lápiz puesta en G." },
+      { "s": 141, "texto": "Para recordar." },
+      { "s": 144.1, "texto": "Mediana: segmento que va de un vértice al punto medio del lado opuesto. Hay tres en cada triángulo." },
+      { "s": 151.4, "texto": "Baricentro: punto donde se cortan las tres medianas. Divide cada mediana en dos partes, una el doble de la otra, y es el centro de gravedad." },
+      { "s": 159.7, "texto": "Para hallar un punto medio sin medir, traza la mediatriz del lado con el compás." }
+    ] }
+  ]
+}

@@ -1859,3 +1859,13 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Cada video tiene su guion en `materiales-fuente/voz/<video>.json` (cramer, metodo-grafico, ecuaciones-imaginarias, general-a-ordinaria, trinomio-cuadrado-perfecto). La letra y se dice "ye" para que no suene como la "y" de "y" (conjunción).
   `voz-video.mjs` ahora entiende `"pausa": N` en una escena: hasta el segundo N (la cuenta regresiva de "Ahora tú") no se estira y lo que viene después sí. En "Para recordar" (y "Ahora tú" de binomio) se movieron los tiempos de las tarjetas para que alcance la voz.
 - Las páginas de cada tema piden el video con `?v=20261031` (para que el navegador no use la copia vieja) y el pie dice "Video con voz".
+
+## 2026-10-31 (voz en los 14 videos que no tenían generador)
+- A pedido de Carmen, **los 14 videos restantes ya llevan voz** (Microsoft Sabina): Matemáticas 1 (jerarquía de operaciones, alturas y ortocentro, bisectrices e incentro, medianas y baricentro, mediatrices y circuncentro),
+  Matemáticas 3 (inecuaciones ejemplos 1 y 2, valor absoluto ejemplos 1 y 2, f(x) = ax² + b, f(x) = ax² "puntos", f(x) = ax² "variando a", ¿raíces reales o imaginarias? y binomios conjugados). **Ya todos los videos del sitio tienen voz** (20 de 20).
+- Como estos videos no tienen generador, la imagen **no se rehízo**: se lee el .mp4 ya hecho, se le agrega la voz y, donde la voz necesita más tiempo del que hay entre una cosa y la siguiente, **se congela el cuadro** hasta que termine de hablar.
+  Herramienta nueva: `materiales-fuente/agregar-voz-a-video.html` (`analizar` encuentra cuándo cambia la imagen y hace hojas de contacto para escribir el guion; `agregarVoz` hace el video nuevo). Los guiones están en `materiales-fuente/voz/<video>.json`
+  (`"s"` = segundo del video ORIGINAL donde empieza la frase; `"h"` opcional = segundo donde se congela). `materiales-fuente/crear-guion.sh` arma el .json desde líneas "segundo|texto". Los cuadros por segundo se leen del propio video (los de inecuaciones y valor absoluto son de 25).
+- Los videos **originales sin voz** se guardaron en `materiales-fuente/originales-sin-voz/` (esa carpeta **no se sube a GitHub**; si se vuelve a generar un video hay que partir de ese original o de la versión anterior de git, nunca del que ya tiene voz).
+  La música se tomó de `materiales-fuente/musica-bach.mp4` (copia del audio original de "jerarquía de operaciones"), que ahora usan todos los generadores en lugar del video de jerarquía (que ahora tiene voz).
+- Las páginas piden cada video con `?v=20261031` y su pie dice "Video con voz".

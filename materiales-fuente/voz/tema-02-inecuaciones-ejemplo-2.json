@@ -1,0 +1,25 @@
+{
+  "video": "tema-02-inecuaciones-ejemplo-2",
+  "fuente": "matematicas-3/materiales/tema-02-inecuaciones-ejemplo-2.mp4",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 1, "texto": "Ejemplo dos. Resolver: tres por, x medios más un cuarto, más cinco medios, menor que dos tercios por, x más un medio, menos tres medios." },
+      { "s": 4.4, "texto": "Paso uno: quitamos los paréntesis con la propiedad distributiva." },
+      { "s": 6.6, "texto": "Tres medios de x, más tres cuartos, más cinco medios, menor que dos tercios de x, más dos sextos, menos tres medios." },
+      { "s": 12.2, "texto": "Paso dos: multiplicamos todo por doce, que es el mínimo común múltiplo de dos, cuatro, tres y seis." },
+      { "s": 14.6, "texto": "Queda: dieciocho x, más nueve, más treinta, menor que ocho x, más cuatro, menos dieciocho." },
+      { "s": 20.2, "texto": "Paso tres: sumamos y restamos los términos semejantes." },
+      { "s": 22.7, "texto": "Queda dieciocho x más treinta y nueve, menor que ocho x menos catorce." },
+      { "s": 28.2, "texto": "Paso cuatro: agrupamos las x de un lado de la desigualdad." },
+      { "s": 30.2, "texto": "Dieciocho x menos ocho x, menor que menos catorce menos treinta y nueve." },
+      { "s": 36.2, "texto": "Paso cinco: sumamos y restamos términos semejantes." },
+      { "s": 38.6, "texto": "Diez x, menor que menos cincuenta y tres." },
+      { "s": 44.2, "texto": "Paso seis: dividimos entre diez. Como es positivo, el signo no cambia." },
+      { "s": 46.7, "texto": "x es menor que menos cincuenta y tres décimos." },
+      { "s": 54.7, "texto": "La solución es: x menor que menos cincuenta y tres décimos." },
+      { "s": 60.2, "texto": "En la recta numérica, marcamos menos cincuenta y tres décimos y sombreamos hacia la izquierda." },
+      { "s": 66.8, "texto": "El círculo vacío indica que menos cincuenta y tres décimos no forma parte de la solución, porque es menor que. Intervalo: de menos infinito a menos cincuenta y tres décimos, abierto." }
+    ] }
+  ]
+}

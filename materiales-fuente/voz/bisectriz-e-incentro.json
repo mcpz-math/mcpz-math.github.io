@@ -1,0 +1,32 @@
+{
+  "video": "bisectriz-e-incentro",
+  "fuente": "matematicas-1/materiales/bisectriz-e-incentro.mp4",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.3, "texto": "Bisectrices e incentro." },
+      { "s": 5.8, "texto": "Matemáticas uno: rectas y puntos notables del triángulo." },
+      { "s": 8.5, "texto": "Vamos a hacer la construcción con compás y regla." },
+      { "s": 10.6, "texto": "¿Qué es una bisectriz?" },
+      { "s": 13.8, "texto": "Es la recta que divide un ángulo en dos ángulos iguales." },
+      { "s": 22, "texto": "Todo triángulo tiene tres bisectrices, una por cada ángulo." },
+      { "s": 28.4, "texto": "Usaremos un triángulo escaleno: sus tres lados son diferentes." },
+      { "s": 34.6, "texto": "Necesitas compás, regla y lápiz. La regla sólo sirve para trazar rectas, no para medir." },
+      { "s": 40, "texto": "Construcción paso a paso." },
+      { "s": 43.1, "texto": "Paso uno: dibuja el triángulo A B C." },
+      { "s": 50.4, "texto": "Paso dos: con centro en B, traza un arco que corte los dos lados del ángulo: son los puntos P y Q." },
+      { "s": 60.7, "texto": "Paso tres: con la misma abertura, traza un arco desde P y otro desde Q. Se cruzan en R." },
+      { "s": 71, "texto": "Paso cuatro: une B con R. Es la bisectriz del ángulo B." },
+      { "s": 80.3, "texto": "Paso cinco: repite lo mismo en los ángulos A y C." },
+      { "s": 90.6, "texto": "Paso seis: las tres bisectrices se cortan en un solo punto: el incentro, I." },
+      { "s": 99.9, "texto": "¿Qué tiene de especial?" },
+      { "s": 103.2, "texto": "El incentro siempre queda dentro del triángulo." },
+      { "s": 110.4, "texto": "Está a la misma distancia de los tres lados. Esa distancia se mide en forma perpendicular." },
+      { "s": 120.7, "texto": "Con centro en I se traza una circunferencia que toca los tres lados: la circunferencia inscrita." },
+      { "s": 132, "texto": "Para recordar." },
+      { "s": 135.1, "texto": "Bisectriz: recta que divide un ángulo en dos ángulos iguales. Hay tres en cada triángulo." },
+      { "s": 142.4, "texto": "Incentro: punto donde se cortan las tres bisectrices. Está a la misma distancia de los tres lados." },
+      { "s": 151.7, "texto": "Para trazar una bisectriz: arco desde el vértice y, con la misma abertura, dos arcos que se cruzan." }
+    ] }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "video": "mediatriz-y-circuncentro",
+  "fuente": "matematicas-1/materiales/mediatriz-y-circuncentro.mp4",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.3, "texto": "Mediatrices y circuncentro." },
+      { "s": 5.8, "texto": "Matemáticas uno: rectas y puntos notables del triángulo." },
+      { "s": 8.5, "texto": "Vamos a hacer la construcción con compás y regla." },
+      { "s": 10.6, "texto": "¿Qué es una mediatriz?" },
+      { "s": 13.8, "texto": "Es la recta perpendicular a un lado que pasa por su punto medio." },
+      { "s": 22, "texto": "Todo triángulo tiene tres mediatrices, una por cada lado." },
+      { "s": 28.4, "texto": "Usaremos un triángulo escaleno: sus tres lados son diferentes." },
+      { "s": 34.6, "texto": "Necesitas compás, regla y lápiz. La regla sólo sirve para trazar rectas, no para medir." },
+      { "s": 40, "texto": "Construcción paso a paso." },
+      { "s": 43.1, "texto": "Paso uno: dibuja el triángulo A B C." },
+      { "s": 50.4, "texto": "Paso dos: abre el compás más de la mitad de B C. Con centro en B y luego en C, traza arcos que se crucen arriba y abajo del lado." },
+      { "s": 61.7, "texto": "Paso tres: une los dos cruces con la regla. Es la mediatriz de B C: pasa por el punto medio y forma un ángulo recto." },
+      { "s": 72, "texto": "Paso cuatro: repite con el lado A C: arcos desde A y desde C, y une los cruces." },
+      { "s": 83.3, "texto": "Paso cinco: repite con el lado A B." },
+      { "s": 93.6, "texto": "Paso seis: las tres mediatrices se cortan en un solo punto: el circuncentro, O." },
+      { "s": 102.9, "texto": "¿Qué tiene de especial?" },
+      { "s": 106.1, "texto": "El circuncentro está a la misma distancia de los tres vértices: O A es igual a O B, igual a O C." },
+      { "s": 115.4, "texto": "Con centro en O y radio O A se traza una circunferencia que pasa por A, B y C: la circunferencia circunscrita." },
+      { "s": 126.7, "texto": "En un triángulo acutángulo queda dentro. En uno rectángulo, en el punto medio de la hipotenusa. En uno obtusángulo, afuera." },
+      { "s": 138, "texto": "Para recordar." },
+      { "s": 141.1, "texto": "Mediatriz: recta perpendicular a un lado que pasa por su punto medio. Hay tres en cada triángulo." },
+      { "s": 148.4, "texto": "Circuncentro: punto donde se cortan las tres mediatrices. Está a la misma distancia de los tres vértices." },
+      { "s": 157.7, "texto": "Para trazar una mediatriz: abre el compás más de la mitad del lado y traza arcos desde cada extremo." }
+    ] }
+  ]
+}

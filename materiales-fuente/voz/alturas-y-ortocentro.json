@@ -1,0 +1,32 @@
+{
+  "video": "alturas-y-ortocentro",
+  "fuente": "matematicas-1/materiales/alturas-y-ortocentro.mp4",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.3,   "texto": "Alturas y ortocentro." },
+      { "s": 5.8,   "texto": "Matemáticas uno: rectas y puntos notables del triángulo." },
+      { "s": 8.5,   "texto": "Vamos a hacer la construcción con regla y compás." },
+      { "s": 10.6,  "texto": "¿Qué es una altura?" },
+      { "s": 13.8,  "texto": "Es el segmento que va de un vértice al lado opuesto, o a su prolongación, formando un ángulo recto." },
+      { "s": 22,    "texto": "Todo triángulo tiene tres alturas, una por cada vértice." },
+      { "s": 28.4,  "texto": "Usaremos un triángulo escaleno: sus tres lados son diferentes." },
+      { "s": 34.6,  "texto": "Necesitas compás, regla y lápiz. La regla sólo sirve para trazar rectas, no para medir." },
+      { "s": 41,    "texto": "Construcción paso a paso." },
+      { "s": 44.1,  "texto": "Paso uno: dibuja el triángulo A B C." },
+      { "s": 51.4,  "texto": "Paso dos: con centro en A, traza un arco que corte el lado B C en dos puntos, P y Q. Desde P y desde Q, con la misma abertura del compás, traza dos arcos que se crucen del otro lado." },
+      { "s": 64.7,  "texto": "Paso tres: une A con ese cruce. La parte que va de A al lado B C es la altura desde A." },
+      { "s": 75,    "texto": "Paso cuatro: repite desde B hacia el lado A C. Si hace falta, prolonga el lado." },
+      { "s": 86.3,  "texto": "Paso cinco: repite desde C hacia el lado A B." },
+      { "s": 97.6,  "texto": "Paso seis: las tres alturas se cortan en un solo punto: el ortocentro, H." },
+      { "s": 106.9, "texto": "¿Qué tiene de especial?" },
+      { "s": 110.1, "texto": "En un triángulo acutángulo, como éste, el ortocentro queda dentro." },
+      { "s": 118.4, "texto": "En uno rectángulo, queda en el vértice del ángulo recto. En uno obtusángulo, queda afuera, y hay que prolongar los lados." },
+      { "s": 129.7, "texto": "La altura se usa para calcular el área del triángulo: área igual a base por altura, entre dos." },
+      { "s": 140,   "texto": "Para recordar." },
+      { "s": 143.1, "texto": "Altura: segmento perpendicular que va de un vértice al lado opuesto, o a su prolongación. Hay tres." },
+      { "s": 150.4, "texto": "Ortocentro: punto donde se cortan las tres alturas, o sus prolongaciones." },
+      { "s": 159.7, "texto": "Para trazar una altura: arco desde el vértice que corte el lado y, desde esos puntos, dos arcos iguales que se crucen del otro lado." }
+    ] }
+  ]
+}

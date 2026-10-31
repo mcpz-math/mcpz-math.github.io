@@ -1,0 +1,24 @@
+{
+  "video": "tema-05-ax-cuadrada-variando-a",
+  "fuente": "matematicas-3/materiales/tema-05-ax-cuadrada-variando-a.mp4",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.3, "texto": "Funciones cuadráticas: f de x igual a a x al cuadrado. ¿Qué le pasa a la parábola cuando cambiamos el número a?" },
+      { "s": 4.2, "texto": "Con a igual a uno, la parábola abre hacia arriba. El vértice, cero, cero, es un mínimo, y el tamaño es el mismo que x al cuadrado." },
+      { "s": 6.8, "texto": "Si a crece hasta cuatro, la parábola se cierra: es más angosta que x al cuadrado." },
+      { "s": 12.5, "texto": "Si a se acerca a cero, por ejemplo cero punto dos, se abre: es más ancha que x al cuadrado." },
+      { "s": 21, "texto": "Cuando a es cero, cuidado: f de x es igual a cero, una recta, el eje x. Ya no es cuadrática, por eso a es distinta de cero." },
+      { "s": 27.2, "texto": "Si a es negativa, como menos uno, la parábola abre hacia abajo, y el vértice es un máximo." },
+      { "s": 34.3, "texto": "Con a igual a menos cuatro, abre hacia abajo y es más cerrada." },
+      { "s": 40.3, "texto": "Y si a regresa a uno, la parábola vuelve a ser x al cuadrado." },
+      { "s": 44.3, "texto": "En resumen:" },
+      { "s": 44.6, "texto": "si a es mayor que cero, abre hacia arriba y el vértice es un mínimo." },
+      { "s": 45.3, "texto": "Si a es menor que cero, abre hacia abajo y el vértice es un máximo." },
+      { "s": 46.1, "texto": "Si el valor absoluto de a es mayor que uno, es más cerrada, más flaca que x al cuadrado." },
+      { "s": 46.9, "texto": "Si está entre cero y uno, es más abierta, más gorda." },
+      { "s": 47.6, "texto": "Siempre: el vértice es cero, cero; el eje de simetría es x igual a cero, y la raíz es cero, repetida." },
+      { "s": 48.5, "texto": "Recuerda: a es distinta de cero. Si a es cero, ya no es una función cuadrática." }
+    ] }
+  ]
+}

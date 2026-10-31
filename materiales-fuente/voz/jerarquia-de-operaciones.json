@@ -1,0 +1,38 @@
+{
+  "video": "jerarquia-de-operaciones",
+  "fuente": "matematicas-1/materiales/jerarquia-de-operaciones.mp4",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.3, "texto": "Jerarquía de operaciones." },
+      { "s": 2.2, "texto": "Matemáticas uno: leyes de los signos." },
+      { "s": 4.2, "texto": "Dos ejemplos paso a paso." },
+      { "s": 8.2, "texto": "¿En qué orden se hacen las operaciones?" },
+      { "s": 11.6, "texto": "Primero, lo que está dentro de paréntesis." },
+      { "s": 16.9, "texto": "Segundo, las potencias. Por ejemplo, menos cuatro, entre paréntesis, al cuadrado." },
+      { "s": 22.6, "texto": "Tercero, las multiplicaciones y divisiones, de izquierda a derecha." },
+      { "s": 29, "texto": "Cuarto, las sumas y restas, también de izquierda a derecha." },
+      { "s": 35.6, "texto": "En cada paso, usa las leyes de los signos." },
+      { "s": 41, "texto": "Ejemplo uno." },
+      { "s": 43.8, "texto": "Resolvamos cinco menos dos, por el paréntesis de tres menos siete, al cuadrado." },
+      { "s": 47.9, "texto": "Paso uno: el paréntesis. Tres menos siete es menos cuatro." },
+      { "s": 56.4, "texto": "Paso dos: la potencia. Menos cuatro al cuadrado es menos cuatro por menos cuatro, igual a dieciséis. Menos por menos da más." },
+      { "s": 65.9, "texto": "Paso tres: la multiplicación. Dos por dieciséis es treinta y dos." },
+      { "s": 74.4, "texto": "Paso cuatro: la resta. Cinco menos treinta y dos. Los signos son diferentes, se restan: treinta y dos menos cinco es veintisiete, y queda el signo del treinta y dos. Es menos veintisiete." },
+      { "s": 83.9, "texto": "Cuidado: no hagas primero cinco menos dos, igual a tres. La resta va al final. Tres por menos cuatro al cuadrado, igual a cuarenta y ocho, está mal." },
+      { "s": 93.4, "texto": "Ejemplo dos." },
+      { "s": 95.8, "texto": "Menos tres al cuadrado, más doce entre menos cuatro, por dos, menos menos cinco." },
+      { "s": 100.2, "texto": "Los paréntesis de menos cuatro y menos cinco no tienen operaciones adentro: sólo indican el signo." },
+      { "s": 105.8, "texto": "Paso uno: la potencia. Menos tres al cuadrado es menos nueve, porque el exponente sólo afecta al tres." },
+      { "s": 115.2, "texto": "Paso dos: la división, de izquierda a derecha. Doce entre menos cuatro es menos tres." },
+      { "s": 124.8, "texto": "Paso tres: la multiplicación. Menos tres por dos es menos seis." },
+      { "s": 133.2, "texto": "Paso cuatro: los signos. Más menos seis es menos seis, y menos menos cinco es más cinco." },
+      { "s": 141.9, "texto": "Paso cinco: restas y sumas, de izquierda a derecha. Menos nueve menos seis es menos quince, porque los signos iguales se suman." },
+      { "s": 150.2, "texto": "Paso seis: signos diferentes. Quince menos cinco es diez, y queda el signo del quince. El resultado es menos diez." },
+      { "s": 161.8, "texto": "Para recordar." },
+      { "s": 164.1, "texto": "El orden: uno, paréntesis; dos, potencias; tres, multiplicaciones y divisiones; cuatro, sumas y restas." },
+      { "s": 170.6, "texto": "Los signos: signos iguales, más; signos diferentes, menos. Menos menos cinco es más cinco. Menos tres entre paréntesis, al cuadrado, es nueve; pero menos tres al cuadrado, sin paréntesis, es menos nueve." },
+      { "s": 180.1, "texto": "Hazlo paso a paso y escribe cada resultado antes de seguir." }
+    ] }
+  ]
+}

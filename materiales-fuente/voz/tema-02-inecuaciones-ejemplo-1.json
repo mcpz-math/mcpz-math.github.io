@@ -1,0 +1,25 @@
+{
+  "video": "tema-02-inecuaciones-ejemplo-1",
+  "fuente": "matematicas-3/materiales/tema-02-inecuaciones-ejemplo-1.mp4",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 1, "texto": "Ejemplo uno. Resolver: tres cuartos por, x menos uno, más un medio, mayor o igual que dos por, x más un cuarto, menos uno." },
+      { "s": 4.4, "texto": "Paso uno: quitamos los paréntesis con la propiedad distributiva." },
+      { "s": 6.7, "texto": "Tres cuartos de x, menos tres cuartos, más un medio, mayor o igual que dos x, más dos cuartos, menos uno." },
+      { "s": 12.2, "texto": "Paso dos: multiplicamos todo por cuatro, que es el mínimo común múltiplo de dos y cuatro." },
+      { "s": 14.6, "texto": "Queda: tres x, menos tres, más dos, mayor o igual que ocho x, más dos, menos cuatro." },
+      { "s": 20.2, "texto": "Paso tres: sumamos y restamos los términos semejantes." },
+      { "s": 22.7, "texto": "Queda tres x menos uno, mayor o igual que ocho x menos dos." },
+      { "s": 28.2, "texto": "Paso cuatro: agrupamos las x de un lado de la desigualdad." },
+      { "s": 30.2, "texto": "Tres x menos ocho x, mayor o igual que menos dos más uno." },
+      { "s": 36.2, "texto": "Paso cinco: sumamos y restamos términos semejantes." },
+      { "s": 38.8, "texto": "Menos cinco x, mayor o igual que menos uno." },
+      { "s": 44.2, "texto": "Paso seis: dividimos entre menos cinco. Como es negativo, invertimos el signo de la desigualdad." },
+      { "s": 46.7, "texto": "x es menor o igual que menos uno entre menos cinco." },
+      { "s": 54.7, "texto": "La solución es: x menor o igual que un quinto." },
+      { "s": 60.2, "texto": "En la recta numérica, marcamos un quinto y sombreamos hacia la izquierda." },
+      { "s": 66.8, "texto": "El círculo relleno indica que un quinto sí forma parte de la solución. Intervalo: de menos infinito a un quinto, cerrado." }
+    ] }
+  ]
+}

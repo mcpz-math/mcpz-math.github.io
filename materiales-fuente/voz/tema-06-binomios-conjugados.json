@@ -1,0 +1,38 @@
+{
+  "video": "tema-06-binomios-conjugados",
+  "fuente": "matematicas-3/materiales/tema-06-binomios-conjugados.mp4",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.4, "texto": "Binomios conjugados. ¿Cómo se resuelven? Matemáticas tres, productos notables." },
+      { "s": 4.2, "texto": "¿Qué es un binomio conjugado? Es un producto de la forma a más b, por a menos b." },
+      { "s": 6.3, "texto": "Tienen los mismos términos: a y b." },
+      { "s": 8.5, "texto": "Sólo cambia el signo de en medio: uno es más, y el otro es menos." },
+      { "s": 11.3, "texto": "Ejemplos: x más cinco, por x menos cinco; y dos eme menos tres, por dos eme más tres." },
+      { "s": 15.2, "texto": "La regla: a más b por a menos b es igual a a al cuadrado menos b al cuadrado. Es el cuadrado del primero, menos el cuadrado del segundo." },
+      { "s": 18.7, "texto": "Observación: elevar al cuadrado significa multiplicar por el mismo. a al cuadrado es a por a, y b al cuadrado es b por b." },
+      { "s": 20.9, "texto": "Por ejemplo, tres x, al cuadrado, es tres x por tres x, igual a nueve x al cuadrado." },
+      { "s": 26.2, "texto": "Ejemplo uno: tres x más cuatro, por tres x menos cuatro." },
+      { "s": 28.1, "texto": "Paso uno: identificamos los términos. El primero es tres x, y el segundo es cuatro." },
+      { "s": 31.1, "texto": "Paso dos: elevamos al cuadrado el primero. Tres x al cuadrado es tres al cuadrado por x al cuadrado, que es nueve x al cuadrado." },
+      { "s": 33.5, "texto": "Paso tres: elevamos al cuadrado el segundo. Cuatro al cuadrado es dieciséis." },
+      { "s": 37, "texto": "Paso cuatro: escribimos la resta: nueve x al cuadrado menos dieciséis." },
+      { "s": 40.8, "texto": "Entonces, tres x más cuatro por tres x menos cuatro es igual a nueve x al cuadrado menos dieciséis." },
+      { "s": 43.2, "texto": "Ejemplo dos: dos eme al cuadrado menos siete ene, por dos eme al cuadrado más siete ene. Paso uno: el primero es dos eme al cuadrado, y el segundo es siete ene." },
+      { "s": 46.8, "texto": "Paso dos: dos eme al cuadrado, al cuadrado, es dos al cuadrado por eme a la cuarta: cuatro eme a la cuarta." },
+      { "s": 49.1, "texto": "Paso tres: siete ene, al cuadrado, es cuarenta y nueve ene al cuadrado." },
+      { "s": 51.2, "texto": "Paso cuatro: escribimos la resta: cuatro eme a la cuarta menos cuarenta y nueve ene al cuadrado." },
+      { "s": 53.8, "texto": "No importa el orden: el signo menos puede estar en el primer binomio o en el segundo. El resultado es cuatro eme a la cuarta menos cuarenta y nueve ene al cuadrado." },
+      { "s": 58.2, "texto": "Cuidado: eleva al cuadrado el número y también la letra. Tres x, al cuadrado, es nueve x al cuadrado, no tres x al cuadrado." },
+      { "s": 61.8, "texto": "El resultado siempre es una resta: x más cinco por x menos cinco es x al cuadrado menos veinticinco." },
+      { "s": 66.5, "texto": "El resultado sólo tiene dos términos: el cuadrado del primero y el cuadrado del segundo." },
+      { "s": 68.2, "texto": "Ahora tú. Pausa el video y resuélvelo: cinco ye más dos, por cinco ye menos dos." },
+      { "s": 74.7, "texto": "Cinco ye, al cuadrado, es veinticinco ye al cuadrado; dos al cuadrado es cuatro. El resultado es veinticinco ye al cuadrado menos cuatro." },
+      { "s": 80.2, "texto": "En resumen." },
+      { "s": 80.9, "texto": "Uno: revisa que sean conjugados: mismos términos, signos distintos." },
+      { "s": 81.9, "texto": "Dos: eleva al cuadrado el primer término, número y letra." },
+      { "s": 82.9, "texto": "Tres: eleva al cuadrado el segundo término." },
+      { "s": 83.9, "texto": "Cuatro: réstalos: a más b por a menos b es igual a a al cuadrado menos b al cuadrado." }
+    ] }
+  ]
+}

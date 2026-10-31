@@ -1,0 +1,20 @@
+{
+  "video": "tema-03-valor-absoluto-ejemplo-2",
+  "fuente": "matematicas-3/materiales/tema-03-valor-absoluto-ejemplo-2.mp4",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 1, "texto": "Ejemplo dos. Resolver: valor absoluto de cuatro x más tres, mayor o igual que dos." },
+      { "s": 4.4, "texto": "Paso uno: trazar la recta de adentro, cuidando la escala." },
+      { "s": 6, "texto": "Es y igual a cuatro x más tres. Una unidad equivale a cuatro cuadros." },
+      { "s": 13.2, "texto": "Paso dos: aplicar el valor absoluto. Lo negativo se vuelve positivo." },
+      { "s": 15.8, "texto": "Ahora es y igual al valor absoluto de cuatro x más tres. La parte de abajo se refleja hacia arriba." },
+      { "s": 22.2, "texto": "Paso tres: trazar la recta horizontal. Es el número del otro lado de la desigualdad." },
+      { "s": 30.3, "texto": "Aquí está: y igual a dos." },
+      { "s": 31.2, "texto": "Paso cuatro: decidir. Como es mayor o igual que dos, queremos la parte de la gráfica que queda arriba de la recta." },
+      { "s": 33, "texto": "Eso ocurre cuando x es menor o igual que menos cinco cuartos, o x es mayor o igual que menos un cuarto." },
+      { "s": 40.2, "texto": "Paso cinco: escribir la solución. Como es mayor o igual que, los extremos son cerrados." },
+      { "s": 45.2, "texto": "Es la unión de dos intervalos: de menos infinito a menos cinco cuartos, cerrado; y de menos un cuarto a infinito, cerrado." }
+    ] }
+  ]
+}

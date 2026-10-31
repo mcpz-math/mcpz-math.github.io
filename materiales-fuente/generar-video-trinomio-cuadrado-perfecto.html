@@ -362,7 +362,7 @@ async function hacerVideo(nombre = 'video.mp4', opc = {}) {
   window.estado = 'cargando audio';
   const SR = 48000;
   const ac = new AudioContext({ sampleRate: SR });
-  const src = await ac.decodeAudioData(await (await fetch('/matematicas-1/materiales/jerarquia-de-operaciones.mp4')).arrayBuffer());
+  const src = await ac.decodeAudioData(await (await fetch('/materiales-fuente/musica-bach.mp4')).arrayBuffer());
   const N = Math.round(DUR * SR), ch = [src.getChannelData(0), src.getChannelData(1)];
   const pcm = mezclar(DUR, ch, VOZ ? VOZ.pistas : []); // música en bucle + voz (la música baja al hablar)
 

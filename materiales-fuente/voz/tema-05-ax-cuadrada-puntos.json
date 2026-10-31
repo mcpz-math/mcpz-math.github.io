@@ -1,0 +1,32 @@
+{
+  "video": "tema-05-ax-cuadrada-puntos",
+  "fuente": "matematicas-3/materiales/tema-05-ax-cuadrada-puntos.mp4",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.4, "texto": "La función f de x igual a a x al cuadrado. ¿Cómo se mueven los puntos de f de x igual a x al cuadrado? Matemáticas tres, tema cinco, funciones cuadráticas." },
+      { "s": 3.2, "texto": "Paso uno: primero graficamos la parábola básica, f de x igual a x al cuadrado." },
+      { "s": 7.2, "texto": "Estos son sus puntos principales: menos tres, nueve; menos dos, cuatro; menos uno, uno; cero, cero; uno, uno; dos, cuatro; y tres, nueve." },
+      { "s": 11.2, "texto": "Ahora multiplicamos x al cuadrado por a. La parábola azul queda de referencia. Mira cómo se mueven los puntos." },
+      { "s": 14.2, "texto": "Con a igual a dos, los puntos se alejan del eje x, porque se multiplican por dos: la parábola es más delgada." },
+      { "s": 19.5, "texto": "Con a igual a un medio, los puntos se acercan al eje x, porque se multiplican por un medio: la parábola es más gorda." },
+      { "s": 26.7, "texto": "Con a igual a cero, todos los puntos quedan en el eje x: es una recta. Ya no es cuadrática, por eso a es distinta de cero." },
+      { "s": 31, "texto": "Con a igual a menos uno, la parábola abre hacia abajo. Los puntos se reflejan en el eje x." },
+      { "s": 36.3, "texto": "Con a igual a menos dos, abre hacia abajo y es más delgada." },
+      { "s": 41.8, "texto": "Con a igual a menos un medio, abre hacia abajo y es más gorda: los puntos se acercan al eje x desde abajo." },
+      { "s": 47.8, "texto": "Y con a igual a uno, regresamos a f de x igual a x al cuadrado." },
+      { "s": 51.8, "texto": "¿Qué observamos en la tabla? La x no cambia: lo único que cambia es el valor de la y en cada coordenada." },
+      { "s": 54.3, "texto": "Para x igual a cero, uno, dos y tres, la y de x al cuadrado vale cero, uno, cuatro y nueve. En la tercera fila, cada valor se multiplica por a." },
+      { "s": 57.8, "texto": "Si a es mayor que cero, abre hacia arriba. Por ejemplo, con a igual a dos, la y vale cero, dos, ocho y dieciocho." },
+      { "s": 62.3, "texto": "Si a es menor que cero, abre hacia abajo: los valores de y son negativos. Con a igual a menos dos, la y vale cero, menos dos, menos ocho y menos dieciocho." }
+,
+      { "s": 68.8, "texto": "En resumen." },
+      { "s": 69.4, "texto": "Si a es mayor que cero, abre hacia arriba y el vértice es un mínimo." },
+      { "s": 70.2, "texto": "Si a es menor que cero, abre hacia abajo y el vértice es un máximo." },
+      { "s": 71, "texto": "Si el valor absoluto de a es mayor que uno, es más delgada: los puntos se alejan del eje x." },
+      { "s": 71.8, "texto": "Si es menor que uno, es más gorda: los puntos se acercan al eje x." },
+      { "s": 72.6, "texto": "Si a es cero, ya no es cuadrática: es una recta." },
+      { "s": 73.4, "texto": "Siempre: el vértice, cero, cero, no se mueve, y cada punto x, y pasa a x, a por y." }
+    ] }
+  ]
+}

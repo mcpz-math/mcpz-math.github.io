@@ -1,0 +1,21 @@
+{
+  "video": "tema-03-valor-absoluto-ejemplo-1",
+  "fuente": "matematicas-3/materiales/tema-03-valor-absoluto-ejemplo-1.mp4",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 1, "texto": "Ejemplo uno. Resolver: valor absoluto de tres x menos dos, menor que cuatro." },
+      { "s": 4.4, "texto": "Paso uno: trazar la recta de adentro, cuidando la escala." },
+      { "s": 6, "texto": "Es y igual a tres x menos dos. Una unidad equivale a tres cuadros." },
+      { "s": 13.2, "texto": "Paso dos: aplicar el valor absoluto. Lo negativo se vuelve positivo." },
+      { "s": 15.8, "texto": "Ahora es y igual al valor absoluto de tres x menos dos. La parte de abajo se refleja hacia arriba." },
+      { "s": 22.2, "texto": "Paso tres: trazar la recta horizontal. Es el número del otro lado de la desigualdad." },
+      { "s": 30.3, "texto": "Aquí está: y igual a cuatro." },
+      { "s": 31.2, "texto": "Paso cuatro: decidir. Como es menor que cuatro, queremos la parte de la gráfica que queda abajo de la recta." },
+      { "s": 33, "texto": "La solución está entre x igual a menos dos tercios y x igual a dos." },
+      { "s": 40.2, "texto": "Paso cinco: escribir la solución. Como es menor que, los extremos son abiertos." },
+      { "s": 45.2, "texto": "La solución es el intervalo abierto de menos dos tercios a dos." },
+      { "s": 50.2, "texto": "Es decir, x es mayor que menos dos tercios y menor que dos." }
+    ] }
+  ]
+}
