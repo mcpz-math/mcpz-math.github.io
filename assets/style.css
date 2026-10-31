@@ -457,8 +457,8 @@ footer.site-footer {
   font-size: 0.95rem;
   line-height: 1.3;
 }
-.frac .num { padding-bottom: 0.15rem; }
-.frac .den { border-top: 1.5px solid var(--ink); padding-top: 0.15rem; }
+.frac .num { padding-bottom: 0.15rem; text-align: center; }
+.frac .den { border-top: 1.5px solid var(--ink); padding-top: 0.15rem; align-self: stretch; text-align: center; } /* la raya cubre todo el numerador */
 .frac.frac-inline { font-size: 0.85rem; margin: 0 0.2rem; }
 
 /* ---- Ejercicios ---- */

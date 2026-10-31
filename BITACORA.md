@@ -1897,3 +1897,6 @@ Registro de lo que vamos haciendo, en orden cronológico.
   ahora es **1. Binomio factor común → 2. Factorizar x² + bx + c → 3. Completar el TCP** (antes 2 era Completar el TCP y 3 era Factorizar). Para que la secuencia tenga sentido se ajustaron los enlaces "Siguiente":
   el de Binomio factor común lleva a Factorizar x² + bx + c; Factorizar x² + bx + c tiene un nuevo "Siguiente" hacia Completar el TCP (y su "Conocimiento previo" ya sólo pide el Binomio factor común);
   Completar el TCP termina con un enlace a "La fórmula general" (la idea de la que sale). También se reordenó la descripción del subtema.
+- A pedido de Carmen, la **fórmula general** de `matematicas-3/tema-06-factorizar-x2-bx-c.html` se escribe ahora como en un libro: x = (−b ± √(b² − 4ac)) sobre 2a, en grande, con la **barra de la raíz** cubriendo todo el radicando (clase `.rad`/`.radicand`)
+  y la **raya de la fracción** cubriendo todo el numerador. Para eso se cambió `assets/style.css`: en `.frac`, el denominador se estira al ancho del numerador (esto también mejora cualquier otra fracción con numerador más ancho que el denominador).
+  La página pide la hoja de estilos con `?v=20261031a`.
