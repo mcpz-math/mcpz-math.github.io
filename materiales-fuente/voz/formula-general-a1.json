@@ -18,35 +18,33 @@
       { "s": 17, "texto": "Y en x al cuadrado más cuatro x más cinco: a es uno, be es cuatro y ce es cinco." }
     ] },
     { "n": 3, "voz": [
-      { "s": 1.2,  "texto": "Ejemplo uno, con soluciones reales: x al cuadrado más cuatro x más uno igual a cero. Paso uno: identificamos a, be y ce. a es uno, be es cuatro y ce es uno." },
-      { "s": 6.5,  "texto": "Paso dos: calculamos el discriminante, delta igual a be al cuadrado menos cuatro a ce. Sustituimos: cuatro al cuadrado, menos cuatro por uno por uno." },
-      { "s": 12.5, "texto": "Paso tres: hacemos las operaciones. Cuatro al cuadrado es dieciséis, y cuatro por uno por uno es cuatro." },
-      { "s": 17.5, "texto": "Entonces, delta es dieciséis menos cuatro, que es doce." },
-      { "s": 22,   "texto": "Delta es doce. Es positivo, así que las dos soluciones son reales." }
+      { "s": 1.2, "texto": "Ejemplo uno, con soluciones reales: x al cuadrado más cuatro x más uno igual a cero. Paso uno: identificamos a, be y ce. a es uno, be es cuatro y ce es uno." },
+      { "s": 9,   "texto": "Paso dos: sustituimos en la fórmula general. Donde está be ponemos cuatro, donde está a ponemos uno, y donde está ce ponemos uno. Queda: menos cuatro, más menos raíz de, cuatro al cuadrado, menos cuatro por uno por uno, todo entre dos por uno." },
+      { "s": 26,  "texto": "Cada letra se cambia por su número, con su signo." }
     ] },
     { "n": 4, "voz": [
-      { "s": 1,  "texto": "Paso cuatro: sustituimos en la fórmula. Menos cuatro, más menos raíz de doce, entre dos por uno, que es dos." },
-      { "s": 8,  "texto": "Paso cinco: las dos soluciones. Con el más: x uno es menos cuatro más raíz de doce, entre dos. Con el menos: x dos es menos cuatro menos raíz de doce, entre dos." },
-      { "s": 15, "texto": "Aproximadamente, menos cero punto veintisiete y menos tres punto setenta y tres." },
-      { "s": 18, "texto": "No hace falta simplificar la raíz de doce: se puede dejar así." }
+      { "s": 1,  "texto": "Paso tres: hacemos las operaciones. Cuatro al cuadrado es dieciséis. Cuatro por uno por uno es cuatro. Y dos por uno es dos." },
+      { "s": 10, "texto": "Escribimos los resultados. Menos cuatro, más menos raíz de dieciséis menos cuatro, entre dos. Dieciséis menos cuatro es doce. Queda: menos cuatro, más menos raíz de doce, entre dos." },
+      { "s": 22, "texto": "Paso cuatro: las dos soluciones. Con el más, x uno es menos cuatro más raíz de doce, entre dos. Con el menos, x dos es menos cuatro menos raíz de doce, entre dos." },
+      { "s": 33, "texto": "Aproximadamente, menos cero punto veintisiete y menos tres punto setenta y tres." },
+      { "s": 37, "texto": "No hace falta simplificar la raíz de doce: se puede dejar así." }
     ] },
     { "n": 5, "voz": [
-      { "s": 1.2,  "texto": "Ejemplo dos, con soluciones imaginarias: x al cuadrado más cuatro x más cinco igual a cero. Paso uno: a es uno, be es cuatro y ce es cinco." },
-      { "s": 6.5,  "texto": "Paso dos: sustituimos en el discriminante. Cuatro al cuadrado, menos cuatro por uno por cinco." },
-      { "s": 12.5, "texto": "Paso tres: hacemos las operaciones. Cuatro al cuadrado es dieciséis, y cuatro por uno por cinco es veinte." },
-      { "s": 17.5, "texto": "Entonces, delta es dieciséis menos veinte, que es menos cuatro." },
-      { "s": 22,   "texto": "Delta es menos cuatro. Es negativo, así que las soluciones son imaginarias: llevan i." }
+      { "s": 1.2, "texto": "Ejemplo dos, con soluciones imaginarias: x al cuadrado más cuatro x más cinco igual a cero. Paso uno: a es uno, be es cuatro y ce es cinco." },
+      { "s": 9,   "texto": "Paso dos: sustituimos en la fórmula general. Donde está be ponemos cuatro, donde está a ponemos uno, y donde está ce ponemos cinco. Queda: menos cuatro, más menos raíz de, cuatro al cuadrado, menos cuatro por uno por cinco, todo entre dos por uno." },
+      { "s": 26,  "texto": "Cada letra se cambia por su número, con su signo." }
     ] },
     { "n": 6, "voz": [
-      { "s": 1,  "texto": "Paso cuatro: sustituimos en la fórmula. Menos cuatro, más menos raíz de menos cuatro, entre dos por uno." },
-      { "s": 8,  "texto": "Paso cinco: sacamos la i de la raíz. Raíz de menos cuatro es raíz de cuatro por i, que es dos i." },
-      { "s": 15, "texto": "Paso seis: dividimos entre dos. Menos cuatro entre dos es menos dos, y dos i entre dos es i. Queda menos dos, más menos i." },
-      { "s": 22, "texto": "Paso siete: las dos soluciones. x uno es menos dos más i, y x dos es menos dos menos i." }
+      { "s": 1,  "texto": "Paso tres: hacemos las operaciones. Cuatro al cuadrado es dieciséis. Cuatro por uno por cinco es veinte. Y dos por uno es dos." },
+      { "s": 10, "texto": "Escribimos los resultados. Menos cuatro, más menos raíz de dieciséis menos veinte, entre dos. Dieciséis menos veinte es menos cuatro. Queda raíz de menos cuatro. Adentro de la raíz salió un número negativo, por eso las soluciones son imaginarias: llevan i." },
+      { "s": 23, "texto": "Paso cuatro: sacamos la i de la raíz. Raíz de menos cuatro es raíz de cuatro por i, que es dos i." },
+      { "s": 31, "texto": "Paso cinco: dividimos entre dos. Menos cuatro entre dos es menos dos, y dos i entre dos es i. Queda menos dos, más menos i." },
+      { "s": 40, "texto": "Paso seis: las dos soluciones. x uno es menos dos más i, y x dos es menos dos menos i." }
     ] },
     { "n": 7, "voz": [
       { "s": 0.8,  "texto": "Para recordar. Uno: identifica a, be y ce con su signo; a es uno aunque no se escriba." },
-      { "s": 4.2,  "texto": "Dos: calcula el discriminante, be al cuadrado menos cuatro a ce." },
-      { "s": 7.6,  "texto": "Tres: sustituye en la fórmula y haz las operaciones." },
+      { "s": 4.2,  "texto": "Dos: sustituye a, be y ce en la fórmula general, con su signo." },
+      { "s": 7.6,  "texto": "Tres: haz las operaciones. Lo de adentro de la raíz es el discriminante, delta." },
       { "s": 11,   "texto": "Cuatro: escribe las dos soluciones, x uno con más y x dos con menos." },
       { "s": 15,   "texto": "Si delta es positivo, las dos soluciones son reales. Si delta es negativo, son imaginarias, con i." }
     ] }

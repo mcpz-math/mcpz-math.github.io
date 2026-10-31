@@ -147,6 +147,7 @@ const na = s => bl(s), nb = s => pl(s), nc = s => or(s);   // números de a (azu
 const x1 = ['x', sub('1')], x2 = ['x', sub('2')];
 const FORMULA = ['x = ', fr([MINUS, b_, ' ± ', sq([b_, sup('2', C.plum), ' ' + MINUS + ' 4', a_, c_])], ['2', a_])];
 const ECUACION = [a_, 'x', sup('2'), ' + ', b_, 'x + ', c_, ' = 0'];
+const sust = (a, b, c) => ['x = ', fr([MINUS + '(', nb(b), ') ± ', sq(['(', nb(b), ')', sup('2'), ' ' + MINUS + ' 4(', na(a), ')(', nc(c), ')'])], ['2(', na(a), ')'])];   // sustitución en la fórmula general
 
 // portada
 function portada(sub1, sub2) {
@@ -238,49 +239,47 @@ if (!ES_A2) {
     filaABC(tt, 17, 440, ['x', sup('2'), ' + 4x + 5 = 0'], '1', '4', '5', null);
   });
 
-  // 3. Ejemplo 1 (reales), parte 1
-  escena(30, tt => {
+  // 3. Ejemplo 1 (reales), parte 1: a, b, c y sustitución en la fórmula general
+  escena(34, tt => {
     titulo(tt, 'Ejemplo 1 · soluciones reales', 60, 34);
     withAlpha(fade(tt, .3), () => mathAt(['x', sup('2'), ' + ', nb('4'), 'x + ', nc('1'), ' = 0'], W / 2, 150, 60, C.forest, 'center'));
-    const o = { sz: 38 }, h = 80, y0 = 186, g = 10;
+    const o = { sz: 38 }, h = 80, y0 = 186, g = 12;
     fila(tt, 1.2, y0, h, 'Paso 1.', 'Identifica a, b y c:', [a_, ' = ', na('1'), '      ', b_, ' = ', nb('4'), '      ', c_, ' = ', nc('1')], o);
-    fila(tt, 6.5, y0 + (h + g), h, 'Paso 2.', 'Sustituye en Δ = b² − 4ac:', ['Δ = (', nb('4'), ')', sup('2'), ' ' + MINUS + ' 4(', na('1'), ')(', nc('1'), ')'], o);
-    filaOper(tt, 12.5, y0 + 2 * (h + g), 150, 'Paso 3.', 'Haz las operaciones:', ['(', nb('4'), ')', sup('2'), ' = 16        4(', na('1'), ')(', nc('1'), ') = 4'], ['Δ = 16 ' + MINUS + ' 4 = 12'], 17.5, 38);
-    aviso(tt, 22, 546, 100, 'Δ = 12 es positivo', 'tiene dos soluciones reales');
+    fila(tt, 9, y0 + h + g, 200, 'Paso 2.', 'Sustituye en la fórmula general:', sust('1', '4', '1'), { sz: 52 });
+    withAlpha(fade(tt, 26), () => txt('Cada letra se cambia por su número, con su signo.', W / 2, 520, 28, C.forest, { w: 700, align: 'center' }));
   });
 
-  // 4. Ejemplo 1 (reales), parte 2
-  escena(26, tt => {
+  // 4. Ejemplo 1 (reales), parte 2: operaciones y soluciones
+  escena(42, tt => {
     titulo(tt, 'Ejemplo 1 · x² + 4x + 1 = 0', 56, 34);
-    const o = { sz: 44 }, h = 150, y0 = 100, g = 16;
-    fila(tt, 1, y0, h, 'Paso 4.', 'Sustituye en la fórmula:', ['x = ', fr([MINUS + '(', nb('4'), ') ± ', sq(['12'])], ['2(', na('1'), ')']), ' = ', fr([MINUS + '4 ± ', sq(['12'])], ['2'])], o);
-    fila(tt, 8, y0 + (h + g), h + 20, 'Paso 5.', 'Las dos soluciones:', [x1, ' = ', fr([MINUS + '4 + ', sq(['12'])], ['2']), '        ', x2, ' = ', fr([MINUS + '4 − ', sq(['12'])], ['2'])], Object.assign({}, o, LIME));
-    withAlpha(fade(tt, 15), () => txt('x₁ ≈ −0.27     x₂ ≈ −3.73', W / 2, 590, 30, C.mute, { w: 700, align: 'center' }));
-    withAlpha(fade(tt, 18), () => txt('No hace falta simplificar √12: se puede dejar así.', W / 2, 640, 28, C.forest, { w: 700, align: 'center' }));
+    const o = { sz: 44 };
+    filaOper(tt, 1, 96, 230, 'Paso 3.', 'Haz las operaciones:', ['(', nb('4'), ')', sup('2'), ' = 16       4(', na('1'), ')(', nc('1'), ') = 4       2(', na('1'), ') = 2'], ['x = ', fr([MINUS + '4 ± ', sq(['16 ' + MINUS + ' 4'])], ['2']), ' = ', fr([MINUS + '4 ± ', sq(['12'])], ['2'])], 10, 36);
+    fila(tt, 22, 342, 170, 'Paso 4.', 'Las dos soluciones:', [x1, ' = ', fr([MINUS + '4 + ', sq(['12'])], ['2']), '        ', x2, ' = ', fr([MINUS + '4 − ', sq(['12'])], ['2'])], Object.assign({}, o, LIME));
+    withAlpha(fade(tt, 33), () => txt('x₁ ≈ −0.27     x₂ ≈ −3.73', W / 2, 566, 30, C.mute, { w: 700, align: 'center' }));
+    withAlpha(fade(tt, 37), () => txt('No hace falta simplificar √12: se puede dejar así.', W / 2, 618, 28, C.forest, { w: 700, align: 'center' }));
   });
 
   // 5. Ejemplo 2 (imaginarias), parte 1
-  escena(30, tt => {
+  escena(34, tt => {
     titulo(tt, 'Ejemplo 2 · soluciones imaginarias', 60, 34);
     withAlpha(fade(tt, .3), () => mathAt(['x', sup('2'), ' + ', nb('4'), 'x + ', nc('5'), ' = 0'], W / 2, 150, 60, C.forest, 'center'));
-    const o = { sz: 38 }, h = 80, y0 = 186, g = 10;
+    const o = { sz: 38 }, h = 80, y0 = 186, g = 12;
     fila(tt, 1.2, y0, h, 'Paso 1.', 'Identifica a, b y c:', [a_, ' = ', na('1'), '      ', b_, ' = ', nb('4'), '      ', c_, ' = ', nc('5')], o);
-    fila(tt, 6.5, y0 + (h + g), h, 'Paso 2.', 'Sustituye en Δ = b² − 4ac:', ['Δ = (', nb('4'), ')', sup('2'), ' ' + MINUS + ' 4(', na('1'), ')(', nc('5'), ')'], o);
-    filaOper(tt, 12.5, y0 + 2 * (h + g), 150, 'Paso 3.', 'Haz las operaciones:', ['(', nb('4'), ')', sup('2'), ' = 16        4(', na('1'), ')(', nc('5'), ') = 20'], ['Δ = 16 ' + MINUS + ' 20 = ' + MINUS + '4'], 17.5, 38);
-    aviso(tt, 22, 546, 100, 'Δ = −4 es negativo', 'las soluciones son imaginarias (llevan i)');
+    fila(tt, 9, y0 + h + g, 200, 'Paso 2.', 'Sustituye en la fórmula general:', sust('1', '4', '5'), { sz: 52 });
+    withAlpha(fade(tt, 26), () => txt('Cada letra se cambia por su número, con su signo.', W / 2, 520, 28, C.forest, { w: 700, align: 'center' }));
   });
 
   // 6. Ejemplo 2 (imaginarias), parte 2
-  escena(34, tt => {
-    titulo(tt, 'Ejemplo 2 · x² + 4x + 5 = 0', 56, 34);
-    const o = { sz: 36 }, h = 104, y0 = 90, g = 8;
-    fila(tt, 1, y0, h, 'Paso 4.', 'Sustituye en la fórmula:', ['x = ', fr([MINUS + '(', nb('4'), ') ± ', sq([MINUS + '4'])], ['2(', na('1'), ')'])], o);
-    fila(tt, 8, y0 + (h + g), h, 'Paso 5.', 'Saca la i de la raíz:', [sq([MINUS + '4']), ' = ', sq(['4']), ' ' + DOT + ' ', iI, ' = 2', iI], o);
-    fila(tt, 15, y0 + 2 * (h + g), h, 'Paso 6.', 'Divide entre 2:', ['x = ', fr([MINUS + '4 ± 2', iI], ['2']), ' = ', MINUS + '2 ± ', iI], o);
-    fila(tt, 22, y0 + 3 * (h + g), h + 20, 'Paso 7.', 'Las dos soluciones:', [x1, ' = ', MINUS + '2 + ', iI, '       ', x2, ' = ', MINUS + '2 − ', iI], Object.assign({}, o, LIME));
+  escena(48, tt => {
+    titulo(tt, 'Ejemplo 2 · x² + 4x + 5 = 0', 52, 34);
+    const o = { sz: 36 }, h = 100, g = 8;
+    filaOper(tt, 1, 80, 220, 'Paso 3.', 'Haz las operaciones:', ['(', nb('4'), ')', sup('2'), ' = 16       4(', na('1'), ')(', nc('5'), ') = 20       2(', na('1'), ') = 2'], ['x = ', fr([MINUS + '4 ± ', sq(['16 ' + MINUS + ' 20'])], ['2']), ' = ', fr([MINUS + '4 ± ', sq([MINUS + '4'])], ['2'])], 10, 36);
+    fila(tt, 23, 80 + 220 + g, h, 'Paso 4.', 'Saca la i de la raíz:', [sq([MINUS + '4']), ' = ', sq(['4']), ' ' + DOT + ' ', iI, ' = 2', iI], o);
+    fila(tt, 31, 80 + 220 + g + (h + g), h, 'Paso 5.', 'Divide entre 2:', ['x = ', fr([MINUS + '4 ± 2', iI], ['2']), ' = ', MINUS + '2 ± ', iI], o);
+    fila(tt, 40, 80 + 220 + g + 2 * (h + g), h + 20, 'Paso 6.', 'Las dos soluciones:', [x1, ' = ', MINUS + '2 + ', iI, '       ', x2, ' = ', MINUS + '2 − ', iI], Object.assign({}, o, LIME));
   });
 
-  recordar(['Identifica a, b y c con su signo (a = 1 aunque no se escriba).', 'Calcula el discriminante: Δ = b² − 4ac.', 'Sustituye en x = (−b ± √Δ) ÷ 2a y haz las operaciones.', 'Escribe las dos soluciones, x₁ (con +) y x₂ (con −).'],
+  recordar(['Identifica a, b y c con su signo (a = 1 aunque no se escriba).', 'Sustituye a, b y c en la fórmula general, con su signo.', 'Haz las operaciones. Lo de adentro de la raíz es el discriminante Δ.', 'Escribe las dos soluciones, x₁ (con +) y x₂ (con −).'],
     'Δ > 0  →  dos soluciones reales', 'Δ < 0  →  dos soluciones imaginarias (con i)');
 } else {
   // ============================ VIDEO 2: a distinta de 1, valores reales e imaginarios ============================
@@ -309,50 +308,49 @@ if (!ES_A2) {
     filaABC(tt, 19, 440, [MINUS + 'x', sup('2'), ' + 4x ' + MINUS + ' 1 = 0'], MINUS + '1', '4', MINUS + '1', 'el signo menos delante de x² es a = −1');
   });
 
-  // 3. Ejemplo 1 (reales), parte 1
+  // 3. Ejemplo 1 (reales), parte 1: a, b, c y sustitución en la fórmula general
   escena(38, tt => {
     titulo(tt, 'Ejemplo 1 · soluciones reales', 60, 34);
     withAlpha(fade(tt, .3), () => mathAt([na('2'), 'x', sup('2'), ' ' + MINUS + ' ', nb('4'), 'x ' + MINUS + ' ', nc('1'), ' = 0'], W / 2, 150, 60, C.forest, 'center'));
-    const o = { sz: 36 }, h = 80, y0 = 186, g = 10;
+    const o = { sz: 36 }, h = 80, y0 = 186, g = 12;
     fila(tt, 1.2, y0, h, 'Paso 1.', 'Identifica a, b y c:', [a_, ' = ', na('2'), '     ', b_, ' = ', nb(MINUS + '4'), '     ', c_, ' = ', nc(MINUS + '1')], o);
-    fila(tt, 7, y0 + (h + g), h, 'Paso 2.', 'Sustituye en Δ = b² − 4ac:', ['Δ = (', nb(MINUS + '4'), ')', sup('2'), ' ' + MINUS + ' 4(', na('2'), ')(', nc(MINUS + '1'), ')'], o);
-    filaOper(tt, 15, y0 + 2 * (h + g), 150, 'Paso 3.', 'Haz las operaciones:', ['(', nb(MINUS + '4'), ')', sup('2'), ' = 16        4(', na('2'), ')(', nc(MINUS + '1'), ') = ' + MINUS + '8'], ['Δ = 16 ' + MINUS + ' (' + MINUS + '8) = 16 + 8 = 24'], 21.5, 36);
-    aviso(tt, 28, 546, 100, 'Δ = 24 es positivo', 'tiene dos soluciones reales');
+    fila(tt, 9, y0 + h + g, 200, 'Paso 2.', 'Sustituye en la fórmula general:', sust('2', MINUS + '4', MINUS + '1'), { sz: 52 });
+    withAlpha(fade(tt, 28), () => txt('Cada letra se cambia por su número, con su signo.', W / 2, 520, 28, C.forest, { w: 700, align: 'center' }));
+    withAlpha(fade(tt, 32), () => txt('Si el número es negativo, va entre paréntesis.', W / 2, 565, 28, C.mute, { w: 700, align: 'center' }));
   });
 
-  // 4. Ejemplo 1 (reales), parte 2
-  escena(28, tt => {
+  // 4. Ejemplo 1 (reales), parte 2: operaciones y soluciones
+  escena(46, tt => {
     titulo(tt, 'Ejemplo 1 · 2x² − 4x − 1 = 0', 56, 34);
-    const o = { sz: 40 }, h = 150, y0 = 100, g = 16;
-    fila(tt, 1, y0, h, 'Paso 4.', 'Sustituye en la fórmula:', ['x = ', fr([MINUS + '(', nb(MINUS + '4'), ') ± ', sq(['24'])], ['2(', na('2'), ')']), ' = ', fr(['4 ± ', sq(['24'])], ['4'])], o);
-    fila(tt, 10, y0 + (h + g), h + 20, 'Paso 5.', 'Las dos soluciones:', [x1, ' = ', fr(['4 + ', sq(['24'])], ['4']), '        ', x2, ' = ', fr(['4 − ', sq(['24'])], ['4'])], Object.assign({}, o, LIME));
-    withAlpha(fade(tt, 17), () => txt('x₁ ≈ 2.22     x₂ ≈ −0.22', W / 2, 590, 30, C.mute, { w: 700, align: 'center' }));
-    withAlpha(fade(tt, 20), () => txt('No hace falta simplificar √24: se puede dejar así.', W / 2, 640, 28, C.forest, { w: 700, align: 'center' }));
+    const o = { sz: 40 };
+    filaOper(tt, 1, 96, 230, 'Paso 3.', 'Haz las operaciones:', ['(', nb(MINUS + '4'), ')', sup('2'), ' = 16       4(', na('2'), ')(', nc(MINUS + '1'), ') = ' + MINUS + '8       2(', na('2'), ') = 4'], ['x = ', fr(['4 ± ', sq(['16 ' + MINUS + ' (' + MINUS + '8)'])], ['4']), ' = ', fr(['4 ± ', sq(['24'])], ['4'])], 12, 36);
+    fila(tt, 25, 342, 170, 'Paso 4.', 'Las dos soluciones:', [x1, ' = ', fr(['4 + ', sq(['24'])], ['4']), '        ', x2, ' = ', fr(['4 − ', sq(['24'])], ['4'])], Object.assign({}, o, LIME));
+    withAlpha(fade(tt, 36), () => txt('x₁ ≈ 2.22     x₂ ≈ −0.22', W / 2, 566, 30, C.mute, { w: 700, align: 'center' }));
+    withAlpha(fade(tt, 40), () => txt('No hace falta simplificar √24: se puede dejar así.', W / 2, 618, 28, C.forest, { w: 700, align: 'center' }));
   });
 
   // 5. Ejemplo 2 (imaginarias), parte 1
-  escena(34, tt => {
+  escena(36, tt => {
     titulo(tt, 'Ejemplo 2 · soluciones imaginarias', 60, 34);
     withAlpha(fade(tt, .3), () => mathAt([na('3'), 'x', sup('2'), ' + ', nb('2'), 'x + ', nc('1'), ' = 0'], W / 2, 150, 60, C.forest, 'center'));
-    const o = { sz: 36 }, h = 80, y0 = 186, g = 10;
+    const o = { sz: 36 }, h = 80, y0 = 186, g = 12;
     fila(tt, 1.2, y0, h, 'Paso 1.', 'Identifica a, b y c:', [a_, ' = ', na('3'), '     ', b_, ' = ', nb('2'), '     ', c_, ' = ', nc('1')], o);
-    fila(tt, 7, y0 + (h + g), h, 'Paso 2.', 'Sustituye en Δ = b² − 4ac:', ['Δ = (', nb('2'), ')', sup('2'), ' ' + MINUS + ' 4(', na('3'), ')(', nc('1'), ')'], o);
-    filaOper(tt, 14, y0 + 2 * (h + g), 150, 'Paso 3.', 'Haz las operaciones:', ['(', nb('2'), ')', sup('2'), ' = 4        4(', na('3'), ')(', nc('1'), ') = 12'], ['Δ = 4 ' + MINUS + ' 12 = ' + MINUS + '8'], 20.5, 36);
-    aviso(tt, 26, 546, 100, 'Δ = −8 es negativo', 'las soluciones son imaginarias (llevan i)');
+    fila(tt, 9, y0 + h + g, 200, 'Paso 2.', 'Sustituye en la fórmula general:', sust('3', '2', '1'), { sz: 52 });
+    withAlpha(fade(tt, 27), () => txt('Cada letra se cambia por su número, con su signo.', W / 2, 520, 28, C.forest, { w: 700, align: 'center' }));
   });
 
   // 6. Ejemplo 2 (imaginarias), parte 2
-  escena(36, tt => {
-    titulo(tt, 'Ejemplo 2 · 3x² + 2x + 1 = 0', 56, 34);
-    const o = { sz: 38 }, h = 118, y0 = 90, g = 12;
-    fila(tt, 1, y0, h, 'Paso 4.', 'Sustituye en la fórmula:', ['x = ', fr([MINUS + '(', nb('2'), ') ± ', sq([MINUS + '8'])], ['2(', na('3'), ')']), ' = ', fr([MINUS + '2 ± ', sq([MINUS + '8'])], ['6'])], o);
-    fila(tt, 9, y0 + (h + g), h, 'Paso 5.', 'Saca la i de la raíz:', [sq([MINUS + '8']), ' = ', sq(['8']), ' ' + DOT + ' ', iI, ' = ', sq(['8']), ' ', iI], o);
-    fila(tt, 16, y0 + 2 * (h + g), h, 'Paso 6.', 'Escribe el resultado:', ['x = ', fr([MINUS + '2 ± ', sq(['8']), ' ', iI], ['6'])], o);
-    fila(tt, 23, y0 + 3 * (h + g), h + 20, 'Paso 7.', 'Las dos soluciones:', [x1, ' = ', fr([MINUS + '2 + ', sq(['8']), ' ', iI], ['6']), '      ', x2, ' = ', fr([MINUS + '2 − ', sq(['8']), ' ', iI], ['6'])], Object.assign({}, o, LIME));
-    withAlpha(fade(tt, 29), () => txt('No hace falta simplificar √8: se puede dejar así.', W / 2, 650, 28, C.forest, { w: 700, align: 'center' }));
+  escena(52, tt => {
+    titulo(tt, 'Ejemplo 2 · 3x² + 2x + 1 = 0', 52, 34);
+    const o = { sz: 36 }, h = 100, g = 8, y1 = 80 + 220 + g;
+    filaOper(tt, 1, 80, 220, 'Paso 3.', 'Haz las operaciones:', ['(', nb('2'), ')', sup('2'), ' = 4       4(', na('3'), ')(', nc('1'), ') = 12       2(', na('3'), ') = 6'], ['x = ', fr([MINUS + '2 ± ', sq(['4 ' + MINUS + ' 12'])], ['6']), ' = ', fr([MINUS + '2 ± ', sq([MINUS + '8'])], ['6'])], 10, 36);
+    fila(tt, 22, y1, h, 'Paso 4.', 'Saca la i de la raíz:', [sq([MINUS + '8']), ' = ', sq(['8']), ' ' + DOT + ' ', iI, ' = ', sq(['8']), ' ', iI], o);
+    fila(tt, 30, y1 + (h + g), h, 'Paso 5.', 'Escribe el resultado:', ['x = ', fr([MINUS + '2 ± ', sq(['8']), ' ', iI], ['6'])], o);
+    fila(tt, 37, y1 + 2 * (h + g), h + 30, 'Paso 6.', 'Las dos soluciones:', [x1, ' = ', fr([MINUS + '2 + ', sq(['8']), ' ', iI], ['6']), '      ', x2, ' = ', fr([MINUS + '2 − ', sq(['8']), ' ', iI], ['6'])], Object.assign({}, o, LIME));
+    withAlpha(fade(tt, 45), () => txt('No hace falta simplificar √8: se puede dejar así.', W / 2, 680, 26, C.forest, { w: 700, align: 'center' }));
   });
 
-  recordar(['Identifica a, b y c con su signo (a es el número que multiplica a x²).', 'Calcula el discriminante: Δ = b² − 4ac.', 'Sustituye en x = (−b ± √Δ) ÷ 2a; el denominador es 2a.', 'Escribe x₁ y x₂ (no hace falta simplificar la raíz).'],
+  recordar(['Identifica a, b y c con su signo (a es el número que multiplica a x²).', 'Sustituye en la fórmula general; el denominador es 2a.', 'Haz las operaciones. Lo de adentro de la raíz es el discriminante Δ.', 'Escribe x₁ y x₂ (no hace falta simplificar la raíz).'],
     'Δ > 0  →  dos soluciones reales', 'Δ < 0  →  dos soluciones imaginarias (con i)');
 }
 
