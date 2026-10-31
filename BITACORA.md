@@ -1869,3 +1869,5 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Los videos **originales sin voz** se guardaron en `materiales-fuente/originales-sin-voz/` (esa carpeta **no se sube a GitHub**; si se vuelve a generar un video hay que partir de ese original o de la versión anterior de git, nunca del que ya tiene voz).
   La música se tomó de `materiales-fuente/musica-bach.mp4` (copia del audio original de "jerarquía de operaciones"), que ahora usan todos los generadores en lugar del video de jerarquía (que ahora tiene voz).
 - Las páginas piden cada video con `?v=20261031` y su pie dice "Video con voz".
+- A pedido de Carmen, en `matematicas-3/tema-06-factorizar-x2-bx-c.html` la explicación de cómo se factoriza x² + bx + c dice ahora que el **producto de los dos números nos dé el tercer término (c)** y que su **suma sea el coeficiente del segundo término (b)**
+  (antes: "su producto sea c… su suma sea b"). Se igualó también el texto de las instrucciones de los ejercicios.
