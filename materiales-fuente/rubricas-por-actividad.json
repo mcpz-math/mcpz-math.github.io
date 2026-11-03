@@ -1690,6 +1690,74 @@
           "n5": "Elabora una cadena de argumentos que generaliza: demuestra por qué (a + b)(a − b) = a² − b², relaciona la factorización con las raíces reales de ax² + b = 0 y explica por qué, con a y b del mismo signo, las raíces son un par ±…i para cualquier a y b. Distingue convencerse con ejemplos de demostrar."
         }
       ]
+    },
+    {
+      "id": "numegipcia",
+      "titulo": "Matemáticas 1 · Tema 2 · Numeración egipcia",
+      "file": "matematicas-1/tema-02-numeracion-egipcia.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página (leer, escribir, sumar y multiplicar), resueltos en el cuaderno con la descomposición del número y los cambios de 10 símbolos iguales por uno del siguiente.",
+        "Al menos dos números dibujados a mano con los símbolos egipcios, uno de ellos con un lugar vacío (por ejemplo 1 207).",
+        "La tabla de duplicación de una multiplicación y la explicación de por qué los renglones marcados suman el primer factor."
+      ],
+      "errores": [
+        "Escribe un 0 o deja un hueco para el lugar vacío en lugar de omitir el símbolo.",
+        "Piensa que el símbolo vale más o menos según el lugar donde está (aplica el valor posicional al sistema egipcio).",
+        "Confunde el valor de los símbolos (toma el arco por 100 o la cuerda por 10) o intercambia el dedo (10 000) con el renacuajo (100 000).",
+        "Al sumar, junta los símbolos pero olvida cambiar 10 símbolos iguales por uno del siguiente.",
+        "En la multiplicación por duplicación marca renglones que no suman el primer factor, o suma la primera columna en lugar de la segunda."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe el número con cifras y la descomposición (2 · 1 000 + 3 · 100 + 4 · 10 + 5) que justifica lo que leyó o dibujó.",
+            "Usa el vocabulario correcto (símbolo, valor, base 10, valor posicional, cero, duplicar).",
+            "Explica con sus palabras cómo se escribe, se suma y se multiplica en el sistema egipcio."
+          ],
+          "n1": "Da el número final sin mostrar de dónde sale (no escribe la descomposición ni qué hizo con los símbolos) y casi no usa vocabulario matemático. No usa ningún apoyo, como la tabla de símbolos.",
+          "n23": "Escribe algunos pasos (cuenta símbolos, suma valores) pero omite otros; nombra los símbolos sin explicar cuánto valen ni cómo se cambian 10 iguales por uno del siguiente.",
+          "n4": "Escribe la descomposición y los cambios de 10 símbolos iguales por 1 del siguiente en casi todos los ejercicios, con el vocabulario adecuado, y explica con claridad lo que hizo; puede tener una omisión menor.",
+          "n5": "Escribe todos los pasos con notación correcta (descomposición, cambios al sumar, tabla de duplicación), explica por escrito u oralmente por qué funciona cada método y reconstruye el procedimiento con números nuevos, apoyándose en la tabla de símbolos."
+        },
+        {
+          "id": "REP_ARI",
+          "observar": [
+            "Pasa de la representación egipcia a la decimal y al revés (lee y escribe números con símbolos).",
+            "Relaciona cada símbolo con una potencia de 10 (1, 10, 100, 1 000…).",
+            "Distingue lo que cambia y lo que no entre los dos sistemas: en el egipcio no hay valor posicional ni cero."
+          ],
+          "n1": "Confunde el valor de los símbolos o los cuenta uno por uno sin su valor; no pasa con seguridad de una representación a otra.",
+          "n23": "Lee y escribe números sencillos (sin lugares vacíos), pero se equivoca cuando falta un símbolo (1 207) o cuando hay muchos; usa el cero o la posición como si el sistema egipcio los tuviera.",
+          "n4": "Lee y escribe correctamente números de hasta cinco cifras, incluso con lugares vacíos, relaciona cada símbolo con su potencia de 10 y reconoce que el orden de los símbolos no cambia el valor.",
+          "n5": "Pasa con fluidez de una representación a la otra, incluso con millones; relaciona los símbolos con las potencias de 10 y compara con claridad los dos sistemas (cuántos símbolos o cifras necesita cada uno y qué papel hace el cero)."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Elige el procedimiento que corresponde (descomponer, juntar y cambiar 10 símbolos iguales, duplicar y sumar).",
+            "Llega al resultado de la suma y de la multiplicación.",
+            "Verifica su resultado (con la suma o la multiplicación en cifras) y corrige si no coincide."
+          ],
+          "n1": "Intenta sumar o multiplicar sin un método (suma símbolos de distinta clase, olvida cambiar 10 iguales por uno del siguiente) y no revisa; el resultado no coincide.",
+          "n23": "Aplica el método en los casos sencillos (sumas sin cambiar, duplicaciones cortas), pero se pierde cuando hay que cambiar 10 símbolos iguales por uno del siguiente o elegir los renglones de la tabla de duplicación; revisa poco.",
+          "n45": "Elige y aplica el procedimiento correcto en la suma y en la multiplicación por duplicación, obtiene el resultado completo y lo verifica con la operación en cifras. Detecta y corrige sus errores y resuelve una situación nueva con el mismo método."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué el sistema egipcio no necesita el cero ni el valor posicional.",
+            "Justifica por qué funciona la duplicación (12 × 13 = (8 + 4) × 13) y por qué se cambian 10 símbolos iguales por uno del siguiente.",
+            "Comprueba con ejemplos y contraejemplos (2 005 sin ceros; 999 necesita 27 símbolos)."
+          ],
+          "n1": "Defiende su resultado con frases como «así lo hacían» o «así me salió», sin usar los símbolos ni sus valores.",
+          "n2": "Explica con sus palabras («cada símbolo vale lo mismo donde esté», «se duplica y se suma») por qué funcionan los métodos, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: reordena los símbolos de un número y comprueba que el valor no cambia, verifica una multiplicación por duplicación con la multiplicación en cifras y da ejemplos de números que necesitan muchos símbolos.",
+          "n4": "Explica la estructura del argumento: el valor de cada símbolo es una potencia de 10 y el número vale la suma de sus símbolos (hipótesis), por eso el orden no importa y no hace falta el cero (conclusión). Justifica los cambios de 10 iguales por uno del siguiente.",
+          "n5": "Construye una cadena de argumentos que generaliza: explica por qué todo número se puede escribir sumando potencias de 2 (y por eso la duplicación siempre funciona) y por qué un sistema aditivo es práctico para números redondos y largo para otros, frente al sistema posicional. Distingue convencerse con ejemplos de demostrar."
+        }
+      ]
     }
   ]
 }

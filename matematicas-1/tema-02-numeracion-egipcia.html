@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numeración egipcia — Matemáticas 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css?v=20261031a">
+  <style>
+    /* Símbolos egipcios dibujados con SVG */
+    .egy-num { display: inline-flex; flex-wrap: wrap; align-items: flex-end; gap: 0.4rem 0.8rem; color: var(--forest); vertical-align: middle; }
+    .egy-g { display: block; color: inherit; }
+    .crit-table td:first-child .egy-num { color: var(--lime); }
+    .crit-table td:first-child { vertical-align: middle; }
+    .crit-table td:nth-child(2) { white-space: nowrap; }
+    .egy-show { width: min(100% - 3rem, 760px); margin: 0 auto 1rem; padding: 0.9rem 1.1rem; background: var(--cream); border: 1px solid var(--line); border-radius: 12px; overflow-x: auto; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .example-box .egy-show { width: auto; margin: 0 0 0.8rem; }
+    .egy-show .egy-lbl { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.95rem; color: var(--forest); font-weight: 500; }
+    .egy-ex { margin: 0.4rem 0 0.7rem; padding: 0.7rem 0.9rem; background: var(--cream); border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; }
+    .egy-ex .egy-num { flex-wrap: nowrap; }
+    .egy-ex .egy-plus { font-family: 'Outfit', system-ui, sans-serif; font-size: 1.6rem; color: var(--forest); line-height: 1; }
+    .egy-inputs { align-items: flex-start; gap: 0.7rem 0.9rem; }
+    .egy-inputs label { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; font-size: 0.74rem; color: var(--ink-soft); }
+    .egy-inputs input { flex: none; width: 3.3rem; text-align: center; }
+    .egy-probar { width: min(100% - 3rem, 760px); margin: 0 auto 2.4rem; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.2rem 1.4rem 1.4rem; }
+    .egy-probar input { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 1.1rem; width: 11rem; padding: 0.45rem 0.7rem; border: 1.5px solid var(--moss); border-radius: 8px; background: var(--cream); color: var(--forest); }
+    .egy-probar input:focus { outline: 2px solid var(--moss); outline-offset: 1px; }
+    .egy-probar .egy-out { margin-top: 0.9rem; min-height: 4.5rem; }
+    .egy-probar p { font-size: 0.9rem; color: var(--ink-soft); margin: 0.5rem 0 0; }
+    .egy-dob { border-collapse: separate; border-spacing: 0 4px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.92rem; margin: 0.4rem 0 0.5rem; }
+    .egy-dob th { font-family: 'Karla', system-ui, sans-serif; font-size: 0.78rem; color: var(--ink-soft); font-weight: 700; padding: 0 0.9rem 0.1rem; text-align: center; }
+    .egy-dob td { padding: 0.3rem 0.9rem; text-align: center; background: var(--cream); color: var(--ink-soft); }
+    .egy-dob td:first-child { border-radius: 8px 0 0 8px; }
+    .egy-dob td:last-child { border-radius: 0 8px 8px 0; }
+    .egy-dob tr.on td { background: var(--callout-bg); color: var(--forest); font-weight: 500; }
+    .egy-dob td.mark { background: transparent; color: var(--forest); font-weight: 700; padding-left: 0.2rem; }
+    .egy-cmp { width: min(100% - 3rem, 760px); margin: 0 auto 2rem; border-collapse: collapse; font-size: 0.92rem; background: var(--surface); }
+    .egy-cmp th, .egy-cmp td { border: 1px solid var(--line); padding: 0.55rem 0.8rem; text-align: left; }
+    .egy-cmp th { background: var(--forest); color: var(--lime); font-family: 'Outfit', system-ui, sans-serif; font-weight: 600; }
+    .egy-cmp td:first-child { font-weight: 700; color: var(--forest); background: var(--cream); }
+  </style>
+</head>
+<body>
+
+  <!-- Dibujos de los siete símbolos (se usan con <use>) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <!-- 1: un trazo (vara) -->
+    <symbol id="eg1" viewBox="0 0 20 60"><rect x="7" y="8" width="6" height="44" rx="3" fill="currentColor"/></symbol>
+    <!-- 10: un arco -->
+    <symbol id="eg10" viewBox="0 0 36 60"><path d="M7 52 V26 A11 11 0 0 1 29 26 V52" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></symbol>
+    <!-- 100: una cuerda enrollada -->
+    <symbol id="eg100" viewBox="0 0 46 60"><path d="M21 30 A2 2 0 1 1 17 30 A6 6 0 1 1 29 30 A10 10 0 1 1 9 30 A14 14 0 1 1 37 30" transform="translate(23 30) scale(1.2) translate(-23 -30)" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+    <!-- 1 000: una flor de loto -->
+    <symbol id="eg1000" viewBox="0 0 40 60"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 56 V30"/><path d="M20 30 C13 24 13 12 20 4 C27 12 27 24 20 30 Z"/><path d="M20 30 C10 30 5 22 5 12 C13 14 18 21 20 30 Z"/><path d="M20 30 C30 30 35 22 35 12 C27 14 22 21 20 30 Z"/></g></symbol>
+    <!-- 10 000: un dedo doblado -->
+    <symbol id="eg10000" viewBox="0 0 38 60"><path d="M13 56 V26 C13 14 20 10 31 12" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></symbol>
+    <!-- 100 000: un renacuajo -->
+    <symbol id="eg100000" viewBox="0 0 40 60"><ellipse cx="20" cy="13" rx="9" ry="7" fill="currentColor"/><path d="M20 20 C12 28 28 36 20 44 C15 49 22 53 21 57" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></symbol>
+    <!-- 1 000 000: el dios Heh con los brazos alzados -->
+    <symbol id="eg1000000" viewBox="0 0 50 60"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="25" cy="10" r="5" fill="currentColor"/><path d="M25 17 V37"/><path d="M25 23 L12 15 V5"/><path d="M25 23 L38 15 V5"/><path d="M25 37 L13 56"/><path d="M25 37 L38 56"/></g></symbol>
+  </svg>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-02-numeros-naturales.html">← Tema 2</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 1 · Tema 2 · Sistemas antiguos de numeración</div>
+    <h1>Numeración egipcia</h1>
+  </div>
+
+  <div class="callout">
+    <div class="k">Objetivo</div>
+    <p>Al terminar esta clase podrás <strong>leer y escribir números</strong> con los símbolos de los antiguos egipcios,
+       <strong>sumar</strong> y <strong>multiplicar</strong> como lo hacían sus escribas, y explicar en qué se parece y en qué se
+       diferencia su sistema del nuestro.</p>
+  </div>
+
+  <p class="section-label">¿Quiénes lo usaban?</p>
+  <div class="prose">
+    <p>Hace unos <strong>5 000 años</strong>, a orillas del río Nilo, los antiguos egipcios ya necesitaban contar: las cosechas de trigo, el
+       ganado, los impuestos, los trabajadores de una obra… Para escribir las cantidades inventaron un sistema con
+       <strong>símbolos tomados de su vida diaria</strong> (una vara, una cuerda, una flor de loto…) que dibujaban como jeroglíficos en
+       templos, tumbas y monumentos.</p>
+    <p>Casi todo lo que sabemos de sus matemáticas viene de papiros como el <strong>papiro de Rhind</strong> (hacia 1650 a. C.), copiado por el escriba
+       <strong>Ahmés</strong>, que reúne 84 problemas con sus soluciones. También hay números muy grandes: en la maza del rey Narmer
+       (hacia 3100 a. C.) se interpreta que se anotó un botín de 400 000 bueyes, 1 422 000 cabras y 120 000 prisioneros.</p>
+  </div>
+
+  <p class="section-label" id="simbolos">Los siete símbolos</p>
+  <div class="prose">
+    <p>Es un sistema de <strong>base 10</strong>, igual que el nuestro: cada símbolo vale <strong>diez veces</strong> el anterior. Hay un símbolo
+       distinto para el 1 y para cada potencia de 10 hasta el millón.</p>
+  </div>
+  <table class="crit-table" aria-label="Los siete símbolos egipcios">
+    <tr><td data-egy="1" data-sc="0.8"></td><td><strong>1</strong> = 10⁰</td><td>Un <strong>trazo</strong> (una vara).</td></tr>
+    <tr><td data-egy="10" data-sc="0.8"></td><td><strong>10</strong> = 10¹</td><td>Un <strong>arco</strong> (parece un hueso del talón o una soga doblada).</td></tr>
+    <tr><td data-egy="100" data-sc="0.8"></td><td><strong>100</strong> = 10²</td><td>Una <strong>cuerda enrollada</strong>.</td></tr>
+    <tr><td data-egy="1000" data-sc="0.8"></td><td><strong>1 000</strong> = 10³</td><td>Una <strong>flor de loto</strong>.</td></tr>
+    <tr><td data-egy="10000" data-sc="0.8"></td><td><strong>10 000</strong> = 10⁴</td><td>Un <strong>dedo</strong> doblado.</td></tr>
+    <tr><td data-egy="100000" data-sc="0.8"></td><td><strong>100 000</strong> = 10⁵</td><td>Un <strong>renacuajo</strong> (o una rana).</td></tr>
+    <tr><td data-egy="1000000" data-sc="0.8"></td><td><strong>1 000 000</strong> = 10⁶</td><td>El dios <strong>Heh</strong> con los brazos alzados, como asombrado ante un número tan grande.</td></tr>
+  </table>
+
+  <p class="section-label" id="escribir">¿Cómo se escribe un número?</p>
+  <ol class="steps">
+    <li><span><strong>Descompón el número</strong> en unidades, decenas, centenas, unidades de millar… Por ejemplo, 2 345 = 2 000 + 300 + 40 + 5.</span></li>
+    <li><span><strong>Dibuja cada símbolo tantas veces</strong> como diga su cifra: 2 flores de loto, 3 cuerdas, 4 arcos y 5 trazos.</span></li>
+    <li><span><strong>Si una cifra es 0, no dibujas ese símbolo.</strong> No hay nada que dibujar para «cero decenas».</span></li>
+    <li><span><strong>Acomódalos de mayor a menor</strong> (aquí, de izquierda a derecha). Es sólo una costumbre: el valor del número no cambia si los cambias de lugar.</span></li>
+  </ol>
+
+  <div class="example-box">
+    <h2>Ejemplo 1: 2 345</h2>
+    <div class="egy-show"><div data-egy="2345" data-sc="0.7"></div></div>
+    <span class="eq">2 · 1 000 + 3 · 100 + 4 · 10 + 5 · 1 = 2 345</span>
+  </div>
+  <div class="example-box">
+    <h2>Ejemplo 2: 1 207 (no hay decenas)</h2>
+    <div class="egy-show"><div data-egy="1207" data-sc="0.7"></div></div>
+    <span class="eq">1 · 1 000 + 2 · 100 + 0 · 10 + 7 · 1 = 1 207</span>
+    <p style="margin:0.6rem 0 0;">No hay ningún arco porque el lugar de las decenas está vacío: <strong>ese lugar simplemente no se dibuja</strong>.</p>
+  </div>
+  <div class="example-box">
+    <h2>Ejemplo 3: 130 042</h2>
+    <div class="egy-show"><div data-egy="130042" data-sc="0.7"></div></div>
+    <span class="eq">1 · 100 000 + 3 · 10 000 + 4 · 10 + 2 · 1 = 130 042</span>
+    <p style="margin:0.6rem 0 0;">Faltan las flores de loto y las cuerdas, porque no hay unidades de millar ni centenas.</p>
+  </div>
+
+  <p class="section-label" id="probador">Pruébalo tú</p>
+  <div class="egy-probar">
+    <label for="pr-in" style="font-weight:700; color:var(--forest); font-size:0.9rem;">Escribe un número del 1 al 9 999 999:</label><br>
+    <input type="text" id="pr-in" inputmode="numeric" autocomplete="off" value="3407">
+    <div class="egy-out" id="pr-out" aria-live="polite"></div>
+  </div>
+
+  <p class="section-label" id="sin-valor-posicional">Sin valor posicional y sin cero</p>
+  <div class="prose">
+    <p>En nuestro sistema <strong>el lugar importa</strong>: el 3 vale 30 en 31, pero vale sólo 3 en 13. En el sistema egipcio no:
+       <strong>cada símbolo vale lo mismo en cualquier lugar</strong>, y lo único que importa es <strong>cuántos</strong> símbolos de cada
+       clase hay. Por eso estos dos dibujos son el mismo número, 2 345:</p>
+  </div>
+  <div class="egy-show">
+    <div data-egy="2345" data-sc="0.55"></div>
+    <span class="egy-lbl">=</span>
+    <div data-egy="2345" data-sc="0.55" data-order="asc"></div>
+  </div>
+  <div class="prose">
+    <p>Tampoco tenían <strong>cero</strong>. No lo necesitaban: para escribir 2 005 nosotros usamos dos ceros para marcar lugares vacíos; los egipcios sólo dibujaban lo que había.</p>
+  </div>
+  <div class="egy-show">
+    <span class="egy-lbl">2 005 =</span>
+    <div data-egy="2005" data-sc="0.55"></div>
+  </div>
+  <div class="callout">
+    <div class="k">Para recordar</div>
+    <p>El sistema egipcio es <strong>aditivo</strong>: el valor del número es la <strong>suma</strong> del valor de todos sus símbolos. No tiene valor posicional ni cero.</p>
+  </div>
+
+  <p class="section-label" id="sumar">Sumar en numeración egipcia</p>
+  <ol class="steps">
+    <li><span><strong>Dibuja los dos números.</strong></span></li>
+    <li><span><strong>Junta los símbolos iguales</strong> (trazos con trazos, arcos con arcos…).</span></li>
+    <li><span>Cada vez que haya <strong>10 símbolos iguales</strong>, cámbialos por <strong>uno del siguiente</strong>: 10 trazos por 1 arco, 10 arcos por 1 cuerda, etcétera.</span></li>
+    <li><span><strong>Lee el resultado</strong> sumando el valor de los símbolos que quedaron.</span></li>
+  </ol>
+  <div class="example-box">
+    <h2>Ejemplo: 345 + 178</h2>
+    <p style="margin-bottom:0.3rem;"><strong>1.</strong> Los dos números:</p>
+    <div class="egy-ex"><span data-egy="345" data-sc="0.5"></span><span class="egy-plus">+</span><span data-egy="178" data-sc="0.5"></span></div>
+    <p style="margin-bottom:0.3rem;"><strong>2.</strong> Junta los símbolos iguales: 4 cuerdas, 11 arcos y 13 trazos.</p>
+    <div class="egy-ex"><span data-egyc="100:4,10:11,1:13" data-sc="0.5"></span></div>
+    <p style="margin-bottom:0.3rem;"><strong>3.</strong> Cambia 10 trazos por 1 arco: quedan 12 arcos y 3 trazos.</p>
+    <div class="egy-ex"><span data-egyc="100:4,10:12,1:3" data-sc="0.5"></span></div>
+    <p style="margin-bottom:0.3rem;"><strong>4.</strong> Cambia 10 arcos por 1 cuerda: quedan 5 cuerdas, 2 arcos y 3 trazos.</p>
+    <div class="egy-ex"><span data-egyc="100:5,10:2,1:3" data-sc="0.5"></span></div>
+    <span class="eq">5 · 100 + 2 · 10 + 3 · 1 = 523</span>
+    <p style="margin:0.6rem 0 0;">Comprobación con nuestro sistema: 345 + 178 = 523 ✓</p>
+  </div>
+
+  <p class="section-label" id="multiplicar">Multiplicar: duplicar y sumar</p>
+  <div class="prose">
+    <p>Los escribas no se aprendían tablas de multiplicar. Sólo necesitaban saber <strong>duplicar</strong> (multiplicar por 2) y <strong>sumar</strong>.</p>
+  </div>
+  <ol class="steps">
+    <li><span>Escribe dos columnas: en la primera empieza con <strong>1</strong> y en la segunda con el <strong>número que vas a multiplicar</strong>.</span></li>
+    <li><span><strong>Duplica</strong> las dos columnas, renglón por renglón, hasta que la primera columna esté a punto de pasarse del otro factor.</span></li>
+    <li><span>Elige los números de la primera columna que <strong>suman el otro factor</strong> (empieza por el más grande que quepa).</span></li>
+    <li><span><strong>Suma</strong> los números de la segunda columna que están en esos mismos renglones.</span></li>
+  </ol>
+  <div class="example-box">
+    <h2>Ejemplo: 12 × 13</h2>
+    <table class="egy-dob" aria-label="Tabla de duplicación de 12 por 13">
+      <tr><th>Primera columna</th><th>13 duplicado</th><th></th></tr>
+      <tr><td>1</td><td>13</td><td class="mark"></td></tr>
+      <tr><td>2</td><td>26</td><td class="mark"></td></tr>
+      <tr class="on"><td>4</td><td>52</td><td class="mark">✓</td></tr>
+      <tr class="on"><td>8</td><td>104</td><td class="mark">✓</td></tr>
+    </table>
+    <p>Para llegar a 12 se necesitan 8 y 4 (8 + 4 = 12), que son los renglones marcados. Sumamos lo que tienen en la segunda columna:</p>
+    <span class="eq">52 + 104 = 156</span>
+    <p style="margin:0.6rem 0 0;"><strong>¿Por qué funciona?</strong> Porque 12 × 13 = (8 + 4) × 13 = 8 × 13 + 4 × 13 = 104 + 52. Los renglones marcados son justo esos productos.</p>
+  </div>
+
+  <p class="section-label" id="comparar">Comparamos con nuestro sistema</p>
+  <table class="egy-cmp" aria-label="Sistema egipcio y sistema indoarábigo">
+    <tr><th></th><th>Egipcio</th><th>Indoarábigo (el que usamos)</th></tr>
+    <tr><td>Base</td><td>10</td><td>10</td></tr>
+    <tr><td>Símbolos distintos</td><td>7</td><td>10 cifras (0 al 9)</td></tr>
+    <tr><td>Valor posicional</td><td>No</td><td>Sí</td></tr>
+    <tr><td>Cero</td><td>No</td><td>Sí</td></tr>
+    <tr><td>El número 999</td><td>27 símbolos (9 cuerdas, 9 arcos y 9 trazos)</td><td>3 cifras</td></tr>
+    <tr><td>El número 1 000 000</td><td>1 símbolo</td><td>7 cifras</td></tr>
+    <tr><td>El número 999 999</td><td>54 símbolos</td><td>6 cifras</td></tr>
+  </table>
+  <div class="callout">
+    <div class="k">Para recordar</div>
+    <p>El sistema egipcio es muy claro para escribir <strong>números como 1 000 000</strong>, pero muy largo para números como 999 999.
+       El valor posicional y el cero nos permiten escribir cualquier número con sólo <strong>diez cifras</strong>.</p>
+  </div>
+
+  <p class="section-label" id="ejercicios-egipcia">Ejercicios: numeración egipcia</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Hay cuatro tipos de ejercicios: <strong>leer</strong> un número egipcio, <strong>escribir</strong> un número con los símbolos
+       (cuántas veces dibujas cada uno), <strong>sumar</strong> dos números egipcios y <strong>multiplicar</strong> duplicando.
+       Resuélvelos en tu cuaderno y oprime <strong>Comprobar</strong>.</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong> (30 de leer, 30 de escribir, 25 de sumar y 15 de multiplicar).
+       Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="ne-grid"></div>
+  <p class="practice-score" id="ne-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="ne-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script src="../assets/practica-tarjetas.js?v=20261030r"></script>
+  <script>
+  (function () {
+    var h = Practica.h;
+    var ORDER = [1000000, 100000, 10000, 1000, 100, 10, 1];
+    var GW = { 1: 20, 10: 36, 100: 46, 1000: 40, 10000: 38, 100000: 40, 1000000: 50 }, RH = 60;
+    var NAME = { 1: 'el trazo', 10: 'el arco', 100: 'la cuerda', 1000: 'la flor de loto', 10000: 'el dedo', 100000: 'el renacuajo', 1000000: 'el dios Heh' };
+    var ONE = { 1: 'trazo', 10: 'arco', 100: 'cuerda', 1000: 'flor de loto', 10000: 'dedo', 100000: 'renacuajo', 1000000: 'dios Heh' };
+    var MANY = { 1: 'trazos', 10: 'arcos', 100: 'cuerdas', 1000: 'flores de loto', 10000: 'dedos', 100000: 'renacuajos', 1000000: 'dioses Heh' };
+
+    function countsOf(n) { var c = {}; ORDER.forEach(function (v) { c[v] = Math.floor(n / v); n -= c[v] * v; }); return c; }
+    function rowsOf(c) { // cómo se acomodan los símbolos repetidos, en filas
+      if (c <= 4) return [c]; if (c === 5) return [3, 2]; if (c === 6) return [3, 3]; if (c === 7) return [4, 3]; if (c === 8) return [4, 4]; if (c === 9) return [3, 3, 3];
+      var p = Math.ceil(c / 3); return [p, p, c - 2 * p];
+    }
+    function groupSVG(v, c, sc) {
+      var rows = rowsOf(c), mx = Math.max.apply(null, rows), w = mx * GW[v], hh = rows.length * RH, s = '';
+      rows.forEach(function (k, r) {
+        var off = (mx - k) * GW[v] / 2;
+        for (var i = 0; i < k; i++) s += '<use href="#eg' + v + '" x="' + (off + i * GW[v]) + '" y="' + (r * RH) + '" width="' + GW[v] + '" height="' + RH + '"/>';
+      });
+      return '<svg class="egy-g" role="img" aria-label="' + c + ' × ' + h.thin(v) + '" width="' + Math.round(w * sc) + '" height="' + Math.round(hh * sc) + '" viewBox="0 0 ' + w + ' ' + hh + '">' + s + '</svg>';
+    }
+    function egy(counts, sc, order) { // dibujo de un número a partir de cuántos símbolos de cada clase
+      var s = '';
+      (order || ORDER).forEach(function (v) { if (counts[v] > 0) s += groupSVG(v, counts[v], sc); });
+      return '<span class="egy-num">' + s + '</span>';
+    }
+    function terms(n) { var c = countsOf(n), t = []; ORDER.forEach(function (v) { if (c[v] > 0) t.push(c[v] + ' · ' + h.thin(v)); }); return t.join(' + '); }
+    function words(counts) { // «4 cuerdas, 11 arcos y 13 trazos»
+      var t = []; ORDER.forEach(function (v) { var c = counts[v]; if (c > 0) t.push(c + ' ' + (c === 1 ? ONE[v] : MANY[v])); });
+      return t.length > 1 ? t.slice(0, -1).join(', ') + ' y ' + t[t.length - 1] : t.join('');
+    }
+
+    // Dibujos fijos de la página
+    [].forEach.call(document.querySelectorAll('[data-egy]'), function (el) {
+      el.innerHTML = egy(countsOf(+el.getAttribute('data-egy')), parseFloat(el.getAttribute('data-sc') || '0.6'), el.getAttribute('data-order') === 'asc' ? ORDER.slice().reverse() : null);
+    });
+    [].forEach.call(document.querySelectorAll('[data-egyc]'), function (el) {
+      var c = {}; el.getAttribute('data-egyc').split(',').forEach(function (p) { var kv = p.split(':'); c[kv[0]] = +kv[1]; });
+      el.innerHTML = egy(c, parseFloat(el.getAttribute('data-sc') || '0.5'));
+    });
+
+    // Probador
+    var inp = document.getElementById('pr-in'), out = document.getElementById('pr-out');
+    function probar() {
+      var s = inp.value.replace(/\s+/g, '');
+      if (s === '') { out.innerHTML = '<p>Escribe un número para ver cómo lo escribían los egipcios.</p>'; return; }
+      if (!/^\d+$/.test(s)) { out.innerHTML = '<p>Escribe sólo cifras (del 0 al 9).</p>'; return; }
+      var n = parseInt(s, 10);
+      if (n === 0) { out.innerHTML = '<p>El cero no se escribe: los egipcios no tenían un símbolo para él.</p>'; return; }
+      if (n > 9999999) { out.innerHTML = '<p>Este probador llega hasta 9 999 999.</p>'; return; }
+      out.innerHTML = '<div class="egy-show" style="width:auto; margin:0;">' + egy(countsOf(n), 0.75) + '</div>' +
+                      '<p><strong>' + h.thin(n) + '</strong> = ' + terms(n) + '</p><p>Son ' + words(countsOf(n)) + '.</p>';
+    }
+    inp.addEventListener('input', probar); probar();
+
+    // Tabla de duplicación de a × b (a = el número que se descompone en potencias de 2)
+    function dob(a, b) {
+      var rows = [], p = 1, i;
+      while (p <= a) { rows.push({ p: p, v: p * b }); p *= 2; }
+      var rest = a, on = [];
+      for (i = rows.length - 1; i >= 0; i--) if (rows[i].p <= rest) { on[i] = true; rest -= rows[i].p; }
+      var html = '<table class="egy-dob"><tr><th>Primera columna</th><th>' + b + ' duplicado</th><th></th></tr>', ps = [], vs = [];
+      rows.forEach(function (r, k) {
+        html += '<tr' + (on[k] ? ' class="on"' : '') + '><td>' + r.p + '</td><td>' + r.v + '</td><td class="mark">' + (on[k] ? '✓' : '') + '</td></tr>';
+        if (on[k]) { ps.unshift(r.p); vs.unshift(r.v); }
+      });
+      return { html: html + '</table>', text: a + ' = ' + ps.join(' + ') + '; ' + vs.join(' + ') + ' = <strong>' + (a * b) + '</strong>' };
+    }
+
+    // Banco de 100 ejercicios: 30 de leer, 30 de escribir, 25 de sumar y 15 de multiplicar
+    var seed = 20261103;
+    function rnd() { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; }
+    function rint(lo, hi) { return lo + Math.floor(rnd() * (hi - lo + 1)); }
+    function randN(d, zero) { // número de d cifras; si zero, con un lugar vacío (cifra 0) que no sea la primera
+      var s = String(rint(Math.pow(10, d - 1), Math.pow(10, d) - 1)).split('');
+      if (zero) s[rint(1, d - 1)] = '0';
+      return parseInt(s.join(''), 10);
+    }
+    var BANK = [], seen = {}, c;
+    function add(e, key) { if (seen[key]) return false; seen[key] = 1; BANK.push(e); return true; }
+    for (c = 0; c < 30;) { var n1 = randN(c < 8 ? 2 : (c < 18 ? 3 : (c < 26 ? 4 : 5)), c % 3 === 2); if (add({ t: 'leer', n: n1 }, 'L' + n1)) c++; }
+    for (c = 0; c < 30;) { var n2 = randN(c < 6 ? 2 : (c < 14 ? 3 : (c < 24 ? 4 : 5)), c % 3 === 2); if (add({ t: 'esc', n: n2 }, 'E' + n2)) c++; }
+    for (c = 0; c < 25;) { var d3 = c < 8 ? 2 : (c < 17 ? 3 : 4), a3 = randN(d3, false), b3 = randN(d3, false); if (add({ t: 'sum', a: a3, b: b3 }, 'S' + a3 + '+' + b3)) c++; }
+    for (c = 0; c < 15;) {
+      var a4 = c < 5 ? rint(3, 9) : (c < 10 ? rint(10, 19) : rint(13, 31)), b4 = c < 5 ? rint(3, 15) : (c < 10 ? rint(6, 30) : rint(11, 45));
+      if (add({ t: 'mul', a: a4, b: b4 }, 'M' + a4 + 'x' + b4)) c++;
+    }
+
+    function numInput(label) {
+      return '<div class="practice-row"><span class="eq">' + label + '</span>' + h.inputHTML('n', label, 'width:8rem') + '</div>';
+    }
+
+    Practica.setup({
+      id: 'ne', bank: BANK, anchor: 'ejercicios-egipcia',
+      card: function (e) {
+        if (e.t === 'leer') {
+          var cl = countsOf(e.n);
+          return {
+            head: 'Lee este número egipcio',
+            body: '<div class="egy-ex">' + egy(cl, 0.5) + '</div>' + numInput('Es el número'),
+            check: function (ctx) {
+              var v = h.parseNat(ctx.inp.n.value);
+              if (v === null) return { msg: 'Escribe el número con cifras (por ejemplo 2 345).' };
+              return v === e.n ? { wrong: [], total: 1 } :
+                { wrong: [1], total: 1, msgs: ['Cuenta cuántos símbolos hay de cada clase, multiplica por su valor (el trazo vale 1, el arco 10, la cuerda 100, la flor de loto 1 000…) y suma todo.'] };
+            },
+            sol: terms(e.n) + ' = <strong>' + h.thin(e.n) + '</strong>'
+          };
+        }
+        if (e.t === 'esc') {
+          var ce = countsOf(e.n), top = ORDER.filter(function (v) { return ce[v] > 0; })[0], shown = ORDER.filter(function (v) { return v <= top; }), boxes = '';
+          shown.forEach(function (v) {
+            boxes += '<label>' + egy(countsOf(v), 0.6) + h.inputHTML('c' + v, 'Cuántas veces ' + NAME[v], '', 'inputmode="numeric" ') + '<span>' + h.thin(v) + '</span></label>';
+          });
+          return {
+            head: 'Escribe <strong>' + h.thin(e.n) + '</strong> en numeración egipcia',
+            body: '<div class="practice-ask">¿Cuántas veces dibujas cada símbolo? Escribe 0 si no lo usas.</div><div class="practice-row egy-inputs">' + boxes + '</div>',
+            check: function (ctx) {
+              var vals = {}, i, v;
+              for (i = 0; i < shown.length; i++) {
+                v = h.parseNat(ctx.inp['c' + shown[i]].value);
+                if (v === null) return { msg: 'Llena todas las casillas con un número (escribe 0 si no usas ese símbolo).' };
+                vals[shown[i]] = v;
+              }
+              var wrong = [], msgs = [];
+              shown.forEach(function (sv) {
+                if (vals[sv] !== ce[sv]) {
+                  wrong.push(sv);
+                  msgs.push('<strong>' + NAME[sv].charAt(0).toUpperCase() + NAME[sv].slice(1) + '</strong> (' + h.thin(sv) + '): necesitas ' + ce[sv] + ' ' + (ce[sv] === 1 ? ONE[sv] : MANY[sv]) +
+                            (ce[sv] === 0 ? ' — ese lugar vale 0, así que no se dibuja.' : '.'));
+                }
+              });
+              return { wrong: wrong, msgs: msgs, total: shown.length };
+            },
+            sol: '<div class="egy-ex">' + egy(ce, 0.5) + '</div>' + words(ce) + '.'
+          };
+        }
+        if (e.t === 'sum') {
+          var sa = countsOf(e.a), sb = countsOf(e.b), join = {}, sm = e.a + e.b;
+          ORDER.forEach(function (v) { join[v] = sa[v] + sb[v]; });
+          return {
+            head: 'Suma estos dos números egipcios',
+            body: '<div class="egy-ex">' + egy(sa, 0.45) + '<span class="egy-plus">+</span>' + egy(sb, 0.45) + '</div>' + numInput('La suma es'),
+            check: function (ctx) {
+              var v = h.parseNat(ctx.inp.n.value);
+              if (v === null) return { msg: 'Escribe la suma con cifras (por ejemplo 523).' };
+              return v === sm ? { wrong: [], total: 1 } :
+                { wrong: [1], total: 1, msgs: ['Al juntar los símbolos iguales quedan ' + words(join) + '. Cada 10 símbolos iguales se cambian por 1 del siguiente.'] };
+            },
+            sol: '<div class="egy-ex">' + egy(countsOf(sm), 0.5) + '</div>' + h.thin(e.a) + ' + ' + h.thin(e.b) + ' = <strong>' + h.thin(sm) + '</strong>'
+          };
+        }
+        var t = dob(e.a, e.b), pr = e.a * e.b;
+        return {
+          head: 'Calcula <strong>' + e.a + ' × ' + e.b + '</strong> duplicando',
+          body: '<div class="practice-ask">Duplica ' + e.b + ' y suma los renglones que forman ' + e.a + '.</div>' + numInput('El producto es'),
+          check: function (ctx) {
+            var v = h.parseNat(ctx.inp.n.value);
+            if (v === null) return { msg: 'Escribe el producto con cifras.' };
+            return v === pr ? { wrong: [], total: 1 } :
+              { wrong: [1], total: 1, msgs: ['Escribe las dos columnas: la primera empieza en 1 y la segunda en ' + e.b + ', y las dos se duplican. Elige los números de la primera columna que suman ' + e.a + ' y suma los de la segunda.'] };
+          },
+          sol: t.html + t.text
+        };
+      }
+    });
+  })();
+  </script>
+
+  <p class="section-label no-caps" id="rubrica-egipcia">Rúbrica · Numeración egipcia</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe el número con cifras y la descomposición (2 · 1 000 + 3 · 100 + 4 · 10 + 5) que justifica lo que leyó o dibujó.</li><li>Usa el vocabulario correcto (símbolo, valor, base 10, valor posicional, cero, duplicar).</li><li>Explica con sus palabras cómo se escribe, se suma y se multiplica en el sistema egipcio.</li></ul></div></td>
+            <td>Da el número final sin mostrar de dónde sale (no escribe la descomposición ni qué hizo con los símbolos) y casi no usa vocabulario matemático. No usa ningún apoyo, como la tabla de símbolos.</td>
+            <td colspan="2">Escribe algunos pasos (cuenta símbolos, suma valores) pero omite otros; nombra los símbolos sin explicar cuánto valen ni cómo se cambian 10 iguales por uno del siguiente.</td>
+            <td>Escribe la descomposición y los cambios de 10 símbolos iguales por 1 del siguiente en casi todos los ejercicios, con el vocabulario adecuado, y explica con claridad lo que hizo; puede tener una omisión menor.</td>
+            <td>Escribe todos los pasos con notación correcta (descomposición, cambios al sumar, tabla de duplicación), explica por escrito u oralmente por qué funciona cada método y reconstruye el procedimiento con números nuevos, apoyándose en la tabla de símbolos.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación aritmética</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Pasa de la representación egipcia a la decimal y al revés (lee y escribe números con símbolos).</li><li>Relaciona cada símbolo con una potencia de 10 (1, 10, 100, 1 000…).</li><li>Distingue lo que cambia y lo que no entre los dos sistemas: en el egipcio no hay valor posicional ni cero.</li></ul></div></td>
+            <td>Confunde el valor de los símbolos o los cuenta uno por uno sin su valor; no pasa con seguridad de una representación a otra.</td>
+            <td colspan="2">Lee y escribe números sencillos (sin lugares vacíos), pero se equivoca cuando falta un símbolo (1 207) o cuando hay muchos; usa el cero o la posición como si el sistema egipcio los tuviera.</td>
+            <td>Lee y escribe correctamente números de hasta cinco cifras, incluso con lugares vacíos, relaciona cada símbolo con su potencia de 10 y reconoce que el orden de los símbolos no cambia el valor.</td>
+            <td>Pasa con fluidez de una representación a la otra, incluso con millones; relaciona los símbolos con las potencias de 10 y compara con claridad los dos sistemas (cuántos símbolos o cifras necesita cada uno y qué papel hace el cero).</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Modelación y resolución de problemas</strong><span class="crit-desc">Formulación del problema y sistematización · Matematización y análisis del sistema matemático · Interpretación, evaluación y validación.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Elige el procedimiento que corresponde (descomponer, juntar y cambiar 10 símbolos iguales, duplicar y sumar).</li><li>Llega al resultado de la suma y de la multiplicación.</li><li>Verifica su resultado (con la suma o la multiplicación en cifras) y corrige si no coincide.</li></ul></div></td>
+            <td>Intenta sumar o multiplicar sin un método (suma símbolos de distinta clase, olvida cambiar 10 iguales por uno del siguiente) y no revisa; el resultado no coincide.</td>
+            <td colspan="2">Aplica el método en los casos sencillos (sumas sin cambiar, duplicaciones cortas), pero se pierde cuando hay que cambiar 10 símbolos iguales por uno del siguiente o elegir los renglones de la tabla de duplicación; revisa poco.</td>
+            <td colspan="2">Elige y aplica el procedimiento correcto en la suma y en la multiplicación por duplicación, obtiene el resultado completo y lo verifica con la operación en cifras. Detecta y corrige sus errores y resuelve una situación nueva con el mismo método.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué el sistema egipcio no necesita el cero ni el valor posicional.</li><li>Justifica por qué funciona la duplicación (12 × 13 = (8 + 4) × 13) y por qué se cambian 10 símbolos iguales por uno del siguiente.</li><li>Comprueba con ejemplos y contraejemplos (2 005 sin ceros; 999 necesita 27 símbolos).</li></ul></div></td>
+            <td>Defiende su resultado con frases como «así lo hacían» o «así me salió», sin usar los símbolos ni sus valores.</td>
+            <td>Explica con sus palabras («cada símbolo vale lo mismo donde esté», «se duplica y se suma») por qué funcionan los métodos, con pocos términos matemáticos.</td>
+            <td>Valida con ejemplos: reordena los símbolos de un número y comprueba que el valor no cambia, verifica una multiplicación por duplicación con la multiplicación en cifras y da ejemplos de números que necesitan muchos símbolos.</td>
+            <td>Explica la estructura del argumento: el valor de cada símbolo es una potencia de 10 y el número vale la suma de sus símbolos (hipótesis), por eso el orden no importa y no hace falta el cero (conclusión). Justifica los cambios de 10 iguales por uno del siguiente.</td>
+            <td>Construye una cadena de argumentos que generaliza: explica por qué todo número se puede escribir sumando potencias de 2 (y por eso la duplicación siempre funciona) y por qué un sistema aditivo es práctico para números redondos y largo para otros, frente al sistema posicional. Distingue convencerse con ejemplos de demostrar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>
