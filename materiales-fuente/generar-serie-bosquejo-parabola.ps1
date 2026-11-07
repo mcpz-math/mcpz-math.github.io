@@ -8,13 +8,15 @@
 # Script solo ASCII: el texto con acentos viene del JSON (UTF-8).
 # Mini-lenguaje de cada expresion del JSON: "{1/3}" = fraccion apilada, "[x-2]^2" = parentesis con exponente,
 # "^2" = exponente de un solo caracter, "^{2m}" = exponente de varios caracteres (se aplica al caracter anterior).
-param([string]$Root, [string]$Base, [string]$Out, [string]$OutClave = '', [string]$Serie = 'serie3bosquejo')
+param([string]$Root, [string]$Base, [string]$Out, [string]$OutClave = '', [string]$Serie = 'serie3bosquejo', [string]$Rubrica = 'serie3bosquejo')
 $ErrorActionPreference = 'Stop'
 $utf8 = New-Object System.Text.UTF8Encoding($false)
 $matriz = [IO.File]::ReadAllText((Join-Path $Root 'materiales-fuente\matriz-niveles-evaluacion.json'), $utf8) | ConvertFrom-Json
 $act = [IO.File]::ReadAllText((Join-Path $Root 'materiales-fuente\rubricas-por-actividad.json'), $utf8) | ConvertFrom-Json
 $s = $act.$Serie
-$ru = $act.actividades | Where-Object { $_.id -eq $Serie }
+# una serie nueva (p. ej. serie4bosquejo) solo trae titulo y ejercicios: lo demas (textos, instrucciones, clave) se toma de serie3bosquejo
+foreach ($p in $act.serie3bosquejo.PSObject.Properties) { if (-not $s.PSObject.Properties[$p.Name]) { $s | Add-Member -NotePropertyName $p.Name -NotePropertyValue $p.Value } }
+$ru = $act.actividades | Where-Object { $_.id -eq $Rubrica }
 $et = $act.etiquetas
 $bul = [string][char]0x2022
 $dot = [char]0x00B7
