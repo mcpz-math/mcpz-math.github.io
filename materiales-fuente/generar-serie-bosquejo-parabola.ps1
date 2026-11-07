@@ -1,6 +1,6 @@
 # Genera la "Serie 3. Bosquejo de f(x) = a(x - h)^2 y de f(x) = ax^2 + bx + c (TCP)" en Word (.docx):
-#   - la Serie para los alumnos: 10 ejercicios, cada uno con un plano cartesiano vacio para el bosquejo, la casilla
-#     de maximo / minimo y su rubrica (matriz de niveles de Carmen);
+#   - la Serie para los alumnos: 10 ejercicios (sin plano: el bosquejo se hace en hoja aparte) con las casillas de
+#     hacia donde abre, gorda / flaca y maximo / minimo, y su rubrica (matriz de niveles de Carmen);
 #   - (opcional, -OutClave) la clave de respuestas para la profesora, con los bosquejos dibujados a escala aproximada.
 # Toma los textos de materiales-fuente\rubricas-por-actividad.json (bloque y actividad "serie3bosquejo") y de
 # matriz-niveles-evaluacion.json. Usa como base (estilos, fuentes, tema) cualquier otra Serie en Word de Carmen: -Base.
@@ -176,10 +176,14 @@ function Img-Parrafo([string]$rid, [string]$nombre) {
 $wT = 2200; $wI = 2670   # ancho de la celda de texto y de la celda del plano (suman 4870 por ejercicio)
 $sz = 18
 function Linea([string]$runs) { return (P $runs 50) }
-function Casillas([bool]$esMax, [bool]$marcar) {
-  $c1 = $boxOff; $c2 = $boxOff
-  if ($marcar) { if ($esMax) { $c1 = $boxOn } else { $c2 = $boxOn } }
-  return (Run $c1 $sz $false $false 'Segoe UI Symbol') + (Run (' ' + $s.maximo + '    ') $sz) + (Run $c2 $sz $false $false 'Segoe UI Symbol') + (Run (' ' + $s.minimo) $sz)
+function Opc([string]$titulo, $etiquetas, [int]$marca) {   # "titulo  [ ] op1   [ ] op2 ..." ($marca = indice marcado, -1 = ninguno)
+  $r = ''
+  if ($titulo -ne '') { $r += (Run ($titulo + '  ') $sz) }
+  for ($k = 0; $k -lt $etiquetas.Count; $k++) {
+    $c = $boxOff; if ($k -eq $marca) { $c = $boxOn }
+    $r += (Run $c $sz $false $false 'Segoe UI Symbol') + (Run (' ' + $etiquetas[$k] + '    ') $sz)
+  }
+  return $r
 }
 function Celdas-Ejercicio([int]$i, [bool]$clave, [string]$rid) {
   $e = $s.ejercicios[$i]; $n = $i + 1
@@ -188,21 +192,31 @@ function Celdas-Ejercicio([int]$i, [bool]$clave, [string]$rid) {
   $cabeza = (P ((Run ([string]$n + '.  ') 22 $true) + (Mat ('f(x)=' + $e.f))) 80)
   $txt = $cabeza
   $esMax = ([int]$a[0] -lt 0)
+  $iAbre = 0; if ($esMax) { $iAbre = 1 }                      # 0 = arriba, 1 = abajo
+  $absn = [Math]::Abs([int]$a[0]); $dd = [int]$a[1]
+  $iForma = 2; if ($absn -gt $dd) { $iForma = 1 } elseif ($absn -lt $dd) { $iForma = 0 }   # 0 gorda, 1 flaca, 2 igual
+  $etAbre = @($s.arriba, $s.abajo); $etForma = @($s.gorda, $s.flaca, $s.igual)
   if (-not $clave) {
     if ($tcp) { $txt += (Linea (Run $s.lineaFact $sz)) }
     $txt += (Linea (Run $s.lineaA $sz))
     $txt += (Linea (Run $s.lineaV $sz))
-    $txt += (Linea (Casillas $esMax $false))
+    $txt += (Linea (Opc $s.lineaAbre $etAbre -1))
+    $txt += (Linea (Opc $s.lineaForma $etForma -1))
+    $txt += (Linea (Opc '' @($s.maximo, $s.minimo) -1))
     $txt += (Linea (Run $s.lineaPorque $sz))
     $txt += (Linea (Run $s.lineaPorque2 $sz))
-    $plano = (Img-Parrafo $rid 'Plano')
+    return (Tc 4870 $txt '' 1 'top')
   } else {
     $cn = [int]$a[0] * [int]$h[0] * [int]$h[0]; $cd = [int]$a[1] * [int]$h[1] * [int]$h[1]
     $cy = Fr $cn $cd
     if ($tcp) { $txt += (Linea ((Run ($s.claveFact + ' ') $sz $true) + (Mat (Factorizada $a $h)))) }
     $txt += (Linea ((Run 'a = ' $sz) + (Mat (Fmt $a)) + (Run '    h = ' $sz) + (Mat (Fmt $h))))
     $txt += (Linea ((Run ($s.claveV + ' ') $sz $true) + (Mat ('V(' + (Fmt $h) + ',0)'))))
-    $txt += (Linea (Casillas $esMax $true))
+    $txt += (Linea ((Run ($s.claveAbre + ' ') $sz $true) + (Run $etAbre[$iAbre] $sz)))
+    $fx = @($s.claveFormaGorda, $s.claveFormaFlaca, $s.claveFormaIgual)[$iForma]
+    $txt += (Linea ((Run ($s.claveForma + ' ') $sz $true) + (Run $fx $sz)))
+    $iMM = 1; if ($esMax) { $iMM = 0 }                         # 0 = maximo, 1 = minimo
+    $txt += (Linea (Opc '' @($s.maximo, $s.minimo) $iMM))
     $txt += (Linea ((Run ($s.claveCorte + ' ') $sz $true) + (Mat ('(0,' + (Fmt $cy) + ')'))))
     if ($esMax) { $por = $s.clavePorqueNeg } else { $por = $s.clavePorquePos }
     $txt += (Linea (Run $por 16 $false $true))
@@ -212,16 +226,21 @@ function Celdas-Ejercicio([int]$i, [bool]$clave, [string]$rid) {
 }
 
 function Tabla-Ejercicios([bool]$clave, $rids) {
+  if ($clave) {   # la clave lleva a cada ejercicio su bosquejo correcto (texto + dibujo)
+    $span = 2; $grid = '<w:gridCol w:w="' + $wT + '"/><w:gridCol w:w="' + $wI + '"/><w:gridCol w:w="' + $wT + '"/><w:gridCol w:w="' + $wI + '"/>'; $hgt = '<w:trHeight w:val="2500"/>'
+  } else {        # la hoja de los alumnos no lleva plano: una celda de texto por ejercicio
+    $span = 1; $grid = '<w:gridCol w:w="4870"/><w:gridCol w:w="4870"/>'; $hgt = ''
+  }
   $hdr = '<w:tr><w:trPr><w:cantSplit/><w:tblHeader/><w:jc w:val="center"/></w:trPr>' +
-         (Tc 4870 (P (Run $s.parte1 20 $true) 0) 'E2EFDA' 2) + (Tc 4870 (P (Run $s.parte2 20 $true) 0) 'E2EFDA' 2) + '</w:tr>'
+         (Tc 4870 (P (Run $s.parte1 20 $true) 0) 'E2EFDA' $span) + (Tc 4870 (P (Run $s.parte2 20 $true) 0) 'E2EFDA' $span) + '</w:tr>'
   $rows = ''
   for ($k = 0; $k -lt 5; $k++) {
     $r1 = ''; $r2 = ''
-    if ($clave) { $r1 = $rids[$k]; $r2 = $rids[$k + 5] } else { $r1 = $rids[0]; $r2 = $rids[0] }
+    if ($clave) { $r1 = $rids[$k]; $r2 = $rids[$k + 5] }
     $cells = (Celdas-Ejercicio $k $clave $r1) + (Celdas-Ejercicio ($k + 5) $clave $r2)
-    $rows += '<w:tr><w:trPr><w:cantSplit/><w:trHeight w:val="2500"/><w:jc w:val="center"/></w:trPr>' + $cells + '</w:tr>'
+    $rows += '<w:tr><w:trPr><w:cantSplit/>' + $hgt + '<w:jc w:val="center"/></w:trPr>' + $cells + '</w:tr>'
   }
-  return '<w:tbl>' + (TblPr 9740) + '<w:tblGrid><w:gridCol w:w="' + $wT + '"/><w:gridCol w:w="' + $wI + '"/><w:gridCol w:w="' + $wT + '"/><w:gridCol w:w="' + $wI + '"/></w:tblGrid>' + $hdr + $rows + '</w:tbl>'
+  return '<w:tbl>' + (TblPr 9740) + '<w:tblGrid>' + $grid + '</w:tblGrid>' + $hdr + $rows + '</w:tbl>'
 }
 
 $secV = '<w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="1250" w:right="1250" w:bottom="1250" w:left="1250" w:header="708" w:footer="708" w:gutter="0"/><w:cols w:space="720"/></w:sectPr>'
@@ -305,10 +324,7 @@ New-Item -ItemType Directory -Path $tmp | Out-Null
 
 # ======== SERIE DE LOS ALUMNOS ========
 $script:imgs.Clear()
-$ruta = Join-Path $tmp 'plano-vacio.png'
-Dibuja-Plano $ruta $null $null $false
-$script:imgs.Add(@{ rid = 'rIdPlano'; nombre = 'plano-vacio.png'; ruta = $ruta })
-$B = New-Object System.Collections.Generic.List[string]
+$B =New-Object System.Collections.Generic.List[string]
 $B.Add((P (Run $s.titulo 32 $true) 60))
 $B.Add((P (Run $s.autor) 160))
 $B.Add((P (Run $s.estudiante 20) 200))
@@ -321,7 +337,7 @@ for ($k = 0; $k -lt $s.pasos.Count; $k++) {
   $B.Add((P ((Run ($letras[$k] + ')  ') 0 $true) + (Run $s.pasos[$k])) 40 '<w:ind w:left="567" w:hanging="283"/>'))
 }
 $B.Add((P '' 160))
-$B.Add((Tabla-Ejercicios $false @('rIdPlano')))
+$B.Add((Tabla-Ejercicios $false @()))
 $B.Add((P '' 0))
 $B.Add('<w:p><w:pPr><w:spacing w:after="0"/>' + $secV + '</w:pPr></w:p>')
 $B.Add((Rubrica-Xml))

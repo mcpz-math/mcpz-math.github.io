@@ -134,14 +134,15 @@
     "autor": "DTI. Maria del Carmen Pérez Zarate",
     "estudiante": "Estudiante____________________________________________________  Fecha______________  Grupo___________",
     "propositoTitulo": "PROPÓSITO",
-    "proposito": "Evaluar el desarrollo de habilidades para bosquejar la gráfica de funciones cuadráticas de la forma f(x) = a(x − h)² y de la forma f(x) = ax² + bx + c cuando el trinomio es cuadrado perfecto (TCP), identificando hacia dónde abre la parábola, dónde está su vértice y si tiene un máximo o un mínimo, y explicando y justificando cada parte del procedimiento.",
+    "proposito": "Evaluar el desarrollo de habilidades para bosquejar la gráfica de funciones cuadráticas de la forma f(x) = a(x − h)² y de la forma f(x) = ax² + bx + c cuando el trinomio es cuadrado perfecto (TCP), identificando hacia dónde abre la parábola, si es gorda o flaca comparada con y = x², dónde está su vértice y si tiene un máximo o un mínimo, y explicando y justificando cada parte del procedimiento.",
     "instruccionesTitulo": "INSTRUCCIONES:",
     "instruccionesIntro": "Para cada una de las siguientes funciones:",
     "pasos": [
       "Si la función es un trinomio, factorízala como a(x − h)² y escribe la factorización en la línea. Escribe los valores de a y h.",
-      "Indica hacia dónde abre la parábola y escribe las coordenadas de su vértice, V(h, 0).",
-      "Haz un bosquejo de la gráfica en el plano de la derecha: marca el vértice y el punto donde la parábola corta al eje y. No hace falta una tabla de valores ni una escala exacta.",
-      "Marca si la función tiene un máximo o un mínimo y explica por qué (una frase en la línea «Porque»)."
+      "Indica hacia dónde abre la parábola (arriba o abajo) y escribe las coordenadas de su vértice, V(h, 0).",
+      "Compara |a| con 1 y marca si la parábola es gorda o flaca comparada con la de y = x² (|a| mayor que 1: flaca; |a| menor que 1: gorda; |a| = 1: igual de abierta).",
+      "Marca si la función tiene un máximo o un mínimo y explica por qué (una frase en la línea «Porque»).",
+      "En una hoja aparte (de preferencia cuadriculada), haz un bosquejo de la gráfica de cada función: dibuja los ejes, marca el vértice y el punto donde la parábola corta al eje y. No hace falta una tabla de valores ni una escala exacta. Numera cada bosquejo con el número del ejercicio."
     ],
     "rubricaTitulo": "Rúbrica",
     "parte1": "Parte 1 · f(x) = a(x − h)²",
@@ -149,10 +150,22 @@
     "lineaA": "a = ______    h = ______",
     "lineaFact": "Factorizada: ________",
     "lineaV": "Vértice: V(_____ , _____ )",
+    "lineaAbre": "Abre hacia:",
+    "arriba": "arriba",
+    "abajo": "abajo",
+    "lineaForma": "Comparada con y = x², es:",
+    "gorda": "gorda",
+    "flaca": "flaca",
+    "igual": "igual de abierta",
     "maximo": "Máximo",
     "minimo": "Mínimo",
-    "lineaPorque": "Porque: ______________",
-    "lineaPorque2": "_____________________",
+    "claveAbre": "Abre hacia:",
+    "claveForma": "Forma:",
+    "claveFormaFlaca": "flaca (|a| es mayor que 1)",
+    "claveFormaGorda": "gorda (|a| es menor que 1)",
+    "claveFormaIgual": "igual de abierta que x² (|a| = 1)",
+    "lineaPorque": "Porque: ______________________________",
+    "lineaPorque2": "____________________________________",
     "claveTitulo": "Serie 3 · Clave de respuestas (sólo para la profesora)",
     "claveNota": "Los bosquejos de la clave están hechos a escala aproximada: el punto verde es el vértice y el naranja es el corte con el eje y. Al calificar, lo importante es la forma y la posición de la parábola (hacia dónde abre, dónde queda el vértice) y que marquen bien el máximo o el mínimo, no la escala.",
     "claveFact": "Factorizada:",
@@ -1809,9 +1822,9 @@
       "file": "",
       "ocurrencia": 0,
       "evidencia": [
-        "Los 10 bosquejos de la hoja: parábola simétrica, que abre hacia el lado correcto, con el vértice (sobre el eje x) y el corte con el eje y marcados.",
+        "Los 10 bosquejos de la hoja aparte: ejes dibujados, parábola simétrica que abre hacia el lado correcto, con el vértice (sobre el eje x) y el corte con el eje y marcados.",
         "En los 5 trinomios, la factorización escrita en la línea «Factorizada» y los valores de a y h de cada ejercicio.",
-        "La casilla de máximo o mínimo y la frase «Porque» de cada ejercicio."
+        "Las casillas de hacia dónde abre, gorda o flaca, y máximo o mínimo, y la frase «Porque» de cada ejercicio."
       ],
       "errores": [
         "Pone el vértice del lado equivocado por el signo de h: en (x + 3)² lo dibuja en x = 3 en lugar de x = −3.",
@@ -1819,7 +1832,7 @@
         "Confunde máximo con mínimo: marca «mínimo» en una parábola que abre hacia abajo, o dice que el máximo es «el punto más a la derecha».",
         "Dibuja la parábola cruzando el eje x en dos puntos (o sin tocarlo) cuando el vértice está sobre el eje x: no distingue que la raíz es repetida.",
         "Dibuja una V, una curva que no es simétrica o no marca el corte con el eje y; en 4x² − 4x + 1 escribe (0, 4) en lugar de (0, 1).",
-        "Con a = ½ o a = 4 dibuja la parábola igual de abierta que x² (no distingue más abierta si |a| < 1 y más cerrada si |a| > 1)."
+        "Con a = ½ o a = 4 la llama «flaca» o «gorda» al revés, o la dibuja igual de abierta que x² (la gorda es la de |a| < 1 y la flaca la de |a| > 1)."
       ],
       "rows": [
         {
@@ -1840,7 +1853,7 @@
             "Dibuja una parábola simétrica, con un solo vértice, que abre hacia arriba cuando a > 0 y hacia abajo cuando a < 0.",
             "Ubica el vértice sobre el eje x, en x = h: a la derecha del eje y si h > 0 y a la izquierda si h < 0 (también con h = ½).",
             "Marca el corte con el eje y y deja claro que la parábola sólo toca al eje x (raíz repetida), sin cruzarlo.",
-            "Distingue si la parábola es más cerrada (|a| > 1) o más abierta (|a| < 1) que la de x²."
+            "Dice hacia dónde abre y distingue si la parábola es flaca (|a| > 1), gorda (|a| < 1) o igual de abierta (|a| = 1) que la de x², y su bosquejo lo muestra."
           ],
           "n1": "Conoce la forma de la parábola básica, pero la dibuja como una V o de manera no simétrica, o no distingue hacia dónde abre ni dónde queda el vértice.",
           "n23": "Describe las propiedades de la parábola: hacia dónde abre y dónde está el vértice en los casos sencillos (a = 1 o a = −1, h entero). Se equivoca con h negativo, con h fraccionario, con a distinta de 1 o con el corte con el eje y, o no distingue el máximo del mínimo en su dibujo.",
