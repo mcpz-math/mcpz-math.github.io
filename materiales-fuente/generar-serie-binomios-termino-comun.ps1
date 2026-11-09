@@ -3,10 +3,10 @@
 # 20 ejercicios en dos columnas (10 filas) con espacio para resolver, y pagina de respuestas.
 # Toma como base (estilos, pie de pagina, medidas) el .docx de la Serie 3 o 4 de Binomios conjugados
 # y solo cambia titulos, recuadro, instrucciones y el contenido de las dos tablas.
-# Uso: powershell -ExecutionPolicy Bypass -File generar-serie-binomios-termino-comun.ps1 -Base <Serie4_Binomios conjugados.docx> -Out <salida.docx> [-Num 1] [-BaseNum 4]
+# Uso: powershell -ExecutionPolicy Bypass -File generar-serie-binomios-termino-comun.ps1 -Base <Serie4_Binomios conjugados.docx> -Out <salida.docx> [-Num 1] [-BaseNum 4] [-Root <carpeta del sitio, para agregar la rubrica>]
 # Script solo ASCII. Mini-lenguaje de cada expresion: "-" = signo menos, "^2" = exponente,
 # "{1/5}" = fraccion apilada (ecuacion de Word).
-param([string]$Base, [string]$Out, [int]$Num = 1, [int]$BaseNum = 4)
+param([string]$Base, [string]$Out, [int]$Num = 1, [int]$BaseNum = 4, [string]$Root = '')
 $ErrorActionPreference = 'Stop'
 $utf8 = New-Object System.Text.UTF8Encoding($false)
 $dot = [string][char]0x00B7
@@ -108,6 +108,67 @@ function RehacerRecuerda([string]$tbl) {
   return $tbl.Substring(0, $ini) + $p1 + $p2 + $p3 + $tbl.Substring($fin)
 }
 
+# ---- rubrica (matriz de niveles de Carmen), en una hoja horizontal al final ----
+# Toma los textos de materiales-fuente\matriz-niveles-evaluacion.json y de la actividad "serie1terminocomun" de
+# materiales-fuente\rubricas-por-actividad.json (se necesita -Root, la carpeta del sitio).
+function RRun([string]$t, [int]$sz = 0, [bool]$b = $false, [bool]$it = $false) {
+  $p = ''
+  if ($b) { $p += '<w:b/>' }
+  if ($it) { $p += '<w:i/>' }
+  if ($sz -gt 0) { $p += '<w:sz w:val="' + $sz + '"/><w:szCs w:val="' + $sz + '"/>' }
+  $q = ''
+  if ($p -ne '') { $q = '<w:rPr>' + $p + '</w:rPr>' }
+  return '<w:r>' + $q + '<w:t xml:space="preserve">' + (Esc $t) + '</w:t></w:r>'
+}
+function RPar([string]$runs, [int]$after = 0, [string]$extra = '') {
+  return '<w:p><w:pPr><w:spacing w:after="' + $after + '"/>' + $extra + '</w:pPr>' + $runs + '</w:p>'
+}
+function RTc([int]$w, [string]$inner, [string]$fill = '', [int]$span = 1) {
+  $pr = '<w:tcW w:w="' + $w + '" w:type="dxa"/>'
+  if ($span -gt 1) { $pr += '<w:gridSpan w:val="' + $span + '"/>' }
+  if ($fill -ne '') { $pr += '<w:shd w:val="clear" w:color="auto" w:fill="' + $fill + '"/>' }
+  return '<w:tc><w:tcPr>' + $pr + '<w:vAlign w:val="center"/></w:tcPr>' + $inner + '</w:tc>'
+}
+function RubricaXml() {
+  $matriz = [IO.File]::ReadAllText((Join-Path $Root 'materiales-fuente\matriz-niveles-evaluacion.json'), $utf8) | ConvertFrom-Json
+  $actj = [IO.File]::ReadAllText((Join-Path $Root 'materiales-fuente\rubricas-por-actividad.json'), $utf8) | ConvertFrom-Json
+  $ru = $actj.actividades | Where-Object { $_.id -eq 'serie1terminocomun' }
+  $et = $actj.etiquetas
+  $bul = [string][char]0x2022
+  $wC = 2800; $wN = 2176; $tot = $wC + 5 * $wN; $fillH = 'E2EFDA'
+  $bd = ''
+  foreach ($side in 'top', 'left', 'bottom', 'right', 'insideH', 'insideV') { $bd += '<w:' + $side + ' w:val="single" w:sz="4" w:space="0" w:color="808080"/>' }
+  $tblPr = '<w:tblPr><w:tblW w:w="' + $tot + '" w:type="dxa"/><w:jc w:val="center"/><w:tblBorders>' + $bd + '</w:tblBorders><w:tblLayout w:type="fixed"/><w:tblLook w:val="0000" w:firstRow="0" w:lastRow="0" w:firstColumn="0" w:lastColumn="0" w:noHBand="0" w:noVBand="0"/></w:tblPr>'
+  $hd = @(
+    @('Nivel 1', 'Insuficiente'),
+    @('Nivel 2', 'En desarrollo'),
+    @('Nivel 3', ('En desarrollo ' + $dot + ' m' + [char]0x00ED + 'nimo indispensable')),
+    @('Nivel 4', 'Suficiente'),
+    @('Nivel 5', 'Satisfactorio')
+  )
+  $h = (RTc $wC (RPar (RRun $et.criterio 18 $true)) $fillH)
+  foreach ($c in $hd) { $h += (RTc $wN ((RPar (RRun $c[0] 18 $true)) + (RPar (RRun $c[1] 15))) $fillH) }
+  $rr = '<w:tr><w:trPr><w:cantSplit/><w:tblHeader/><w:jc w:val="center"/></w:trPr>' + $h + '</w:tr>'
+  foreach ($row in $ru.rows) {
+    $c = $matriz.comp.($row.id)
+    $nm = $c.nombre
+    if ($c.sub -ne '') { $nm += ' (' + $c.sub + ')' }
+    $crit = (RPar (RRun $nm 18 $true) 40) + (RPar (RRun $c.criterio 15 $false $true) 60) + (RPar (RRun ($et.observar + ':') 16 $true) 20)
+    foreach ($o in $row.observar) { $crit += (RPar ((RRun ($bul + ' ') 16) + (RRun $o 16)) 20 '<w:ind w:left="170" w:hanging="170"/>') }
+    $cells = (RTc $wC $crit 'F2F2F2') + (RTc $wN (RPar (RRun $row.n1 16)))
+    if ($row.id -eq 'ARG') { $cells += (RTc $wN (RPar (RRun $row.n2 16))) + (RTc $wN (RPar (RRun $row.n3 16))) }
+    else { $cells += (RTc ($wN * 2) (RPar (RRun $row.n23 16)) '' 2) }
+    $cells += (RTc $wN (RPar (RRun $row.n4 16))) + (RTc $wN (RPar (RRun $row.n5 16)))
+    $rr += '<w:tr><w:trPr><w:cantSplit/><w:jc w:val="center"/></w:trPr>' + $cells + '</w:tr>'
+  }
+  $grid = '<w:tblGrid><w:gridCol w:w="' + $wC + '"/>' + ((1..5 | ForEach-Object { '<w:gridCol w:w="' + $wN + '"/>' }) -join '') + '</w:tblGrid>'
+  $x = (RPar (RRun ('R' + [char]0x00FA + 'brica') 0 $true) 80) + '<w:tbl>' + $tblPr + $grid + $rr + '</w:tbl>'
+  $n0 = $et.guiaNota0
+  $cut = $n0.IndexOf(':')
+  $x += (RPar ((RRun $n0.Substring(0, $cut + 1) 17 $true) + (RRun $n0.Substring($cut + 1) 17)) 0)
+  return $x
+}
+
 # ---- leer la base y cambiar document.xml ----
 Add-Type -AssemblyName System.IO.Compression
 Add-Type -AssemblyName System.IO.Compression.FileSystem
@@ -130,6 +191,14 @@ $doc = $doc.Replace("Serie $BaseNum $dot Binomios conjugados", "Serie $Num $dot 
 $doc = $doc.Replace('Instrucciones: desarrolla los siguientes productos de binomios conjugados. Escribe el resultado en el espacio de cada ejercicio.',
                     'Instrucciones: multiplica los siguientes binomios con un t' + $e1 + 'rmino com' + $u1 + 'n aplicando la regla. Escribe el resultado, ya reducido, en el espacio de cada ejercicio.')
 if ($doc -match 'conjugados') { throw 'Quedo texto de "conjugados" sin cambiar.' }
+# rubrica en hoja horizontal: la seccion vertical (con el pie de pagina de la base) se cierra en un parrafo
+if ($Root -ne '') {
+  $sect = [regex]::Match($doc, '(?s)<w:sectPr[ >].*?</w:sectPr>(?=</w:body>)')
+  if (-not $sect.Success) { throw 'No se encontro la seccion final de la base.' }
+  $sectH = [regex]::Replace($sect.Value, '<w:pgSz [^>]*/>', '<w:pgSz w:w="15840" w:h="12240" w:orient="landscape"/>')
+  $doc = $doc.Substring(0, $sect.Index) + '<w:p><w:pPr><w:spacing w:after="0"/>' + $sect.Value + '</w:pPr></w:p>' + (RubricaXml) + $sectH + '</w:body></w:document>'
+}
+
 
 # propiedades del documento (autora)
 $now = (Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ssZ')

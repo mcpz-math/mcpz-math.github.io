@@ -1902,6 +1902,66 @@
           "n5": "Elabora una cadena de argumentos que generaliza para cualquier a y h: demuestra que (x − h)² ≥ 0 y que sólo vale 0 en x = h, concluye que el vértice es el mínimo (a > 0) o el máximo (a < 0) y que la función no tiene el otro extremo. Distingue convencerse con un dibujo de demostrar."
         }
       ]
+    },
+    {
+      "id": "serie1terminocomun",
+      "titulo": "Matemáticas 3 · Tema 6 · Serie 1: binomios con término común (Word)",
+      "file": "",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los 20 ejercicios de la serie resueltos en el espacio de cada uno, con el procedimiento (la suma y el producto de los números), no sólo el resultado.",
+        "Los ejercicios 1 a 4 (los dos números positivos), 5 a 8 (los dos negativos) y 9 a 13 (signos diferentes), con la suma y el producto escritos con su signo.",
+        "Los casos especiales: el 14, (b − 7)(b + 7), donde desaparece el término de en medio, y el 15, (v − 4)(v − 4), que es un binomio al cuadrado.",
+        "Los ejercicios 17 a 20, donde el término común no es sólo x: x², 3x, 2m, y las fracciones del 20, con la suma y el producto de las fracciones."
+      ],
+      "errores": [
+        "Escribe (x + 2)(x + 5) = x² + 10 (sólo multiplica los números y olvida el término con x) o x² + 7x (olvida el producto).",
+        "Pierde un signo: en (x − 3)(x − 4) escribe x² + 7x + 12, o en (t − 9)(t + 2) escribe t² + 7t − 18.",
+        "Con signos diferentes pone el producto positivo (en (c + 8)(c − 5) escribe + 40), o suma 8 + 5 en lugar de 8 + (−5).",
+        "En (b − 7)(b + 7) escribe b² + 0b − 49 sin entender que la suma es 0, o b² + 49.",
+        "En (x² + 3)(x² + 5) escribe x² + 8x + 15 o x⁴ + 8x⁴ + 15: no multiplica x² · x² = x⁴ ni deja x² en el término de en medio.",
+        "En (3x + 2)(3x + 5) escribe 3x² + 7x + 10 o 9x² + 7x + 10: eleva mal el término común (3x)² = 9x² y no multiplica la suma 2 + 5 por 3x (21x).",
+        "En (x + ½)(x + ⅓) suma 1/2 + 1/3 como 2/5 (suma numeradores y denominadores) o no ocupa el denominador común (5/6), o escribe el producto como 1/5."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe el resultado como un trinomio sin paréntesis, con cada término con su signo, su coeficiente y su exponente: t² − 7t − 18, 9x² + 21x + 10, x⁴ + 8x² + 15.",
+            "Escribe la suma y el producto de los números con paréntesis en los negativos, por ejemplo (−9) + 2 y (−9)(2), antes de dar el resultado.",
+            "Escribe las fracciones del ejercicio 20 de manera apilada y explica con sus palabras cómo obtuvo cada término."
+          ],
+          "n1": "Escribe el resultado sin el exponente, sin signos o sin el término de en medio, y sus respuestas no se entienden. No usa ningún apoyo, como escribir la suma y el producto de los números.",
+          "n23": "Usa la simbología con limitaciones: escribe el trinomio, pero a veces omite un signo, un paréntesis o el exponente (x4 en lugar de x⁴). Contesta sin explicar o sólo repite la regla.",
+          "n4": "Escribe con la simbología correcta la suma, el producto y el trinomio reducido, también en los ejercicios con exponente, coeficiente y fracciones, con alguna deficiencia (por ejemplo, un signo ambiguo). Explica con claridad qué hizo en cada paso.",
+          "n5": "Escribe y explica con notación correcta el procedimiento completo (término común al cuadrado, suma, producto y resultado reducido), por diferentes medios (con la regla y con palabras), y lo reconstruye en un ejercicio nuevo que él mismo inventa."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Multiplica (x + a)(x + b) y obtiene x² + (a + b)x + ab con la regla, con los dos números positivos, los dos negativos y con signos diferentes.",
+            "Reconoce los casos especiales: números iguales (binomio al cuadrado) y números opuestos (binomios conjugados, b² − 49).",
+            "Aplica la regla cuando el término común es x², 3x o 2m: (término común)² + (suma)(término común) + producto, y con fracciones."
+          ],
+          "n1": "Conoce el producto de binomios sólo de memoria: escribe x² + ab o x² + (a + b), o multiplica sólo los números. Confunde la suma con el producto.",
+          "n23": "Aplica la regla en los casos sencillos (los dos números positivos). Le fallan los casos con números negativos, con signos diferentes o con números opuestos, y los signos de la suma y del producto. No sabe qué hacer cuando el término común no es x.",
+          "n4": "Comprende y maneja las propiedades: aplica la regla en cualquier caso de signos, reduce términos semejantes, reconoce los casos especiales (p = q y p = −q) y la aplica también con x², con 3x o 2m y con fracciones.",
+          "n5": "Explica que (x + a)(x + b) = x² + (a + b)x + ab, por qué sale la suma y por qué sale el producto, y generaliza la regla a cualquier término común, (u + a)(u + b) = u² + (a + b)u + ab, incluso con u = x², 3x o 2m; relaciona el producto con factorizar x² + bx + c."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué el término de en medio es la suma de los números: al multiplicar, los términos ax y bx son semejantes y se suman.",
+            "Justifica el signo del producto con los signos de los números, y por qué en (b − 7)(b + 7) el término de en medio desaparece.",
+            "Comprueba su resultado multiplicando término a término, o sustituyendo un valor (por ejemplo, x = 1)."
+          ],
+          "n1": "Dice «así es la regla» sin justificar. Hace la multiplicación pero no la comprueba ni la explica.",
+          "n2": "Defiende con una regla simple («suma los números y multiplícalos») con lenguaje matemático básico.",
+          "n3": "Valida con ejemplos: multiplica varios pares de binomios de la serie por la regla y por término a término y compara los resultados; da ejemplos y no-ejemplos (como x² + 10 para (x + 2)(x + 5)).",
+          "n4": "Explica la estructura del argumento: que los binomios compartan el término común es la hipótesis y que el resultado sea (término común)² + (a + b)(término común) + ab es la conclusión; comprueba sus resultados multiplicando término a término o sustituyendo un valor.",
+          "n5": "Elabora una cadena de argumentos que generaliza: demuestra con la propiedad distributiva por qué (x + a)(x + b) = x² + (a + b)x + ab para cualquier a y b, explica por qué la regla sigue valiendo si el término común es x², 3x o una letra cualquiera, y la relaciona con los casos especiales y con factorizar x² + bx + c."
+        }
+      ]
     }
   ]
 }
