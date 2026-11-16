@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circunferencia: ecuación general — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-07-circunferencia.html">← Circunferencia</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 3 · Tema 7 · Subtema</div>
+    <h1>Circunferencia: de la ecuación general al centro y al radio</h1>
+  </div>
+
+  <!-- 1. Qué vamos a estudiar -->
+  <p class="section-label">¿Qué vamos a estudiar?</p>
+  <div class="prose">
+    <p>En el subtema anterior fuimos del centro y el radio a la <strong>ecuación general</strong>
+       <span style="font-family:'IBM Plex Mono',monospace; color:var(--forest); white-space:nowrap;">x² + y² + Dx + Ey + F = 0</span>.
+       Ahora hacemos el <strong>camino contrario</strong>: te dan la ecuación general y tú encuentras el
+       <strong>centro</strong> y el <strong>radio</strong> de la circunferencia. Para eso usaremos una técnica llamada
+       <strong>completar cuadrados</strong>.</p>
+  </div>
+
+  <!-- 2. Cómo reconocerla -->
+  <p class="section-label">¿Cómo sé que es una circunferencia?</p>
+  <div class="prose">
+    <p>Recuerda la clasificación de las cónicas: en la ecuación general de segundo grado, la circunferencia es el caso en que
+       los coeficientes de x² y de y² son <strong>iguales (A = C)</strong> y <strong>no hay término xy</strong>.</p>
+  </div>
+  <div class="example-box">
+    <ul class="def-list">
+      <li>Si <strong>A = C = 1</strong>, la ecuación ya tiene la forma x² + y² + Dx + Ey + F = 0 y se puede trabajar directamente.</li>
+      <li>Si <strong>A = C</strong> pero no valen 1 (por ejemplo, 3x² + 3y² + …), <strong>divide toda la ecuación entre A</strong> para que queden x² + y².</li>
+    </ul>
+  </div>
+
+  <!-- 3. Completar cuadrados -->
+  <p class="section-label">Completar cuadrados</p>
+  <div class="prose">
+    <p>La idea es convertir x² + Dx en un <strong>binomio al cuadrado</strong>. Fíjate en cómo se desarrolla un binomio:</p>
+  </div>
+  <div class="example-box">
+    <span class="eq">(x + a)² = x² + 2ax + a²</span>
+    <p style="margin-top:1rem;">El coeficiente de x es <strong>2a</strong>, el doble de a. Entonces, para completar el cuadrado de x² + Dx,
+       <strong>a es la mitad del coeficiente de x</strong> y hay que sumar <strong>a²</strong>.</p>
+    <ul class="def-list">
+      <li>x² − 6x: la mitad de −6 es −3 y (−3)² = 9, así que <strong>x² − 6x + 9 = (x − 3)²</strong>.</li>
+      <li>y² + 4y: la mitad de 4 es 2 y 2² = 4, así que <strong>y² + 4y + 4 = (y + 2)²</strong>.</li>
+    </ul>
+  </div>
+  <div class="callout">
+    <div class="k no-caps">Para no equivocarte</div>
+    <p>Lo que sumas de un lado de la igualdad lo tienes que sumar <strong>también del otro lado</strong>, para no cambiar la ecuación.
+       Y el signo del binomio es el <strong>mismo signo del coeficiente de x</strong> (o de y).</p>
+  </div>
+
+  <p class="section-label no-caps">Pasos para encontrar el centro y el radio</p>
+  <ol class="steps">
+    <li><span>Si hace falta, <strong>divide entre A</strong> para que los coeficientes de x² y de y² sean 1.</span></li>
+    <li><span><strong>Agrupa</strong> los términos en x, los términos en y, y pasa el número F al lado derecho (con signo cambiado).</span></li>
+    <li><span><strong>Completa el cuadrado</strong> en x y en y: suma la mitad del coeficiente elevada al cuadrado, <strong>a los dos lados</strong>.</span></li>
+    <li><span>Escribe cada trinomio como <strong>binomio al cuadrado</strong> y suma los números del lado derecho: queda (x − h)² + (y − k)² = r².</span></li>
+    <li><span>Lee el <strong>centro (h, k)</strong> (con los signos contrarios a los de los paréntesis) y el <strong>radio</strong>: r = √(r²).</span></li>
+  </ol>
+
+  <!-- 4. Ejemplos -->
+  <p class="section-label">Ejemplos</p>
+
+  <div class="example-box">
+    <h2>Ejemplo 1: centro y radio</h2>
+    <span class="eq">x² + y² − 6x + 4y − 3 = 0</span>
+    <ol class="steps">
+      <li><span>Agrupa y pasa el −3 a la derecha: (x² − 6x) + (y² + 4y) = 3.</span></li>
+      <li><span>La mitad de −6 es −3 y (−3)² = 9. La mitad de 4 es 2 y 2² = 4. Suma 9 y 4 a los dos lados: (x² − 6x + 9) + (y² + 4y + 4) = 3 + 9 + 4.</span></li>
+      <li><span>Escribe los binomios: (x − 3)² + (y + 2)² = 16.</span></li>
+      <li><span>Lee los datos: <strong>h = 3</strong>, <strong>k = −2</strong> y r² = 16, entonces <strong>r = 4</strong>.</span></li>
+    </ol>
+    <p><strong>Centro (3, −2) y radio 4.</strong> (Es la circunferencia que desarrollamos en el subtema anterior.)</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 2: centro con coordenada negativa</h2>
+    <span class="eq">x² + y² + 4x − 10y + 20 = 0</span>
+    <ol class="steps">
+      <li><span>Agrupa y pasa el 20: (x² + 4x) + (y² − 10y) = −20.</span></li>
+      <li><span>La mitad de 4 es 2 y 2² = 4. La mitad de −10 es −5 y (−5)² = 25: (x² + 4x + 4) + (y² − 10y + 25) = −20 + 4 + 25.</span></li>
+      <li><span>Binomios: (x + 2)² + (y − 5)² = 9.</span></li>
+    </ol>
+    <p><strong>Centro (−2, 5) y radio 3.</strong></p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 3: cuando falta un término</h2>
+    <span class="eq">x² + y² − 8x − 9 = 0</span>
+    <ol class="steps">
+      <li><span>No hay término en y: ya es un cuadrado (y² = (y − 0)²). Agrupa: (x² − 8x) + y² = 9.</span></li>
+      <li><span>La mitad de −8 es −4 y (−4)² = 16: (x² − 8x + 16) + y² = 9 + 16.</span></li>
+      <li><span>Binomios: (x − 4)² + y² = 25.</span></li>
+    </ol>
+    <p><strong>Centro (4, 0) y radio 5.</strong></p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 4: cuando los coeficientes no son 1</h2>
+    <span class="eq">3x² + 3y² − 12x + 6y − 12 = 0</span>
+    <ol class="steps">
+      <li><span>Los coeficientes de x² y de y² son iguales (A = C = 3), así que es una circunferencia. Divide toda la ecuación entre 3: x² + y² − 4x + 2y − 4 = 0.</span></li>
+      <li><span>Agrupa y pasa el −4: (x² − 4x) + (y² + 2y) = 4.</span></li>
+      <li><span>La mitad de −4 es −2 y (−2)² = 4. La mitad de 2 es 1 y 1² = 1: (x² − 4x + 4) + (y² + 2y + 1) = 4 + 4 + 1.</span></li>
+      <li><span>Binomios: (x − 2)² + (y + 1)² = 9.</span></li>
+    </ol>
+    <p><strong>Centro (2, −1) y radio 3.</strong></p>
+  </div>
+
+  <!-- 5. Siempre es circunferencia? -->
+  <p class="section-label">¿Siempre sale una circunferencia?</p>
+  <div class="prose">
+    <p>Al completar cuadrados llegamos a (x − h)² + (y − k)² = <strong>r²</strong>, y el número de la derecha decide qué es:</p>
+  </div>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Lado derecho (r²)</th><th>Qué representa</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>positivo</strong></td><td>Una circunferencia, con radio r = √(r²).</td></tr>
+        <tr><td><strong>cero</strong></td><td>Un solo punto: el centro (h, k). El radio es 0.</td></tr>
+        <tr><td><strong>negativo</strong></td><td>Ningún punto: no hay números reales que cumplan la ecuación.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="example-box">
+    <h2>Ejemplo 5: un punto</h2>
+    <span class="eq">x² + y² − 2x + 4y + 5 = 0</span>
+    <p>(x² − 2x + 1) + (y² + 4y + 4) = −5 + 1 + 4 → (x − 1)² + (y + 2)² = <strong>0</strong>.
+       Sólo cumple la ecuación el punto (1, −2).</p>
+  </div>
+  <div class="example-box">
+    <h2>Ejemplo 6: ningún punto</h2>
+    <span class="eq">x² + y² + 2x + 2y + 5 = 0</span>
+    <p>(x² + 2x + 1) + (y² + 2y + 1) = −5 + 1 + 1 → (x + 1)² + (y + 1)² = <strong>−3</strong>.
+       Un cuadrado nunca es negativo, así que ningún punto cumple la ecuación.</p>
+  </div>
+
+  <!-- 6. Atajo -->
+  <p class="section-label">Un atajo con fórmulas</p>
+  <div class="example-box">
+    <p>Si completas cuadrados con letras en x² + y² + Dx + Ey + F = 0, siempre se obtiene:</p>
+    <span class="eq">h = −<span class="frac frac-inline"><span class="num">D</span><span class="den">2</span></span> &nbsp;&nbsp;
+      k = −<span class="frac frac-inline"><span class="num">E</span><span class="den">2</span></span> &nbsp;&nbsp;
+      r² = h² + k² − F</span>
+    <p style="margin-top:1rem;">Con el ejemplo 1 (D = −6, E = 4, F = −3):</p>
+    <ul class="def-list">
+      <li>h = −<span class="frac frac-inline"><span class="num">−6</span><span class="den">2</span></span> = <strong>3</strong></li>
+      <li>k = −<span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> = <strong>−2</strong></li>
+      <li>r² = 3² + (−2)² − (−3) = 9 + 4 + 3 = <strong>16</strong>, entonces r = 4</li>
+    </ul>
+    <p>Úsalo para <strong>revisar</strong> tu resultado; el procedimiento de completar cuadrados es el que debes escribir.</p>
+  </div>
+
+  <!-- 7. Resumen -->
+  <p class="section-label">Resumen</p>
+  <div class="example-box">
+    <span class="eq">x² + y² + Dx + Ey + F = 0</span>
+    <ul class="def-list">
+      <li>Es una circunferencia cuando <strong>A = C</strong> y no hay término xy. Si A = C ≠ 1, divide entre A.</li>
+      <li><strong>Completa cuadrados</strong> en x y en y (sumando lo mismo a los dos lados) para llegar a (x − h)² + (y − k)² = r².</li>
+      <li>El <strong>centro</strong> es (h, k), con los signos contrarios a los de los paréntesis, y el <strong>radio</strong> es la raíz cuadrada de r².</li>
+      <li>Si r² es positivo es una circunferencia; si es 0, un punto; si es negativo, no hay puntos.</li>
+    </ul>
+  </div>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>
