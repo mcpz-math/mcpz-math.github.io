@@ -1,0 +1,62 @@
+{
+  "titulo": "Circunferencia con centro en (0,0)",
+  "kicker": "APUNTE DE CLASE",
+  "org": "DTI. Maria del Carmen Pérez Zarate · Matemáticas 3 · Tema 7",
+  "nombre": "Nombre: ________________________________________   Grupo: __________",
+  "pie": "mcpz-math.github.io · Matemáticas 3 · Tema 7: Circunferencia",
+  "bloques": [
+    { "t": "h2", "v": "Definición y elementos" },
+    { "t": "p", "v": "Una **circunferencia** es el conjunto de todos los puntos del plano que están a la **misma distancia** de un punto fijo llamado **centro**. Esa distancia es el **radio**. (La circunferencia es sólo el borde; el *círculo* incluye también el interior.)" },
+    { "t": "ul", "v": [
+      "**Centro (C):** el punto fijo. **Radio (r):** distancia del centro a cualquier punto de la circunferencia.",
+      "**Diámetro:** segmento que pasa por el centro y une dos puntos de la circunferencia; mide **2r**.",
+      "**Cuerda:** segmento que une dos puntos de la circunferencia (el diámetro es la más larga)."
+    ] },
+    { "t": "p", "v": "Es una **cónica**: sale al cortar un cono con un plano horizontal. En la ecuación general $Ax^2+Cy^2+Dx+Ey+F=0$ corresponde a **A = C**." },
+
+    { "t": "h2", "v": "La ecuación con centro en el origen" },
+    { "t": "dos", "img": "circ-origen-ecuacion.png", "ancho_px": 360, "alto_px": 300, "ancho_cm": 7.4, "col_izq": 4300,
+      "alt": "Circunferencia con centro en el origen, un punto P(x, y) y el radio r",
+      "cap": "P(x, y) está en la circunferencia si su distancia al origen es r.",
+      "der": [
+        { "k": "p", "v": "La distancia del origen a P(x, y) es la hipotenusa de un triángulo rectángulo con catetos x y y: **√(x² + y²)**. Igualamos al radio y elevamos al cuadrado:" },
+        { "k": "formula", "v": "x^2+y^2=r^2" },
+        { "k": "aviso", "titulo": "¡Cuidado!", "v": "A la derecha va **r²**, no r. En x² + y² = 25 el radio es **5**, no 25." }
+      ] },
+
+    { "t": "h2", "v": "¿Un punto está sobre, dentro o fuera?" },
+    { "t": "p", "v": "Sustituye las coordenadas del punto en x² + y² y compara con r²:" },
+    { "t": "tabla", "cols": [3400, 6800], "head": ["Resultado", "El punto está…"], "rows": [
+      ["$x^2+y^2=r^2$", "**Sobre** la circunferencia"],
+      ["$x^2+y^2<r^2$", "**Dentro** (más cerca del centro que el radio)"],
+      ["$x^2+y^2>r^2$", "**Fuera** (más lejos del centro que el radio)"]
+    ] },
+
+    { "t": "h2", "v": "La gráfica" },
+    { "t": "dos", "img": "circ-origen-grafica.png", "ancho_px": 378, "alto_px": 320, "ancho_cm": 7.4, "col_izq": 4300,
+      "alt": "Gráfica de la circunferencia x al cuadrado más y al cuadrado igual a 25",
+      "cap": "x² + y² = 25: centro (0, 0) y radio 5. Cada cuadrito mide 1 unidad.",
+      "der": [
+        { "k": "h", "v": "Cómo graficarla" },
+        { "k": "paso", "v": "Ubica el centro en el origen." },
+        { "k": "paso", "v": "Calcula el radio: r = √(r²)." },
+        { "k": "paso", "v": "Marca los cuatro puntos donde corta a los ejes: **(r, 0)**, **(−r, 0)**, **(0, r)** y **(0, −r)**." },
+        { "k": "paso", "v": "Con el compás, punta en el origen y abertura hasta el radio, traza la curva." }
+      ] },
+
+    { "t": "h2", "v": "Ejemplos" },
+    { "t": "box", "titulo": "1. Del radio a la ecuación", "v": ["Centro (0, 0) y radio 7: r² = 7² = 49, entonces $x^2+y^2=49$."] },
+    { "t": "box", "titulo": "2. De la ecuación al radio", "v": ["$x^2+y^2=36$: el centro es (0, 0) y r² = 36, así que **r = 6**."] },
+    { "t": "box", "titulo": "3. La que pasa por un punto", "v": ["Centro (0, 0) y pasa por (3, 4): r² = 3² + 4² = 9 + 16 = 25, entonces $x^2+y^2=25$ (radio 5)."] },
+    { "t": "box", "titulo": "4. Cuando los coeficientes no son 1", "v": ["$3x^2+3y^2=48$: A = C = 3, es una circunferencia. Divide entre 3: $x^2+y^2=16$, así que **r = 4**."] },
+
+    { "t": "h2", "v": "Resumen" },
+    { "t": "box", "titulo": "", "v": [
+      "• Ecuación: $x^2+y^2=r^2$. El centro es el origen y el radio es la raíz positiva de r².",
+      "• Un punto está **sobre**, **dentro** o **fuera** según x² + y² sea igual, menor o mayor que r².",
+      "• Corta a los ejes en (r, 0), (−r, 0), (0, r) y (0, −r)."
+    ] },
+
+    { "t": "notas", "titulo": "Mis notas", "n": 3 }
+  ]
+}

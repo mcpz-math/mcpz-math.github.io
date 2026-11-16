@@ -104,9 +104,8 @@ function Tabla($b) {
 # ---- figuras ----
 $script:imgs = New-Object System.Collections.Generic.List[object]
 $script:docPrId = 100
-function ImgPar([string]$rid, [string]$nombre, [string]$alt) {
+function ImgPar([string]$rid, [string]$nombre, [string]$alt, [int]$cx = 1800000, [int]$cy = 1864286) {   # por omision 5.0 x 5.18 cm (relacion 560 x 580)
   $script:docPrId++; $id = $script:docPrId
-  $cx = 1800000; $cy = 1864286   # 5.0 cm x 5.18 cm (relacion 560 x 580)
   return '<w:p><w:pPr><w:spacing w:after="0"/><w:jc w:val="center"/></w:pPr><w:r><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent cx="' + $cx + '" cy="' + $cy + '"/><wp:docPr id="' + $id + '" name="' + $nombre + '" descr="' + (Esc $alt) + '"/><wp:cNvGraphicFramePr/><a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:nvPicPr><pic:cNvPr id="' + $id + '" name="' + $nombre + '"/><pic:cNvPicPr/></pic:nvPicPr><pic:blipFill><a:blip r:embed="' + $rid + '"/><a:stretch><a:fillRect/></a:stretch></pic:blipFill><pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="' + $cx + '" cy="' + $cy + '"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr></pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r></w:p>'
 }
 function Figuras($items) {
@@ -122,6 +121,32 @@ function Figuras($items) {
   $b = (Bd 'top' 4 $LINE) + (Bd 'left' 4 $LINE) + (Bd 'bottom' 4 $LINE) + (Bd 'right' 4 $LINE) + (Bd 'insideH' 4 $LINE) + (Bd 'insideV' 4 $LINE)
   for ($k = 0; $k -lt $cells.Count; $k += 2) { $rows += '<w:tr><w:trPr><w:cantSplit/></w:trPr>' + $cells[$k] + $cells[$k + 1] + '</w:tr>' }
   return '<w:tbl>' + (TblPr $W $b) + '<w:tblGrid><w:gridCol w:w="' + $half + '"/><w:gridCol w:w="' + $half + '"/></w:tblGrid>' + $rows + '</w:tbl>' + (P '' 60)
+}
+# figura a la izquierda y texto a la derecha (sin bordes)
+function Dos($blq) {
+  $path = Join-Path (Join-Path $dirA 'figuras') $blq.img
+  if (-not (Test-Path -LiteralPath $path)) { throw "Falta la figura $($blq.img)" }
+  $rid = 'rIdF' + ($script:imgs.Count + 1)
+  $script:imgs.Add(@{ rid = $rid; nombre = $blq.img; ruta = $path })
+  $icx = [int]([double]$blq.ancho_cm * 360000); $icy = [int]($icx * [double]$blq.alto_px / [double]$blq.ancho_px)
+  $izq = (ImgPar $rid $blq.img $blq.alt $icx $icy) + (P (Run $blq.cap 16 $false $true $SOFT) 40 'center')
+  $der = ''
+  $n = 0
+  foreach ($it in $blq.der) {
+    switch ($it.k) {
+      'p' { $der += (P (Rico $it.v 21) 80) }
+      'h' { $der += (P (Run $it.v 23 $true $false $FOREST) 60 '' '<w:keepNext/>') }
+      'paso' { $n++; $der += (P ((Run ([string]$n + '.  ') 21 $true $false $MOSS) + (Rico $it.v 21)) 50 '' '' '<w:ind w:left="300" w:hanging="300"/>') }
+      'formula' { $der += (P (Mat $it.v) 60 'center' ('<w:pBdr>' + (Bd 'top' 12 $FOREST) + (Bd 'left' 12 $FOREST) + (Bd 'bottom' 12 $FOREST) + (Bd 'right' 12 $FOREST) + '</w:pBdr>')) }
+      'aviso' {
+        $pb = '<w:pBdr>' + (Bd 'left' 36 'D9650B') + '</w:pBdr><w:shd w:val="clear" w:color="auto" w:fill="FFF4E5"/>'
+        $der += (P (Run $it.titulo.ToUpper() 16 $true $false 'D9650B') 0 '' $pb) + (P (Rico $it.v 21) 80 '' $pb)
+      }
+      default { throw "Elemento desconocido: $($it.k)" }
+    }
+  }
+  $wl = [int]$blq.col_izq; $wr = $W - $wl
+  return '<w:tbl>' + (TblPr $W $none) + '<w:tblGrid><w:gridCol w:w="' + $wl + '"/><w:gridCol w:w="' + $wr + '"/></w:tblGrid><w:tr><w:trPr><w:cantSplit/></w:trPr>' + (Tc $wl $izq '' 'top') + (Tc $wr $der '' 'top') + '</w:tr></w:tbl>' + (P '' 60)
 }
 function Notas([string]$titulo, [int]$n) {
   $x = (P (Run $titulo 23 $true $false $FOREST) 40 '' '<w:keepNext/>')
@@ -141,6 +166,7 @@ foreach ($blq in $d.bloques) {
     'p' { $L.Add((P (Rico $blq.v 21) 80)) }
     'ul' { foreach ($i in $blq.v) { $L.Add((P ((Run ([string][char]0x2022 + ' ') 21) + (Rico $i 21)) 40 '' '' '<w:ind w:left="360" w:hanging="240"/>')) } }
     'figs' { $L.Add((Figuras $blq.items)) }
+    'dos' { $L.Add((Dos $blq)) }
     'formula' { $L.Add((Formula $blq.v)) }
     'box' { $L.Add((Cuadro $blq.titulo $blq.v $blq.tono)) }
     'tabla' { $L.Add((Tabla $blq)) }
