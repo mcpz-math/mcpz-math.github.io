@@ -193,6 +193,24 @@
     <p><strong>Centro (0, 0) y radio 4.</strong></p>
   </div>
 
+  <!-- Ejercicios -->
+  <p class="section-label" id="ejercicios-circ-origen">Ejercicios: circunferencia con centro en (0,0)</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Resuelve cada ejercicio en tu cuaderno y escribe tu respuesta. Oprime <strong>Comprobar</strong> (o la tecla Enter) y la
+       página te dirá si es correcta. Hay ejercicios de escribir la ecuación a partir del radio, de encontrar el radio o el diámetro
+       a partir de la ecuación, de decidir si un punto está <strong>sobre</strong>, <strong>dentro</strong> o <strong>fuera</strong>
+       de la circunferencia, y de circunferencias que pasan por un punto. Recuerda: <strong>x² + y² = r²</strong>.</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Cuando termines, oprime
+       <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="cc-grid"></div>
+  <p class="practice-score" id="cc-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="cc-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
   <!-- 7. Resumen -->
   <p class="section-label">Resumen</p>
   <div class="example-box">
@@ -205,9 +223,164 @@
     </ul>
   </div>
 
+  <p class="section-label no-caps" id="rubrica-circ-origen">Rúbrica · Circunferencia con centro en (0,0)</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe los cálculos que lo llevan a la respuesta (r² = r · r, r² = a² + b², x² + y² = … ÷ k) y la ecuación completa.</li><li>Usa el vocabulario adecuado (centro, radio, diámetro, sobre, dentro, fuera, r²).</li><li>Rotula su gráfica: el centro, el radio y los cuatro puntos donde corta a los ejes.</li></ul></div></td>
+            <td>Escribe sólo el resultado, sin cálculos, y casi no usa vocabulario matemático; su gráfica no tiene rótulos o no se entiende. No usa ningún apoyo, como un dibujo o una tabla.</td>
+            <td colspan="2">Escribe algunos cálculos pero omite otros (por ejemplo, no muestra la sustitución de las coordenadas) y usa el vocabulario de manera limitada; su gráfica tiene el centro marcado pero faltan los puntos de los ejes o el radio.</td>
+            <td>Escribe los cálculos y la ecuación completa en casi todos los ejercicios, con el vocabulario adecuado, y explica con claridad por qué un punto está sobre, dentro o fuera. Su gráfica está rotulada con claridad; puede tener una omisión menor.</td>
+            <td>Expresa su trabajo por diferentes medios (ecuación, cálculos, gráfica con compás y palabras) con notación correcta, y explica de manera oral o escrita cómo obtendría la ecuación o el radio en un caso nuevo.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación geométrica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Traza la circunferencia con compás: punta en el origen y abertura igual al radio.</li><li>Marca los cuatro puntos donde la circunferencia corta a los ejes: (r, 0), (−r, 0), (0, r) y (0, −r).</li><li>Ubica un punto dado en el dibujo y dice si queda sobre, dentro o fuera de la circunferencia.</li></ul></div></td>
+            <td>Sabe que la circunferencia es una curva redonda, pero la dibuja a mano libre, no centrada en el origen o con un radio que no corresponde a la ecuación.</td>
+            <td colspan="2">Describe la circunferencia (centro en el origen y radio r) y la traza con compás en los casos sencillos, pero se equivoca al marcar los puntos de los ejes o al ubicar puntos con coordenadas negativas.</td>
+            <td>Clasifica los puntos como sobre, dentro o fuera e interpreta cómo se ven en la gráfica. Traza con compás la circunferencia con el radio correcto y marca correctamente los cuatro puntos de los ejes.</td>
+            <td>Infiere e integra las relaciones: sin graficar anticipa el radio, el diámetro, los cortes con los ejes y la posición de cualquier punto, y lo confirma con la gráfica; reconoce que todos los puntos de la circunferencia cumplen la misma ecuación.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe r² (y no r) del lado derecho, y saca la raíz cuadrada para pasar de la ecuación al radio.</li><li>Sustituye correctamente las coordenadas con su signo (por ejemplo, (−3)² = 9) y obtiene r² = a² + b² cuando la circunferencia pasa por (a, b).</li><li>Divide toda la ecuación entre k cuando los coeficientes de x² y y² no son 1.</li></ul></div></td>
+            <td>Aún no usa correctamente las expresiones algebraicas: confunde r con r² (escribe x² + y² = 5 para r = 5 o dice que el radio de x² + y² = 25 es 25) o no sabe qué sustituir en x² + y².</td>
+            <td colspan="2">Hace uso de la sintaxis y la semántica del lenguaje algebraico en los casos directos (del radio entero a la ecuación y al revés), pero se equivoca con los signos de las coordenadas negativas o cuando los coeficientes de x² y y² no son 1.</td>
+            <td>Comprende y maneja las propiedades del lenguaje algebraico: pasa del radio a la ecuación y de la ecuación al radio y al diámetro, obtiene la ecuación de la circunferencia que pasa por un punto y resuelve kx² + ky² = m dividiendo entre k, cuidando los signos.</td>
+            <td>Dota de significado y generaliza las propiedades: explica por qué r² = a² + b² no necesita calcular la raíz, por qué dividir entre k no cambia la circunferencia y por qué la ecuación x² + y² = r² sirve para cualquier radio (y r² debe ser positivo).</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Justifica por qué un punto está sobre, dentro o fuera comparando x² + y² con r², no sólo dice la respuesta.</li><li>Verifica sustituyendo que un punto cumple la ecuación (por ejemplo, que (3, 4) y (−3, 4) están en x² + y² = 25).</li><li>Explica por qué x² + y² &lt; r² significa que el punto está más cerca del centro que el radio.</li></ul></div></td>
+            <td>Defiende su respuesta con frases como «así se ve» o «me salió», sin sustituir ni comparar.</td>
+            <td>Explica con sus palabras («si x² + y² da más que r², el punto está más lejos del centro») por qué decidió así, con pocos términos matemáticos.</td>
+            <td>Valida con ejemplos: sustituye varios puntos (por ejemplo (3, 4), (−3, 4) y (4, 3)) para comprobar que están en la misma circunferencia y da ejemplos y no-ejemplos de puntos de una circunferencia.</td>
+            <td>Explica la estructura del argumento: la distancia de (x, y) al origen es √(x² + y²) (hipótesis), así que comparar x² + y² con r² dice si el punto está sobre, dentro o fuera (conclusión). Verifica su conclusión sustituyendo.</td>
+            <td>Elabora una cadena de argumentos que generaliza para cualquier radio: demuestra que x² + y² menor, igual o mayor que r² equivale a que la distancia al origen sea menor, igual o mayor que r. Distingue convencerse con un dibujo de demostrar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
   <footer class="site-footer">
     DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
   </footer>
+
+  <script src="../assets/practica-tarjetas.js?v=20261030r"></script>
+  <script>
+  (function () {
+    var h = Practica.h, M = '−', NUM = 'inputmode="numeric" ';
+    function ri(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+    function sq(n) { return n < 0 ? '(' + M + Math.abs(n) + ')²' : n + '²'; }
+    function pt(a, b) { return '(' + (a < 0 ? M + Math.abs(a) : a) + ', ' + (b < 0 ? M + Math.abs(b) : b) + ')'; }
+    function eq(N) { return 'x² + y² = ' + N; }
+
+    // ---- banco de 100 ejercicios ----
+    var BANK = [];
+    [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 20, 25, 30, 16, 18].forEach(function (r) { BANK.push({ t: 'A', r: r }); });                       // radio → ecuación (20)
+    for (var r = 2; r <= 21; r++) BANK.push({ t: 'B', r: r });                                                                                          // ecuación → radio (20)
+    [3, 4, 5, 6, 7, 8, 9, 10, 12, 15].forEach(function (r) { BANK.push({ t: 'F', r: r }); });                                                           // ecuación → diámetro (10)
+    [[2, 3], [3, 2], [3, 4], [4, 2], [5, 2], [2, 5], [3, 5], [4, 3], [5, 3], [6, 2]].forEach(function (v) { BANK.push({ t: 'E', k: v[0], r: v[1] }); }); // kx² + ky² = m (10)
+    [[3, 4], [-3, 4], [5, -12], [1, 1], [2, 3], [-2, -5], [0, 7], [-6, 0], [1, -2], [4, 4], [-3, -3], [7, 1], [-4, 5], [6, -2], [8, -1]]
+      .forEach(function (p) { BANK.push({ t: 'D', a: p[0], b: p[1] }); });                                                                              // pasa por un punto (15)
+    [[5, 3, 4], [5, -4, 3], [5, 0, -5], [10, 6, -8], [13, 5, 12], [13, -12, 5], [10, -10, 0], [25, 7, 24],                                               // sobre (8)
+     [5, 2, 3], [5, -1, -4], [6, 0, 5], [10, -5, 6], [7, 3, -4], [8, -2, 2], [9, -6, 5], [13, -7, 8], [4, 1, -2],                                       // dentro (9)
+     [5, 4, 4], [5, -5, 1], [10, 8, 7], [3, -3, 1], [6, -5, -4], [7, 6, 5], [4, -3, -3], [9, 7, -7]]                                                    // fuera (8)
+      .forEach(function (v) { BANK.push({ t: 'C', r: v[0], a: v[1], b: v[2] }); });
+    for (var i = BANK.length - 1; i > 0; i--) { var j = ri(0, i), tmp = BANK[i]; BANK[i] = BANK[j]; BANK[j] = tmp; } // mezclar
+
+    function numCard(e, n, spec) {   // tarjeta con una sola casilla numérica
+      return {
+        head: spec.head,
+        body: '<div class="practice-ask">' + spec.ask + '</div><div class="practice-row"><span class="eq">' + spec.label + '</span>' +
+              h.inputHTML('v', spec.aria + ', ejercicio ' + n, 'flex:0 1 6rem;', NUM) + '</div>',
+        check: function (ctx) {
+          var raw = ctx.inp.v.value.trim();
+          if (!raw) return { msg: 'Escribe tu respuesta antes de comprobar.' };
+          var v = h.parseNat(raw);
+          if (v == null) return { bad: true, msg: '<span class="no">La respuesta es un número entero positivo,</span> por ejemplo <strong>25</strong>.' };
+          if (v === spec.ans) return { wrong: [], total: 1 };
+          return { wrong: ['v'], msgs: [spec.hint], total: 1 };
+        },
+        sol: spec.sol
+      };
+    }
+
+    Practica.setup({
+      id: 'cc', bank: BANK, anchor: 'ejercicios-circ-origen',
+      card: function (e, n) {
+        var N, R;
+        if (e.t === 'A') {
+          N = e.r * e.r;
+          return numCard(e, n, {
+            head: 'Centro (0, 0) y radio ' + e.r, ask: 'Completa la ecuación de la circunferencia', label: 'x² + y² =', aria: 'Lado derecho de la ecuación',
+            ans: N, hint: 'A la derecha va <strong>r²</strong>, no r: ' + e.r + '² = ' + e.r + ' · ' + e.r + ' = ' + N + '.',
+            sol: 'r² = ' + e.r + '² = ' + N + '<br>x² + y² = <strong>' + N + '</strong>'
+          });
+        }
+        if (e.t === 'B') {
+          N = e.r * e.r;
+          return numCard(e, n, {
+            head: eq(N), ask: '¿Cuánto mide el radio?', label: 'r =', aria: 'Radio',
+            ans: e.r, hint: 'El número de la derecha es <strong>r²</strong> = ' + N + '. El radio es su raíz cuadrada positiva: ¿qué número multiplicado por sí mismo da ' + N + '? Es ' + e.r + '.',
+            sol: 'r² = ' + N + '<br>r = √' + N + ' = <strong>' + e.r + '</strong>'
+          });
+        }
+        if (e.t === 'F') {
+          N = e.r * e.r;
+          return numCard(e, n, {
+            head: eq(N), ask: '¿Cuánto mide el diámetro?', label: 'diámetro =', aria: 'Diámetro',
+            ans: 2 * e.r, hint: 'Primero el radio: r² = ' + N + ', así que r = ' + e.r + '. El diámetro es el <strong>doble</strong> del radio: 2 · ' + e.r + ' = ' + (2 * e.r) + '.',
+            sol: 'r² = ' + N + ' → r = ' + e.r + '<br>diámetro = 2r = 2 · ' + e.r + ' = <strong>' + (2 * e.r) + '</strong>'
+          });
+        }
+        if (e.t === 'E') {
+          N = e.r * e.r; var m = e.k * N;
+          return numCard(e, n, {
+            head: e.k + 'x² + ' + e.k + 'y² = ' + m, ask: '¿Cuánto mide el radio?', label: 'r =', aria: 'Radio',
+            ans: e.r, hint: 'Divide <strong>toda</strong> la ecuación entre ' + e.k + ': x² + y² = ' + m + ' ÷ ' + e.k + ' = ' + N + '. Entonces r² = ' + N + ' y r = ' + e.r + '.',
+            sol: 'Dividimos entre ' + e.k + ': x² + y² = ' + N + '<br>r² = ' + N + ' → r = √' + N + ' = <strong>' + e.r + '</strong>'
+          });
+        }
+        if (e.t === 'D') {
+          N = e.a * e.a + e.b * e.b;
+          return numCard(e, n, {
+            head: 'Centro (0, 0), la circunferencia pasa por el punto ' + pt(e.a, e.b), ask: 'Completa la ecuación de la circunferencia', label: 'x² + y² =', aria: 'Lado derecho de la ecuación',
+            ans: N, hint: 'El punto está en la circunferencia, así que cumple x² + y² = r². Sustituye x = ' + (e.a < 0 ? M + Math.abs(e.a) : e.a) + ' y y = ' + (e.b < 0 ? M + Math.abs(e.b) : e.b) + ': r² = ' + sq(e.a) + ' + ' + sq(e.b) + ' = ' + N + '.',
+            sol: 'r² = ' + sq(e.a) + ' + ' + sq(e.b) + ' = ' + (e.a * e.a) + ' + ' + (e.b * e.b) + ' = ' + N + '<br>x² + y² = <strong>' + N + '</strong>'
+          });
+        }
+        // C: ¿sobre, dentro o fuera?
+        N = e.r * e.r; var S = e.a * e.a + e.b * e.b, key = S === N ? 'sobre' : (S < N ? 'dentro' : 'fuera');
+        var rel = S === N ? '=' : (S < N ? '&lt;' : '&gt;');
+        var txt = { sobre: 'sobre la circunferencia', dentro: 'dentro de la circunferencia', fuera: 'fuera de la circunferencia' };
+        var sol = 'x² + y² = ' + sq(e.a) + ' + ' + sq(e.b) + ' = ' + (e.a * e.a) + ' + ' + (e.b * e.b) + ' = ' + S + '<br>' + S + ' ' + rel + ' ' + N + ' → el punto está <strong>' + txt[key] + '</strong>';
+        return {
+          head: 'Circunferencia ' + eq(N) + '. Punto ' + pt(e.a, e.b),
+          body: '<div class="practice-ask">¿Dónde está el punto?</div>' + h.optsHTML('t', [['sobre', 'Sobre la circunferencia'], ['dentro', 'Dentro'], ['fuera', 'Fuera']], false),
+          check: function (ctx) {
+            if (!ctx.chosen.t) return { msg: 'Elige una de las tres opciones.' };
+            if (ctx.chosen.t === key) return { wrong: [], total: 1 };
+            return { wrong: ['t'], msgs: ['Sustituye las coordenadas en x² + y² y compara el resultado con r² = ' + N + ': si es igual, el punto está sobre la circunferencia; si es menor, dentro; si es mayor, fuera.'], total: 1 };
+          },
+          sol: sol
+        };
+      }
+    });
+  })();
+  </script>
 
 </body>
 </html>

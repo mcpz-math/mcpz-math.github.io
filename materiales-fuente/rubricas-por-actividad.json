@@ -2127,6 +2127,76 @@
           "n5": "Elabora una cadena de argumentos que generaliza: deduce las condiciones de C para cualquier valor de A (positivo o negativo), explica por qué la circunferencia es un caso particular de la elipse y distingue convencerse con un ejemplo de demostrar para todos los valores."
         }
       ]
+    },
+    {
+      "id": "circorigen",
+      "titulo": "Matemáticas 3 · Tema 7 · Circunferencia con centro en (0,0)",
+      "file": "matematicas-3/tema-07-circunferencia-centro-origen.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página resueltos en el cuaderno, con los cálculos (r² = r · r, r² = a² + b², la división entre k) y la ecuación completa x² + y² = ….",
+        "La gráfica de al menos una circunferencia hecha a mano con compás: centro en el origen, radio correcto y los puntos (r, 0), (−r, 0), (0, r) y (0, −r) marcados.",
+        "La justificación de al menos tres puntos: la sustitución en x² + y², la comparación con r² y la conclusión (sobre, dentro o fuera)."
+      ],
+      "errores": [
+        "Escribe x² + y² = r en lugar de x² + y² = r²: para radio 5 pone x² + y² = 5.",
+        "Dice que en x² + y² = 25 el radio es 25 (olvida sacar la raíz cuadrada).",
+        "Al sustituir coordenadas negativas escribe (−3)² = −9 en lugar de 9, o suma 3 + 4 = 7 sin elevar al cuadrado.",
+        "En 3x² + 3y² = 48 dice que r² = 48 (no divide toda la ecuación entre 3) o que el radio es 4 sin justificar.",
+        "Confunde diámetro y radio: contesta 6 en lugar de 12 cuando r = 6.",
+        "Decide dentro, sobre o fuera comparando x + y con r en lugar de x² + y² con r², o dibuja la circunferencia sin centrarla en el origen."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe los cálculos que lo llevan a la respuesta (r² = r · r, r² = a² + b², x² + y² = … ÷ k) y la ecuación completa.",
+            "Usa el vocabulario adecuado (centro, radio, diámetro, sobre, dentro, fuera, r²).",
+            "Rotula su gráfica: el centro, el radio y los cuatro puntos donde corta a los ejes."
+          ],
+          "n1": "Escribe sólo el resultado, sin cálculos, y casi no usa vocabulario matemático; su gráfica no tiene rótulos o no se entiende. No usa ningún apoyo, como un dibujo o una tabla.",
+          "n23": "Escribe algunos cálculos pero omite otros (por ejemplo, no muestra la sustitución de las coordenadas) y usa el vocabulario de manera limitada; su gráfica tiene el centro marcado pero faltan los puntos de los ejes o el radio.",
+          "n4": "Escribe los cálculos y la ecuación completa en casi todos los ejercicios, con el vocabulario adecuado, y explica con claridad por qué un punto está sobre, dentro o fuera. Su gráfica está rotulada con claridad; puede tener una omisión menor.",
+          "n5": "Expresa su trabajo por diferentes medios (ecuación, cálculos, gráfica con compás y palabras) con notación correcta, y explica de manera oral o escrita cómo obtendría la ecuación o el radio en un caso nuevo."
+        },
+        {
+          "id": "REP_GEO",
+          "observar": [
+            "Traza la circunferencia con compás: punta en el origen y abertura igual al radio.",
+            "Marca los cuatro puntos donde la circunferencia corta a los ejes: (r, 0), (−r, 0), (0, r) y (0, −r).",
+            "Ubica un punto dado en el dibujo y dice si queda sobre, dentro o fuera de la circunferencia."
+          ],
+          "n1": "Sabe que la circunferencia es una curva redonda, pero la dibuja a mano libre, no centrada en el origen o con un radio que no corresponde a la ecuación.",
+          "n23": "Describe la circunferencia (centro en el origen y radio r) y la traza con compás en los casos sencillos, pero se equivoca al marcar los puntos de los ejes o al ubicar puntos con coordenadas negativas.",
+          "n4": "Clasifica los puntos como sobre, dentro o fuera e interpreta cómo se ven en la gráfica. Traza con compás la circunferencia con el radio correcto y marca correctamente los cuatro puntos de los ejes.",
+          "n5": "Infiere e integra las relaciones: sin graficar anticipa el radio, el diámetro, los cortes con los ejes y la posición de cualquier punto, y lo confirma con la gráfica; reconoce que todos los puntos de la circunferencia cumplen la misma ecuación."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Escribe r² (y no r) del lado derecho, y saca la raíz cuadrada para pasar de la ecuación al radio.",
+            "Sustituye correctamente las coordenadas con su signo (por ejemplo, (−3)² = 9) y obtiene r² = a² + b² cuando la circunferencia pasa por (a, b).",
+            "Divide toda la ecuación entre k cuando los coeficientes de x² y y² no son 1."
+          ],
+          "n1": "Aún no usa correctamente las expresiones algebraicas: confunde r con r² (escribe x² + y² = 5 para r = 5 o dice que el radio de x² + y² = 25 es 25) o no sabe qué sustituir en x² + y².",
+          "n23": "Hace uso de la sintaxis y la semántica del lenguaje algebraico en los casos directos (del radio entero a la ecuación y al revés), pero se equivoca con los signos de las coordenadas negativas o cuando los coeficientes de x² y y² no son 1.",
+          "n4": "Comprende y maneja las propiedades del lenguaje algebraico: pasa del radio a la ecuación y de la ecuación al radio y al diámetro, obtiene la ecuación de la circunferencia que pasa por un punto y resuelve kx² + ky² = m dividiendo entre k, cuidando los signos.",
+          "n5": "Dota de significado y generaliza las propiedades: explica por qué r² = a² + b² no necesita calcular la raíz, por qué dividir entre k no cambia la circunferencia y por qué la ecuación x² + y² = r² sirve para cualquier radio (y r² debe ser positivo)."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Justifica por qué un punto está sobre, dentro o fuera comparando x² + y² con r², no sólo dice la respuesta.",
+            "Verifica sustituyendo que un punto cumple la ecuación (por ejemplo, que (3, 4) y (−3, 4) están en x² + y² = 25).",
+            "Explica por qué x² + y² < r² significa que el punto está más cerca del centro que el radio."
+          ],
+          "n1": "Defiende su respuesta con frases como «así se ve» o «me salió», sin sustituir ni comparar.",
+          "n2": "Explica con sus palabras («si x² + y² da más que r², el punto está más lejos del centro») por qué decidió así, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: sustituye varios puntos (por ejemplo (3, 4), (−3, 4) y (4, 3)) para comprobar que están en la misma circunferencia y da ejemplos y no-ejemplos de puntos de una circunferencia.",
+          "n4": "Explica la estructura del argumento: la distancia de (x, y) al origen es √(x² + y²) (hipótesis), así que comparar x² + y² con r² dice si el punto está sobre, dentro o fuera (conclusión). Verifica su conclusión sustituyendo.",
+          "n5": "Elabora una cadena de argumentos que generaliza para cualquier radio: demuestra que x² + y² menor, igual o mayor que r² equivale a que la distancia al origen sea menor, igual o mayor que r. Distingue convencerse con un dibujo de demostrar."
+        }
+      ]
     }
   ]
 }
