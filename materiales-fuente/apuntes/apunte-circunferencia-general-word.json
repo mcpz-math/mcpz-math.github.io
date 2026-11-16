@@ -1,0 +1,72 @@
+{
+  "titulo": "Circunferencia: de la ecuación general al centro y al radio",
+  "kicker": "APUNTE DE CLASE",
+  "org": "DTI. Maria del Carmen Pérez Zarate · Matemáticas 3 · Tema 7",
+  "nombre": "Nombre: ________________________________________   Grupo: __________",
+  "pie": "mcpz-math.github.io · Matemáticas 3 · Tema 7: Circunferencia",
+  "bloques": [
+    { "t": "h2", "v": "¿Cómo sé que es una circunferencia?" },
+    { "t": "p", "v": "En la ecuación general de segundo grado, es circunferencia cuando los coeficientes de x² y de y² son **iguales (A = C)** y **no hay término xy**." },
+    { "t": "ul", "v": [
+      "Si **A = C = 1**, ya tiene la forma $x^2+y^2+Dx+Ey+F=0$.",
+      "Si **A = C ≠ 1** (por ejemplo, 3x² + 3y² + …), **divide toda la ecuación entre A**."
+    ] },
+
+    { "t": "h2", "v": "Completar cuadrados" },
+    { "t": "box", "titulo": "La idea", "v": [
+      "$(x+a)^2=x^2+2ax+a^2$",
+      "El coeficiente de x es **2a**. Para completar el cuadrado de x² + Dx: **a es la mitad del coeficiente de x** y hay que sumar **a²**.",
+      "• x² − 6x: la mitad de −6 es −3 y (−3)² = 9, entonces **x² − 6x + 9 = (x − 3)²**.",
+      "• y² + 4y: la mitad de 4 es 2 y 2² = 4, entonces **y² + 4y + 4 = (y + 2)²**." ] },
+    { "t": "box", "tono": "naranja", "titulo": "Para no equivocarte", "v": ["Lo que sumas de un lado de la igualdad, súmalo **también del otro lado**. El signo del binomio es el mismo signo del coeficiente de x (o de y)."] },
+    { "t": "h3", "v": "Pasos para encontrar el centro y el radio" },
+    { "t": "pasos", "v": [
+      "Si hace falta, **divide entre A** para que los coeficientes de x² y de y² sean 1.",
+      "**Agrupa** los términos en x, los términos en y, y pasa F al lado derecho (con signo cambiado).",
+      "**Completa el cuadrado** en x y en y, sumando a los **dos lados** la mitad del coeficiente elevada al cuadrado.",
+      "Escribe cada trinomio como **binomio al cuadrado** y suma los números de la derecha: (x − h)² + (y − k)² = r².",
+      "Lee el **centro (h, k)** (signos contrarios a los de los paréntesis) y el **radio** r = √(r²)."
+    ] },
+
+    { "t": "h2", "v": "Ejemplos" },
+    { "t": "box", "titulo": "1.", "v": [
+      "$x^2+y^2-6x+4y-3=0$",
+      "(x² − 6x) + (y² + 4y) = 3  →  (x² − 6x + 9) + (y² + 4y + 4) = 3 + 9 + 4  →  (x − 3)² + (y + 2)² = 16.",
+      "**Centro (3, −2) y radio 4.**" ] },
+    { "t": "box", "titulo": "2.", "v": [
+      "$x^2+y^2+4x-10y+20=0$",
+      "(x² + 4x + 4) + (y² − 10y + 25) = −20 + 4 + 25  →  (x + 2)² + (y − 5)² = 9.",
+      "**Centro (−2, 5) y radio 3.**" ] },
+    { "t": "box", "titulo": "3. Cuando falta un término", "v": [
+      "$x^2+y^2-8x-9=0$",
+      "(x² − 8x + 16) + y² = 9 + 16  →  (x − 4)² + y² = 25.",
+      "**Centro (4, 0) y radio 5.**" ] },
+    { "t": "box", "titulo": "4. Cuando los coeficientes no son 1", "v": [
+      "$3x^2+3y^2-12x+6y-12=0$",
+      "A = C = 3: divide entre 3  →  x² + y² − 4x + 2y − 4 = 0  →  (x² − 4x + 4) + (y² + 2y + 1) = 4 + 4 + 1  →  (x − 2)² + (y + 1)² = 9.",
+      "**Centro (2, −1) y radio 3.**" ] },
+
+    { "t": "h2", "v": "¿Siempre sale una circunferencia?" },
+    { "t": "tabla", "cols": [2600, 7600], "head": ["Lado derecho (r²)", "Qué representa"], "rows": [
+      ["**positivo**", "Una circunferencia, con radio r = √(r²)."],
+      ["**cero**", "Un solo punto: el centro (h, k). Ejemplo: x² + y² − 2x + 4y + 5 = 0 → (x − 1)² + (y + 2)² = 0, el punto (1, −2)."],
+      ["**negativo**", "Ningún punto (un cuadrado nunca es negativo). Ejemplo: x² + y² + 2x + 2y + 5 = 0 → (x + 1)² + (y + 1)² = −3."]
+    ] },
+
+    { "t": "h2", "v": "Un atajo con fórmulas (para revisar)" },
+    { "t": "box", "titulo": "", "v": [
+      "Completando cuadrados con letras en x² + y² + Dx + Ey + F = 0 se obtiene:",
+      "$h=-{D|2}$        $k=-{E|2}$        $r^2=h^2+k^2-F$",
+      "Con el ejemplo 1 (D = −6, E = 4, F = −3):   $h=-{-6|2}=3$,   $k=-{4|2}=-2$,   $r^2=3^2+(-2)^2-(-3)=9+4+3=16$,  entonces r = 4 ✓.",
+      "El procedimiento que debes escribir es el de completar cuadrados; las fórmulas sirven para revisar." ] },
+
+    { "t": "h2", "v": "Resumen" },
+    { "t": "box", "titulo": "", "v": [
+      "• Es circunferencia si **A = C** y no hay término xy (si A = C ≠ 1, divide entre A).",
+      "• **Completa cuadrados** en x y en y, sumando lo mismo a los dos lados, para llegar a (x − h)² + (y − k)² = r².",
+      "• **Centro** (h, k) con signos contrarios a los de los paréntesis; **radio** = raíz positiva de r².",
+      "• r² positivo: circunferencia  ·  r² = 0: un punto  ·  r² negativo: ningún punto." ] },
+
+    { "t": "notas", "titulo": "Mis notas", "n": 3 }
+  ]
+}
