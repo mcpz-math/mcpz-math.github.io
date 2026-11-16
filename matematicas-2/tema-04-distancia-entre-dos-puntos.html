@@ -7,6 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
   <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sust { display: block; font-family: 'IBM Plex Mono', monospace; color: var(--forest); font-weight: 500; margin: 0.3rem 0 0.1rem; }
+    .expl { display: block; font-size: 0.82rem; color: var(--ink-soft); }
+  </style>
 </head>
 <body>
 
@@ -90,66 +94,72 @@
   </div>
   <div class="callout">
     <div class="k no-caps">Cuidado con los signos</div>
-    <p>Si una coordenada es negativa, escríbela <strong>entre paréntesis</strong> al restar: para A(−3, 4) y B(2, −8),
-       la diferencia en y es (−8) − 4 = −12, y al elevarla al cuadrado queda (−12)² = <strong>144</strong>, positivo.
-       La raíz es de toda la suma, no de cada sumando por separado.</p>
+    <p>Si una coordenada es negativa, <strong>escríbela entre paréntesis</strong> al sustituir. Para A(−3, 4) y B(2, −8):</p>
+    <p><span class="sust">d = <span class="rad">√<span class="radicand">(2 − (−3))² + (−8 − 4)²</span></span> = <span class="rad">√<span class="radicand">5² + (−12)²</span></span> = <span class="rad">√<span class="radicand">25 + 144</span></span> = <span class="rad">√<span class="radicand">169</span></span> = 13</span></p>
+    <p>Fíjate en que (−12)² = <strong>144</strong>, positivo, y que la raíz cubre <strong>toda la suma</strong>: √(25 + 144) no es 5 + 12.</p>
   </div>
 
   <!-- 4. Pasos -->
   <p class="section-label">Pasos para calcular la distancia</p>
   <ol class="steps">
-    <li><span>Identifica las coordenadas: <strong>(x<sub>1</sub>, y<sub>1</sub>)</strong> del primer punto y <strong>(x<sub>2</sub>, y<sub>2</sub>)</strong> del segundo.</span></li>
-    <li><span>Calcula las <strong>diferencias</strong>: x<sub>2</sub> − x<sub>1</sub> y y<sub>2</sub> − y<sub>1</sub> (con paréntesis si hay negativos).</span></li>
-    <li><span><strong>Eleva al cuadrado</strong> cada diferencia y <strong>suma</strong> los resultados.</span></li>
-    <li><span>Saca la <strong>raíz cuadrada</strong> de la suma. Si no es exacta, déjala indicada o aproxímala con decimales.</span></li>
+    <li><span><strong>Identifica los puntos.</strong> El primero te da (x<sub>1</sub>, y<sub>1</sub>) y el segundo (x<sub>2</sub>, y<sub>2</sub>). No importa cuál elijas como primero.</span></li>
+    <li><span><strong>Sustituye en la fórmula.</strong> Reemplaza cada letra por su número (con paréntesis si es negativo): las x van en el primer paréntesis y las y en el segundo.
+      <span class="sust">d = <span class="rad">√<span class="radicand">(x<sub>2</sub> − x<sub>1</sub>)² + (y<sub>2</sub> − y<sub>1</sub>)²</span></span> &nbsp;→&nbsp; d = <span class="rad">√<span class="radicand">( __ − __ )² + ( __ − __ )²</span></span></span></span></li>
+    <li><span><strong>Resuelve las restas</strong> que quedaron dentro de cada paréntesis.</span></li>
+    <li><span><strong>Eleva al cuadrado</strong> cada resultado y <strong>suma</strong>: así sabes cuánto vale lo que está dentro de la raíz.</span></li>
+    <li><span><strong>Saca la raíz cuadrada</strong> de la suma. Si no es exacta, déjala indicada o aproxímala con decimales.</span></li>
   </ol>
 
   <!-- 5. Ejemplos -->
   <p class="section-label">Ejemplos</p>
-
   <div class="example-box">
     <h2>Ejemplo 1: los puntos de la figura</h2>
     <p>Distancia entre A(1, 2) y B(5, 5).</p>
     <ol class="steps">
-      <li><span>Diferencias: 5 − 1 = 4 y 5 − 2 = 3.</span></li>
-      <li><span>Cuadrados y suma: 4² + 3² = 16 + 9 = 25.</span></li>
-      <li><span>Raíz: √25 = 5.</span></li>
+      <li><span><strong>Identifica los puntos: </strong><span class="sust">x<sub>1</sub> = 1, y<sub>1</sub> = 2  (A)   y   x<sub>2</sub> = 5, y<sub>2</sub> = 5  (B)</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(5 − 1)² + (5 − 2)²</span></span></span><span class="expl">En el primer paréntesis van las x (5 − 1) y en el segundo las y (5 − 2).</span></span></li>
+      <li><span><strong>Resuelve las restas: </strong><span class="sust">d = <span class="rad">√<span class="radicand">4² + 3²</span></span></span><span class="expl">5 − 1 = 4 y 5 − 2 = 3.</span></span></li>
+      <li><span><strong>Eleva al cuadrado y suma: </strong><span class="sust">d = <span class="rad">√<span class="radicand">16 + 9</span></span> = <span class="rad">√<span class="radicand">25</span></span></span><span class="expl">4² = 16 y 3² = 9; 16 + 9 = 25.</span></span></li>
+      <li><span><strong>Saca la raíz: </strong><span class="sust">d = 5</span><span class="expl">Porque 5 · 5 = 25.</span></span></li>
     </ol>
-    <p><strong>d = 5</strong> (es la terna 3-4-5).</p>
+    <p><strong>La distancia es 5 unidades</strong> (es la terna 3-4-5).</p>
   </div>
 
   <div class="example-box">
     <h2>Ejemplo 2: con coordenadas negativas</h2>
     <p>Distancia entre A(−3, 4) y B(2, −8).</p>
     <ol class="steps">
-      <li><span>Diferencias: 2 − (−3) = 5 y (−8) − 4 = −12.</span></li>
-      <li><span>Cuadrados y suma: 5² + (−12)² = 25 + 144 = 169.</span></li>
-      <li><span>Raíz: √169 = 13.</span></li>
+      <li><span><strong>Identifica los puntos: </strong><span class="sust">x<sub>1</sub> = −3, y<sub>1</sub> = 4  (A)   y   x<sub>2</sub> = 2, y<sub>2</sub> = −8  (B)</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(2 − (−3))² + (−8 − 4)²</span></span></span><span class="expl">Los números negativos van entre paréntesis para no confundir los signos.</span></span></li>
+      <li><span><strong>Resuelve las restas: </strong><span class="sust">d = <span class="rad">√<span class="radicand">5² + (−12)²</span></span></span><span class="expl">2 − (−3) = 2 + 3 = 5 y −8 − 4 = −12.</span></span></li>
+      <li><span><strong>Eleva al cuadrado y suma: </strong><span class="sust">d = <span class="rad">√<span class="radicand">25 + 144</span></span> = <span class="rad">√<span class="radicand">169</span></span></span><span class="expl">5² = 25 y (−12)² = 144 (el cuadrado de un negativo es positivo); 25 + 144 = 169.</span></span></li>
+      <li><span><strong>Saca la raíz: </strong><span class="sust">d = 13</span><span class="expl">Porque 13 · 13 = 169.</span></span></li>
     </ol>
-    <p><strong>d = 13</strong> (es la terna 5-12-13).</p>
+    <p><strong>La distancia es 13 unidades</strong> (es la terna 5-12-13).</p>
   </div>
 
   <div class="example-box">
     <h2>Ejemplo 3: cuando la raíz no es exacta</h2>
     <p>Distancia entre A(−2, −1) y B(3, 2).</p>
     <ol class="steps">
-      <li><span>Diferencias: 3 − (−2) = 5 y 2 − (−1) = 3.</span></li>
-      <li><span>Cuadrados y suma: 5² + 3² = 25 + 9 = 34.</span></li>
-      <li><span>Raíz: √34, que no es un número entero (5² = 25 y 6² = 36).</span></li>
+      <li><span><strong>Identifica los puntos: </strong><span class="sust">x<sub>1</sub> = −2, y<sub>1</sub> = −1  (A)   y   x<sub>2</sub> = 3, y<sub>2</sub> = 2  (B)</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(3 − (−2))² + (2 − (−1))²</span></span></span><span class="expl">Restar un número negativo es lo mismo que sumar su opuesto.</span></span></li>
+      <li><span><strong>Resuelve las restas: </strong><span class="sust">d = <span class="rad">√<span class="radicand">5² + 3²</span></span></span><span class="expl">3 − (−2) = 3 + 2 = 5 y 2 − (−1) = 2 + 1 = 3.</span></span></li>
+      <li><span><strong>Eleva al cuadrado y suma: </strong><span class="sust">d = <span class="rad">√<span class="radicand">25 + 9</span></span> = <span class="rad">√<span class="radicand">34</span></span></span><span class="expl">5² = 25 y 3² = 9; 25 + 9 = 34.</span></span></li>
+      <li><span><strong>Saca la raíz: </strong><span class="sust">d = <span class="rad">√<span class="radicand">34</span></span> ≈ 5.83</span><span class="expl">34 no es un cuadrado perfecto (5² = 25 y 6² = 36), así que la raíz no es entera: la respuesta exacta es √34 y con calculadora vale aproximadamente 5.83.</span></span></li>
     </ol>
-    <p><strong>d = √34 ≈ 5.83</strong>. La respuesta exacta es √34; el decimal es una aproximación.</p>
+    <p><strong>La distancia es √34 ≈ 5.83 unidades.</strong></p>
   </div>
 
   <div class="example-box">
     <h2>Ejemplo 4: ¿qué tipo de triángulo es?</h2>
-    <p>Los vértices de un triángulo son A(−1, 1), B(2, 5) y C(6, 2). Calcula la longitud de sus lados.</p>
+    <p>Los vértices de un triángulo son A(−1, 1), B(2, 5) y C(6, 2). Calcula la longitud de sus tres lados; cada lado es la distancia entre dos vértices.</p>
     <ol class="steps">
-      <li><span>AB: (2 − (−1))² + (5 − 1)² = 3² + 4² = 25 → AB = 5.</span></li>
-      <li><span>BC: (6 − 2)² + (2 − 5)² = 4² + (−3)² = 25 → BC = 5.</span></li>
-      <li><span>AC: (6 − (−1))² + (2 − 1)² = 7² + 1² = 50 → AC = √50.</span></li>
+      <li><span><strong>Lado AB: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(2 − (−1))² + (5 − 1)²</span></span> = <span class="rad">√<span class="radicand">3² + 4²</span></span> = <span class="rad">√<span class="radicand">9 + 16</span></span> = <span class="rad">√<span class="radicand">25</span></span> = 5</span><span class="expl">Se sustituyen A(−1, 1) y B(2, 5).</span></span></li>
+      <li><span><strong>Lado BC: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(6 − 2)² + (2 − 5)²</span></span> = <span class="rad">√<span class="radicand">4² + (−3)²</span></span> = <span class="rad">√<span class="radicand">16 + 9</span></span> = <span class="rad">√<span class="radicand">25</span></span> = 5</span><span class="expl">Se sustituyen B(2, 5) y C(6, 2).</span></span></li>
+      <li><span><strong>Lado AC: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(6 − (−1))² + (2 − 1)²</span></span> = <span class="rad">√<span class="radicand">7² + 1²</span></span> = <span class="rad">√<span class="radicand">49 + 1</span></span> = <span class="rad">√<span class="radicand">50</span></span></span><span class="expl">Se sustituyen A(−1, 1) y C(6, 2). 50 no es cuadrado perfecto, así que se deja como √50.</span></span></li>
     </ol>
-    <p>Como AB = BC = 5, el triángulo es <strong>isósceles</strong>. Además, 5² + 5² = 50 = (√50)², así que cumple el teorema de Pitágoras:
-       es un triángulo <strong>rectángulo</strong> (con el ángulo recto en B).</p>
+    <p>Como AB = BC = 5, el triángulo es <strong>isósceles</strong>. Además, 5² + 5² = 25 + 25 = 50 = (√50)², así que cumple el teorema de Pitágoras: es un triángulo <strong>rectángulo</strong>, con el ángulo recto en B.</p>
   </div>
 
   <!-- 6. Resumen -->

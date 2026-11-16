@@ -7,6 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
   <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sust { display: block; font-family: 'IBM Plex Mono', monospace; color: var(--forest); font-weight: 500; margin: 0.3rem 0 0.1rem; }
+    .expl { display: block; font-size: 0.82rem; color: var(--ink-soft); }
+  </style>
 </head>
 <body>
 
@@ -78,63 +82,72 @@
   <!-- 4. Pasos -->
   <p class="section-label">Pasos para encontrar el punto medio</p>
   <ol class="steps">
-    <li><span>Identifica las coordenadas de los extremos: <strong>(x<sub>1</sub>, y<sub>1</sub>)</strong> y <strong>(x<sub>2</sub>, y<sub>2</sub>)</strong>.</span></li>
-    <li><span><strong>Suma</strong> las coordenadas x y <strong>divide entre 2</strong>: ésa es la x del punto medio (con paréntesis si hay negativos).</span></li>
-    <li><span><strong>Suma</strong> las coordenadas y y <strong>divide entre 2</strong>: ésa es la y del punto medio.</span></li>
+    <li><span><strong>Identifica los extremos.</strong> El primero te da (x<sub>1</sub>, y<sub>1</sub>) y el segundo (x<sub>2</sub>, y<sub>2</sub>).</span></li>
+    <li><span><strong>Sustituye en la fórmula.</strong> Reemplaza cada letra por su número (con paréntesis si es negativo): las x van en la primera coordenada y las y en la segunda.
+      <span class="sust">M = ( <span class="frac frac-inline"><span class="num">x<sub>1</sub> + x<sub>2</sub></span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">y<sub>1</sub> + y<sub>2</sub></span><span class="den">2</span></span> ) &nbsp;→&nbsp; M = ( <span class="frac frac-inline"><span class="num">__ + __</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">__ + __</span><span class="den">2</span></span> )</span></span></li>
+    <li><span><strong>Suma</strong> los dos números que quedaron arriba en cada coordenada.</span></li>
+    <li><span><strong>Divide entre 2</strong> cada resultado: así obtienes el promedio.</span></li>
     <li><span>Escribe el resultado como un punto: <strong>M(x, y)</strong>.</span></li>
   </ol>
 
   <!-- 5. Ejemplos -->
   <p class="section-label">Ejemplos</p>
-
   <div class="example-box">
     <h2>Ejemplo 1</h2>
     <p>Punto medio entre A(2, 4) y B(8, 10).</p>
     <ol class="steps">
-      <li><span>x: <span class="frac frac-inline"><span class="num">2 + 8</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">10</span><span class="den">2</span></span> = 5.</span></li>
-      <li><span>y: <span class="frac frac-inline"><span class="num">4 + 10</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">14</span><span class="den">2</span></span> = 7.</span></li>
+      <li><span><strong>Identifica los extremos: </strong><span class="sust">x<sub>1</sub> = 2, y<sub>1</sub> = 4  (A)   y   x<sub>2</sub> = 8, y<sub>2</sub> = 10  (B)</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">2 + 8</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">4 + 10</span><span class="den">2</span></span> )</span><span class="expl">Las x (2 y 8) van en la primera coordenada y las y (4 y 10) en la segunda.</span></span></li>
+      <li><span><strong>Suma: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">10</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">14</span><span class="den">2</span></span> )</span><span class="expl">2 + 8 = 10 y 4 + 10 = 14.</span></span></li>
+      <li><span><strong>Divide entre 2: </strong><span class="sust">M = ( 5 , 7 )</span><span class="expl">10 ÷ 2 = 5 y 14 ÷ 2 = 7.</span></span></li>
     </ol>
-    <p><strong>M(5, 7)</strong>.</p>
+    <p><strong>El punto medio es M(5, 7).</strong></p>
   </div>
 
   <div class="example-box">
     <h2>Ejemplo 2: con coordenadas negativas</h2>
     <p>Punto medio entre A(−3, 5) y B(7, −1).</p>
     <ol class="steps">
-      <li><span>x: <span class="frac frac-inline"><span class="num">−3 + 7</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> = 2.</span></li>
-      <li><span>y: <span class="frac frac-inline"><span class="num">5 + (−1)</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> = 2.</span></li>
+      <li><span><strong>Identifica los extremos: </strong><span class="sust">x<sub>1</sub> = −3, y<sub>1</sub> = 5  (A)   y   x<sub>2</sub> = 7, y<sub>2</sub> = −1  (B)</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">−3 + 7</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">5 + (−1)</span><span class="den">2</span></span> )</span><span class="expl">El número negativo va entre paréntesis para no confundir los signos.</span></span></li>
+      <li><span><strong>Suma: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> )</span><span class="expl">−3 + 7 = 4 y 5 + (−1) = 4.</span></span></li>
+      <li><span><strong>Divide entre 2: </strong><span class="sust">M = ( 2 , 2 )</span><span class="expl">4 ÷ 2 = 2 en las dos coordenadas.</span></span></li>
     </ol>
-    <p><strong>M(2, 2)</strong>.</p>
+    <p><strong>El punto medio es M(2, 2).</strong></p>
   </div>
 
   <div class="example-box">
     <h2>Ejemplo 3: cuando el resultado es una fracción</h2>
     <p>Punto medio entre A(−6, −2) y B(3, 1).</p>
     <ol class="steps">
-      <li><span>x: <span class="frac frac-inline"><span class="num">−6 + 3</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">−3</span><span class="den">2</span></span> = −1.5.</span></li>
-      <li><span>y: <span class="frac frac-inline"><span class="num">−2 + 1</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">−1</span><span class="den">2</span></span> = −0.5.</span></li>
+      <li><span><strong>Identifica los extremos: </strong><span class="sust">x<sub>1</sub> = −6, y<sub>1</sub> = −2  (A)   y   x<sub>2</sub> = 3, y<sub>2</sub> = 1  (B)</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">−6 + 3</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−2 + 1</span><span class="den">2</span></span> )</span><span class="expl">Las x (−6 y 3) van en la primera coordenada y las y (−2 y 1) en la segunda.</span></span></li>
+      <li><span><strong>Suma: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">−3</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−1</span><span class="den">2</span></span> )</span><span class="expl">−6 + 3 = −3 y −2 + 1 = −1.</span></span></li>
+      <li><span><strong>Divide entre 2: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">−3</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−1</span><span class="den">2</span></span> ) = ( −1.5 , −0.5 )</span><span class="expl">Como −3 y −1 no son divisibles entre 2, el resultado es una fracción; se puede dejar así o escribir en decimales.</span></span></li>
     </ol>
-    <p><strong>M(<span class="frac frac-inline"><span class="num">−3</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">−1</span><span class="den">2</span></span>)</strong>, o en decimales, M(−1.5, −0.5).</p>
+    <p><strong>El punto medio es M(<span class="frac frac-inline"><span class="num">−3</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">−1</span><span class="den">2</span></span>)</strong>, o en decimales, M(−1.5, −0.5).</p>
   </div>
 
   <div class="example-box">
     <h2>Ejemplo 4: encontrar el otro extremo</h2>
     <p>El punto medio de un segmento AB es M(3, 2) y uno de sus extremos es A(1, −2). ¿Cuáles son las coordenadas de B(x, y)?</p>
     <ol class="steps">
-      <li><span>Para x: <span class="frac frac-inline"><span class="num">1 + x</span><span class="den">2</span></span> = 3 → 1 + x = 6 → x = 5.</span></li>
-      <li><span>Para y: <span class="frac frac-inline"><span class="num">−2 + y</span><span class="den">2</span></span> = 2 → −2 + y = 4 → y = 6.</span></li>
+      <li><span><strong>Identifica los datos: </strong><span class="sust">x<sub>1</sub> = 1, y<sub>1</sub> = −2  (A),   punto medio (3, 2),   x<sub>2</sub> = x, y<sub>2</sub> = y  (B, desconocido)</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">( 3 , 2 ) = ( <span class="frac frac-inline"><span class="num">1 + x</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−2 + y</span><span class="den">2</span></span> )</span><span class="expl">La coordenada x de M es el promedio de 1 y x, y la coordenada y de M es el promedio de −2 y y. Eso da dos ecuaciones.</span></span></li>
+      <li><span><strong>Despeja x: </strong><span class="sust"><span class="frac frac-inline"><span class="num">1 + x</span><span class="den">2</span></span> = 3   →   1 + x = 6   →   x = 5</span><span class="expl">Multiplica los dos lados por 2 y luego resta 1.</span></span></li>
+      <li><span><strong>Despeja y: </strong><span class="sust"><span class="frac frac-inline"><span class="num">−2 + y</span><span class="den">2</span></span> = 2   →   −2 + y = 4   →   y = 6</span><span class="expl">Multiplica los dos lados por 2 y luego suma 2.</span></span></li>
     </ol>
-    <p><strong>B(5, 6)</strong>. Comprobación: el punto medio de A(1, −2) y B(5, 6) es (3, 2) ✓.</p>
+    <p><strong>El otro extremo es B(5, 6).</strong> Comprobación: el punto medio de A(1, −2) y B(5, 6) es (<span class="frac frac-inline"><span class="num">1 + 5</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">−2 + 6</span><span class="den">2</span></span>) = (3, 2) ✓.</p>
   </div>
 
   <div class="example-box">
     <h2>Ejemplo 5: junto con la distancia</h2>
     <p>Un segmento tiene extremos A(−1, 2) y B(5, −6). Encuentra su punto medio y su longitud.</p>
     <ol class="steps">
-      <li><span>Punto medio: <span class="frac frac-inline"><span class="num">−1 + 5</span><span class="den">2</span></span> = 2 y <span class="frac frac-inline"><span class="num">2 + (−6)</span><span class="den">2</span></span> = −2, así que <strong>M(2, −2)</strong>.</span></li>
-      <li><span>Longitud: (5 − (−1))² + (−6 − 2)² = 6² + (−8)² = 36 + 64 = 100, entonces <strong>AB = 10</strong>.</span></li>
+      <li><span><strong>Punto medio, sustituye en la fórmula: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">−1 + 5</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">2 + (−6)</span><span class="den">2</span></span> ) = M = ( <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−4</span><span class="den">2</span></span> ) = ( 2 , −2 )</span><span class="expl">−1 + 5 = 4 y 2 + (−6) = −4; después se divide entre 2.</span></span></li>
+      <li><span><strong>Longitud, sustituye en la fórmula de la distancia: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(5 − (−1))² + (−6 − 2)²</span></span> = <span class="rad">√<span class="radicand">6² + (−8)²</span></span> = <span class="rad">√<span class="radicand">36 + 64</span></span> = <span class="rad">√<span class="radicand">100</span></span> = 10</span><span class="expl">5 − (−1) = 6 y −6 − 2 = −8; (−8)² = 64.</span></span></li>
     </ol>
-    <p>La mitad de la longitud, 5, es la distancia de M a cada extremo.</p>
+    <p><strong>El punto medio es M(2, −2) y la longitud del segmento es 10.</strong> La mitad de la longitud, 5, es la distancia de M a cada extremo.</p>
   </div>
 
   <!-- 6. Resumen -->
