@@ -1990,3 +1990,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
   El banco: 20 de **radio → ecuación** (x² + y² = ?), 20 de **ecuación → radio**, 10 de **ecuación → diámetro**, 10 de **kx² + ky² = m → radio** (dividir entre k), 15 de **circunferencia que pasa por un punto** (r² = a² + b², con coordenadas negativas) y 25 de **punto sobre, dentro o fuera** (8 sobre, 9 dentro, 8 fuera).
   Se comprobó con 400 ejercicios generados que la respuesta correcta siempre se acepta.
 - Rúbrica (entrada "circorigen" de `rubricas-por-actividad.json`; Comunicación, Representación geométrica, Representación algebraica y Argumentación, con evidencia y errores típicos); se regeneró la guía en Word `IEMS\Guia_para_evaluar_con_la_matriz.docx` (ahora con 28 rúbricas). Las otras rúbricas no cambiaron.
+
+## 2026-11-16 (Matemáticas 3, Tema 7: Serie 8 en Word, circunferencia con centro en (0,0))
+- A pedido de Carmen, nueva **Serie 8 en Word**, «Circunferencia con centro en (0,0)», con **10 ejercicios** en 4 partes y su clave. Archivos en `Escritorio\IEMS\Matemàticas III\`: `Serie 8_Circunferencia centro en el origen.docx` (para los alumnos, con la rúbrica) y `…_CLAVE.docx` (para la profesora).
+  **Parte 1 (1–3):** de los datos a la ecuación (radio 6, radio 9 y diámetro 10). **Parte 2 (4–6):** de la ecuación (x² + y² = 16, x² + y² = 64 y 2x² + 2y² = 98) al radio, el diámetro y los cuatro puntos donde corta a los ejes, con la **gráfica hecha con compás en hoja aparte**.
+  **Parte 3 (7–8):** la circunferencia que pasa por (6, 8) y por (−5, 12). **Parte 4 (9–10):** tres puntos en cada una (x² + y² = 25 y x² + y² = 100): sustituir, comparar con r², marcar sobre / dentro / fuera y explicar en «Porque».
+  Cada ejercicio trae su «Procedimiento» (o «Porque»). Ecuaciones en Word, formato estándar de las Series.
+- Rúbrica con la **matriz de niveles** (Comunicación, Representación geométrica, Representación algebraica y Argumentación): bloque y actividad "serie8circorigen" de `materiales-fuente/rubricas-por-actividad.json`. Se genera con el nuevo `materiales-fuente/generar-serie-circunferencia.ps1`
+  y se regeneró la guía en Word `IEMS\Guia_para_evaluar_con_la_matriz.docx` (ahora con 29 rúbricas). No se pudo abrir en Word desde aquí, así que conviene abrir el archivo una vez y revisar que cada parte quede completa en la hoja.

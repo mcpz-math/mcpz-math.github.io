@@ -288,6 +288,67 @@
       { "resp": "Elipse: cualquier C positivo distinto de 5 (por ejemplo C = 2). Hipérbola: cualquier C negativo (por ejemplo C = −3).", "por": "Elipse: A = 5 y C tienen el mismo signo y son distintos (C > 0 y C ≠ 5; si C = 5 sería circunferencia). Hipérbola: A = 5 y C tienen signos contrarios (C < 0)." }
     ]
   },
+  "serie8circorigen": {
+    "titulo": "Serie 8. Circunferencia con centro en (0,0)",
+    "claveTitulo": "Serie 8 · Clave de respuestas (sólo para la profesora)",
+    "autor": "DTI. Maria del Carmen Pérez Zarate",
+    "estudiante": "Estudiante________________________________________________  Fecha______________  Grupo______________",
+    "propositoTitulo": "PROPÓSITO",
+    "proposito": "Evaluar el desarrollo de habilidades para trabajar con la circunferencia de centro en el origen: escribir su ecuación x² + y² = r² a partir del radio, del diámetro o de un punto por el que pasa; obtener el radio, el diámetro y los puntos donde corta a los ejes a partir de la ecuación; graficarla con compás; y decidir si un punto está sobre, dentro o fuera de ella, justificando cada paso.",
+    "instruccionesTitulo": "INSTRUCCIONES:",
+    "instruccionesIntro": "Resuelve cada ejercicio:",
+    "pasos": [
+      "Haz tus cálculos en el cuaderno y escribe tus respuestas en la hoja. En «Procedimiento» escribe los cálculos principales.",
+      "Recuerda que la circunferencia con centro en (0, 0) y radio r tiene ecuación x² + y² = r²: el número de la derecha es r², no r. El diámetro mide 2r.",
+      "En los ejercicios 4, 5 y 6 traza la circunferencia con regla y compás en una hoja aparte, cuadriculada y con el número del ejercicio: pon la punta del compás en el origen y ábrelo hasta el punto donde la circunferencia corta al eje x (no hace falta medir: cuenta los cuadritos). Marca el centro, el radio y los cuatro puntos donde corta a los ejes.",
+      "En los ejercicios 9 y 10 sustituye las coordenadas de cada punto en x² + y², compara el resultado con r², marca si el punto está sobre, dentro o fuera de la circunferencia y explica por qué en «Porque»."
+    ],
+    "partes": [
+      { "titulo": "Parte 1 · De los datos a la ecuación (ejercicios 1 a 3)", "n": 3 },
+      { "titulo": "Parte 2 · De la ecuación al radio, el diámetro y la gráfica (ejercicios 4 a 6)", "n": 3 },
+      { "titulo": "Parte 3 · La circunferencia que pasa por un punto (ejercicios 7 y 8)", "n": 2 },
+      { "titulo": "Parte 4 · ¿Sobre, dentro o fuera? (ejercicios 9 y 10)", "n": 2 }
+    ],
+    "lineaProc": "Procedimiento: ______________________",
+    "lineaProc2": "_______________________________________",
+    "lineaPor": "Porque: _____________________________",
+    "lineaPor2": "_______________________________________",
+    "rubricaTitulo": "Rúbrica (matriz de niveles de evaluación)",
+    "claveNota": "Todas las circunferencias tienen centro en (0, 0). En los ejercicios 4 a 6 el alumno traza la circunferencia con compás en hoja aparte: centro en el origen, radio correcto y los cuatro puntos donde corta a los ejes marcados. En los ejercicios 9 y 10 basta con que «Porque» diga que x² + y² se compara con r²: igual → sobre, menor → dentro, mayor → fuera.",
+    "ejercicios": [
+      { "enunciado": "Centro (0, 0) y radio 6.",
+        "lineas": ["Ecuación: $x^2+y^2=$ ________", "Diámetro: ________", "@proc"],
+        "clave": ["$x^2+y^2=36$", "Diámetro = 12"] },
+      { "enunciado": "Centro (0, 0) y radio 9.",
+        "lineas": ["Ecuación: $x^2+y^2=$ ________", "Diámetro: ________", "@proc"],
+        "clave": ["$x^2+y^2=81$", "Diámetro = 18"] },
+      { "enunciado": "Centro (0, 0) y diámetro 10.",
+        "lineas": ["Radio: ________", "Ecuación: $x^2+y^2=$ ________", "@proc"],
+        "clave": ["Radio = 5", "$x^2+y^2=25$"] },
+      { "enunciado": "$x^2+y^2=16$",
+        "lineas": ["Radio: ________        Diámetro: ________", "Puntos donde corta a los ejes: (____, 0)  (____, 0)  (0, ____)  (0, ____)", "Gráfica con compás en hoja aparte.", "@proc"],
+        "clave": ["Radio = 4, diámetro = 8", "Cortes: (4, 0), (−4, 0), (0, 4), (0, −4)"] },
+      { "enunciado": "$x^2+y^2=64$",
+        "lineas": ["Radio: ________        Diámetro: ________", "Puntos donde corta a los ejes: (____, 0)  (____, 0)  (0, ____)  (0, ____)", "Gráfica con compás en hoja aparte.", "@proc"],
+        "clave": ["Radio = 8, diámetro = 16", "Cortes: (8, 0), (−8, 0), (0, 8), (0, −8)"] },
+      { "enunciado": "$2x^2+2y^2=98$",
+        "lineas": ["Dividida entre 2: $x^2+y^2=$ ________", "Radio: ________        Diámetro: ________", "Puntos donde corta a los ejes: (____, 0)  (____, 0)  (0, ____)  (0, ____)", "Gráfica con compás en hoja aparte.", "@proc"],
+        "clave": ["Dividida entre 2: $x^2+y^2=49$", "Radio = 7, diámetro = 14", "Cortes: (7, 0), (−7, 0), (0, 7), (0, −7)"] },
+      { "enunciado": "Centro (0, 0); la circunferencia pasa por el punto (6, 8).",
+        "lineas": ["$r^2=$ ________", "Ecuación: $x^2+y^2=$ ________", "Radio: ________", "@proc"],
+        "clave": ["$r^2=6^2+8^2=36+64=100$", "$x^2+y^2=100$", "Radio = 10"] },
+      { "enunciado": "Centro (0, 0); la circunferencia pasa por el punto (−5, 12).",
+        "lineas": ["$r^2=$ ________", "Ecuación: $x^2+y^2=$ ________", "Radio: ________", "@proc"],
+        "clave": ["$r^2=(-5)^2+12^2=25+144=169$", "$x^2+y^2=169$", "Radio = 13"] },
+      { "enunciado": "Circunferencia $x^2+y^2=25$.",
+        "lineas": ["A(3, −4):  $x^2+y^2=$ ______   @sdf", "B(−2, −3):  $x^2+y^2=$ ______   @sdf", "C(−4, −4):  $x^2+y^2=$ ______   @sdf", "@por"],
+        "clave": ["A: 9 + 16 = 25 → sobre", "B: 4 + 9 = 13 < 25 → dentro", "C: 16 + 16 = 32 > 25 → fuera"] },
+      { "enunciado": "Circunferencia $x^2+y^2=100$.",
+        "lineas": ["A(9, 5):  $x^2+y^2=$ ______   @sdf", "B(−8, 6):  $x^2+y^2=$ ______   @sdf", "C(7, −6):  $x^2+y^2=$ ______   @sdf", "@por"],
+        "clave": ["A: 81 + 25 = 106 > 100 → fuera", "B: 64 + 36 = 100 → sobre", "C: 49 + 36 = 85 < 100 → dentro"] }
+    ],
+    "sdf": ["Sobre", "Dentro", "Fuera"]
+  },
   "actividades": [
     {
       "id": "signos",
@@ -2143,6 +2204,76 @@
         "Dice que en x² + y² = 25 el radio es 25 (olvida sacar la raíz cuadrada).",
         "Al sustituir coordenadas negativas escribe (−3)² = −9 en lugar de 9, o suma 3 + 4 = 7 sin elevar al cuadrado.",
         "En 3x² + 3y² = 48 dice que r² = 48 (no divide toda la ecuación entre 3) o que el radio es 4 sin justificar.",
+        "Confunde diámetro y radio: contesta 6 en lugar de 12 cuando r = 6.",
+        "Decide dentro, sobre o fuera comparando x + y con r en lugar de x² + y² con r², o dibuja la circunferencia sin centrarla en el origen."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe los cálculos que lo llevan a la respuesta (r² = r · r, r² = a² + b², x² + y² = … ÷ k) y la ecuación completa.",
+            "Usa el vocabulario adecuado (centro, radio, diámetro, sobre, dentro, fuera, r²).",
+            "Rotula su gráfica: el centro, el radio y los cuatro puntos donde corta a los ejes."
+          ],
+          "n1": "Escribe sólo el resultado, sin cálculos, y casi no usa vocabulario matemático; su gráfica no tiene rótulos o no se entiende. No usa ningún apoyo, como un dibujo o una tabla.",
+          "n23": "Escribe algunos cálculos pero omite otros (por ejemplo, no muestra la sustitución de las coordenadas) y usa el vocabulario de manera limitada; su gráfica tiene el centro marcado pero faltan los puntos de los ejes o el radio.",
+          "n4": "Escribe los cálculos y la ecuación completa en casi todos los ejercicios, con el vocabulario adecuado, y explica con claridad por qué un punto está sobre, dentro o fuera. Su gráfica está rotulada con claridad; puede tener una omisión menor.",
+          "n5": "Expresa su trabajo por diferentes medios (ecuación, cálculos, gráfica con compás y palabras) con notación correcta, y explica de manera oral o escrita cómo obtendría la ecuación o el radio en un caso nuevo."
+        },
+        {
+          "id": "REP_GEO",
+          "observar": [
+            "Traza la circunferencia con compás: punta en el origen y abertura igual al radio.",
+            "Marca los cuatro puntos donde la circunferencia corta a los ejes: (r, 0), (−r, 0), (0, r) y (0, −r).",
+            "Ubica un punto dado en el dibujo y dice si queda sobre, dentro o fuera de la circunferencia."
+          ],
+          "n1": "Sabe que la circunferencia es una curva redonda, pero la dibuja a mano libre, no centrada en el origen o con un radio que no corresponde a la ecuación.",
+          "n23": "Describe la circunferencia (centro en el origen y radio r) y la traza con compás en los casos sencillos, pero se equivoca al marcar los puntos de los ejes o al ubicar puntos con coordenadas negativas.",
+          "n4": "Clasifica los puntos como sobre, dentro o fuera e interpreta cómo se ven en la gráfica. Traza con compás la circunferencia con el radio correcto y marca correctamente los cuatro puntos de los ejes.",
+          "n5": "Infiere e integra las relaciones: sin graficar anticipa el radio, el diámetro, los cortes con los ejes y la posición de cualquier punto, y lo confirma con la gráfica; reconoce que todos los puntos de la circunferencia cumplen la misma ecuación."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Escribe r² (y no r) del lado derecho, y saca la raíz cuadrada para pasar de la ecuación al radio.",
+            "Sustituye correctamente las coordenadas con su signo (por ejemplo, (−3)² = 9) y obtiene r² = a² + b² cuando la circunferencia pasa por (a, b).",
+            "Divide toda la ecuación entre k cuando los coeficientes de x² y y² no son 1."
+          ],
+          "n1": "Aún no usa correctamente las expresiones algebraicas: confunde r con r² (escribe x² + y² = 5 para r = 5 o dice que el radio de x² + y² = 25 es 25) o no sabe qué sustituir en x² + y².",
+          "n23": "Hace uso de la sintaxis y la semántica del lenguaje algebraico en los casos directos (del radio entero a la ecuación y al revés), pero se equivoca con los signos de las coordenadas negativas o cuando los coeficientes de x² y y² no son 1.",
+          "n4": "Comprende y maneja las propiedades del lenguaje algebraico: pasa del radio a la ecuación y de la ecuación al radio y al diámetro, obtiene la ecuación de la circunferencia que pasa por un punto y resuelve kx² + ky² = m dividiendo entre k, cuidando los signos.",
+          "n5": "Dota de significado y generaliza las propiedades: explica por qué r² = a² + b² no necesita calcular la raíz, por qué dividir entre k no cambia la circunferencia y por qué la ecuación x² + y² = r² sirve para cualquier radio (y r² debe ser positivo)."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Justifica por qué un punto está sobre, dentro o fuera comparando x² + y² con r², no sólo dice la respuesta.",
+            "Verifica sustituyendo que un punto cumple la ecuación (por ejemplo, que (3, 4) y (−3, 4) están en x² + y² = 25).",
+            "Explica por qué x² + y² < r² significa que el punto está más cerca del centro que el radio."
+          ],
+          "n1": "Defiende su respuesta con frases como «así se ve» o «me salió», sin sustituir ni comparar.",
+          "n2": "Explica con sus palabras («si x² + y² da más que r², el punto está más lejos del centro») por qué decidió así, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: sustituye varios puntos (por ejemplo (3, 4), (−3, 4) y (4, 3)) para comprobar que están en la misma circunferencia y da ejemplos y no-ejemplos de puntos de una circunferencia.",
+          "n4": "Explica la estructura del argumento: la distancia de (x, y) al origen es √(x² + y²) (hipótesis), así que comparar x² + y² con r² dice si el punto está sobre, dentro o fuera (conclusión). Verifica su conclusión sustituyendo.",
+          "n5": "Elabora una cadena de argumentos que generaliza para cualquier radio: demuestra que x² + y² menor, igual o mayor que r² equivale a que la distancia al origen sea menor, igual o mayor que r. Distingue convencerse con un dibujo de demostrar."
+        }
+      ]
+    },
+    {
+      "id": "serie8circorigen",
+      "titulo": "Matemáticas 3 · Tema 7 · Serie 8: circunferencia con centro en (0,0) (Word)",
+      "file": "",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Las 10 respuestas de la hoja: la ecuación x² + y² = … con r² (no r), los radios, los diámetros y los puntos donde corta a los ejes, con el procedimiento escrito.",
+        "Las tres gráficas hechas con compás en hoja aparte (ejercicios 4, 5 y 6): centro en el origen, radio correcto y los cuatro puntos de los ejes marcados.",
+        "En los ejercicios 9 y 10, la sustitución en x² + y², la comparación con r² y la frase «Porque» de cada uno de los seis puntos."
+      ],
+      "errores": [
+        "Escribe x² + y² = r en lugar de x² + y² = r²: para radio 5 pone x² + y² = 5.",
+        "Dice que en x² + y² = 25 el radio es 25 (olvida sacar la raíz cuadrada).",
+        "Al sustituir coordenadas negativas escribe (−3)² = −9 en lugar de 9, o suma 3 + 4 = 7 sin elevar al cuadrado.",
+        "En 2x² + 2y² = 98 dice que r² = 98 (no divide toda la ecuación entre 2) o que el radio es 7 sin justificar.",
         "Confunde diámetro y radio: contesta 6 en lugar de 12 cuando r = 6.",
         "Decide dentro, sobre o fuera comparando x + y con r en lugar de x² + y² con r², o dibuja la circunferencia sin centrarla en el origen."
       ],
