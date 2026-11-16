@@ -2030,3 +2030,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
   Se hicieron cuatro porque «esta clase» podía ser Centro (h,k) o Ecuación general (los dos subtemas que se acababan de escribir).
 - Los PDF están en `matematicas-3/materiales/` y en `Escritorio\IEMS\Matemàticas III\`. Cada página de clase tiene arriba un botón «Descargar el apunte de esta clase (PDF)» (estilo `.apunte-link` en `assets/style.css`).
 - Cómo se generan: los .html fuente están en `materiales-fuente/apuntes/` (con `apunte.css`) y `generar-apuntes.ps1` los imprime a PDF con Microsoft Edge sin ventana (las figuras 3D de las cónicas se dibujan con three.js al imprimir, así que hace falta internet). No se pudo abrir el PDF terminado desde aquí: se revisó el diseño en el navegador a tamaño carta y que cada PDF tenga 2 páginas.
+
+## 2026-11-16 (botón «siguiente» en todas las páginas de Matemáticas 1, 2 y 3)
+- A pedido de Carmen, el botón de **siguiente tema o subtema** (`.page-next`) se agregó también a las páginas anteriores: **57 páginas** más, para un total de 62 (Matemáticas 1: 22, Matemáticas 2: 9 y Matemáticas 3: 31 con las de cónicas y circunferencia). El botón queda al final de la página, **después de la rúbrica** si la tiene, justo antes del pie.
+  Reglas: la **página de un tema** manda al siguiente tema; cada **subtema** manda al siguiente subtema del mismo tema y el **último subtema** manda al siguiente tema; la **última página de cada curso** dice «Fin del temario» y regresa al temario. El orden de los subtemas es el que tienen en la página de su tema.
+  Cambios de recorrido a tener presentes: en Matemáticas 3, el Tema 6 manda a «Introducción a las cónicas» (que va antes de Circunferencia). No se tocaron las páginas de prueba `prueba-ax-cuadrada*.html`.
+- Se comprobó en el navegador que las 62 páginas tienen el botón, que los 62 enlaces abren su destino y que en las 26 páginas con rúbrica el botón queda después de ella.
