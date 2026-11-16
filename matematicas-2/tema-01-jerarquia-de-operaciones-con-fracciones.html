@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jerarquía de operaciones con fracciones — Matemáticas 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sust { display: block; font-family: 'IBM Plex Mono', monospace; color: var(--forest); font-weight: 500; margin: 0.3rem 0 0.1rem; line-height: 2.1; }
+    .expl { display: block; font-size: 0.82rem; color: var(--ink-soft); line-height: 1.9; }
+    .jf-nota { display: block; font-size: 0.78rem; color: var(--ink-soft); margin: 0.15rem 0 0.2rem 0.6rem; line-height: 2; }
+    #jf-grid .practice-q { line-height: 2.3; }
+    #jf-grid .sol { line-height: 2; }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-01-numeros-racionales.html">← Tema 1</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 2 · Tema 1 · Subtema</div>
+    <h1>Jerarquía de operaciones con fracciones</h1>
+  </div>
+
+  <div class="fx">
+
+  <div class="callout">
+    <div class="k">Objetivo</div>
+    <p>Que el estudiante resuelva operaciones combinadas <strong>con fracciones</strong> respetando la <strong>jerarquía de operaciones</strong>:
+       paréntesis, potencias, multiplicaciones y divisiones, y al final sumas y restas.</p>
+  </div>
+
+  <div class="callout">
+    <div class="k no-caps">Sólo para recordar</div>
+    <p>La jerarquía de operaciones ya la viste en Matemáticas 1, con números enteros. Si necesitas repasarla,
+       entra a <a href="../matematicas-1/tema-04-jerarquia-de-operaciones.html"><strong>Jerarquía de operaciones (Matemáticas 1)</strong></a>.
+       Y para recordar cómo se suman, se restan, se multiplican y se dividen las fracciones, entra a
+       <a href="tema-01-operaciones-con-fracciones.html"><strong>Operaciones con fracciones</strong></a>.</p>
+  </div>
+
+  <p class="section-label" id="orden">1 · El orden de las operaciones</p>
+  <div class="prose">
+    <p>El orden es <strong>el mismo</strong> que con números enteros; lo único que cambia es que cada operación se hace <strong>con fracciones</strong>.
+       Hazlo paso a paso, sin saltarte ninguno:</p>
+  </div>
+  <ol class="steps">
+    <li><span><strong>Paréntesis:</strong> primero lo que está dentro de los grupos ( ), [ ] y { }, empezando por el de <strong>más adentro</strong>.</span></li>
+    <li><span><strong>Potencias y raíces:</strong> una fracción se eleva al cuadrado elevando el numerador y el denominador, ({2/3})² = {4/9}; y la raíz se saca al numerador y al denominador, <span class="rad">√<span class="radicand">{4/9}</span></span> = {2/3}.</span></li>
+    <li><span><strong>Multiplicaciones y divisiones:</strong> luego, de izquierda a derecha. Dividir es multiplicar por la <strong>inversa</strong> de la fracción que sigue.</span></li>
+    <li><span><strong>Sumas y restas:</strong> al final, de izquierda a derecha, con denominador común (el mcm).</span></li>
+  </ol>
+
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Nivel</th><th>Qué se hace con fracciones</th><th>Ejemplo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1. Paréntesis</strong></td><td>Se resuelve lo de adentro con las reglas de siempre.</td><td>({1/2} + {1/3}) = {5/6}</td></tr>
+        <tr><td><strong>2. Potencias</strong></td><td>Se eleva el numerador y el denominador.</td><td>({3/4})² = {9/16}</td></tr>
+        <tr><td><strong>3. × y ÷</strong></td><td>Numerador por numerador y denominador por denominador; ÷ es × por la inversa.</td><td>{2/3} ÷ {4/9} = {2/3} · {9/4} = {3/2}</td></tr>
+        <tr><td><strong>4. + y −</strong></td><td>Denominador común (mcm) y se operan los numeradores.</td><td>{1/2} − {1/3} = {3/6} − {2/6} = {1/6}</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <div class="k no-caps">Cuidado con los errores típicos</div>
+    <p><strong>Operar de izquierda a derecha:</strong> {1/2} + {1/3} · {3/4} <strong>no</strong> es {5/6} · {3/4} = {5/8}. La multiplicación va primero: {1/3} · {3/4} = {1/4} y después {1/2} + {1/4} = {3/4}.</p>
+    <p><strong>Elevar sólo el numerador:</strong> ({1/3})² = {1/9}, no {1/3} ni {1/6}: se elevan el numerador <strong>y</strong> el denominador.</p>
+    <p><strong>Invertir la fracción equivocada:</strong> en {a/b} ÷ {c/d} se invierte la <strong>segunda</strong>: {a/b} · {d/c}.</p>
+  </div>
+
+  <p class="section-label" id="ejemplos">2 · Ejemplos paso a paso</p>
+
+  <div class="example-box">
+    <h2>Ejemplo 1: multiplicar antes de sumar</h2>
+    <p>Resuelve {1/2} + {1/3} · {3/4}.</p>
+    <ol class="steps">
+      <li><span><strong>Multiplicación primero: </strong><span class="sust">{1/2} + {1/3} · {3/4} = {1/2} + {3/12} = {1/2} + {1/4}</span><span class="expl">{1/3} · {3/4} = {3/12}, que se simplifica a {1/4}.</span></span></li>
+      <li><span><strong>Suma: </strong><span class="sust">{1/2} + {1/4} = {2/4} + {1/4} = {3/4}</span><span class="expl">mcm(2, 4) = 4.</span></span></li>
+    </ol>
+    <p><strong>El resultado es {3/4}.</strong></p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 2: con paréntesis</h2>
+    <p>Resuelve ({2/3} − {1/6}) · {4/5}.</p>
+    <ol class="steps">
+      <li><span><strong>Paréntesis: </strong><span class="sust">({2/3} − {1/6}) · {4/5} = ({4/6} − {1/6}) · {4/5} = {3/6} · {4/5} = {1/2} · {4/5}</span><span class="expl">mcm(3, 6) = 6; {3/6} se simplifica a {1/2}.</span></span></li>
+      <li><span><strong>Multiplicación: </strong><span class="sust">{1/2} · {4/5} = {4/10} = {2/5}</span></span></li>
+    </ol>
+    <p><strong>El resultado es {2/5}.</strong></p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 3: con una potencia y una división</h2>
+    <p>Resuelve {3/4} ÷ {1/2} − ({1/3})².</p>
+    <ol class="steps">
+      <li><span><strong>Potencia: </strong><span class="sust">{3/4} ÷ {1/2} − ({1/3})² = {3/4} ÷ {1/2} − {1/9}</span><span class="expl">({1/3})² = {1/9}: se eleva el numerador y el denominador.</span></span></li>
+      <li><span><strong>División: </strong><span class="sust">{3/4} ÷ {1/2} − {1/9} = {3/4} · {2/1} − {1/9} = {6/4} − {1/9} = {3/2} − {1/9}</span><span class="expl">Se invierte la segunda fracción, {1/2} → {2/1}, y se multiplica; {6/4} se simplifica a {3/2}.</span></span></li>
+      <li><span><strong>Resta: </strong><span class="sust">{3/2} − {1/9} = {27/18} − {2/18} = {25/18}</span><span class="expl">mcm(2, 9) = 18.</span></span></li>
+    </ol>
+    <p><strong>El resultado es {25/18}.</strong></p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 4: paréntesis, división y suma</h2>
+    <p>Resuelve {1/2} + ({3/4} − {1/3}) ÷ {5/6}.</p>
+    <ol class="steps">
+      <li><span><strong>Paréntesis: </strong><span class="sust">{1/2} + ({3/4} − {1/3}) ÷ {5/6} = {1/2} + ({9/12} − {4/12}) ÷ {5/6} = {1/2} + {5/12} ÷ {5/6}</span><span class="expl">mcm(4, 3) = 12.</span></span></li>
+      <li><span><strong>División: </strong><span class="sust">{1/2} + {5/12} ÷ {5/6} = {1/2} + {5/12} · {6/5} = {1/2} + {30/60} = {1/2} + {1/2}</span><span class="expl">Se invierte la segunda fracción: {5/6} → {6/5}.</span></span></li>
+      <li><span><strong>Suma: </strong><span class="sust">{1/2} + {1/2} = {2/2} = 1</span></span></li>
+    </ol>
+    <p><strong>El resultado es 1.</strong></p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 5: un grupo dentro de otro</h2>
+    <p>Resuelve {2/3} · [{1/2} + ({3/4} − {1/4})].</p>
+    <ol class="steps">
+      <li><span><strong>Paréntesis de más adentro: </strong><span class="sust">{2/3} · [{1/2} + ({3/4} − {1/4})] = {2/3} · [{1/2} + {2/4}] = {2/3} · [{1/2} + {1/2}]</span><span class="expl">Con grupos dentro de grupos se empieza por el de más adentro, ( ), y se sigue con el de afuera, [ ].</span></span></li>
+      <li><span><strong>Corchetes: </strong><span class="sust">{2/3} · [{1/2} + {1/2}] = {2/3} · {2/2} = {2/3} · 1</span></span></li>
+      <li><span><strong>Multiplicación: </strong><span class="sust">{2/3} · 1 = {2/3}</span></span></li>
+    </ol>
+    <p><strong>El resultado es {2/3}.</strong></p>
+  </div>
+
+  </div><!-- /fx -->
+
+  <p class="section-label" id="ejercicios-jerarquia-fracciones">3 · Ejercicios</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Resuelve cada operación respetando el orden: <strong>paréntesis</strong> (primero los de más adentro: ( ) y después [ ] y { }), <strong>potencias</strong>,
+       <strong>multiplicaciones y divisiones</strong> y al final <strong>sumas y restas</strong>. Escribe el resultado <strong>como fracción simplificada</strong>
+       (por ejemplo <strong>3/4</strong> o <strong>−5/12</strong>) o como número entero, y oprime <strong>Comprobar</strong> (o la tecla Enter).
+       Las fracciones negativas van entre paréntesis.</p>
+    <p>Resuélvelo primero en tu cuaderno, paso a paso. Si te equivocas, la página te muestra cómo va quedando toda la operación en cada paso.
+       Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>, de los más sencillos a los más largos
+       (dos operaciones, tres con potencias o paréntesis, y grupos dentro de grupos). Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar.</p>
+  </div>
+
+  <div class="practice-grid" id="jf-grid"></div>
+  <p class="practice-score" id="jf-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="jf-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <p class="section-label">Resumen</p>
+  <div class="example-box">
+    <ul class="def-list">
+      <li>El orden es: <strong>paréntesis</strong>, <strong>potencias y raíces</strong>, <strong>× y ÷</strong> y por último <strong>+ y −</strong>; las del mismo nivel, de izquierda a derecha.</li>
+      <li>Con fracciones: la potencia afecta al numerador y al denominador; ÷ es × por la inversa de la fracción que sigue; + y − necesitan denominador común.</li>
+      <li>Con grupos dentro de grupos, se empieza por el de más adentro.</li>
+      <li>Simplifica el resultado y en cada paso copia lo que todavía no has resuelto.</li>
+    </ul>
+  </div>
+
+  <div class="page-next">
+    <span class="lbl">Siguiente tema</span>
+    <a href="tema-02-proporcionalidad-y-porcentajes.html">Proporcionalidad y porcentajes →</a>
+  </div>
+
+  <p class="section-label no-caps" id="rubrica-jerarquia-fracciones">Rúbrica · Jerarquía de operaciones con fracciones</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe cada paso con la operación completa, copiando lo que todavía no ha resuelto y con las fracciones bien escritas (numerador arriba, denominador abajo).</li><li>Usa paréntesis, corchetes y llaves de forma correcta, y escribe el resultado simplificado.</li><li>Explica con sus palabras qué hizo en cada paso y por qué lo hizo primero.</li></ul></div></td>
+            <td>Escribe sólo el resultado, sin los pasos, o con errores que cambian el sentido (numerador y denominador invertidos, paréntesis mal puestos). No usa ningún apoyo.</td>
+            <td colspan="2">Escribe algunos pasos pero omite otros (por ejemplo, el mcm o lo que falta por resolver) o pierde un signo al copiar; explica poco lo que hizo.</td>
+            <td>Escribe todos los pasos en casi todos los ejercicios, con la operación completa en cada línea, los agrupadores bien usados y el resultado simplificado; puede tener una omisión menor. Explica con claridad qué hizo.</td>
+            <td>Escribe todos los pasos con notación correcta y ordenada, y explica por escrito u oralmente el orden de las operaciones con fracciones y el porqué de cada paso, con ejemplos propios.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación aritmética</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Reconoce el nivel de cada operación (paréntesis, potencia, multiplicación o división, suma o resta) dentro de la expresión.</li><li>Representa la potencia de una fracción, la división como multiplicación por la inversa y la suma con denominador común.</li><li>Reconoce las fracciones equivalentes y el entero como fracción al operar.</li></ul></div></td>
+            <td>Conoce el orden sólo de memoria y lo aplica de forma mecánica; no distingue qué operación se hace primero en una expresión con fracciones.</td>
+            <td colspan="2">Reconoce el orden en expresiones sencillas (dos operaciones) y representa bien la potencia o la división, pero se confunde cuando hay paréntesis o más de tres operaciones.</td>
+            <td>Identifica el orden en expresiones con paréntesis y potencias, y representa correctamente cada operación con fracciones (inversa, mcm, numerador y denominador al cuadrado).</td>
+            <td>Combina las representaciones (fracciones equivalentes, inversa, simplificación antes de multiplicar) y elige la más adecuada para cada paso, justificando su elección en expresiones con grupos dentro de grupos.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Modelación y resolución de problemas</strong><span class="crit-desc">Formulación del problema y sistematización · Matematización y análisis del sistema matemático · Interpretación, evaluación y validación.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Identifica el orden en que debe resolver cada expresión antes de empezar.</li><li>Resuelve paso a paso, respetando la jerarquía, y revisa que el resultado sea razonable.</li><li>Detecta y corrige sus errores (por ejemplo, haber operado de izquierda a derecha).</li></ul></div></td>
+            <td>Opera en el orden en que aparecen los números, sin distinguir los niveles; resuelve al azar y no revisa.</td>
+            <td colspan="2">Aplica la jerarquía en expresiones sencillas, pero falla con paréntesis, potencias o divisiones de fracciones, y revisa poco sus resultados.</td>
+            <td colspan="2">Resuelve expresiones con paréntesis, potencias, multiplicaciones y divisiones y grupos dentro de grupos, siguiendo siempre el orden y simplificando; revisa que el resultado sea razonable, detecta y corrige sus errores y resuelve una expresión nueva con el mismo método.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué se resuelve primero lo que está entre paréntesis y por qué la multiplicación va antes que la suma.</li><li>Compara el resultado correcto con el que se obtiene al operar de izquierda a derecha.</li><li>Comprueba sus resultados (por ejemplo, con decimales o con otro camino).</li></ul></div></td>
+            <td>Defiende su resultado con frases como «así es el orden» o «así me salió», sin comprobar ni explicar.</td>
+            <td>Explica con sus palabras por qué se hace primero la multiplicación o el paréntesis, con pocos términos matemáticos.</td>
+            <td>Valida con ejemplos: muestra con un caso numérico (1/2 + 1/3 · 3/4) que operar de izquierda a derecha da otro resultado, y da ejemplos de errores comunes.</td>
+            <td>Explica la estructura del argumento: la jerarquía es un acuerdo que hace que toda expresión tenga un solo resultado; justifica cada paso de un ejercicio con ese acuerdo y comprueba el resultado con otro camino.</td>
+            <td>Construye una cadena de argumentos que generaliza: justifica por qué se necesita la jerarquía, por qué dividir es multiplicar por la inversa y por qué la potencia afecta al numerador y al denominador, y la usa para convencer a alguien de que otro orden es incorrecto.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+  <script>
+  // Escribe las fracciones apiladas: {n/d} dentro de un elemento con clase "fx"
+  document.querySelectorAll('.fx').forEach(function (el) {
+    el.innerHTML = el.innerHTML.replace(/\{([^{}]+?)\/([^{}]+?)\}/g, function (m, n, d) {
+      return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>';
+    });
+  });
+  </script>
+
+  <script>
+  (function () {
+    var MINUS = '−', DOT = '·', DIV = '÷';
+    function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = b; b = a % b; a = t; } return a || 1; }
+    function lcm(a, b) { return a / gcd(a, b) * b; }
+    function frac(n, d) { if (d < 0) { n = -n; d = -d; } var g = gcd(n, d); return { n: n / g, d: d / g }; }
+    function addF(f, g) { return frac(f.n * g.d + g.n * f.d, f.d * g.d); }
+    function mulF(f, g) { return frac(f.n * g.n, f.d * g.d); }
+    function negF(f) { return frac(-f.n, f.d); }
+    function invF(f) { return frac(f.d, f.n); }
+    function eqF(f, g) { return f.n * g.d === g.n * f.d; }
+    function ri(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+    function pick(l) { return l[ri(0, l.length - 1)]; }
+    function parseNum(txt) {
+      var s = String(txt).replace(/\s+/g, '').replace(/[−–—]/g, '-').replace(',', '.'), m;
+      if ((m = s.match(/^([+-]?)(\d+)\/(\d+)$/))) { var d = parseInt(m[3], 10); return d === 0 ? null : frac((m[1] === '-' ? -1 : 1) * parseInt(m[2], 10), d); }
+      if ((m = s.match(/^([+-]?)(\d*)\.?(\d*)$/)) && (m[2] || m[3])) {
+        var dec = m[3] || '', p = Math.pow(10, dec.length);
+        return frac((m[1] === '-' ? -1 : 1) * parseInt((m[2] || '0') + dec, 10), p);
+      }
+      return null;
+    }
+    function F(n, d) { return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>'; }
+    function U(n, d) { return (n < 0 ? MINUS : '') + (d === 1 ? Math.abs(n) : F(Math.abs(n), d)); }
+    function pU(n, d) { return n < 0 ? '(' + U(n, d) + ')' : U(n, d); }
+    function UF(f) { return U(f.n, f.d); }
+    function pUF(f) { return pU(f.n, f.d); }
+    function simp(rn, rd, r) { return (r.n === rn && r.d === rd) ? '' : ' = ' + UF(r); }   // " = simplificada" si hace falta
+
+    // ---- expresiones: una secuencia [término, operador, término, …]; término = número, paréntesis o potencia ----
+    function num(f) { return { k: 'num', f: f }; }
+    function toNode(x) { return (x && x.n !== undefined && x.d !== undefined && !x.k) ? num(x) : x; }
+    function par() { return { k: 'par', seq: [].slice.call(arguments).map(toNode) }; }
+    function pw(base) { return { k: 'pow', base: base }; }
+    function S() { return [].slice.call(arguments).map(toNode); }
+    function parH(t) {
+      if (t.k === 'par') return 1 + Math.max.apply(null, t.seq.map(function (x, i) { return i % 2 ? 0 : parH(x); }));
+      if (t.k === 'pow') return t.base.k === 'par' ? parH(t.base) : 0;
+      return 0;
+    }
+    function rTerm(t) {
+      if (t.k === 'num') return pUF(t.f);
+      if (t.k === 'par') { var h = parH(t), o = h === 1 ? ['(', ')'] : h === 2 ? ['[', ']'] : ['{', '}']; return o[0] + rSeq(t.seq) + o[1]; }
+      return (t.base.k === 'num' ? '(' + UF(t.base.f) + ')' : rTerm(t.base)) + '²';
+    }
+    function rSeq(seq) { return seq.map(function (t, i) { return i % 2 ? ' ' + t + ' ' : rTerm(t); }).join(''); }
+    function isPowNum(t) { return t.k === 'pow' && t.base.k === 'num'; }
+
+    function noteOp(a, op, b, r) {
+      var rn, rd, m;
+      if (op === DOT) { rn = a.n * b.n; rd = a.d * b.d; return pUF(a) + ' · ' + pUF(b) + ' = ' + U(rn, rd) + simp(rn, rd, r); }
+      if (op === DIV) { var ib = invF(b); rn = a.n * ib.n; rd = a.d * ib.d; var q = frac(rn, rd); return pUF(a) + ' ÷ ' + pUF(b) + ' = ' + pUF(a) + ' · ' + pUF(ib) + ' = ' + U(rn, rd) + simp(rn, rd, r); }
+      var sg = op === '+' ? 1 : -1; m = lcm(a.d, b.d);
+      var an = a.n * m / a.d, bn = b.n * m / b.d; rn = an + sg * bn;
+      if (a.d === b.d) return pUF(a) + ' ' + op + ' ' + pUF(b) + ' = ' + U(rn, m) + simp(rn, m, r);
+      return 'mcm(' + a.d + ', ' + b.d + ') = ' + m + '; ' + pU(an, m) + ' ' + op + ' ' + pU(bn, m) + ' = ' + U(rn, m) + simp(rn, m, r);
+    }
+    function applyOp(a, op, b) {
+      if (op === DOT) return mulF(a, b);
+      if (op === DIV) { if (b.n === 0) throw new Error('div0'); return mulF(a, invF(b)); }
+      return addF(a, op === '+' ? b : negF(b));
+    }
+    function flatStep(seq) {
+      var i, notes = [];
+      if (seq.some(isPowNum)) {
+        var out = seq.map(function (t) {
+          if (!isPowNum(t)) return t;
+          var f = t.base.f, r = mulF(f, f);
+          notes.push('(' + UF(f) + ')² = ' + U(f.n * f.n, f.d * f.d));
+          return num(r);
+        });
+        return { seq: out, note: 'Potencia · ' + notes.join('; ') };
+      }
+      for (i = 1; i < seq.length; i += 2) if (seq[i] === DOT || seq[i] === DIV) return reduceAt(seq, i, 'Multiplicación o división · ');
+      for (i = 1; i < seq.length; i += 2) return reduceAt(seq, i, 'Suma o resta · ');
+      return null;
+    }
+    function reduceAt(seq, i, label) {
+      var a = seq[i - 1].f, b = seq[i + 1].f, r = applyOp(a, seq[i], b);
+      return { seq: seq.slice(0, i - 1).concat([num(r)], seq.slice(i + 2)), note: label + noteOp(a, seq[i], b, r) };
+    }
+    function step(seq) {
+      for (var i = 0; i < seq.length; i += 2) {
+        var t = seq[i], inner = t.k === 'par' ? t : (t.k === 'pow' && t.base.k === 'par' ? t.base : null);
+        if (inner) {
+          var r = step(inner.seq);
+          if (r) {
+            var single = r.seq.length === 1 && r.seq[0].k === 'num';
+            var nt = t.k === 'par' ? (single ? r.seq[0] : { k: 'par', seq: r.seq }) : pw(single ? r.seq[0] : { k: 'par', seq: r.seq });
+            var out = seq.slice(); out[i] = nt;
+            return { seq: out, note: r.note.indexOf('Dentro del grupo') === 0 ? r.note : 'Dentro del grupo · ' + r.note.charAt(0).toLowerCase() + r.note.slice(1) };
+          }
+        }
+      }
+      return flatStep(seq);
+    }
+    function reduceAll(seq) {
+      var steps = [], cur = seq, guard = 0;
+      while (!(cur.length === 1 && cur[0].k === 'num')) {
+        var r = step(cur); if (!r || ++guard > 30) throw new Error('sin paso');
+        steps.push(r); cur = r.seq;
+      }
+      return { steps: steps, r: cur[0].f };
+    }
+    function termVal(t) {
+      if (t.k === 'num') return t.f;
+      if (t.k === 'par') return l2r(t.seq);
+      var b = t.base.k === 'num' ? t.base.f : l2r(t.base.seq); return mulF(b, b);
+    }
+    function l2r(seq) {      // el error típico: operar todo de izquierda a derecha sin jerarquía
+      var v = termVal(seq[0]);
+      for (var i = 1; i < seq.length; i += 2) { var w = termVal(seq[i + 1]), op = seq[i]; v = op === '+' ? addF(v, w) : op === MINUS ? addF(v, negF(w)) : op === DOT ? mulF(v, w) : (w.n === 0 ? v : mulF(v, invF(w))); }
+      return v;
+    }
+    function maxSize(steps, seq0) {
+      var mx = 0;
+      function walk(t) { if (t.k === 'num') mx = Math.max(mx, Math.abs(t.f.n), t.f.d); else if (t.k === 'par') t.seq.forEach(function (x, i) { if (i % 2 === 0) walk(x); }); else walk(t.base); }
+      steps.forEach(function (s) { s.seq.forEach(function (x, i) { if (i % 2 === 0) walk(x); }); });
+      return mx;
+    }
+
+    // ---- banco de 100 ejercicios (30 sencillos, 40 medios, 30 con grupos dentro de grupos) ----
+    var P = '+', M = MINUS;
+    var L1 = [
+      function (a, b, c) { return S(a, P, b, DOT, c); }, function (a, b, c) { return S(a, M, b, DOT, c); },
+      function (a, b, c) { return S(a, P, b, DIV, c); }, function (a, b, c) { return S(a, M, b, DIV, c); },
+      function (a, b, c) { return S(a, DOT, b, P, c); }, function (a, b, c) { return S(a, DIV, b, M, c); },
+      function (a, b, c) { return S(par(a, P, b), DOT, c); }, function (a, b, c) { return S(par(a, M, b), DOT, c); },
+      function (a, b, c) { return S(par(a, P, b), DIV, c); }, function (a, b, c) { return S(par(a, M, b), DIV, c); }
+    ].map(function (f) { return { n: 3, f: f }; });
+    var L2 = [
+      { n: 2, f: function (a, b) { return S(a, P, pw(num(b))); } },
+      { n: 3, f: function (a, b, c) { return S(a, M, pw(num(b)), DOT, c); } },
+      { n: 2, f: function (a, b) { return S(pw(par(a, P, b))); } },
+      { n: 4, f: function (a, b, c, d) { return S(a, DIV, b, P, c, DOT, d); } },
+      { n: 4, f: function (a, b, c, d) { return S(a, DOT, b, M, c, DIV, d); } },
+      { n: 4, f: function (a, b, c, d) { return S(a, P, b, DOT, c, M, d); } },
+      { n: 4, f: function (a, b, c, d) { return S(par(a, P, b), DOT, c, M, d); } },
+      { n: 4, f: function (a, b, c, d) { return S(a, M, par(b, P, c), DIV, d); } },
+      { n: 4, f: function (a, b, c, d) { return S(a, DIV, par(b, M, c), P, d); } },
+      { n: 4, f: function (a, b, c, d) { return S(par(a, M, b), DOT, par(c, P, d)); } },
+      { n: 3, f: function (a, b, c) { return S(pw(num(a)), P, b, DOT, c); } },
+      { n: 4, f: function (a, b, c, d) { return S(par(a, P, b, DIV, c), DOT, d); } }
+    ];
+    var L3 = [
+      { n: 5, f: function (a, b, c, d, e) { return S(a, M, par(b, P, par(c, M, d), DOT, e)); } },
+      { n: 4, f: function (a, b, c, d) { return S(par(a, P, par(b, M, c)), DIV, d); } },
+      { n: 5, f: function (a, b, c, d, e) { return S(par(a, P, b), DIV, par(c, M, d), DOT, e); } },
+      { n: 5, f: function (a, b, c, d, e) { return S(a, DOT, par(b, M, par(c, P, d), DIV, e)); } },
+      { n: 4, f: function (a, b, c, d) { return S(pw(par(a, P, b, DOT, c)), M, d); } },
+      { n: 4, f: function (a, b, c, d) { return S(a, P, pw(num(b)), DIV, c, M, d); } },
+      { n: 5, f: function (a, b, c, d, e) { return S(par(a, M, b), DOT, par(c, P, d), DIV, e); } },
+      { n: 5, f: function (a, b, c, d, e) { return S(a, DIV, par(b, P, par(c, DOT, d)), M, e); } },
+      { n: 4, f: function (a, b, c, d) { return S(par(pw(num(a)), M, b), DOT, c, P, d); } },
+      { n: 5, f: function (a, b, c, d, e) { return S(a, M, par(par(b, P, c), DOT, d), DIV, e); } }
+    ];
+    function rfrac() {
+      var d, n;
+      if (Math.random() < 0.12) { n = ri(1, 3); d = 1; }
+      else { do { d = pick([2, 3, 4, 5, 6, 8]); n = ri(1, d - 1); } while (gcd(n, d) !== 1); }
+      if (Math.random() < 0.15) n = -n;
+      return frac(n, d);
+    }
+    function build(tpl, maxFinal) {
+      for (var tries = 0; tries < 3000; tries++) {
+        var args = []; for (var k = 0; k < tpl.n; k++) args.push(rfrac());
+        var seq;
+        try {
+          seq = tpl.f.apply(null, args.map(function (x) { return x; }));
+          var res = reduceAll(seq);
+          if (res.r.n === 0 || Math.abs(res.r.n) > maxFinal || res.r.d > maxFinal || maxSize(res.steps) > 2500) continue;
+          return { seq0: seq, steps: res.steps, r: res.r, wrong: l2r(seq) };
+        } catch (err) { continue; }
+      }
+      throw new Error('no se pudo generar');
+    }
+    var BANK = [], q, t;
+    for (q = 0; q < 30; q++) BANK.push(build(L1[q % L1.length], 120));
+    for (q = 0; q < 40; q++) BANK.push(build(L2[q % L2.length], 200));
+    for (q = 0; q < 30; q++) BANK.push(build(L3[q % L3.length], 300));
+
+    function solution(e) {
+      var s = rSeq(e.seq0);
+      e.steps.forEach(function (st) { s += '<span class="jf-nota">↳ ' + st.note + '</span>= ' + (st.seq.length === 1 && st.seq[0].k === 'num' ? UF(st.seq[0].f) : rSeq(st.seq)); });
+      return s + '<br>Resultado: <strong>' + UF(e.r) + '</strong>';
+    }
+
+    var N = 10, done = {}, grid = document.getElementById('jf-grid'), scoreEl = document.getElementById('jf-score');
+    function score() {
+      var n = Object.keys(done).length;
+      scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
+    }
+    function pickSet() {
+      var idx = BANK.map(function (e, j) { return j; });
+      for (var a = idx.length - 1; a > 0; a--) { var b = Math.floor(Math.random() * (a + 1)), tt = idx[a]; idx[a] = idx[b]; idx[b] = tt; }
+      return idx.slice(0, N).sort(function (p1, p2) { return p1 - p2; }).map(function (j) { return BANK[j]; });
+    }
+    function makeCard(e, idx) {
+      var card = document.createElement('div');
+      card.className = 'practice-card';
+      card.innerHTML =
+        '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + rSeq(e.seq0) + '</span></div>' +
+        '<div class="practice-row"><span class="eq">=</span><input type="text" data-f="res" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tu resultado del ejercicio ' + (idx + 1) + '" style="flex:0 1 8rem;"></div>' +
+        '<div class="practice-keys">' + [MINUS, '/'].map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('') + '</div>' +
+        '<div class="practice-row" style="margin-top:0.7rem;"><button type="button" class="practice-check">Comprobar</button></div>' +
+        '<div class="practice-fb" aria-live="polite"></div>';
+      grid.appendChild(card);
+      var input = card.querySelector('input'), fb = card.querySelector('.practice-fb');
+      card.querySelectorAll('.practice-keys button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var s = input.selectionStart == null ? input.value.length : input.selectionStart, e2 = input.selectionEnd == null ? s : input.selectionEnd;
+          input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e2);
+          input.focus(); input.setSelectionRange(s + 1, s + 1);
+        });
+      });
+      function check() {
+        var v = input.value.trim(), msg;
+        card.classList.remove('ok', 'bad');
+        if (!v) { fb.innerHTML = 'Escribe tu respuesta en el cuadro.'; return; }
+        var ans = parseNum(v);
+        if (!ans) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí lo que escribiste.</span> Escribe una fracción como <strong>3/4</strong> o <strong>−5/12</strong>, o un número entero.'; return; }
+        var m = v.replace(/\s+/g, '').replace(/[−–—]/g, '-').match(/^[+-]?(\d+)\/(\d+)$/), unreduced = m && gcd(parseInt(m[1], 10), parseInt(m[2], 10)) > 1;
+        if (eqF(ans, e.r)) {
+          if (unreduced) { card.classList.add('bad'); delete done[idx]; score(); fb.innerHTML = '<span class="no">Casi:</span> el resultado es correcto, pero <strong>falta simplificar</strong> la fracción (divide arriba y abajo entre el MCD).'; return; }
+          card.classList.add('ok'); done[idx] = 1; score();
+          fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span><div class="sol">' + solution(e) + '</div>';
+          return;
+        }
+        card.classList.add('bad'); delete done[idx]; score();
+        if (eqF(ans, e.wrong)) msg = 'Parece que operaste <strong>de izquierda a derecha</strong> sin respetar la jerarquía: primero los paréntesis, luego las potencias, después × y ÷, y al final + y −.';
+        else if (eqF(ans, negF(e.r))) msg = 'Revisa el <strong>signo</strong> del resultado.';
+        else msg = 'Respeta el orden: <strong>paréntesis</strong> (primero los de más adentro), <strong>potencias</strong>, <strong>× y ÷</strong> y al final <strong>+ y −</strong>. En una división se invierte la segunda fracción, y para sumar o restar se necesita el mcm.';
+        fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + msg + '<div class="sol">La respuesta correcta es:<br>' + solution(e) + '</div>';
+      }
+      card.querySelector('.practice-check').addEventListener('click', check);
+      input.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') check(); });
+    }
+    function newSet() { grid.innerHTML = ''; done = {}; pickSet().forEach(makeCard); score(); }
+    document.getElementById('jf-new').addEventListener('click', function () {
+      newSet();
+      document.getElementById('ejercicios-jerarquia-fracciones').scrollIntoView({ behavior: 'smooth' });
+    });
+    newSet();
+  })();
+  </script>
+
+</body>
+</html>

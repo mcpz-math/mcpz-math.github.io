@@ -1581,7 +1581,7 @@
       "ocurrencia": 0,
       "evidencia": [
         "Los ejercicios al azar de la página (suma, resta, multiplicación y división), resueltos en el cuaderno con el procedimiento: mcm, fracciones equivalentes, inversa de la segunda fracción y simplificación.",
-        "Al menos una suma o resta con denominadores distintos (con el mcm), una multiplicación, una división y una operación con fracciones negativas, y al menos dos ejercicios de sumas y restas combinadas con tres o cuatro fracciones (mcm de todos los denominadores, fracciones convertidas y numeradores operados en orden).",
+        "Al menos una suma o resta con denominadores distintos (con el mcm), una multiplicación, una división y una operación con fracciones negativas, y al menos dos ejercicios de sumas y restas combinadas con tres o cuatro fracciones (mcm de todos los denominadores, fracciones convertidas y numeradores operados en orden) y dos de multiplicaciones y divisiones combinadas (cada división como multiplicación por la inversa).",
         "La explicación (oral o escrita) de por qué se necesita un denominador común para sumar y de por qué dividir es multiplicar por la inversa."
       ],
       "errores": [
@@ -1591,7 +1591,7 @@
         "Al dividir no invierte la segunda fracción, invierte la primera o invierte las dos.",
         "Deja el resultado sin simplificar (10/12) o simplifica mal (dividiendo sólo el numerador).",
         "Con fracciones negativas se equivoca en el signo del resultado (por ejemplo, (−2/3) · (3/5) = 2/5).",
-        "En las sumas y restas combinadas, suma todos los numeradores aunque haya un signo menos (1/2 + 1/3 − 1/4 = 6 + 4 + 3), o busca el mcm sólo de dos de los denominadores."
+        "En las sumas y restas combinadas, suma todos los numeradores aunque haya un signo menos (1/2 + 1/3 − 1/4 = 6 + 4 + 3), o busca el mcm sólo de dos de los denominadores. En las multiplicaciones y divisiones combinadas, multiplica todo sin invertir las fracciones que dividen."
       ],
       "rows": [
         {
@@ -1645,6 +1645,74 @@
       ]
     },
     {
+      "id": "jerarquiafrac",
+      "titulo": "Matemáticas 2 · Tema 1 · Jerarquía de operaciones con fracciones",
+      "file": "matematicas-2/tema-01-jerarquia-de-operaciones-con-fracciones.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página resueltos en el cuaderno, copiando en cada paso la operación completa con lo que todavía no se ha resuelto y escribiendo el resultado simplificado.",
+        "Al menos un ejercicio con paréntesis, uno con potencia, uno con multiplicaciones y divisiones combinadas con sumas o restas, y uno con grupos dentro de grupos ( ) y [ ].",
+        "La explicación (oral o escrita) del orden de las operaciones y de por qué 1/2 + 1/3 · 3/4 no es (5/6) · (3/4)."
+      ],
+      "errores": [
+        "Opera de izquierda a derecha sin respetar la jerarquía: 1/2 + 1/3 · 3/4 = 5/6 · 3/4 = 5/8 en lugar de 1/2 + 1/4 = 3/4.",
+        "Eleva al cuadrado sólo el numerador o sólo el denominador: (1/3)² = 1/9 escrito como 1/3 · 1/3 = 2/6, o como 1/6.",
+        "Al dividir no invierte la segunda fracción, invierte la primera o invierte las dos.",
+        "Suma o resta sin denominador común (1/2 + 1/4 = 2/6) o suma los numeradores y los denominadores.",
+        "Con grupos dentro de grupos no empieza por el de más adentro, o al quitar un paréntesis pierde un signo.",
+        "Deja el resultado sin simplificar (6/4 en lugar de 3/2) o se equivoca en el signo con fracciones negativas."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe cada paso con la operación completa, copiando lo que todavía no ha resuelto y con las fracciones bien escritas (numerador arriba, denominador abajo).",
+            "Usa paréntesis, corchetes y llaves de forma correcta, y escribe el resultado simplificado.",
+            "Explica con sus palabras qué hizo en cada paso y por qué lo hizo primero."
+          ],
+          "n1": "Escribe sólo el resultado, sin los pasos, o con errores que cambian el sentido (numerador y denominador invertidos, paréntesis mal puestos). No usa ningún apoyo.",
+          "n23": "Escribe algunos pasos pero omite otros (por ejemplo, el mcm o lo que falta por resolver) o pierde un signo al copiar; explica poco lo que hizo.",
+          "n4": "Escribe todos los pasos en casi todos los ejercicios, con la operación completa en cada línea, los agrupadores bien usados y el resultado simplificado; puede tener una omisión menor. Explica con claridad qué hizo.",
+          "n5": "Escribe todos los pasos con notación correcta y ordenada, y explica por escrito u oralmente el orden de las operaciones con fracciones y el porqué de cada paso, con ejemplos propios."
+        },
+        {
+          "id": "REP_ARI",
+          "observar": [
+            "Reconoce el nivel de cada operación (paréntesis, potencia, multiplicación o división, suma o resta) dentro de la expresión.",
+            "Representa la potencia de una fracción, la división como multiplicación por la inversa y la suma con denominador común.",
+            "Reconoce las fracciones equivalentes y el entero como fracción al operar."
+          ],
+          "n1": "Conoce el orden sólo de memoria y lo aplica de forma mecánica; no distingue qué operación se hace primero en una expresión con fracciones.",
+          "n23": "Reconoce el orden en expresiones sencillas (dos operaciones) y representa bien la potencia o la división, pero se confunde cuando hay paréntesis o más de tres operaciones.",
+          "n4": "Identifica el orden en expresiones con paréntesis y potencias, y representa correctamente cada operación con fracciones (inversa, mcm, numerador y denominador al cuadrado).",
+          "n5": "Combina las representaciones (fracciones equivalentes, inversa, simplificación antes de multiplicar) y elige la más adecuada para cada paso, justificando su elección en expresiones con grupos dentro de grupos."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Identifica el orden en que debe resolver cada expresión antes de empezar.",
+            "Resuelve paso a paso, respetando la jerarquía, y revisa que el resultado sea razonable.",
+            "Detecta y corrige sus errores (por ejemplo, haber operado de izquierda a derecha)."
+          ],
+          "n1": "Opera en el orden en que aparecen los números, sin distinguir los niveles; resuelve al azar y no revisa.",
+          "n23": "Aplica la jerarquía en expresiones sencillas, pero falla con paréntesis, potencias o divisiones de fracciones, y revisa poco sus resultados.",
+          "n45": "Resuelve expresiones con paréntesis, potencias, multiplicaciones y divisiones y grupos dentro de grupos, siguiendo siempre el orden y simplificando; revisa que el resultado sea razonable, detecta y corrige sus errores y resuelve una expresión nueva con el mismo método."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué se resuelve primero lo que está entre paréntesis y por qué la multiplicación va antes que la suma.",
+            "Compara el resultado correcto con el que se obtiene al operar de izquierda a derecha.",
+            "Comprueba sus resultados (por ejemplo, con decimales o con otro camino)."
+          ],
+          "n1": "Defiende su resultado con frases como «así es el orden» o «así me salió», sin comprobar ni explicar.",
+          "n2": "Explica con sus palabras por qué se hace primero la multiplicación o el paréntesis, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: muestra con un caso numérico (1/2 + 1/3 · 3/4) que operar de izquierda a derecha da otro resultado, y da ejemplos de errores comunes.",
+          "n4": "Explica la estructura del argumento: la jerarquía es un acuerdo que hace que toda expresión tenga un solo resultado; justifica cada paso de un ejercicio con ese acuerdo y comprueba el resultado con otro camino.",
+          "n5": "Construye una cadena de argumentos que generaliza: justifica por qué se necesita la jerarquía, por qué dividir es multiplicar por la inversa y por qué la potencia afecta al numerador y al denominador, y la usa para convencer a alguien de que otro orden es incorrecto."
+        }
+      ]
+    },    {
       "id": "binomiofactorcomun",
       "titulo": "Matemáticas 3 · Tema 6 · Binomio factor común (x + a)(x + b)",
       "file": "matematicas-3/tema-06-binomio-factor-comun.html",
