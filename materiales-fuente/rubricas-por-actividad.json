@@ -2364,6 +2364,75 @@
           "n5": "Elabora una cadena de argumentos que generaliza para cualquier radio: demuestra que x² + y² menor, igual o mayor que r² equivale a que la distancia al origen sea menor, igual o mayor que r. Distingue convencerse con un dibujo de demostrar."
         }
       ]
+    },
+    {
+      "id": "circhk",
+      "titulo": "Matemáticas 3 · Tema 7 · Circunferencia con centro en (h,k)",
+      "file": "matematicas-3/tema-07-circunferencia-centro-hk.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página resueltos en el cuaderno, con la ecuación ordinaria, el desarrollo de los binomios al cuadrado, r² pasado a la izquierda y los números juntados antes de dar D, E y F.",
+        "Al menos un ejercicio de los extremos de un diámetro, con el punto medio (el centro) y el cálculo de r².",
+        "La comprobación de su ecuación general con D = −2h, E = −2k y F = h² + k² − r², o la sustitución del punto dado en la ecuación."
+      ],
+      "errores": [
+        "Escribe (x − h)² con el signo de h: para el centro (−2, 5) pone (x − 2)², o para h = 3 pone (x + 3)².",
+        "Desarrolla (x − 3)² como x² − 9 o x² + 9 (olvida el doble producto −6x).",
+        "Se equivoca en el signo del doble producto cuando la coordenada es negativa: escribe (y + 2)² = y² − 4y + 4.",
+        "Al pasar r² al lado izquierdo no le cambia el signo: obtiene F = 9 + 4 + 16 en lugar de 9 + 4 − 16.",
+        "Calcula el centro restando las coordenadas de los extremos en lugar de sumarlas y dividir entre 2, o usa r en lugar de r² al calcular F.",
+        "Cuando una coordenada del centro es 0 (por ejemplo k = 0) escribe un término en y distinto de cero en la ecuación general."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe la ecuación ordinaria y el desarrollo paso a paso (binomios al cuadrado, r² pasado a la izquierda, números juntados) antes de dar D, E y F.",
+            "Escribe con notación correcta los paréntesis, los exponentes y los signos, tanto en la ecuación ordinaria como en x² + y² + Dx + Ey + F = 0.",
+            "Usa el vocabulario adecuado (centro, radio, punto medio, diámetro, ecuación ordinaria, ecuación general)."
+          ],
+          "n1": "Escribe sólo D, E y F (o la ecuación final) sin la ecuación ordinaria ni el desarrollo, y casi no usa vocabulario matemático. No usa ningún apoyo, como las fórmulas de D, E y F.",
+          "n23": "Escribe el desarrollo pero omite pasos (por ejemplo, no muestra cómo se desarrolla el binomio o salta el paso de pasar r² a la izquierda) y usa el vocabulario de manera limitada; hay omisiones de signos o de paréntesis.",
+          "n4": "Escribe la ecuación ordinaria y el desarrollo completo con notación correcta en casi todos los ejercicios y explica con claridad cómo obtuvo el centro y el radio cuando no se los dan; puede tener una omisión menor.",
+          "n5": "Expresa su trabajo por diferentes medios (ecuación ordinaria, desarrollo, fórmulas D = −2h, E = −2k, F = h² + k² − r²) con notación correcta, y explica de manera oral o escrita cómo obtendría la ecuación general con datos nuevos."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Escribe (x − h)² y (y − k)² con el signo contrario al de la coordenada del centro, también con coordenadas negativas o iguales a 0.",
+            "Desarrolla correctamente los binomios al cuadrado, con el doble producto y su signo.",
+            "Pasa r² al lado izquierdo con el signo cambiado, junta los números y obtiene D, E y F."
+          ],
+          "n1": "Aún no usa correctamente las expresiones algebraicas: escribe (x − h)² con el signo de h sin cambiarlo o desarrolla (x − 3)² como x² − 9 (olvida el doble producto).",
+          "n23": "Hace uso de la sintaxis y la semántica del lenguaje algebraico: desarrolla bien los binomios cuando h y k son positivos, pero se equivoca con las coordenadas negativas, con el signo del doble producto o al pasar r² al otro lado.",
+          "n4": "Comprende y maneja las propiedades del lenguaje algebraico: obtiene correctamente la ecuación general en casi todos los casos, incluso con coordenadas negativas o iguales a 0, y pasa de la ecuación ordinaria al centro y al radio.",
+          "n5": "Dota de significado y generaliza las propiedades: desarrolla con letras y deduce D = −2h, E = −2k y F = h² + k² − r², los usa para comprobar sus resultados y explica qué significa que falte el término en x o en y (h = 0 o k = 0)."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Identifica los datos (centro y radio, centro y un punto, o los extremos de un diámetro) y qué necesita para escribir la ecuación: h, k y r².",
+            "Obtiene el centro como punto medio y r² como el cuadrado de la distancia (sin sacar la raíz), y plantea la ecuación ordinaria.",
+            "Revisa si su resultado es razonable: comprueba con D = −2h, E = −2k y F = h² + k² − r², o sustituye el punto dado en la ecuación."
+          ],
+          "n1": "Usa los datos aleatoriamente: suma las coordenadas del punto en lugar de restar las del centro, no identifica que necesita r² y no revisa su resultado.",
+          "n23": "Identifica h, k y r² en los casos directos (centro y radio dados) y usa algún método para los demás, pero se equivoca al calcular el punto medio o la distancia (por ejemplo, olvida elevar al cuadrado); revisa poco.",
+          "n45": "Identifica los datos, calcula el centro (punto medio) y r² (distancia al cuadrado), plantea la ecuación ordinaria y llega a la general. Revisa que su resultado sea razonable (el punto dado cumple la ecuación, D = −2h…), detecta y corrige errores y resuelve una situación nueva con el mismo método."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Justifica por qué el centro de un diámetro es su punto medio y por qué r² se calcula con la distancia al centro.",
+            "Comprueba que el punto dado cumple su ecuación general (sustituye y verifica que se obtiene 0).",
+            "Explica por qué en la ecuación general A = C = 1 y por qué D y E tienen el signo contrario al doble de h y de k."
+          ],
+          "n1": "Defiende su resultado con frases como «así se hace» o «me salió», sin sustituir ni verificar.",
+          "n2": "Explica con sus palabras («el centro está justo en medio de los dos extremos») por qué hizo cada paso, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: sustituye un punto de la circunferencia en su ecuación general y comprueba que da 0, y compara dos circunferencias con el mismo radio y distinto centro para ver cómo cambian D y E.",
+          "n4": "Explica la estructura del argumento: la circunferencia son los puntos a distancia r del centro (hipótesis); de ahí la ecuación ordinaria, su desarrollo y la ecuación general (conclusión). Distingue entre lo que supone y lo que comprueba al sustituir el punto.",
+          "n5": "Elabora una cadena de argumentos que generaliza: desarrolla con letras y deduce D, E y F para cualquier centro y radio, relaciona el resultado con el caso h = 0 y k = 0 y distingue convencerse con un ejemplo de demostrar para todos los valores."
+        }
+      ]
     }
   ]
 }
