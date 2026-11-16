@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circunferencia con centro en (h,k) — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-07-circunferencia.html">← Circunferencia</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 3 · Tema 7 · Subtema</div>
+    <h1>Circunferencia con centro en (h,k)</h1>
+  </div>
+
+  <!-- 1. Qué vamos a estudiar -->
+  <p class="section-label">¿Qué vamos a estudiar?</p>
+  <div class="prose">
+    <p>Ahora el centro de la circunferencia ya no tiene que ser el origen: puede ser <strong>cualquier punto (h, k)</strong>
+       del plano. Vamos a ver cómo se escribe su ecuación y, sobre todo, cómo llegar a la
+       <strong>ecuación general</strong> <span style="font-family:'IBM Plex Mono',monospace; color:var(--forest); white-space:nowrap;">x² + y² + Dx + Ey + F = 0</span>
+       a partir del centro y del radio.</p>
+  </div>
+
+  <!-- 2. La ecuación con centro (h,k) -->
+  <p class="section-label">La ecuación con centro (h,k)</p>
+  <figure class="graph-figure">
+    <svg viewBox="0 0 420 340" width="420" height="340" role="img" aria-label="Circunferencia con centro C(h, k), un punto P(x, y) y el radio r, que es la hipotenusa de un triángulo rectángulo con catetos x menos h y y menos k">
+      <g stroke="#56604f" stroke-width="1.6" fill="none">
+        <line x1="40" y1="310" x2="404" y2="310"/>
+        <line x1="40" y1="310" x2="40" y2="16"/>
+      </g>
+      <g font-family="'IBM Plex Mono', monospace" font-size="15" fill="#14301f">
+        <text x="406" y="328">x</text>
+        <text x="28" y="14">y</text>
+      </g>
+      <circle cx="190" cy="170" r="110" fill="rgba(196,232,107,0.28)" stroke="#14301f" stroke-width="2.8"/>
+      <g stroke="#56604f" stroke-width="1.2" stroke-dasharray="4 4">
+        <line x1="190" y1="170" x2="190" y2="310"/>
+        <line x1="40" y1="170" x2="190" y2="170"/>
+      </g>
+      <line x1="190" y1="170" x2="280" y2="170" stroke="#3f6b4a" stroke-width="2.2" stroke-dasharray="6 4"/>
+      <line x1="280" y1="170" x2="280" y2="107" stroke="#3f6b4a" stroke-width="2.2" stroke-dasharray="6 4"/>
+      <line x1="190" y1="170" x2="280" y2="107" stroke="#d9650b" stroke-width="3.2" stroke-linecap="round"/>
+      <circle cx="190" cy="170" r="5" fill="#14301f"/>
+      <circle cx="280" cy="107" r="5.5" fill="#d9650b" stroke="#14301f" stroke-width="1.5"/>
+      <g font-family="'IBM Plex Mono', monospace" font-size="15" fill="#14301f">
+        <text x="112" y="162">C(h, k)</text>
+        <text x="288" y="100">P(x, y)</text>
+        <text x="219" y="127" fill="#d9650b" font-weight="700">r</text>
+        <text x="206" y="190" fill="#3f6b4a">x − h</text>
+        <text x="286" y="143" fill="#3f6b4a">y − k</text>
+        <text x="186" y="328">h</text>
+        <text x="20" y="175">k</text>
+      </g>
+    </svg>
+    <figcaption>El punto P(x, y) está en la circunferencia cuando su distancia al centro C(h, k) es el radio r.</figcaption>
+  </figure>
+  <div class="prose">
+    <p>La distancia del centro C(h, k) a un punto P(x, y) es la hipotenusa de un triángulo rectángulo cuyos catetos miden
+       <strong>x − h</strong> y <strong>y − k</strong>, así que vale
+       <span style="font-family:'IBM Plex Mono',monospace; color:var(--forest); white-space:nowrap;"><span class="rad">√<span class="radicand">(x − h)² + (y − k)²</span></span></span>.
+       Igualamos esa distancia al radio y elevamos al cuadrado los dos lados:</p>
+  </div>
+  <div class="example-box">
+    <span class="eq">(x − h)² + (y − k)² = r²</span>
+    <p style="margin-top:1rem;">Se llama <strong>ecuación ordinaria</strong> de la circunferencia con <strong>centro (h, k)</strong> y <strong>radio r</strong>.
+       Si h = 0 y k = 0, es la de la página anterior: x² + y² = r².</p>
+  </div>
+  <div class="callout">
+    <div class="k no-caps">¡Cuidado con los signos!</div>
+    <p>Dentro de los paréntesis el signo es el <strong>contrario</strong> al de la coordenada del centro:
+       con h = 3 se escribe <strong>(x − 3)</strong>, y con k = −2 se escribe <strong>(y + 2)</strong>.
+       Si una coordenada del centro es 0, ese paréntesis queda sólo como x² (o y²).</p>
+  </div>
+
+  <!-- 3. Ejemplos de la ecuación ordinaria -->
+  <p class="section-label">Ejemplos: la ecuación ordinaria</p>
+
+  <div class="example-box">
+    <h2>Ejemplo 1: de los datos a la ecuación</h2>
+    <p>Escribe la ecuación de la circunferencia con centro (3, −2) y radio 4.</p>
+    <ol class="steps">
+      <li><span>Identifica los datos: <strong>h = 3</strong>, <strong>k = −2</strong> y <strong>r = 4</strong>.</span></li>
+      <li><span>Sustituye en (x − h)² + (y − k)² = r²: <strong>(x − 3)² + (y − (−2))² = 4²</strong>.</span></li>
+      <li><span>Simplifica los signos y calcula 4² = 16.</span></li>
+    </ol>
+    <span class="eq">(x − 3)² + (y + 2)² = 16</span>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 2: de la ecuación al centro y al radio</h2>
+    <span class="eq">(x + 1)² + (y − 4)² = 9</span>
+    <ol class="steps">
+      <li><span><strong>(x + 1)</strong> es lo mismo que (x − (−1)), así que <strong>h = −1</strong>.</span></li>
+      <li><span><strong>(y − 4)</strong> da <strong>k = 4</strong>.</span></li>
+      <li><span>r² = 9, entonces <strong>r = 3</strong> (el radio es la raíz positiva).</span></li>
+    </ol>
+    <p><strong>Centro (−1, 4) y radio 3.</strong></p>
+  </div>
+
+  <!-- 4. De la ordinaria a la general -->
+  <p class="section-label">De la ecuación ordinaria a la ecuación general</p>
+  <div class="prose">
+    <p>La ecuación ordinaria muestra el centro y el radio, pero a veces la necesitamos <strong>sin paréntesis</strong>,
+       en la forma <strong>ecuación general</strong>:</p>
+  </div>
+  <div class="example-box">
+    <span class="eq">x² + y² + Dx + Ey + F = 0</span>
+    <p style="margin-top:1rem;">Observa que en esta forma el coeficiente de x² y el de y² es 1 (A = C = 1) y todos los términos
+       están de un solo lado, igualados a cero.</p>
+  </div>
+  <div class="callout">
+    <div class="k no-caps">Para desarrollar los paréntesis</div>
+    <p>Recuerda el binomio al cuadrado: <strong>(a + b)² = a² + 2ab + b²</strong> y <strong>(a − b)² = a² − 2ab + b²</strong>.
+       El término de en medio es el <strong>doble producto</strong>.</p>
+  </div>
+  <p class="section-label no-caps">Pasos para encontrar la ecuación general</p>
+  <ol class="steps">
+    <li><span>Escribe la <strong>ecuación ordinaria</strong>: (x − h)² + (y − k)² = r².</span></li>
+    <li><span><strong>Desarrolla</strong> los dos binomios al cuadrado.</span></li>
+    <li><span>Pasa el <strong>r² al lado izquierdo</strong> (cambia de signo) para que todo quede igualado a cero.</span></li>
+    <li><span><strong>Junta los números</strong> sueltos (los que no llevan x ni y): ése es el término F. Ordena: x², y², x, y, número.</span></li>
+  </ol>
+
+  <!-- 5. Ejemplos de la general -->
+  <p class="section-label">Ejemplos: encuentra la ecuación general</p>
+
+  <div class="example-box">
+    <h2>Ejemplo 3: centro (3, −2) y radio 4</h2>
+    <p>Continuamos con el ejemplo 1.</p>
+    <ol class="steps">
+      <li><span>Ecuación ordinaria: (x − 3)² + (y + 2)² = 16.</span></li>
+      <li><span>Desarrolla: (x² − 6x + 9) + (y² + 4y + 4) = 16.</span></li>
+      <li><span>Pasa el 16 al lado izquierdo: x² − 6x + 9 + y² + 4y + 4 − 16 = 0.</span></li>
+      <li><span>Junta los números: 9 + 4 − 16 = −3.</span></li>
+    </ol>
+    <span class="eq">x² + y² − 6x + 4y − 3 = 0</span>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 4: centro (−2, 5) y radio 3</h2>
+    <ol class="steps">
+      <li><span>Ecuación ordinaria: (x + 2)² + (y − 5)² = 9.</span></li>
+      <li><span>Desarrolla: (x² + 4x + 4) + (y² − 10y + 25) = 9.</span></li>
+      <li><span>Pasa el 9 al lado izquierdo: x² + 4x + 4 + y² − 10y + 25 − 9 = 0.</span></li>
+      <li><span>Junta los números: 4 + 25 − 9 = 20.</span></li>
+    </ol>
+    <span class="eq">x² + y² + 4x − 10y + 20 = 0</span>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 5: cuando una coordenada del centro es 0</h2>
+    <p>Centro (4, 0) y radio 5.</p>
+    <ol class="steps">
+      <li><span>Ecuación ordinaria: (x − 4)² + y² = 25. Como k = 0, el término de y queda como y² y no hay que desarrollarlo.</span></li>
+      <li><span>Desarrolla sólo el primero: x² − 8x + 16 + y² = 25.</span></li>
+      <li><span>Pasa el 25 y junta los números: 16 − 25 = −9.</span></li>
+    </ol>
+    <span class="eq">x² + y² − 8x − 9 = 0</span>
+    <p style="margin-top:1rem;">Aquí no aparece el término en y, porque E = 0.</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 6: centro (2, −1) y pasa por el punto (5, 3)</h2>
+    <ol class="steps">
+      <li><span>El radio es la distancia del centro al punto: r² = (5 − 2)² + (3 − (−1))² = 3² + 4² = 9 + 16 = <strong>25</strong>.</span></li>
+      <li><span>Ecuación ordinaria: (x − 2)² + (y + 1)² = 25.</span></li>
+      <li><span>Desarrolla y pasa el 25: x² − 4x + 4 + y² + 2y + 1 − 25 = 0.</span></li>
+      <li><span>Junta los números: 4 + 1 − 25 = −20.</span></li>
+    </ol>
+    <span class="eq">x² + y² − 4x + 2y − 20 = 0</span>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 7: los extremos de un diámetro son (−1, 2) y (5, −6)</h2>
+    <ol class="steps">
+      <li><span>El centro es el <strong>punto medio</strong> del diámetro:
+          h = <span class="frac frac-inline"><span class="num">−1 + 5</span><span class="den">2</span></span> = 2 y
+          k = <span class="frac frac-inline"><span class="num">2 + (−6)</span><span class="den">2</span></span> = −2. El centro es <strong>(2, −2)</strong>.</span></li>
+      <li><span>El radio es la distancia del centro a un extremo, por ejemplo (5, −6): r² = (5 − 2)² + (−6 − (−2))² = 3² + (−4)² = 9 + 16 = <strong>25</strong>.</span></li>
+      <li><span>Ecuación ordinaria: (x − 2)² + (y + 2)² = 25.</span></li>
+      <li><span>Desarrolla y pasa el 25: x² − 4x + 4 + y² + 4y + 4 − 25 = 0, y junta los números: 4 + 4 − 25 = −17.</span></li>
+    </ol>
+    <span class="eq">x² + y² − 4x + 4y − 17 = 0</span>
+  </div>
+
+  <!-- 6. Para comprobar -->
+  <p class="section-label">Para comprobar tu resultado</p>
+  <div class="example-box">
+    <p>Si desarrollas (x − h)² + (y − k)² = r² con letras, siempre se obtiene:</p>
+    <span class="eq">D = −2h &nbsp;&nbsp; E = −2k &nbsp;&nbsp; F = h² + k² − r²</span>
+    <p style="margin-top:1rem;">Úsalo para <strong>revisar</strong> tu ecuación general. Con el ejemplo 3 (h = 3, k = −2, r = 4):</p>
+    <ul class="def-list">
+      <li>D = −2(3) = <strong>−6</strong></li>
+      <li>E = −2(−2) = <strong>4</strong></li>
+      <li>F = 3² + (−2)² − 4² = 9 + 4 − 16 = <strong>−3</strong></li>
+    </ul>
+    <p>Coincide con x² + y² − 6x + 4y − 3 = 0.</p>
+  </div>
+
+  <!-- 7. Resumen -->
+  <p class="section-label">Resumen</p>
+  <div class="example-box">
+    <span class="eq">(x − h)² + (y − k)² = r²</span>
+    <ul class="def-list">
+      <li>El <strong>centro</strong> es (h, k) y el <strong>radio</strong> es r. Los signos dentro de los paréntesis son los contrarios a los del centro.</li>
+      <li>Para llegar a la <strong>ecuación general</strong>: desarrolla los binomios, pasa r² a la izquierda y junta los números.</li>
+      <li>La ecuación general es <strong>x² + y² + Dx + Ey + F = 0</strong>, con D = −2h, E = −2k y F = h² + k² − r².</li>
+      <li>Si te dan un punto de la circunferencia, calcula r² con la distancia al centro; si te dan los extremos de un diámetro, el centro es su punto medio.</li>
+    </ul>
+    <p style="margin-top:0.8rem;">En el siguiente subtema harás el camino contrario: a partir de la ecuación general, encontrarás el centro y el radio.</p>
+  </div>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>
