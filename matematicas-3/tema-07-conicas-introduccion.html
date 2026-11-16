@@ -125,31 +125,6 @@
     </ul>
   </div>
 
-  <!-- 4. Con xy -->
-  <p class="section-label">Y si aparece el término xy… (para saber más)</p>
-  <div class="prose">
-    <p>Cuando <strong>B ≠ 0</strong> la cónica está <em>girada</em> y ya no basta con comparar A y C. Entonces se usa el
-       <strong>discriminante</strong> de la ecuación general:</p>
-    <p style="text-align:center; font-family:'IBM Plex Mono',monospace; color:var(--forest); font-size:1.05rem;"><strong>B² − 4AC</strong></p>
-  </div>
-  <div class="table-scroll">
-    <table>
-      <thead>
-        <tr><th>Valor de B² − 4AC</th><th>Cónica</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>menor que 0 (<strong>negativo</strong>)</td><td><strong>Elipse</strong> (o circunferencia, si B = 0 y A = C)</td></tr>
-        <tr><td>igual a 0</td><td><strong>Parábola</strong></td></tr>
-        <tr><td>mayor que 0 (<strong>positivo</strong>)</td><td><strong>Hipérbola</strong></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="prose">
-    <p>Con B = 0 este criterio da lo mismo que la tabla de arriba, porque entonces
-       B² − 4AC = −4AC: si A y C tienen el mismo signo, AC &gt; 0 y el discriminante es negativo (elipse);
-       si tienen signos contrarios, es positivo (hipérbola); y si alguno vale 0, el discriminante es 0 (parábola).</p>
-  </div>
-
   <!-- 5. Ejemplos -->
   <p class="section-label">Ejemplos paso a paso</p>
 
@@ -204,16 +179,6 @@
     <p><strong>Es una circunferencia.</strong></p>
   </div>
 
-  <div class="example-box">
-    <h2>Ejemplo 6: con término xy</h2>
-    <span class="eq">2x² + 5xy + 2y² − 10 = 0</span>
-    <ol class="steps">
-      <li><strong>A = 2</strong>, <strong>B = 5</strong>, <strong>C = 2</strong>. Como B ≠ 0, se usa el discriminante.</li>
-      <li>B² − 4AC = 5² − 4(2)(2) = 25 − 16 = <strong>9</strong>, que es positivo.</li>
-    </ol>
-    <p><strong>Es una hipérbola.</strong></p>
-  </div>
-
   <!-- 6. Casos degenerados -->
   <div class="callout">
     <div class="k no-caps">Un detalle: las cónicas “degeneradas”</div>
@@ -224,12 +189,11 @@
   </div>
 
   <!-- 7. Probador -->
-  <p class="section-label" id="probador-conicas">Pruébalo tú: escribe A, B y C</p>
+  <p class="section-label" id="probador-conicas">Pruébalo tú: escribe A y C</p>
   <div class="example-box">
-    <p>Escribe los coeficientes de tu ecuación (si no tiene término xy, deja B = 0) y la página te dice qué cónica es.</p>
+    <p>Escribe los coeficientes A (de x²) y C (de y²) de tu ecuación y la página te dice qué cónica es.</p>
     <div style="display:flex; flex-wrap:wrap; gap:0.8rem; align-items:center; margin:0.8rem 0; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
       <label>A = <input id="pc-A" type="number" step="any" value="1" style="width:5.5rem; padding:0.35rem; border:2px solid var(--line); border-radius:10px; font:inherit;"></label>
-      <label>B = <input id="pc-B" type="number" step="any" value="0" style="width:5.5rem; padding:0.35rem; border:2px solid var(--line); border-radius:10px; font:inherit;"></label>
       <label>C = <input id="pc-C" type="number" step="any" value="4" style="width:5.5rem; padding:0.35rem; border:2px solid var(--line); border-radius:10px; font:inherit;"></label>
     </div>
     <p id="pc-out" aria-live="polite" style="font-weight:700; color:var(--forest); margin:0;"></p>
@@ -240,8 +204,8 @@
   <div class="callout">
     <div class="k">Instrucciones</div>
     <p>Cada tarjeta trae una ecuación de segundo grado. Identifica los coeficientes, elige <strong>qué cónica es</strong>
-       y oprime <strong>Comprobar</strong>. Si la ecuación tiene término <strong>xy</strong>, usa <strong>B² − 4AC</strong>.</p>
-    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de más de 100. Oprime <strong>Otros 10 ejercicios</strong>
+       y oprime <strong>Comprobar</strong>.</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de 100. Oprime <strong>Otros 10 ejercicios</strong>
        para volver a intentar con ejercicios diferentes.</p>
   </div>
 
@@ -260,7 +224,6 @@
       <li><strong>B = 0, A y C del mismo signo y A ≠ C</strong> → elipse.</li>
       <li><strong>B = 0, A y C de signos contrarios</strong> → hipérbola.</li>
       <li><strong>B = 0 y A = 0 o C = 0</strong> (no los dos) → parábola.</li>
-      <li><strong>B ≠ 0</strong> → mira B² − 4AC: negativo, elipse; cero, parábola; positivo, hipérbola.</li>
     </ul>
   </div>
 
@@ -377,15 +340,17 @@
     })();
 
     // ---------- Probador ----------
-    var iA = document.getElementById('pc-A'), iB = document.getElementById('pc-B'), iC = document.getElementById('pc-C'), out = document.getElementById('pc-out');
+    var iA = document.getElementById('pc-A'), iC = document.getElementById('pc-C'), out = document.getElementById('pc-out');
+    var POR = { circ: 'A y C son iguales', elip: 'A y C tienen el mismo signo pero son diferentes',
+                hip: 'A y C tienen signos contrarios', parab: 'una de las dos letras no está al cuadrado (A o C vale 0)' };
     function probar() {
-      var A = parseFloat(iA.value), B = parseFloat(iB.value), C = parseFloat(iC.value);
-      if (isNaN(A) || isNaN(B) || isNaN(C)) { out.textContent = 'Escribe un número en A, B y C.'; return; }
-      if (A === 0 && B === 0 && C === 0) { out.textContent = 'Si A, B y C valen 0, la ecuación es de primer grado: es una recta, no una cónica.'; return; }
-      var t = tipo(A, B, C), d = B * B - 4 * A * C;
-      out.innerHTML = 'Es: ' + NOMBRE[t] + '.<br><span style="font-weight:400;">B² − 4AC = ' + num(B) + '² − 4(' + num(A) + ')(' + num(C) + ') = ' + num(Math.round(d * 1e6) / 1e6) + '</span>';
+      var A = parseFloat(iA.value), C = parseFloat(iC.value);
+      if (isNaN(A) || isNaN(C)) { out.textContent = 'Escribe un número en A y en C.'; return; }
+      if (A === 0 && C === 0) { out.textContent = 'Si A y C valen 0, la ecuación es de primer grado: es una recta, no una cónica.'; return; }
+      var t = tipo(A, 0, C);
+      out.innerHTML = 'Es: ' + NOMBRE[t] + '.<br><span style="font-weight:400;">' + POR[t] + '.</span>';
     }
-    [iA, iB, iC].forEach(function (i) { i.addEventListener('input', probar); });
+    [iA, iC].forEach(function (i) { i.addEventListener('input', probar); });
     probar();
 
     // ---------- Banco de ejercicios ----------
@@ -423,20 +388,10 @@
       if (Math.random() < 0.5) BANK.push(mk(0, 0, s * c, d, -2 * s * c * k, s * c * k * k - d * h));      // (y−k)² = …
       else BANK.push(mk(s * c, 0, 0, -2 * s * c * h, d, s * c * h * h - d * k));                          // (x−h)² = …
     }
-    // Con término xy (se usa B² − 4AC)
-    [[0, 1, 0, 0, 0, -4], [1, 2, 1, -3, 2, 0], [1, 1, 1, 0, 0, -9], [2, 5, 2, 0, 0, -10], [1, -4, 4, 2, -1, 0],
-     [3, 2, 3, 0, 0, -8], [1, 4, 1, 0, 0, -6], [4, -4, 1, -6, 0, 1]].forEach(function (v) { BANK.push(mk(v[0], v[1], v[2], v[3], v[4], v[5])); });
     for (i = BANK.length - 1; i > 0; i--) { var j = ri(0, i), tmp = BANK[i]; BANK[i] = BANK[j]; BANK[j] = tmp; } // mezclar
 
     function razon(q) {
-      var d = q.B * q.B - 4 * q.A * q.C, ac = 'A = ' + num(q.A) + ', B = ' + num(q.B) + ', C = ' + num(q.C);
-      if (q.B !== 0) {
-        return ac + '.<br>B² − 4AC = ' + num(q.B) + '² − 4(' + num(q.A) + ')(' + num(q.C) + ') = ' + num(d) + ', que es ' +
-          (d < 0 ? 'negativo' : d === 0 ? 'cero' : 'positivo') + ' → <strong>' + NOMBRE[q.t].toLowerCase() + '</strong>.';
-      }
-      var why = { circ: 'A y C son iguales', elip: 'A y C tienen el mismo signo pero son diferentes',
-                  hip: 'A y C tienen signos contrarios', parab: 'una de las dos letras no está al cuadrado (A o C vale 0)' };
-      return 'A = ' + num(q.A) + ' y C = ' + num(q.C) + ' (B = 0).<br>' + why[q.t] + ' → <strong>' + NOMBRE[q.t].toLowerCase() + '</strong>.';
+      return 'A = ' + num(q.A) + ' y C = ' + num(q.C) + '.<br>' + POR[q.t] + ' → <strong>' + NOMBRE[q.t].toLowerCase() + '</strong>.';
     }
 
     var h2 = Practica.h;

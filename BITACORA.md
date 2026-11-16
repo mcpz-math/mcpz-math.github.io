@@ -1958,3 +1958,4 @@ Registro de lo que vamos haciendo, en orden cronológico.
   Si el navegador no permite 3D (WebGL) o no carga la librería, se quedan los dibujos planos de antes como respaldo.
 - A pedido de Carmen, en `tema-07-conicas-introduccion.html` se **quitaron los dibujos planos** (SVG) del corte plano–cono: ahora sólo están los **dibujos en 3D**. Si el navegador no puede mostrar 3D, en su lugar aparece el aviso «Tu navegador no pudo mostrar este dibujo en 3D.».
 - A pedido de Carmen, en `tema-07-conicas-introduccion.html` se quitó el recuadro «Truco para recordarlo».
+- A pedido de Carmen, en `tema-07-conicas-introduccion.html` se quitó la sección **«Y si aparece el término xy… (para saber más)»** (el discriminante B² − 4AC) y todo lo que dependía de ella: el **Ejemplo 6** (con término xy), los ejercicios con xy del banco, el renglón de B ≠ 0 en el resumen, y el probador ahora pide sólo **A y C**. La página queda sólo con el caso B = 0 (el del curso).
