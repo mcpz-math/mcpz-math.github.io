@@ -349,6 +349,42 @@
     ],
     "sdf": ["Sobre", "Dentro", "Fuera"]
   },
+  "serie9circorigen": {
+    "titulo": "Serie 9. Circunferencia con centro en (0,0)",
+    "claveTitulo": "Serie 9 · Clave de respuestas (sólo para la profesora)",
+    "ejercicios": [
+      { "enunciado": "Centro (0, 0) y radio 7.",
+        "lineas": ["Ecuación: $x^2+y^2=$ ________", "Diámetro: ________", "@proc"],
+        "clave": ["$x^2+y^2=49$", "Diámetro = 14"] },
+      { "enunciado": "Centro (0, 0) y radio 11.",
+        "lineas": ["Ecuación: $x^2+y^2=$ ________", "Diámetro: ________", "@proc"],
+        "clave": ["$x^2+y^2=121$", "Diámetro = 22"] },
+      { "enunciado": "Centro (0, 0) y diámetro 24.",
+        "lineas": ["Radio: ________", "Ecuación: $x^2+y^2=$ ________", "@proc"],
+        "clave": ["Radio = 12", "$x^2+y^2=144$"] },
+      { "enunciado": "$x^2+y^2=36$",
+        "lineas": ["Radio: ________        Diámetro: ________", "Puntos donde corta a los ejes: (____, 0)  (____, 0)  (0, ____)  (0, ____)", "Gráfica con compás en hoja aparte.", "@proc"],
+        "clave": ["Radio = 6, diámetro = 12", "Cortes: (6, 0), (−6, 0), (0, 6), (0, −6)"] },
+      { "enunciado": "$x^2+y^2=100$",
+        "lineas": ["Radio: ________        Diámetro: ________", "Puntos donde corta a los ejes: (____, 0)  (____, 0)  (0, ____)  (0, ____)", "Gráfica con compás en hoja aparte.", "@proc"],
+        "clave": ["Radio = 10, diámetro = 20", "Cortes: (10, 0), (−10, 0), (0, 10), (0, −10)"] },
+      { "enunciado": "$3x^2+3y^2=75$",
+        "lineas": ["Dividida entre 3: $x^2+y^2=$ ________", "Radio: ________        Diámetro: ________", "Puntos donde corta a los ejes: (____, 0)  (____, 0)  (0, ____)  (0, ____)", "Gráfica con compás en hoja aparte.", "@proc"],
+        "clave": ["Dividida entre 3: $x^2+y^2=25$", "Radio = 5, diámetro = 10", "Cortes: (5, 0), (−5, 0), (0, 5), (0, −5)"] },
+      { "enunciado": "Centro (0, 0); la circunferencia pasa por el punto (9, 12).",
+        "lineas": ["$r^2=$ ________", "Ecuación: $x^2+y^2=$ ________", "Radio: ________", "@proc"],
+        "clave": ["$r^2=9^2+12^2=81+144=225$", "$x^2+y^2=225$", "Radio = 15"] },
+      { "enunciado": "Centro (0, 0); la circunferencia pasa por el punto (−8, −15).",
+        "lineas": ["$r^2=$ ________", "Ecuación: $x^2+y^2=$ ________", "Radio: ________", "@proc"],
+        "clave": ["$r^2=(-8)^2+(-15)^2=64+225=289$", "$x^2+y^2=289$", "Radio = 17"] },
+      { "enunciado": "Circunferencia $x^2+y^2=49$.",
+        "lineas": ["A(−2, 5):  $x^2+y^2=$ ______   @sdf", "B(6, 4):  $x^2+y^2=$ ______   @sdf", "C(0, −7):  $x^2+y^2=$ ______   @sdf", "@por"],
+        "clave": ["A: 4 + 25 = 29 < 49 → dentro", "B: 36 + 16 = 52 > 49 → fuera", "C: 0 + 49 = 49 → sobre"] },
+      { "enunciado": "Circunferencia $x^2+y^2=81$.",
+        "lineas": ["A(−7, −6):  $x^2+y^2=$ ______   @sdf", "B(5, −6):  $x^2+y^2=$ ______   @sdf", "C(0, 9):  $x^2+y^2=$ ______   @sdf", "@por"],
+        "clave": ["A: 49 + 36 = 85 > 81 → fuera", "B: 25 + 36 = 61 < 81 → dentro", "C: 0 + 81 = 81 → sobre"] }
+    ]
+  },
   "actividades": [
     {
       "id": "signos",
