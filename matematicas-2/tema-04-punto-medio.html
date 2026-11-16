@@ -39,7 +39,7 @@
        el promedio de las coordenadas x y el promedio de las coordenadas y.</p>
   </div>
   <figure class="graph-figure">
-    <svg viewBox="0 0 380 300" width="380" height="300" role="img" aria-label="El segmento de A(1, 2) a B(7, 6) y su punto medio M(4, 4)">
+    <svg viewBox="0 0 380 300" width="380" height="300" role="img" aria-label="El segmento de A(1, 2) a B(7, 6) y su punto medio Pm(4, 4)">
       <g stroke="#dde2dc" stroke-width="1">
         <line x1="66" y1="18" x2="66" y2="270"/><line x1="102" y1="18" x2="102" y2="270"/><line x1="138" y1="18" x2="138" y2="270"/><line x1="174" y1="18" x2="174" y2="270"/>
         <line x1="210" y1="18" x2="210" y2="270"/><line x1="246" y1="18" x2="246" y2="270"/><line x1="282" y1="18" x2="282" y2="270"/><line x1="318" y1="18" x2="318" y2="270"/><line x1="354" y1="18" x2="354" y2="270"/>
@@ -57,18 +57,18 @@
       <g font-family="'IBM Plex Mono', monospace" font-size="13" fill="#14301f">
         <text x="40" y="224" font-weight="700">A(1, 2)</text>
         <text x="290" y="48" font-weight="700">B(7, 6)</text>
-        <text x="186" y="152" fill="#d9650b" font-weight="700">M(4, 4)</text>
+        <text x="186" y="152" fill="#d9650b" font-weight="700">P<tspan dy="3" font-size="10">m</tspan><tspan dy="-3">(4, 4)</tspan></text>
       </g>
     </svg>
-    <figcaption>M(4, 4) es el punto medio del segmento AB: 4 es el promedio de 1 y 7, y 4 es el promedio de 2 y 6.</figcaption>
+    <figcaption>P<sub>m</sub>(4, 4) es el punto medio del segmento AB: 4 es el promedio de 1 y 7, y 4 es el promedio de 2 y 6.</figcaption>
   </figure>
 
   <!-- 3. Formula -->
   <p class="section-label">La fórmula</p>
   <div class="example-box">
-    <span class="eq">M = ( <span class="frac frac-inline"><span class="num">x<sub>1</sub> + x<sub>2</sub></span><span class="den">2</span></span> ,
+    <span class="eq">P<sub>m</sub> = ( <span class="frac frac-inline"><span class="num">x<sub>1</sub> + x<sub>2</sub></span><span class="den">2</span></span> ,
       <span class="frac frac-inline"><span class="num">y<sub>1</sub> + y<sub>2</sub></span><span class="den">2</span></span> )</span>
-    <p style="margin-top:1rem;">El punto medio M del segmento con extremos <strong>A(x<sub>1</sub>, y<sub>1</sub>)</strong> y
+    <p style="margin-top:1rem;">El punto medio P<sub>m</sub> del segmento con extremos <strong>A(x<sub>1</sub>, y<sub>1</sub>)</strong> y
        <strong>B(x<sub>2</sub>, y<sub>2</sub>)</strong> tiene como coordenadas el <strong>promedio</strong> de las coordenadas x y el
        <strong>promedio</strong> de las coordenadas y. Como se suman, tampoco importa el orden de los puntos.</p>
   </div>
@@ -84,10 +84,10 @@
   <ol class="steps">
     <li><span><strong>Identifica los extremos.</strong> El primero te da (x<sub>1</sub>, y<sub>1</sub>) y el segundo (x<sub>2</sub>, y<sub>2</sub>).</span></li>
     <li><span><strong>Sustituye en la fórmula.</strong> Reemplaza cada letra por su número (con paréntesis si es negativo): las x van en la primera coordenada y las y en la segunda.
-      <span class="sust">M = ( <span class="frac frac-inline"><span class="num">x<sub>1</sub> + x<sub>2</sub></span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">y<sub>1</sub> + y<sub>2</sub></span><span class="den">2</span></span> ) &nbsp;→&nbsp; M = ( <span class="frac frac-inline"><span class="num">__ + __</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">__ + __</span><span class="den">2</span></span> )</span></span></li>
+      <span class="sust">P<sub>m</sub> = ( <span class="frac frac-inline"><span class="num">x<sub>1</sub> + x<sub>2</sub></span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">y<sub>1</sub> + y<sub>2</sub></span><span class="den">2</span></span> ) &nbsp;→&nbsp; P<sub>m</sub> = ( <span class="frac frac-inline"><span class="num">__ + __</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">__ + __</span><span class="den">2</span></span> )</span></span></li>
     <li><span><strong>Suma</strong> los dos números que quedaron arriba en cada coordenada.</span></li>
     <li><span><strong>Divide entre 2</strong> cada resultado: así obtienes el promedio.</span></li>
-    <li><span>Escribe el resultado como un punto: <strong>M(x, y)</strong>.</span></li>
+    <li><span>Escribe el resultado como un punto: <strong>P<sub>m</sub>(x, y)</strong>.</span></li>
   </ol>
 
   <!-- 5. Ejemplos -->
@@ -97,11 +97,11 @@
     <p>Punto medio entre A(2, 4) y B(8, 10).</p>
     <ol class="steps">
       <li><span><strong>Identifica los extremos: </strong><span class="sust">x<sub>1</sub> = 2, y<sub>1</sub> = 4  (A)   y   x<sub>2</sub> = 8, y<sub>2</sub> = 10  (B)</span></span></li>
-      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">2 + 8</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">4 + 10</span><span class="den">2</span></span> )</span><span class="expl">Las x (2 y 8) van en la primera coordenada y las y (4 y 10) en la segunda.</span></span></li>
-      <li><span><strong>Suma: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">10</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">14</span><span class="den">2</span></span> )</span><span class="expl">2 + 8 = 10 y 4 + 10 = 14.</span></span></li>
-      <li><span><strong>Divide entre 2: </strong><span class="sust">M = ( 5 , 7 )</span><span class="expl">10 ÷ 2 = 5 y 14 ÷ 2 = 7.</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">P<sub>m</sub> = ( <span class="frac frac-inline"><span class="num">2 + 8</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">4 + 10</span><span class="den">2</span></span> )</span><span class="expl">Las x (2 y 8) van en la primera coordenada y las y (4 y 10) en la segunda.</span></span></li>
+      <li><span><strong>Suma: </strong><span class="sust">P<sub>m</sub> = ( <span class="frac frac-inline"><span class="num">10</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">14</span><span class="den">2</span></span> )</span><span class="expl">2 + 8 = 10 y 4 + 10 = 14.</span></span></li>
+      <li><span><strong>Divide entre 2: </strong><span class="sust">P<sub>m</sub> = ( 5 , 7 )</span><span class="expl">10 ÷ 2 = 5 y 14 ÷ 2 = 7.</span></span></li>
     </ol>
-    <p><strong>El punto medio es M(5, 7).</strong></p>
+    <p><strong>El punto medio es P<sub>m</sub>(5, 7).</strong></p>
   </div>
 
   <div class="example-box">
@@ -109,11 +109,11 @@
     <p>Punto medio entre A(−3, 5) y B(7, −1).</p>
     <ol class="steps">
       <li><span><strong>Identifica los extremos: </strong><span class="sust">x<sub>1</sub> = −3, y<sub>1</sub> = 5  (A)   y   x<sub>2</sub> = 7, y<sub>2</sub> = −1  (B)</span></span></li>
-      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">−3 + 7</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">5 + (−1)</span><span class="den">2</span></span> )</span><span class="expl">El número negativo va entre paréntesis para no confundir los signos.</span></span></li>
-      <li><span><strong>Suma: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> )</span><span class="expl">−3 + 7 = 4 y 5 + (−1) = 4.</span></span></li>
-      <li><span><strong>Divide entre 2: </strong><span class="sust">M = ( 2 , 2 )</span><span class="expl">4 ÷ 2 = 2 en las dos coordenadas.</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">P<sub>m</sub> = ( <span class="frac frac-inline"><span class="num">−3 + 7</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">5 + (−1)</span><span class="den">2</span></span> )</span><span class="expl">El número negativo va entre paréntesis para no confundir los signos.</span></span></li>
+      <li><span><strong>Suma: </strong><span class="sust">P<sub>m</sub> = ( <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> )</span><span class="expl">−3 + 7 = 4 y 5 + (−1) = 4.</span></span></li>
+      <li><span><strong>Divide entre 2: </strong><span class="sust">P<sub>m</sub> = ( 2 , 2 )</span><span class="expl">4 ÷ 2 = 2 en las dos coordenadas.</span></span></li>
     </ol>
-    <p><strong>El punto medio es M(2, 2).</strong></p>
+    <p><strong>El punto medio es P<sub>m</sub>(2, 2).</strong></p>
   </div>
 
   <div class="example-box">
@@ -121,19 +121,19 @@
     <p>Punto medio entre A(−6, −2) y B(3, 1).</p>
     <ol class="steps">
       <li><span><strong>Identifica los extremos: </strong><span class="sust">x<sub>1</sub> = −6, y<sub>1</sub> = −2  (A)   y   x<sub>2</sub> = 3, y<sub>2</sub> = 1  (B)</span></span></li>
-      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">−6 + 3</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−2 + 1</span><span class="den">2</span></span> )</span><span class="expl">Las x (−6 y 3) van en la primera coordenada y las y (−2 y 1) en la segunda.</span></span></li>
-      <li><span><strong>Suma: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">−3</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−1</span><span class="den">2</span></span> )</span><span class="expl">−6 + 3 = −3 y −2 + 1 = −1.</span></span></li>
-      <li><span><strong>Divide entre 2: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">−3</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−1</span><span class="den">2</span></span> ) = ( −1.5 , −0.5 )</span><span class="expl">Como −3 y −1 no son divisibles entre 2, el resultado es una fracción; se puede dejar así o escribir en decimales.</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">P<sub>m</sub> = ( <span class="frac frac-inline"><span class="num">−6 + 3</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−2 + 1</span><span class="den">2</span></span> )</span><span class="expl">Las x (−6 y 3) van en la primera coordenada y las y (−2 y 1) en la segunda.</span></span></li>
+      <li><span><strong>Suma: </strong><span class="sust">P<sub>m</sub> = ( <span class="frac frac-inline"><span class="num">−3</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−1</span><span class="den">2</span></span> )</span><span class="expl">−6 + 3 = −3 y −2 + 1 = −1.</span></span></li>
+      <li><span><strong>Divide entre 2: </strong><span class="sust">P<sub>m</sub> = ( <span class="frac frac-inline"><span class="num">−3</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−1</span><span class="den">2</span></span> ) = ( −1.5 , −0.5 )</span><span class="expl">Como −3 y −1 no son divisibles entre 2, el resultado es una fracción; se puede dejar así o escribir en decimales.</span></span></li>
     </ol>
-    <p><strong>El punto medio es M(<span class="frac frac-inline"><span class="num">−3</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">−1</span><span class="den">2</span></span>)</strong>, o en decimales, M(−1.5, −0.5).</p>
+    <p><strong>El punto medio es P<sub>m</sub>(<span class="frac frac-inline"><span class="num">−3</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">−1</span><span class="den">2</span></span>)</strong>, o en decimales, P<sub>m</sub>(−1.5, −0.5).</p>
   </div>
 
   <div class="example-box">
     <h2>Ejemplo 4: encontrar el otro extremo</h2>
-    <p>El punto medio de un segmento AB es M(3, 2) y uno de sus extremos es A(1, −2). ¿Cuáles son las coordenadas de B(x, y)?</p>
+    <p>El punto medio de un segmento AB es P<sub>m</sub>(3, 2) y uno de sus extremos es A(1, −2). ¿Cuáles son las coordenadas de B(x, y)?</p>
     <ol class="steps">
       <li><span><strong>Identifica los datos: </strong><span class="sust">x<sub>1</sub> = 1, y<sub>1</sub> = −2  (A),   punto medio (3, 2),   x<sub>2</sub> = x, y<sub>2</sub> = y  (B, desconocido)</span></span></li>
-      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">( 3 , 2 ) = ( <span class="frac frac-inline"><span class="num">1 + x</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−2 + y</span><span class="den">2</span></span> )</span><span class="expl">La coordenada x de M es el promedio de 1 y x, y la coordenada y de M es el promedio de −2 y y. Eso da dos ecuaciones.</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">( 3 , 2 ) = ( <span class="frac frac-inline"><span class="num">1 + x</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−2 + y</span><span class="den">2</span></span> )</span><span class="expl">La coordenada x de P<sub>m</sub> es el promedio de 1 y x, y la coordenada y de P<sub>m</sub> es el promedio de −2 y y. Eso da dos ecuaciones.</span></span></li>
       <li><span><strong>Despeja x: </strong><span class="sust"><span class="frac frac-inline"><span class="num">1 + x</span><span class="den">2</span></span> = 3   →   1 + x = 6   →   x = 5</span><span class="expl">Multiplica los dos lados por 2 y luego resta 1.</span></span></li>
       <li><span><strong>Despeja y: </strong><span class="sust"><span class="frac frac-inline"><span class="num">−2 + y</span><span class="den">2</span></span> = 2   →   −2 + y = 4   →   y = 6</span><span class="expl">Multiplica los dos lados por 2 y luego suma 2.</span></span></li>
     </ol>
@@ -144,16 +144,35 @@
     <h2>Ejemplo 5: junto con la distancia</h2>
     <p>Un segmento tiene extremos A(−1, 2) y B(5, −6). Encuentra su punto medio y su longitud.</p>
     <ol class="steps">
-      <li><span><strong>Punto medio, sustituye en la fórmula: </strong><span class="sust">M = ( <span class="frac frac-inline"><span class="num">−1 + 5</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">2 + (−6)</span><span class="den">2</span></span> ) = M = ( <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−4</span><span class="den">2</span></span> ) = ( 2 , −2 )</span><span class="expl">−1 + 5 = 4 y 2 + (−6) = −4; después se divide entre 2.</span></span></li>
+      <li><span><strong>Punto medio, sustituye en la fórmula: </strong><span class="sust">P<sub>m</sub> = ( <span class="frac frac-inline"><span class="num">−1 + 5</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">2 + (−6)</span><span class="den">2</span></span> ) = P<sub>m</sub> = ( <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> , <span class="frac frac-inline"><span class="num">−4</span><span class="den">2</span></span> ) = ( 2 , −2 )</span><span class="expl">−1 + 5 = 4 y 2 + (−6) = −4; después se divide entre 2.</span></span></li>
       <li><span><strong>Longitud, sustituye en la fórmula de la distancia: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(5 − (−1))² + (−6 − 2)²</span></span> = <span class="rad">√<span class="radicand">6² + (−8)²</span></span> = <span class="rad">√<span class="radicand">36 + 64</span></span> = <span class="rad">√<span class="radicand">100</span></span> = 10</span><span class="expl">5 − (−1) = 6 y −6 − 2 = −8; (−8)² = 64.</span></span></li>
     </ol>
-    <p><strong>El punto medio es M(2, −2) y la longitud del segmento es 10.</strong> La mitad de la longitud, 5, es la distancia de M a cada extremo.</p>
+    <p><strong>El punto medio es P<sub>m</sub>(2, −2) y la longitud del segmento es 10.</strong> La mitad de la longitud, 5, es la distancia de P<sub>m</sub> a cada extremo.</p>
   </div>
+
+  <!-- Ejercicios -->
+  <p class="section-label" id="ejercicios-punto-medio">Ejercicios: punto medio</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Resuelve cada ejercicio en tu cuaderno: <strong>sustituye los números en la fórmula</strong>, suma las coordenadas y divide entre 2.
+       Escribe tus respuestas en las casillas y oprime <strong>Comprobar</strong> (o la tecla Enter). Hay ejercicios de encontrar el punto medio
+       (con resultados enteros y con fracciones), de encontrar el <strong>otro extremo</strong> de un segmento y de encontrar el punto medio
+       <strong>y</strong> la longitud del segmento.</p>
+    <p>Puedes escribir un número entero, un decimal con punto (por ejemplo −1.5) o una fracción con <strong>/</strong> (por ejemplo −3/2).
+       Para el signo menos usa el guion <strong>-</strong> o el botón <strong>−</strong>.
+       Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>; cuando termines, oprime <strong>Otros 10 ejercicios</strong> para volver a intentar.</p>
+  </div>
+
+  <div class="practice-grid" id="pm-grid"></div>
+  <p class="practice-score" id="pm-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="pm-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
 
   <!-- 6. Resumen -->
   <p class="section-label">Resumen</p>
   <div class="example-box">
-    <span class="eq">M = ( <span class="frac frac-inline"><span class="num">x<sub>1</sub> + x<sub>2</sub></span><span class="den">2</span></span> ,
+    <span class="eq">P<sub>m</sub> = ( <span class="frac frac-inline"><span class="num">x<sub>1</sub> + x<sub>2</sub></span><span class="den">2</span></span> ,
       <span class="frac frac-inline"><span class="num">y<sub>1</sub> + y<sub>2</sub></span><span class="den">2</span></span> )</span>
     <ul class="def-list">
       <li>El punto medio divide al segmento en dos partes iguales.</li>
@@ -163,6 +182,56 @@
     <p style="margin-top:0.8rem;">Más adelante (Matemáticas 3): si los extremos de un diámetro son A y B, el punto medio es el centro de la circunferencia y la mitad de la distancia AB es su radio.</p>
   </div>
 
+  <p class="section-label no-caps" id="rubrica-punto-medio">Rúbrica · Punto medio</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe la fórmula con los números sustituidos y cada paso (suma y división entre 2), con fracciones y con paréntesis en los negativos.</li><li>Usa el vocabulario adecuado (punto medio, extremos, promedio, coordenadas).</li><li>Escribe el resultado como un punto Pm(x, y) y, cuando es fracción, como fracción y como decimal.</li></ul></div></td>
+            <td>Escribe sólo las coordenadas del resultado, sin la fórmula ni los pasos, y casi no usa vocabulario matemático.</td>
+            <td colspan="2">Escribe algunos pasos pero omite otros (por ejemplo, no muestra la sustitución o la suma) y usa el vocabulario de manera limitada; escribe el resultado sin el formato de punto.</td>
+            <td>Escribe la fórmula sustituida y todos los pasos en casi todos los ejercicios, con el vocabulario adecuado, y expresa el resultado como punto; puede tener una omisión menor.</td>
+            <td>Expresa su trabajo por diferentes medios (fórmula sustituida con fracciones, pasos, decimales y, cuando se pide, un dibujo del segmento) con notación correcta, y explica de manera oral o escrita cómo encontraría el punto medio o el extremo de un segmento nuevo.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Suma las coordenadas x y, por separado, las coordenadas y, con los signos correctos (también con negativos).</li><li>Divide entre 2 cada suma y expresa el resultado como entero, fracción o decimal.</li><li>Trabaja cada coordenada por separado (el promedio de las x y el promedio de las y) y escribe el punto en orden (x, y).</li></ul></div></td>
+            <td>Aún no usa correctamente las expresiones algebraicas: resta en lugar de sumar, no divide entre 2 o mezcla las coordenadas x y y.</td>
+            <td colspan="2">Hace uso de la sintaxis y la semántica del lenguaje algebraico: encuentra el punto medio cuando las coordenadas son positivas y las sumas son pares, pero se equivoca con los negativos o con los resultados fraccionarios.</td>
+            <td>Comprende y maneja las propiedades del lenguaje algebraico: encuentra correctamente el punto medio en casi todos los casos, incluso con negativos y con fracciones, y expresa el resultado en forma de fracción y decimal.</td>
+            <td>Dota de significado y generaliza las propiedades: explica por qué el punto medio es el promedio de las coordenadas y por qué no importa el orden de los extremos, y usa la fórmula con letras para obtener un extremo o el punto medio de cualquier segmento.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Modelación y resolución de problemas</strong><span class="crit-desc">Formulación del problema y sistematización · Matematización y análisis del sistema matemático · Interpretación, evaluación y validación.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Identifica los datos de cada ejercicio (los dos extremos, o el punto medio y un extremo) y qué se pide.</li><li>En los ejercicios del otro extremo, plantea una ecuación para cada coordenada, (x₁ + x) ÷ 2 = x del punto medio, y la despeja.</li><li>Revisa su resultado: comprueba que el punto medio de los extremos obtenidos es el dado, o que Pm queda a la misma distancia de los dos extremos.</li></ul></div></td>
+            <td>Usa los datos aleatoriamente: no distingue cuál es el punto medio y cuál un extremo, o escribe el punto medio como si fuera el extremo. No revisa.</td>
+            <td colspan="2">Identifica los datos y obtiene el punto medio, pero en los ejercicios del otro extremo plantea sólo una ecuación o la despeja con errores (por ejemplo, no multiplica por 2); revisa poco.</td>
+            <td colspan="2">Identifica los datos, plantea y despeja las ecuaciones del extremo desconocido y obtiene el punto medio y la longitud cuando se piden. Revisa que su resultado sea razonable (comprueba con la fórmula o con la distancia a los extremos), detecta y corrige sus errores y resuelve una situación nueva con el mismo método.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué el punto medio es el promedio de las coordenadas (está justo en medio de los extremos).</li><li>Justifica que Pm está a la misma distancia de los dos extremos calculando las dos distancias con la fórmula.</li><li>Comprueba el extremo que encontró: el punto medio de A y B debe ser el Pm dado.</li></ul></div></td>
+            <td>Defiende su resultado con frases como «así se hace» o «me salió», sin usar la fórmula ni comprobar.</td>
+            <td>Explica con sus palabras («está a la mitad entre los dos puntos») por qué calculó así el punto medio, con pocos términos matemáticos.</td>
+            <td>Valida con ejemplos: comprueba con un caso numérico que el punto medio queda a la misma distancia de los extremos, o intercambia los extremos y obtiene el mismo punto medio, y da ejemplos de errores comunes.</td>
+            <td>Explica la estructura del argumento: el punto medio divide al segmento en dos partes iguales (hipótesis), por lo que sus coordenadas son el promedio de las de los extremos (conclusión). Comprueba la longitud de las dos mitades con la fórmula de la distancia.</td>
+            <td>Elabora una cadena de argumentos que generaliza: deduce la fórmula del punto medio con letras para cualquier segmento, justifica el procedimiento para encontrar un extremo desconocido y relaciona el punto medio con la distancia (cada mitad mide la mitad de la longitud del segmento).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
   <div class="page-next">
     <span class="lbl">Siguiente tema</span>
     <a href="tema-05-trigonometria.html">Trigonometría →</a>
@@ -171,6 +240,111 @@
   <footer class="site-footer">
     DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
   </footer>
+
+  <script src="../assets/practica-tarjetas.js?v=20261030r"></script>
+  <script>
+  (function () {
+    var h = Practica.h, M = '−';
+    function ri(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+    function pick(l) { return l[ri(0, l.length - 1)]; }
+    function sg() { return ri(0, 1) ? 1 : -1; }
+    function tn(n) { return n < 0 ? M + Math.abs(n) : String(n); }
+    function par(n) { return n < 0 ? '(' + M + Math.abs(n) + ')' : String(n); }
+    function sq(n) { return par(n) + '²'; }
+    function pt(x, y) { return '(' + tn(x) + ', ' + tn(y) + ')'; }
+    function fr(n, d) { return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>'; }
+    function rad(x) { return '<span class="rad">√<span class="radicand">' + x + '</span></span>'; }
+    function parseNum(s) {   // entero, decimal (con punto o coma) o fracción a/b
+      s = String(s).replace(/[−–—]/g, '-').replace(/\s+/g, '').replace(',', '.');
+      var m = s.match(/^(-?\d+)\/(\d+)$/);
+      if (m) return +m[2] === 0 ? null : (+m[1]) / (+m[2]);
+      return /^-?\d+(\.\d+)?$/.test(s) ? parseFloat(s) : null;
+    }
+    function dec(n) { return String(n).replace('-', M); }                                   // −1.5
+    function half(s) {   // s/2 como fracción apilada simplificada: devuelve {html, val}
+      var v = s / 2; if (s % 2 === 0) return tn(v);
+      return (s < 0 ? M : '') + fr(Math.abs(s), 2);
+    }
+
+    // ---- banco de 100 ejercicios ----
+    var TERNAS = [[3, 4], [4, 3], [6, 8], [8, 6], [5, 12], [12, 5], [0, 3], [3, 0], [0, 4], [4, 0], [0, 5], [5, 0]];
+    var BANK = [], i, x1, y1, u, w;
+    for (i = 0; i < 40; i++) {      // A: punto medio entero (40)
+      x1 = ri(-9, 9); y1 = ri(-9, 9); do { u = ri(-6, 6); w = ri(-6, 6); } while (u === 0 && w === 0);
+      BANK.push({ t: 'A', x1: x1, y1: y1, x2: x1 + 2 * u, y2: y1 + 2 * w });
+    }
+    for (i = 0; i < 20; i++) {      // B: punto medio con fracción (20)
+      x1 = ri(-9, 9); y1 = ri(-9, 9); var dx, dy; do { dx = ri(-9, 9); dy = ri(-9, 9); } while (dx % 2 === 0 && dy % 2 === 0);
+      BANK.push({ t: 'B', x1: x1, y1: y1, x2: x1 + dx, y2: y1 + dy });
+    }
+    for (i = 0; i < 25; i++) {      // C: encontrar el otro extremo (25)
+      var mx = ri(-8, 8), my = ri(-8, 8); x1 = ri(-9, 9); y1 = ri(-9, 9);
+      BANK.push({ t: 'C', x1: x1, y1: y1, mx: mx, my: my });
+    }
+    for (i = 0; i < 15; i++) {      // D: punto medio y longitud (15)
+      var m2x = ri(-6, 6), m2y = ri(-6, 6), v = pick(TERNAS), a = sg() * v[0], b = sg() * v[1];
+      BANK.push({ t: 'D', x1: m2x - a, y1: m2y - b, x2: m2x + a, y2: m2y + b });
+    }
+    for (i = BANK.length - 1; i > 0; i--) { var j = ri(0, i), tmp = BANK[i]; BANK[i] = BANK[j]; BANK[j] = tmp; } // mezclar
+
+    function field(f, label, aria, n) { return '<span style="display:inline-flex; align-items:center; gap:0.4rem; white-space:nowrap;"><span class="eq">' + label + '</span>' + h.inputHTML(f, aria + ', ejercicio ' + n, 'width:5.2rem;') + '</span>'; }
+    function card(n, spec) {
+      var ids = spec.fields.map(function (f) { return f.f; }).join(',');
+      return {
+        head: spec.head,
+        body: '<div class="practice-ask">' + spec.ask + '</div><div class="practice-row">' + spec.fields.map(function (f) { return field(f.f, f.label, f.aria, n); }).join('') + '</div>' + h.keysHTML([M, '/'], ids),
+        check: function (ctx) {
+          var empty = spec.fields.some(function (f) { return !ctx.inp[f.f].value.trim(); });
+          if (empty) return { msg: 'Contesta <strong>todas</strong> las casillas antes de comprobar.' };
+          var wrong = [], msgs = [], vals = {};
+          var bad = spec.fields.some(function (f) { vals[f.f] = parseNum(ctx.inp[f.f].value); return vals[f.f] == null; });
+          if (bad) return { bad: true, msg: '<span class="no">No pude leer tus respuestas.</span> Escribe números: enteros (<strong>-3</strong>), decimales (<strong>-1.5</strong>) o fracciones (<strong>-3/2</strong>).' };
+          spec.fields.forEach(function (f) { if (Math.abs(vals[f.f] - f.ans) > 1e-9) { wrong.push(f.f); msgs.push(f.hint); } });
+          return { wrong: wrong, msgs: msgs, total: spec.fields.length };
+        },
+        sol: spec.sol
+      };
+    }
+    function Fd(f, label, aria, ans, hint) { return { f: f, label: label, aria: aria, ans: ans, hint: hint }; }
+    function Mt(a, b) { return 'P<sub>m</sub> = ( ' + a + ' , ' + b + ' )'; }
+
+    Practica.setup({
+      id: 'pm', bank: BANK, anchor: 'ejercicios-punto-medio',
+      card: function (e, n) {
+        if (e.t === 'C') {   // extremo desconocido
+          var bx = 2 * e.mx - e.x1, by = 2 * e.my - e.y1;
+          return card(n, {
+            head: 'El punto medio de AB es P<sub>m</sub>' + pt(e.mx, e.my) + ' y uno de los extremos es A' + pt(e.x1, e.y1),
+            ask: 'Encuentra las coordenadas del otro extremo B(x, y)',
+            fields: [Fd('x', 'x =', 'x de B', bx, 'Como ' + fr(tn(e.x1) + ' + x', 2) + ' = ' + tn(e.mx) + ', entonces ' + tn(e.x1) + ' + x = ' + tn(2 * e.mx) + ' y x = ' + tn(bx) + '.'),
+                     Fd('y', 'y =', 'y de B', by, 'Como ' + fr(tn(e.y1) + ' + y', 2) + ' = ' + tn(e.my) + ', entonces ' + tn(e.y1) + ' + y = ' + tn(2 * e.my) + ' y y = ' + tn(by) + '.')],
+            sol: 'Sustituye en la fórmula: ( ' + tn(e.mx) + ' , ' + tn(e.my) + ' ) = ( ' + fr(tn(e.x1) + ' + x', 2) + ' , ' + fr(tn(e.y1) + ' + y', 2) + ' )<br>' +
+                 'Despeja x: ' + tn(e.x1) + ' + x = ' + tn(2 * e.mx) + ' → x = ' + tn(bx) + '<br>Despeja y: ' + tn(e.y1) + ' + y = ' + tn(2 * e.my) + ' → y = ' + tn(by) + '<br><strong>B' + pt(bx, by) + '</strong>'
+          });
+        }
+        var sx = e.x1 + e.x2, sy = e.y1 + e.y2, mx2 = sx / 2, my2 = sy / 2;
+        var base = 'Sustituye: ' + Mt(fr(tn(e.x1) + ' + ' + par(e.x2), 2), fr(tn(e.y1) + ' + ' + par(e.y2), 2)) + '<br>Suma: ' + Mt(fr(tn(sx), 2), fr(tn(sy), 2)) + '<br>Divide entre 2: ';
+        var hx = 'Suma las coordenadas x y divide entre 2: ' + fr(tn(e.x1) + ' + ' + par(e.x2), 2) + ' = ' + fr(tn(sx), 2) + ' = ' + dec(mx2) + '.';
+        var hy = 'Suma las coordenadas y y divide entre 2: ' + fr(tn(e.y1) + ' + ' + par(e.y2), 2) + ' = ' + fr(tn(sy), 2) + ' = ' + dec(my2) + '.';
+        var head = 'A' + pt(e.x1, e.y1) + ' y B' + pt(e.x2, e.y2);
+        if (e.t === 'D') {
+          var dxx = e.x2 - e.x1, dyy = e.y2 - e.y1, N = dxx * dxx + dyy * dyy, dd = Math.round(Math.sqrt(N));
+          return card(n, {
+            head: 'Un segmento tiene extremos ' + head, ask: 'Encuentra su punto medio P<sub>m</sub>(x, y) y su longitud d',
+            fields: [Fd('x', 'x =', 'x de Pm', mx2, hx), Fd('y', 'y =', 'y de Pm', my2, hy),
+                     Fd('d', 'd =', 'longitud', dd, 'Sustituye en la fórmula de la distancia: d = √((' + tn(e.x2) + ' − ' + par(e.x1) + ')² + (' + tn(e.y2) + ' − ' + par(e.y1) + ')²) = √(' + sq(dxx) + ' + ' + sq(dyy) + ') = √' + N + ' = ' + dd + '.')],
+            sol: base + Mt(tn(mx2), tn(my2)) + '<br>Longitud: d = ' + rad('(' + tn(e.x2) + ' − ' + par(e.x1) + ')² + (' + tn(e.y2) + ' − ' + par(e.y1) + ')²') + ' = ' + rad(sq(dxx) + ' + ' + sq(dyy)) + ' = ' + rad(N) + ' = <strong>' + dd + '</strong><br><strong>P<sub>m</sub>' + pt(mx2, my2) + '</strong> y <strong>d = ' + dd + '</strong>'
+          });
+        }
+        return card(n, {   // A y B
+          head: head, ask: 'Encuentra el punto medio P<sub>m</sub>(x, y)' + (e.t === 'B' ? ' (puede dar fracciones o decimales)' : ''),
+          fields: [Fd('x', 'x =', 'x de Pm', mx2, hx), Fd('y', 'y =', 'y de Pm', my2, hy)],
+          sol: base + Mt(half(sx), half(sy)) + '<br><strong>P<sub>m</sub>' + (e.t === 'B' ? '(' + dec(mx2) + ', ' + dec(my2) + ')' : pt(mx2, my2)) + '</strong>'
+        });
+      }
+    });
+  })();
+  </script>
 
 </body>
 </html>

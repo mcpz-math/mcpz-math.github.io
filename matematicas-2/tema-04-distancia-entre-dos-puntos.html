@@ -162,6 +162,24 @@
     <p>Como AB = BC = 5, el triángulo es <strong>isósceles</strong>. Además, 5² + 5² = 25 + 25 = 50 = (√50)², así que cumple el teorema de Pitágoras: es un triángulo <strong>rectángulo</strong>, con el ángulo recto en B.</p>
   </div>
 
+  <!-- Ejercicios -->
+  <p class="section-label" id="ejercicios-distancia">Ejercicios: distancia entre dos puntos</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Resuelve cada ejercicio en tu cuaderno: <strong>sustituye los números en la fórmula</strong>, resuelve las restas, eleva al cuadrado, suma y saca la raíz.
+       Escribe tu respuesta y oprime <strong>Comprobar</strong> (o la tecla Enter). Hay ejercicios en los que debes calcular la distancia, otros en los que sólo
+       escribes el número que queda <strong>dentro de la raíz</strong> (cuando la raíz no es exacta), otros de puntos en una recta horizontal o vertical,
+       y otros del <strong>perímetro de un triángulo</strong>.</p>
+    <p>Las respuestas son números. Para escribir una fracción usa <strong>/</strong> (por ejemplo 3/2) o un decimal con punto (por ejemplo 1.5).
+       Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>; cuando termines, oprime <strong>Otros 10 ejercicios</strong> para volver a intentar.</p>
+  </div>
+
+  <div class="practice-grid" id="dd-grid"></div>
+  <p class="practice-score" id="dd-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="dd-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
   <!-- 6. Resumen -->
   <p class="section-label">Resumen</p>
   <div class="example-box">
@@ -175,6 +193,57 @@
     <p style="margin-top:0.8rem;">Más adelante (Matemáticas 3) usarás esta fórmula en la circunferencia: el radio es la distancia del centro a un punto de la curva.</p>
   </div>
 
+  <p class="section-label no-caps" id="rubrica-distancia">Rúbrica · Distancia entre dos puntos</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe la fórmula con los números sustituidos y cada paso del cálculo (restas, cuadrados, suma y raíz), con paréntesis en los negativos.</li><li>Usa el vocabulario adecuado (distancia, coordenadas, cateto, hipotenusa, raíz cuadrada, valor absoluto).</li><li>Dibuja o describe el triángulo rectángulo o el segmento para explicar qué calculó.</li></ul></div></td>
+            <td>Escribe sólo el resultado, sin la fórmula ni los pasos, y casi no usa vocabulario matemático. No usa ningún apoyo, como un dibujo del segmento.</td>
+            <td colspan="2">Escribe algunos pasos pero omite otros (por ejemplo, no muestra la sustitución en la fórmula o salta de las restas a la raíz) y usa el vocabulario de manera limitada; su dibujo, si lo hace, no tiene rótulos.</td>
+            <td>Escribe la fórmula sustituida y todos los pasos en casi todos los ejercicios, con el vocabulario adecuado, y explica con claridad qué calculó; puede tener una omisión menor.</td>
+            <td>Expresa su trabajo por diferentes medios (fórmula sustituida, pasos, dibujo del triángulo rectángulo y palabras) con notación correcta, y explica de manera oral o escrita cómo calcularía la distancia entre dos puntos nuevos.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación geométrica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Ubica los puntos en el plano cartesiano y dibuja el segmento que los une.</li><li>Reconoce que la distancia es la hipotenusa de un triángulo rectángulo cuyos catetos son las diferencias de las coordenadas.</li><li>Distingue los puntos en una recta horizontal o vertical y usa las longitudes de los lados para clasificar un triángulo (isósceles, rectángulo).</li></ul></div></td>
+            <td>Conoce que dos puntos determinan un segmento, pero no los ubica bien en el plano o no relaciona la distancia con el triángulo rectángulo.</td>
+            <td colspan="2">Describe la relación entre el segmento y el triángulo rectángulo en los casos sencillos (rectas horizontales o verticales, catetos positivos) pero se equivoca al ubicar puntos con coordenadas negativas o al identificar los catetos.</td>
+            <td>Clasifica los casos (horizontal, vertical o general) e interpreta la distancia como hipotenusa del triángulo rectángulo. Usa las longitudes de los lados para decidir si un triángulo es isósceles o rectángulo.</td>
+            <td>Infiere e integra las relaciones: anticipa la distancia a partir del dibujo (por ejemplo, reconoce las ternas 3-4-5 y 5-12-13), explica cómo cambia la distancia al mover un punto y usa las longitudes de los lados para clasificar un triángulo y comprobar que es rectángulo.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Sustituye las coordenadas en la fórmula en el lugar correcto (las x en un paréntesis y las y en el otro), con paréntesis para los negativos.</li><li>Resta con números negativos (2 − (−3) = 5) y eleva al cuadrado con el signo correcto ((−12)² = 144).</li><li>Suma los cuadrados antes de sacar la raíz, y deja la raíz indicada o la aproxima cuando no es exacta.</li></ul></div></td>
+            <td>Aún no usa correctamente las expresiones algebraicas: sustituye en lugar equivocado o no sabe qué debe elevar al cuadrado, o da como distancia la suma sin sacar la raíz.</td>
+            <td colspan="2">Hace uso de la sintaxis y la semántica del lenguaje algebraico: sustituye y calcula bien con coordenadas positivas, pero se equivoca con las restas de negativos, con el signo al elevar al cuadrado o al sacar la raíz de la suma.</td>
+            <td>Comprende y maneja las propiedades del lenguaje algebraico: sustituye y calcula correctamente en casi todos los casos, incluso con negativos y con raíces no exactas, y distingue la raíz de toda la suma de la suma de raíces.</td>
+            <td>Dota de significado y generaliza las propiedades: explica por qué el orden de los puntos no cambia el resultado (las diferencias van al cuadrado) y por qué la fórmula sirve para cualquier par de puntos, incluidos los de una recta horizontal o vertical.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Explica por qué la distancia es la hipotenusa de un triángulo rectángulo y por qué se usa el teorema de Pitágoras.</li><li>Justifica por qué no importa el orden de los puntos y por qué la raíz cubre toda la suma (√(25 + 144) no es 5 + 12).</li><li>Comprueba con la relación de Pitágoras si un triángulo es rectángulo (a² + b² = c²) y justifica su clasificación.</li></ul></div></td>
+            <td>Defiende su resultado con frases como «así se hace» o «me salió», sin usar el triángulo rectángulo ni la fórmula.</td>
+            <td>Explica con sus palabras («es el lado más largo del triángulo») por qué usa la fórmula, con pocos términos matemáticos.</td>
+            <td>Valida con ejemplos: calcula la distancia en un caso con las ternas 3-4-5 y comprueba con el dibujo, o intercambia los puntos y obtiene el mismo resultado, y da ejemplos de errores comunes.</td>
+            <td>Explica la estructura del argumento: los catetos son las diferencias de las coordenadas (hipótesis), así que por Pitágoras d² es la suma de sus cuadrados y d su raíz (conclusión). Comprueba con a² + b² = c² si un triángulo es rectángulo.</td>
+            <td>Elabora una cadena de argumentos que generaliza: deduce la fórmula de la distancia para dos puntos cualesquiera a partir de Pitágoras, explica por qué los casos horizontal y vertical son casos particulares y usa las longitudes para demostrar que un triángulo es isósceles o rectángulo.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
   <div class="page-next">
     <span class="lbl">Siguiente subtema</span>
     <a href="tema-04-punto-medio.html">Punto medio →</a>
@@ -183,6 +252,112 @@
   <footer class="site-footer">
     DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
   </footer>
+
+  <script src="../assets/practica-tarjetas.js?v=20261030r"></script>
+  <script>
+  (function () {
+    var h = Practica.h, M = '−';
+    function ri(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+    function pick(l) { return l[ri(0, l.length - 1)]; }
+    function sg() { return ri(0, 1) ? 1 : -1; }
+    function tn(n) { return n < 0 ? M + Math.abs(n) : String(n); }
+    function par(n) { return n < 0 ? '(' + M + Math.abs(n) + ')' : String(n); }
+    function sq(n) { return par(n) + '²'; }
+    function pt(x, y) { return '(' + tn(x) + ', ' + tn(y) + ')'; }
+    function rad(x) { return '<span class="rad">√<span class="radicand">' + x + '</span></span>'; }
+    function parseNum(s) {   // entero, decimal (con punto o coma) o fracción a/b
+      s = String(s).replace(/[−–—]/g, '-').replace(/\s+/g, '').replace(',', '.');
+      var m = s.match(/^(-?\d+)\/(\d+)$/);
+      if (m) return +m[2] === 0 ? null : (+m[1]) / (+m[2]);
+      return /^-?\d+(\.\d+)?$/.test(s) ? parseFloat(s) : null;
+    }
+    function isSq(n) { var r = Math.round(Math.sqrt(n)); return r * r === n; }
+
+    // ---- cadena de solución con los números sustituidos ----
+    function sol(x1, y1, x2, y2) {
+      var dx = x2 - x1, dy = y2 - y1, N = dx * dx + dy * dy, r = Math.round(Math.sqrt(N)), s;
+      s = 'Sustituye: d = ' + rad('(' + tn(x2) + ' − ' + par(x1) + ')² + (' + tn(y2) + ' − ' + par(y1) + ')²') + '<br>' +
+          'Resta: d = ' + rad(sq(dx) + ' + ' + sq(dy)) + '<br>' +
+          'Eleva al cuadrado y suma: d = ' + rad((dx * dx) + ' + ' + (dy * dy)) + ' = ' + rad(N) + '<br>';
+      s += isSq(N) ? 'Raíz: <strong>d = ' + r + '</strong>' : 'La raíz no es exacta: <strong>d = √' + N + ' ≈ ' + Math.sqrt(N).toFixed(2) + '</strong>';
+      return s;
+    }
+
+    // ---- banco de 100 ejercicios ----
+    var TERNAS = [[3, 4], [4, 3], [3, 4], [4, 3], [6, 8], [8, 6], [5, 12], [12, 5], [9, 12], [12, 9], [8, 15], [15, 8]];
+    var BANK = [], i, x1, y1, v;
+    for (i = 0; i < 40; i++) {      // A: distancia con resultado entero (40)
+      x1 = ri(-7, 7); y1 = ri(-7, 7); v = pick(TERNAS);
+      BANK.push({ t: 'A', x1: x1, y1: y1, x2: x1 + sg() * v[0], y2: y1 + sg() * v[1] });
+    }
+    for (i = 0; i < 25; i++) {      // B: raíz no exacta → número dentro de la raíz (25)
+      var dx, dy; do { dx = ri(1, 9); dy = ri(1, 9); } while (isSq(dx * dx + dy * dy));
+      x1 = ri(-7, 7); y1 = ri(-7, 7); BANK.push({ t: 'B', x1: x1, y1: y1, x2: x1 + sg() * dx, y2: y1 + sg() * dy });
+    }
+    for (i = 0; i < 20; i++) {      // C: recta horizontal o vertical (20)
+      x1 = ri(-8, 8); y1 = ri(-8, 8); var len = ri(2, 12) * sg();
+      if (i % 2) BANK.push({ t: 'C', x1: x1, y1: y1, x2: x1 + len, y2: y1 }); else BANK.push({ t: 'C', x1: x1, y1: y1, x2: x1, y2: y1 + len });
+    }
+    for (i = 0; i < 15; i++) {      // D: perímetro de un triángulo rectángulo (15)
+      x1 = ri(-6, 6); y1 = ri(-6, 6); v = pick(TERNAS); var a = sg() * v[0], b = sg() * v[1];
+      BANK.push({ t: 'D', ax: x1, ay: y1, bx: x1 + a, by: y1, cx: x1 + a, cy: y1 + b });
+    }
+    for (i = BANK.length - 1; i > 0; i--) { var j = ri(0, i), tmp = BANK[i]; BANK[i] = BANK[j]; BANK[j] = tmp; } // mezclar
+
+    function card(n, spec) {
+      return {
+        head: spec.head,
+        body: '<div class="practice-ask">' + spec.ask + '</div><div class="practice-row"><span class="eq">' + spec.label + '</span>' + h.inputHTML('v', spec.aria + ', ejercicio ' + n, 'flex:0 1 7rem;') + '</div>',
+        check: function (ctx) {
+          var raw = ctx.inp.v.value.trim();
+          if (!raw) return { msg: 'Escribe tu respuesta antes de comprobar.' };
+          var v = parseNum(raw);
+          if (v == null) return { bad: true, msg: '<span class="no">No pude leer tu respuesta.</span> Escribe un número, por ejemplo <strong>13</strong> o <strong>5.83</strong>.' };
+          if (Math.abs(v - spec.ans) < 0.005 + (spec.tol || 0)) return { wrong: [], total: 1 };
+          return { wrong: ['v'], msgs: [spec.hint], total: 1 };
+        },
+        sol: spec.sol
+      };
+    }
+
+    Practica.setup({
+      id: 'dd', bank: BANK, anchor: 'ejercicios-distancia',
+      card: function (e, n) {
+        if (e.t === 'D') {
+          var ab = Math.abs(e.bx - e.ax) + Math.abs(e.by - e.ay), bc = Math.abs(e.cx - e.bx) + Math.abs(e.cy - e.by), ac = Math.round(Math.hypot(e.cx - e.ax, e.cy - e.ay)), P = ab + bc + ac;
+          return card(n, {
+            head: 'Triángulo con vértices A' + pt(e.ax, e.ay) + ', B' + pt(e.bx, e.by) + ' y C' + pt(e.cx, e.cy),
+            ask: 'Calcula su perímetro (la suma de la longitud de sus tres lados)', label: 'perímetro =', aria: 'Perímetro', ans: P,
+            hint: 'Calcula cada lado con la fórmula de la distancia: AB = ' + ab + ', BC = ' + bc + ' y AC = ' + ac + '. Súmalos: ' + ab + ' + ' + bc + ' + ' + ac + ' = ' + P + '.',
+            sol: 'AB: ' + sol(e.ax, e.ay, e.bx, e.by).split('<br>').pop() + '<br>BC: ' + sol(e.bx, e.by, e.cx, e.cy).split('<br>').pop() + '<br>AC: ' + sol(e.ax, e.ay, e.cx, e.cy) +
+                 '<br>Perímetro = ' + ab + ' + ' + bc + ' + ' + ac + ' = <strong>' + P + '</strong>'
+          });
+        }
+        var dx = e.x2 - e.x1, dy = e.y2 - e.y1, N = dx * dx + dy * dy, head = 'A' + pt(e.x1, e.y1) + ' y B' + pt(e.x2, e.y2);
+        if (e.t === 'C') {
+          var d = Math.abs(e.x1 === e.x2 ? dy : dx), eje = e.x1 === e.x2 ? 'vertical (misma x)' : 'horizontal (misma y)';
+          return card(n, {
+            head: head, ask: 'Calcula la distancia entre los dos puntos', label: 'd =', aria: 'Distancia', ans: d,
+            hint: 'Los puntos están en una recta ' + eje + ': resta las coordenadas que cambian y toma el valor absoluto: d = |' + (e.x1 === e.x2 ? tn(e.y2) + ' − ' + par(e.y1) : tn(e.x2) + ' − ' + par(e.x1)) + '| = ' + d + '.',
+            sol: 'Los puntos están en una recta ' + eje + '.<br>d = |' + (e.x1 === e.x2 ? tn(e.y2) + ' − ' + par(e.y1) : tn(e.x2) + ' − ' + par(e.x1)) + '| = |' + tn(e.x1 === e.x2 ? dy : dx) + '| = <strong>' + d + '</strong>'
+          });
+        }
+        if (e.t === 'B') {
+          return card(n, {
+            head: head, ask: 'La distancia es d = √( ? ). Escribe el número que queda dentro de la raíz', label: 'dentro de la raíz =', aria: 'Número dentro de la raíz', ans: N,
+            hint: 'Resta las coordenadas: (' + tn(e.x2) + ' − ' + par(e.x1) + ') = ' + tn(dx) + ' y (' + tn(e.y2) + ' − ' + par(e.y1) + ') = ' + tn(dy) + '. Elévalas al cuadrado y súmalas: ' + (dx * dx) + ' + ' + (dy * dy) + ' = ' + N + '.',
+            sol: sol(e.x1, e.y1, e.x2, e.y2)
+          });
+        }
+        return card(n, {   // A
+          head: head, ask: 'Calcula la distancia entre los dos puntos', label: 'd =', aria: 'Distancia', ans: Math.round(Math.sqrt(N)),
+          hint: 'Sustituye en la fórmula: d = √((' + tn(e.x2) + ' − ' + par(e.x1) + ')² + (' + tn(e.y2) + ' − ' + par(e.y1) + ')²) = √(' + sq(dx) + ' + ' + sq(dy) + ') = √(' + (dx * dx) + ' + ' + (dy * dy) + ') = √' + N + ' = ' + Math.round(Math.sqrt(N)) + '.',
+          sol: sol(e.x1, e.y1, e.x2, e.y2)
+        });
+      }
+    });
+  })();
+  </script>
 
 </body>
 </html>

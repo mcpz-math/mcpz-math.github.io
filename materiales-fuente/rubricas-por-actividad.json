@@ -2668,6 +2668,145 @@
           "n5": "Elabora una cadena de argumentos que generaliza: desarrolla con letras y deduce D, E y F para cualquier centro y radio, relaciona el resultado con el caso h = 0 y k = 0 y distingue convencerse con un ejemplo de demostrar para todos los valores."
         }
       ]
+    },
+    {
+      "id": "distancia2",
+      "titulo": "Matemáticas 2 · Tema 4 · Distancia entre dos puntos",
+      "file": "matematicas-2/tema-04-distancia-entre-dos-puntos.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página resueltos en el cuaderno, con la fórmula de la distancia escrita con los números sustituidos y cada paso (restas, cuadrados, suma y raíz).",
+        "Al menos un ejercicio con coordenadas negativas y uno en el que la raíz no es exacta (el número dentro de la raíz y su aproximación).",
+        "Un dibujo del triángulo rectángulo (catetos |x₂ − x₁| y |y₂ − y₁|, hipotenusa d) para al menos un ejercicio, y el perímetro de un triángulo con el cálculo de cada lado."
+      ],
+      "errores": [
+        "Resta mal con negativos: en A(−3, 4) y B(2, −8) escribe 2 − 3 = −1 en lugar de 2 − (−3) = 5, o −8 − 4 como −4.",
+        "Eleva al cuadrado y conserva el signo: (−12)² = −144 en lugar de 144.",
+        "Saca la raíz de cada sumando por separado: √(25 + 144) = 5 + 12 = 17 en lugar de √169 = 13.",
+        "Olvida la raíz y deja como distancia la suma de los cuadrados (por ejemplo, d = 25 en lugar de d = 5).",
+        "Mezcla las coordenadas: resta una x con una y, o pone las x y las y en el mismo paréntesis.",
+        "En los puntos de una recta horizontal o vertical suma las coordenadas en lugar de restarlas, o olvida el valor absoluto."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe la fórmula con los números sustituidos y cada paso del cálculo (restas, cuadrados, suma y raíz), con paréntesis en los negativos.",
+            "Usa el vocabulario adecuado (distancia, coordenadas, cateto, hipotenusa, raíz cuadrada, valor absoluto).",
+            "Dibuja o describe el triángulo rectángulo o el segmento para explicar qué calculó."
+          ],
+          "n1": "Escribe sólo el resultado, sin la fórmula ni los pasos, y casi no usa vocabulario matemático. No usa ningún apoyo, como un dibujo del segmento.",
+          "n23": "Escribe algunos pasos pero omite otros (por ejemplo, no muestra la sustitución en la fórmula o salta de las restas a la raíz) y usa el vocabulario de manera limitada; su dibujo, si lo hace, no tiene rótulos.",
+          "n4": "Escribe la fórmula sustituida y todos los pasos en casi todos los ejercicios, con el vocabulario adecuado, y explica con claridad qué calculó; puede tener una omisión menor.",
+          "n5": "Expresa su trabajo por diferentes medios (fórmula sustituida, pasos, dibujo del triángulo rectángulo y palabras) con notación correcta, y explica de manera oral o escrita cómo calcularía la distancia entre dos puntos nuevos."
+        },
+        {
+          "id": "REP_GEO",
+          "observar": [
+            "Ubica los puntos en el plano cartesiano y dibuja el segmento que los une.",
+            "Reconoce que la distancia es la hipotenusa de un triángulo rectángulo cuyos catetos son las diferencias de las coordenadas.",
+            "Distingue los puntos en una recta horizontal o vertical y usa las longitudes de los lados para clasificar un triángulo (isósceles, rectángulo)."
+          ],
+          "n1": "Conoce que dos puntos determinan un segmento, pero no los ubica bien en el plano o no relaciona la distancia con el triángulo rectángulo.",
+          "n23": "Describe la relación entre el segmento y el triángulo rectángulo en los casos sencillos (rectas horizontales o verticales, catetos positivos) pero se equivoca al ubicar puntos con coordenadas negativas o al identificar los catetos.",
+          "n4": "Clasifica los casos (horizontal, vertical o general) e interpreta la distancia como hipotenusa del triángulo rectángulo. Usa las longitudes de los lados para decidir si un triángulo es isósceles o rectángulo.",
+          "n5": "Infiere e integra las relaciones: anticipa la distancia a partir del dibujo (por ejemplo, reconoce las ternas 3-4-5 y 5-12-13), explica cómo cambia la distancia al mover un punto y usa las longitudes de los lados para clasificar un triángulo y comprobar que es rectángulo."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Sustituye las coordenadas en la fórmula en el lugar correcto (las x en un paréntesis y las y en el otro), con paréntesis para los negativos.",
+            "Resta con números negativos (2 − (−3) = 5) y eleva al cuadrado con el signo correcto ((−12)² = 144).",
+            "Suma los cuadrados antes de sacar la raíz, y deja la raíz indicada o la aproxima cuando no es exacta."
+          ],
+          "n1": "Aún no usa correctamente las expresiones algebraicas: sustituye en lugar equivocado o no sabe qué debe elevar al cuadrado, o da como distancia la suma sin sacar la raíz.",
+          "n23": "Hace uso de la sintaxis y la semántica del lenguaje algebraico: sustituye y calcula bien con coordenadas positivas, pero se equivoca con las restas de negativos, con el signo al elevar al cuadrado o al sacar la raíz de la suma.",
+          "n4": "Comprende y maneja las propiedades del lenguaje algebraico: sustituye y calcula correctamente en casi todos los casos, incluso con negativos y con raíces no exactas, y distingue la raíz de toda la suma de la suma de raíces.",
+          "n5": "Dota de significado y generaliza las propiedades: explica por qué el orden de los puntos no cambia el resultado (las diferencias van al cuadrado) y por qué la fórmula sirve para cualquier par de puntos, incluidos los de una recta horizontal o vertical."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué la distancia es la hipotenusa de un triángulo rectángulo y por qué se usa el teorema de Pitágoras.",
+            "Justifica por qué no importa el orden de los puntos y por qué la raíz cubre toda la suma (√(25 + 144) no es 5 + 12).",
+            "Comprueba con la relación de Pitágoras si un triángulo es rectángulo (a² + b² = c²) y justifica su clasificación."
+          ],
+          "n1": "Defiende su resultado con frases como «así se hace» o «me salió», sin usar el triángulo rectángulo ni la fórmula.",
+          "n2": "Explica con sus palabras («es el lado más largo del triángulo») por qué usa la fórmula, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: calcula la distancia en un caso con las ternas 3-4-5 y comprueba con el dibujo, o intercambia los puntos y obtiene el mismo resultado, y da ejemplos de errores comunes.",
+          "n4": "Explica la estructura del argumento: los catetos son las diferencias de las coordenadas (hipótesis), así que por Pitágoras d² es la suma de sus cuadrados y d su raíz (conclusión). Comprueba con a² + b² = c² si un triángulo es rectángulo.",
+          "n5": "Elabora una cadena de argumentos que generaliza: deduce la fórmula de la distancia para dos puntos cualesquiera a partir de Pitágoras, explica por qué los casos horizontal y vertical son casos particulares y usa las longitudes para demostrar que un triángulo es isósceles o rectángulo."
+        }
+      ]
+    },
+    {
+      "id": "puntomedio2",
+      "titulo": "Matemáticas 2 · Tema 4 · Punto medio",
+      "file": "matematicas-2/tema-04-punto-medio.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página resueltos en el cuaderno, con la fórmula del punto medio escrita con los números sustituidos (con las fracciones) y cada paso (suma y división entre 2).",
+        "Al menos un ejercicio con resultado fraccionario o decimal, y uno de encontrar el otro extremo con las ecuaciones planteadas y despejadas.",
+        "Al menos un ejercicio de punto medio y longitud, con la comprobación de que Pm queda a la misma distancia de los dos extremos."
+      ],
+      "errores": [
+        "Resta las coordenadas en lugar de sumarlas: para A(2, 4) y B(8, 10) obtiene (3, 3) en lugar de (5, 7).",
+        "Suma las coordenadas pero olvida dividir entre 2 (o divide sólo una de las dos).",
+        "Mezcla las coordenadas: suma una x con una y, o pone el promedio de las x en la coordenada y.",
+        "Se equivoca con los signos al sumar con negativos: −3 + 7 = −4, o −6 + 3 = 3.",
+        "Al buscar el otro extremo, escribe el punto medio como si fuera el extremo, o resta (2Pm − A) con el signo cambiado, o no multiplica por 2.",
+        "En los resultados fraccionarios, escribe −3/2 como −1.2 o 1.5 (pierde el signo o el valor)."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe la fórmula con los números sustituidos y cada paso (suma y división entre 2), con fracciones y con paréntesis en los negativos.",
+            "Usa el vocabulario adecuado (punto medio, extremos, promedio, coordenadas).",
+            "Escribe el resultado como un punto Pm(x, y) y, cuando es fracción, como fracción y como decimal."
+          ],
+          "n1": "Escribe sólo las coordenadas del resultado, sin la fórmula ni los pasos, y casi no usa vocabulario matemático.",
+          "n23": "Escribe algunos pasos pero omite otros (por ejemplo, no muestra la sustitución o la suma) y usa el vocabulario de manera limitada; escribe el resultado sin el formato de punto.",
+          "n4": "Escribe la fórmula sustituida y todos los pasos en casi todos los ejercicios, con el vocabulario adecuado, y expresa el resultado como punto; puede tener una omisión menor.",
+          "n5": "Expresa su trabajo por diferentes medios (fórmula sustituida con fracciones, pasos, decimales y, cuando se pide, un dibujo del segmento) con notación correcta, y explica de manera oral o escrita cómo encontraría el punto medio o el extremo de un segmento nuevo."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Suma las coordenadas x y, por separado, las coordenadas y, con los signos correctos (también con negativos).",
+            "Divide entre 2 cada suma y expresa el resultado como entero, fracción o decimal.",
+            "Trabaja cada coordenada por separado (el promedio de las x y el promedio de las y) y escribe el punto en orden (x, y)."
+          ],
+          "n1": "Aún no usa correctamente las expresiones algebraicas: resta en lugar de sumar, no divide entre 2 o mezcla las coordenadas x y y.",
+          "n23": "Hace uso de la sintaxis y la semántica del lenguaje algebraico: encuentra el punto medio cuando las coordenadas son positivas y las sumas son pares, pero se equivoca con los negativos o con los resultados fraccionarios.",
+          "n4": "Comprende y maneja las propiedades del lenguaje algebraico: encuentra correctamente el punto medio en casi todos los casos, incluso con negativos y con fracciones, y expresa el resultado en forma de fracción y decimal.",
+          "n5": "Dota de significado y generaliza las propiedades: explica por qué el punto medio es el promedio de las coordenadas y por qué no importa el orden de los extremos, y usa la fórmula con letras para obtener un extremo o el punto medio de cualquier segmento."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Identifica los datos de cada ejercicio (los dos extremos, o el punto medio y un extremo) y qué se pide.",
+            "En los ejercicios del otro extremo, plantea una ecuación para cada coordenada, (x₁ + x) ÷ 2 = x del punto medio, y la despeja.",
+            "Revisa su resultado: comprueba que el punto medio de los extremos obtenidos es el dado, o que Pm queda a la misma distancia de los dos extremos."
+          ],
+          "n1": "Usa los datos aleatoriamente: no distingue cuál es el punto medio y cuál un extremo, o escribe el punto medio como si fuera el extremo. No revisa.",
+          "n23": "Identifica los datos y obtiene el punto medio, pero en los ejercicios del otro extremo plantea sólo una ecuación o la despeja con errores (por ejemplo, no multiplica por 2); revisa poco.",
+          "n45": "Identifica los datos, plantea y despeja las ecuaciones del extremo desconocido y obtiene el punto medio y la longitud cuando se piden. Revisa que su resultado sea razonable (comprueba con la fórmula o con la distancia a los extremos), detecta y corrige sus errores y resuelve una situación nueva con el mismo método."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Explica por qué el punto medio es el promedio de las coordenadas (está justo en medio de los extremos).",
+            "Justifica que Pm está a la misma distancia de los dos extremos calculando las dos distancias con la fórmula.",
+            "Comprueba el extremo que encontró: el punto medio de A y B debe ser el Pm dado."
+          ],
+          "n1": "Defiende su resultado con frases como «así se hace» o «me salió», sin usar la fórmula ni comprobar.",
+          "n2": "Explica con sus palabras («está a la mitad entre los dos puntos») por qué calculó así el punto medio, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: comprueba con un caso numérico que el punto medio queda a la misma distancia de los extremos, o intercambia los extremos y obtiene el mismo punto medio, y da ejemplos de errores comunes.",
+          "n4": "Explica la estructura del argumento: el punto medio divide al segmento en dos partes iguales (hipótesis), por lo que sus coordenadas son el promedio de las de los extremos (conclusión). Comprueba la longitud de las dos mitades con la fórmula de la distancia.",
+          "n5": "Elabora una cadena de argumentos que generaliza: deduce la fórmula del punto medio con letras para cualquier segmento, justifica el procedimiento para encontrar un extremo desconocido y relaciona el punto medio con la distancia (cada mitad mide la mitad de la longitud del segmento)."
+        }
+      ]
     }
   ]
 }
