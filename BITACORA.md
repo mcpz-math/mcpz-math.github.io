@@ -1979,3 +1979,9 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Pendiente: la introducción a la circunferencia aún no tiene rúbrica con la matriz ni ejercicios con revisión (se pueden agregar si Carmen los quiere).
 - A pedido de Carmen, en `tema-07-circunferencia.html` se quitó la sección «Cómo se obtiene la ecuación» (los 4 pasos con Pitágoras). Quedan la figura, el recuadro con (x − h)² + (y − k)² = r² y el resto de la introducción.
 - A pedido de Carmen, en `tema-07-circunferencia.html` también se quitaron los **4 ejemplos** (y el aviso de los signos). La introducción queda con: qué es, sus elementos, que es una cónica, la figura, la ecuación y la tabla de las tres formas.
+
+## 2026-11-16 (Matemáticas 3, Tema 7: Circunferencia con centro en (0,0))
+- A pedido de Carmen, nueva página **`matematicas-3/tema-07-circunferencia-centro-origen.html`** con el contenido del subtema «Centro (0,0)», enlazada desde el bloque de ese subtema en `tema-07-circunferencia.html` («Ver contenido completo →»).
+  Contenido: qué se estudia; **la ecuación x² + y² = r²** (figura con el triángulo rectángulo y la distancia al origen) y el aviso de que a la derecha va r², no r; tabla del radio a la ecuación y al revés (con r = √número cuando no es cuadrado perfecto);
+  **¿un punto está sobre, dentro o fuera?** (x² + y² igual, menor o mayor que r², con tabla para x² + y² = 25); **la gráfica** de x² + y² = 25 con cuadrícula y los puntos (±5, 0), (0, ±5) y (3, 4), y cómo graficar (con compás, punta en el origen); 4 ejemplos (del radio a la ecuación, de la ecuación al radio, la circunferencia que pasa por (3, 4) y 3x² + 3y² = 48); y un resumen.
+- Pendiente: esta página aún no tiene ejercicios con revisión automática ni rúbrica con la matriz (se pueden agregar si Carmen los quiere). Los subtemas «Centro (h,k)» y «Ecuación general» siguen «Próximamente».

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circunferencia con centro en (0,0) — Matemáticas 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-07-circunferencia.html">← Circunferencia</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 3 · Tema 7 · Subtema</div>
+    <h1>Circunferencia con centro en (0,0)</h1>
+  </div>
+
+  <!-- 1. Qué vamos a estudiar -->
+  <p class="section-label">¿Qué vamos a estudiar?</p>
+  <div class="prose">
+    <p>Empezamos con el caso más sencillo: la circunferencia cuyo <strong>centro es el origen</strong>,
+       el punto <strong>(0, 0)</strong> del plano cartesiano. Recuerda que una circunferencia es el conjunto de
+       todos los puntos que están a la <strong>misma distancia</strong> (el radio r) del centro.</p>
+    <p>Vamos a ver cómo se escribe su ecuación, cómo encontrar el radio a partir de la ecuación (y al revés),
+       cómo saber si un punto está en la circunferencia y cómo graficarla.</p>
+  </div>
+
+  <!-- 2. La ecuación -->
+  <p class="section-label">La ecuación</p>
+  <figure class="graph-figure">
+    <svg viewBox="0 0 360 300" width="360" height="300" role="img" aria-label="Circunferencia con centro en el origen O, un punto P(x, y) sobre ella y el radio r, que es la hipotenusa de un triángulo rectángulo con catetos x y y">
+      <g stroke="#56604f" stroke-width="1.6" fill="none">
+        <line x1="20" y1="170" x2="340" y2="170"/>
+        <line x1="150" y1="290" x2="150" y2="14"/>
+      </g>
+      <circle cx="150" cy="170" r="110" fill="rgba(196,232,107,0.28)" stroke="#14301f" stroke-width="2.8"/>
+      <line x1="150" y1="170" x2="234" y2="170" stroke="#3f6b4a" stroke-width="2.2" stroke-dasharray="6 4"/>
+      <line x1="234" y1="170" x2="234" y2="99" stroke="#3f6b4a" stroke-width="2.2" stroke-dasharray="6 4"/>
+      <line x1="150" y1="170" x2="234" y2="99" stroke="#d9650b" stroke-width="3.2" stroke-linecap="round"/>
+      <circle cx="150" cy="170" r="5" fill="#14301f"/>
+      <circle cx="234" cy="99" r="5.5" fill="#d9650b" stroke="#14301f" stroke-width="1.5"/>
+      <g font-family="'IBM Plex Mono', monospace" font-size="15" fill="#14301f">
+        <text x="342" y="188">x</text>
+        <text x="158" y="16">y</text>
+        <text x="96" y="188">(0, 0)</text>
+        <text x="242" y="94">P(x, y)</text>
+        <text x="184" y="124" fill="#d9650b" font-weight="700">r</text>
+        <text x="186" y="190" fill="#3f6b4a">x</text>
+        <text x="242" y="140" fill="#3f6b4a">y</text>
+      </g>
+    </svg>
+    <figcaption>Un punto P(x, y) está en la circunferencia cuando su distancia al origen es el radio r.</figcaption>
+  </figure>
+  <div class="prose">
+    <p>La distancia del origen al punto P(x, y) es la hipotenusa de un triángulo rectángulo cuyos catetos miden
+       x y y, así que vale
+       <span style="font-family:'IBM Plex Mono',monospace; color:var(--forest); white-space:nowrap;"><span class="rad">√<span class="radicand">x² + y²</span></span></span>.
+       Como esa distancia debe ser igual al radio y elevamos al cuadrado los dos lados, llegamos a la ecuación:</p>
+  </div>
+  <div class="example-box">
+    <span class="eq">x² + y² = r²</span>
+    <p style="margin-top:1rem;">Es la ecuación de la circunferencia con <strong>centro (0, 0)</strong> y <strong>radio r</strong>.
+       Todos los puntos (x, y) que cumplen esta ecuación están en la circunferencia, y los que no la cumplen, no.</p>
+  </div>
+  <div class="callout">
+    <div class="k no-caps">¡Cuidado!</div>
+    <p>El número que está del lado derecho es <strong>r²</strong>, no r. En x² + y² = 25 el radio no es 25:
+       como r² = 25, el radio es <strong>r = 5</strong>.</p>
+  </div>
+
+  <!-- 3. Del radio a la ecuación y al revés -->
+  <p class="section-label">Del radio a la ecuación, y al revés</p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Radio r</th><th>r²</th><th>Ecuación</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>1</td><td>x² + y² = 1</td></tr>
+        <tr><td>3</td><td>9</td><td>x² + y² = 9</td></tr>
+        <tr><td>4</td><td>16</td><td>x² + y² = 16</td></tr>
+        <tr><td>5</td><td>25</td><td>x² + y² = 25</td></tr>
+        <tr><td>7</td><td>49</td><td>x² + y² = 49</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="prose">
+    <p>Para ir <strong>del radio a la ecuación</strong>, eleva el radio al cuadrado y escríbelo del lado derecho.
+       Para ir <strong>de la ecuación al radio</strong>, saca la raíz cuadrada (positiva) del número del lado derecho:
+       en x² + y² = 49, r = √49 = 7. Si el número del lado derecho no es un cuadrado perfecto, el radio se deja con
+       raíz: en x² + y² = 7, r = √7.</p>
+  </div>
+
+  <!-- 4. Un punto, está en la circunferencia? -->
+  <p class="section-label">¿Un punto está en la circunferencia?</p>
+  <div class="prose">
+    <p>Para saberlo, <strong>sustituye</strong> las coordenadas del punto en x² + y² y compara el resultado con r²:</p>
+  </div>
+  <div class="example-box">
+    <ul class="def-list">
+      <li>Si <strong>x² + y² = r²</strong>, el punto está <strong>sobre</strong> la circunferencia.</li>
+      <li>Si <strong>x² + y² &lt; r²</strong>, el punto está <strong>dentro</strong> (más cerca del centro que el radio).</li>
+      <li>Si <strong>x² + y² &gt; r²</strong>, el punto está <strong>fuera</strong> (más lejos del centro que el radio).</li>
+    </ul>
+  </div>
+  <p class="section-label no-caps">Con la circunferencia x² + y² = 25</p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Punto</th><th>x² + y²</th><th>Comparado con 25</th><th>Dónde está</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>(3, 4)</td><td>9 + 16 = 25</td><td>igual</td><td><strong>Sobre</strong> la circunferencia</td></tr>
+        <tr><td>(−5, 0)</td><td>25 + 0 = 25</td><td>igual</td><td><strong>Sobre</strong> la circunferencia</td></tr>
+        <tr><td>(2, 3)</td><td>4 + 9 = 13</td><td>menor</td><td><strong>Dentro</strong></td></tr>
+        <tr><td>(4, 4)</td><td>16 + 16 = 32</td><td>mayor</td><td><strong>Fuera</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. Gráfica -->
+  <p class="section-label">La gráfica</p>
+  <figure class="graph-figure">
+    <svg viewBox="0 0 378 320" width="378" height="320" role="img" aria-label="Gráfica de la circunferencia x al cuadrado más y al cuadrado igual a 25, con centro en el origen y radio 5">
+      <g transform="translate(18,0)">
+      <g stroke="#dde2dc" stroke-width="1">
+        <line x1="30" y1="10" x2="30" y2="310"/><line x1="55" y1="10" x2="55" y2="310"/><line x1="80" y1="10" x2="80" y2="310"/>
+        <line x1="105" y1="10" x2="105" y2="310"/><line x1="130" y1="10" x2="130" y2="310"/><line x1="155" y1="10" x2="155" y2="310"/>
+        <line x1="205" y1="10" x2="205" y2="310"/><line x1="230" y1="10" x2="230" y2="310"/><line x1="255" y1="10" x2="255" y2="310"/>
+        <line x1="280" y1="10" x2="280" y2="310"/><line x1="305" y1="10" x2="305" y2="310"/><line x1="330" y1="10" x2="330" y2="310"/>
+        <line x1="30" y1="10" x2="330" y2="10"/><line x1="30" y1="35" x2="330" y2="35"/><line x1="30" y1="60" x2="330" y2="60"/>
+        <line x1="30" y1="85" x2="330" y2="85"/><line x1="30" y1="110" x2="330" y2="110"/><line x1="30" y1="135" x2="330" y2="135"/>
+        <line x1="30" y1="185" x2="330" y2="185"/><line x1="30" y1="210" x2="330" y2="210"/><line x1="30" y1="235" x2="330" y2="235"/>
+        <line x1="30" y1="260" x2="330" y2="260"/><line x1="30" y1="285" x2="330" y2="285"/><line x1="30" y1="310" x2="330" y2="310"/>
+      </g>
+      <g stroke="#56604f" stroke-width="1.8" fill="none">
+        <line x1="24" y1="160" x2="338" y2="160"/>
+        <line x1="180" y1="316" x2="180" y2="4"/>
+      </g>
+      <circle cx="180" cy="160" r="125" fill="rgba(196,232,107,0.28)" stroke="#14301f" stroke-width="3"/>
+      <g fill="#c4e86b" stroke="#14301f" stroke-width="1.8">
+        <circle cx="305" cy="160" r="5.5"/><circle cx="55" cy="160" r="5.5"/>
+        <circle cx="180" cy="35" r="5.5"/><circle cx="180" cy="285" r="5.5"/>
+      </g>
+      <circle cx="255" cy="60" r="5.5" fill="#d9650b" stroke="#14301f" stroke-width="1.8"/>
+      <circle cx="180" cy="160" r="4" fill="#14301f"/>
+      <g font-family="'IBM Plex Mono', monospace" font-size="13" fill="#14301f">
+        <text x="340" y="178">x</text>
+        <text x="188" y="14">y</text>
+        <text x="308" y="178">(5, 0)</text>
+        <text x="-12" y="178">(−5, 0)</text>
+        <text x="188" y="32">(0, 5)</text>
+        <text x="188" y="300">(0, −5)</text>
+        <text x="262" y="56">(3, 4)</text>
+        <text x="130" y="176">(0, 0)</text>
+      </g>
+      </g>
+    </svg>
+    <figcaption>x² + y² = 25: centro (0, 0) y radio 5. Cada cuadrito de la cuadrícula mide 1 unidad.</figcaption>
+  </figure>
+
+  <div class="prose">
+    <p>Para <strong>graficarla</strong>, ubica el centro en el origen, calcula el radio (la raíz cuadrada del número del lado derecho),
+       marca los cuatro puntos donde la circunferencia corta a los ejes, que son <strong>(r, 0)</strong>, <strong>(−r, 0)</strong>,
+       <strong>(0, r)</strong> y <strong>(0, −r)</strong>, y traza la curva redonda que pasa por ellos. Con un compás, pon la punta en
+       el origen y abre el compás hasta el radio r.</p>
+  </div>
+
+  <!-- 6. Ejemplos -->
+  <p class="section-label">Ejemplos</p>
+
+  <div class="example-box">
+    <h2>Ejemplo 1: del radio a la ecuación</h2>
+    <p>Escribe la ecuación de la circunferencia con centro (0, 0) y radio 7.</p>
+    <ol class="steps">
+      <li><span>Eleva el radio al cuadrado: r² = 7² = 49.</span></li>
+      <li><span>Sustituye en x² + y² = r².</span></li>
+    </ol>
+    <span class="eq">x² + y² = 49</span>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 2: de la ecuación al radio</h2>
+    <span class="eq">x² + y² = 36</span>
+    <ol class="steps">
+      <li><span>El centro es el origen, <strong>(0, 0)</strong>, porque no hay números restando a x ni a y.</span></li>
+      <li><span>r² = 36, entonces <strong>r = 6</strong> (el radio es la raíz positiva).</span></li>
+    </ol>
+    <p><strong>Centro (0, 0) y radio 6.</strong></p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 3: la circunferencia que pasa por un punto</h2>
+    <p>Encuentra la ecuación de la circunferencia con centro (0, 0) que pasa por el punto (3, 4).</p>
+    <ol class="steps">
+      <li><span>El punto (3, 4) está en la circunferencia, así que sus coordenadas cumplen x² + y² = r².</span></li>
+      <li><span>Sustituye x = 3 y y = 4: r² = 3² + 4² = 9 + 16 = <strong>25</strong>.</span></li>
+    </ol>
+    <span class="eq">x² + y² = 25</span>
+    <p style="margin-top:1rem;">El radio es 5. Fíjate que no hace falta calcular la raíz para escribir la ecuación.</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 4: cuando los coeficientes no son 1</h2>
+    <span class="eq">3x² + 3y² = 48</span>
+    <ol class="steps">
+      <li><span>Los coeficientes de x² y de y² son iguales (A = C = 3), así que sí es una circunferencia.</span></li>
+      <li><span>Divide toda la ecuación entre 3: <strong>x² + y² = 16</strong>.</span></li>
+      <li><span>Ahora se lee igual que antes: r² = 16, entonces <strong>r = 4</strong>.</span></li>
+    </ol>
+    <p><strong>Centro (0, 0) y radio 4.</strong></p>
+  </div>
+
+  <!-- 7. Resumen -->
+  <p class="section-label">Resumen</p>
+  <div class="example-box">
+    <span class="eq">x² + y² = r²</span>
+    <ul class="def-list">
+      <li>El <strong>centro</strong> es el origen (0, 0).</li>
+      <li>El <strong>radio</strong> es la raíz cuadrada (positiva) del número del lado derecho: r = √(r²).</li>
+      <li>Un punto está <strong>sobre</strong>, <strong>dentro</strong> o <strong>fuera</strong> de la circunferencia según x² + y² sea igual, menor o mayor que r².</li>
+      <li>Corta a los ejes en (r, 0), (−r, 0), (0, r) y (0, −r).</li>
+    </ul>
+  </div>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>
