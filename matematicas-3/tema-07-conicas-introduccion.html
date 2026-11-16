@@ -28,44 +28,36 @@
        Según cómo inclines el plano, aparece una de estas cuatro curvas:</p>
   </div>
 
-  <div class="case-grid">
+  <style>
+    .cortes { grid-template-columns: 1fr; }
+    @media (min-width: 560px) { .cortes { grid-template-columns: repeat(2, 1fr); } }
+    .cortes .case-card svg { width: 100%; max-width: 260px; height: auto; }
+  </style>
+  <div class="case-grid cortes">
     <div class="case-card">
-      <svg viewBox="0 0 120 100" width="120" height="100" role="img" aria-label="Circunferencia">
-        <line x1="10" y1="50" x2="110" y2="50" stroke="#cbd5c0" stroke-width="1"/>
-        <line x1="60" y1="8" x2="60" y2="92" stroke="#cbd5c0" stroke-width="1"/>
-        <circle cx="60" cy="50" r="34" fill="none" stroke="#14301f" stroke-width="2.4"/>
-      </svg>
+      <svg class="corte" data-corte="circ" viewBox="0 0 220 260" role="img" aria-label="Un plano horizontal corta el cono y marca una circunferencia"></svg>
       <h3>Circunferencia</h3>
-      <p>El plano corta el cono de forma <strong>horizontal</strong>.</p>
+      <p>El plano corta el cono de forma <strong>horizontal</strong> (perpendicular al eje del cono).</p>
     </div>
     <div class="case-card">
-      <svg viewBox="0 0 120 100" width="120" height="100" role="img" aria-label="Elipse">
-        <line x1="10" y1="50" x2="110" y2="50" stroke="#cbd5c0" stroke-width="1"/>
-        <line x1="60" y1="8" x2="60" y2="92" stroke="#cbd5c0" stroke-width="1"/>
-        <ellipse cx="60" cy="50" rx="46" ry="26" fill="none" stroke="#14301f" stroke-width="2.4"/>
-      </svg>
+      <svg class="corte" data-corte="elip" viewBox="0 0 220 260" role="img" aria-label="Un plano inclinado corta todo alrededor del cono y marca una elipse"></svg>
       <h3>Elipse</h3>
-      <p>El plano se <strong>inclina un poco</strong> y corta todo un lado del cono.</p>
+      <p>El plano se <strong>inclina un poco</strong> y corta todo alrededor del cono, sin llegar a ser paralelo a un lado.</p>
     </div>
     <div class="case-card">
-      <svg viewBox="0 0 120 100" width="120" height="100" role="img" aria-label="Parábola">
-        <line x1="10" y1="50" x2="110" y2="50" stroke="#cbd5c0" stroke-width="1"/>
-        <line x1="60" y1="8" x2="60" y2="92" stroke="#cbd5c0" stroke-width="1"/>
-        <path d="M 24 8 Q 60 100 96 8" fill="none" stroke="#14301f" stroke-width="2.4"/>
-      </svg>
+      <svg class="corte" data-corte="parab" viewBox="0 0 220 260" role="img" aria-label="Un plano paralelo a un lado del cono marca una parábola"></svg>
       <h3>Parábola</h3>
-      <p>El plano es <strong>paralelo</strong> a un lado del cono.</p>
+      <p>El plano es <strong>paralelo a un lado</strong> del cono (a una de sus rectas generatrices). La curva no se cierra.</p>
     </div>
     <div class="case-card">
-      <svg viewBox="0 0 120 100" width="120" height="100" role="img" aria-label="Hipérbola">
-        <line x1="10" y1="50" x2="110" y2="50" stroke="#cbd5c0" stroke-width="1"/>
-        <line x1="60" y1="8" x2="60" y2="92" stroke="#cbd5c0" stroke-width="1"/>
-        <path d="M 104 10 Q 72 50 104 90" fill="none" stroke="#14301f" stroke-width="2.4"/>
-        <path d="M 16 10 Q 48 50 16 90" fill="none" stroke="#14301f" stroke-width="2.4"/>
-      </svg>
+      <svg class="corte" data-corte="hip" viewBox="0 0 220 260" role="img" aria-label="Un plano más vertical que los lados del cono corta los dos conos y marca una hipérbola de dos ramas"></svg>
       <h3>Hipérbola</h3>
-      <p>El plano es <strong>casi vertical</strong> y corta los dos conos: salen dos ramas.</p>
+      <p>El plano es <strong>más vertical</strong> que los lados del cono y corta <strong>los dos conos</strong>: salen dos ramas.</p>
     </div>
+  </div>
+  <div class="prose">
+    <p style="font-size:0.9rem; color:var(--ink-soft);">En cada dibujo, el <strong>plano</strong> es el rectángulo verde-lima y la
+       <strong style="color:#d9650b;">curva naranja</strong> es la cónica que queda marcada en el cono.</p>
   </div>
 
   <div class="prose">
@@ -292,6 +284,60 @@
       return d === 0 ? 'parab' : 'hip';
     }
     function num(n) { return n < 0 ? M + Math.abs(n) : String(n); }
+
+    // ---------- Dibujos: cómo el plano corta al cono ----------
+    (function () {
+      var TAU = 22 * Math.PI / 180, S = 70, CX = 110, CY = 132, H = 1.25, NS = 'http://www.w3.org/2000/svg';
+      var PI = Math.PI, a = Math.asin(Math.tan(TAU));
+      function P(x, y, z) { return [CX + S * x, CY - S * (z * Math.cos(TAU) + y * Math.sin(TAU))]; }
+      function path(pts, close) { return 'M' + pts.map(function (p) { return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' L') + (close ? ' Z' : ''); }
+      function rim(z, t0, t1, n) { var r = []; for (var i = 0; i <= n; i++) { var t = t0 + (t1 - t0) * i / n; r.push(P(H * Math.cos(t), H * Math.sin(t), z)); } return r; }
+      function el(svg, name, attrs) { var e = document.createElementNS(NS, name); for (var k in attrs) e.setAttribute(k, attrs[k]); svg.appendChild(e); return e; }
+
+      function cone(svg) {
+        var A = P(0, 0, 0), top = rim(H, -a, PI + a, 48), bot = rim(-H, a, a - (PI + 2 * a), 48);
+        // cono de arriba: vértice → punta derecha → borde de atrás → punta izquierda
+        el(svg, 'path', { d: path([A].concat(top), true), fill: 'rgba(63,107,74,0.14)', stroke: '#3f6b4a', 'stroke-width': 1.6, 'stroke-linejoin': 'round' });
+        el(svg, 'path', { d: path(rim(H, PI + a, 2 * PI - a, 30)), fill: 'none', stroke: '#3f6b4a', 'stroke-width': 1.2 });
+        // cono de abajo
+        el(svg, 'path', { d: path([A].concat(bot), true), fill: 'rgba(63,107,74,0.14)', stroke: '#3f6b4a', 'stroke-width': 1.6, 'stroke-linejoin': 'round' });
+        el(svg, 'path', { d: path(rim(-H, a, PI - a, 30)), fill: 'none', stroke: '#3f6b4a', 'stroke-width': 1.1, 'stroke-dasharray': '3 3', opacity: 0.8 });
+        // eje del cono
+        el(svg, 'path', { d: path([P(0, 0, -H - 0.12), P(0, 0, H + 0.12)]), stroke: '#56604f', 'stroke-width': 1, 'stroke-dasharray': '1 4', 'stroke-linecap': 'round', fill: 'none' });
+      }
+      function plane(svg, C, u, v, u0, u1, s0, s1) { // paralelogramo: centro C + x·u + s·v
+        function Q(x, s) { return P(C[0] + x * u[0] + s * v[0], C[1] + x * u[1] + s * v[1], C[2] + x * u[2] + s * v[2]); }
+        el(svg, 'path', { d: path([Q(u0, s0), Q(u1, s0), Q(u1, s1), Q(u0, s1)], true), fill: 'rgba(196,232,107,0.5)', stroke: '#14301f', 'stroke-width': 1.5, 'stroke-linejoin': 'round' });
+      }
+      function curve(svg, pts) { el(svg, 'path', { d: path(pts), fill: 'none', stroke: '#d9650b', 'stroke-width': 3.2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }); }
+      function viaT(c, m, zmax, t0, n) { // z = c / (1 − m·sen t): puntos del cono z² = x² + y² que están en el plano
+        var pts = [];
+        for (var i = 0; i <= n; i++) {
+          var t = t0 + 2 * PI * i / n, d = 1 - m * Math.sin(t); if (d <= 1e-6) continue;
+          var z = c / d; if (z > zmax) continue; pts.push(P(z * Math.cos(t), z * Math.sin(t), z));
+        }
+        return pts;
+      }
+      var ZMAX = 1.1, ESC = {
+        circ: function (svg) {
+          cone(svg); plane(svg, [0, 0, 0.7], [1, 0, 0], [0, 1, 0], -1.05, 1.05, -1.05, 1.05);
+          var pts = []; for (var i = 0; i <= 90; i++) { var t = 2 * PI * i / 90; pts.push(P(0.7 * Math.cos(t), 0.7 * Math.sin(t), 0.7)); } curve(svg, pts);
+        },
+        elip: function (svg) {
+          cone(svg); plane(svg, [0, 0, 0.6], [1, 0, 0], [0, 1, 0.4], -1.0, 1.0, -0.75, 1.15); curve(svg, viaT(0.6, 0.4, 9, 0, 120));
+        },
+        parab: function (svg) {
+          cone(svg); plane(svg, [0, 0, 0.5], [1, 0, 0], [0, 1, 1], -1.0, 1.0, -0.4, ZMAX - 0.5); curve(svg, viaT(0.5, 1, ZMAX, PI / 2, 400));
+        },
+        hip: function (svg) {
+          var y0 = -0.35, X = Math.sqrt(ZMAX * ZMAX - y0 * y0), up = [], dn = [], i, x, z;
+          cone(svg); plane(svg, [0, y0, 0], [1, 0, 0], [0, 0, 1], -1.15, 1.15, -1.15, 1.15);
+          for (i = 0; i <= 60; i++) { x = -X + 2 * X * i / 60; z = Math.sqrt(x * x + y0 * y0); up.push(P(x, y0, z)); dn.push(P(x, y0, -z)); }
+          curve(svg, up); curve(svg, dn);
+        }
+      };
+      [].forEach.call(document.querySelectorAll('svg.corte'), function (svg) { ESC[svg.getAttribute('data-corte')](svg); });
+    })();
 
     // ---------- Probador ----------
     var iA = document.getElementById('pc-A'), iB = document.getElementById('pc-B'), iC = document.getElementById('pc-C'), out = document.getElementById('pc-out');
