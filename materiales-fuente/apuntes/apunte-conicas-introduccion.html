@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Apunte: Introducción a las cónicas</title>
+<link rel="stylesheet" href="apunte.css">
+</head>
+<body>
+
+<div class="head">
+  <div class="who"><b>DTI. Maria del Carmen Pérez Zarate</b> · Matemáticas 3 · Tema 7</div>
+  <div class="name">Nombre: ____________________________  Grupo: ________</div>
+</div>
+<div class="kicker">Apunte de clase</div>
+<h1>Introducción a las cónicas</h1>
+
+<h2>¿Qué son las cónicas?</h2>
+<p>Si cortas un <b>cono doble</b> con un <b>plano</b>, la curva que queda marcada en el corte es una <b>cónica</b>. Según cómo inclines el plano, sale una de estas cuatro curvas (el plano es el rectángulo verde-lima y la curva naranja es la cónica):</p>
+<div class="grid4">
+  <div class="c"><div class="c3d" data-corte="circ"></div><b>Circunferencia</b><div class="d">El plano corta el cono de forma horizontal (perpendicular al eje).</div></div>
+  <div class="c"><div class="c3d" data-corte="elip"></div><b>Elipse</b><div class="d">El plano se inclina un poco y corta todo alrededor del cono.</div></div>
+  <div class="c"><div class="c3d" data-corte="parab"></div><b>Parábola</b><div class="d">El plano es paralelo a un lado del cono. La curva no se cierra.</div></div>
+  <div class="c"><div class="c3d" data-corte="hip"></div><b>Hipérbola</b><div class="d">El plano es más vertical que los lados y corta los dos conos: salen dos ramas.</div></div>
+</div>
+<p><b>Cerradas:</b> circunferencia y elipse. <b>Abiertas:</b> parábola (una rama) e hipérbola (dos ramas).</p>
+
+<h2>La ecuación general de segundo grado</h2>
+<div class="formula">Ax² + Bxy + Cy² + Dx + Ey + F = 0</div>
+<p>A, B, C, D, E y F son números (coeficientes); A, B y C no pueden ser los tres cero. <b>A</b> es el coeficiente de x², <b>C</b> el de y², <b>B</b> el del término xy, <b>D</b> y <b>E</b> los de x y de y, y <b>F</b> el número solo.</p>
+<div class="box"><b class="t">En este curso: B = 0</b>Las cónicas tienen sus ejes paralelos a los ejes x y y, así que no aparece el término xy: <span class="eqline">Ax² + Cy² + Dx + Ey + F = 0</span>. Para clasificarla sólo miramos <b>A y C</b>.</div>
+
+<h2>¿De qué cónica se trata? Mira A y C</h2>
+<table>
+  <tr><th>Los coeficientes de x² y y²…</th><th>Condición</th><th>Cónica</th></tr>
+  <tr><td>son <b>iguales</b> (mismo número y mismo signo)</td><td>A = C</td><td><b>Circunferencia</b></td></tr>
+  <tr><td>tienen el <b>mismo signo</b> pero son <b>diferentes</b></td><td>AC &gt; 0 y A ≠ C</td><td><b>Elipse</b></td></tr>
+  <tr><td>tienen <b>signos contrarios</b></td><td>AC &lt; 0</td><td><b>Hipérbola</b></td></tr>
+  <tr><td><b>uno de los dos vale 0</b> (un solo cuadrado)</td><td>A = 0 o C = 0 (no los dos)</td><td><b>Parábola</b></td></tr>
+</table>
+<div class="box"><b class="t">¿Por qué funciona?</b>Al completar cuadrados: cuadrados con el <b>mismo signo</b> dan una <i>suma</i> de cuadrados (circunferencia o elipse); con <b>signos contrarios</b> dan una <i>resta</i> (hipérbola); y con <b>un solo cuadrado</b> la otra letra queda con exponente 1 (parábola).</div>
+
+<h2>Ejemplos</h2>
+<table>
+  <tr><th>Ecuación</th><th>A</th><th>C</th><th>Cónica</th></tr>
+  <tr><td class="eqline">x² + y² − 6x + 4y − 3 = 0</td><td>1</td><td>1</td><td><b>Circunferencia</b> (A = C)</td></tr>
+  <tr><td class="eqline">4x² + 9y² − 16x + 18y − 11 = 0</td><td>4</td><td>9</td><td><b>Elipse</b> (mismo signo, distintos)</td></tr>
+  <tr><td class="eqline">x² − 4y² − 2x + 8y − 7 = 0</td><td>1</td><td>−4</td><td><b>Hipérbola</b> (signos contrarios)</td></tr>
+  <tr><td class="eqline">y² − 8x + 2y + 9 = 0</td><td>0</td><td>1</td><td><b>Parábola</b> (falta x²)</td></tr>
+  <tr><td class="eqline">−3x² − 3y² + 12x − 6y + 5 = 0</td><td>−3</td><td>−3</td><td><b>Circunferencia</b> (A = C aunque sean negativos)</td></tr>
+</table>
+<div class="warn"><b class="t">Ojo</b>Cuando falta x² o y², su coeficiente vale <b>0</b> (no 1). Los números que acompañan a x y a y (D y E) <b>no</b> son A ni C.</div>
+<div class="box"><b class="t">Cónicas degeneradas</b>La clasificación dice qué tipo de ecuación es. Al completar cuadrados puede resultar sólo un punto (x² + y² = 0), ningún punto (x² + y² = −4) o dos rectas (x² − y² = 0). En este curso trabajamos con las cónicas “de verdad”.</div>
+
+<div class="notas"><h3>Mis notas</h3><div class="l"></div><div class="l"></div><div class="l"></div></div>
+<div class="pie">mcpz-math.github.io · Matemáticas 3 · Tema 7: Cónicas</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+  var holders = [].slice.call(document.querySelectorAll('.c3d'));
+  function done() { document.body.setAttribute('data-listo', '1'); }
+  if (!window.THREE) { holders.forEach(function (h) { h.textContent = '(dibujo en 3D no disponible)'; }); done(); return; }
+  var T = THREE, H = 1.25, PI = Math.PI;
+  function curveMesh(pts, closed) {
+    var c = new T.CatmullRomCurve3(pts, closed);
+    var m = new T.Mesh(new T.TubeGeometry(c, pts.length * 2, 0.045, 10, closed), new T.MeshBasicMaterial({ color: 0xd9650b, transparent: true, depthTest: false }));
+    m.renderOrder = 5; return m;
+  }
+  function planeMesh(point, normal, size) {
+    var m = new T.Mesh(new T.PlaneGeometry(size, size), new T.MeshBasicMaterial({ color: 0xc4e86b, transparent: true, opacity: 0.55, side: T.DoubleSide, depthWrite: false }));
+    m.position.copy(point); m.quaternion.setFromUnitVectors(new T.Vector3(0, 0, 1), normal.clone().normalize());
+    m.add(new T.LineSegments(new T.EdgesGeometry(m.geometry), new T.LineBasicMaterial({ color: 0x14301f }))); m.renderOrder = 3; return m;
+  }
+  function sceneFor(type, g) {
+    var i, t, y, pts, c, m;
+    if (type === 'circ') {
+      g.add(planeMesh(new T.Vector3(0, 0.7, 0), new T.Vector3(0, 1, 0), 2.7));
+      pts = []; for (i = 0; i < 72; i++) { t = 2 * PI * i / 72; pts.push(new T.Vector3(0.7 * Math.cos(t), 0.7, 0.7 * Math.sin(t))); } g.add(curveMesh(pts, true));
+    } else if (type === 'elip') {
+      c = 0.6; m = 0.4; g.add(planeMesh(new T.Vector3(0, c, 0), new T.Vector3(0, 1, -m), 2.6));
+      pts = []; for (i = 0; i < 96; i++) { t = 2 * PI * i / 96; y = c / (1 - m * Math.sin(t)); pts.push(new T.Vector3(y * Math.cos(t), y, y * Math.sin(t))); } g.add(curveMesh(pts, true));
+    } else if (type === 'parab') {
+      c = 0.5; g.add(planeMesh(new T.Vector3(0, c, 0), new T.Vector3(0, 1, -1), 2.7));
+      pts = []; for (i = 1; i < 800; i++) { t = PI / 2 + 2 * PI * i / 800; y = c / (1 - Math.sin(t)); if (y <= 1.2) pts.push(new T.Vector3(y * Math.cos(t), y, y * Math.sin(t))); } g.add(curveMesh(pts, false));
+    } else {
+      var z0 = 0.4, X = Math.sqrt(1.2 * 1.2 - z0 * z0), a = [], b = [];
+      g.add(planeMesh(new T.Vector3(0, 0, z0), new T.Vector3(0, 0, 1), 2.7));
+      for (i = 0; i <= 50; i++) { var x = -X + 2 * X * i / 50, yy = Math.sqrt(x * x + z0 * z0); a.push(new T.Vector3(x, yy, z0)); b.push(new T.Vector3(x, -yy, z0)); }
+      g.add(curveMesh(a, false)); g.add(curveMesh(b, false));
+    }
+  }
+  holders.forEach(function (holder) {
+    var W = 560, Hh = 580, renderer;
+    try { renderer = new T.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true }); } catch (e) { holder.textContent = '(dibujo en 3D no disponible)'; return; }
+    renderer.setSize(W, Hh); renderer.setClearColor(0xffffff, 0);
+    var scene = new T.Scene(), cam = new T.PerspectiveCamera(32, W / Hh, 0.1, 50), g = new T.Group(), k;
+    cam.position.set(0, 0.8, 6.4); cam.lookAt(0, 0, 0);
+    scene.add(new T.AmbientLight(0xffffff, 0.8)); var dl = new T.DirectionalLight(0xffffff, 0.6); dl.position.set(2, 4, 3); scene.add(dl); scene.add(g);
+    var cm = new T.MeshLambertMaterial({ color: 0x3f6b4a, transparent: true, opacity: 0.3, side: T.DoubleSide, depthWrite: false });
+    var up = new T.Mesh(new T.CylinderGeometry(H, 0, H, 64, 1, true), cm); up.position.y = H / 2;
+    var dn = new T.Mesh(new T.CylinderGeometry(0, H, H, 64, 1, true), cm); dn.position.y = -H / 2; g.add(up, dn);
+    var lm = new T.LineBasicMaterial({ color: 0x14301f, transparent: true, opacity: 0.5 }), seg = [], ring = [], ring2 = [];
+    for (k = 0; k < 24; k++) { var q = 2 * PI * k / 24, cx = H * Math.cos(q), cz = H * Math.sin(q); seg.push(0, 0, 0, cx, H, cz, 0, 0, 0, cx, -H, cz); }
+    for (k = 0; k <= 64; k++) { var r = 2 * PI * k / 64; ring.push(new T.Vector3(H * Math.cos(r), H, H * Math.sin(r))); ring2.push(new T.Vector3(H * Math.cos(r), -H, H * Math.sin(r))); }
+    var gl = new T.BufferGeometry(); gl.setAttribute('position', new T.Float32BufferAttribute(seg, 3));
+    g.add(new T.LineSegments(gl, lm), new T.Line(new T.BufferGeometry().setFromPoints(ring), new T.LineBasicMaterial({ color: 0x14301f })), new T.Line(new T.BufferGeometry().setFromPoints(ring2), new T.LineBasicMaterial({ color: 0x14301f })));
+    var apex = new T.Mesh(new T.SphereGeometry(0.05, 12, 12), new T.MeshBasicMaterial({ color: 0x14301f })); g.add(apex);
+    sceneFor(holder.getAttribute('data-corte'), g);
+    g.rotation.set(0.38, -0.7, 0);
+    renderer.render(scene, cam);
+    var img = new Image(); img.src = renderer.domElement.toDataURL('image/png'); img.alt = 'Corte del cono';
+    holder.appendChild(img);
+  });
+  done();
+})();
+</script>
+</body>
+</html>

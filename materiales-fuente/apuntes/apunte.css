@@ -1,0 +1,50 @@
+/* Estilo compartido de los apuntes en PDF ("Compás", versión para imprimir) */
+@page { size: Letter; margin: 13mm 14mm 14mm 14mm; }
+:root { --forest: #14301f; --moss: #3f6b4a; --lime: #c4e86b; --ink: #22301f; --soft: #56604f; --line: #b9c7b0; --box: #eef6e2; --orange: #d9650b; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html { font-size: 10.5pt; }
+body { margin: 0; font-family: 'Segoe UI', Calibri, Arial, sans-serif; color: var(--ink); line-height: 1.38; }
+.head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--lime); padding-bottom: 4pt; margin-bottom: 8pt; }
+.head .who { font-size: 8.5pt; color: var(--soft); }
+.head .who b { color: var(--forest); }
+.head .name { font-size: 8.5pt; color: var(--soft); text-align: right; }
+h1 { font-size: 19pt; color: var(--forest); margin: 0 0 1pt; line-height: 1.15; }
+.kicker { font-size: 8.5pt; letter-spacing: .08em; text-transform: uppercase; color: var(--moss); margin: 0 0 2pt; font-weight: 700; }
+h2 { font-size: 12.5pt; color: var(--forest); margin: 10pt 0 3pt; padding-bottom: 1.5pt; border-bottom: 1.5px solid var(--lime); break-after: avoid; }
+h3 { font-size: 10.5pt; color: var(--forest); margin: 6pt 0 2pt; break-after: avoid; }
+p { margin: 3pt 0 4pt; }
+ul, ol { margin: 2pt 0 5pt; padding-left: 16pt; }
+li { margin: 1.5pt 0; }
+.box { background: var(--box); border: 1.2px solid var(--line); border-left: 4px solid var(--moss); border-radius: 4pt; padding: 5pt 8pt; margin: 5pt 0 7pt; break-inside: avoid; }
+.box > :first-child { margin-top: 0; } .box > :last-child { margin-bottom: 0; }
+.formula { font-family: 'Cambria Math', 'Consolas', monospace; font-weight: 700; font-size: 13pt; color: var(--forest); text-align: center; background: #fff; border: 1.5px solid var(--forest); border-radius: 5pt; padding: 4pt 8pt; margin: 5pt 0 7pt; break-inside: avoid; }
+.eqline { font-family: 'Cambria Math', 'Consolas', monospace; color: var(--forest); font-weight: 700; }
+.warn { background: #fff4e5; border: 1.2px solid #f0c48a; border-left: 4px solid var(--orange); border-radius: 4pt; padding: 5pt 8pt; margin: 5pt 0 7pt; break-inside: avoid; }
+.warn b.t, .box b.t { display: block; font-size: 8.5pt; text-transform: uppercase; letter-spacing: .07em; color: var(--moss); margin-bottom: 1pt; }
+.warn b.t { color: var(--orange); }
+table { border-collapse: collapse; width: 100%; margin: 4pt 0 7pt; break-inside: avoid; }
+th { background: var(--forest); color: #fff; text-align: left; font-size: 9.5pt; padding: 3pt 6pt; }
+td { border-bottom: 1px solid var(--line); padding: 3pt 6pt; font-size: 10pt; }
+tr:nth-child(even) td { background: #f7faf1; }
+.cols { display: flex; gap: 10pt; align-items: flex-start; }
+.cols > * { flex: 1; min-width: 0; }
+.fig { text-align: center; break-inside: avoid; margin: 4pt 0 6pt; }
+.fig svg, .fig img, .fig canvas { max-width: 100%; height: auto; }
+.fig .cap { font-size: 8.5pt; color: var(--soft); margin-top: 1pt; }
+.grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 6pt 10pt; }
+.grid4 .c { border: 1px solid var(--line); border-radius: 5pt; padding: 3pt 4pt 5pt; text-align: center; break-inside: avoid; }
+.grid4 .c b { color: var(--forest); font-size: 10.5pt; }
+.grid4 .c .d { font-size: 8.8pt; color: var(--soft); }
+.grid4 .c img { width: 78%; max-width: 190px; display: block; margin: 0 auto; }
+.ej { border: 1px solid var(--line); border-radius: 5pt; padding: 4pt 8pt; margin: 4pt 0 6pt; break-inside: avoid; }
+.ej h3 { margin-top: 0; }
+.steps { list-style: none; counter-reset: p; padding-left: 0; }
+.steps li { counter-increment: p; display: block; padding-left: 17pt; position: relative; margin: 2pt 0; }
+.steps li::before { content: counter(p); position: absolute; left: 0; top: 0.5pt; width: 12.5pt; height: 12.5pt; border-radius: 50%; background: var(--moss); color: #fff; font-size: 8pt; text-align: center; line-height: 12.5pt; font-weight: 700; }
+.frac { display: inline-block; vertical-align: middle; text-align: center; line-height: 1.15; margin: 0 1pt; }
+.frac .n { display: block; border-bottom: 1px solid currentColor; padding: 0 2pt 0.5pt; }
+.frac .d { display: block; padding: 0.5pt 2pt 0; }
+.rad { white-space: nowrap; } .radicand { border-top: 1px solid currentColor; padding: 0 1pt 0 2pt; margin-left: -1pt; }
+.notas { margin-top: 8pt; break-inside: avoid; }
+.notas .l { border-bottom: 1px solid var(--line); height: 17pt; }
+.pie { margin-top: 8pt; padding-top: 3pt; border-top: 1px solid var(--line); font-size: 8pt; color: var(--soft); text-align: center; }

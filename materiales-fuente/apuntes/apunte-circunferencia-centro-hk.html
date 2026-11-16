@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Apunte: Circunferencia con centro en (h,k)</title>
+<link rel="stylesheet" href="apunte.css">
+</head>
+<body>
+
+<div class="head">
+  <div class="who"><b>DTI. Maria del Carmen Pérez Zarate</b> · Matemáticas 3 · Tema 7</div>
+  <div class="name">Nombre: ____________________________  Grupo: ________</div>
+</div>
+<div class="kicker">Apunte de clase</div>
+<h1>Circunferencia con centro en (h,k)</h1>
+
+<h2>La ecuación ordinaria</h2>
+<div class="cols">
+  <div class="fig">
+    <svg viewBox="0 0 420 340" width="300" height="243" role="img" aria-label="Circunferencia con centro C(h, k)">
+      <g stroke="#56604f" stroke-width="1.6" fill="none"><line x1="40" y1="310" x2="404" y2="310"/><line x1="40" y1="310" x2="40" y2="16"/></g>
+      <g font-family="Consolas, monospace" font-size="15" fill="#14301f"><text x="406" y="328">x</text><text x="28" y="14">y</text></g>
+      <circle cx="190" cy="170" r="110" fill="rgba(196,232,107,0.35)" stroke="#14301f" stroke-width="2.8"/>
+      <g stroke="#56604f" stroke-width="1.2" stroke-dasharray="4 4"><line x1="190" y1="170" x2="190" y2="310"/><line x1="40" y1="170" x2="190" y2="170"/></g>
+      <line x1="190" y1="170" x2="280" y2="170" stroke="#3f6b4a" stroke-width="2.2" stroke-dasharray="6 4"/>
+      <line x1="280" y1="170" x2="280" y2="107" stroke="#3f6b4a" stroke-width="2.2" stroke-dasharray="6 4"/>
+      <line x1="190" y1="170" x2="280" y2="107" stroke="#d9650b" stroke-width="3.2" stroke-linecap="round"/>
+      <circle cx="190" cy="170" r="5" fill="#14301f"/><circle cx="280" cy="107" r="5.5" fill="#d9650b" stroke="#14301f" stroke-width="1.5"/>
+      <g font-family="Consolas, monospace" font-size="15" fill="#14301f">
+        <text x="112" y="162">C(h, k)</text><text x="288" y="100">P(x, y)</text><text x="219" y="127" fill="#d9650b" font-weight="700">r</text>
+        <text x="206" y="190" fill="#3f6b4a">x − h</text><text x="286" y="143" fill="#3f6b4a">y − k</text><text x="186" y="328">h</text><text x="20" y="175">k</text>
+      </g>
+    </svg>
+    <div class="cap">P(x, y) está en la circunferencia si su distancia a C(h, k) es r.</div>
+  </div>
+  <div>
+    <p>La distancia de C(h, k) a P(x, y) es la hipotenusa de un triángulo rectángulo con catetos <b>x − h</b> y <b>y − k</b>. Igualada al radio y elevada al cuadrado:</p>
+    <div class="formula">(x − h)² + (y − k)² = r²</div>
+    <p>Es la ecuación <b>ordinaria</b>: centro <b>(h, k)</b> y radio <b>r</b>. Si h = k = 0 queda x² + y² = r².</p>
+  </div>
+</div>
+<div class="warn"><b class="t">¡Cuidado con los signos!</b>Dentro de los paréntesis el signo es el <b>contrario</b> al de la coordenada del centro: con h = 3 se escribe <b>(x − 3)</b>; con k = −2 se escribe <b>(y + 2)</b>. Si una coordenada es 0, queda sólo x² (o y²).</div>
+
+<table>
+  <tr><th>Datos</th><th>Ecuación ordinaria</th></tr>
+  <tr><td>Centro (3, −2) y radio 4</td><td class="eqline">(x − 3)² + (y + 2)² = 16</td></tr>
+  <tr><td class="eqline">(x + 1)² + (y − 4)² = 9</td><td>Centro (−1, 4) y radio 3</td></tr>
+</table>
+
+<h2>De la ecuación ordinaria a la ecuación general</h2>
+<div class="formula">x² + y² + Dx + Ey + F = 0</div>
+<p>Aquí A = C = 1 y todos los términos están de un lado, igualados a cero. Recuerda el binomio al cuadrado: <b>(a ± b)² = a² ± 2ab + b²</b> (el término de en medio es el doble producto).</p>
+<h3>Pasos</h3>
+<ol class="steps">
+  <li>Escribe la <b>ecuación ordinaria</b>: (x − h)² + (y − k)² = r².</li>
+  <li><b>Desarrolla</b> los dos binomios al cuadrado.</li>
+  <li>Pasa <b>r² al lado izquierdo</b> (cambia de signo) para igualar a cero.</li>
+  <li><b>Junta los números</b> sueltos: ese es F. Ordena: x², y², x, y, número.</li>
+</ol>
+
+<h2>Ejemplos</h2>
+<div class="ej"><h3>Centro (3, −2) y radio 4</h3>
+(x − 3)² + (y + 2)² = 16 → (x² − 6x + 9) + (y² + 4y + 4) = 16 → x² − 6x + 9 + y² + 4y + 4 − 16 = 0 (números: 9 + 4 − 16 = −3)<br>
+<span class="eqline">x² + y² − 6x + 4y − 3 = 0</span></div>
+<div class="ej"><h3>Centro (−2, 5) y radio 3</h3>
+(x + 2)² + (y − 5)² = 9 → x² + 4x + 4 + y² − 10y + 25 − 9 = 0 (números: 4 + 25 − 9 = 20)<br>
+<span class="eqline">x² + y² + 4x − 10y + 20 = 0</span></div>
+<div class="ej"><h3>Cuando una coordenada es 0: centro (4, 0) y radio 5</h3>
+(x − 4)² + y² = 25 → x² − 8x + 16 + y² − 25 = 0<br>
+<span class="eqline">x² + y² − 8x − 9 = 0</span> (no aparece el término en y: E = 0)</div>
+<div class="ej"><h3>Centro (2, −1) y pasa por (5, 3)</h3>
+r² = (5 − 2)² + (3 − (−1))² = 9 + 16 = 25 → (x − 2)² + (y + 1)² = 25<br>
+→ x² − 4x + 4 + y² + 2y + 1 − 25 = 0 → <span class="eqline">x² + y² − 4x + 2y − 20 = 0</span></div>
+<div class="ej"><h3>Los extremos de un diámetro son (−1, 2) y (5, −6)</h3>
+Centro = punto medio: h = <span class="frac"><span class="n">−1 + 5</span><span class="d">2</span></span> = 2, k = <span class="frac"><span class="n">2 + (−6)</span><span class="d">2</span></span> = −2.
+Radio: r² = (5 − 2)² + (−6 − (−2))² = 9 + 16 = 25.<br>
+(x − 2)² + (y + 2)² = 25 → <span class="eqline">x² + y² − 4x + 4y − 17 = 0</span></div>
+
+<h2>Para comprobar tu resultado</h2>
+<div class="box">Si desarrollas con letras, siempre resulta:
+  <div class="formula">D = −2h &nbsp;&nbsp; E = −2k &nbsp;&nbsp; F = h² + k² − r²</div>
+  Con h = 3, k = −2, r = 4: D = −6, E = 4, F = 9 + 4 − 16 = −3 ✓.</div>
+
+<h2>Resumen</h2>
+<div class="box"><ul>
+  <li>Ordinaria: <span class="eqline">(x − h)² + (y − k)² = r²</span>; los signos dentro de los paréntesis son contrarios a los del centro.</li>
+  <li>Para la <b>general</b>: desarrolla, pasa r² a la izquierda y junta los números.</li>
+  <li>Si te dan un <b>punto</b>, r² es el cuadrado de su distancia al centro; si te dan los extremos de un <b>diámetro</b>, el centro es su punto medio.</li>
+</ul></div>
+
+<div class="notas"><h3>Mis notas</h3><div class="l"></div><div class="l"></div></div>
+<div class="pie">mcpz-math.github.io · Matemáticas 3 · Tema 7: Circunferencia</div>
+</body>
+</html>
