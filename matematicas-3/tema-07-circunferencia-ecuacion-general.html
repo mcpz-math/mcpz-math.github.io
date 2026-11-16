@@ -169,6 +169,28 @@
     <p>Úsalo para <strong>revisar</strong> tu resultado; el procedimiento de completar cuadrados es el que debes escribir.</p>
   </div>
 
+  <!-- Ejercicios -->
+  <p class="section-label" id="ejercicios-circ-general">Ejercicios: de la ecuación general al centro y al radio</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Resuelve cada ejercicio en tu cuaderno (divide entre A si hace falta, agrupa, completa cuadrados y escribe los binomios).
+       Después escribe tu respuesta y oprime <strong>Comprobar</strong> (o la tecla Enter). Hay ejercicios en los que debes
+       <strong>escribir la ecuación ordinaria</strong> y encontrar el <strong>centro y el radio</strong>, otros en los que debes decidir
+       <strong>qué representa</strong> la ecuación (una circunferencia, un solo punto o ningún punto) y otros en los que decides
+       si la ecuación <strong>es una circunferencia</strong>.</p>
+    <p>La ecuación ordinaria se escribe así: <strong>(x − 3)² + (y + 2)² = 16</strong>. Puedes usar los botones que están debajo de la
+       casilla o escribir el exponente con ^ (x^2). Las casillas numéricas llevan <strong>números enteros</strong>; para el signo menos usa el
+       guion <strong>-</strong> o el botón <strong>−</strong>. Al comprobar, la página dibuja la circunferencia (cuando existe).</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>. Cuando termines, oprime
+       <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+  </div>
+
+  <div class="practice-grid" id="cg-grid"></div>
+  <p class="practice-score" id="cg-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="cg-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
   <!-- 7. Resumen -->
   <p class="section-label">Resumen</p>
   <div class="example-box">
@@ -181,6 +203,56 @@
     </ul>
   </div>
 
+  <p class="section-label no-caps" id="rubrica-circ-general">Rúbrica · Circunferencia: de la ecuación general al centro y al radio</p>
+  <details class="rubric rubric-matriz">
+    <summary>Ver rúbrica por competencias</summary>
+    <div class="table-scroll">
+      <table class="matriz">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel 1<small>Insuficiente</small></th>
+            <th>Nivel 2<small>En desarrollo</small></th>
+            <th>Nivel 3<small>En desarrollo · mínimo indispensable</small></th>
+            <th>Nivel 4<small>Suficiente</small></th>
+            <th>Nivel 5<small>Satisfactorio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crit"><strong>Comunicación</strong><span class="sub">Expresión escrita y oral</span><span class="crit-desc">Transmite sus ideas utilizando vocabulario matemático y con una variedad de representaciones (escrito, oral, visual, electrónico, etc.).</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Escribe cada paso de completar cuadrados (dividir entre A, agrupar, sumar los cuadrados a los dos lados, escribir los binomios) y la ecuación ordinaria completa.</li><li>Usa el vocabulario adecuado (completar cuadrados, binomio, centro, radio, r², un solo punto).</li><li>Explica con sus palabras qué representa la ecuación (una circunferencia, un solo punto o ningún punto) y por qué.</li></ul></div></td>
+            <td>Escribe sólo el centro y el radio (o «sí» o «no») sin mostrar cómo los obtuvo: no hay agrupación, ni cuadrados completados, ni ecuación ordinaria. Casi no usa vocabulario matemático.</td>
+            <td colspan="2">Escribe algunos pasos pero omite otros (por ejemplo, no muestra lo que suma a los dos lados o salta de la ecuación general al centro) y usa el vocabulario de manera limitada; hay omisiones de signos o de paréntesis.</td>
+            <td>Escribe todos los pasos de completar cuadrados y la ecuación ordinaria con notación correcta en casi todos los ejercicios, y explica con claridad qué representa la ecuación; puede tener una omisión menor.</td>
+            <td>Expresa su trabajo por diferentes medios (pasos de completar cuadrados, ecuación ordinaria, las fórmulas h = −D/2 y k = −E/2, o el dibujo de la circunferencia) con notación correcta, y explica de manera oral o escrita cómo resolvería una ecuación nueva.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Identifica A y C, y divide toda la ecuación entre A cuando son iguales y distintos de 1.</li><li>Calcula la mitad de cada coeficiente y su cuadrado, con los signos correctos (también con coeficientes negativos o iguales a 0), y lo suma a los dos lados.</li><li>Escribe los binomios al cuadrado con el signo correcto y lee el centro con los signos contrarios a los de los paréntesis.</li></ul></div></td>
+            <td>Aún no usa correctamente las expresiones algebraicas: no completa el cuadrado (suma números sin relación con el coeficiente), no suma a los dos lados o escribe los binomios sin relación con la ecuación.</td>
+            <td colspan="2">Hace uso de la sintaxis y la semántica del lenguaje algebraico: completa cuadrados en los casos con coeficientes positivos y A = C = 1, pero se equivoca con los signos negativos, al sumar a los dos lados o cuando hay que dividir entre A.</td>
+            <td>Comprende y maneja las propiedades del lenguaje algebraico: completa cuadrados correctamente en casi todos los casos (con coeficientes negativos, con un término faltante y dividiendo entre A) y lee bien el centro y el radio.</td>
+            <td>Dota de significado y generaliza las propiedades: completa cuadrados con letras y deduce h = −D/2, k = −E/2 y r² = h² + k² − F, los usa para comprobar sus resultados y explica por qué el procedimiento sirve para cualquier ecuación de la forma x² + y² + Dx + Ey + F = 0.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Modelación y resolución de problemas</strong><span class="crit-desc">Formulación del problema y sistematización · Matematización y análisis del sistema matemático · Interpretación, evaluación y validación.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Decide si la ecuación puede ser una circunferencia comparando A y C (y que no hay término xy) antes de empezar.</li><li>Después de completar cuadrados interpreta el lado derecho: r² positivo (circunferencia), igual a 0 (un solo punto) o negativo (ningún punto).</li><li>Revisa su resultado: comprueba con h = −D/2, k = −E/2 y r² = h² + k² − F, o desarrolla su ecuación ordinaria y verifica que obtiene la ecuación general original.</li></ul></div></td>
+            <td>Usa los datos aleatoriamente: no compara A y C, suma o resta números sin relación con los coeficientes, y no interpreta el lado derecho ni revisa su resultado.</td>
+            <td colspan="2">Identifica en los casos directos que A = C y obtiene el centro y el radio con un procedimiento, pero no siempre interpreta el signo de r² (por ejemplo, saca raíz de un número negativo) y revisa poco.</td>
+            <td colspan="2">Verifica que A = C, completa cuadrados e interpreta r² (circunferencia, un solo punto o ningún punto) en todos los casos. Revisa que su resultado sea razonable (desarrolla la ecuación ordinaria o usa las fórmulas), detecta y corrige sus errores y resuelve una ecuación nueva con el mismo método.</td>
+          </tr>
+          <tr>
+            <td class="crit"><strong>Argumentación</strong><span class="sub">Pensamiento y razonamiento matemático</span><span class="crit-desc">Seguir y elaborar cadenas de argumentos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Justifica por qué lo que suma a un lado de la igualdad lo suma también al otro.</li><li>Explica por qué r² negativo no tiene ningún punto (un cuadrado nunca es negativo) y por qué r² = 0 es un solo punto.</li><li>Explica por qué una ecuación con A ≠ C no es una circunferencia.</li></ul></div></td>
+            <td>Defiende su respuesta con frases como «así se hace» o «me salió», sin justificar lo que suma ni cómo interpretó el resultado.</td>
+            <td>Explica con sus palabras («si da negativo no hay puntos») por qué decidió así, con pocos términos matemáticos.</td>
+            <td>Valida con ejemplos: sustituye el centro que encontró en la ecuación original o desarrolla su ecuación ordinaria para comprobar que regresa a la general, y da ejemplos de ecuaciones que sí y que no son circunferencias.</td>
+            <td>Explica la estructura del argumento: al sumar lo mismo a los dos lados la ecuación no cambia (hipótesis), así que la ecuación ordinaria es equivalente a la general y de ella se lee el centro y el radio (conclusión). Distingue los tres casos de r² (positivo, cero y negativo) y los justifica.</td>
+            <td>Elabora una cadena de argumentos que generaliza: completa cuadrados con letras en x² + y² + Dx + Ey + F = 0, deduce que r² = h² + k² − F y las condiciones para que sea circunferencia, un punto o ningún punto, y distingue convencerse con ejemplos de demostrar para todos los valores.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rubric-note"><strong>Nivel 0 · No hay elementos:</strong> no existen evidencias suficientes para evaluar (no se presentó o asistió a menos del 20% del curso).</p>
+  </details>
+
   <div class="page-next">
     <span class="lbl">Siguiente tema</span>
     <a href="tema-08-parabola.html">Parábola →</a>
@@ -189,6 +261,163 @@
   <footer class="site-footer">
     DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
   </footer>
+
+  <script src="../assets/practica-tarjetas.js?v=20261030r"></script>
+  <script>
+  (function () {
+    var h = Practica.h, M = '−';
+    function ri(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+    function pick(l) { return l[ri(0, l.length - 1)]; }
+    function tn(n) { return n < 0 ? M + Math.abs(n) : String(n); }
+    function par(n) { return n < 0 ? '(' + M + Math.abs(n) + ')' : String(n); }
+    function parseInt2(s) { s = String(s).replace(/[−–—]/g, '-').replace(/\s+/g, ''); return /^[+-]?\d+$/.test(s) ? parseInt(s, 10) : null; }
+    function binom(v, c) { return c === 0 ? v + '²' : '(' + v + (c > 0 ? ' − ' + c : ' + ' + (-c)) + ')²'; }          // (x − c)²
+    function ord(hc, kc, N) { return binom('x', hc) + ' + ' + binom('y', kc) + ' = ' + tn(N); }
+    function group(v, c) { return c === 0 ? v + '²' : '(' + v + '² ' + (c > 0 ? M : '+') + ' ' + Math.abs(2 * c) + v + ')'; }                 // (x² − 6x)
+    function done(v, c) { return c === 0 ? v + '²' : '(' + v + '² ' + (c > 0 ? M : '+') + ' ' + Math.abs(2 * c) + v + ' + ' + (c * c) + ')'; } // (x² − 6x + 9)
+    function genEq(A, C, D, E, F) {   // A x² + C y² + D x + E y + F = 0 (se omiten los términos en 0)
+      var s = '', first = true;
+      [[A, 'x²'], [C, 'y²'], [D, 'x'], [E, 'y'], [F, '']].forEach(function (p) {
+        var c = p[0], a = Math.abs(c); if (c === 0) return;
+        var t = ((a === 1 && p[1]) ? '' : a) + p[1];
+        s += first ? (c < 0 ? M : '') + t : ' ' + (c < 0 ? M : '+') + ' ' + t; first = false;
+      });
+      return s + ' = 0';
+    }
+
+    // ---- lector de la ecuación ordinaria que escribe el alumno: (x − h)² + (y − k)² = N  →  {h, k, N} o null ----
+    function parseOrd(s) {
+      s = String(s).replace(/[−–—]/g, '-').replace(/²/g, '^2').replace(/[·*\s]/g, '').toLowerCase();
+      var T = '(?:\\(([xy])([+-]\\d+)\\)\\^2|([xy])\\^2)', m = s.match(new RegExp('^' + T + '\\+' + T + '=(-?\\d+)$'));
+      if (!m) return null;
+      var v1 = m[1] || m[3], o1 = m[2] ? parseInt(m[2], 10) : 0, v2 = m[4] || m[6], o2 = m[5] ? parseInt(m[5], 10) : 0;
+      if (v1 === v2) return null;
+      var o = {}; o[v1] = -o1; o[v2] = -o2;
+      return { h: o.x + 0, k: o.y + 0, N: parseInt(m[7], 10) };
+    }
+
+    // ---- dibujo de la circunferencia (se muestra en la solución) ----
+    function circleSVG(hc, kc, r) {
+      var xmin = Math.min(hc - r, 0) - 1, xmax = Math.max(hc + r, 0) + 1, ymin = Math.min(kc - r, 0) - 1, ymax = Math.max(kc + r, 0) + 1;
+      var span = Math.max(xmax - xmin, ymax - ymin), cx = (xmin + xmax) / 2, cy = (ymin + ymax) / 2, half = span / 2, sc = 125 / half;
+      function X(x) { return (150 + (x - cx) * sc).toFixed(1); }
+      function Y(y) { return (150 - (y - cy) * sc).toFixed(1); }
+      var s = '<svg viewBox="0 0 300 300" width="250" height="250" role="img" aria-label="Circunferencia con centro (' + hc + ', ' + kc + ') y radio ' + r + '" style="max-width:100%; height:auto; background:#fff; border:1px solid #c3dba3; border-radius:8px;">';
+      var i, g = '', x0 = Math.ceil(cx - half), x1 = Math.floor(cx + half), y0 = Math.ceil(cy - half), y1 = Math.floor(cy + half), step = span > 24 ? 5 : (span > 12 ? 2 : 1);
+      for (i = x0; i <= x1; i++) g += '<line x1="' + X(i) + '" y1="12" x2="' + X(i) + '" y2="288" />';
+      for (i = y0; i <= y1; i++) g += '<line x1="12" y1="' + Y(i) + '" x2="288" y2="' + Y(i) + '" />';
+      s += '<g stroke="#e3e8df" stroke-width="1">' + g + '</g>';
+      s += '<g stroke="#56604f" stroke-width="1.6"><line x1="8" y1="' + Y(0) + '" x2="292" y2="' + Y(0) + '"/><line x1="' + X(0) + '" y1="292" x2="' + X(0) + '" y2="8"/></g>';
+      var lab = '';
+      for (i = x0; i <= x1; i++) if (i !== 0 && i % step === 0) lab += '<text x="' + X(i) + '" y="' + (+Y(0) + 11) + '" text-anchor="middle">' + tn(i) + '</text>';
+      for (i = y0; i <= y1; i++) if (i !== 0 && i % step === 0) lab += '<text x="' + (+X(0) - 4) + '" y="' + (+Y(i) + 3) + '" text-anchor="end">' + tn(i) + '</text>';
+      s += '<g font-family="IBM Plex Mono, monospace" font-size="9" fill="#56604f">' + lab + '</g>';
+      s += '<circle cx="' + X(hc) + '" cy="' + Y(kc) + '" r="' + (r * sc).toFixed(1) + '" fill="rgba(196,232,107,0.35)" stroke="#14301f" stroke-width="2.6"/>';
+      s += '<line x1="' + X(hc) + '" y1="' + Y(kc) + '" x2="' + X(hc + r) + '" y2="' + Y(kc) + '" stroke="#d9650b" stroke-width="2.6" stroke-linecap="round"/>';
+      s += '<circle cx="' + X(hc) + '" cy="' + Y(kc) + '" r="4" fill="#14301f"/><circle cx="' + X(hc + r) + '" cy="' + Y(kc) + '" r="3.5" fill="#d9650b"/>';
+      s += '<g font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#14301f"><text x="' + (+X(hc) - 4) + '" y="' + (+Y(kc) + 15) + '" text-anchor="end">C(' + tn(hc) + ', ' + tn(kc) + ')</text>' +
+           '<text x="' + (+X(hc) + r * sc / 2).toFixed(1) + '" y="' + (+Y(kc) - 6) + '" text-anchor="middle" fill="#d9650b">r = ' + r + '</text></g></svg>';
+      return '<div style="text-align:center; margin:0.5rem 0 0.2rem;">' + s + '<div style="font-size:0.78rem; color:#56604f;">Así queda la circunferencia (cada cuadrito mide 1 unidad)</div></div>';
+    }
+
+    // ---- banco de 100 ejercicios ----
+    var BANK = [], i, hc, kc, r, kk;
+    function centro() { do { hc = ri(-6, 6); kc = ri(-6, 6); } while (hc === 0 && kc === 0); }
+    for (i = 0; i < 40; i++) { centro(); if (i % 6 === 0) hc = 0; if (i % 7 === 0) kc = 0; if (hc === 0 && kc === 0) kc = 4; BANK.push({ t: 'A', k: 1, h: hc, kc: kc, r: ri(1, 9) }); }   // A: x² + y² + Dx + Ey + F = 0 (40)
+    for (i = 0; i < 20; i++) { centro(); if (i % 5 === 0) hc = 0; if (hc === 0 && kc === 0) kc = -3; BANK.push({ t: 'A', k: pick([2, 2, 3, 3, 4, 5]), h: hc, kc: kc, r: ri(1, 6) }); }   // B: A = C ≠ 1 (20)
+    for (i = 0; i < 20; i++) { centro(); BANK.push({ t: 'C', h: hc, kc: kc, N: [4, 9, 16, 25, 1, 36, 0, 0, 0, 0, -1, -4, -9, -3, -5, -2, -8, -6, -10, -7][i] }); }   // C: ¿qué representa? (20)
+    var NO = [[1, 2], [2, 3], [1, -1], [3, -2], [1, 4], [4, 1], [-1, 2], [2, -3], [0, 1], [1, 0], [5, 2], [-3, -1], [1, -4], [2, 5], [-2, 1], [3, 1]];
+    for (i = 0; i < 20; i++) {      // D: ¿es una circunferencia? (20: 8 que sí, 12 que no)
+      if (i < 8) { centro(); BANK.push({ t: 'D', si: true, k: pick([1, 2, 3, -1, -2, 4]), h: hc, kc: kc, r: ri(1, 6) }); }
+      else { var p = NO[i - 8]; BANK.push({ t: 'D', si: false, A: p[0], C: p[1], D: 2 * ri(-4, 4), E: 2 * ri(-4, 4), F: ri(-9, 9) }); }
+    }
+    for (i = BANK.length - 1; i > 0; i--) { var j = ri(0, i), tmp = BANK[i]; BANK[i] = BANK[j]; BANK[j] = tmp; } // mezclar
+
+    // ---- explicación de completar cuadrados ----
+    function pasos(kk, hc, kc, N) {
+      var D = -2 * hc, E = -2 * kc, F = hc * hc + kc * kc - N, s = '';
+      if (kk !== 1) s += 'Divide toda la ecuación entre ' + kk + ': ' + genEq(1, 1, D, E, F) + '<br>';
+      s += 'Agrupa y pasa el número: ' + group('x', hc) + ' + ' + group('y', kc) + ' = ' + tn(-F) + '<br>';
+      if (hc !== 0 || kc !== 0) {
+        var sum = [], sp = [];
+        if (hc !== 0) { sp.push('la mitad de ' + tn(D) + ' es ' + tn(-hc) + ' y ' + par(-hc) + '² = ' + (hc * hc)); sum.push(hc * hc); }
+        if (kc !== 0) { sp.push('la mitad de ' + tn(E) + ' es ' + tn(-kc) + ' y ' + par(-kc) + '² = ' + (kc * kc)); sum.push(kc * kc); }
+        s += 'Completa cuadrados (' + sp.join('; ') + ') y suma a los dos lados: ' + done('x', hc) + ' + ' + done('y', kc) + ' = ' + tn(-F) + ' + ' + sum.join(' + ') + '<br>';
+      }
+      s += 'Ordinaria: <strong>' + ord(hc, kc, N) + '</strong>';
+      return s;
+    }
+
+    function textRow(n) {
+      return '<div class="practice-row" style="margin-top:0.4rem;"><span class="eq">Ordinaria:</span>' + h.inputHTML('o', 'Ecuación ordinaria, ejercicio ' + n, 'flex:1 1 13rem; min-width:0;') + '</div>' +
+             h.keysHTML(['(', ')', 'x', 'y', '²', '+', M, '='], 'o');
+    }
+    function numRow(n) {
+      var f = [['h', 'h ='], ['k', 'k ='], ['r', 'r =']];
+      return '<div class="practice-row">' + f.map(function (p) {
+        return '<span style="display:inline-flex; align-items:center; gap:0.4rem; white-space:nowrap;"><span class="eq">' + p[1] + '</span>' + h.inputHTML(p[0], p[0] + ', ejercicio ' + n, 'width:4.2rem;') + '</span>';
+      }).join('') + '</div>' + h.keysHTML([M], 'h,k,r');
+    }
+
+    Practica.setup({
+      id: 'cg', bank: BANK, anchor: 'ejercicios-circ-general',
+      card: function (e, n) {
+        if (e.t === 'A') {   // ecuación general (con A = C = k) → ecuación ordinaria, centro y radio
+          var hc = e.h, kc = e.kc, N = e.r * e.r, D = -2 * hc, E = -2 * kc, F = hc * hc + kc * kc - N, k1 = e.k;
+          return {
+            head: genEq(k1, k1, k1 * D, k1 * E, k1 * F),
+            body: '<div class="practice-ask">Completa cuadrados: escribe la ecuación ordinaria y encuentra el centro y el radio</div>' + textRow(n) + numRow(n),
+            check: function (ctx) {
+              var empty = ['o', 'h', 'k', 'r'].some(function (f) { return !ctx.inp[f].value.trim(); });
+              if (empty) return { msg: 'Contesta <strong>todo</strong> antes de comprobar.' };
+              var vh = parseInt2(ctx.inp.h.value), vk = parseInt2(ctx.inp.k.value), vr = parseInt2(ctx.inp.r.value);
+              if (vh == null || vk == null || vr == null) return { bad: true, msg: '<span class="no">h, k y r son números enteros,</span> por ejemplo <strong>-3</strong> o <strong>4</strong>.' };
+              var q = parseOrd(ctx.inp.o.value);
+              if (!q) return { bad: true, msg: '<span class="no">No pude leer tu ecuación ordinaria.</span> Escríbela así: <strong>(x − 3)² + (y + 2)² = 16</strong> (con los botones, o con ^2 para el exponente).' };
+              var wrong = [], msgs = [];
+              if (q.h !== hc || q.k !== kc || q.N !== N) { wrong.push('o'); msgs.push((k1 !== 1 ? 'Primero divide entre ' + k1 + '. ' : '') + 'Completa cuadrados: la mitad del coeficiente de x es ' + tn(-hc) + ' y la de y es ' + tn(-kc) + '. La ecuación ordinaria es ' + ord(hc, kc, N) + '.'); }
+              if (vh !== hc) { wrong.push('h'); msgs.push('h es la coordenada x del centro: el signo es el contrario al que aparece dentro del paréntesis (x ' + (hc > 0 ? '− ' + hc : (hc < 0 ? '+ ' + (-hc) : '')) + ') → h = ' + tn(hc) + '.'); }
+              if (vk !== kc) { wrong.push('k'); msgs.push('k es la coordenada y del centro: el signo es el contrario al que aparece dentro del paréntesis (y ' + (kc > 0 ? '− ' + kc : (kc < 0 ? '+ ' + (-kc) : '')) + ') → k = ' + tn(kc) + '.'); }
+              if (vr !== e.r) { wrong.push('r'); msgs.push('El lado derecho es r² = ' + N + '; el radio es su raíz cuadrada positiva: r = √' + N + ' = ' + e.r + '.'); }
+              return { wrong: wrong, msgs: msgs, total: 4 };
+            },
+            sol: pasos(k1, hc, kc, N) + '<br>Centro (' + tn(hc) + ', ' + tn(kc) + ') y radio <strong>' + e.r + '</strong>' + circleSVG(hc, kc, e.r)
+          };
+        }
+        if (e.t === 'C') {   // ¿qué representa?
+          var hc2 = e.h, kc2 = e.kc, N2 = e.N, F2 = hc2 * hc2 + kc2 * kc2 - N2, key = N2 > 0 ? 'circ' : (N2 === 0 ? 'punto' : 'nada');
+          var interp = { circ: 'r² = ' + N2 + ' es positivo → es una <strong>circunferencia</strong> de radio ' + Math.round(Math.sqrt(Math.max(N2, 0))) + '.',
+                         punto: 'r² = 0 → sólo cumple la ecuación el centro: es <strong>un solo punto</strong> (' + tn(hc2) + ', ' + tn(kc2) + ').',
+                         nada: 'r² = ' + N2 + ' es negativo y un cuadrado nunca es negativo → <strong>ningún punto</strong> cumple la ecuación.' }[key];
+          return {
+            head: genEq(1, 1, -2 * hc2, -2 * kc2, F2),
+            body: '<div class="practice-ask">Completa cuadrados. ¿Qué representa esta ecuación?</div>' + h.optsHTML('t', [['circ', 'Una circunferencia'], ['punto', 'Un solo punto'], ['nada', 'Ningún punto']], false),
+            check: function (ctx) {
+              if (!ctx.chosen.t) return { msg: 'Elige una de las tres opciones.' };
+              if (ctx.chosen.t === key) return { wrong: [], total: 1 };
+              return { wrong: ['t'], msgs: ['Completa cuadrados hasta llegar a (x − h)² + (y − k)² = r² y mira el número de la derecha: si es positivo, es una circunferencia; si es 0, un solo punto; si es negativo, ningún punto.'], total: 1 };
+            },
+            sol: pasos(1, hc2, kc2, N2) + '<br>' + interp + (key === 'circ' ? circleSVG(hc2, kc2, Math.round(Math.sqrt(N2))) : '')
+          };
+        }
+        // D: ¿es una circunferencia?
+        var A, C, Dd, Ee, Ff, si = e.si;
+        if (si) { var N3 = e.r * e.r; A = e.k; C = e.k; Dd = -2 * e.h * e.k; Ee = -2 * e.kc * e.k; Ff = (e.h * e.h + e.kc * e.kc - N3) * e.k; }
+        else { A = e.A; C = e.C; Dd = e.D; Ee = e.E; Ff = e.F; }
+        return {
+          head: genEq(A, C, Dd, Ee, Ff),
+          body: '<div class="practice-ask">¿Esta ecuación es una circunferencia?</div>' + h.optsHTML('t', [['si', 'Sí, es una circunferencia'], ['no', 'No es una circunferencia']], false),
+          check: function (ctx) {
+            if (!ctx.chosen.t) return { msg: 'Elige una de las dos opciones.' };
+            if ((ctx.chosen.t === 'si') === si) return { wrong: [], total: 1 };
+            return { wrong: ['t'], msgs: ['Compara los coeficientes de x² y de y²: es una circunferencia sólo cuando son <strong>iguales</strong> (A = C) y no hay término xy.'], total: 1 };
+          },
+          sol: 'A = ' + tn(A) + ' (coeficiente de x²) y C = ' + tn(C) + ' (coeficiente de y²).<br>' + (si ? 'A = C → <strong>sí es una circunferencia</strong>.' : 'A ≠ C → <strong>no es una circunferencia</strong>.')
+        };
+      }
+    });
+  })();
+  </script>
 
 </body>
 </html>

@@ -2433,6 +2433,75 @@
           "n5": "Elabora una cadena de argumentos que generaliza: desarrolla con letras y deduce D, E y F para cualquier centro y radio, relaciona el resultado con el caso h = 0 y k = 0 y distingue convencerse con un ejemplo de demostrar para todos los valores."
         }
       ]
+    },
+    {
+      "id": "circgeneral",
+      "titulo": "Matemáticas 3 · Tema 7 · Circunferencia: de la ecuación general al centro y al radio",
+      "file": "matematicas-3/tema-07-circunferencia-ecuacion-general.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página resueltos en el cuaderno, con cada paso de completar cuadrados: dividir entre A, agrupar, la mitad de cada coeficiente y su cuadrado sumado a los dos lados, los binomios y la ecuación ordinaria.",
+        "Al menos un ejercicio con A = C distinto de 1 (por ejemplo, 3x² + 3y² + …) en el que se divide toda la ecuación antes de completar cuadrados.",
+        "La justificación de un caso en que la ecuación representa un solo punto o ningún punto (r² igual a 0 o negativo) y de un caso en que A ≠ C y por lo tanto no es una circunferencia."
+      ],
+      "errores": [
+        "Calcula mal la mitad del coeficiente o pierde el signo: en x² − 6x suma 6² en lugar de (−3)², o escribe (x + 3)².",
+        "Suma el cuadrado que completa sólo de un lado de la igualdad y no del otro.",
+        "Escribe el centro con los mismos signos que aparecen en los paréntesis: de (x + 2)² + (y − 5)² = 9 toma el centro (2, −5) en lugar de (−2, 5).",
+        "No divide entre k cuando A = C = 3 (por ejemplo, toma r² = 48 en lugar de 16) o divide sólo algunos términos.",
+        "Al pasar F al lado derecho no le cambia el signo, y obtiene un r² equivocado.",
+        "Dice que siempre es una circunferencia aunque r² sea 0 o negativo, o dice que sí lo es porque aparecen x² y y² sin comparar sus coeficientes (en 2x² + 3y² + … no son iguales)."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe cada paso de completar cuadrados (dividir entre A, agrupar, sumar los cuadrados a los dos lados, escribir los binomios) y la ecuación ordinaria completa.",
+            "Usa el vocabulario adecuado (completar cuadrados, binomio, centro, radio, r², un solo punto).",
+            "Explica con sus palabras qué representa la ecuación (una circunferencia, un solo punto o ningún punto) y por qué."
+          ],
+          "n1": "Escribe sólo el centro y el radio (o «sí» o «no») sin mostrar cómo los obtuvo: no hay agrupación, ni cuadrados completados, ni ecuación ordinaria. Casi no usa vocabulario matemático.",
+          "n23": "Escribe algunos pasos pero omite otros (por ejemplo, no muestra lo que suma a los dos lados o salta de la ecuación general al centro) y usa el vocabulario de manera limitada; hay omisiones de signos o de paréntesis.",
+          "n4": "Escribe todos los pasos de completar cuadrados y la ecuación ordinaria con notación correcta en casi todos los ejercicios, y explica con claridad qué representa la ecuación; puede tener una omisión menor.",
+          "n5": "Expresa su trabajo por diferentes medios (pasos de completar cuadrados, ecuación ordinaria, las fórmulas h = −D/2 y k = −E/2, o el dibujo de la circunferencia) con notación correcta, y explica de manera oral o escrita cómo resolvería una ecuación nueva."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Identifica A y C, y divide toda la ecuación entre A cuando son iguales y distintos de 1.",
+            "Calcula la mitad de cada coeficiente y su cuadrado, con los signos correctos (también con coeficientes negativos o iguales a 0), y lo suma a los dos lados.",
+            "Escribe los binomios al cuadrado con el signo correcto y lee el centro con los signos contrarios a los de los paréntesis."
+          ],
+          "n1": "Aún no usa correctamente las expresiones algebraicas: no completa el cuadrado (suma números sin relación con el coeficiente), no suma a los dos lados o escribe los binomios sin relación con la ecuación.",
+          "n23": "Hace uso de la sintaxis y la semántica del lenguaje algebraico: completa cuadrados en los casos con coeficientes positivos y A = C = 1, pero se equivoca con los signos negativos, al sumar a los dos lados o cuando hay que dividir entre A.",
+          "n4": "Comprende y maneja las propiedades del lenguaje algebraico: completa cuadrados correctamente en casi todos los casos (con coeficientes negativos, con un término faltante y dividiendo entre A) y lee bien el centro y el radio.",
+          "n5": "Dota de significado y generaliza las propiedades: completa cuadrados con letras y deduce h = −D/2, k = −E/2 y r² = h² + k² − F, los usa para comprobar sus resultados y explica por qué el procedimiento sirve para cualquier ecuación de la forma x² + y² + Dx + Ey + F = 0."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Decide si la ecuación puede ser una circunferencia comparando A y C (y que no hay término xy) antes de empezar.",
+            "Después de completar cuadrados interpreta el lado derecho: r² positivo (circunferencia), igual a 0 (un solo punto) o negativo (ningún punto).",
+            "Revisa su resultado: comprueba con h = −D/2, k = −E/2 y r² = h² + k² − F, o desarrolla su ecuación ordinaria y verifica que obtiene la ecuación general original."
+          ],
+          "n1": "Usa los datos aleatoriamente: no compara A y C, suma o resta números sin relación con los coeficientes, y no interpreta el lado derecho ni revisa su resultado.",
+          "n23": "Identifica en los casos directos que A = C y obtiene el centro y el radio con un procedimiento, pero no siempre interpreta el signo de r² (por ejemplo, saca raíz de un número negativo) y revisa poco.",
+          "n45": "Verifica que A = C, completa cuadrados e interpreta r² (circunferencia, un solo punto o ningún punto) en todos los casos. Revisa que su resultado sea razonable (desarrolla la ecuación ordinaria o usa las fórmulas), detecta y corrige sus errores y resuelve una ecuación nueva con el mismo método."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Justifica por qué lo que suma a un lado de la igualdad lo suma también al otro.",
+            "Explica por qué r² negativo no tiene ningún punto (un cuadrado nunca es negativo) y por qué r² = 0 es un solo punto.",
+            "Explica por qué una ecuación con A ≠ C no es una circunferencia."
+          ],
+          "n1": "Defiende su respuesta con frases como «así se hace» o «me salió», sin justificar lo que suma ni cómo interpretó el resultado.",
+          "n2": "Explica con sus palabras («si da negativo no hay puntos») por qué decidió así, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: sustituye el centro que encontró en la ecuación original o desarrolla su ecuación ordinaria para comprobar que regresa a la general, y da ejemplos de ecuaciones que sí y que no son circunferencias.",
+          "n4": "Explica la estructura del argumento: al sumar lo mismo a los dos lados la ecuación no cambia (hipótesis), así que la ecuación ordinaria es equivalente a la general y de ella se lee el centro y el radio (conclusión). Distingue los tres casos de r² (positivo, cero y negativo) y los justifica.",
+          "n5": "Elabora una cadena de argumentos que generaliza: completa cuadrados con letras en x² + y² + Dx + Ey + F = 0, deduce que r² = h² + k² − F y las condiciones para que sea circunferencia, un punto o ningún punto, y distingue convencerse con ejemplos de demostrar para todos los valores."
+        }
+      ]
     }
   ]
 }
