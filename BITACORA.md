@@ -1977,3 +1977,4 @@ Registro de lo que vamos haciendo, en orden cronológico.
   una tabla de las tres formas (centro (0,0), centro (h,k) y ecuación general, que son los tres subtemas); y 4 ejemplos (ecuación con centro en el origen, con centro (3, −2) y radio 4 con aviso de los signos, de la ecuación al centro y radio, y pasar a la ecuación general x² + y² − 6x + 4y − 3 = 0).
 - Arreglo de formato: en las listas numeradas (`ol.steps`) el texto con negritas se separaba en columnas; ahora cada paso va dentro de un `<span>`. Se corrigió también en los ejemplos de `tema-07-conicas-introduccion.html`.
 - Pendiente: la introducción a la circunferencia aún no tiene rúbrica con la matriz ni ejercicios con revisión (se pueden agregar si Carmen los quiere).
+- A pedido de Carmen, en `tema-07-circunferencia.html` se quitó la sección «Cómo se obtiene la ecuación» (los 4 pasos con Pitágoras). Quedan la figura, el recuadro con (x − h)² + (y − k)² = r² y el resto de la introducción.
