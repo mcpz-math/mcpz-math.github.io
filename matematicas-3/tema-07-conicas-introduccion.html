@@ -188,17 +188,6 @@
        <strong>dos rectas</strong> que se cruzan. En este curso trabajaremos con las cónicas “de verdad” (no degeneradas).</p>
   </div>
 
-  <!-- 7. Probador -->
-  <p class="section-label" id="probador-conicas">Pruébalo tú: escribe A y C</p>
-  <div class="example-box">
-    <p>Escribe los coeficientes A (de x²) y C (de y²) de tu ecuación y la página te dice qué cónica es.</p>
-    <div style="display:flex; flex-wrap:wrap; gap:0.8rem; align-items:center; margin:0.8rem 0; font-family:'IBM Plex Mono',monospace; color:var(--forest);">
-      <label>A = <input id="pc-A" type="number" step="any" value="1" style="width:5.5rem; padding:0.35rem; border:2px solid var(--line); border-radius:10px; font:inherit;"></label>
-      <label>C = <input id="pc-C" type="number" step="any" value="4" style="width:5.5rem; padding:0.35rem; border:2px solid var(--line); border-radius:10px; font:inherit;"></label>
-    </div>
-    <p id="pc-out" aria-live="polite" style="font-weight:700; color:var(--forest); margin:0;"></p>
-  </div>
-
   <!-- 8. Ejercicios -->
   <p class="section-label" id="ejercicios-conicas">Ejercicios: ¿qué cónica es?</p>
   <div class="callout">
@@ -339,19 +328,9 @@
       })();
     })();
 
-    // ---------- Probador ----------
-    var iA = document.getElementById('pc-A'), iC = document.getElementById('pc-C'), out = document.getElementById('pc-out');
+    // ---------- Razones de cada tipo (para la explicación de los ejercicios) ----------
     var POR = { circ: 'A y C son iguales', elip: 'A y C tienen el mismo signo pero son diferentes',
                 hip: 'A y C tienen signos contrarios', parab: 'una de las dos letras no está al cuadrado (A o C vale 0)' };
-    function probar() {
-      var A = parseFloat(iA.value), C = parseFloat(iC.value);
-      if (isNaN(A) || isNaN(C)) { out.textContent = 'Escribe un número en A y en C.'; return; }
-      if (A === 0 && C === 0) { out.textContent = 'Si A y C valen 0, la ecuación es de primer grado: es una recta, no una cónica.'; return; }
-      var t = tipo(A, 0, C);
-      out.innerHTML = 'Es: ' + NOMBRE[t] + '.<br><span style="font-weight:400;">' + POR[t] + '.</span>';
-    }
-    [iA, iC].forEach(function (i) { i.addEventListener('input', probar); });
-    probar();
 
     // ---------- Banco de ejercicios ----------
     function ri(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
