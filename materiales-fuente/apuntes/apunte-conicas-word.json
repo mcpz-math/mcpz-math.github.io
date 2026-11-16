@@ -1,0 +1,45 @@
+{
+  "titulo": "Introducción a las cónicas",
+  "kicker": "APUNTE DE CLASE",
+  "org": "DTI. Maria del Carmen Pérez Zarate · Matemáticas 3 · Tema 7",
+  "nombre": "Nombre: ________________________________________   Grupo: __________",
+  "pie": "mcpz-math.github.io · Matemáticas 3 · Tema 7: Cónicas",
+  "bloques": [
+    { "t": "h2", "v": "¿Qué son las cónicas?" },
+    { "t": "p", "v": "Si cortas un **cono doble** con un **plano**, la curva que queda marcada en el corte es una **cónica**. Según cómo inclines el plano, sale una de estas cuatro curvas (el plano es el rectángulo verde-lima y la curva naranja es la cónica):" },
+    { "t": "figs", "items": [
+      { "img": "corte-circ.png", "nombre": "Circunferencia", "desc": "El plano corta el cono de forma horizontal (perpendicular al eje)." },
+      { "img": "corte-elip.png", "nombre": "Elipse", "desc": "El plano se inclina un poco y corta todo alrededor del cono." },
+      { "img": "corte-parab.png", "nombre": "Parábola", "desc": "El plano es paralelo a un lado del cono. La curva no se cierra." },
+      { "img": "corte-hip.png", "nombre": "Hipérbola", "desc": "El plano es más vertical que los lados y corta los dos conos: salen dos ramas." }
+    ] },
+    { "t": "p", "v": "**Cerradas:** circunferencia y elipse. **Abiertas:** parábola (una rama) e hipérbola (dos ramas)." },
+
+    { "t": "h2", "v": "La ecuación general de segundo grado" },
+    { "t": "formula", "v": "Ax^2+Bxy+Cy^2+Dx+Ey+F=0" },
+    { "t": "p", "v": "A, B, C, D, E y F son números (coeficientes); A, B y C no pueden ser los tres cero. **A** es el coeficiente de x², **C** el de y², **B** el del término xy, **D** y **E** los de x y de y, y **F** el número solo." },
+    { "t": "box", "titulo": "En este curso: B = 0", "v": ["Las cónicas tienen sus ejes paralelos a los ejes x y y, así que no aparece el término xy: $Ax^2+Cy^2+Dx+Ey+F=0$. Para clasificarla sólo miramos **A y C**."] },
+
+    { "t": "h2", "v": "¿De qué cónica se trata? Mira A y C" },
+    { "t": "tabla", "cols": [4700, 2800, 2700], "head": ["Los coeficientes de x² y y²…", "Condición", "Cónica"], "rows": [
+      ["son **iguales** (mismo número y mismo signo)", "A = C", "**Circunferencia**"],
+      ["tienen el **mismo signo** pero son **diferentes**", "AC > 0 y A ≠ C", "**Elipse**"],
+      ["tienen **signos contrarios**", "AC < 0", "**Hipérbola**"],
+      ["**uno de los dos vale 0** (un solo cuadrado)", "A = 0 o C = 0 (no los dos)", "**Parábola**"]
+    ] },
+    { "t": "box", "titulo": "¿Por qué funciona?", "v": ["Al completar cuadrados: cuadrados con el **mismo signo** dan una *suma* de cuadrados (circunferencia o elipse); con **signos contrarios** dan una *resta* (hipérbola); y con **un solo cuadrado** la otra letra queda con exponente 1 (parábola)."] },
+
+    { "t": "h2", "v": "Ejemplos" },
+    { "t": "tabla", "cols": [4900, 600, 700, 4000], "head": ["Ecuación", "A", "C", "Cónica"], "rows": [
+      ["$x^2+y^2-6x+4y-3=0$", "1", "1", "**Circunferencia** (A = C)"],
+      ["$4x^2+9y^2-16x+18y-11=0$", "4", "9", "**Elipse** (mismo signo, distintos)"],
+      ["$x^2-4y^2-2x+8y-7=0$", "1", "−4", "**Hipérbola** (signos contrarios)"],
+      ["$y^2-8x+2y+9=0$", "0", "1", "**Parábola** (falta x²)"],
+      ["$-3x^2-3y^2+12x-6y+5=0$", "−3", "−3", "**Circunferencia** (A = C aunque sean negativos)"]
+    ] },
+    { "t": "box", "tono": "naranja", "titulo": "Ojo", "v": ["Cuando falta x² o y², su coeficiente vale **0** (no 1). Los números que acompañan a x y a y (D y E) **no** son A ni C."] },
+    { "t": "box", "titulo": "Cónicas degeneradas", "v": ["La clasificación dice qué tipo de ecuación es. Al completar cuadrados puede resultar sólo un punto ($x^2+y^2=0$), ningún punto ($x^2+y^2=-4$) o dos rectas ($x^2-y^2=0$). En este curso trabajamos con las cónicas “de verdad”."] },
+
+    { "t": "notas", "titulo": "Mis notas", "n": 3 }
+  ]
+}

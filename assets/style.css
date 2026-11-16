@@ -1084,3 +1084,4 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
   padding: 0.5rem 1.2rem; text-decoration: none; transition: border-color 0.15s ease;
 }
 .apunte-link a:hover { border-color: var(--moss); }
+.apunte-link a + a { margin-left: 0.5rem; margin-top: 0.4rem; }
