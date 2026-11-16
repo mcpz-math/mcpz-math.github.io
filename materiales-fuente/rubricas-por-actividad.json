@@ -218,6 +218,76 @@
       { "f": "{1/2}x^2+2x+2",        "a": [1, 2],  "h": [-2, 1] }
     ]
   },
+  "serie7conicas": {
+    "titulo": "Serie 7. Introducción a las cónicas: ¿qué cónica es?",
+    "claveTitulo": "Serie 7 · Clave de respuestas (sólo para la profesora)",
+    "autor": "DTI. Maria del Carmen Pérez Zarate",
+    "estudiante": "Estudiante________________________________________________  Fecha______________  Grupo______________",
+    "propositoTitulo": "PROPÓSITO",
+    "proposito": "Evaluar si el alumno reconoce, a partir de los coeficientes A y C de una ecuación de segundo grado de la forma Ax² + Cy² + Dx + Ey + F = 0, si ésta representa una circunferencia, una elipse, una parábola o una hipérbola, y si justifica su respuesta con la condición que cumplen A y C.",
+    "instruccionesTitulo": "INSTRUCCIONES:",
+    "instruccionesIntro": "Para cada una de las siguientes ecuaciones:",
+    "pasos": [
+      "Si la ecuación no está acomodada (hay términos de los dos lados del signo igual o desordenados), pásala a la forma Ax² + Cy² + Dx + Ey + F = 0 y escríbela en la línea «Ecuación ordenada». Lo que necesites calcular, hazlo en el cuaderno.",
+      "Escribe los valores de A (el coeficiente de x²) y de C (el coeficiente de y²), con su signo. Si falta uno de los dos términos cuadráticos, su coeficiente vale 0.",
+      "Marca qué cónica es: circunferencia, elipse, parábola o hipérbola.",
+      "En «Porque», escribe la condición que cumplen A y C y que te permitió decidir.",
+      "En los ejercicios 18 a 20 la letra C es un número desconocido: escribe el valor (o los valores) que debe tener para obtener la cónica que se pide."
+    ],
+    "partes": [
+      "Parte 1 · Ecuaciones en forma general (ejercicios 1 a 8)",
+      "Parte 2 · Coeficientes negativos, términos que faltan y ecuaciones desordenadas (ejercicios 9 a 14)",
+      "Parte 3 · Primero acomoda la ecuación (ejercicios 15 a 17)",
+      "Parte 4 · ¿Qué valor debe tener C? (ejercicios 18 a 20)"
+    ],
+    "lineaOrd": "Ecuación ordenada: ______________________",
+    "lineaAC": "A = ________        C = ________",
+    "opciones": ["Circunferencia", "Elipse", "Parábola", "Hipérbola"],
+    "lineaPorque": "Porque: _________________________________",
+    "lineaPorque2": "_______________________________________",
+    "parte4Antes": "En la ecuación",
+    "parte4Eq": "5x^2+Cy^2-10x+4y-3=0",
+    "parte4Despues": "la letra C representa un número. Contesta cada pregunta:",
+    "preguntas": [
+      "¿Qué valor debe tener C para que sea una circunferencia?",
+      "¿Qué valor debe tener C para que sea una parábola?",
+      "Escribe un valor de C para que sea una elipse y otro para que sea una hipérbola."
+    ],
+    "lineaC": "C = ________",
+    "lineaC2": "Elipse: C = ________        Hipérbola: C = ________",
+    "rubricaTitulo": "Rúbrica (matriz de niveles de evaluación)",
+    "claveNota": "A y C se leen de la ecuación ya ordenada (Ax² + Cy² + Dx + Ey + F = 0). Circunferencia: A = C. Elipse: A y C del mismo signo y distintos. Hipérbola: A y C de signos contrarios. Parábola: A = 0 o C = 0 (no los dos). Basta con que el alumno escriba esa condición en «Porque» con sus propias palabras.",
+    "razones": [
+      "A = C",
+      "A y C tienen el mismo signo y son distintos",
+      "Uno de los dos, A o C, vale 0",
+      "A y C tienen signos contrarios"
+    ],
+    "ejercicios": [
+      { "eq": "x^2+y^2+8x-2y+1=0",              "A": 1,  "C": 1,  "t": 0 },
+      { "eq": "2x^2+5y^2-12x+10y+3=0",          "A": 2,  "C": 5,  "t": 1 },
+      { "eq": "3x^2-y^2+6x-4y-10=0",            "A": 3,  "C": -1, "t": 3 },
+      { "eq": "x^2+4x-12y+8=0",                 "A": 1,  "C": 0,  "t": 2 },
+      { "eq": "5x^2+5y^2-20x+10y-4=0",          "A": 5,  "C": 5,  "t": 0 },
+      { "eq": "y^2-4x+6y+7=0",                  "A": 0,  "C": 1,  "t": 2 },
+      { "eq": "9x^2+y^2-18x-4y+4=0",            "A": 9,  "C": 1,  "t": 1 },
+      { "eq": "x^2-9y^2+6x+18y-27=0",           "A": 1,  "C": -9, "t": 3 },
+      { "eq": "-2x^2-2y^2+8x-4y+1=0",           "A": -2, "C": -2, "t": 0 },
+      { "eq": "-x^2-4y^2+2x+8y-3=0",            "A": -1, "C": -4, "t": 1 },
+      { "eq": "-3x^2+y^2+12x-6y+2=0",           "A": -3, "C": 1,  "t": 3 },
+      { "eq": "-y^2+4x-2y+5=0",                 "A": 0,  "C": -1, "t": 2 },
+      { "eq": "7y^2+3x-5+2x^2-4y=0",            "A": 2,  "C": 7,  "t": 1 },
+      { "eq": "10+3y-y^2+4x^2-8x=0",            "A": 4,  "C": -1, "t": 3 },
+      { "eq": "x^2+8y=2x+5",                    "A": 1,  "C": 0,  "t": 2, "ord": "x^2-2x+8y-5=0" },
+      { "eq": "4x^2=36-9y^2",                   "A": 4,  "C": 9,  "t": 1, "ord": "4x^2+9y^2-36=0" },
+      { "eq": "9y^2=36+4x^2",                   "A": -4, "C": 9,  "t": 3, "ord": "-4x^2+9y^2-36=0" }
+    ],
+    "claveC": [
+      { "resp": "C = 5",  "por": "Para que sea una circunferencia, A y C deben ser iguales. Como A = 5, C = 5." },
+      { "resp": "C = 0",  "por": "Si C = 0 la ecuación sólo tiene el término cuadrático 5x² (A = 5 y C = 0): es una parábola." },
+      { "resp": "Elipse: cualquier C positivo distinto de 5 (por ejemplo C = 2). Hipérbola: cualquier C negativo (por ejemplo C = −3).", "por": "Elipse: A = 5 y C tienen el mismo signo y son distintos (C > 0 y C ≠ 5; si C = 5 sería circunferencia). Hipérbola: A = 5 y C tienen signos contrarios (C < 0)." }
+    ]
+  },
   "actividades": [
     {
       "id": "signos",
@@ -1986,6 +2056,75 @@
           "n3": "Valida con ejemplos: compara pares de ecuaciones que sólo difieren en un signo o en un coeficiente y dice qué cambia, da ejemplos y no-ejemplos de cada cónica y menciona al menos un caso en que la ecuación no da una curva «de verdad».",
           "n4": "Explica la estructura del argumento: los valores y signos de A y C son la hipótesis y el tipo de cónica la conclusión, apoyándose en lo que ocurre al completar cuadrados (suma, resta o un cuadrado con un término lineal). Distingue entre lo que se conjetura al mirar A y C y lo que se concluye al completar cuadrados (puede salir un punto, el vacío o dos rectas).",
           "n5": "Elabora una cadena de argumentos que generaliza para cualquier A y C: demuestra cada caso completando cuadrados, explica por qué la circunferencia es un caso particular de la elipse y por qué aparecen las cónicas degeneradas. Distingue convencerse con ejemplos de demostrar."
+        }
+      ]
+    },
+    {
+      "id": "serie7conicas",
+      "titulo": "Matemáticas 3 · Tema 7 · Serie 7: introducción a las cónicas, ¿qué cónica es? (Word)",
+      "file": "",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los 20 ejercicios de la hoja: A y C escritos con su signo, la cónica marcada y la frase «Porque» con la condición que cumplen A y C.",
+        "En los ejercicios 15 a 17, la ecuación ordenada escrita en su línea y los cálculos hechos en el cuaderno para acomodarla.",
+        "En los ejercicios 18 a 20, los valores (o las condiciones) que escribe para C y la forma en que los justifica."
+      ],
+      "errores": [
+        "Toma como A y C los coeficientes de x y de y (D y E) o los exponentes, en lugar de los coeficientes de x² y de y².",
+        "Dice que −2x² − 2y² + … no es una circunferencia porque los coeficientes son negativos (A = C aunque los dos sean negativos).",
+        "Marca «circunferencia» en 2x² + 5y² + … porque los dos cuadrados tienen el mismo signo (olvida que A y C deben ser iguales).",
+        "Cuando falta x² o y² escribe A = 1 o C = 1 en lugar de 0, o dice que «no es una cónica».",
+        "Lee A y C de la ecuación sin acomodar: en 4x² = 36 − 9y² toma C = −9, o en 9y² = 36 + 4x² toma A = 4 (olvida pasar los términos al otro lado y cambiarles el signo).",
+        "En el ejercicio 20 da para la elipse un valor de C negativo, o C = 5 (que sería circunferencia); para la hipérbola da un valor positivo."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe A y C con su signo y, en «Porque», la condición que cumplen («A = C», «mismo signo y distintos», «signos contrarios», «C = 0»).",
+            "En los ejercicios 15 a 17 escribe la ecuación ordenada con los signos correctos.",
+            "Usa el vocabulario adecuado (coeficiente, término cuadrático, circunferencia, elipse, parábola, hipérbola)."
+          ],
+          "n1": "Marca la cónica sin escribir cuánto valen A y C ni cómo lo decidió; el «Porque» falta o dice frases como «porque sí» o «se ve así». Casi no usa vocabulario matemático y no escribe la ecuación ordenada.",
+          "n23": "Escribe A y C en la mayoría de los ejercicios, pero omite signos o la condición que usó; su «Porque» repite el nombre de la cónica o la regla de manera mecánica, con vocabulario limitado.",
+          "n4": "Escribe A y C con su signo y la condición en casi todos los ejercicios, con el vocabulario adecuado, y la ecuación ordenada en los ejercicios 15 a 17; puede tener una omisión menor.",
+          "n5": "Escribe con notación correcta todo el análisis (ecuación ordenada, A y C, condición) y lo expresa con claridad por escrito en todos los ejercicios, también en los de la letra C; explica de manera oral o escrita cómo reconocería la cónica de una ecuación nueva."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Identifica A y C (coeficientes de x² y de y²) sin confundirlos con D y E, con los exponentes ni con las constantes.",
+            "Aplica la clasificación: A = C → circunferencia; mismo signo y A ≠ C → elipse; signos contrarios → hipérbola; A = 0 o C = 0 (no los dos) → parábola.",
+            "Cuida los signos (ejercicios 9 a 11 y 14), reconoce el coeficiente 0 cuando falta un cuadrado (ejercicios 4, 6 y 12) y lee bien A y C en ecuaciones desordenadas (13 y 14)."
+          ],
+          "n1": "Aún no usa correctamente las expresiones algebraicas: toma otros coeficientes por A y C, o aplica la condición al revés, y no distingue en la ecuación los términos de grado 2 de los de grado 1.",
+          "n23": "Hace uso de la sintaxis y la semántica del lenguaje algebraico: identifica A y C y clasifica bien las ecuaciones de la Parte 1, pero se equivoca con los signos negativos, con A ≠ C del mismo signo, cuando falta un cuadrado o cuando la ecuación viene desordenada.",
+          "n4": "Comprende y maneja las propiedades del lenguaje algebraico: identifica A y C con su signo y clasifica correctamente casi todas las ecuaciones, incluso las de coeficientes negativos, las que no tienen x² o y² y las desordenadas, con un error menor en los ejercicios más difíciles.",
+          "n5": "Dota de significado y generaliza las propiedades: clasifica correctamente los 17 ejercicios y explica por qué los términos D, E y F no cambian el tipo de cónica y por qué al pasar un término al otro lado de la igualdad cambia su signo pero no el tipo de cónica."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "En los ejercicios 15 a 17 pasa todos los términos a un lado, junta los términos semejantes y escribe la ecuación ordenada.",
+            "En los ejercicios 18 a 20 trata a C como la incógnita: escribe la condición que le pide cada cónica (C = 5, C = 0, C positivo y distinto de 5, C negativo).",
+            "Revisa su respuesta: sustituye un valor de C en la ecuación y comprueba qué cónica resulta."
+          ],
+          "n1": "No acomoda las ecuaciones de la Parte 3 o las acomoda sin sentido, y en la Parte 4 escribe un valor de C al azar o repite un número de la ecuación sin relacionarlo con A. No revisa.",
+          "n23": "Identifica que C es un número desconocido y da un valor correcto en los casos directos (C = 5 para la circunferencia, C = 0 para la parábola), pero en la elipse y la hipérbola escribe sólo un valor sin la condición, o con errores de signo; acomoda las ecuaciones de la Parte 3 pero se equivoca al cambiar de lado un término.",
+          "n45": "Acomoda correctamente las ecuaciones de la Parte 3 y escribe las condiciones de C para las cuatro cónicas (C = 5; C = 0; C positivo y distinto de 5; C negativo). Revisa si su respuesta es razonable sustituyendo valores de C, detecta y corrige sus errores y resuelve una variante nueva (por ejemplo con otro valor de A)."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "En «Porque» justifica con A y C, no sólo repite el nombre de la cónica.",
+            "En el ejercicio 20 explica por qué para la elipse C debe ser positivo y distinto de 5, y por qué para la hipérbola debe ser negativo.",
+            "Comprueba con ejemplos y contraejemplos (por qué C = 5 no sirve para la elipse; por qué 2x² + 5y² no es circunferencia aunque los dos signos sean iguales)."
+          ],
+          "n1": "Defiende su respuesta con frases como «así lo dice la tabla» o «se parece a la otra», sin usar A ni C ni la condición que cumplen.",
+          "n2": "Explica con sus palabras («como los dos cuadrados tienen el mismo signo, la curva se cierra») por qué es esa cónica, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: prueba un valor de C para comprobar qué cónica resulta, compara dos ejercicios que sólo difieren en un signo y da ejemplos y no-ejemplos de cada cónica.",
+          "n4": "Explica la estructura del argumento: los valores y signos de A y C son la hipótesis y el tipo de cónica la conclusión. En el ejercicio 20 deduce las condiciones de C (de signo y distinto de A) y distingue entre un valor que sirve y todos los valores que sirven.",
+          "n5": "Elabora una cadena de argumentos que generaliza: deduce las condiciones de C para cualquier valor de A (positivo o negativo), explica por qué la circunferencia es un caso particular de la elipse y distingue convencerse con un ejemplo de demostrar para todos los valores."
         }
       ]
     }
