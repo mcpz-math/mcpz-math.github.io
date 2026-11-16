@@ -1067,3 +1067,12 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
 /* palabras grandes de los pasos: que siempre quepan dentro de su tarjeta */
 .regla-step { min-width: 0; }
 .regla-step .big { font-size: clamp(1.2rem, 5vw, 1.6rem); overflow-wrap: anywhere; max-width: 100%; }
+/* ---- Enlace al siguiente tema / subtema (al final de la página) ---- */
+.page-next { width: min(100% - 3rem, 760px); margin: 0 auto 2.6rem auto; text-align: center; }
+.page-next .lbl { display: block; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.5rem; }
+.page-next a {
+  display: inline-block; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem;
+  color: var(--cream); background: var(--forest); border-radius: 999px; padding: 0.75rem 1.6rem;
+  text-decoration: none; transition: background 0.15s ease;
+}
+.page-next a:hover { background: var(--forest-soft); }
