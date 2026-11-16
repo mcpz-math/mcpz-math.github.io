@@ -1944,3 +1944,11 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - A pedido de Carmen, **Serie 6** (otra serie de 10 ejercicios del mismo tipo que las Series 3 y 4, con el mismo formato y la misma rúbrica con la matriz; se numera 6 porque la Serie 5 ya es la de factorización). Ejercicios:
   (x − 4)², −(x + 1)², 4(x + 2)², −½(x − 6)², ⅓(x − 3)², x² + 2x + 1, −x² + 10x − 25, 2x² − 4x + 2, −4x² − 8x − 4 y ½x² + 2x + 2 (no se repite ninguno de las Series 3 y 4; hay parábolas flacas, gordas e «igual de abiertas», con a positiva y negativa y con h positiva y negativa).
   Archivos en `IEMS\Matemàticas III\`: `Serie 6_Bosquejo f(x)=a(x-h)2 y TCP.docx` y `…_CLAVE.docx`. Datos en el bloque "serie6bosquejo" de `rubricas-por-actividad.json`; se genera con `generar-serie-bosquejo-parabola.ps1 -Serie serie6bosquejo`.
+
+## 2026-11-16 (Matemáticas 3, Tema 7: Introducción a las cónicas)
+- A pedido de Carmen, nueva página **`matematicas-3/tema-07-conicas-introduccion.html`**: introducción a las cónicas con la **ecuación general de segundo grado** (Ax² + Bxy + Cy² + Dx + Ey + F = 0) y cómo saber de qué cónica se trata **a partir de los coeficientes**.
+  Contenido: qué son las cónicas (cortes de un cono doble, con dibujo de circunferencia, elipse, parábola e hipérbola); qué es cada coeficiente (A, B, C, D, E, F); en este curso B = 0 (ejes paralelos a x y y), así que se mira sólo **A y C**:
+  A = C → circunferencia; A y C del mismo signo y distintos → elipse; signos contrarios → hipérbola; uno de los dos vale 0 → parábola. Incluye "¿por qué funciona así?" (completar cuadrados), un truco para recordarlo, el criterio **B² − 4AC** para cuando aparece el término xy (como "para saber más"),
+  6 ejemplos paso a paso (incluye coeficientes negativos y uno con xy), nota sobre cónicas degeneradas (punto, vacío, dos rectas), un **probador** (se escriben A, B y C y la página dice qué cónica es) y **10 ejercicios al azar** de un banco generado (≈ 100, con revisión automática y explicación).
+- Se enlaza desde el temario de Matemáticas 3 (fila nueva "Introducción a las cónicas", antes de Circunferencia) y desde la página del Tema 7 (recuadro "Antes de empezar").
+- Pendiente: esta página aún no tiene rúbrica con la matriz de niveles (se puede agregar si Carmen la quiere como actividad evaluable).
