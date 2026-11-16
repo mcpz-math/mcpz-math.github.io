@@ -2133,3 +2133,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Se comprobó con generación automática: 2 000 ejercicios por página sin errores de texto, 1 200 de punto medio y 444 de distancia con fracciones (las respuestas correctas se aceptan y las incorrectas se rechazan; la clasificación de triángulos coincide con el cálculo independiente).
 - Estilo: en `assets/style.css` la barra de la raíz cuadrada ahora queda por encima cuando el radicando lleva fracciones apiladas.
 - Las rúbricas «distancia2» y «puntomedio2» (con la matriz) mencionan ahora las coordenadas fraccionarias (evidencia, qué observar y errores típicos); guía en Word regenerada.
+
+## 2026-11-16 (Matemáticas 2, Tema 1: sumas y restas combinadas con tres o cuatro fracciones)
+- A pedido de Carmen, en `matematicas-2/tema-01-operaciones-con-fracciones.html`:
+  **Material nuevo «Sumas y restas combinadas»** (después de «Sumar y restar»): el recuadro de pasos (mcm de todos los denominadores, convertir todas las fracciones, operar los numeradores en orden) con tres ejemplos —3 fracciones con suma y resta, dos restas con simplificación, y 4 fracciones— y el aviso de que cada signo afecta sólo a la fracción que le sigue (con un ejemplo con la primera fracción negativa).
+  **Banco nuevo de 100 ejercicios** «Ejercicios: sumas y restas combinadas» (10 al azar; botón «Otros 10 ejercicios»; aparte del banco anterior, con enlace desde sus instrucciones): 55 con tres fracciones y 45 con cuatro, siempre combinando sumas y restas, de mcm chico (hasta 12) a más grande (hasta 72); algunos empiezan con una fracción negativa. El resultado se escribe simplificado; si falla, ve la pista (por ejemplo, que el signo − resta el numerador o que no se suman los denominadores) y la solución con el mcm, las fracciones convertidas, la operación de los numeradores y la simplificación.
+- Se comprobó con 600 ejercicios generados: las respuestas correctas se aceptan, las incorrectas se rechazan y no hay resultados en cero ni textos con errores.
+- Rúbrica «fraccionesops» actualizada (evidencia y error típico de las sumas y restas combinadas); guía en Word regenerada.

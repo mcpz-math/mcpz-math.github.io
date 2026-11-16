@@ -109,6 +109,61 @@
     </p>
   </div>
 
+  <!-- ===================== SUMAS Y RESTAS COMBINADAS ===================== -->
+  <p class="section-label" id="sumas-y-restas-combinadas">Sumas y restas combinadas</p>
+  <div class="regla-box">
+    <div class="regla-head">★ Tres o más fracciones ★</div>
+    <div class="regla-formula">
+      {a/b} + {c/d} − {e/f}
+    </div>
+    <div class="regla-steps">
+      <div class="regla-step c1">
+        <div class="paso">Paso 1</div>
+        <div class="big">mcm</div>
+        <div class="txt">de todos los denominadores</div>
+      </div>
+      <div class="regla-step c2">
+        <div class="paso">Paso 2</div>
+        <div class="big">convertir</div>
+        <div class="txt">todas las fracciones</div>
+      </div>
+      <div class="regla-step c3">
+        <div class="paso">Paso 3</div>
+        <div class="big">operar</div>
+        <div class="txt">los numeradores en orden</div>
+      </div>
+    </div>
+    <div class="regla-ejemplo">
+      <span class="lbl">Tres fracciones · ejemplo</span>
+      {1/2} + {1/3} − {1/4}<br>
+      <span class="regla-chip c1">mcm(2, 3, 4) = 12</span>
+      → <span class="regla-chip c2">{6/12} + {4/12} − {3/12}</span>
+      → <span class="regla-chip c3">{7/12}</span><br>
+      <span class="nota">Numeradores, de izquierda a derecha: 6 + 4 − 3 = 7. El denominador <strong>no cambia</strong>.</span>
+    </div>
+    <div class="regla-ejemplo" style="margin-top:-0.4rem;">
+      <span class="lbl">Dos restas · ejemplo</span>
+      {5/6} − {1/4} − {1/3}<br>
+      <span class="regla-chip c1">mcm(6, 4, 3) = 12</span>
+      → <span class="regla-chip c2">{10/12} − {3/12} − {4/12}</span>
+      → <span class="regla-chip c3">{3/12} = {1/4}</span><br>
+      <span class="nota">10 − 3 − 4 = 3, y al final se <strong>simplifica</strong> (÷ 3).</span>
+    </div>
+    <div class="regla-ejemplo" style="margin-top:-0.4rem;">
+      <span class="lbl">Cuatro fracciones · ejemplo</span>
+      {3/4} − {1/6} + {5/12} − {1/2}<br>
+      <span class="regla-chip c1">mcm(4, 6, 12, 2) = 12</span>
+      → <span class="regla-chip c2">{9/12} − {2/12} + {5/12} − {6/12}</span>
+      → <span class="regla-chip c3">{6/12} = {1/2}</span><br>
+      <span class="nota">9 − 2 + 5 − 6 = 6.</span>
+    </div>
+  </div>
+  <div class="prose">
+    <p><strong>Cuidado con los signos:</strong> cada signo <strong>+</strong> o <strong>−</strong> afecta sólo a la fracción que viene después de él.
+       Por eso, al convertir, cada fracción conserva su signo y los numeradores se operan <strong>de izquierda a derecha</strong>.
+       Si la primera fracción es negativa, su numerador empieza con signo menos: −{1/2} + {1/3} − {1/6} = {−3/6} + {2/6} − {1/6} = {−2/6} = −{1/3}.</p>
+  </div>
+
   <!-- ===================== MULTIPLICAR ===================== -->
   <p class="section-label" id="multiplicar">Multiplicar</p>
   <div class="regla-box">
@@ -215,6 +270,7 @@
        opera con el mcm y <strong>sin simplificar antes</strong>, descompón los dos números en primos y multiplica los factores comunes.</p>
     <p>Hay sumas, restas, multiplicaciones y divisiones, de las más sencillas a las más difíciles. Te tocan <strong>10 ejercicios al azar</strong> de un banco de
        <strong>100</strong>. Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar con ejercicios diferentes.</p>
+    <p>Más abajo hay otro banco de ejercicios con <strong>tres o cuatro fracciones</strong> y sumas y restas combinadas: <a href="#ejercicios-combinadas"><strong>ir a «Sumas y restas combinadas»</strong></a>.</p>
   </div>
 
   <div class="practice-grid" id="fr-grid"></div>
@@ -401,6 +457,146 @@
     document.getElementById('fr-new').addEventListener('click', function () {
       newSet();
       document.getElementById('ejercicios-fracciones').scrollIntoView({ behavior: 'smooth' });
+    });
+    newSet();
+  })();
+  </script>
+
+  <p class="section-label" id="ejercicios-combinadas">Ejercicios: sumas y restas combinadas</p>
+  <div class="callout">
+    <div class="k">Instrucciones</div>
+    <p>Ahora hay <strong>tres o cuatro fracciones</strong> con sumas y restas combinadas. Busca el <strong>mcm de todos los denominadores</strong>, convierte cada fracción
+       (cada una conserva su signo), opera los numeradores de izquierda a derecha y escribe el resultado <strong>como fracción simplificada</strong>
+       (por ejemplo <strong>5/12</strong> o <strong>−1/6</strong>) o como número entero. Debajo de cada cuadro hay botones para el signo y la fracción.</p>
+    <p>Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>, de los más sencillos a los más difíciles. Oprime <strong>Otros 10 ejercicios</strong> para volver a intentar.</p>
+  </div>
+
+  <div class="practice-grid" id="fc-grid"></div>
+  <p class="practice-score" id="fc-score"></p>
+  <p style="text-align:center; margin:-1.6rem 0 2.5rem;">
+    <button type="button" class="pg-btn" id="fc-new">Otros 10 ejercicios (volver a intentar)</button>
+  </p>
+
+  <script>
+  (function () {
+    var MINUS = '−';
+    function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = b; b = a % b; a = t; } return a || 1; }
+    function lcm(a, b) { return a / gcd(a, b) * b; }
+    function lcmAll(list) { return list.reduce(lcm, 1); }
+    function frac(n, d) { if (d < 0) { n = -n; d = -d; } var g = gcd(n, d); return { n: n / g, d: d / g }; }
+    function negF(f) { return frac(-f.n, f.d); }
+    function eqF(f, g) { return f.n * g.d === g.n * f.d; }
+    function ri(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+    function pick(l) { return l[ri(0, l.length - 1)]; }
+    function parseNum(txt) {
+      var s = String(txt).replace(/\s+/g, '').replace(/[−–—]/g, '-').replace(',', '.'), m;
+      if ((m = s.match(/^([+-]?)(\d+)\/(\d+)$/))) { var d = parseInt(m[3], 10); return d === 0 ? null : frac((m[1] === '-' ? -1 : 1) * parseInt(m[2], 10), d); }
+      if ((m = s.match(/^([+-]?)(\d*)\.?(\d*)$/)) && (m[2] || m[3])) {
+        var dec = m[3] || '', p = Math.pow(10, dec.length);
+        return frac((m[1] === '-' ? -1 : 1) * parseInt((m[2] || '0') + dec, 10), p);
+      }
+      return null;
+    }
+    function F(n, d) { return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>'; }
+    function U(n, d) { return (n < 0 ? MINUS : '') + (d === 1 ? Math.abs(n) : F(Math.abs(n), d)); }
+    function fracHTML(f) { return U(f.n, f.d); }
+
+    // ---- banco de 100 ejercicios: tres o cuatro fracciones con sumas y restas combinadas ----
+    var DEN_A = [2, 3, 4, 6, 12], DEN_B = [2, 3, 4, 5, 6, 8, 9, 10, 12];
+    function make(nTerms, pool, maxL, negFirst) {
+      for (var tries = 0; tries < 5000; tries++) {
+        var ds = [], sg = [], ns = [], k;
+        for (k = 0; k < nTerms; k++) ds.push(pick(pool));
+        if (lcmAll(ds) > maxL || ds.every(function (d) { return d === ds[0]; })) continue;
+        for (k = 0; k < nTerms; k++) sg.push(k === 0 ? (negFirst ? -1 : 1) : (ri(0, 1) ? 1 : -1));
+        if (sg.indexOf(1) < 0 || sg.indexOf(-1) < 0) continue;          // deben combinarse sumas y restas
+        var ok = true;
+        for (k = 0; k < nTerms; k++) { var n = ri(1, ds[k] - 1); if (gcd(n, ds[k]) !== 1) { ok = false; break; } ns.push(n); }
+        if (!ok) continue;
+        var m = lcmAll(ds), tot = 0, cn = [];
+        for (k = 0; k < nTerms; k++) { cn.push(ns[k] * m / ds[k]); tot += sg[k] * cn[k]; }
+        if (tot === 0) continue;
+        return { ds: ds, sg: sg, ns: ns, m: m, cn: cn, tot: tot, r: frac(tot, m) };
+      }
+    }
+    var BANK = [], i;
+    function addN(count, nTerms, pool, maxL, negEvery) { for (var q = 0; q < count; q++) BANK.push(make(nTerms, pool, maxL, negEvery && q % negEvery === negEvery - 1)); }
+    addN(15, 3, DEN_A, 12, 3);      // 3 fracciones, mcm hasta 12
+    addN(25, 3, DEN_B, 36, 6);      // 3 fracciones, mcm hasta 36
+    addN(20, 4, DEN_A, 12, 4);      // 4 fracciones, mcm hasta 12
+    addN(25, 4, DEN_B, 60, 6);      // 4 fracciones, mcm hasta 60
+    addN(15, 3, DEN_B, 72, 5);      // 3 fracciones, denominadores más variados
+
+    function exprHTML(e, conv) {     // la expresión; conv = true → con el denominador común
+      return e.ns.map(function (n, k) {
+        var top = conv ? e.cn[k] : n, den = conv ? e.m : e.ds[k];
+        return (k === 0 ? (e.sg[k] < 0 ? MINUS : '') : ' ' + (e.sg[k] > 0 ? '+' : MINUS) + ' ') + F(top, den);
+      }).join('');
+    }
+    function solution(e) {
+      var nums = e.cn.map(function (c, k) { return (k === 0 ? (e.sg[k] < 0 ? MINUS : '') : ' ' + (e.sg[k] > 0 ? '+' : MINUS) + ' ') + c; }).join('');
+      var s = 'mcm(' + e.ds.join(', ') + ') = ' + e.m + '<br>' + exprHTML(e, true) + '<br>Numeradores: ' + nums + ' = ' + e.tot + '<br>' + U(e.tot, e.m);
+      if (!(e.r.n === e.tot && e.r.d === e.m)) s += ' = ' + fracHTML(e.r) + ' (se simplifica)';
+      return s + '<br>Resultado: <strong>' + fracHTML(e.r) + '</strong>';
+    }
+
+    var N = 10, done = {}, grid = document.getElementById('fc-grid'), scoreEl = document.getElementById('fc-score');
+    function score() {
+      var n = Object.keys(done).length;
+      scoreEl.innerHTML = 'Llevas <strong>' + n + ' de ' + N + '</strong> correctas' + (n === N ? ' — ¡excelente trabajo! 🎉' : '');
+    }
+    function pickSet() {
+      var idx = BANK.map(function (e, j) { return j; });
+      for (var a = idx.length - 1; a > 0; a--) { var b = Math.floor(Math.random() * (a + 1)), t = idx[a]; idx[a] = idx[b]; idx[b] = t; }
+      return idx.slice(0, N).sort(function (p, q) { return p - q; }).map(function (j) { return BANK[j]; });
+    }
+    function makeCard(e, idx) {
+      var card = document.createElement('div');
+      card.className = 'practice-card';
+      card.innerHTML =
+        '<div class="practice-head"><span class="enum">' + (idx + 1) + '</span><span class="practice-q">' + exprHTML(e, false) + '</span></div>' +
+        '<div class="practice-row"><span class="eq">=</span><input type="text" data-f="res" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tu resultado del ejercicio ' + (idx + 1) + '" style="flex:0 1 8rem;"></div>' +
+        '<div class="practice-keys">' + [MINUS, '/'].map(function (k) { return '<button type="button" data-k="' + k + '">' + k + '</button>'; }).join('') + '</div>' +
+        '<div class="practice-row" style="margin-top:0.7rem;"><button type="button" class="practice-check">Comprobar</button></div>' +
+        '<div class="practice-fb" aria-live="polite"></div>';
+      grid.appendChild(card);
+      var input = card.querySelector('input'), fb = card.querySelector('.practice-fb');
+      card.querySelectorAll('.practice-keys button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var s = input.selectionStart == null ? input.value.length : input.selectionStart, e2 = input.selectionEnd == null ? s : input.selectionEnd;
+          input.value = input.value.slice(0, s) + b.dataset.k + input.value.slice(e2);
+          input.focus(); input.setSelectionRange(s + 1, s + 1);
+        });
+      });
+      function check() {
+        var v = input.value.trim(), msg;
+        card.classList.remove('ok', 'bad');
+        if (!v) { fb.innerHTML = 'Escribe tu respuesta en el cuadro.'; return; }
+        var ans = parseNum(v);
+        if (!ans) { card.classList.add('bad'); fb.innerHTML = '<span class="no">No entendí lo que escribiste.</span> Escribe una fracción como <strong>5/12</strong> o <strong>−1/6</strong>, o un número entero.'; return; }
+        var m = v.replace(/\s+/g, '').replace(/[−–—]/g, '-').match(/^[+-]?(\d+)\/(\d+)$/), unreduced = m && gcd(parseInt(m[1], 10), parseInt(m[2], 10)) > 1;
+        if (eqF(ans, e.r)) {
+          if (unreduced) { card.classList.add('bad'); delete done[idx]; score(); fb.innerHTML = '<span class="no">Casi:</span> el resultado es correcto, pero <strong>falta simplificar</strong> la fracción (divide arriba y abajo entre el MCD).'; return; }
+          card.classList.add('ok'); done[idx] = 1; score();
+          fb.innerHTML = '<span class="yes">✓ ¡Correcto!</span><div class="sol">' + solution(e) + '</div>';
+          return;
+        }
+        card.classList.add('bad'); delete done[idx]; score();
+        var allPlus = e.ns.reduce(function (acc, n, k) { return acc + n * e.m / e.ds[k]; }, 0), sumNum = 0, sumDen = 0;
+        e.ns.forEach(function (n, k) { sumNum += e.sg[k] * n; sumDen += e.ds[k]; });
+        if (eqF(ans, frac(allPlus, e.m))) msg = 'Cada signo <strong>−</strong> afecta a la fracción que sigue: su numerador se <strong>resta</strong>, no se suma.';
+        else if (eqF(ans, negF(e.r))) msg = 'Revisa el <strong>signo</strong> del resultado.';
+        else if (eqF(ans, frac(sumNum, sumDen))) msg = 'No se suman (ni se restan) los <strong>denominadores</strong>: busca un denominador común para todas las fracciones.';
+        else msg = 'Busca el <strong>mcm de todos los denominadores</strong> (' + e.m + '), convierte cada fracción (con su signo) y opera los numeradores de izquierda a derecha.';
+        fb.innerHTML = '<span class="no">✗ No es correcta.</span> ' + msg + '<div class="sol">La respuesta correcta es:<br>' + solution(e) + '</div>';
+      }
+      card.querySelector('.practice-check').addEventListener('click', check);
+      input.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') check(); });
+    }
+    function newSet() { grid.innerHTML = ''; done = {}; pickSet().forEach(makeCard); score(); }
+    document.getElementById('fc-new').addEventListener('click', function () {
+      newSet();
+      document.getElementById('ejercicios-combinadas').scrollIntoView({ behavior: 'smooth' });
     });
     newSet();
   })();
