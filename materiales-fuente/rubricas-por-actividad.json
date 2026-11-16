@@ -2676,7 +2676,7 @@
       "ocurrencia": 0,
       "evidencia": [
         "Los ejercicios al azar de la página resueltos en el cuaderno, con la fórmula de la distancia escrita con los números sustituidos y cada paso (restas, cuadrados, suma y raíz).",
-        "Al menos un ejercicio con coordenadas negativas y uno en el que la raíz no es exacta (el número dentro de la raíz y su aproximación).",
+        "Al menos un ejercicio con coordenadas negativas, uno en el que la raíz no es exacta (el número dentro de la raíz y su aproximación) y uno con coordenadas fraccionarias (restas con denominador común, cuadrados de fracciones y raíz del numerador y del denominador).",
         "Un dibujo del triángulo rectángulo (catetos |x₂ − x₁| y |y₂ − y₁|, hipotenusa d) para al menos un ejercicio, el perímetro de un triángulo con el cálculo de cada lado y la clasificación de al menos tres triángulos (equilátero, isósceles o escaleno) con las tres distancias calculadas."
       ],
       "errores": [
@@ -2685,7 +2685,8 @@
         "Saca la raíz de cada sumando por separado: √(25 + 144) = 5 + 12 = 17 en lugar de √169 = 13.",
         "Olvida la raíz y deja como distancia la suma de los cuadrados (por ejemplo, d = 25 en lugar de d = 5).",
         "Mezcla las coordenadas: resta una x con una y, o pone las x y las y en el mismo paréntesis.",
-        "En los puntos de una recta horizontal o vertical suma las coordenadas en lugar de restarlas, o olvida el valor absoluto."
+        "En los puntos de una recta horizontal o vertical suma las coordenadas en lugar de restarlas, o olvida el valor absoluto.",
+        "Con coordenadas fraccionarias resta sin denominador común (1/2 − 1/4 = 0/4) o eleva al cuadrado sólo el numerador ((3/2)² = 9/2)."
       ],
       "rows": [
         {
@@ -2717,7 +2718,7 @@
           "observar": [
             "Sustituye las coordenadas en la fórmula en el lugar correcto (las x en un paréntesis y las y en el otro), con paréntesis para los negativos.",
             "Resta con números negativos (2 − (−3) = 5) y eleva al cuadrado con el signo correcto ((−12)² = 144).",
-            "Suma los cuadrados antes de sacar la raíz, y deja la raíz indicada o la aproxima cuando no es exacta."
+            "Suma los cuadrados antes de sacar la raíz, y deja la raíz indicada o la aproxima cuando no es exacta. Con fracciones, usa denominador común y saca la raíz del numerador y del denominador."
           ],
           "n1": "Aún no usa correctamente las expresiones algebraicas: sustituye en lugar equivocado o no sabe qué debe elevar al cuadrado, o da como distancia la suma sin sacar la raíz.",
           "n23": "Hace uso de la sintaxis y la semántica del lenguaje algebraico: sustituye y calcula bien con coordenadas positivas, pero se equivoca con las restas de negativos, con el signo al elevar al cuadrado o al sacar la raíz de la suma.",
@@ -2746,7 +2747,7 @@
       "ocurrencia": 0,
       "evidencia": [
         "Los ejercicios al azar de la página resueltos en el cuaderno, con la fórmula del punto medio escrita con los números sustituidos (con las fracciones) y cada paso (suma y división entre 2).",
-        "Al menos un ejercicio con resultado fraccionario o decimal, y uno de encontrar el otro extremo con las ecuaciones planteadas y despejadas.",
+        "Al menos un ejercicio con resultado fraccionario o decimal, uno con coordenadas que son fracciones (suma con denominador común y división entre 2 escritas paso a paso) y uno de encontrar el otro extremo con las ecuaciones planteadas y despejadas.",
         "Al menos un ejercicio de punto medio y longitud, con la comprobación de que Pm queda a la misma distancia de los dos extremos."
       ],
       "errores": [
@@ -2755,7 +2756,8 @@
         "Mezcla las coordenadas: suma una x con una y, o pone el promedio de las x en la coordenada y.",
         "Se equivoca con los signos al sumar con negativos: −3 + 7 = −4, o −6 + 3 = 3.",
         "Al buscar el otro extremo, escribe el punto medio como si fuera el extremo, o resta (2Pm − A) con el signo cambiado, o no multiplica por 2.",
-        "En los resultados fraccionarios, escribe −3/2 como −1.2 o 1.5 (pierde el signo o el valor)."
+        "En los resultados fraccionarios, escribe −3/2 como −1.2 o 1.5 (pierde el signo o el valor).",
+        "Con coordenadas fraccionarias suma los numeradores y los denominadores por separado (1/2 + 3/4 = 4/6) o no usa denominador común, y al dividir entre 2 divide sólo el numerador (5/4 ÷ 2 = 5/2)."
       ],
       "rows": [
         {
@@ -2773,7 +2775,7 @@
         {
           "id": "REP_ALG",
           "observar": [
-            "Suma las coordenadas x y, por separado, las coordenadas y, con los signos correctos (también con negativos).",
+            "Suma las coordenadas x y, por separado, las coordenadas y, con los signos correctos (también con negativos y con fracciones, con denominador común).",
             "Divide entre 2 cada suma y expresa el resultado como entero, fracción o decimal.",
             "Trabaja cada coordenada por separado (el promedio de las x y el promedio de las y) y escribe el punto en orden (x, y)."
           ],

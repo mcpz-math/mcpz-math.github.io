@@ -10,6 +10,7 @@
   <style>
     .sust { display: block; font-family: 'IBM Plex Mono', monospace; color: var(--forest); font-weight: 500; margin: 0.3rem 0 0.1rem; }
     .expl { display: block; font-size: 0.82rem; color: var(--ink-soft); }
+    #tabla-frac td:last-child { white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -207,6 +208,78 @@
     <p>Los tres lados miden 2: el triángulo es <strong>equilátero</strong>. (Un triángulo equilátero no puede tener todos sus vértices con coordenadas enteras; por eso aparece √3.)</p>
   </div>
 
+  <!-- Coordenadas con fracciones -->
+  <p class="section-label" id="coordenadas-fracciones">Cuando las coordenadas son fracciones</p>
+  <div class="prose">
+    <p>Las coordenadas de un punto no siempre son enteros: también pueden ser <strong>fracciones</strong>, como A(<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>).
+       La fórmula de la distancia es exactamente la misma; lo único que cambia es que las restas, los cuadrados, la suma y la raíz se hacen <strong>con fracciones</strong>.</p>
+  </div>
+  <div class="callout">
+    <div class="k no-caps">Repasa las operaciones con fracciones</div>
+    <p>Si necesitas recordar cómo se suman, se restan, se multiplican o se dividen fracciones, entra a
+       <a href="tema-01-operaciones-con-fracciones.html"><strong>Operaciones con fracciones</strong></a> (Tema 1):
+       <a href="tema-01-operaciones-con-fracciones.html#sumar-y-restar">sumar y restar</a>,
+       <a href="tema-01-operaciones-con-fracciones.html#multiplicar">multiplicar</a> y
+       <a href="tema-01-operaciones-con-fracciones.html#dividir">dividir</a>. Ahí hay pasos con colores, ejemplos y 100 ejercicios.</p>
+  </div>
+  <div class="prose"><p>Estas son las operaciones con fracciones que vas a necesitar:</p></div>
+  <div class="table-scroll">
+    <table id="tabla-frac">
+      <thead>
+        <tr><th>Qué haces</th><th>Cómo se hace</th><th>Ejemplo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Restar o sumar</strong> fracciones con distinto denominador</td><td>Busca un denominador común (el mcm), convierte las fracciones y opera los numeradores.</td><td>2 − <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> − <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span></td></tr>
+        <tr><td><strong>Elevar al cuadrado</strong> una fracción</td><td>Se eleva el numerador y también el denominador.</td><td>(<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span>)² = <span class="frac frac-inline"><span class="num">9</span><span class="den">4</span></span></td></tr>
+        <tr><td><strong>Raíz cuadrada</strong> de una fracción</td><td>Se saca la raíz del numerador y la raíz del denominador.</td><td><span class="rad">√<span class="radicand"><span class="frac frac-inline"><span class="num">25</span><span class="den">4</span></span></span></span> = <span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span></td></tr>
+        <tr><td><strong>Cuidado:</strong> un cuadrado nunca es negativo</td><td>Aunque la diferencia sea negativa, su cuadrado es positivo.</td><td>(−<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span>)² = <span class="frac frac-inline"><span class="num">9</span><span class="den">4</span></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ol class="steps">
+    <li><span><strong>Sustituye en la fórmula</strong> igual que siempre, con paréntesis en las fracciones negativas.</span></li>
+    <li><span><strong>Resta con denominador común</strong> las x y las y: convierte las fracciones al mismo denominador y resta los numeradores.</span></li>
+    <li><span><strong>Eleva al cuadrado</strong> cada diferencia (numerador y denominador) y <strong>suma</strong> con denominador común.</span></li>
+    <li><span><strong>Saca la raíz</strong> del numerador y del denominador. Si el numerador o el denominador no tienen raíz exacta, deja la raíz indicada.</span></li>
+  </ol>
+
+  <div class="example-box">
+    <h2>Ejemplo: distancia con coordenadas fraccionarias</h2>
+    <p>Distancia entre A(<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>) y B(2, <span class="frac frac-inline"><span class="num">9</span><span class="den">4</span></span>).</p>
+    <ol class="steps">
+      <li><span><strong>Identifica los puntos: </strong><span class="sust">x<sub>1</sub> = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>, y<sub>1</sub> = <span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>  (A)   y   x<sub>2</sub> = 2, y<sub>2</sub> = <span class="frac frac-inline"><span class="num">9</span><span class="den">4</span></span>  (B)</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(2 − <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>)² + (<span class="frac frac-inline"><span class="num">9</span><span class="den">4</span></span> − <span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>)²</span></span></span></span></li>
+      <li><span><strong>Resta con denominador común: </strong><span class="sust">2 − <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> − <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span> <br><span class="frac frac-inline"><span class="num">9</span><span class="den">4</span></span> − <span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span> = <span class="frac frac-inline"><span class="num">8</span><span class="den">4</span></span> = 2</span><span class="expl">Para restar 2 − <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>, el 2 se escribe como <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span>. En la y los denominadores ya son iguales.</span></span></li>
+      <li><span><strong>Eleva al cuadrado y suma: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span>)² + 2²</span></span> = <span class="rad">√<span class="radicand"><span class="frac frac-inline"><span class="num">9</span><span class="den">4</span></span> + 4</span></span> = <span class="rad">√<span class="radicand"><span class="frac frac-inline"><span class="num">9</span><span class="den">4</span></span> + <span class="frac frac-inline"><span class="num">16</span><span class="den">4</span></span></span></span> = <span class="rad">√<span class="radicand"><span class="frac frac-inline"><span class="num">25</span><span class="den">4</span></span></span></span></span><span class="expl">(<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span>)² = <span class="frac frac-inline"><span class="num">9</span><span class="den">4</span></span> (se elevan el 3 y el 2); 2² = 4 = <span class="frac frac-inline"><span class="num">16</span><span class="den">4</span></span>; <span class="frac frac-inline"><span class="num">9</span><span class="den">4</span></span> + <span class="frac frac-inline"><span class="num">16</span><span class="den">4</span></span> = <span class="frac frac-inline"><span class="num">25</span><span class="den">4</span></span>.</span></span></li>
+      <li><span><strong>Saca la raíz: </strong><span class="sust">d = <span class="rad">√<span class="radicand"><span class="frac frac-inline"><span class="num">25</span><span class="den">4</span></span></span></span> = <span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span></span><span class="expl">Raíz de 25 es 5 y raíz de 4 es 2. En decimales, <span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span> = 2.5.</span></span></li>
+    </ol>
+    <p><strong>La distancia es <span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span> unidades.</strong></p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo: cuando la raíz no es exacta</h2>
+    <p>Distancia entre A(−<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">1</span><span class="den">3</span></span>) y B(1, <span class="frac frac-inline"><span class="num">4</span><span class="den">3</span></span>).</p>
+    <ol class="steps">
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(1 − (−<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>))² + (<span class="frac frac-inline"><span class="num">4</span><span class="den">3</span></span> − <span class="frac frac-inline"><span class="num">1</span><span class="den">3</span></span>)²</span></span></span></span></li>
+      <li><span><strong>Resta con denominador común: </strong><span class="sust">1 − (−<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>) = 1 + <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">2</span><span class="den">2</span></span> + <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span> <br><span class="frac frac-inline"><span class="num">4</span><span class="den">3</span></span> − <span class="frac frac-inline"><span class="num">1</span><span class="den">3</span></span> = <span class="frac frac-inline"><span class="num">3</span><span class="den">3</span></span> = 1</span><span class="expl">Restar un número negativo es sumar su opuesto.</span></span></li>
+      <li><span><strong>Eleva al cuadrado y suma: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span>)² + 1²</span></span> = <span class="rad">√<span class="radicand"><span class="frac frac-inline"><span class="num">9</span><span class="den">4</span></span> + <span class="frac frac-inline"><span class="num">4</span><span class="den">4</span></span></span></span> = <span class="rad">√<span class="radicand"><span class="frac frac-inline"><span class="num">13</span><span class="den">4</span></span></span></span></span></span></li>
+      <li><span><strong>Saca la raíz: </strong><span class="sust">d = <span class="rad">√<span class="radicand"><span class="frac frac-inline"><span class="num">13</span><span class="den">4</span></span></span></span> = <span class="frac frac-inline"><span class="num"><span class="rad">√<span class="radicand">13</span></span></span><span class="den">2</span></span> ≈ 1.80</span><span class="expl">La raíz de 4 es 2, pero la de 13 no es exacta; se deja indicada (o se aproxima: √13 ≈ 3.61 y 3.61 ÷ 2 ≈ 1.80).</span></span></li>
+    </ol>
+    <p><strong>La distancia es <span class="frac frac-inline"><span class="num"><span class="rad">√<span class="radicand">13</span></span></span><span class="den">2</span></span> ≈ 1.80 unidades.</strong> Si el ejercicio sólo te pide el número dentro de la raíz, la respuesta es <span class="frac frac-inline"><span class="num">13</span><span class="den">4</span></span>.</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo: clasificar un triángulo con vértices fraccionarios</h2>
+    <p>Los vértices de un triángulo son A(<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>, 0), B(<span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span>, 0) y C(<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span>). Clasifícalo según sus lados.</p>
+    <ol class="steps">
+      <li><span><strong>Lado AB: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(<span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span> − <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>)² + (0 − 0)²</span></span> = <span class="rad">√<span class="radicand">2² + 0²</span></span> = <span class="rad">√<span class="radicand">4</span></span> = 2</span></span></li>
+      <li><span><strong>Lado BC: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span> − <span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span>)² + (<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span> − 0)²</span></span> = <span class="rad">√<span class="radicand">(−1)² + (<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span>)²</span></span> = <span class="rad">√<span class="radicand">1 + <span class="frac frac-inline"><span class="num">9</span><span class="den">4</span></span></span></span> = <span class="rad">√<span class="radicand"><span class="frac frac-inline"><span class="num">13</span><span class="den">4</span></span></span></span></span></span></li>
+      <li><span><strong>Lado AC: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span> − <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>)² + (<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span> − 0)²</span></span> = <span class="rad">√<span class="radicand">1² + (<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span>)²</span></span> = <span class="rad">√<span class="radicand">1 + <span class="frac frac-inline"><span class="num">9</span><span class="den">4</span></span></span></span> = <span class="rad">√<span class="radicand"><span class="frac frac-inline"><span class="num">13</span><span class="den">4</span></span></span></span></span></span></li>
+    </ol>
+    <p>BC y AC valen lo mismo, <span class="rad">√<span class="radicand"><span class="frac frac-inline"><span class="num">13</span><span class="den">4</span></span></span></span>, y AB = 2 es diferente: el triángulo es <strong>isósceles</strong>.</p>
+  </div>
+
   <!-- Ejercicios -->
   <p class="section-label" id="ejercicios-distancia">Ejercicios: distancia entre dos puntos</p>
   <div class="callout">
@@ -215,8 +288,11 @@
        Escribe tu respuesta y oprime <strong>Comprobar</strong> (o la tecla Enter). Hay ejercicios en los que debes calcular la distancia, otros en los que sólo
        escribes el número que queda <strong>dentro de la raíz</strong> (cuando la raíz no es exacta), otros de puntos en una recta horizontal o vertical,
        otros del <strong>perímetro de un triángulo</strong> y otros en los que debes <strong>clasificar un triángulo según la longitud de sus lados</strong>
-       (equilátero, isósceles o escaleno; en algunos equiláteros aparece √3: recuerda que (√3)² = 3).</p>
-    <p>Las respuestas son números. Para escribir una fracción usa <strong>/</strong> (por ejemplo 3/2) o un decimal con punto (por ejemplo 1.5).
+       (equilátero, isósceles o escaleno; en algunos equiláteros aparece √3: recuerda que (√3)² = 3).
+       Muchos ejercicios tienen <strong>coordenadas con fracciones</strong>: si necesitas repasar cómo se suman, se restan o se elevan al cuadrado,
+       entra a <a href="tema-01-operaciones-con-fracciones.html"><strong>Operaciones con fracciones</strong></a>.</p>
+    <p>Las respuestas son números. Para escribir una fracción usa <strong>/</strong> (por ejemplo 3/2) o un decimal con punto (por ejemplo 1.5);
+       cuando la respuesta es una fracción, escríbela como fracción.
        Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>; cuando termines, oprime <strong>Otros 10 ejercicios</strong> para volver a intentar.</p>
   </div>
 
@@ -270,7 +346,7 @@
             <td>Infiere e integra las relaciones: anticipa la distancia a partir del dibujo (por ejemplo, reconoce las ternas 3-4-5 y 5-12-13), explica cómo cambia la distancia al mover un punto y usa las longitudes de los lados para clasificar un triángulo y comprobar que es rectángulo.</td>
           </tr>
           <tr>
-            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Sustituye las coordenadas en la fórmula en el lugar correcto (las x en un paréntesis y las y en el otro), con paréntesis para los negativos.</li><li>Resta con números negativos (2 − (−3) = 5) y eleva al cuadrado con el signo correcto ((−12)² = 144).</li><li>Suma los cuadrados antes de sacar la raíz, y deja la raíz indicada o la aproxima cuando no es exacta.</li></ul></div></td>
+            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Sustituye las coordenadas en la fórmula en el lugar correcto (las x en un paréntesis y las y en el otro), con paréntesis para los negativos.</li><li>Resta con números negativos (2 − (−3) = 5) y eleva al cuadrado con el signo correcto ((−12)² = 144).</li><li>Suma los cuadrados antes de sacar la raíz, y deja la raíz indicada o la aproxima cuando no es exacta. Con fracciones, usa denominador común y saca la raíz del numerador y del denominador.</li></ul></div></td>
             <td>Aún no usa correctamente las expresiones algebraicas: sustituye en lugar equivocado o no sabe qué debe elevar al cuadrado, o da como distancia la suma sin sacar la raíz.</td>
             <td colspan="2">Hace uso de la sintaxis y la semántica del lenguaje algebraico: sustituye y calcula bien con coordenadas positivas, pero se equivoca con las restas de negativos, con el signo al elevar al cuadrado o al sacar la raíz de la suma.</td>
             <td>Comprende y maneja las propiedades del lenguaje algebraico: sustituye y calcula correctamente en casi todos los casos, incluso con negativos y con raíces no exactas, y distingue la raíz de toda la suma de la suma de raíces.</td>
@@ -319,6 +395,48 @@
     }
     function isSq(n) { var r = Math.round(Math.sqrt(n)); return r * r === n; }
 
+    // ---- fracciones exactas (numerador n y denominador d, siempre simplificadas) ----
+    function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = a % b; a = b; b = t; } return a; }
+    function lcm(a, b) { return a / gcd(a, b) * b; }
+    function F(n, d) { d = d || 1; if (d < 0) { n = -n; d = -d; } var g = gcd(n, d) || 1; return { n: n / g, d: d / g }; }
+    function fadd(a, b) { return F(a.n * b.d + b.n * a.d, a.d * b.d); }
+    function fsub(a, b) { return F(a.n * b.d - b.n * a.d, a.d * b.d); }
+    function fmul(a, b) { return F(a.n * b.n, a.d * b.d); }
+    function fval(a) { return a.n / a.d; }
+    function fr(n, d) { return '<span class="frac frac-inline"><span class="num">' + n + '</span><span class="den">' + d + '</span></span>'; }
+    function fraw(n, d) { return d === 1 ? tn(n) : (n < 0 ? M : '') + fr(Math.abs(n), d); }   // fracción tal cual (sin simplificar)
+    function ff(a) { return fraw(a.n, a.d); }
+    function fpar(a) { return a.n < 0 ? '(' + ff(a) + ')' : ff(a); }
+    function ptF(p) { return '(' + ff(p[0]) + ', ' + ff(p[1]) + ')'; }
+    function rf(q) { var n; do { n = ri(-11, 11); } while (n === 0); return F(n, q); }
+    function dedup(parts) { var out = []; parts.forEach(function (s) { if (!out.length || out[out.length - 1] !== s) out.push(s); }); return out; }
+    function opChain(a, b, op) {     // a ± b con denominador común, paso por paso
+      var L = lcm(a.d, b.d), an = a.n * (L / a.d), bn = b.n * (L / b.d), rn = op === '+' ? an + bn : an - bn;
+      var parts = [ff(a) + ' ' + op + ' ' + fpar(b)];
+      if (a.d !== b.d) parts.push(fraw(an, L) + ' ' + op + ' ' + (bn < 0 ? '(' + fraw(bn, L) + ')' : fraw(bn, L)));
+      parts.push(fraw(rn, L)); parts.push(ff(F(rn, L)));
+      return dedup(parts).join(' = ');
+    }
+    function exactRoot(N) { var a = Math.round(Math.sqrt(N.n)), b = Math.round(Math.sqrt(N.d)); return (a * a === N.n && b * b === N.d) ? F(a, b) : null; }
+    function distCalc(p, q) { var dx = fsub(q[0], p[0]), dy = fsub(q[1], p[1]), sx = fmul(dx, dx), sy = fmul(dy, dy); return { dx: dx, dy: dy, sx: sx, sy: sy, N: fadd(sx, sy) }; }
+    function rootTxt(N) {            // d = √N: exacta, como radical sobre entero, o aproximada
+      var ex = exactRoot(N), b = Math.round(Math.sqrt(N.d));
+      if (ex) return 'Raíz: d = ' + rad(ff(N)) + ' = <strong>' + ff(ex) + '</strong>';
+      if (b * b === N.d) return 'La raíz no es exacta: d = ' + rad(ff(N)) + ' = ' + fr(rad(N.n), b) + ' ≈ <strong>' + Math.sqrt(fval(N)).toFixed(2) + '</strong>';
+      return 'La raíz no es exacta: d = ' + rad(ff(N)) + ' ≈ <strong>' + Math.sqrt(fval(N)).toFixed(2) + '</strong>';
+    }
+    function distChain(p, q) {       // solución completa con fracciones
+      var c = distCalc(p, q);
+      return 'Sustituye: d = ' + rad('(' + ff(q[0]) + ' − ' + fpar(p[0]) + ')² + (' + ff(q[1]) + ' − ' + fpar(p[1]) + ')²') + '<br>' +
+             'Resta las x (denominador común): ' + opChain(q[0], p[0], '−') + '<br>Resta las y: ' + opChain(q[1], p[1], '−') + '<br>' +
+             'Eleva al cuadrado: d = ' + rad('(' + ff(c.dx) + ')² + (' + ff(c.dy) + ')²') + ' = ' + rad(ff(c.sx) + ' + ' + ff(c.sy)) + '<br>' +
+             'Suma: ' + opChain(c.sx, c.sy, '+') + '<br>' + rootTxt(c.N);
+    }
+    function sideTxt(nom, p, q) {    // un lado, en una sola línea
+      var c = distCalc(p, q);
+      return nom + ': d = ' + rad('(' + ff(q[0]) + ' − ' + fpar(p[0]) + ')² + (' + ff(q[1]) + ' − ' + fpar(p[1]) + ')²') + ' = ' + rad('(' + ff(c.dx) + ')² + (' + ff(c.dy) + ')²') + ' = ' + rad(ff(c.N));
+    }
+
     // ---- cadena de solución con los números sustituidos ----
     function sol(x1, y1, x2, y2) {
       var dx = x2 - x1, dy = y2 - y1, N = dx * dx + dy * dy, r = Math.round(Math.sqrt(N)), s;
@@ -332,38 +450,60 @@
     // ---- banco de 100 ejercicios ----
     var TERNAS = [[3, 4], [4, 3], [3, 4], [4, 3], [6, 8], [8, 6], [5, 12], [12, 5], [9, 12], [12, 9], [8, 15], [15, 8]];
     var BANK = [], i, x1, y1, v;
-    for (i = 0; i < 30; i++) {      // A: distancia con resultado entero (30)
+    for (i = 0; i < 18; i++) {      // A: distancia con resultado entero (18)
       x1 = ri(-7, 7); y1 = ri(-7, 7); v = pick(TERNAS);
       BANK.push({ t: 'A', x1: x1, y1: y1, x2: x1 + sg() * v[0], y2: y1 + sg() * v[1] });
     }
-    for (i = 0; i < 20; i++) {      // B: raíz no exacta → número dentro de la raíz (20)
+    for (i = 0; i < 12; i++) {      // B: raíz no exacta → número dentro de la raíz (12)
       var dx, dy; do { dx = ri(1, 9); dy = ri(1, 9); } while (isSq(dx * dx + dy * dy));
       x1 = ri(-7, 7); y1 = ri(-7, 7); BANK.push({ t: 'B', x1: x1, y1: y1, x2: x1 + sg() * dx, y2: y1 + sg() * dy });
     }
-    for (i = 0; i < 15; i++) {      // C: recta horizontal o vertical (15)
+    for (i = 0; i < 8; i++) {       // C: recta horizontal o vertical (8)
       x1 = ri(-8, 8); y1 = ri(-8, 8); var len = ri(2, 12) * sg();
       if (i % 2) BANK.push({ t: 'C', x1: x1, y1: y1, x2: x1 + len, y2: y1 }); else BANK.push({ t: 'C', x1: x1, y1: y1, x2: x1, y2: y1 + len });
     }
-    for (i = 0; i < 10; i++) {      // D: perímetro de un triángulo rectángulo (10)
+    for (i = 0; i < 5; i++) {       // D: perímetro de un triángulo rectángulo (5)
       x1 = ri(-6, 6); y1 = ri(-6, 6); v = pick(TERNAS); var a = sg() * v[0], b = sg() * v[1];
       BANK.push({ t: 'D', ax: x1, ay: y1, bx: x1 + a, by: y1, cx: x1 + a, cy: y1 + b });
     }
     function l2(p, q) { return (q[0] - p[0]) * (q[0] - p[0]) + (q[1] - p[1]) * (q[1] - p[1]); }
     function area2(p, q, r) { return (q[0] - p[0]) * (r[1] - p[1]) - (q[1] - p[1]) * (r[0] - p[0]); }
     function giraNombres(P) { var k = ri(0, 2); return [P[k], P[(k + 1) % 3], P[(k + 2) % 3]]; }
-    for (i = 0; i < 25; i++) {      // E: clasificar un triángulo por la longitud de sus lados (25: 5 equiláteros, 10 isósceles, 10 escalenos)
-      if (i < 5) { BANK.push({ t: 'E', k: 'equi', m: [1, 2, 2, 3, 1][i], a0: ri(-5, 5), b0: ri(-5, 5) }); continue; }
+    function mkIsos() {             // isósceles: dos lados desde un mismo vértice, iguales (por reflexión o por giro de 90°)
+      var bx = ri(-5, 5), by = ri(-5, 5), ddx = sg() * ri(1, 5), ddy = sg() * ri(1, 5);
+      return giraNombres([[bx + ddx, by + ddy], [bx, by], ri(0, 1) ? [bx - ddy, by + ddx] : [bx + ddx, by - ddy]]);
+    }
+    function mkEsca() {             // escaleno: los tres lados distintos y sin que los puntos estén alineados
       var P3;
-      if (i < 15) {                 // isósceles: dos lados desde un mismo vértice, iguales (por reflexión o por giro de 90°)
-        var bx = ri(-5, 5), by = ri(-5, 5), ddx = sg() * ri(1, 5), ddy = sg() * ri(1, 5);
-        P3 = giraNombres([[bx + ddx, by + ddy], [bx, by], ri(0, 1) ? [bx - ddy, by + ddx] : [bx + ddx, by - ddy]]);
-        BANK.push({ t: 'E', k: 'isos', P: P3 });
-      } else {                      // escaleno: los tres lados distintos y sin que los puntos estén alineados
-        do { P3 = [[ri(-6, 6), ri(-6, 6)], [ri(-6, 6), ri(-6, 6)], [ri(-6, 6), ri(-6, 6)]]; }
-        while (area2(P3[0], P3[1], P3[2]) === 0 || l2(P3[0], P3[1]) === l2(P3[1], P3[2]) || l2(P3[1], P3[2]) === l2(P3[0], P3[2]) || l2(P3[0], P3[1]) === l2(P3[0], P3[2]));
-        BANK.push({ t: 'E', k: 'esca', P: P3 });
-      }
-    }    for (i = BANK.length - 1; i > 0; i--) { var j = ri(0, i), tmp = BANK[i]; BANK[i] = BANK[j]; BANK[j] = tmp; } // mezclar
+      do { P3 = [[ri(-6, 6), ri(-6, 6)], [ri(-6, 6), ri(-6, 6)], [ri(-6, 6), ri(-6, 6)]]; }
+      while (area2(P3[0], P3[1], P3[2]) === 0 || l2(P3[0], P3[1]) === l2(P3[1], P3[2]) || l2(P3[1], P3[2]) === l2(P3[0], P3[2]) || l2(P3[0], P3[1]) === l2(P3[0], P3[2]));
+      return P3;
+    }
+    for (i = 0; i < 20; i++) {      // E: clasificar un triángulo por la longitud de sus lados (20: 4 equiláteros, 8 isósceles, 8 escalenos)
+      if (i < 4) BANK.push({ t: 'E', k: 'equi', m: [1, 2, 2, 3][i], a0: ri(-5, 5), b0: ri(-5, 5) });
+      else if (i < 12) BANK.push({ t: 'E', k: 'isos', P: mkIsos() });
+      else BANK.push({ t: 'E', k: 'esca', P: mkEsca() });
+    }
+    // ---- ejercicios con coordenadas fraccionarias (37) ----
+    var TERN3 = [[3, 4, 5], [4, 3, 5], [5, 12, 13], [12, 5, 13], [8, 15, 17], [15, 8, 17]], DENS = [2, 3, 4, 5, 6];
+    for (i = 0; i < 15; i++) {      // F: distancia exacta con coordenadas fraccionarias (15)
+      v = pick(TERN3); var qf = pick([2, 2, 3, 3, 4, 5, 6]), fx1 = rf(pick(DENS)), fy1 = rf(pick(DENS));
+      BANK.push({ t: 'F', p: [fx1, fy1], q: [fadd(fx1, F(sg() * v[0], qf)), fadd(fy1, F(sg() * v[1], qf))] });
+    }
+    for (i = 0; i < 10; i++) {      // G: raíz no exacta con fracciones → fracción dentro de la raíz (10)
+      var ga, gb, gq = pick([2, 2, 3, 4]); do { ga = ri(1, 5); gb = ri(1, 5); } while (isSq(ga * ga + gb * gb));
+      var gx1 = rf(pick(DENS)), gy1 = rf(pick(DENS));
+      BANK.push({ t: 'G', p: [gx1, gy1], q: [fadd(gx1, F(sg() * ga, gq)), fadd(gy1, F(sg() * gb, gq))] });
+    }
+    for (i = 0; i < 5; i++) {       // H: recta horizontal o vertical con fracciones (5)
+      var hx1 = rf(pick(DENS)), hy1 = rf(pick(DENS)), hl = F(sg() * ri(1, 11), pick(DENS));
+      BANK.push(i % 2 ? { t: 'H', p: [hx1, hy1], q: [fadd(hx1, hl), hy1] } : { t: 'H', p: [hx1, hy1], q: [hx1, fadd(hy1, hl)] });
+    }
+    for (i = 0; i < 7; i++) {       // I: clasificar un triángulo con vértices fraccionarios (7: 4 isósceles, 3 escalenos)
+      var Pi = i < 4 ? mkIsos() : mkEsca(), qi = pick([2, 3, 4]);
+      BANK.push({ t: 'I', k: i < 4 ? 'isos' : 'esca', P: Pi.map(function (pp) { return [F(pp[0], qi), F(pp[1], qi)]; }) });
+    }
+    for (i = BANK.length - 1; i > 0; i--) { var j = ri(0, i), tmp = BANK[i]; BANK[i] = BANK[j]; BANK[j] = tmp; } // mezclar
 
     function card(n, spec) {
       return {
@@ -373,7 +513,7 @@
           var raw = ctx.inp.v.value.trim();
           if (!raw) return { msg: 'Escribe tu respuesta antes de comprobar.' };
           var v = parseNum(raw);
-          if (v == null) return { bad: true, msg: '<span class="no">No pude leer tu respuesta.</span> Escribe un número, por ejemplo <strong>13</strong> o <strong>5.83</strong>.' };
+          if (v == null) return { bad: true, msg: '<span class="no">No pude leer tu respuesta.</span> Escribe un número, por ejemplo <strong>13</strong>, <strong>5.83</strong> o una fracción como <strong>5/2</strong>.' };
           if (Math.abs(v - spec.ans) < 0.005 + (spec.tol || 0)) return { wrong: [], total: 1 };
           return { wrong: ['v'], msgs: [spec.hint], total: 1 };
         },
@@ -425,7 +565,50 @@
             },
             sol: sol3
           };
-        }        var dx = e.x2 - e.x1, dy = e.y2 - e.y1, N = dx * dx + dy * dy, head = 'A' + pt(e.x1, e.y1) + ' y B' + pt(e.x2, e.y2);
+        }
+        if (e.t === 'F' || e.t === 'G' || e.t === 'H') {   // coordenadas fraccionarias
+          var cf = distCalc(e.p, e.q), headF = 'A' + ptF(e.p) + ' y B' + ptF(e.q), exF = exactRoot(cf.N);
+          if (e.t === 'H') {
+            var horiz = e.p[1].n === e.q[1].n && e.p[1].d === e.q[1].d, dH = horiz ? cf.dx : cf.dy, dAbs = F(Math.abs(dH.n), dH.d),
+                ejeH = horiz ? 'horizontal (misma y)' : 'vertical (misma x)', difH = horiz ? opChain(e.q[0], e.p[0], '−') : opChain(e.q[1], e.p[1], '−');
+            return card(n, {
+              head: headF, ask: 'Calcula la distancia entre los dos puntos (escribe una fracción, por ejemplo 7/4)', label: 'd =', aria: 'Distancia', ans: fval(dAbs), tol: -0.003,
+              hint: 'Los puntos están en una recta ' + ejeH + ': resta las coordenadas que cambian con denominador común y toma el valor absoluto: ' + difH + ' → d = ' + ff(dAbs) + '.',
+              sol: 'Los puntos están en una recta ' + ejeH + '.<br>Resta: ' + difH + '<br>Valor absoluto: d = |' + ff(dH) + '| = <strong>' + ff(dAbs) + '</strong>'
+            });
+          }
+          if (e.t === 'G') {
+            return card(n, {
+              head: headF, ask: 'La distancia es d = √( ? ). Escribe la fracción que queda dentro de la raíz (por ejemplo 13/4)', label: 'dentro de la raíz =', aria: 'Fracción dentro de la raíz', ans: fval(cf.N), tol: -0.003,
+              hint: 'Resta las coordenadas con denominador común: x₂ − x₁ = ' + ff(cf.dx) + ' y y₂ − y₁ = ' + ff(cf.dy) + '. Elévalas al cuadrado: ' + ff(cf.sx) + ' y ' + ff(cf.sy) + '. Súmalas con denominador común: ' + opChain(cf.sx, cf.sy, '+') + '.',
+              sol: distChain(e.p, e.q)
+            });
+          }
+          return card(n, {   // F: distancia exacta
+            head: headF, ask: 'Calcula la distancia entre los dos puntos (escribe la respuesta como fracción, por ejemplo 5/2)', label: 'd =', aria: 'Distancia', ans: fval(exF), tol: -0.003,
+            hint: 'Resta con denominador común: x₂ − x₁ = ' + ff(cf.dx) + ' y y₂ − y₁ = ' + ff(cf.dy) + '. Eleva al cuadrado y suma: ' + opChain(cf.sx, cf.sy, '+') + '. Saca la raíz del numerador y del denominador: d = ' + ff(exF) + '.',
+            sol: distChain(e.p, e.q)
+          });
+        }
+        if (e.t === 'I') {   // clasificar con vértices fraccionarios
+          var PI = e.P, c1 = distCalc(PI[0], PI[1]), c2 = distCalc(PI[1], PI[2]), c3 = distCalc(PI[0], PI[2]);
+          var igI = ff(c1.N) === ff(c2.N) ? 'AB y BC' : (ff(c2.N) === ff(c3.N) ? 'BC y AC' : 'AB y AC');
+          var cmpI = 'Los números dentro de las raíces son ' + ff(c1.N) + ', ' + ff(c2.N) + ' y ' + ff(c3.N) + ': ' +
+                     (e.k === 'isos' ? igI + ' miden lo mismo y el otro es diferente: <strong>isósceles</strong>.' : 'los tres son distintos: <strong>escaleno</strong>.');
+          var hintI = 'Calcula las tres distancias y compáralas (puedes comparar los números dentro de las raíces): AB² = ' + ff(c1.N) + ', BC² = ' + ff(c2.N) + ' y AC² = ' + ff(c3.N) + '. ' +
+                      (e.k === 'isos' ? 'Dos son iguales (' + igI + '): isósceles.' : 'Los tres son distintos: escaleno.');
+          return {
+            head: 'Triángulo con vértices A' + ptF(PI[0]) + ', B' + ptF(PI[1]) + ' y C' + ptF(PI[2]),
+            body: '<div class="practice-ask">Calcula la longitud de sus lados y clasifícalo según sus lados</div>' + h.optsHTML('t', [['equi', 'Equilátero'], ['isos', 'Isósceles'], ['esca', 'Escaleno']], false),
+            check: function (ctx) {
+              if (!ctx.chosen.t) return { msg: 'Elige una de las tres opciones.' };
+              if (ctx.chosen.t === e.k) return { wrong: [], total: 1 };
+              return { wrong: ['t'], msgs: [hintI], total: 1 };
+            },
+            sol: sideTxt('AB', PI[0], PI[1]) + '<br>' + sideTxt('BC', PI[1], PI[2]) + '<br>' + sideTxt('AC', PI[0], PI[2]) + '<br>' + cmpI
+          };
+        }
+        var dx = e.x2 - e.x1, dy = e.y2 - e.y1, N = dx * dx + dy * dy, head = 'A' + pt(e.x1, e.y1) + ' y B' + pt(e.x2, e.y2);
         if (e.t === 'C') {
           var d = Math.abs(e.x1 === e.x2 ? dy : dx), eje = e.x1 === e.x2 ? 'vertical (misma x)' : 'horizontal (misma y)';
           return card(n, {

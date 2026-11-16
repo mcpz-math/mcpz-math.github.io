@@ -10,6 +10,7 @@
   <style>
     .sust { display: block; font-family: 'IBM Plex Mono', monospace; color: var(--forest); font-weight: 500; margin: 0.3rem 0 0.1rem; }
     .expl { display: block; font-size: 0.82rem; color: var(--ink-soft); }
+    #tabla-frac td:last-child { white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -150,15 +151,87 @@
     <p><strong>El punto medio es P<sub>m</sub>(2, −2) y la longitud del segmento es 10.</strong> La mitad de la longitud, 5, es la distancia de P<sub>m</sub> a cada extremo.</p>
   </div>
 
+  <!-- Coordenadas con fracciones -->
+  <p class="section-label" id="coordenadas-fracciones">Cuando las coordenadas son fracciones</p>
+  <div class="prose">
+    <p>Las coordenadas de un punto no siempre son enteros: también pueden ser <strong>fracciones</strong>, como A(<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span>).
+       La fórmula del punto medio es exactamente la misma; lo único que cambia es que las sumas y la división entre 2 se hacen <strong>con fracciones</strong>.</p>
+  </div>
+  <div class="callout">
+    <div class="k no-caps">Repasa las operaciones con fracciones</div>
+    <p>Si necesitas recordar cómo se suman, se restan, se multiplican o se dividen fracciones, entra a
+       <a href="tema-01-operaciones-con-fracciones.html"><strong>Operaciones con fracciones</strong></a> (Tema 1):
+       <a href="tema-01-operaciones-con-fracciones.html#sumar-y-restar">sumar y restar</a>,
+       <a href="tema-01-operaciones-con-fracciones.html#multiplicar">multiplicar</a> y
+       <a href="tema-01-operaciones-con-fracciones.html#dividir">dividir</a>. Ahí hay pasos con colores, ejemplos y 100 ejercicios.</p>
+  </div>
+  <div class="prose"><p>Estas son las operaciones con fracciones que vas a necesitar:</p></div>
+  <div class="table-scroll">
+    <table id="tabla-frac">
+      <thead>
+        <tr><th>Qué haces</th><th>Cómo se hace</th><th>Ejemplo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Sumar</strong> fracciones con distinto denominador</td><td>Busca un denominador común (el mcm), convierte las fracciones y suma los numeradores.</td><td><span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> + <span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span> = <span class="frac frac-inline"><span class="num">2</span><span class="den">4</span></span> + <span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span> = <span class="frac frac-inline"><span class="num">5</span><span class="den">4</span></span></td></tr>
+        <tr><td><strong>Sumar</strong> una fracción negativa</td><td>Va entre paréntesis; se restan los numeradores.</td><td><span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span> + (−<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>) = <span class="frac frac-inline"><span class="num">2</span><span class="den">4</span></span> = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span></td></tr>
+        <tr><td><strong>Dividir entre 2</strong></td><td>Dividir entre 2 es multiplicar por <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>: el denominador se duplica.</td><td><span class="frac frac-inline"><span class="num">5</span><span class="den">4</span></span> ÷ 2 = <span class="frac frac-inline"><span class="num">5</span><span class="den">4</span></span> · <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">5</span><span class="den">8</span></span></td></tr>
+        <tr><td><strong>Simplificar</strong></td><td>Divide numerador y denominador entre el mismo número.</td><td><span class="frac frac-inline"><span class="num">6</span><span class="den">2</span></span> = 3 &nbsp; y &nbsp; <span class="frac frac-inline"><span class="num">2</span><span class="den">4</span></span> = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ol class="steps">
+    <li><span><strong>Sustituye en la fórmula</strong> con las fracciones, entre paréntesis si son negativas. Para no escribir una fracción dentro de otra, la división se escribe «÷ 2».
+      <span class="sust">P<sub>m</sub> = ( ( x<sub>1</sub> + x<sub>2</sub> ) ÷ 2 , ( y<sub>1</sub> + y<sub>2</sub> ) ÷ 2 )</span></span></li>
+    <li><span><strong>Suma con denominador común</strong> las dos fracciones de cada coordenada.</span></li>
+    <li><span><strong>Divide entre 2</strong> el resultado: multiplícalo por <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>.</span></li>
+    <li><span><strong>Simplifica</strong> si se puede, y escribe P<sub>m</sub>(x, y).</span></li>
+  </ol>
+
+  <div class="example-box">
+    <h2>Ejemplo 6: coordenadas con fracciones</h2>
+    <p>Punto medio entre A(<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span>) y B(<span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span>, −<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>).</p>
+    <ol class="steps">
+      <li><span><strong>Identifica los extremos: </strong><span class="sust">x<sub>1</sub> = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>, y<sub>1</sub> = <span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span>  (A)   y   x<sub>2</sub> = <span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span>, y<sub>2</sub> = −<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>  (B)</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">P<sub>m</sub> = ( (<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> + <span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span>) ÷ 2 , (<span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span> + (−<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>)) ÷ 2 )</span><span class="expl">La fracción negativa va entre paréntesis.</span></span></li>
+      <li><span><strong>Suma las fracciones: </strong><span class="sust">x: <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> + <span class="frac frac-inline"><span class="num">5</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">6</span><span class="den">2</span></span> = 3 <br>y: <span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span> + (−<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>) = <span class="frac frac-inline"><span class="num">2</span><span class="den">4</span></span> = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span></span><span class="expl">En las dos sumas los denominadores ya son iguales; sólo se suman los numeradores y se simplifica.</span></span></li>
+      <li><span><strong>Divide entre 2: </strong><span class="sust">x: 3 ÷ 2 = <span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span> <br>y: <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> ÷ 2 = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> · <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span></span><span class="expl">Dividir entre 2 es multiplicar por <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>.</span></span></li>
+    </ol>
+    <p><strong>El punto medio es P<sub>m</sub>(<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>).</strong></p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 7: fracciones con distinto denominador</h2>
+    <p>Punto medio entre A(−<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">1</span><span class="den">3</span></span>) y B(<span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span>, <span class="frac frac-inline"><span class="num">5</span><span class="den">6</span></span>).</p>
+    <ol class="steps">
+      <li><span><strong>Identifica los extremos: </strong><span class="sust">x<sub>1</sub> = −<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>, y<sub>1</sub> = <span class="frac frac-inline"><span class="num">1</span><span class="den">3</span></span>  (A)   y   x<sub>2</sub> = <span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span>, y<sub>2</sub> = <span class="frac frac-inline"><span class="num">5</span><span class="den">6</span></span>  (B)</span></span></li>
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">P<sub>m</sub> = ( (−<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> + <span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span>) ÷ 2 , (<span class="frac frac-inline"><span class="num">1</span><span class="den">3</span></span> + <span class="frac frac-inline"><span class="num">5</span><span class="den">6</span></span>) ÷ 2 )</span></span></li>
+      <li><span><strong>Suma con denominador común: </strong><span class="sust">x: −<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> + <span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span> = −<span class="frac frac-inline"><span class="num">2</span><span class="den">4</span></span> + <span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span> = <span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span> <br>y: <span class="frac frac-inline"><span class="num">1</span><span class="den">3</span></span> + <span class="frac frac-inline"><span class="num">5</span><span class="den">6</span></span> = <span class="frac frac-inline"><span class="num">2</span><span class="den">6</span></span> + <span class="frac frac-inline"><span class="num">5</span><span class="den">6</span></span> = <span class="frac frac-inline"><span class="num">7</span><span class="den">6</span></span></span><span class="expl">En la x el denominador común es 4 (mcm de 2 y 4); en la y es 6 (mcm de 3 y 6).</span></span></li>
+      <li><span><strong>Divide entre 2: </strong><span class="sust">x: <span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span> ÷ 2 = <span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span> · <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">1</span><span class="den">8</span></span> <br>y: <span class="frac frac-inline"><span class="num">7</span><span class="den">6</span></span> ÷ 2 = <span class="frac frac-inline"><span class="num">7</span><span class="den">6</span></span> · <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">7</span><span class="den">12</span></span></span></span></li>
+    </ol>
+    <p><strong>El punto medio es P<sub>m</sub>(<span class="frac frac-inline"><span class="num">1</span><span class="den">8</span></span>, <span class="frac frac-inline"><span class="num">7</span><span class="den">12</span></span>).</strong></p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 8: el otro extremo, con fracciones</h2>
+    <p>El punto medio de un segmento AB es P<sub>m</sub>(<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>, −<span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span>) y uno de sus extremos es A(−<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>, <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>). ¿Cuáles son las coordenadas de B(x, y)?</p>
+    <ol class="steps">
+      <li><span><strong>Sustituye en la fórmula: </strong><span class="sust">( <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> , −<span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span> ) = ( (−<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span> + x) ÷ 2 , (<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> + y) ÷ 2 )</span></span></li>
+      <li><span><strong>Despeja x: </strong><span class="sust">(−<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span> + x) ÷ 2 = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span>  →  −<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span> + x = 2 · <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> = 1  →  x = 1 − (−<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span>) = <span class="frac frac-inline"><span class="num">4</span><span class="den">4</span></span> + <span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span> = <span class="frac frac-inline"><span class="num">5</span><span class="den">4</span></span></span><span class="expl">Se multiplica por 2 los dos lados; después se resta −<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span> (restar un negativo es sumar).</span></span></li>
+      <li><span><strong>Despeja y: </strong><span class="sust">(<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> + y) ÷ 2 = −<span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span>  →  <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> + y = 2 · (−<span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span>) = −<span class="frac frac-inline"><span class="num">6</span><span class="den">4</span></span> = −<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span>  →  y = −<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span> − <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> = −<span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> = −2</span></span></li>
+    </ol>
+    <p><strong>El otro extremo es B(<span class="frac frac-inline"><span class="num">5</span><span class="den">4</span></span>, −2).</strong> Comprobación: (−<span class="frac frac-inline"><span class="num">1</span><span class="den">4</span></span> + <span class="frac frac-inline"><span class="num">5</span><span class="den">4</span></span>) ÷ 2 = 1 ÷ 2 = <span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> ✓ y (<span class="frac frac-inline"><span class="num">1</span><span class="den">2</span></span> + (−2)) ÷ 2 = −<span class="frac frac-inline"><span class="num">3</span><span class="den">2</span></span> ÷ 2 = −<span class="frac frac-inline"><span class="num">3</span><span class="den">4</span></span> ✓.</p>
+  </div>
+
   <!-- Ejercicios -->
   <p class="section-label" id="ejercicios-punto-medio">Ejercicios: punto medio</p>
   <div class="callout">
     <div class="k">Instrucciones</div>
     <p>Resuelve cada ejercicio en tu cuaderno: <strong>sustituye los números en la fórmula</strong>, suma las coordenadas y divide entre 2.
        Escribe tus respuestas en las casillas y oprime <strong>Comprobar</strong> (o la tecla Enter). Hay ejercicios de encontrar el punto medio
-       (con resultados enteros y con fracciones), de encontrar el <strong>otro extremo</strong> de un segmento y de encontrar el punto medio
+       (con resultados enteros y con fracciones, y <strong>con coordenadas que son fracciones</strong>), de encontrar el <strong>otro extremo</strong> de un segmento y de encontrar el punto medio
        <strong>y</strong> la longitud del segmento.</p>
-    <p>Puedes escribir un número entero, un decimal con punto (por ejemplo −1.5) o una fracción con <strong>/</strong> (por ejemplo −3/2).
+    <p>Puedes escribir un número entero, un decimal con punto (por ejemplo −1.5) o una fracción con <strong>/</strong> (por ejemplo −3/2); si el resultado es una fracción, escríbela como fracción. Si necesitas repasar cómo se suman o se dividen las fracciones, entra a <a href="tema-01-operaciones-con-fracciones.html"><strong>Operaciones con fracciones</strong></a>.
        Para el signo menos usa el guion <strong>-</strong> o el botón <strong>−</strong>.
        Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>; cuando termines, oprime <strong>Otros 10 ejercicios</strong> para volver a intentar.</p>
   </div>
@@ -206,7 +279,7 @@
             <td>Expresa su trabajo por diferentes medios (fórmula sustituida con fracciones, pasos, decimales y, cuando se pide, un dibujo del segmento) con notación correcta, y explica de manera oral o escrita cómo encontraría el punto medio o el extremo de un segmento nuevo.</td>
           </tr>
           <tr>
-            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Suma las coordenadas x y, por separado, las coordenadas y, con los signos correctos (también con negativos).</li><li>Divide entre 2 cada suma y expresa el resultado como entero, fracción o decimal.</li><li>Trabaja cada coordenada por separado (el promedio de las x y el promedio de las y) y escribe el punto en orden (x, y).</li></ul></div></td>
+            <td class="crit"><strong>Representación algebraica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Suma las coordenadas x y, por separado, las coordenadas y, con los signos correctos (también con negativos y con fracciones, con denominador común).</li><li>Divide entre 2 cada suma y expresa el resultado como entero, fracción o decimal.</li><li>Trabaja cada coordenada por separado (el promedio de las x y el promedio de las y) y escribe el punto en orden (x, y).</li></ul></div></td>
             <td>Aún no usa correctamente las expresiones algebraicas: resta en lugar de sumar, no divide entre 2 o mezcla las coordenadas x y y.</td>
             <td colspan="2">Hace uso de la sintaxis y la semántica del lenguaje algebraico: encuentra el punto medio cuando las coordenadas son positivas y las sumas son pares, pero se equivoca con los negativos o con los resultados fraccionarios.</td>
             <td>Comprende y maneja las propiedades del lenguaje algebraico: encuentra correctamente el punto medio en casi todos los casos, incluso con negativos y con fracciones, y expresa el resultado en forma de fracción y decimal.</td>
@@ -266,26 +339,60 @@
       return (s < 0 ? M : '') + fr(Math.abs(s), 2);
     }
 
+    // ---- fracciones exactas (numerador n y denominador d, siempre simplificadas) ----
+    function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = a % b; a = b; b = t; } return a; }
+    function lcm(a, b) { return a / gcd(a, b) * b; }
+    function F(n, d) { d = d || 1; if (d < 0) { n = -n; d = -d; } var g = gcd(n, d) || 1; return { n: n / g, d: d / g }; }
+    function fadd(a, b) { return F(a.n * b.d + b.n * a.d, a.d * b.d); }
+    function fsub(a, b) { return F(a.n * b.d - b.n * a.d, a.d * b.d); }
+    function fmul(a, b) { return F(a.n * b.n, a.d * b.d); }
+    function fval(a) { return a.n / a.d; }
+    function fraw(n, d) { return d === 1 ? tn(n) : (n < 0 ? M : '') + fr(Math.abs(n), d); }   // fracción tal cual (sin simplificar)
+    function ff(a) { return fraw(a.n, a.d); }
+    function fpar(a) { return a.n < 0 ? '(' + ff(a) + ')' : ff(a); }
+    function pF(x, y) { return '(' + ff(x) + ', ' + ff(y) + ')'; }
+    function rf(q) { var n; do { n = ri(-11, 11); } while (n === 0); return F(n, q); }
+    function dedup(parts) { var out = []; parts.forEach(function (s) { if (!out.length || out[out.length - 1] !== s) out.push(s); }); return out; }
+    function opChain(a, b, op) {     // a ± b con denominador común, paso por paso
+      var L = lcm(a.d, b.d), an = a.n * (L / a.d), bn = b.n * (L / b.d), rn = op === '+' ? an + bn : an - bn;
+      var parts = [ff(a) + ' ' + op + ' ' + fpar(b)];
+      if (a.d !== b.d) parts.push(fraw(an, L) + ' ' + op + ' ' + (bn < 0 ? '(' + fraw(bn, L) + ')' : fraw(bn, L)));
+      parts.push(fraw(rn, L)); parts.push(ff(F(rn, L)));
+      return dedup(parts).join(' = ');
+    }
+    function halfChain(s) {          // s ÷ 2 = s · 1/2
+      return dedup([ff(s) + ' ÷ 2', ff(s) + ' · ' + fr(1, 2), fraw(s.n, 2 * s.d), ff(F(s.n, 2 * s.d))]).join(' = ');
+    }
+    var DPAIRS = [[2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [8, 8], [2, 4], [4, 2], [3, 6], [6, 3], [2, 6], [6, 2], [4, 8], [8, 4]];
+    function fpair() { var d = pick(DPAIRS); return [rf(d[0]), rf(d[1])]; }
+    function nonInt(list) { return list.filter(function (c) { return c.d > 1; }).length; }
     // ---- banco de 100 ejercicios ----
     var TERNAS = [[3, 4], [4, 3], [6, 8], [8, 6], [5, 12], [12, 5], [0, 3], [3, 0], [0, 4], [4, 0], [0, 5], [5, 0]];
     var BANK = [], i, x1, y1, u, w;
-    for (i = 0; i < 40; i++) {      // A: punto medio entero (40)
+    for (i = 0; i < 25; i++) {      // A: punto medio entero (25)
       x1 = ri(-9, 9); y1 = ri(-9, 9); do { u = ri(-6, 6); w = ri(-6, 6); } while (u === 0 && w === 0);
       BANK.push({ t: 'A', x1: x1, y1: y1, x2: x1 + 2 * u, y2: y1 + 2 * w });
     }
-    for (i = 0; i < 20; i++) {      // B: punto medio con fracción (20)
+    for (i = 0; i < 12; i++) {      // B: punto medio con resultado fraccionario (12)
       x1 = ri(-9, 9); y1 = ri(-9, 9); var dx, dy; do { dx = ri(-9, 9); dy = ri(-9, 9); } while (dx % 2 === 0 && dy % 2 === 0);
       BANK.push({ t: 'B', x1: x1, y1: y1, x2: x1 + dx, y2: y1 + dy });
     }
-    for (i = 0; i < 25; i++) {      // C: encontrar el otro extremo (25)
+    for (i = 0; i < 13; i++) {      // C: encontrar el otro extremo (13)
       var mx = ri(-8, 8), my = ri(-8, 8); x1 = ri(-9, 9); y1 = ri(-9, 9);
       BANK.push({ t: 'C', x1: x1, y1: y1, mx: mx, my: my });
     }
-    for (i = 0; i < 15; i++) {      // D: punto medio y longitud (15)
+    for (i = 0; i < 10; i++) {      // D: punto medio y longitud (10)
       var m2x = ri(-6, 6), m2y = ri(-6, 6), v = pick(TERNAS), a = sg() * v[0], b = sg() * v[1];
       BANK.push({ t: 'D', x1: m2x - a, y1: m2y - b, x2: m2x + a, y2: m2y + b });
     }
-    for (i = BANK.length - 1; i > 0; i--) { var j = ri(0, i), tmp = BANK[i]; BANK[i] = BANK[j]; BANK[j] = tmp; } // mezclar
+    for (i = 0; i < 25; i++) {      // F: punto medio con coordenadas fraccionarias (25)
+      var px, py; do { px = fpair(); py = fpair(); } while (nonInt([px[0], px[1], py[0], py[1]]) < 3);
+      BANK.push({ t: 'F', x1: px[0], x2: px[1], y1: py[0], y2: py[1] });
+    }
+    for (i = 0; i < 15; i++) {      // G: otro extremo con coordenadas fraccionarias (15)
+      var qa, qb; do { qa = fpair(); qb = fpair(); } while (nonInt([qa[0], qa[1], qb[0], qb[1]]) < 3);
+      BANK.push({ t: 'G', x1: qa[0], mx: qa[1], y1: qb[0], my: qb[1] });
+    }    for (i = BANK.length - 1; i > 0; i--) { var j = ri(0, i), tmp = BANK[i]; BANK[i] = BANK[j]; BANK[j] = tmp; } // mezclar
 
     function field(f, label, aria, n) { return '<span style="display:inline-flex; align-items:center; gap:0.4rem; white-space:nowrap;"><span class="eq">' + label + '</span>' + h.inputHTML(f, aria + ', ejercicio ' + n, 'width:5.2rem;') + '</span>'; }
     function card(n, spec) {
@@ -299,7 +406,7 @@
           var wrong = [], msgs = [], vals = {};
           var bad = spec.fields.some(function (f) { vals[f.f] = parseNum(ctx.inp[f.f].value); return vals[f.f] == null; });
           if (bad) return { bad: true, msg: '<span class="no">No pude leer tus respuestas.</span> Escribe números: enteros (<strong>-3</strong>), decimales (<strong>-1.5</strong>) o fracciones (<strong>-3/2</strong>).' };
-          spec.fields.forEach(function (f) { if (Math.abs(vals[f.f] - f.ans) > 1e-9) { wrong.push(f.f); msgs.push(f.hint); } });
+          spec.fields.forEach(function (f) { if (Math.abs(vals[f.f] - f.ans) > (spec.tol || 1e-9)) { wrong.push(f.f); msgs.push(f.hint); } });
           return { wrong: wrong, msgs: msgs, total: spec.fields.length };
         },
         sol: spec.sol
@@ -322,7 +429,28 @@
                  'Despeja x: ' + tn(e.x1) + ' + x = ' + tn(2 * e.mx) + ' → x = ' + tn(bx) + '<br>Despeja y: ' + tn(e.y1) + ' + y = ' + tn(2 * e.my) + ' → y = ' + tn(by) + '<br><strong>B' + pt(bx, by) + '</strong>'
           });
         }
-        var sx = e.x1 + e.x2, sy = e.y1 + e.y2, mx2 = sx / 2, my2 = sy / 2;
+        if (e.t === 'F') {   // punto medio con coordenadas fraccionarias
+          var sxF = fadd(e.x1, e.x2), syF = fadd(e.y1, e.y2), mxF = fmul(sxF, F(1, 2)), myF = fmul(syF, F(1, 2));
+          return card(n, {
+            head: 'A' + pF(e.x1, e.y1) + ' y B' + pF(e.x2, e.y2), ask: 'Encuentra el punto medio P<sub>m</sub>(x, y) (escribe fracciones, por ejemplo 5/8)', tol: 0.002,
+            fields: [Fd('x', 'x =', 'x de Pm', fval(mxF), 'Suma las x con denominador común: ' + opChain(e.x1, e.x2, '+') + '<br>Divide entre 2: ' + halfChain(sxF) + '.'),
+                     Fd('y', 'y =', 'y de Pm', fval(myF), 'Suma las y con denominador común: ' + opChain(e.y1, e.y2, '+') + '<br>Divide entre 2: ' + halfChain(syF) + '.')],
+            sol: 'Sustituye: P<sub>m</sub> = ( (' + ff(e.x1) + ' + ' + fpar(e.x2) + ') ÷ 2 , (' + ff(e.y1) + ' + ' + fpar(e.y2) + ') ÷ 2 )<br>' +
+                 'Suma de las x: ' + opChain(e.x1, e.x2, '+') + '<br>Suma de las y: ' + opChain(e.y1, e.y2, '+') + '<br>' +
+                 'Divide entre 2 la x: ' + halfChain(sxF) + '<br>Divide entre 2 la y: ' + halfChain(syF) + '<br><strong>P<sub>m</sub>' + pF(mxF, myF) + '</strong>'
+          });
+        }
+        if (e.t === 'G') {   // otro extremo con coordenadas fraccionarias
+          var tmxG = fmul(F(2), e.mx), tmyG = fmul(F(2), e.my), bxG = fsub(tmxG, e.x1), byG = fsub(tmyG, e.y1);
+          return card(n, {
+            head: 'El punto medio de AB es P<sub>m</sub>' + pF(e.mx, e.my) + ' y uno de los extremos es A' + pF(e.x1, e.y1), ask: 'Encuentra las coordenadas del otro extremo B(x, y) (escribe fracciones, por ejemplo 5/4)', tol: 0.002,
+            fields: [Fd('x', 'x =', 'x de B', fval(bxG), 'Como (' + ff(e.x1) + ' + x) ÷ 2 = ' + ff(e.mx) + ', entonces ' + ff(e.x1) + ' + x = 2 · ' + fpar(e.mx) + ' = ' + ff(tmxG) + ' y x = ' + opChain(tmxG, e.x1, '−') + '.'),
+                     Fd('y', 'y =', 'y de B', fval(byG), 'Como (' + ff(e.y1) + ' + y) ÷ 2 = ' + ff(e.my) + ', entonces ' + ff(e.y1) + ' + y = 2 · ' + fpar(e.my) + ' = ' + ff(tmyG) + ' y y = ' + opChain(tmyG, e.y1, '−') + '.')],
+            sol: 'Sustituye en la fórmula: ' + pF(e.mx, e.my) + ' = ( (' + ff(e.x1) + ' + x) ÷ 2 , (' + ff(e.y1) + ' + y) ÷ 2 )<br>' +
+                 'Multiplica por 2: ' + ff(e.x1) + ' + x = ' + ff(tmxG) + '<br>Multiplica por 2: ' + ff(e.y1) + ' + y = ' + ff(tmyG) + '<br>' +
+                 'Despeja x: x = ' + opChain(tmxG, e.x1, '−') + '<br>Despeja y: y = ' + opChain(tmyG, e.y1, '−') + '<br><strong>B' + pF(bxG, byG) + '</strong>'
+          });
+        }        var sx = e.x1 + e.x2, sy = e.y1 + e.y2, mx2 = sx / 2, my2 = sy / 2;
         var base = 'Sustituye: ' + Mt(fr(tn(e.x1) + ' + ' + par(e.x2), 2), fr(tn(e.y1) + ' + ' + par(e.y2), 2)) + '<br>Suma: ' + Mt(fr(tn(sx), 2), fr(tn(sy), 2)) + '<br>Divide entre 2: ';
         var hx = 'Suma las coordenadas x y divide entre 2: ' + fr(tn(e.x1) + ' + ' + par(e.x2), 2) + ' = ' + fr(tn(sx), 2) + ' = ' + dec(mx2) + '.';
         var hy = 'Suma las coordenadas y y divide entre 2: ' + fr(tn(e.y1) + ' + ' + par(e.y2), 2) + ' = ' + fr(tn(sy), 2) + ' = ' + dec(my2) + '.';

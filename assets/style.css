@@ -941,6 +941,9 @@ details.rubric .interval-card svg { display: block; width: 100%; max-width: 260p
 /* Raíz cuadrada con barra (vínculo) que cubre todo el radicando */
 .rad { white-space: nowrap; }
 .radicand { border-top: 0.08em solid currentColor; padding: 0.08em 0.12em 0 0.14em; margin-left: -0.08em; }
+/* Si el radicando lleva fracciones apiladas, la barra debe quedar por encima de ellas */
+.rad:has(.frac) { display: inline-flex; align-items: center; vertical-align: middle; margin: 0.45em 0; }
+.radicand:has(.frac) { padding-top: 0.25em; }
 
 /* ===== Regla destacada: cuadro grande con la fórmula y sus pasos de colores ===== */
 .regla-box { width: min(100% - 3rem, 760px); margin: 1.6rem auto 2.4rem auto; border: 3px solid var(--forest); border-radius: 22px; overflow: hidden; background: var(--surface); box-shadow: 0 7px 0 var(--forest); }
