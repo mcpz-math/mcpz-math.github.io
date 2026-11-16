@@ -1,0 +1,64 @@
+{
+  "video": "punto-medio-regla-y-compas",
+  "voz": "Microsoft Sabina Desktop",
+  "escenas": [
+    { "n": 0, "voz": [
+      { "s": 0.4, "texto": "Punto medio de un segmento. Con regla y compás, sin medir." }
+    ] },
+    { "n": 1, "voz": [
+      { "s": 0.6, "texto": "Tenemos un segmento A B." },
+      { "s": 4.5, "texto": "Su punto medio es el punto que lo divide en dos partes iguales." },
+      { "s": 9.5, "texto": "Fíjate: A pe eme mide lo mismo que pe eme B." },
+      { "s": 13, "texto": "¿Cómo lo encontramos sin medir? Con regla y compás." }
+    ] },
+    { "n": 2, "voz": [
+      { "s": 0.5, "texto": "Necesitamos dos instrumentos: el compás y la regla." },
+      { "s": 4.5, "texto": "El compás sirve para trazar arcos y círculos con la misma abertura." },
+      { "s": 9, "texto": "La regla sólo sirve para trazar rectas. No la usamos para medir." }
+    ] },
+    { "n": 3, "voz": [
+      { "s": 0.5, "texto": "Paso uno. Abre el compás un poco más de la mitad del segmento A B." },
+      { "s": 5, "texto": "Pon la punta en A y traza un arco por encima del segmento." },
+      { "s": 11, "texto": "Ahora traza otro arco por debajo." },
+      { "s": 17, "texto": "No cambies la abertura del compás." }
+    ] },
+    { "n": 4, "voz": [
+      { "s": 0.5, "texto": "Paso dos. Sin cambiar la abertura, pon la punta en B." },
+      { "s": 5, "texto": "Traza un arco por encima, que cruce al primero." },
+      { "s": 11, "texto": "Y otro por debajo." },
+      { "s": 16.5, "texto": "Los arcos se cruzan en dos puntos. Los llamamos C y D." }
+    ] },
+    { "n": 5, "voz": [
+      { "s": 0.5, "texto": "Paso tres. Con la regla, une los puntos C y D." },
+      { "s": 6, "texto": "Trazamos la recta que pasa por los dos puntos." },
+      { "s": 10, "texto": "Recuerda: la regla sólo traza la recta, no mide nada." }
+    ] },
+    { "n": 6, "voz": [
+      { "s": 0.5, "texto": "Paso cuatro. La recta C D corta al segmento A B en un punto." },
+      { "s": 5.5, "texto": "Ése es el punto medio. Lo llamamos pe eme." },
+      { "s": 10, "texto": "Las dos partes, A pe eme y pe eme B, son iguales." }
+    ] },
+    { "n": 7, "voz": [
+      { "s": 0.5, "texto": "Comprobemos con el compás." },
+      { "s": 3.5, "texto": "Ponemos la punta en pe eme y abrimos el compás hasta A." },
+      { "s": 9, "texto": "Al girarlo, pasa exactamente por B." },
+      { "s": 13.5, "texto": "Entonces pe eme está a la misma distancia de A y de B." }
+    ] },
+    { "n": 8, "voz": [
+      { "s": 0.5, "texto": "¿Por qué funciona?" },
+      { "s": 3, "texto": "Los puntos C y D están a la misma distancia de A y de B, porque usamos la misma abertura del compás." },
+      { "s": 11, "texto": "Si los unimos con A y con B, obtenemos cuatro lados iguales: es un rombo." },
+      { "s": 18, "texto": "En un rombo, las diagonales se cortan en su punto medio y son perpendiculares." },
+      { "s": 24, "texto": "Por eso la recta C D es la mediatriz del segmento A B." }
+    ] },
+    { "n": 9, "voz": [
+      { "s": 0.8, "texto": "Para recordar." },
+      { "s": 3, "texto": "Uno: abre el compás un poco más de la mitad del segmento." },
+      { "s": 8, "texto": "Dos: con la punta en A, traza arcos arriba y abajo. Con la misma abertura, haz lo mismo desde B." },
+      { "s": 15, "texto": "Tres: con la regla, une los dos puntos donde se cruzan los arcos." },
+      { "s": 21, "texto": "Cuatro: donde esa recta corta al segmento está el punto medio." },
+      { "s": 27, "texto": "Esa recta es la mediatriz: pasa por el punto medio y es perpendicular al segmento." },
+      { "s": 33, "texto": "Practica en tu cuaderno con segmentos de distintos tamaños." }
+    ] }
+  ]
+}

@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Generador del video: punto medio con regla y compás</title>
+<!--
+  Genera el video matematicas-1/materiales/punto-medio-regla-y-compas.mp4
+  dibujando cada cuadro en un <canvas> (1280×720, 30 cuadros por segundo, estilo "Compás"),
+  lo codifica con WebCodecs (H.264 + AAC) y lo empaqueta en MP4 con mp4-muxer.
+  La música es la misma de los otros videos (Preludio en Do mayor, BWV 846, de Bach): se toma
+  de matematicas-1/materiales/jerarquia-de-operaciones.mp4.
+  Uso: abrir esta página desde un servidor local (http://localhost:…/materiales-fuente/…) en
+  Chrome/Edge y, en la consola, llamar  await hacerVideo()  (sube el .mp4 a /subir/…) o
+  dibujarEn(segundos) para ver un cuadro.
+-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Karla:wght@400;700&display=swap">
+<style>body{margin:0;background:#222}canvas{width:960px;height:540px;display:block}</style>
+</head>
+<body>
+<canvas id="c" width="1280" height="720"></canvas>
+<script type="module">
+import { Muxer, ArrayBufferTarget } from 'https://cdn.jsdelivr.net/npm/mp4-muxer@5.1.3/build/mp4-muxer.mjs';
+import { cargarVoz, mezclar } from './voz-video.mjs';
+
+const W = 1280, H = 720, FPS = 30;
+const C = { forest:'#14301f', cream:'#f6f3ea', lime:'#c4e86b', blue:'#2f6db5', orange:'#c2621b', red:'#b3261e',
+            green:'#2f7d3b', plum:'#7b3fa0', mute:'#3a6b4a', line:'#d7d2c2', white:'#ffffff' };
+const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+const FM = 'Outfit, "DejaVu Sans", "Segoe UI", sans-serif', FT = 'Karla, "Segoe UI", sans-serif';
+const MINUS = '−', PM = '±', DOT = '·';
+
+// ---------- motor de fórmulas: texto, superíndice, subíndice, fracción apilada y raíz ----------
+const t = (s, c) => ({ t: s, c }), sup = (n, c) => ({ sup: n, c }), sub = (n, c) => ({ sub: n, c });
+const fr = (n, d) => ({ fr: [n, d] }), sq = n => ({ sq: n });
+const bl = s => t(s, C.blue), or = s => t(s, C.orange), pl = s => t(s, C.plum), rd = s => t(s, C.red), gr = s => t(s, C.green);
+const arr = n => Array.isArray(n) ? n : [n];
+let FW = 600;
+function setFont(sz) { ctx.font = `${FW} ${sz}px ${FM}`; }
+function meas(nodes, sz) {
+  let w = 0, asc = sz * .78, desc = 0;
+  for (const n of arr(nodes)) { const r = measOne(n, sz); w += r.w; asc = Math.max(asc, r.asc); desc = Math.max(desc, r.desc); }
+  return { w, asc, desc };
+}
+function measOne(n, sz) {
+  if (Array.isArray(n)) return meas(n, sz);
+  if (typeof n === 'string') n = { t: n };
+  if (n.t !== undefined) { setFont(sz); return { w: ctx.measureText(n.t).width, asc: sz * .78, desc: 0 }; }
+  if (n.sup) { const s = sz * .62, r = meas(n.sup, s); return { w: r.w + sz * .03, asc: sz * .42 + r.asc, desc: 0 }; }
+  if (n.sub) { const s = sz * .62, r = meas(n.sub, s); return { w: r.w + sz * .03, asc: sz * .78, desc: sz * .2 + r.desc }; }
+  if (n.fr) {
+    const s = sz * .85, a = meas(n.fr[0], s), b = meas(n.fr[1], s);
+    return { w: Math.max(a.w, b.w) + sz * .2, asc: sz * .42 + a.asc, desc: Math.max(0, b.asc + b.desc - sz * .18) };
+  }
+  if (n.sq) { const r = meas(n.sq, sz); return { w: r.w + sz * .52, asc: r.asc + sz * .16, desc: Math.max(r.desc, sz * .08) }; }
+  return { w: 0, asc: 0, desc: 0 };
+}
+function drawSeq(nodes, x, y, sz, col) {
+  let w = 0;
+  for (const n of arr(nodes)) w += drawOne(n, x + w, y, sz, col);
+  return w;
+}
+function drawOne(n, x, y, sz, col) {
+  if (Array.isArray(n)) return drawSeq(n, x, y, sz, col);
+  if (typeof n === 'string') n = { t: n };
+  const c = n.c || col;
+  if (n.t !== undefined) { setFont(sz); ctx.fillStyle = c; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; ctx.fillText(n.t, x, y); return ctx.measureText(n.t).width; }
+  if (n.sup) return drawSeq(n.sup, x, y - sz * .42, sz * .62, c) + sz * .03;
+  if (n.sub) return drawSeq(n.sub, x, y + sz * .18, sz * .62, c) + sz * .03;
+  if (n.fr) {
+    const s = sz * .85, a = meas(n.fr[0], s), b = meas(n.fr[1], s), Wd = Math.max(a.w, b.w), x0 = x + sz * .1, axis = y - sz * .3;
+    drawSeq(n.fr[0], x0 + (Wd - a.w) / 2, axis - sz * .12, s, c);
+    drawSeq(n.fr[1], x0 + (Wd - b.w) / 2, axis + sz * .12 + b.asc, s, c);
+    ctx.strokeStyle = c; ctx.lineWidth = Math.max(3, sz * .08); ctx.lineCap = 'butt';
+    ctx.beginPath(); ctx.moveTo(x0 - sz * .04, axis); ctx.lineTo(x0 + Wd + sz * .04, axis); ctx.stroke();
+    return Wd + sz * .2;
+  }
+  if (n.sq) {
+    const inn = meas(n.sq, sz), top = y - inn.asc - sz * .08, bot = y + sz * .06;
+    ctx.strokeStyle = c; ctx.lineWidth = Math.max(2, sz * .06); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(x + sz * .02, y - sz * .28); ctx.lineTo(x + sz * .1, y - sz * .33); ctx.lineTo(x + sz * .22, bot);
+    ctx.lineTo(x + sz * .38, top); ctx.lineTo(x + sz * .42 + inn.w + sz * .08, top); ctx.stroke();
+    drawSeq(n.sq, x + sz * .42, y, sz, c);
+    return inn.w + sz * .52;
+  }
+  return 0;
+}
+// dibuja las fórmulas centradas / alineadas
+function mathAt(nodes, x, y, sz, col = C.forest, align = 'left') {
+  const m = meas(nodes, sz);
+  const x0 = align === 'center' ? x - m.w / 2 : align === 'right' ? x - m.w : x;
+  drawSeq(nodes, x0, y, sz, col);
+  return m;
+}
+function mathMid(nodes, x, ymid, sz, col, align) { // centra verticalmente
+  const m = meas(nodes, sz);
+  mathAt(nodes, x, ymid + (m.asc - m.desc) / 2, sz, col, align);
+  return m;
+}
+
+// ---------- utilidades de dibujo ----------
+const ease = x => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x);
+const fade = (tt, at, d = .6) => ease((tt - at) / d);
+function rr(x, y, w, h, r, fill, stroke, lw = 1.5) {
+  ctx.beginPath(); ctx.roundRect(x, y, w, h, r);
+  if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lw; ctx.stroke(); }
+}
+function txt(s, x, y, sz, col, o = {}) {
+  ctx.font = `${o.w || 400} ${sz}px ${o.f || FT}`; ctx.fillStyle = col; ctx.textAlign = o.align || 'left'; ctx.textBaseline = 'alphabetic';
+  ctx.fillText(s, x, y); return ctx.measureText(s).width;
+}
+function withAlpha(a, fn) { if (a <= 0) return; ctx.save(); ctx.globalAlpha = Math.min(1, a); fn(); ctx.restore(); }
+
+function fondo() {
+  ctx.fillStyle = C.cream; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = 'rgba(196,232,107,.55)'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(150, 0); ctx.lineTo(0, 130); ctx.fill();
+  ctx.fillStyle = 'rgba(196,232,107,.38)'; ctx.beginPath(); ctx.arc(1230, 745, 135, 0, Math.PI * 2); ctx.fill();
+  rr(936, 682, 330, 32, 16, 'rgba(20,48,31,.88)');
+  ctx.fillStyle = C.lime; ctx.beginPath(); ctx.arc(953, 698, 4.5, 0, Math.PI * 2); ctx.fill();
+  txt('DTI. Maria del Carmen Pérez Zarate', 964, 704, 16, '#eef3e6', { w: 700 });
+}
+function titulo(tt, s, y = 72, sz = 44) { withAlpha(fade(tt, .1), () => txt(s, W / 2, y, sz, C.forest, { w: 600, f: FM, align: 'center' })); }
+
+// fila de un paso: tarjeta con explicación a la izquierda y fórmula a la derecha
+function fila(tt, at, y, h, n, expl, math, o = {}) {
+  withAlpha(fade(tt, at), () => {
+    rr(60, y, 1160, h, 14, o.fill || C.white, o.stroke || C.line, o.lw || 1.5);
+    let x = 88;
+    if (n) x += txt(n, x, y + h / 2 + 8, 22, o.lab || C.mute, { w: 600, f: FM }) + 16;
+    txt(expl, x, y + h / 2 + 8, 24, C.forest, { w: o.lime ? 700 : 400 });
+  });
+  if (math) withAlpha(fade(tt, at + 1.3), () => mathMid(math, 1196, y + h / 2, o.sz || 40, C.forest, 'right'));
+}
+
+// ---------- piezas ----------
+const PMED = c => [t('P', c), sub('m', c)];                 // P con la m como subíndice
+const ESC = [];
+function escena(dur, draw) { ESC.push({ dur, draw }); }
+const clamp01 = x => Math.max(0, Math.min(1, x));
+const DEG = Math.PI / 180;
+
+// ---------- geometría de la construcción ----------
+const GA = { x: 200, y: 440 }, GB = { x: 700, y: 440 }, GM = { x: 450, y: 440 };
+const R = 300, MITAD = 250, DY = Math.sqrt(R * R - MITAD * MITAD), ANG = Math.atan2(DY, MITAD);
+const GC = { x: 450, y: 440 - DY }, GD = { x: 450, y: 440 + DY };
+const ARCO = 16 * DEG;
+const AUa = [-ANG - ARCO, -ANG + ARCO], ALa = [ANG - ARCO, ANG + ARCO];                     // arcos con centro en A (arriba, abajo)
+const BUa = [Math.PI + ANG - ARCO, Math.PI + ANG + ARCO], BLa = [Math.PI - ANG - ARCO, Math.PI - ANG + ARCO]; // arcos con centro en B
+
+function etiqueta(s, x, y, col = C.forest, sz = 36) { txt(s, x, y, sz, col, { w: 700, f: FM, align: 'center' }); }
+function dot(p, r, col, borde) { ctx.fillStyle = col; ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI * 2); ctx.fill(); if (borde) { ctx.strokeStyle = borde; ctx.lineWidth = 3; ctx.stroke(); } }
+function linea(p, q, col, lw, dash) { ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.lineCap = 'round'; ctx.setLineDash(dash || []); ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke(); ctx.setLineDash([]); }
+function segmentoAB(al = 1) {
+  withAlpha(al, () => {
+    linea(GA, GB, C.forest, 8); dot(GA, 11, C.forest); dot(GB, 11, C.forest);
+    etiqueta('A', GA.x - 6, GA.y + 56); etiqueta('B', GB.x + 6, GB.y + 56);
+  });
+}
+function marcasIguales(al = 1) {   // una rayita en cada mitad: "miden lo mismo"
+  withAlpha(al, () => {
+    for (const x of [325, 575]) linea({ x, y: 420 }, { x, y: 460 }, C.green, 5);
+  });
+}
+function arco(c, a, p, col, lw = 6) {
+  if (p <= 0) return;
+  ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.lineCap = 'round'; ctx.beginPath(); ctx.arc(c.x, c.y, R, a[0], a[0] + (a[1] - a[0]) * clamp01(p)); ctx.stroke();
+}
+function compas(P, Q, alpha = 1, hh = 110) {   // dibujo de un compás: aguja en P, lápiz en Q
+  withAlpha(alpha, () => {
+    const dx = Q.x - P.x, dy = Q.y - P.y, L = Math.hypot(dx, dy) || 1;
+    let nx = dy / L, ny = -dx / L; if (ny > 0) { nx = -nx; ny = -ny; }
+    const H = { x: (P.x + Q.x) / 2 + nx * hh, y: (P.y + Q.y) / 2 + ny * hh };
+    ctx.lineCap = 'round';
+    linea(P, H, '#58675c', 10); linea(Q, H, '#7a897e', 10);
+    const K = { x: H.x + nx * 42, y: H.y + ny * 42 };
+    linea(H, K, C.forest, 8); dot(K, 11, C.forest); dot(H, 14, C.forest, C.lime);
+    dot(P, 6, '#222'); dot(Q, 8, C.orange);
+  });
+}
+// ángulo del lápiz según el tiempo: ts = [t0 (empieza a moverse), t1 (llega al inicio del arco de arriba), t2 (termina ese arco), t3 (llega al inicio del arco de abajo), t4 (termina)]
+function lapizAng(tt, ts, a0, arcoU, arcoL) {
+  const keys = [[ts[0], a0], [ts[1], arcoU[0]], [ts[2], arcoU[1]], [ts[3], arcoL[0]], [ts[4], arcoL[1]]];
+  if (tt <= keys[0][0]) return keys[0][1];
+  for (let i = 1; i < keys.length; i++) if (tt <= keys[i][0]) { const [ta, aa0] = keys[i - 1], [tb, bb0] = keys[i]; return aa0 + (bb0 - aa0) * (tt - ta) / (tb - ta); }
+  return keys[keys.length - 1][1];
+}
+function progresos(tt, ts) { return [clamp01((tt - ts[1]) / (ts[2] - ts[1])), clamp01((tt - ts[3]) / (ts[4] - ts[3]))]; }
+function enArco(c, a) { return { x: c.x + R * Math.cos(a), y: c.y + R * Math.sin(a) }; }
+
+// tarjetas de texto en la columna derecha
+function wrap(s, x, y, maxW, lh, sz, col, w = 400) {
+  ctx.font = `${w} ${sz}px ${FT}`; const words = s.split(' '); let line = '', yy = y;
+  for (const wd of words) { const test = line ? line + ' ' + wd : wd; if (ctx.measureText(test).width > maxW && line) { txt(line, x, yy, sz, col, { w }); line = wd; yy += lh; } else line = test; }
+  if (line) txt(line, x, yy, sz, col, { w });
+  return yy;
+}
+function tarjeta(tt, at, y, h, cab, cuerpo, o = {}) {
+  withAlpha(fade(tt, at), () => {
+    rr(830, y, 390, h, 16, o.fill || C.white, o.stroke || C.line, o.lw || 1.6);
+    txt(cab, 856, y + 36, 20, o.cab || C.mute, { w: 700 });
+    wrap(cuerpo, 856, y + 74, 340, 32, 26, C.forest, o.bold ? 700 : 400);
+  });
+}
+
+// ---------- escenas ----------
+// 0. Portada
+escena(6, tt => {
+  withAlpha(fade(tt, .2), () => txt('MATEMÁTICAS 1  ·  TEMA 7', W / 2, 190, 22, C.mute, { w: 700, align: 'center' }));
+  withAlpha(fade(tt, .5), () => txt('Punto medio', W / 2, 300, 88, C.forest, { w: 600, f: FM, align: 'center' }));
+  withAlpha(fade(tt, 1.1), () => txt('de un segmento', W / 2, 392, 70, C.forest, { w: 700, f: FM, align: 'center' }));
+  withAlpha(fade(tt, 1.8), () => { ctx.fillStyle = C.lime; ctx.fillRect(W / 2 - 130, 430, 260, 6); txt('Con regla y compás, sin medir', W / 2, 500, 34, C.forest, { align: 'center' }); });
+  withAlpha(fade(tt, 2.6), () => {
+    const a = { x: 470, y: 590 }, b = { x: 810, y: 590 };
+    linea(a, b, C.forest, 7); dot(a, 9, C.forest); dot(b, 9, C.forest); dot({ x: 640, y: 590 }, 11, C.orange, C.forest);
+  });
+});
+
+// 1. ¿Qué es el punto medio?
+escena(17, tt => {
+  titulo(tt, '¿Qué es el punto medio?');
+  segmentoAB(fade(tt, .6));
+  withAlpha(fade(tt, 4.5), () => {
+    marcasIguales(1); dot(GM, 13, C.orange, C.forest);
+    mathAt(PMED(C.orange), GM.x, GM.y - 46, 40, C.orange, 'center');
+  });
+  tarjeta(tt, 5, 150, 150, 'DEFINICIÓN', 'El punto medio divide al segmento en dos partes iguales.');
+  withAlpha(fade(tt, 9.5), () => {
+    rr(830, 330, 390, 110, 16, C.lime);
+    txt('SE CUMPLE', 856, 366, 20, C.forest, { w: 700 });
+    mathAt(['A', PMED(), ' = ', PMED(), 'B'], 856, 420, 44, C.forest);
+  });
+  withAlpha(fade(tt, 13), () => { rr(830, 470, 390, 120, 16, C.forest); txt('¿Cómo lo hallamos', 856, 516, 28, C.lime, { w: 700 }); txt('sin medir?', 856, 556, 28, C.lime, { w: 700 }); });
+});
+
+// 2. Materiales
+escena(14, tt => {
+  titulo(tt, 'Lo que necesitas');
+  withAlpha(fade(tt, .5), () => {
+    rr(70, 150, 540, 420, 20, C.white, C.line);
+    compas({ x: 250, y: 430 }, { x: 420, y: 430 }, 1, 160);
+    txt('COMPÁS', 340, 215, 28, C.forest, { w: 700, f: FM, align: 'center' });
+    txt('Traza arcos y círculos', 340, 505, 26, C.forest, { w: 700, align: 'center' });
+    txt('con la misma abertura', 340, 540, 26, C.forest, { align: 'center' });
+  });
+  withAlpha(fade(tt, 4.5), () => {
+    rr(670, 150, 540, 420, 20, C.white, C.line);
+    ctx.save(); ctx.translate(940, 360); ctx.rotate(-8 * DEG);
+    ctx.fillStyle = '#f4e6a8'; ctx.strokeStyle = '#a89849'; ctx.lineWidth = 3; ctx.beginPath(); ctx.roundRect(-210, -34, 420, 68, 8); ctx.fill(); ctx.stroke();
+    ctx.strokeStyle = '#8a7c33'; ctx.lineWidth = 3; for (let i = -19; i <= 19; i++) { ctx.beginPath(); ctx.moveTo(i * 10, -34); ctx.lineTo(i * 10, i % 5 === 0 ? -14 : -24); ctx.stroke(); }
+    ctx.restore();
+    txt('REGLA', 940, 215, 28, C.forest, { w: 700, f: FM, align: 'center' });
+    txt('Sólo para trazar rectas', 940, 505, 26, C.forest, { w: 700, align: 'center' });
+    txt('NO se usa para medir', 940, 540, 26, C.red, { w: 700, align: 'center' });
+  });
+});
+
+// 3. Paso 1: arcos desde A
+escena(22, tt => {
+  titulo(tt, 'Paso 1: arcos con centro en A');
+  segmentoAB(1);
+  const ts = [3.5, 5, 8.5, 11, 14.5];
+  const [pu, pl] = progresos(tt, ts);
+  arco(GA, AUa, pu, C.blue); arco(GA, ALa, pl, C.blue);
+  // la abertura: un poco más de la mitad de AB
+  withAlpha(Math.min(fade(tt, .5), 1 - fade(tt, 3.6, .6)), () => {
+    const q = { x: GA.x + R, y: GA.y };
+    linea(GM, q, C.orange, 5, [10, 8]); dot(q, 9, C.orange, '#fff');
+    etiqueta('mitad', GM.x, GM.y + 36, C.mute, 24); txt('un poco más', 600, 405, 24, C.orange, { w: 700, align: 'center' });
+  });
+  const a = lapizAng(tt, ts, 0, AUa, ALa);
+  compas(GA, enArco(GA, a), Math.min(fade(tt, .5), 1 - fade(tt, 16, .8)));
+  tarjeta(tt, .6, 150, 170, 'PASO 1', 'Abre el compás un poco más de la mitad del segmento AB.');
+  tarjeta(tt, 5, 340, 150, 'PASO 1', 'Punta en A: traza un arco arriba y otro abajo.');
+  tarjeta(tt, 17, 510, 90, 'IMPORTANTE', 'No cambies la abertura.', { stroke: C.orange, lw: 2.5, cab: C.orange, bold: true });
+});
+
+// 4. Paso 2: arcos desde B
+escena(22, tt => {
+  titulo(tt, 'Paso 2: arcos con centro en B');
+  segmentoAB(1);
+  arco(GA, AUa, 1, C.blue); arco(GA, ALa, 1, C.blue);
+  const ts = [3, 5, 8.5, 11, 14.5];
+  const [pu, pl] = progresos(tt, ts);
+  arco(GB, BUa, pu, C.orange); arco(GB, BLa, pl, C.orange);
+  const a = lapizAng(tt, ts, Math.PI, BUa, BLa);
+  compas(GB, enArco(GB, a), Math.min(fade(tt, .5), 1 - fade(tt, 15.5, .8)));
+  withAlpha(fade(tt, 16.5), () => {
+    dot(GC, 12, C.plum, '#fff'); dot(GD, 12, C.plum, '#fff');
+    etiqueta('C', GC.x + 34, GC.y - 12, C.plum); etiqueta('D', GD.x + 34, GD.y + 28, C.plum);
+  });
+  tarjeta(tt, .6, 150, 170, 'PASO 2', 'Con la misma abertura, punta en B: arcos arriba y abajo.');
+  tarjeta(tt, 11, 340, 90, 'RESULTADO', 'Los arcos se cruzan.', {});
+  tarjeta(tt, 16.5, 450, 140, 'DOS PUNTOS', 'Los llamamos C y D.', { stroke: C.plum, lw: 2.5, cab: C.plum, bold: true });
+});
+
+// 5. Paso 3: la recta CD
+escena(14, tt => {
+  titulo(tt, 'Paso 3: une C y D con la regla');
+  segmentoAB(1);
+  arco(GA, AUa, 1, C.blue); arco(GA, ALa, 1, C.blue); arco(GB, BUa, 1, C.orange); arco(GB, BLa, 1, C.orange);
+  dot(GC, 11, C.plum, '#fff'); dot(GD, 11, C.plum, '#fff');
+  etiqueta('C', GC.x + 34, GC.y - 12, C.plum); etiqueta('D', GD.x + 34, GD.y + 28, C.plum);
+  const y0 = GC.y - 30, y1 = GD.y + 30, p = clamp01((tt - 2) / 4);
+  // regla junto a la recta
+  withAlpha(Math.min(fade(tt, .5), 1 - fade(tt, 9, .8)), () => {
+    ctx.fillStyle = '#f4e6a8'; ctx.strokeStyle = '#a89849'; ctx.lineWidth = 3; ctx.beginPath(); ctx.roundRect(462, y0 - 14, 52, y1 - y0 + 28, 8); ctx.fill(); ctx.stroke();
+    ctx.strokeStyle = '#8a7c33'; ctx.lineWidth = 3; for (let y = y0 + 6; y < y1; y += 14) { ctx.beginPath(); ctx.moveTo(462, y); ctx.lineTo(y % 5 ? 478 : 490, y); ctx.stroke(); }
+  });
+  if (p > 0) linea({ x: 450, y: y0 }, { x: 450, y: y0 + (y1 - y0) * p }, C.plum, 7);
+  tarjeta(tt, .6, 150, 150, 'PASO 3', 'Con la regla, une C y D: traza la recta CD.');
+  tarjeta(tt, 10, 330, 150, 'RECUERDA', 'La regla sólo traza la recta: no mide nada.', { stroke: C.orange, lw: 2.5, cab: C.orange });
+});
+
+// 6. Paso 4: el punto medio
+escena(16, tt => {
+  titulo(tt, 'Paso 4: el punto medio');
+  segmentoAB(1);
+  arco(GA, AUa, 1, C.blue); arco(GA, ALa, 1, C.blue); arco(GB, BUa, 1, C.orange); arco(GB, BLa, 1, C.orange);
+  dot(GC, 9, C.plum); dot(GD, 9, C.plum); etiqueta('C', GC.x + 34, GC.y - 12, C.plum); etiqueta('D', GD.x + 34, GD.y + 28, C.plum);
+  linea({ x: 450, y: GC.y - 30 }, { x: 450, y: GD.y + 30 }, C.plum, 7);
+  withAlpha(fade(tt, 3.5), () => {
+    ctx.strokeStyle = C.green; ctx.lineWidth = 5; ctx.beginPath(); ctx.arc(GM.x, GM.y, 26 + 6 * Math.sin(tt * 4), 0, Math.PI * 2); ctx.stroke();
+    dot(GM, 13, C.orange, C.forest);
+    mathAt(PMED(C.orange), GM.x - 48, GM.y - 42, 44, C.orange, 'right');
+  });
+  withAlpha(fade(tt, 10), () => marcasIguales(1));
+  tarjeta(tt, .6, 150, 170, 'PASO 4', 'La recta CD corta al segmento AB en un punto.');
+  withAlpha(fade(tt, 5.5), () => { rr(830, 340, 390, 130, 16, C.lime); txt('ES EL PUNTO MEDIO', 856, 378, 20, C.forest, { w: 700 }); mathAt(PMED(), 856, 440, 56, C.forest); });
+  withAlpha(fade(tt, 10), () => { rr(830, 490, 390, 110, 16, C.white, C.line); txt('Las dos partes son iguales', 856, 560, 26, C.forest, { w: 700 }); });
+});
+
+// 7. Comprobación
+escena(18, tt => {
+  titulo(tt, 'Comprobamos con el compás');
+  segmentoAB(1);
+  withAlpha(0.35, () => { arco(GA, AUa, 1, C.blue); arco(GA, ALa, 1, C.blue); arco(GB, BUa, 1, C.orange); arco(GB, BLa, 1, C.orange); });
+  linea({ x: 450, y: GC.y - 30 }, { x: 450, y: GD.y + 30 }, C.plum, 5);
+  dot(GM, 12, C.orange, C.forest); mathAt(PMED(C.orange), GM.x - 26, GM.y - 38, 40, C.orange, 'right');
+  const r2 = MITAD, p = clamp01((tt - 4.5) / 7.5);
+  // la circunferencia con centro en Pm empieza en A y gira hasta cerrarse (pasa por B a la mitad)
+  if (p > 0) { ctx.strokeStyle = C.green; ctx.lineWidth = 7; ctx.lineCap = 'round'; ctx.beginPath(); ctx.arc(GM.x, GM.y, r2, Math.PI, Math.PI + Math.PI * 2 * p); ctx.stroke(); }
+  const ang = Math.PI + Math.PI * 2 * p;
+  withAlpha(Math.min(fade(tt, 2.8), 1 - fade(tt, 13, .8)), () => compas(GM, { x: GM.x + r2 * Math.cos(ang), y: GM.y + r2 * Math.sin(ang) }, 1, 90));
+  withAlpha(fade(tt, 9), () => { dot(GB, 15, 'rgba(47,125,59,.35)', C.green); });
+  tarjeta(tt, .6, 150, 190, 'COMPROBACIÓN', 'Punta en Pm y abertura hasta A: el compás pasa exactamente por B.');
+  withAlpha(fade(tt, 13.5), () => { rr(830, 370, 390, 150, 16, C.lime); txt('Pm está a la misma', 856, 424, 28, C.forest, { w: 700 }); txt('distancia de A y de B', 856, 464, 28, C.forest, { w: 700 }); });
+});
+
+// 8. ¿Por qué funciona?
+escena(30, tt => {
+  titulo(tt, '¿Por qué funciona?');
+  const A = GA, B = GB, Cc = GC, D = GD;
+  // rombo ACBD
+  withAlpha(fade(tt, 11), () => { ctx.fillStyle = 'rgba(196,232,107,.35)'; ctx.beginPath(); ctx.moveTo(A.x, A.y); ctx.lineTo(Cc.x, Cc.y); ctx.lineTo(B.x, B.y); ctx.lineTo(D.x, D.y); ctx.closePath(); ctx.fill(); });
+  segmentoAB(1);
+  const lado = (p, q, at, col) => { const k = clamp01((tt - at) / 1.2); if (k > 0) linea(p, { x: p.x + (q.x - p.x) * k, y: p.y + (q.y - p.y) * k }, col, 6); };
+  lado(A, Cc, 4, C.blue); lado(Cc, B, 5.2, C.orange); lado(B, D, 6.4, C.orange); lado(D, A, 7.6, C.blue);
+  withAlpha(fade(tt, 8.5), () => {
+    for (const [p, q] of [[A, Cc], [Cc, B], [B, D], [D, A]]) { const m = { x: (p.x + q.x) / 2, y: (p.y + q.y) / 2 }; txt('=', m.x + (m.x < 450 ? -30 : 30), m.y + 10, 34, C.forest, { w: 700, align: 'center' }); }
+  });
+  dot(Cc, 10, C.plum, '#fff'); dot(D, 10, C.plum, '#fff'); etiqueta('C', Cc.x + 34, Cc.y - 12, C.plum); etiqueta('D', D.x + 34, D.y + 28, C.plum);
+  withAlpha(fade(tt, 18), () => {
+    linea({ x: 450, y: Cc.y - 20 }, { x: 450, y: D.y + 20 }, C.plum, 6);
+    ctx.strokeStyle = C.forest; ctx.lineWidth = 3; ctx.strokeRect(450, 440 - 26, 26, 26);   // ángulo recto
+    dot(GM, 12, C.orange, C.forest); mathAt(PMED(C.orange), GM.x - 48, GM.y + 52, 38, C.orange, 'right');
+  });
+  tarjeta(tt, 3, 150, 150, 'MISMA ABERTURA', 'AC, CB, BD y DA miden lo mismo: es la abertura del compás.');
+  withAlpha(fade(tt, 11), () => { rr(830, 320, 390, 90, 16, C.lime); txt('ACBD es un rombo', 856, 376, 30, C.forest, { w: 700, f: FM }); });
+  tarjeta(tt, 18, 430, 170, 'EN UN ROMBO', 'Las diagonales se cortan en su punto medio y son perpendiculares.');
+  withAlpha(fade(tt, 24), () => { rr(60, 640, 740, 52, 12, C.forest); txt('La recta CD es la MEDIATRIZ de AB', 430, 676, 28, C.lime, { w: 700, f: FM, align: 'center' }); });
+});
+
+// 9. Para recordar
+escena(38, tt => {
+  titulo(tt, 'Para recordar');
+  const p = (at, y, n, s1, s2) => withAlpha(fade(tt, at), () => {
+    rr(60, y, 1160, 84, 14, C.white, C.line);
+    ctx.fillStyle = C.forest; ctx.beginPath(); ctx.arc(106, y + 42, 22, 0, Math.PI * 2); ctx.fill();
+    txt(String(n), 106, y + 51, 26, C.lime, { w: 700, f: FM, align: 'center' });
+    txt(s1, 150, y + 38, 26, C.forest, { w: 700 });
+    txt(s2, 150, y + 68, 24, C.mute);
+  });
+  p(3, 104, 1, 'Abre el compás un poco más de la mitad del segmento.', 'Esa abertura no se cambia durante toda la construcción.');
+  p(8, 202, 2, 'Con la punta en A traza arcos arriba y abajo; haz lo mismo desde B.', 'Los arcos de A y de B se cruzan en dos puntos: C y D.');
+  p(15, 300, 3, 'Con la regla, une los dos puntos donde se cruzan los arcos.', 'Sólo se traza la recta; no se mide nada.');
+  p(21, 398, 4, 'Donde la recta CD corta al segmento AB está el punto medio.', '');
+  withAlpha(fade(tt, 21.8), () => mathAt(PMED(C.orange), 1120, 470, 40, C.orange, 'center'));
+  withAlpha(fade(tt, 27), () => {
+    rr(60, 500, 1160, 100, 18, C.lime);
+    txt('MEDIATRIZ', 96, 538, 20, C.forest, { w: 700 });
+    txt('La recta CD pasa por el punto medio y es perpendicular al segmento.', 96, 580, 30, C.forest, { w: 700, f: FM });
+  });
+  withAlpha(fade(tt, 33), () => { rr(250, 624, 780, 46, 12, C.forest); txt('Practica en tu cuaderno con segmentos de distintos tamaños', 640, 656, 24, C.lime, { w: 700, align: 'center' }); });
+});
+
+// voz en off (guion en voz/punto-medio-regla-y-compas.json): alarga las escenas para que alcance a hablar
+const VOZ = await cargarVoz('punto-medio-regla-y-compas', ESC);
+const TOTAL = ESC.reduce((s, e) => s + e.dur, 0);
+const FADE = .35;
+function dibujarEn(T) {
+  T = Math.max(0, Math.min(T, TOTAL - 1e-6));
+  let a = 0, i = 0;
+  while (i < ESC.length - 1 && T >= a + ESC[i].dur) { a += ESC[i].dur; i++; }
+  const tt = T - a, d = ESC[i].dur;
+  fondo(); ctx.save(); ESC[i].draw(tt); ctx.restore();
+  const o = Math.max(1 - tt / FADE, 1 - (d - tt) / FADE, 0);
+  if (o > 0) { ctx.fillStyle = `rgba(246,243,234,${Math.min(1, o)})`; ctx.fillRect(0, 0, W, H); }
+}
+function inicioDeEscena(n) { let a = 0; for (let i = 0; i < n; i++) a += ESC[i].dur; return a; }
+
+async function cargarFuentes() {
+  await Promise.all([
+    document.fonts.load('600 40px Outfit', 'x²−±√áéíóú·→'), document.fonts.load('700 40px Outfit', 'x²−±√áéíóú'),
+    document.fonts.load('400 24px Karla', 'x²−±√áéíóú'), document.fonts.load('700 24px Karla', 'x²−±√áéíóú')
+  ]);
+}
+async function subir(nombre, blob) { await fetch('/subir/' + nombre, { method: 'POST', body: blob }); }
+async function guardarCuadro(T, nombre, tipo = 'image/png') {
+  dibujarEn(T);
+  const b = await new Promise(r => cv.toBlob(r, tipo, .92));
+  await subir(nombre, b);
+}
+
+// ---------- codificación ----------
+async function hacerVideo(nombre = 'video.mp4', opc = {}) {
+  const DUR = opc.seg || TOTAL, QP = opc.qp || 0, HW = opc.hw || 'no-preference';
+  await cargarFuentes();
+  window.estado = 'cargando audio';
+  const SR = 48000;
+  const ac = new AudioContext({ sampleRate: SR });
+  const src = await ac.decodeAudioData(await (await fetch('/materiales-fuente/musica-bach.mp4')).arrayBuffer());
+  const N = Math.round(DUR * SR), ch = [src.getChannelData(0), src.getChannelData(1)];
+  const pcm = mezclar(DUR, ch, VOZ ? VOZ.pistas : []); // música en bucle + voz (la música baja al hablar)
+  const muxer = new Muxer({ target: new ArrayBufferTarget(), fastStart: 'in-memory',
+    video: { codec: 'avc', width: W, height: H, frameRate: FPS }, audio: { codec: 'aac', numberOfChannels: 2, sampleRate: SR } });
+  const ve = new VideoEncoder({ output: (c, m) => muxer.addVideoChunk(c, m), error: e => { window.estado = 'error video ' + e; } });
+  ve.configure({ codec: 'avc1.640028', width: W, height: H, bitrate: opc.br || 700000, bitrateMode: opc.mode || 'variable', framerate: FPS, hardwareAcceleration: HW });
+  const ae = new AudioEncoder({ output: (c, m) => muxer.addAudioChunk(c, m), error: e => { window.estado = 'error audio ' + e; } });
+  ae.configure({ codec: 'mp4a.40.2', sampleRate: SR, numberOfChannels: 2, bitrate: 96000 });
+  const NF = Math.round(DUR * FPS);
+  for (let f = 0; f < NF; f++) {
+    dibujarEn(f / FPS);
+    const bm = await createImageBitmap(cv); // copia fija del cuadro ya dibujado
+    const vf = new VideoFrame(bm, { timestamp: Math.round(f * 1e6 / FPS), duration: Math.round(1e6 / FPS) }); bm.close();
+    ve.encode(vf, QP ? { keyFrame: f % 150 === 0, avc: { quantizer: QP } } : { keyFrame: f % 150 === 0 }); vf.close();
+    while (ve.encodeQueueSize > 12) await new Promise(r => setTimeout(r, 2));
+    if (f % 150 === 0) { window.estado = 'video ' + f + '/' + NF; await new Promise(r => setTimeout(r, 0)); }
+  }
+  window.estado = 'audio';
+  const CH = SR; // 1 s por bloque
+  for (let s = 0; s < N; s += CH) {
+    const n = Math.min(CH, N - s), data = new Float32Array(n * 2);
+    data.set(pcm[0].subarray(s, s + n), 0); data.set(pcm[1].subarray(s, s + n), n);
+    const ad = new AudioData({ format: 'f32-planar', sampleRate: SR, numberOfFrames: n, numberOfChannels: 2, timestamp: Math.round(s * 1e6 / SR), data });
+    ae.encode(ad); ad.close();
+  }
+  await ve.flush(); await ae.flush(); muxer.finalize();
+  const buf = muxer.target.buffer;
+  window.estado = 'subiendo ' + buf.byteLength;
+  await subir(nombre, new Blob([buf], { type: 'video/mp4' }));
+  window.estado = 'listo ' + buf.byteLength;
+  return buf.byteLength;
+}
+
+Object.assign(window, { dibujarEn, guardarCuadro, hacerVideo, cargarFuentes, TOTAL, inicioDeEscena, ESC });
+await cargarFuentes();
+dibujarEn(0);
+window.listo = true;
+</script>
+</body>
+</html>

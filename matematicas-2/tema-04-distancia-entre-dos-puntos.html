@@ -162,6 +162,51 @@
     <p>Como AB = BC = 5, el triángulo es <strong>isósceles</strong>. Además, 5² + 5² = 25 + 25 = 50 = (√50)², así que cumple el teorema de Pitágoras: es un triángulo <strong>rectángulo</strong>, con el ángulo recto en B.</p>
   </div>
 
+  <!-- Clasificación de triángulos por sus lados -->
+  <p class="section-label">Clasificar un triángulo según la longitud de sus lados</p>
+  <div class="prose">
+    <p>La fórmula de la distancia sirve para saber cuánto mide cada lado de un triángulo cuando conoces las coordenadas de sus vértices.
+       Al <strong>comparar las tres longitudes</strong> puedes clasificar el triángulo:</p>
+  </div>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Triángulo</th><th>Sus lados</th><th>Ejemplo de longitudes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Equilátero</strong></td><td>Los tres lados miden lo mismo</td><td>4, 4, 4</td></tr>
+        <tr><td><strong>Isósceles</strong></td><td>Dos lados miden lo mismo y el tercero es diferente</td><td>5, 5, 6</td></tr>
+        <tr><td><strong>Escaleno</strong></td><td>Los tres lados son diferentes</td><td>3, 4, 5</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ol class="steps">
+    <li><span><strong>Calcula los tres lados</strong> (AB, BC y AC) con la fórmula de la distancia, sustituyendo los números en cada una.</span></li>
+    <li><span><strong>Compáralos.</strong> Para no aproximar, puedes comparar los números que quedan dentro de cada raíz: si dos son iguales, los lados correspondientes miden lo mismo.</span></li>
+    <li><span><strong>Concluye:</strong> tres iguales, equilátero; dos iguales, isósceles; los tres distintos, escaleno.</span></li>
+  </ol>
+  <div class="example-box">
+    <h2>Ejemplo: un triángulo isósceles</h2>
+    <p>Clasifica el triángulo de vértices A(0, 0), B(6, 0) y C(3, 4) según sus lados.</p>
+    <ol class="steps">
+      <li><span><strong>Lado AB: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(6 − 0)² + (0 − 0)²</span></span> = <span class="rad">√<span class="radicand">6² + 0²</span></span> = <span class="rad">√<span class="radicand">36</span></span> = 6</span></span></li>
+      <li><span><strong>Lado BC: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(3 − 6)² + (4 − 0)²</span></span> = <span class="rad">√<span class="radicand">(−3)² + 4²</span></span> = <span class="rad">√<span class="radicand">9 + 16</span></span> = <span class="rad">√<span class="radicand">25</span></span> = 5</span></span></li>
+      <li><span><strong>Lado AC: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(3 − 0)² + (4 − 0)²</span></span> = <span class="rad">√<span class="radicand">3² + 4²</span></span> = <span class="rad">√<span class="radicand">9 + 16</span></span> = <span class="rad">√<span class="radicand">25</span></span> = 5</span></span></li>
+    </ol>
+    <p>BC = AC = 5 y AB = 6: dos lados iguales y uno distinto. El triángulo es <strong>isósceles</strong>.</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo: un triángulo equilátero</h2>
+    <p>Clasifica el triángulo de vértices A(0, 0), B(2, 0) y C(1, √3).</p>
+    <ol class="steps">
+      <li><span><strong>Lado AB: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(2 − 0)² + (0 − 0)²</span></span> = <span class="rad">√<span class="radicand">4</span></span> = 2</span></span></li>
+      <li><span><strong>Lado BC: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(1 − 2)² + (√3 − 0)²</span></span> = <span class="rad">√<span class="radicand">(−1)² + (√3)²</span></span> = <span class="rad">√<span class="radicand">1 + 3</span></span> = <span class="rad">√<span class="radicand">4</span></span> = 2</span></span></li>
+      <li><span><strong>Lado AC: </strong><span class="sust">d = <span class="rad">√<span class="radicand">(1 − 0)² + (√3 − 0)²</span></span> = <span class="rad">√<span class="radicand">1² + (√3)²</span></span> = <span class="rad">√<span class="radicand">1 + 3</span></span> = <span class="rad">√<span class="radicand">4</span></span> = 2</span></span></li>
+    </ol>
+    <p>Los tres lados miden 2: el triángulo es <strong>equilátero</strong>. (Un triángulo equilátero no puede tener todos sus vértices con coordenadas enteras; por eso aparece √3.)</p>
+  </div>
+
   <!-- Ejercicios -->
   <p class="section-label" id="ejercicios-distancia">Ejercicios: distancia entre dos puntos</p>
   <div class="callout">
@@ -169,7 +214,8 @@
     <p>Resuelve cada ejercicio en tu cuaderno: <strong>sustituye los números en la fórmula</strong>, resuelve las restas, eleva al cuadrado, suma y saca la raíz.
        Escribe tu respuesta y oprime <strong>Comprobar</strong> (o la tecla Enter). Hay ejercicios en los que debes calcular la distancia, otros en los que sólo
        escribes el número que queda <strong>dentro de la raíz</strong> (cuando la raíz no es exacta), otros de puntos en una recta horizontal o vertical,
-       y otros del <strong>perímetro de un triángulo</strong>.</p>
+       otros del <strong>perímetro de un triángulo</strong> y otros en los que debes <strong>clasificar un triángulo según la longitud de sus lados</strong>
+       (equilátero, isósceles o escaleno; en algunos equiláteros aparece √3: recuerda que (√3)² = 3).</p>
     <p>Las respuestas son números. Para escribir una fracción usa <strong>/</strong> (por ejemplo 3/2) o un decimal con punto (por ejemplo 1.5).
        Te tocan <strong>10 ejercicios al azar</strong> de un banco de <strong>100</strong>; cuando termines, oprime <strong>Otros 10 ejercicios</strong> para volver a intentar.</p>
   </div>
@@ -217,10 +263,10 @@
             <td>Expresa su trabajo por diferentes medios (fórmula sustituida, pasos, dibujo del triángulo rectángulo y palabras) con notación correcta, y explica de manera oral o escrita cómo calcularía la distancia entre dos puntos nuevos.</td>
           </tr>
           <tr>
-            <td class="crit"><strong>Representación geométrica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Ubica los puntos en el plano cartesiano y dibuja el segmento que los une.</li><li>Reconoce que la distancia es la hipotenusa de un triángulo rectángulo cuyos catetos son las diferencias de las coordenadas.</li><li>Distingue los puntos en una recta horizontal o vertical y usa las longitudes de los lados para clasificar un triángulo (isósceles, rectángulo).</li></ul></div></td>
+            <td class="crit"><strong>Representación geométrica</strong><span class="crit-desc">Distingue, decodifica, selecciona e intercambia entre diferentes representaciones de objetos matemáticos.</span><div class="en-act"><strong>Qué observar:</strong><ul><li>Ubica los puntos en el plano cartesiano y dibuja el segmento que los une.</li><li>Reconoce que la distancia es la hipotenusa de un triángulo rectángulo cuyos catetos son las diferencias de las coordenadas.</li><li>Distingue los puntos en una recta horizontal o vertical y usa las longitudes de los lados para clasificar un triángulo según sus lados (equilátero, isósceles o escaleno) y para decidir si es rectángulo.</li></ul></div></td>
             <td>Conoce que dos puntos determinan un segmento, pero no los ubica bien en el plano o no relaciona la distancia con el triángulo rectángulo.</td>
             <td colspan="2">Describe la relación entre el segmento y el triángulo rectángulo en los casos sencillos (rectas horizontales o verticales, catetos positivos) pero se equivoca al ubicar puntos con coordenadas negativas o al identificar los catetos.</td>
-            <td>Clasifica los casos (horizontal, vertical o general) e interpreta la distancia como hipotenusa del triángulo rectángulo. Usa las longitudes de los lados para decidir si un triángulo es isósceles o rectángulo.</td>
+            <td>Clasifica los casos (horizontal, vertical o general) e interpreta la distancia como hipotenusa del triángulo rectángulo. Usa las longitudes de los tres lados para clasificar un triángulo (equilátero, isósceles o escaleno) y decidir si es rectángulo.</td>
             <td>Infiere e integra las relaciones: anticipa la distancia a partir del dibujo (por ejemplo, reconoce las ternas 3-4-5 y 5-12-13), explica cómo cambia la distancia al mover un punto y usa las longitudes de los lados para clasificar un triángulo y comprobar que es rectángulo.</td>
           </tr>
           <tr>
@@ -236,7 +282,7 @@
             <td>Explica con sus palabras («es el lado más largo del triángulo») por qué usa la fórmula, con pocos términos matemáticos.</td>
             <td>Valida con ejemplos: calcula la distancia en un caso con las ternas 3-4-5 y comprueba con el dibujo, o intercambia los puntos y obtiene el mismo resultado, y da ejemplos de errores comunes.</td>
             <td>Explica la estructura del argumento: los catetos son las diferencias de las coordenadas (hipótesis), así que por Pitágoras d² es la suma de sus cuadrados y d su raíz (conclusión). Comprueba con a² + b² = c² si un triángulo es rectángulo.</td>
-            <td>Elabora una cadena de argumentos que generaliza: deduce la fórmula de la distancia para dos puntos cualesquiera a partir de Pitágoras, explica por qué los casos horizontal y vertical son casos particulares y usa las longitudes para demostrar que un triángulo es isósceles o rectángulo.</td>
+            <td>Elabora una cadena de argumentos que generaliza: deduce la fórmula de la distancia para dos puntos cualesquiera a partir de Pitágoras, explica por qué los casos horizontal y vertical son casos particulares y usa las longitudes para demostrar que un triángulo es equilátero, isósceles o escaleno, o que es rectángulo.</td>
           </tr>
         </tbody>
       </table>
@@ -286,23 +332,38 @@
     // ---- banco de 100 ejercicios ----
     var TERNAS = [[3, 4], [4, 3], [3, 4], [4, 3], [6, 8], [8, 6], [5, 12], [12, 5], [9, 12], [12, 9], [8, 15], [15, 8]];
     var BANK = [], i, x1, y1, v;
-    for (i = 0; i < 40; i++) {      // A: distancia con resultado entero (40)
+    for (i = 0; i < 30; i++) {      // A: distancia con resultado entero (30)
       x1 = ri(-7, 7); y1 = ri(-7, 7); v = pick(TERNAS);
       BANK.push({ t: 'A', x1: x1, y1: y1, x2: x1 + sg() * v[0], y2: y1 + sg() * v[1] });
     }
-    for (i = 0; i < 25; i++) {      // B: raíz no exacta → número dentro de la raíz (25)
+    for (i = 0; i < 20; i++) {      // B: raíz no exacta → número dentro de la raíz (20)
       var dx, dy; do { dx = ri(1, 9); dy = ri(1, 9); } while (isSq(dx * dx + dy * dy));
       x1 = ri(-7, 7); y1 = ri(-7, 7); BANK.push({ t: 'B', x1: x1, y1: y1, x2: x1 + sg() * dx, y2: y1 + sg() * dy });
     }
-    for (i = 0; i < 20; i++) {      // C: recta horizontal o vertical (20)
+    for (i = 0; i < 15; i++) {      // C: recta horizontal o vertical (15)
       x1 = ri(-8, 8); y1 = ri(-8, 8); var len = ri(2, 12) * sg();
       if (i % 2) BANK.push({ t: 'C', x1: x1, y1: y1, x2: x1 + len, y2: y1 }); else BANK.push({ t: 'C', x1: x1, y1: y1, x2: x1, y2: y1 + len });
     }
-    for (i = 0; i < 15; i++) {      // D: perímetro de un triángulo rectángulo (15)
+    for (i = 0; i < 10; i++) {      // D: perímetro de un triángulo rectángulo (10)
       x1 = ri(-6, 6); y1 = ri(-6, 6); v = pick(TERNAS); var a = sg() * v[0], b = sg() * v[1];
       BANK.push({ t: 'D', ax: x1, ay: y1, bx: x1 + a, by: y1, cx: x1 + a, cy: y1 + b });
     }
-    for (i = BANK.length - 1; i > 0; i--) { var j = ri(0, i), tmp = BANK[i]; BANK[i] = BANK[j]; BANK[j] = tmp; } // mezclar
+    function l2(p, q) { return (q[0] - p[0]) * (q[0] - p[0]) + (q[1] - p[1]) * (q[1] - p[1]); }
+    function area2(p, q, r) { return (q[0] - p[0]) * (r[1] - p[1]) - (q[1] - p[1]) * (r[0] - p[0]); }
+    function giraNombres(P) { var k = ri(0, 2); return [P[k], P[(k + 1) % 3], P[(k + 2) % 3]]; }
+    for (i = 0; i < 25; i++) {      // E: clasificar un triángulo por la longitud de sus lados (25: 5 equiláteros, 10 isósceles, 10 escalenos)
+      if (i < 5) { BANK.push({ t: 'E', k: 'equi', m: [1, 2, 2, 3, 1][i], a0: ri(-5, 5), b0: ri(-5, 5) }); continue; }
+      var P3;
+      if (i < 15) {                 // isósceles: dos lados desde un mismo vértice, iguales (por reflexión o por giro de 90°)
+        var bx = ri(-5, 5), by = ri(-5, 5), ddx = sg() * ri(1, 5), ddy = sg() * ri(1, 5);
+        P3 = giraNombres([[bx + ddx, by + ddy], [bx, by], ri(0, 1) ? [bx - ddy, by + ddx] : [bx + ddx, by - ddy]]);
+        BANK.push({ t: 'E', k: 'isos', P: P3 });
+      } else {                      // escaleno: los tres lados distintos y sin que los puntos estén alineados
+        do { P3 = [[ri(-6, 6), ri(-6, 6)], [ri(-6, 6), ri(-6, 6)], [ri(-6, 6), ri(-6, 6)]]; }
+        while (area2(P3[0], P3[1], P3[2]) === 0 || l2(P3[0], P3[1]) === l2(P3[1], P3[2]) || l2(P3[1], P3[2]) === l2(P3[0], P3[2]) || l2(P3[0], P3[1]) === l2(P3[0], P3[2]));
+        BANK.push({ t: 'E', k: 'esca', P: P3 });
+      }
+    }    for (i = BANK.length - 1; i > 0; i--) { var j = ri(0, i), tmp = BANK[i]; BANK[i] = BANK[j]; BANK[j] = tmp; } // mezclar
 
     function card(n, spec) {
       return {
@@ -333,7 +394,38 @@
                  '<br>Perímetro = ' + ab + ' + ' + bc + ' + ' + ac + ' = <strong>' + P + '</strong>'
           });
         }
-        var dx = e.x2 - e.x1, dy = e.y2 - e.y1, N = dx * dx + dy * dy, head = 'A' + pt(e.x1, e.y1) + ' y B' + pt(e.x2, e.y2);
+        if (e.t === 'E') {
+          var NOM = { equi: 'equilátero', isos: 'isósceles', esca: 'escaleno' }, ptsTxt, sol3, hint3;
+          function ladoTxt(nom, p, q) { var dx3 = q[0] - p[0], dy3 = q[1] - p[1], N3 = dx3 * dx3 + dy3 * dy3; return nom + ': d = ' + rad('(' + tn(q[0]) + ' − ' + par(p[0]) + ')² + (' + tn(q[1]) + ' − ' + par(p[1]) + ')²') + ' = ' + rad(sq(dx3) + ' + ' + sq(dy3)) + ' = ' + rad(N3) + (isSq(N3) ? ' = ' + Math.round(Math.sqrt(N3)) : ''); }
+          if (e.k === 'equi') {
+            var m = e.m, a0 = e.a0, b0 = e.b0, r3 = m === 1 ? '√3' : m + '√3', lado = 2 * m, yC = b0 === 0 ? r3 : tn(b0) + ' + ' + r3, yCp = b0 === 0 ? r3 : '(' + yC + ')';
+            ptsTxt = 'A' + pt(a0, b0) + ', B' + pt(a0 + 2 * m, b0) + ' y C(' + tn(a0 + m) + ', ' + yC + ')';
+            sol3 = 'AB: d = ' + rad('(' + tn(a0 + 2 * m) + ' − ' + par(a0) + ')² + (' + tn(b0) + ' − ' + par(b0) + ')²') + ' = ' + rad(sq(2 * m) + ' + 0²') + ' = ' + rad(4 * m * m) + ' = ' + lado +
+                   '<br>BC: d = ' + rad('(' + tn(a0 + m) + ' − ' + par(a0 + 2 * m) + ')² + (' + yCp + ' − ' + par(b0) + ')²') + ' = ' + rad(sq(-m) + ' + (' + r3 + ')²') + ' = ' + rad((m * m) + ' + ' + (3 * m * m)) + ' = ' + rad(4 * m * m) + ' = ' + lado +
+                   '<br>AC: d = ' + rad('(' + tn(a0 + m) + ' − ' + par(a0) + ')² + (' + yCp + ' − ' + par(b0) + ')²') + ' = ' + rad(sq(m) + ' + (' + r3 + ')²') + ' = ' + rad((m * m) + ' + ' + (3 * m * m)) + ' = ' + rad(4 * m * m) + ' = ' + lado +
+                   '<br>Los tres lados miden ' + lado + ': <strong>equilátero</strong> (recuerda que (√3)² = 3).';
+            hint3 = 'Calcula las tres distancias: AB, BC y AC miden ' + lado + ' (recuerda que (' + r3 + ')² = ' + (3 * m * m) + '). Los tres lados son iguales: equilátero.';
+          } else {
+            var P = e.P, N1 = l2(P[0], P[1]), N2 = l2(P[1], P[2]), N3x = l2(P[0], P[2]);
+            ptsTxt = 'A' + pt(P[0][0], P[0][1]) + ', B' + pt(P[1][0], P[1][1]) + ' y C' + pt(P[2][0], P[2][1]);
+            var iguales = N1 === N2 ? 'AB y BC' : (N2 === N3x ? 'BC y AC' : 'AB y AC');
+            sol3 = ladoTxt('AB', P[0], P[1]) + '<br>' + ladoTxt('BC', P[1], P[2]) + '<br>' + ladoTxt('AC', P[0], P[2]) + '<br>' +
+                   (e.k === 'isos' ? 'Los números dentro de las raíces son ' + N1 + ', ' + N2 + ' y ' + N3x + ': ' + iguales + ' miden lo mismo y el otro es diferente: <strong>isósceles</strong>.'
+                                   : 'Los números dentro de las raíces son ' + N1 + ', ' + N2 + ' y ' + N3x + ': los tres son distintos: <strong>escaleno</strong>.');
+            hint3 = 'Calcula las tres distancias y compáralas (puedes comparar los números dentro de las raíces): AB² = ' + N1 + ', BC² = ' + N2 + ' y AC² = ' + N3x + '. ' +
+                    (e.k === 'isos' ? 'Dos son iguales (' + iguales + '): isósceles.' : 'Los tres son distintos: escaleno.');
+          }
+          return {
+            head: 'Triángulo con vértices ' + ptsTxt,
+            body: '<div class="practice-ask">Calcula la longitud de sus lados y clasifícalo según sus lados</div>' + h.optsHTML('t', [['equi', 'Equilátero'], ['isos', 'Isósceles'], ['esca', 'Escaleno']], false),
+            check: function (ctx) {
+              if (!ctx.chosen.t) return { msg: 'Elige una de las tres opciones.' };
+              if (ctx.chosen.t === e.k) return { wrong: [], total: 1 };
+              return { wrong: ['t'], msgs: [hint3], total: 1 };
+            },
+            sol: sol3
+          };
+        }        var dx = e.x2 - e.x1, dy = e.y2 - e.y1, N = dx * dx + dy * dy, head = 'A' + pt(e.x1, e.y1) + ' y B' + pt(e.x2, e.y2);
         if (e.t === 'C') {
           var d = Math.abs(e.x1 === e.x2 ? dy : dx), eje = e.x1 === e.x2 ? 'vertical (misma x)' : 'horizontal (misma y)';
           return card(n, {

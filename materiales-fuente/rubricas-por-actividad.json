@@ -2677,7 +2677,7 @@
       "evidencia": [
         "Los ejercicios al azar de la página resueltos en el cuaderno, con la fórmula de la distancia escrita con los números sustituidos y cada paso (restas, cuadrados, suma y raíz).",
         "Al menos un ejercicio con coordenadas negativas y uno en el que la raíz no es exacta (el número dentro de la raíz y su aproximación).",
-        "Un dibujo del triángulo rectángulo (catetos |x₂ − x₁| y |y₂ − y₁|, hipotenusa d) para al menos un ejercicio, y el perímetro de un triángulo con el cálculo de cada lado."
+        "Un dibujo del triángulo rectángulo (catetos |x₂ − x₁| y |y₂ − y₁|, hipotenusa d) para al menos un ejercicio, el perímetro de un triángulo con el cálculo de cada lado y la clasificación de al menos tres triángulos (equilátero, isósceles o escaleno) con las tres distancias calculadas."
       ],
       "errores": [
         "Resta mal con negativos: en A(−3, 4) y B(2, −8) escribe 2 − 3 = −1 en lugar de 2 − (−3) = 5, o −8 − 4 como −4.",
@@ -2705,11 +2705,11 @@
           "observar": [
             "Ubica los puntos en el plano cartesiano y dibuja el segmento que los une.",
             "Reconoce que la distancia es la hipotenusa de un triángulo rectángulo cuyos catetos son las diferencias de las coordenadas.",
-            "Distingue los puntos en una recta horizontal o vertical y usa las longitudes de los lados para clasificar un triángulo (isósceles, rectángulo)."
+            "Distingue los puntos en una recta horizontal o vertical y usa las longitudes de los lados para clasificar un triángulo según sus lados (equilátero, isósceles o escaleno) y para decidir si es rectángulo."
           ],
           "n1": "Conoce que dos puntos determinan un segmento, pero no los ubica bien en el plano o no relaciona la distancia con el triángulo rectángulo.",
           "n23": "Describe la relación entre el segmento y el triángulo rectángulo en los casos sencillos (rectas horizontales o verticales, catetos positivos) pero se equivoca al ubicar puntos con coordenadas negativas o al identificar los catetos.",
-          "n4": "Clasifica los casos (horizontal, vertical o general) e interpreta la distancia como hipotenusa del triángulo rectángulo. Usa las longitudes de los lados para decidir si un triángulo es isósceles o rectángulo.",
+          "n4": "Clasifica los casos (horizontal, vertical o general) e interpreta la distancia como hipotenusa del triángulo rectángulo. Usa las longitudes de los tres lados para clasificar un triángulo (equilátero, isósceles o escaleno) y decidir si es rectángulo.",
           "n5": "Infiere e integra las relaciones: anticipa la distancia a partir del dibujo (por ejemplo, reconoce las ternas 3-4-5 y 5-12-13), explica cómo cambia la distancia al mover un punto y usa las longitudes de los lados para clasificar un triángulo y comprobar que es rectángulo."
         },
         {
@@ -2735,7 +2735,7 @@
           "n2": "Explica con sus palabras («es el lado más largo del triángulo») por qué usa la fórmula, con pocos términos matemáticos.",
           "n3": "Valida con ejemplos: calcula la distancia en un caso con las ternas 3-4-5 y comprueba con el dibujo, o intercambia los puntos y obtiene el mismo resultado, y da ejemplos de errores comunes.",
           "n4": "Explica la estructura del argumento: los catetos son las diferencias de las coordenadas (hipótesis), así que por Pitágoras d² es la suma de sus cuadrados y d su raíz (conclusión). Comprueba con a² + b² = c² si un triángulo es rectángulo.",
-          "n5": "Elabora una cadena de argumentos que generaliza: deduce la fórmula de la distancia para dos puntos cualesquiera a partir de Pitágoras, explica por qué los casos horizontal y vertical son casos particulares y usa las longitudes para demostrar que un triángulo es isósceles o rectángulo."
+          "n5": "Elabora una cadena de argumentos que generaliza: deduce la fórmula de la distancia para dos puntos cualesquiera a partir de Pitágoras, explica por qué los casos horizontal y vertical son casos particulares y usa las longitudes para demostrar que un triángulo es equilátero, isósceles o escaleno, o que es rectángulo."
         }
       ]
     },
