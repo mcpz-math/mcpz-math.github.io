@@ -1978,3 +1978,4 @@ Registro de lo que vamos haciendo, en orden cronológico.
 - Arreglo de formato: en las listas numeradas (`ol.steps`) el texto con negritas se separaba en columnas; ahora cada paso va dentro de un `<span>`. Se corrigió también en los ejemplos de `tema-07-conicas-introduccion.html`.
 - Pendiente: la introducción a la circunferencia aún no tiene rúbrica con la matriz ni ejercicios con revisión (se pueden agregar si Carmen los quiere).
 - A pedido de Carmen, en `tema-07-circunferencia.html` se quitó la sección «Cómo se obtiene la ecuación» (los 4 pasos con Pitágoras). Quedan la figura, el recuadro con (x − h)² + (y − k)² = r² y el resto de la introducción.
+- A pedido de Carmen, en `tema-07-circunferencia.html` también se quitaron los **4 ejemplos** (y el aviso de los signos). La introducción queda con: qué es, sus elementos, que es una cónica, la figura, la ecuación y la tabla de las tres formas.
