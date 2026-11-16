@@ -31,29 +31,28 @@
   <style>
     .cortes { grid-template-columns: 1fr; }
     @media (min-width: 560px) { .cortes { grid-template-columns: repeat(2, 1fr); } }
-    .cortes .case-card svg { width: 100%; max-width: 260px; height: auto; }
-    .corte3d { max-width: 280px; margin: 0 auto 0.6rem; }
+    .corte3d { max-width: 280px; margin: 0 auto 0.6rem; font-size: 0.8rem; color: var(--ink-soft); }
     .corte3d canvas { display: block; width: 100%; height: auto; cursor: grab; touch-action: pan-y; }
     .corte3d canvas:active { cursor: grabbing; }
   </style>
   <div class="case-grid cortes">
     <div class="case-card">
-      <svg class="corte" data-corte="circ" viewBox="0 0 220 260" role="img" aria-label="Un plano horizontal corta el cono y marca una circunferencia"></svg>
+      <div class="corte3d" data-corte="circ" role="img" aria-label="Un plano horizontal corta el cono y marca una circunferencia (dibujo en 3D que se puede girar)"></div>
       <h3>Circunferencia</h3>
       <p>El plano corta el cono de forma <strong>horizontal</strong> (perpendicular al eje del cono).</p>
     </div>
     <div class="case-card">
-      <svg class="corte" data-corte="elip" viewBox="0 0 220 260" role="img" aria-label="Un plano inclinado corta todo alrededor del cono y marca una elipse"></svg>
+      <div class="corte3d" data-corte="elip" role="img" aria-label="Un plano inclinado corta todo alrededor del cono y marca una elipse (dibujo en 3D que se puede girar)"></div>
       <h3>Elipse</h3>
       <p>El plano se <strong>inclina un poco</strong> y corta todo alrededor del cono, sin llegar a ser paralelo a un lado.</p>
     </div>
     <div class="case-card">
-      <svg class="corte" data-corte="parab" viewBox="0 0 220 260" role="img" aria-label="Un plano paralelo a un lado del cono marca una parábola"></svg>
+      <div class="corte3d" data-corte="parab" role="img" aria-label="Un plano paralelo a un lado del cono marca una parábola (dibujo en 3D que se puede girar)"></div>
       <h3>Parábola</h3>
       <p>El plano es <strong>paralelo a un lado</strong> del cono (a una de sus rectas generatrices). La curva no se cierra.</p>
     </div>
     <div class="case-card">
-      <svg class="corte" data-corte="hip" viewBox="0 0 220 260" role="img" aria-label="Un plano más vertical que los lados del cono corta los dos conos y marca una hipérbola de dos ramas"></svg>
+      <div class="corte3d" data-corte="hip" role="img" aria-label="Un plano más vertical que los lados del cono corta los dos conos y marca una hipérbola de dos ramas (dibujo en 3D que se puede girar)"></div>
       <h3>Hipérbola</h3>
       <p>El plano es <strong>más vertical</strong> que los lados del cono y corta <strong>los dos conos</strong>: salen dos ramas.</p>
     </div>
@@ -290,63 +289,10 @@
     }
     function num(n) { return n < 0 ? M + Math.abs(n) : String(n); }
 
-    // ---------- Dibujos: cómo el plano corta al cono ----------
+    // ---------- Dibujos en 3D: cómo el plano corta al cono ----------
     (function () {
-      var TAU = 22 * Math.PI / 180, S = 70, CX = 110, CY = 132, H = 1.25, NS = 'http://www.w3.org/2000/svg';
-      var PI = Math.PI, a = Math.asin(Math.tan(TAU));
-      function P(x, y, z) { return [CX + S * x, CY - S * (z * Math.cos(TAU) + y * Math.sin(TAU))]; }
-      function path(pts, close) { return 'M' + pts.map(function (p) { return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' L') + (close ? ' Z' : ''); }
-      function rim(z, t0, t1, n) { var r = []; for (var i = 0; i <= n; i++) { var t = t0 + (t1 - t0) * i / n; r.push(P(H * Math.cos(t), H * Math.sin(t), z)); } return r; }
-      function el(svg, name, attrs) { var e = document.createElementNS(NS, name); for (var k in attrs) e.setAttribute(k, attrs[k]); svg.appendChild(e); return e; }
-
-      function cone(svg) {
-        var A = P(0, 0, 0), top = rim(H, -a, PI + a, 48), bot = rim(-H, a, a - (PI + 2 * a), 48);
-        // cono de arriba: vértice → punta derecha → borde de atrás → punta izquierda
-        el(svg, 'path', { d: path([A].concat(top), true), fill: 'rgba(63,107,74,0.14)', stroke: '#3f6b4a', 'stroke-width': 1.6, 'stroke-linejoin': 'round' });
-        el(svg, 'path', { d: path(rim(H, PI + a, 2 * PI - a, 30)), fill: 'none', stroke: '#3f6b4a', 'stroke-width': 1.2 });
-        // cono de abajo
-        el(svg, 'path', { d: path([A].concat(bot), true), fill: 'rgba(63,107,74,0.14)', stroke: '#3f6b4a', 'stroke-width': 1.6, 'stroke-linejoin': 'round' });
-        el(svg, 'path', { d: path(rim(-H, a, PI - a, 30)), fill: 'none', stroke: '#3f6b4a', 'stroke-width': 1.1, 'stroke-dasharray': '3 3', opacity: 0.8 });
-        // eje del cono
-        el(svg, 'path', { d: path([P(0, 0, -H - 0.12), P(0, 0, H + 0.12)]), stroke: '#56604f', 'stroke-width': 1, 'stroke-dasharray': '1 4', 'stroke-linecap': 'round', fill: 'none' });
-      }
-      function plane(svg, C, u, v, u0, u1, s0, s1) { // paralelogramo: centro C + x·u + s·v
-        function Q(x, s) { return P(C[0] + x * u[0] + s * v[0], C[1] + x * u[1] + s * v[1], C[2] + x * u[2] + s * v[2]); }
-        el(svg, 'path', { d: path([Q(u0, s0), Q(u1, s0), Q(u1, s1), Q(u0, s1)], true), fill: 'rgba(196,232,107,0.5)', stroke: '#14301f', 'stroke-width': 1.5, 'stroke-linejoin': 'round' });
-      }
-      function curve(svg, pts) { el(svg, 'path', { d: path(pts), fill: 'none', stroke: '#d9650b', 'stroke-width': 3.2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }); }
-      function viaT(c, m, zmax, t0, n) { // z = c / (1 − m·sen t): puntos del cono z² = x² + y² que están en el plano
-        var pts = [];
-        for (var i = 0; i <= n; i++) {
-          var t = t0 + 2 * PI * i / n, d = 1 - m * Math.sin(t); if (d <= 1e-6) continue;
-          var z = c / d; if (z > zmax) continue; pts.push(P(z * Math.cos(t), z * Math.sin(t), z));
-        }
-        return pts;
-      }
-      var ZMAX = 1.1, ESC = {
-        circ: function (svg) {
-          cone(svg); plane(svg, [0, 0, 0.7], [1, 0, 0], [0, 1, 0], -1.05, 1.05, -1.05, 1.05);
-          var pts = []; for (var i = 0; i <= 90; i++) { var t = 2 * PI * i / 90; pts.push(P(0.7 * Math.cos(t), 0.7 * Math.sin(t), 0.7)); } curve(svg, pts);
-        },
-        elip: function (svg) {
-          cone(svg); plane(svg, [0, 0, 0.6], [1, 0, 0], [0, 1, 0.4], -1.0, 1.0, -0.75, 1.15); curve(svg, viaT(0.6, 0.4, 9, 0, 120));
-        },
-        parab: function (svg) {
-          cone(svg); plane(svg, [0, 0, 0.5], [1, 0, 0], [0, 1, 1], -1.0, 1.0, -0.4, ZMAX - 0.5); curve(svg, viaT(0.5, 1, ZMAX, PI / 2, 400));
-        },
-        hip: function (svg) {
-          var y0 = -0.35, X = Math.sqrt(ZMAX * ZMAX - y0 * y0), up = [], dn = [], i, x, z;
-          cone(svg); plane(svg, [0, y0, 0], [1, 0, 0], [0, 0, 1], -1.15, 1.15, -1.15, 1.15);
-          for (i = 0; i <= 60; i++) { x = -X + 2 * X * i / 60; z = Math.sqrt(x * x + y0 * y0); up.push(P(x, y0, z)); dn.push(P(x, y0, -z)); }
-          curve(svg, up); curve(svg, dn);
-        }
-      };
-      [].forEach.call(document.querySelectorAll('svg.corte'), function (svg) { ESC[svg.getAttribute('data-corte')](svg); });
-    })();
-
-    // ---------- Versión en 3D (si el navegador la permite; si no, se quedan los dibujos de arriba) ----------
-    (function () {
-      if (!window.THREE) return;
+      var NOPE = 'Tu navegador no pudo mostrar este dibujo en 3D.';
+      if (!window.THREE) { [].forEach.call(document.querySelectorAll('.corte3d'), function (h) { h.textContent = NOPE; }); return; }
       var T = THREE, H = 1.25, PI = Math.PI, items = [];
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -390,14 +336,11 @@
           g.add(curveMesh(a, false)); g.add(curveMesh(b, false));
         }
       }
-      function build(svg) {
-        var holder = document.createElement('div'); holder.className = 'corte3d';
-        svg.parentNode.insertBefore(holder, svg);
+      function build(holder) {
         var w = holder.clientWidth || 260, h = Math.round(w * 1.05), renderer;
-        try { renderer = new T.WebGLRenderer({ antialias: true, alpha: true }); } catch (e) { holder.remove(); return; }
+        try { renderer = new T.WebGLRenderer({ antialias: true, alpha: true }); } catch (e) { holder.textContent = NOPE; return; }
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2)); renderer.setSize(w, h);
-        holder.setAttribute('role', 'img'); holder.setAttribute('aria-label', svg.getAttribute('aria-label') + ' (dibujo en 3D que se puede girar)');
-        holder.appendChild(renderer.domElement); svg.style.display = 'none';
+        holder.appendChild(renderer.domElement);
 
         var scene = new T.Scene(), cam = new T.PerspectiveCamera(32, w / h, 0.1, 50), g = new T.Group(), k;
         cam.position.set(0, 0.8, 6.4); cam.lookAt(0, 0, 0);
@@ -417,7 +360,7 @@
         var axis = new T.Line(new T.BufferGeometry().setFromPoints([new T.Vector3(0, -H - 0.2, 0), new T.Vector3(0, H + 0.2, 0)]), new T.LineDashedMaterial({ color: 0x56604f, dashSize: 0.06, gapSize: 0.06 }));
         axis.computeLineDistances(); g.add(axis);
         var apex = new T.Mesh(new T.SphereGeometry(0.05, 12, 12), new T.MeshBasicMaterial({ color: 0x14301f })); g.add(apex);
-        sceneFor(svg.getAttribute('data-corte'), g);
+        sceneFor(holder.getAttribute('data-corte'), g);
         g.rotation.set(0.38, -0.7, 0);
 
         var it = { renderer: renderer, scene: scene, cam: cam, g: g, visible: true, drag: false };
@@ -428,7 +371,7 @@
         if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { it.visible = es[0].isIntersecting; }).observe(holder);
         items.push(it);
       }
-      [].slice.call(document.querySelectorAll('svg.corte')).forEach(build);
+      [].slice.call(document.querySelectorAll('.corte3d')).forEach(build);
       if (!items.length) return;
       (function loop() {
         items.forEach(function (it) {
