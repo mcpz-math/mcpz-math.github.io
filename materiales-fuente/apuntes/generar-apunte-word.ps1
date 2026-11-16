@@ -27,14 +27,20 @@ function P([string]$runs, [int]$after = 80, [string]$jc = '', [string]$extraPre 
 $cm = '<w:rPr><w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/></w:rPr>'
 function MR([string]$t) { return '<m:r>' + $cm + '<m:t>' + (Esc $t) + '</m:t></m:r>' }
 function MSup([string]$e, [string]$sup) { return '<m:sSup><m:sSupPr><m:ctrlPr>' + $cm + '</m:ctrlPr></m:sSupPr><m:e>' + $e + '</m:e><m:sup>' + $sup + '</m:sup></m:sSup>' }
+function MFrac([string]$n, [string]$d) { return '<m:f><m:fPr><m:ctrlPr>' + $cm + '</m:ctrlPr></m:fPr><m:num>' + (MParse $n) + '</m:num><m:den>' + (MParse $d) + '</m:den></m:f>' }
 function MParse([string]$t) {
   $out = ''; $buf = ''; $pos = 0
-  foreach ($m in [regex]::Matches($t, '\^(\w)')) {
+  # {numerador|denominador} = fraccion apilada; ^2 = exponente de un caracter
+  foreach ($m in [regex]::Matches($t, '\{([^|}]+)\|([^}]+)\}|\^(\w)')) {
     $buf += $t.Substring($pos, $m.Index - $pos)
+    if ($m.Groups[1].Success) {
+      if ($buf -ne '') { $out += (MR $buf); $buf = '' }
+      $out += (MFrac $m.Groups[1].Value $m.Groups[2].Value); $pos = $m.Index + $m.Length; continue
+    }
     if ($buf -eq '') { throw "Exponente sin base en: $t" }
     $base = $buf.Substring($buf.Length - 1); $buf = $buf.Substring(0, $buf.Length - 1)
     if ($buf -ne '') { $out += (MR $buf); $buf = '' }
-    $out += (MSup (MR $base) (MR $m.Groups[1].Value)); $pos = $m.Index + $m.Length
+    $out += (MSup (MR $base) (MR $m.Groups[3].Value)); $pos = $m.Index + $m.Length
   }
   $buf += $t.Substring($pos); if ($buf -ne '') { $out += (MR $buf) }
   return $out
@@ -164,6 +170,8 @@ foreach ($blq in $d.bloques) {
   switch ($blq.t) {
     'h2' { $L.Add((H2 $blq.v)) }
     'p' { $L.Add((P (Rico $blq.v 21) 80)) }
+    'h3' { $L.Add((P (Run $blq.v 23 $true $false $FOREST) 50 '' '<w:keepNext/>')) }
+    'pasos' { $np = 0; foreach ($i in $blq.v) { $np++; $L.Add((P ((Run ([string]$np + '.  ') 21 $true $false $MOSS) + (Rico $i 21)) 50 '' '' '<w:ind w:left="360" w:hanging="360"/>')) } }
     'ul' { foreach ($i in $blq.v) { $L.Add((P ((Run ([string][char]0x2022 + ' ') 21) + (Rico $i 21)) 40 '' '' '<w:ind w:left="360" w:hanging="240"/>')) } }
     'figs' { $L.Add((Figuras $blq.items)) }
     'dos' { $L.Add((Dos $blq)) }

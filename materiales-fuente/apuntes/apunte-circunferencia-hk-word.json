@@ -1,0 +1,68 @@
+{
+  "titulo": "Circunferencia con centro en (h,k)",
+  "kicker": "APUNTE DE CLASE",
+  "org": "DTI. Maria del Carmen Pérez Zarate · Matemáticas 3 · Tema 7",
+  "nombre": "Nombre: ________________________________________   Grupo: __________",
+  "pie": "mcpz-math.github.io · Matemáticas 3 · Tema 7: Circunferencia",
+  "bloques": [
+    { "t": "h2", "v": "La ecuación ordinaria" },
+    { "t": "dos", "img": "circ-hk-ecuacion.png", "ancho_px": 420, "alto_px": 340, "ancho_cm": 7.6, "col_izq": 4400,
+      "alt": "Circunferencia con centro C(h, k), un punto P(x, y) y el radio r",
+      "cap": "P(x, y) está en la circunferencia si su distancia a C(h, k) es r.",
+      "der": [
+        { "k": "p", "v": "La distancia de C(h, k) a P(x, y) es la hipotenusa de un triángulo rectángulo con catetos **x − h** y **y − k**. Igualada al radio y elevada al cuadrado:" },
+        { "k": "formula", "v": "(x-h)^2+(y-k)^2=r^2" },
+        { "k": "p", "v": "Es la ecuación **ordinaria**: centro **(h, k)** y radio **r**. Si h = k = 0 queda $x^2+y^2=r^2$." }
+      ] },
+    { "t": "box", "tono": "naranja", "titulo": "¡Cuidado con los signos!", "v": ["Dentro de los paréntesis el signo es el **contrario** al de la coordenada del centro: con h = 3 se escribe **(x − 3)**; con k = −2 se escribe **(y + 2)**. Si una coordenada es 0, queda sólo x² (o y²)."] },
+    { "t": "tabla", "cols": [4600, 5600], "head": ["Datos", "Ecuación ordinaria"], "rows": [
+      ["Centro (3, −2) y radio 4", "$(x-3)^2+(y+2)^2=16$"],
+      ["Centro (−1, 4) y radio 3", "$(x+1)^2+(y-4)^2=9$"],
+      ["Centro (0, 5) y radio 2", "$x^2+(y-5)^2=4$"]
+    ] },
+
+    { "t": "h2", "v": "De la ecuación ordinaria a la ecuación general" },
+    { "t": "formula", "v": "x^2+y^2+Dx+Ey+F=0" },
+    { "t": "p", "v": "Aquí A = C = 1 y todos los términos están de un lado, igualados a cero. Recuerda el binomio al cuadrado: **(a ± b)² = a² ± 2ab + b²** (el término de en medio es el doble producto)." },
+    { "t": "h3", "v": "Pasos" },
+    { "t": "pasos", "v": [
+      "Escribe la **ecuación ordinaria**: (x − h)² + (y − k)² = r².",
+      "**Desarrolla** los dos binomios al cuadrado.",
+      "Pasa **r² al lado izquierdo** (cambia de signo) para igualar a cero.",
+      "**Junta los números** sueltos: ese es F. Ordena: x², y², x, y, número."
+    ] },
+
+    { "t": "h2", "v": "Ejemplos" },
+    { "t": "box", "titulo": "1. Centro (3, −2) y radio 4", "v": [
+      "(x − 3)² + (y + 2)² = 16  →  (x² − 6x + 9) + (y² + 4y + 4) = 16  →  x² − 6x + 9 + y² + 4y + 4 − 16 = 0   (números: 9 + 4 − 16 = −3)",
+      "$x^2+y^2-6x+4y-3=0$" ] },
+    { "t": "box", "titulo": "2. Centro (−2, 5) y radio 3", "v": [
+      "(x + 2)² + (y − 5)² = 9  →  x² + 4x + 4 + y² − 10y + 25 − 9 = 0   (números: 4 + 25 − 9 = 20)",
+      "$x^2+y^2+4x-10y+20=0$" ] },
+    { "t": "box", "titulo": "3. Cuando una coordenada es 0: centro (4, 0) y radio 5", "v": [
+      "(x − 4)² + y² = 25  →  x² − 8x + 16 + y² − 25 = 0",
+      "$x^2+y^2-8x-9=0$   (no aparece el término en y: E = 0)" ] },
+    { "t": "box", "titulo": "4. Centro (2, −1) y pasa por el punto (5, 3)", "v": [
+      "r² = (5 − 2)² + (3 − (−1))² = 9 + 16 = 25  →  (x − 2)² + (y + 1)² = 25",
+      "→  x² − 4x + 4 + y² + 2y + 1 − 25 = 0",
+      "$x^2+y^2-4x+2y-20=0$" ] },
+    { "t": "box", "titulo": "5. Los extremos de un diámetro son (−1, 2) y (5, −6)", "v": [
+      "El centro es el punto medio:   $h={-1+5|2}=2$   y   $k={2+(-6)|2}=-2$.",
+      "Radio: r² = (5 − 2)² + (−6 − (−2))² = 9 + 16 = 25  →  (x − 2)² + (y + 2)² = 25",
+      "$x^2+y^2-4x+4y-17=0$" ] },
+
+    { "t": "h2", "v": "Para comprobar tu resultado" },
+    { "t": "box", "titulo": "", "v": [
+      "Si desarrollas con letras, siempre resulta:",
+      "$D=-2h$        $E=-2k$        $F=h^2+k^2-r^2$",
+      "Con h = 3, k = −2, r = 4: D = −6, E = 4, F = 9 + 4 − 16 = −3 ✓." ] },
+
+    { "t": "h2", "v": "Resumen" },
+    { "t": "box", "titulo": "", "v": [
+      "• Ordinaria: $(x-h)^2+(y-k)^2=r^2$; los signos dentro de los paréntesis son contrarios a los del centro.",
+      "• Para la **general**: desarrolla, pasa r² a la izquierda y junta los números.",
+      "• Si te dan un **punto**, r² es el cuadrado de su distancia al centro; si te dan los extremos de un **diámetro**, el centro es su punto medio." ] },
+
+    { "t": "notas", "titulo": "Mis notas", "n": 3 }
+  ]
+}

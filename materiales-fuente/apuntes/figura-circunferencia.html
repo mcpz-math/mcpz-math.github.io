@@ -6,7 +6,7 @@
 <style>
   html, body { margin: 0; background: #fff; overflow: hidden; }
   svg { display: none; }
-  body.ecuacion svg#ecuacion, body.grafica svg#grafica { display: block; }
+  body.ecuacion svg#ecuacion, body.grafica svg#grafica, body.hk svg#hk { display: block; }
 </style>
 </head>
 <body>
@@ -42,6 +42,19 @@
   </g>
   </g>
 </svg>
-<script>document.body.className = (location.search.match(/f=(\w+)/) || [0, 'ecuacion'])[1];</script>
+<svg id="hk" viewBox="0 0 420 340" width="420" height="340" role="img" aria-label="Circunferencia con centro C(h, k)">
+  <g stroke="#56604f" stroke-width="1.6" fill="none"><line x1="40" y1="310" x2="404" y2="310"/><line x1="40" y1="310" x2="40" y2="16"/></g>
+  <g font-family="Consolas, monospace" font-size="15" fill="#14301f"><text x="406" y="328">x</text><text x="28" y="14">y</text></g>
+  <circle cx="190" cy="170" r="110" fill="rgba(196,232,107,0.35)" stroke="#14301f" stroke-width="2.8"/>
+  <g stroke="#56604f" stroke-width="1.2" stroke-dasharray="4 4"><line x1="190" y1="170" x2="190" y2="310"/><line x1="40" y1="170" x2="190" y2="170"/></g>
+  <line x1="190" y1="170" x2="280" y2="170" stroke="#3f6b4a" stroke-width="2.2" stroke-dasharray="6 4"/>
+  <line x1="280" y1="170" x2="280" y2="107" stroke="#3f6b4a" stroke-width="2.2" stroke-dasharray="6 4"/>
+  <line x1="190" y1="170" x2="280" y2="107" stroke="#d9650b" stroke-width="3.2" stroke-linecap="round"/>
+  <circle cx="190" cy="170" r="5" fill="#14301f"/><circle cx="280" cy="107" r="5.5" fill="#d9650b" stroke="#14301f" stroke-width="1.5"/>
+  <g font-family="Consolas, monospace" font-size="15" fill="#14301f">
+    <text x="112" y="162">C(h, k)</text><text x="288" y="100">P(x, y)</text><text x="219" y="127" fill="#d9650b" font-weight="700">r</text>
+    <text x="206" y="190" fill="#3f6b4a">x − h</text><text x="286" y="143" fill="#3f6b4a">y − k</text><text x="186" y="328">h</text><text x="20" y="175">k</text>
+  </g>
+</svg><script>document.body.className = (location.search.match(/f=(\w+)/) || [0, 'ecuacion'])[1];</script>
 </body>
 </html>
