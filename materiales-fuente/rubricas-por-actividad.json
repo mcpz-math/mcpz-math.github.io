@@ -2371,7 +2371,7 @@
       "file": "matematicas-3/tema-07-circunferencia-centro-hk.html",
       "ocurrencia": 0,
       "evidencia": [
-        "Los ejercicios al azar de la página resueltos en el cuaderno, con la ecuación ordinaria, el desarrollo de los binomios al cuadrado, r² pasado a la izquierda y los números juntados antes de dar D, E y F.",
+        "Los ejercicios al azar de la página resueltos en el cuaderno, con la ecuación ordinaria, el desarrollo de los binomios al cuadrado, r² pasado a la izquierda y los números juntados antes de escribir la ecuación general.",
         "Al menos un ejercicio de los extremos de un diámetro, con el punto medio (el centro) y el cálculo de r².",
         "La comprobación de su ecuación general con D = −2h, E = −2k y F = h² + k² − r², o la sustitución del punto dado en la ecuación."
       ],
@@ -2387,7 +2387,7 @@
         {
           "id": "COM",
           "observar": [
-            "Escribe la ecuación ordinaria y el desarrollo paso a paso (binomios al cuadrado, r² pasado a la izquierda, números juntados) antes de dar D, E y F.",
+            "Escribe la ecuación ordinaria y el desarrollo paso a paso (binomios al cuadrado, r² pasado a la izquierda, números juntados) antes de escribir la ecuación general.",
             "Escribe con notación correcta los paréntesis, los exponentes y los signos, tanto en la ecuación ordinaria como en x² + y² + Dx + Ey + F = 0.",
             "Usa el vocabulario adecuado (centro, radio, punto medio, diámetro, ecuación ordinaria, ecuación general)."
           ],
@@ -2401,7 +2401,7 @@
           "observar": [
             "Escribe (x − h)² y (y − k)² con el signo contrario al de la coordenada del centro, también con coordenadas negativas o iguales a 0.",
             "Desarrolla correctamente los binomios al cuadrado, con el doble producto y su signo.",
-            "Pasa r² al lado izquierdo con el signo cambiado, junta los números y obtiene D, E y F."
+            "Pasa r² al lado izquierdo con el signo cambiado, junta los números y escribe la ecuación general completa."
           ],
           "n1": "Aún no usa correctamente las expresiones algebraicas: escribe (x − h)² con el signo de h sin cambiarlo o desarrolla (x − 3)² como x² − 9 (olvida el doble producto).",
           "n23": "Hace uso de la sintaxis y la semántica del lenguaje algebraico: desarrolla bien los binomios cuando h y k son positivos, pero se equivoca con las coordenadas negativas, con el signo del doble producto o al pasar r² al otro lado.",
