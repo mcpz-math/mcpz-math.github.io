@@ -1918,6 +1918,76 @@
           "n5": "Elabora una cadena de argumentos que generaliza para cualquier a y h: demuestra que (x − h)² ≥ 0 y que sólo vale 0 en x = h, concluye que el vértice es el mínimo (a > 0) o el máximo (a < 0) y que la función no tiene el otro extremo. Distingue convencerse con un dibujo de demostrar."
         }
       ]
+    },
+    {
+      "id": "conicasintro",
+      "titulo": "Matemáticas 3 · Tema 7 · Introducción a las cónicas",
+      "file": "matematicas-3/tema-07-conicas-introduccion.html",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Los ejercicios al azar de la página («¿qué cónica es?») resueltos en el cuaderno, con A y C escritos (con su signo) y la condición que usó para decidir (A = C, mismo signo, signos contrarios, A = 0 o C = 0).",
+        "Una explicación, escrita o con dibujo, de cómo se coloca el plano respecto al cono para obtener cada una de las cuatro cónicas.",
+        "Al menos tres ecuaciones con casos que cuestan trabajo (coeficientes negativos, sin término x² o y², A ≠ C con el mismo signo) y la justificación de su clasificación."
+      ],
+      "errores": [
+        "Toma como A y C los coeficientes de x y de y (D y E), o los exponentes, en lugar de los coeficientes de x² y de y².",
+        "Dice que −3x² − 3y² + … no es una circunferencia porque los coeficientes son negativos (A = C aunque los dos sean negativos).",
+        "Pone «circunferencia» en 4x² + 9y² + … porque «tiene dos cuadrados con el mismo signo» (olvida que para la circunferencia A y C deben ser iguales).",
+        "Cuando falta x² o y² escribe A = 1 en lugar de A = 0, o dice que no es una cónica; con un solo cuadrado no decide «parábola».",
+        "Cree que D, E o F cambian la clase de cónica (por ejemplo, que un término lineal grande vuelve «hipérbola» a una elipse).",
+        "Mezcla los cortes del plano: horizontal → elipse, paralelo a un lado del cono → hipérbola, o dibuja la hipérbola con una sola rama."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe A y C con su signo y la condición que usó («A = C», «AC < 0», «A = 0») en cada ejercicio.",
+            "Usa el vocabulario adecuado (coeficiente, término cuadrático, ecuación general, plano de corte, ramas, circunferencia, elipse, parábola, hipérbola).",
+            "Explica, con palabras o con un dibujo del cono y el plano, por qué la ecuación corresponde a esa cónica."
+          ],
+          "n1": "Escribe sólo el nombre de la cónica, sin decir cuánto valen A y C ni cómo lo decidió, y casi no usa vocabulario matemático (por ejemplo, «es la redonda» o «es la que abre»). No usa ningún apoyo, como un dibujo o la tabla de clasificación.",
+          "n23": "Escribe A y C en la mayoría de los ejercicios, pero omite signos o la condición que usó; su vocabulario es limitado y repite la tabla de manera mecánica. Su dibujo del cono y el plano, si lo hace, es incompleto o no tiene rótulos.",
+          "n4": "Escribe A y C con su signo y la condición en casi todos los ejercicios, con el vocabulario adecuado, y explica con claridad qué cónica es y por qué. Describe o dibuja cómo corta el plano al cono en cada caso, aunque puede tener una omisión menor.",
+          "n5": "Expresa su análisis por diferentes medios (A y C con su condición, dibujo del cono y el plano, palabras) con notación correcta, y reconstruye la tabla de clasificación sin verla. Explica de manera oral o escrita cómo reconocería la cónica de una ecuación nueva."
+        },
+        {
+          "id": "REP_GEO",
+          "observar": [
+            "Relaciona la posición del plano con la curva que se obtiene: horizontal → circunferencia, inclinado → elipse, paralelo a un lado del cono → parábola, más vertical que los lados (corta los dos conos) → hipérbola de dos ramas.",
+            "Distingue las formas: curva cerrada (circunferencia y elipse), curva abierta de una rama (parábola) y dos ramas separadas (hipérbola).",
+            "Relaciona la forma con su ecuación (por ejemplo, que la circunferencia es una elipse con A = C)."
+          ],
+          "n1": "Conoce las formas básicas (la curva redonda, la alargada, la abierta), pero no las relaciona con la posición del plano ni con la ecuación; confunde la elipse con la circunferencia o la parábola con una rama de la hipérbola.",
+          "n23": "Describe propiedades de las cuatro cónicas (la elipse y la circunferencia son cerradas, la parábola no se cierra, la hipérbola tiene dos ramas) y la posición del plano en los casos más sencillos (horizontal, circunferencia). Confunde la posición del plano para la parábola y la hipérbola.",
+          "n4": "Clasifica las cuatro cónicas e interpreta sus relaciones: dice qué posición del plano produce cada una (incluso por qué un plano paralelo a un lado del cono da una curva abierta y uno muy vertical corta los dos conos) y las relaciona con sus ecuaciones (A = C, mismo signo, signos contrarios, A o C igual a 0).",
+          "n5": "Infiere e integra las relaciones: anticipa que al inclinar poco a poco el plano se pasa de circunferencia a elipse, parábola e hipérbola, explica qué le pasa a la ecuación en cada paso y lo comprueba girando el dibujo en 3D de la página."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Identifica A y C (coeficientes de x² y de y²) sin confundirlos con D y E, con los exponentes ni con las constantes.",
+            "Aplica la clasificación: A = C → circunferencia; mismo signo y A ≠ C → elipse; signos contrarios → hipérbola; A = 0 o C = 0 (no los dos) → parábola.",
+            "Cuida los signos (en −3x² − 3y² + … los dos coeficientes son iguales; en x² − 4y² + … tienen signos contrarios) y sabe que si falta x² o y² el coeficiente vale 0."
+          ],
+          "n1": "Aún no usa correctamente las expresiones algebraicas: toma otros coeficientes por A y C, o aplica la condición al revés, y no distingue en la ecuación los términos de grado 2 de los de grado 1.",
+          "n23": "Hace uso de la sintaxis y la semántica del lenguaje algebraico: identifica A y C y clasifica bien las ecuaciones sencillas (coeficientes positivos), pero se equivoca con los signos negativos, con A ≠ C del mismo signo o cuando falta un cuadrado (A = 0 o C = 0).",
+          "n4": "Comprende y maneja las propiedades del lenguaje algebraico: identifica A y C con su signo y clasifica correctamente casi todas las ecuaciones, incluso las de coeficientes negativos o sin x² o y², y reconoce que multiplicar toda la ecuación por −1 no cambia la cónica.",
+          "n5": "Dota de significado y generaliza las propiedades: explica por qué al completar cuadrados A y C del mismo signo dan una suma de cuadrados, de signos contrarios una resta, y con un solo cuadrado aparece un término lineal; concluye que D, E y F no cambian el tipo de cónica y que la regla sirve para cualquier ecuación de la forma Ax² + Cy² + Dx + Ey + F = 0."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Justifica por qué la ecuación es esa cónica, no sólo repite la tabla.",
+            "Compara ecuaciones parecidas (por ejemplo x² + 4y² − 4 = 0 y x² − 4y² − 4 = 0) y explica qué cambió y por qué cambia la cónica.",
+            "Comprueba con ejemplos y contraejemplos (x² + y² = 0 es sólo un punto; x² + y² = −4 no tiene puntos; x² − y² = 0 son dos rectas) y distingue lo que la clasificación asegura de lo que hay que comprobar."
+          ],
+          "n1": "Defiende su respuesta con frases como «así lo dice la tabla» o «se parece a la otra», sin usar A ni C ni la condición que cumplen.",
+          "n2": "Explica con sus palabras («como los dos cuadrados llevan el mismo signo, la curva se cierra») por qué es esa cónica, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: compara pares de ecuaciones que sólo difieren en un signo o en un coeficiente y dice qué cambia, da ejemplos y no-ejemplos de cada cónica y menciona al menos un caso en que la ecuación no da una curva «de verdad».",
+          "n4": "Explica la estructura del argumento: los valores y signos de A y C son la hipótesis y el tipo de cónica la conclusión, apoyándose en lo que ocurre al completar cuadrados (suma, resta o un cuadrado con un término lineal). Distingue entre lo que se conjetura al mirar A y C y lo que se concluye al completar cuadrados (puede salir un punto, el vacío o dos rectas).",
+          "n5": "Elabora una cadena de argumentos que generaliza para cualquier A y C: demuestra cada caso completando cuadrados, explica por qué la circunferencia es un caso particular de la elipse y por qué aparecen las cónicas degeneradas. Distingue convencerse con ejemplos de demostrar."
+        }
+      ]
     }
   ]
 }
