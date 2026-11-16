@@ -327,13 +327,17 @@
       if (i % 5 === 0) hc = 0; if (i % 7 === 0) kc = 0; if (hc === 0 && kc === 0) kc = 3;
       BANK.push({ t: 'A', h: hc, k: kc, r: r });
     }
+    // Para B y C el radio siempre es entero: la distancia sale de ternas como 3-4-5, 5-12-13 o 6-8-10 (o de un punto sobre un eje)
+    var TERNAS = [[3, 4], [4, 3], [5, 12], [12, 5], [6, 8], [8, 6], [0, 2], [2, 0], [0, 3], [3, 0], [0, 4], [4, 0], [0, 5], [5, 0], [0, 6], [6, 0]];
+    var MEDIAS = [[3, 4], [4, 3], [6, 8], [8, 6], [0, 3], [3, 0], [0, 4], [4, 0], [0, 5], [5, 0], [0, 6], [6, 0]];   // medio diámetro (los extremos son enteros)
+    function conSigno(p) { return [p[0] * (ri(0, 1) ? 1 : -1), p[1] * (ri(0, 1) ? 1 : -1)]; }
     for (i = 0; i < 20; i++) {      // B: centro y un punto → r² y ecuación general (20)
-      hc = ri(-5, 5); kc = ri(-5, 5); dx = ri(-6, 6); dy = ri(-6, 6); if (dx === 0 && dy === 0) dx = 3;
-      BANK.push({ t: 'B', h: hc, k: kc, a: hc + dx, b: kc + dy });
+      hc = ri(-5, 5); kc = ri(-5, 5); var v = conSigno(TERNAS[ri(0, TERNAS.length - 1)]);
+      BANK.push({ t: 'B', h: hc, k: kc, a: hc + v[0], b: kc + v[1] });
     }
     for (i = 0; i < 10; i++) {      // C: extremos de un diámetro → centro, r² y ecuación general (10)
-      hc = ri(-4, 4); kc = ri(-4, 4); dx = nz(-5, 5); dy = ri(-5, 5);
-      BANK.push({ t: 'C', h: hc, k: kc, dx: dx, dy: dy });
+      hc = ri(-4, 4); kc = ri(-4, 4); var w = conSigno(MEDIAS[ri(0, MEDIAS.length - 1)]);
+      BANK.push({ t: 'C', h: hc, k: kc, dx: w[0], dy: w[1] });
     }
     for (i = 0; i < 15; i++) {      // D: ecuación ordinaria → centro y radio (15)
       hc = ri(-6, 6); kc = ri(-6, 6); r = ri(1, 9);
@@ -363,7 +367,7 @@
     function card(e, n, spec) {
       var ids = spec.fields.map(function (f) { return f.f; }).join(',');
       var row = spec.fields.map(function (f) {
-        return '<span class="eq">' + f.label + '</span>' + h.inputHTML(f.f, f.aria + ', ejercicio ' + n, 'flex:0 1 4.4rem;');
+        return '<span style="display:inline-flex; align-items:center; gap:0.4rem; white-space:nowrap;"><span class="eq">' + f.label + '</span>' + h.inputHTML(f.f, f.aria + ', ejercicio ' + n, 'width:4.2rem;') + '</span>';
       }).join('');
       return {
         head: spec.head,

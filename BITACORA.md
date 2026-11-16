@@ -2036,3 +2036,7 @@ Registro de lo que vamos haciendo, en orden cronológico.
   Reglas: la **página de un tema** manda al siguiente tema; cada **subtema** manda al siguiente subtema del mismo tema y el **último subtema** manda al siguiente tema; la **última página de cada curso** dice «Fin del temario» y regresa al temario. El orden de los subtemas es el que tienen en la página de su tema.
   Cambios de recorrido a tener presentes: en Matemáticas 3, el Tema 6 manda a «Introducción a las cónicas» (que va antes de Circunferencia). No se tocaron las páginas de prueba `prueba-ax-cuadrada*.html`.
 - Se comprobó en el navegador que las 62 páginas tienen el botón, que los 62 enlaces abren su destino y que en las 26 páginas con rúbrica el botón queda después de ella.
+
+## 2026-11-16 (ejercicios de Centro (h,k): sólo con radio entero)
+- A pedido de Carmen, en `tema-07-circunferencia-centro-hk.html` se quitaron los ejercicios cuyo r² no es un cuadrado perfecto (por ejemplo, extremos del diámetro (0, −6) y (6, 0), con r² = 18). Ahora, en los ejercicios de **centro y un punto** y de **extremos de un diámetro**, el radio siempre es entero: la distancia sale de ternas como 3-4-5, 5-12-13 y 6-8-10 (o de puntos sobre un eje). Los de ecuación ordinaria y de centro y radio ya tenían radio entero.
+- También se arregló el formato: cada etiqueta («r² =», «D =», …) queda pegada a su casilla, aunque la pantalla sea angosta. Se comprobó con 600 ejercicios generados: ninguno con radio no entero y todas las respuestas correctas se aceptan.
