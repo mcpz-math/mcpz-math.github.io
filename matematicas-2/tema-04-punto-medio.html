@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punto medio — Matemáticas 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-04-la-recta.html">← Tema 4</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 2 · Tema 4 · Subtema</div>
+    <h1>Punto medio</h1>
+  </div>
+
+  <!-- 1. Qué vamos a estudiar -->
+  <p class="section-label">¿Qué vamos a estudiar?</p>
+  <div class="prose">
+    <p>El <strong>punto medio</strong> de un segmento es el punto que está <strong>justo en el centro</strong>: lo divide en dos partes
+       de la misma longitud. Vamos a encontrar sus coordenadas a partir de las coordenadas de los extremos.</p>
+  </div>
+
+  <!-- 2. Idea -->
+  <p class="section-label">La idea: un promedio</p>
+  <div class="prose">
+    <p>En una recta numérica, el punto que está a la mitad entre 2 y 8 es el 5, porque 2 + 8 = 10 y 10 ÷ 2 = 5; es decir, el
+       <strong>promedio</strong> de los dos números. En el plano hacemos lo mismo <strong>con cada coordenada por separado</strong>:
+       el promedio de las coordenadas x y el promedio de las coordenadas y.</p>
+  </div>
+  <figure class="graph-figure">
+    <svg viewBox="0 0 380 300" width="380" height="300" role="img" aria-label="El segmento de A(1, 2) a B(7, 6) y su punto medio M(4, 4)">
+      <g stroke="#dde2dc" stroke-width="1">
+        <line x1="66" y1="18" x2="66" y2="270"/><line x1="102" y1="18" x2="102" y2="270"/><line x1="138" y1="18" x2="138" y2="270"/><line x1="174" y1="18" x2="174" y2="270"/>
+        <line x1="210" y1="18" x2="210" y2="270"/><line x1="246" y1="18" x2="246" y2="270"/><line x1="282" y1="18" x2="282" y2="270"/><line x1="318" y1="18" x2="318" y2="270"/><line x1="354" y1="18" x2="354" y2="270"/>
+        <line x1="30" y1="234" x2="354" y2="234"/><line x1="30" y1="198" x2="354" y2="198"/><line x1="30" y1="162" x2="354" y2="162"/><line x1="30" y1="126" x2="354" y2="126"/><line x1="30" y1="90" x2="354" y2="90"/><line x1="30" y1="54" x2="354" y2="54"/><line x1="30" y1="18" x2="354" y2="18"/>
+      </g>
+      <g stroke="#56604f" stroke-width="1.8" fill="none"><line x1="30" y1="270" x2="358" y2="270"/><line x1="30" y1="270" x2="30" y2="10"/></g>
+      <g font-family="'IBM Plex Mono', monospace" font-size="11" fill="#56604f" text-anchor="middle">
+        <text x="66" y="284">1</text><text x="102" y="284">2</text><text x="138" y="284">3</text><text x="174" y="284">4</text><text x="210" y="284">5</text><text x="246" y="284">6</text><text x="282" y="284">7</text><text x="318" y="284">8</text>
+        <text x="20" y="238" text-anchor="end">1</text><text x="20" y="202" text-anchor="end">2</text><text x="20" y="166" text-anchor="end">3</text><text x="20" y="130" text-anchor="end">4</text><text x="20" y="94" text-anchor="end">5</text><text x="20" y="58" text-anchor="end">6</text>
+      </g>
+      <g stroke="#56604f" stroke-width="1.2" stroke-dasharray="4 4"><line x1="174" y1="126" x2="174" y2="270"/><line x1="30" y1="126" x2="174" y2="126"/></g>
+      <line x1="66" y1="198" x2="282" y2="54" stroke="#14301f" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="66" cy="198" r="5.5" fill="#14301f"/><circle cx="282" cy="54" r="5.5" fill="#14301f"/>
+      <circle cx="174" cy="126" r="7" fill="#d9650b" stroke="#14301f" stroke-width="1.8"/>
+      <g font-family="'IBM Plex Mono', monospace" font-size="13" fill="#14301f">
+        <text x="40" y="224" font-weight="700">A(1, 2)</text>
+        <text x="290" y="48" font-weight="700">B(7, 6)</text>
+        <text x="186" y="152" fill="#d9650b" font-weight="700">M(4, 4)</text>
+      </g>
+    </svg>
+    <figcaption>M(4, 4) es el punto medio del segmento AB: 4 es el promedio de 1 y 7, y 4 es el promedio de 2 y 6.</figcaption>
+  </figure>
+
+  <!-- 3. Formula -->
+  <p class="section-label">La fórmula</p>
+  <div class="example-box">
+    <span class="eq">M = ( <span class="frac frac-inline"><span class="num">x<sub>1</sub> + x<sub>2</sub></span><span class="den">2</span></span> ,
+      <span class="frac frac-inline"><span class="num">y<sub>1</sub> + y<sub>2</sub></span><span class="den">2</span></span> )</span>
+    <p style="margin-top:1rem;">El punto medio M del segmento con extremos <strong>A(x<sub>1</sub>, y<sub>1</sub>)</strong> y
+       <strong>B(x<sub>2</sub>, y<sub>2</sub>)</strong> tiene como coordenadas el <strong>promedio</strong> de las coordenadas x y el
+       <strong>promedio</strong> de las coordenadas y. Como se suman, tampoco importa el orden de los puntos.</p>
+  </div>
+  <div class="callout">
+    <div class="k no-caps">También con regla y compás</div>
+    <p>Sin hacer ninguna cuenta ni medir, el punto medio de un segmento se encuentra trazando su <strong>mediatriz</strong>:
+       con el compás haces arcos del mismo tamaño desde los dos extremos y la recta que pasa por donde se cruzan corta al segmento
+       justo en su punto medio.</p>
+  </div>
+
+  <!-- 4. Pasos -->
+  <p class="section-label">Pasos para encontrar el punto medio</p>
+  <ol class="steps">
+    <li><span>Identifica las coordenadas de los extremos: <strong>(x<sub>1</sub>, y<sub>1</sub>)</strong> y <strong>(x<sub>2</sub>, y<sub>2</sub>)</strong>.</span></li>
+    <li><span><strong>Suma</strong> las coordenadas x y <strong>divide entre 2</strong>: ésa es la x del punto medio (con paréntesis si hay negativos).</span></li>
+    <li><span><strong>Suma</strong> las coordenadas y y <strong>divide entre 2</strong>: ésa es la y del punto medio.</span></li>
+    <li><span>Escribe el resultado como un punto: <strong>M(x, y)</strong>.</span></li>
+  </ol>
+
+  <!-- 5. Ejemplos -->
+  <p class="section-label">Ejemplos</p>
+
+  <div class="example-box">
+    <h2>Ejemplo 1</h2>
+    <p>Punto medio entre A(2, 4) y B(8, 10).</p>
+    <ol class="steps">
+      <li><span>x: <span class="frac frac-inline"><span class="num">2 + 8</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">10</span><span class="den">2</span></span> = 5.</span></li>
+      <li><span>y: <span class="frac frac-inline"><span class="num">4 + 10</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">14</span><span class="den">2</span></span> = 7.</span></li>
+    </ol>
+    <p><strong>M(5, 7)</strong>.</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 2: con coordenadas negativas</h2>
+    <p>Punto medio entre A(−3, 5) y B(7, −1).</p>
+    <ol class="steps">
+      <li><span>x: <span class="frac frac-inline"><span class="num">−3 + 7</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> = 2.</span></li>
+      <li><span>y: <span class="frac frac-inline"><span class="num">5 + (−1)</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">4</span><span class="den">2</span></span> = 2.</span></li>
+    </ol>
+    <p><strong>M(2, 2)</strong>.</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 3: cuando el resultado es una fracción</h2>
+    <p>Punto medio entre A(−6, −2) y B(3, 1).</p>
+    <ol class="steps">
+      <li><span>x: <span class="frac frac-inline"><span class="num">−6 + 3</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">−3</span><span class="den">2</span></span> = −1.5.</span></li>
+      <li><span>y: <span class="frac frac-inline"><span class="num">−2 + 1</span><span class="den">2</span></span> = <span class="frac frac-inline"><span class="num">−1</span><span class="den">2</span></span> = −0.5.</span></li>
+    </ol>
+    <p><strong>M(<span class="frac frac-inline"><span class="num">−3</span><span class="den">2</span></span>, <span class="frac frac-inline"><span class="num">−1</span><span class="den">2</span></span>)</strong>, o en decimales, M(−1.5, −0.5).</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 4: encontrar el otro extremo</h2>
+    <p>El punto medio de un segmento AB es M(3, 2) y uno de sus extremos es A(1, −2). ¿Cuáles son las coordenadas de B(x, y)?</p>
+    <ol class="steps">
+      <li><span>Para x: <span class="frac frac-inline"><span class="num">1 + x</span><span class="den">2</span></span> = 3 → 1 + x = 6 → x = 5.</span></li>
+      <li><span>Para y: <span class="frac frac-inline"><span class="num">−2 + y</span><span class="den">2</span></span> = 2 → −2 + y = 4 → y = 6.</span></li>
+    </ol>
+    <p><strong>B(5, 6)</strong>. Comprobación: el punto medio de A(1, −2) y B(5, 6) es (3, 2) ✓.</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 5: junto con la distancia</h2>
+    <p>Un segmento tiene extremos A(−1, 2) y B(5, −6). Encuentra su punto medio y su longitud.</p>
+    <ol class="steps">
+      <li><span>Punto medio: <span class="frac frac-inline"><span class="num">−1 + 5</span><span class="den">2</span></span> = 2 y <span class="frac frac-inline"><span class="num">2 + (−6)</span><span class="den">2</span></span> = −2, así que <strong>M(2, −2)</strong>.</span></li>
+      <li><span>Longitud: (5 − (−1))² + (−6 − 2)² = 6² + (−8)² = 36 + 64 = 100, entonces <strong>AB = 10</strong>.</span></li>
+    </ol>
+    <p>La mitad de la longitud, 5, es la distancia de M a cada extremo.</p>
+  </div>
+
+  <!-- 6. Resumen -->
+  <p class="section-label">Resumen</p>
+  <div class="example-box">
+    <span class="eq">M = ( <span class="frac frac-inline"><span class="num">x<sub>1</sub> + x<sub>2</sub></span><span class="den">2</span></span> ,
+      <span class="frac frac-inline"><span class="num">y<sub>1</sub> + y<sub>2</sub></span><span class="den">2</span></span> )</span>
+    <ul class="def-list">
+      <li>El punto medio divide al segmento en dos partes iguales.</li>
+      <li>Sus coordenadas son el <strong>promedio</strong> de las coordenadas de los extremos (una coordenada a la vez).</li>
+      <li>Para encontrar un <strong>extremo desconocido</strong>, usa la fórmula como ecuación: suma la coordenada que conoces con la incógnita y divide entre 2 igualado a la del punto medio.</li>
+    </ul>
+    <p style="margin-top:0.8rem;">Más adelante (Matemáticas 3): si los extremos de un diámetro son A y B, el punto medio es el centro de la circunferencia y la mitad de la distancia AB es su radio.</p>
+  </div>
+
+  <div class="page-next">
+    <span class="lbl">Siguiente tema</span>
+    <a href="tema-05-trigonometria.html">Trigonometría →</a>
+  </div>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>

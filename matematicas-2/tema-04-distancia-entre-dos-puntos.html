@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distancia entre dos puntos — Matemáticas 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Karla:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="../index.html"><span class="mark"></span> DTI. Maria del Carmen Pérez Zarate</a>
+    <a class="back" href="tema-04-la-recta.html">← Tema 4</a>
+  </nav>
+
+  <div class="course-header">
+    <div class="k">Matemáticas 2 · Tema 4 · Subtema</div>
+    <h1>Distancia entre dos puntos</h1>
+  </div>
+
+  <!-- 1. Qué vamos a estudiar -->
+  <p class="section-label">¿Qué vamos a estudiar?</p>
+  <div class="prose">
+    <p>Si tienes dos puntos en el plano cartesiano, ¿qué tan lejos están uno del otro? Esa medida es la
+       <strong>distancia entre los dos puntos</strong>, y es la longitud del segmento que los une.
+       Vamos a aprender a calcularla <strong>sin medir</strong>, sólo con las coordenadas de los puntos.</p>
+  </div>
+
+  <!-- 2. Casos sencillos -->
+  <p class="section-label">Primero, los casos sencillos</p>
+  <div class="prose">
+    <p>Cuando los dos puntos están en una <strong>recta horizontal</strong> (tienen la misma coordenada y) o en una
+       <strong>recta vertical</strong> (tienen la misma coordenada x), la distancia se obtiene restando las coordenadas
+       que cambian. Se usa el <strong>valor absoluto</strong> para que la distancia nunca sea negativa.</p>
+  </div>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Caso</th><th>Distancia</th><th>Ejemplo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Horizontal</strong> (misma y)</td><td>d = |x<sub>2</sub> − x<sub>1</sub>|</td><td>A(2, 3) y B(7, 3): d = |7 − 2| = <strong>5</strong></td></tr>
+        <tr><td><strong>Vertical</strong> (misma x)</td><td>d = |y<sub>2</sub> − y<sub>1</sub>|</td><td>A(−1, 4) y B(−1, −2): d = |−2 − 4| = <strong>6</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3. Caso general -->
+  <p class="section-label">El caso general</p>
+  <figure class="graph-figure">
+    <svg viewBox="0 0 360 300" width="360" height="300" role="img" aria-label="Los puntos A(1, 2) y B(5, 5) y el triángulo rectángulo cuyos catetos miden 4 y 3 y cuya hipotenusa es la distancia 5">
+      <g stroke="#dde2dc" stroke-width="1">
+        <line x1="70" y1="20" x2="70" y2="270"/><line x1="110" y1="20" x2="110" y2="270"/><line x1="150" y1="20" x2="150" y2="270"/><line x1="190" y1="20" x2="190" y2="270"/>
+        <line x1="230" y1="20" x2="230" y2="270"/><line x1="270" y1="20" x2="270" y2="270"/><line x1="310" y1="20" x2="310" y2="270"/><line x1="350" y1="20" x2="350" y2="270"/>
+        <line x1="30" y1="230" x2="350" y2="230"/><line x1="30" y1="190" x2="350" y2="190"/><line x1="30" y1="150" x2="350" y2="150"/><line x1="30" y1="110" x2="350" y2="110"/><line x1="30" y1="70" x2="350" y2="70"/><line x1="30" y1="30" x2="350" y2="30"/>
+      </g>
+      <g stroke="#56604f" stroke-width="1.8" fill="none"><line x1="30" y1="270" x2="352" y2="270"/><line x1="30" y1="270" x2="30" y2="16"/></g>
+      <g font-family="'IBM Plex Mono', monospace" font-size="11" fill="#56604f" text-anchor="middle">
+        <text x="70" y="284">1</text><text x="110" y="284">2</text><text x="150" y="284">3</text><text x="190" y="284">4</text><text x="230" y="284">5</text><text x="270" y="284">6</text><text x="310" y="284">7</text>
+        <text x="20" y="234" text-anchor="end">1</text><text x="20" y="194" text-anchor="end">2</text><text x="20" y="154" text-anchor="end">3</text><text x="20" y="114" text-anchor="end">4</text><text x="20" y="74" text-anchor="end">5</text><text x="20" y="34" text-anchor="end">6</text>
+      </g>
+      <line x1="70" y1="190" x2="230" y2="190" stroke="#3f6b4a" stroke-width="2.4" stroke-dasharray="6 4"/>
+      <line x1="230" y1="190" x2="230" y2="70" stroke="#3f6b4a" stroke-width="2.4" stroke-dasharray="6 4"/>
+      <line x1="70" y1="190" x2="230" y2="70" stroke="#d9650b" stroke-width="3.4" stroke-linecap="round"/>
+      <rect x="216" y="176" width="14" height="14" fill="none" stroke="#3f6b4a" stroke-width="1.5"/>
+      <circle cx="70" cy="190" r="5.5" fill="#14301f"/><circle cx="230" cy="70" r="5.5" fill="#14301f"/>
+      <g font-family="'IBM Plex Mono', monospace" font-size="13" fill="#14301f">
+        <text x="34" y="218" font-weight="700">A(1, 2)</text>
+        <text x="238" y="62" font-weight="700">B(5, 5)</text>
+        <text x="86" y="210" fill="#3f6b4a">|x₂ − x₁| = 4</text>
+        <text x="238" y="136" fill="#3f6b4a">|y₂ − y₁| = 3</text>
+        <text x="112" y="116" fill="#d9650b" font-weight="700" transform="rotate(-37 112 116)">d = 5</text>
+      </g>
+    </svg>
+    <figcaption>La distancia d entre A y B es la hipotenusa de un triángulo rectángulo cuyos catetos son las diferencias de las coordenadas.</figcaption>
+  </figure>
+  <div class="prose">
+    <p>Cuando los puntos no están en una recta horizontal ni vertical, puedes dibujar un
+       <strong>triángulo rectángulo</strong>: un cateto horizontal que mide |x<sub>2</sub> − x<sub>1</sub>| y un cateto vertical que
+       mide |y<sub>2</sub> − y<sub>1</sub>|. La distancia d es la <strong>hipotenusa</strong>, y la calculamos con el
+       <strong>teorema de Pitágoras</strong>: d² = (x<sub>2</sub> − x<sub>1</sub>)² + (y<sub>2</sub> − y<sub>1</sub>)².
+       Al sacar la raíz cuadrada queda la fórmula de la distancia.</p>
+  </div>
+  <div class="example-box">
+    <span class="eq">d = <span class="rad">√<span class="radicand">(x<sub>2</sub> − x<sub>1</sub>)² + (y<sub>2</sub> − y<sub>1</sub>)²</span></span></span>
+    <p style="margin-top:1rem;">Es la distancia entre los puntos <strong>A(x<sub>1</sub>, y<sub>1</sub>)</strong> y <strong>B(x<sub>2</sub>, y<sub>2</sub>)</strong>.
+       No importa cuál punto llames A y cuál B: como las diferencias van <strong>al cuadrado</strong>, el resultado es el mismo.</p>
+  </div>
+  <div class="callout">
+    <div class="k no-caps">Cuidado con los signos</div>
+    <p>Si una coordenada es negativa, escríbela <strong>entre paréntesis</strong> al restar: para A(−3, 4) y B(2, −8),
+       la diferencia en y es (−8) − 4 = −12, y al elevarla al cuadrado queda (−12)² = <strong>144</strong>, positivo.
+       La raíz es de toda la suma, no de cada sumando por separado.</p>
+  </div>
+
+  <!-- 4. Pasos -->
+  <p class="section-label">Pasos para calcular la distancia</p>
+  <ol class="steps">
+    <li><span>Identifica las coordenadas: <strong>(x<sub>1</sub>, y<sub>1</sub>)</strong> del primer punto y <strong>(x<sub>2</sub>, y<sub>2</sub>)</strong> del segundo.</span></li>
+    <li><span>Calcula las <strong>diferencias</strong>: x<sub>2</sub> − x<sub>1</sub> y y<sub>2</sub> − y<sub>1</sub> (con paréntesis si hay negativos).</span></li>
+    <li><span><strong>Eleva al cuadrado</strong> cada diferencia y <strong>suma</strong> los resultados.</span></li>
+    <li><span>Saca la <strong>raíz cuadrada</strong> de la suma. Si no es exacta, déjala indicada o aproxímala con decimales.</span></li>
+  </ol>
+
+  <!-- 5. Ejemplos -->
+  <p class="section-label">Ejemplos</p>
+
+  <div class="example-box">
+    <h2>Ejemplo 1: los puntos de la figura</h2>
+    <p>Distancia entre A(1, 2) y B(5, 5).</p>
+    <ol class="steps">
+      <li><span>Diferencias: 5 − 1 = 4 y 5 − 2 = 3.</span></li>
+      <li><span>Cuadrados y suma: 4² + 3² = 16 + 9 = 25.</span></li>
+      <li><span>Raíz: √25 = 5.</span></li>
+    </ol>
+    <p><strong>d = 5</strong> (es la terna 3-4-5).</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 2: con coordenadas negativas</h2>
+    <p>Distancia entre A(−3, 4) y B(2, −8).</p>
+    <ol class="steps">
+      <li><span>Diferencias: 2 − (−3) = 5 y (−8) − 4 = −12.</span></li>
+      <li><span>Cuadrados y suma: 5² + (−12)² = 25 + 144 = 169.</span></li>
+      <li><span>Raíz: √169 = 13.</span></li>
+    </ol>
+    <p><strong>d = 13</strong> (es la terna 5-12-13).</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 3: cuando la raíz no es exacta</h2>
+    <p>Distancia entre A(−2, −1) y B(3, 2).</p>
+    <ol class="steps">
+      <li><span>Diferencias: 3 − (−2) = 5 y 2 − (−1) = 3.</span></li>
+      <li><span>Cuadrados y suma: 5² + 3² = 25 + 9 = 34.</span></li>
+      <li><span>Raíz: √34, que no es un número entero (5² = 25 y 6² = 36).</span></li>
+    </ol>
+    <p><strong>d = √34 ≈ 5.83</strong>. La respuesta exacta es √34; el decimal es una aproximación.</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 4: ¿qué tipo de triángulo es?</h2>
+    <p>Los vértices de un triángulo son A(−1, 1), B(2, 5) y C(6, 2). Calcula la longitud de sus lados.</p>
+    <ol class="steps">
+      <li><span>AB: (2 − (−1))² + (5 − 1)² = 3² + 4² = 25 → AB = 5.</span></li>
+      <li><span>BC: (6 − 2)² + (2 − 5)² = 4² + (−3)² = 25 → BC = 5.</span></li>
+      <li><span>AC: (6 − (−1))² + (2 − 1)² = 7² + 1² = 50 → AC = √50.</span></li>
+    </ol>
+    <p>Como AB = BC = 5, el triángulo es <strong>isósceles</strong>. Además, 5² + 5² = 50 = (√50)², así que cumple el teorema de Pitágoras:
+       es un triángulo <strong>rectángulo</strong> (con el ángulo recto en B).</p>
+  </div>
+
+  <!-- 6. Resumen -->
+  <p class="section-label">Resumen</p>
+  <div class="example-box">
+    <span class="eq">d = <span class="rad">√<span class="radicand">(x<sub>2</sub> − x<sub>1</sub>)² + (y<sub>2</sub> − y<sub>1</sub>)²</span></span></span>
+    <ul class="def-list">
+      <li>Si los puntos están en una recta <strong>horizontal</strong> o <strong>vertical</strong>, basta restar las coordenadas que cambian y tomar el valor absoluto.</li>
+      <li>En general, la distancia es la <strong>hipotenusa</strong> de un triángulo rectángulo cuyos catetos son las diferencias de las coordenadas.</li>
+      <li>Las diferencias van <strong>al cuadrado</strong>, así que no importa el orden de los puntos; cuida los signos negativos.</li>
+      <li>Calcula primero la suma de los cuadrados y <strong>después</strong> saca la raíz.</li>
+    </ul>
+    <p style="margin-top:0.8rem;">Más adelante (Matemáticas 3) usarás esta fórmula en la circunferencia: el radio es la distancia del centro a un punto de la curva.</p>
+  </div>
+
+  <div class="page-next">
+    <span class="lbl">Siguiente subtema</span>
+    <a href="tema-04-punto-medio.html">Punto medio →</a>
+  </div>
+
+  <footer class="site-footer">
+    DTI. Maria del Carmen Pérez Zarate · Matemáticas · IEMS
+  </footer>
+
+</body>
+</html>
