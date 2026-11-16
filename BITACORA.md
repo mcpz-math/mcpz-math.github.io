@@ -1970,3 +1970,10 @@ Registro de lo que vamos haciendo, en orden cronológico.
   Reparto de cónicas en los 17 primeros: 3 circunferencias, 5 elipses, 4 parábolas y 5 hipérbolas (no se repite ningún ejemplo de la página).
 - Rúbrica con la **matriz de niveles** (Comunicación, Representación algebraica, Modelación y resolución de problemas, Argumentación): bloque y actividad "serie7conicas" de `materiales-fuente/rubricas-por-actividad.json`. Se genera con el nuevo `materiales-fuente/generar-serie-conicas.ps1`
   (el script comprueba que la clave coincida con A y C de cada ejercicio) y se regeneró la guía en Word `IEMS\Guia_para_evaluar_con_la_matriz.docx` (ahora con 27 rúbricas). No se pudo abrir en Word desde aquí, así que conviene abrir el archivo una vez y revisar que cada parte quede completa en la hoja.
+
+## 2026-11-16 (Matemáticas 3, Tema 7: introducción a la circunferencia)
+- A pedido de Carmen, en `matematicas-3/tema-07-circunferencia.html` se escribió la **introducción a la circunferencia** (antes de los bloques de subtemas, que siguen "Próximamente"):
+  qué es una circunferencia (puntos a la misma distancia del centro; diferencia con el círculo); sus elementos (centro, radio, diámetro, cuerda); que es una cónica (corte horizontal del cono; A = C en la ecuación general); **cómo sale la ecuación** a partir de la definición (figura con el triángulo rectángulo, distancia con Pitágoras, (x − h)² + (y − k)² = r²);
+  una tabla de las tres formas (centro (0,0), centro (h,k) y ecuación general, que son los tres subtemas); y 4 ejemplos (ecuación con centro en el origen, con centro (3, −2) y radio 4 con aviso de los signos, de la ecuación al centro y radio, y pasar a la ecuación general x² + y² − 6x + 4y − 3 = 0).
+- Arreglo de formato: en las listas numeradas (`ol.steps`) el texto con negritas se separaba en columnas; ahora cada paso va dentro de un `<span>`. Se corrigió también en los ejemplos de `tema-07-conicas-introduccion.html`.
+- Pendiente: la introducción a la circunferencia aún no tiene rúbrica con la matriz ni ejercicios con revisión (se pueden agregar si Carmen los quiere).

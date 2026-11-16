@@ -27,6 +27,157 @@
        circunferencia, parábola, elipse o hipérbola.</p>
   </div>
 
+  <!-- Introducción -->
+  <p class="section-label">Introducción: ¿qué es una circunferencia?</p>
+  <div class="prose">
+    <p>Una <strong>circunferencia</strong> es el conjunto de todos los puntos del plano que están a la
+       <strong>misma distancia</strong> de un punto fijo llamado <strong>centro</strong>. Esa distancia se llama
+       <strong>radio</strong>.</p>
+    <p>Fíjate en la diferencia entre dos palabras que se parecen: la <strong>circunferencia</strong> es sólo la línea
+       (el borde), mientras que el <strong>círculo</strong> es la circunferencia junto con todo su interior.</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Sus elementos</h2>
+    <ul class="def-list">
+      <li><strong>Centro (C):</strong> el punto fijo del que todos los puntos de la circunferencia están a la misma distancia.</li>
+      <li><strong>Radio (r):</strong> la distancia del centro a cualquier punto de la circunferencia.</li>
+      <li><strong>Diámetro:</strong> segmento que pasa por el centro y une dos puntos de la circunferencia. Mide <strong>2r</strong>.</li>
+      <li><strong>Cuerda:</strong> segmento que une dos puntos cualesquiera de la circunferencia. El diámetro es la cuerda más larga.</li>
+    </ul>
+  </div>
+
+  <p class="section-label">La circunferencia es una cónica</p>
+  <div class="prose">
+    <p>Si cortas un cono con un plano <strong>horizontal</strong> (perpendicular a su eje), la curva que queda marcada
+       es una circunferencia. Por eso es la primera de las cuatro cónicas.</p>
+    <p>En la ecuación general de segundo grado <span style="font-family:'IBM Plex Mono',monospace; color:var(--forest); white-space:nowrap;">Ax² + Cy² + Dx + Ey + F = 0</span>
+       la circunferencia es el caso en que <strong>A = C</strong>: los coeficientes de x² y de y² son iguales.</p>
+  </div>
+
+  <p class="section-label">De la definición a la ecuación</p>
+  <figure class="graph-figure">
+    <svg viewBox="0 0 420 340" width="420" height="340" role="img" aria-label="Circunferencia con centro C(h, k), un punto P(x, y) y el radio r, que es la hipotenusa de un triángulo rectángulo con catetos x menos h y y menos k">
+      <!-- ejes -->
+      <g stroke="#56604f" stroke-width="1.6" fill="none">
+        <line x1="40" y1="310" x2="404" y2="310"/>
+        <line x1="40" y1="310" x2="40" y2="16"/>
+      </g>
+      <g font-family="'IBM Plex Mono', monospace" font-size="15" fill="#14301f">
+        <text x="406" y="328">x</text>
+        <text x="28" y="14">y</text>
+      </g>
+      <!-- circunferencia -->
+      <circle cx="190" cy="170" r="110" fill="rgba(196,232,107,0.28)" stroke="#14301f" stroke-width="2.8"/>
+      <!-- guías de h y k -->
+      <g stroke="#56604f" stroke-width="1.2" stroke-dasharray="4 4">
+        <line x1="190" y1="170" x2="190" y2="310"/>
+        <line x1="40" y1="170" x2="190" y2="170"/>
+      </g>
+      <!-- triángulo rectángulo -->
+      <line x1="190" y1="170" x2="280" y2="170" stroke="#3f6b4a" stroke-width="2.2" stroke-dasharray="6 4"/>
+      <line x1="280" y1="170" x2="280" y2="107" stroke="#3f6b4a" stroke-width="2.2" stroke-dasharray="6 4"/>
+      <!-- radio -->
+      <line x1="190" y1="170" x2="280" y2="107" stroke="#d9650b" stroke-width="3.2" stroke-linecap="round"/>
+      <!-- puntos -->
+      <circle cx="190" cy="170" r="5" fill="#14301f"/>
+      <circle cx="280" cy="107" r="5.5" fill="#d9650b" stroke="#14301f" stroke-width="1.5"/>
+      <!-- etiquetas -->
+      <g font-family="'IBM Plex Mono', monospace" font-size="15" fill="#14301f">
+        <text x="112" y="162">C(h, k)</text>
+        <text x="288" y="100">P(x, y)</text>
+        <text x="219" y="127" fill="#d9650b" font-weight="700">r</text>
+        <text x="206" y="190" fill="#3f6b4a">x − h</text>
+        <text x="286" y="143" fill="#3f6b4a">y − k</text>
+        <text x="186" y="328">h</text>
+        <text x="20" y="175">k</text>
+      </g>
+    </svg>
+    <figcaption>El punto P(x, y) está en la circunferencia cuando su distancia al centro C(h, k) es el radio r.</figcaption>
+  </figure>
+
+  <p class="section-label">Cómo se obtiene la ecuación</p>
+  <ol class="steps">
+    <li><span>Sea <strong>C(h, k)</strong> el centro y <strong>r</strong> el radio. Un punto <strong>P(x, y)</strong> está en la
+        circunferencia justo cuando su distancia al centro es r.</span></li>
+    <li><span>Esa distancia es la hipotenusa del triángulo rectángulo de la figura, cuyos catetos miden <strong>x − h</strong> y
+        <strong>y − k</strong>. Por el teorema de Pitágoras:
+        <span style="font-family:'IBM Plex Mono',monospace; color:var(--forest); white-space:nowrap;">distancia = <span class="rad">√<span class="radicand">(x − h)² + (y − k)²</span></span></span>.</span></li>
+    <li><span>Igualamos esa distancia al radio:
+        <span style="font-family:'IBM Plex Mono',monospace; color:var(--forest); white-space:nowrap;"><span class="rad">√<span class="radicand">(x − h)² + (y − k)²</span></span> = r</span>.</span></li>
+    <li><span>Elevamos al cuadrado los dos lados para quitar la raíz y queda la ecuación de la circunferencia.</span></li>
+  </ol>
+
+  <div class="example-box">
+    <span class="eq">(x − h)² + (y − k)² = r²</span>
+    <p style="margin-top:1rem;">Es la ecuación de la circunferencia con <strong>centro (h, k)</strong> y <strong>radio r</strong>.
+       Si el centro es el origen, h = 0 y k = 0, y queda más sencilla:</p>
+    <span class="eq">x² + y² = r²</span>
+  </div>
+
+  <p class="section-label">Tres formas de escribirla</p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Forma</th><th>Ecuación</th><th>Qué se ve en ella</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Centro (0,0)</strong></td><td>x² + y² = r²</td><td>El centro es el origen y el radio es r.</td></tr>
+        <tr><td><strong>Centro (h,k)</strong></td><td>(x − h)² + (y − k)² = r²</td><td>El centro es (h, k) y el radio es r.</td></tr>
+        <tr><td><strong>Ecuación general</strong></td><td>x² + y² + Dx + Ey + F = 0</td><td>Resulta de desarrollar los paréntesis. Aquí A = C = 1.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="prose">
+    <p>Cada una de estas formas es un subtema de este tema, y las veremos con calma una por una.</p>
+  </div>
+
+  <p class="section-label">Ejemplos</p>
+
+  <div class="example-box">
+    <h2>Ejemplo 1: centro en el origen</h2>
+    <p>Escribe la ecuación de la circunferencia con centro (0, 0) y radio 5.</p>
+    <span class="eq">x² + y² = 5²   →   x² + y² = 25</span>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 2: centro (3, −2) y radio 4</h2>
+    <ol class="steps">
+      <li><span>Identifica los datos: <strong>h = 3</strong>, <strong>k = −2</strong> y <strong>r = 4</strong>.</span></li>
+      <li><span>Sustituye en (x − h)² + (y − k)² = r²: <strong>(x − 3)² + (y − (−2))² = 4²</strong>.</span></li>
+      <li><span>Simplifica los signos y calcula 4² = 16.</span></li>
+    </ol>
+    <span class="eq">(x − 3)² + (y + 2)² = 16</span>
+  </div>
+
+  <div class="callout">
+    <div class="k no-caps">¡Cuidado con los signos!</div>
+    <p>Dentro de los paréntesis el signo es el <strong>contrario</strong> al de la coordenada del centro:
+       con h = 3 se escribe <strong>(x − 3)</strong>, y con k = −2 se escribe <strong>(y + 2)</strong>.</p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 3: de la ecuación al centro y al radio</h2>
+    <span class="eq">(x + 1)² + (y − 4)² = 9</span>
+    <ol class="steps">
+      <li><span><strong>(x + 1)</strong> es lo mismo que (x − (−1)), así que <strong>h = −1</strong>.</span></li>
+      <li><span><strong>(y − 4)</strong> da <strong>k = 4</strong>.</span></li>
+      <li><span>r² = 9, entonces <strong>r = 3</strong> (el radio es la raíz positiva).</span></li>
+    </ol>
+    <p><strong>Centro (−1, 4) y radio 3.</strong></p>
+  </div>
+
+  <div class="example-box">
+    <h2>Ejemplo 4: pasar a la ecuación general</h2>
+    <p>Desarrolla la ecuación del ejemplo 2 y acomódala igualada a cero:</p>
+    <ol class="steps">
+      <li><span>Desarrolla los binomios al cuadrado: (x² − 6x + 9) + (y² + 4y + 4) = 16.</span></li>
+      <li><span>Pasa el 16 al otro lado y junta los números: x² + y² − 6x + 4y + 13 − 16 = 0.</span></li>
+    </ol>
+    <span class="eq">x² + y² − 6x + 4y − 3 = 0</span>
+    <p style="margin-top:1rem;">Observa que los coeficientes de x² y de y² son iguales (A = C = 1), como pide una circunferencia.</p>
+  </div>
+
   <p class="section-label">Subtemas</p>
   <div class="blocks">
     <div class="block">
