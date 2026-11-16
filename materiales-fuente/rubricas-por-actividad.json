@@ -385,6 +385,103 @@
         "clave": ["A: 49 + 36 = 85 > 81 → fuera", "B: 25 + 36 = 61 < 81 → dentro", "C: 0 + 81 = 81 → sobre"] }
     ]
   },
+  "serie10circhk": {
+    "titulo": "Serie 10. Circunferencia con centro en (h,k)",
+    "claveTitulo": "Serie 10 · Clave de respuestas (sólo para la profesora)",
+    "autor": "DTI. Maria del Carmen Pérez Zarate",
+    "estudiante": "Estudiante________________________________________________  Fecha______________  Grupo______________",
+    "propositoTitulo": "PROPÓSITO",
+    "proposito": "Evaluar el desarrollo de habilidades para trabajar con la circunferencia de centro en (h, k): escribir su ecuación ordinaria a partir del centro y el radio, de un punto por el que pasa o de los extremos de un diámetro; desarrollarla hasta la ecuación general x² + y² + Dx + Ey + F = 0; y graficarla con compás, justificando cada paso.",
+    "instruccionesTitulo": "INSTRUCCIONES:",
+    "instruccionesIntro": "Resuelve cada ejercicio:",
+    "pasos": [
+      "Haz tus cálculos en el cuaderno y escribe tus respuestas en la hoja. En «Procedimiento» escribe los cálculos principales.",
+      "Recuerda que la circunferencia con centro (h, k) y radio r tiene ecuación ordinaria (x − h)² + (y − k)² = r²: los signos dentro de los paréntesis son los contrarios a los del centro.",
+      "Para encontrar la ecuación general, desarrolla los dos binomios al cuadrado, pasa r² al lado izquierdo y junta los números: queda x² + y² + Dx + Ey + F = 0. Puedes revisar tu resultado con D = −2h, E = −2k y F = h² + k² − r².",
+      "Si te dan un punto de la circunferencia, r² es el cuadrado de la distancia del centro a ese punto; si te dan los extremos de un diámetro, el centro es su punto medio.",
+      "En los ejercicios 3, 5 y 7 traza la circunferencia con regla y compás en una hoja aparte, cuadriculada y con el número del ejercicio: ubica el centro, pon la punta del compás en él y ábrelo la longitud del radio (no hace falta medir: cuenta los cuadritos). Marca el centro y el radio."
+    ],
+    "partes": [
+      { "titulo": "Parte 1 · Del centro y el radio a la ecuación general (ejercicios 1 a 3)", "n": 3 },
+      { "titulo": "Parte 2 · El centro y un punto de la circunferencia (ejercicios 4 y 5)", "n": 2 },
+      { "titulo": "Parte 3 · Los extremos de un diámetro (ejercicios 6 y 7)", "n": 2 },
+      { "titulo": "Parte 4 · Cuando una coordenada es 0, y de la ordinaria a la general (ejercicios 8 a 10)", "n": 3 }
+    ],
+    "lineaProc": "Procedimiento: ______________________",
+    "lineaProc2": "_______________________________________",
+    "lineaPor": "Porque: _____________________________",
+    "lineaPor2": "_______________________________________",
+    "rubricaTitulo": "Rúbrica (matriz de niveles de evaluación)",
+    "claveNota": "En todos los ejercicios el radio es un número entero. La ecuación ordinaria puede escribirse con los binomios en cualquier orden. La ecuación general debe estar igualada a cero y con coeficiente 1 en x² y en y² (revisa con D = −2h, E = −2k, F = h² + k² − r²). En los ejercicios 3, 5 y 7 el alumno traza la circunferencia con compás en hoja aparte: centro correcto, radio correcto y centro y radio marcados.",
+    "ejercicios": [
+      { "enunciado": "Centro (3, 2) y radio 5.",
+        "lineas": ["Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["Ordinaria: $(x-3)^2+(y-2)^2=25$", "General: $x^2+y^2-6x-4y-12=0$   (D = −6, E = −4, F = 9 + 4 − 25 = −12)"] },
+      { "enunciado": "Centro (−4, 1) y radio 3.",
+        "lineas": ["Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["Ordinaria: $(x+4)^2+(y-1)^2=9$", "General: $x^2+y^2+8x-2y+8=0$   (D = 8, E = −2, F = 16 + 1 − 9 = 8)"] },
+      { "enunciado": "Centro (2, −5) y radio 6.",
+        "lineas": ["Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "Gráfica con compás en hoja aparte.", "@proc"],
+        "clave": ["Ordinaria: $(x-2)^2+(y+5)^2=36$", "General: $x^2+y^2-4x+10y-7=0$   (D = −4, E = 10, F = 4 + 25 − 36 = −7)"] },
+      { "enunciado": "Centro (1, −2); la circunferencia pasa por el punto (4, 2).",
+        "lineas": ["$r^2=$ ________", "Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["$r^2=(4-1)^2+(2-(-2))^2=9+16=25$", "Ordinaria: $(x-1)^2+(y+2)^2=25$", "General: $x^2+y^2-2x+4y-20=0$"] },
+      { "enunciado": "Centro (−3, 4); la circunferencia pasa por el punto (3, 12).",
+        "lineas": ["$r^2=$ ________", "Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "Gráfica con compás en hoja aparte.", "@proc"],
+        "clave": ["$r^2=(3-(-3))^2+(12-4)^2=36+64=100$ (radio 10)", "Ordinaria: $(x+3)^2+(y-4)^2=100$", "General: $x^2+y^2+6x-8y-75=0$"] },
+      { "enunciado": "Los extremos de un diámetro son (−2, 1) y (6, 7).",
+        "lineas": ["Centro: ( ____ , ____ )        $r^2=$ ________", "Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["Centro: (2, 4)   (punto medio)   $r^2=4^2+3^2=25$", "Ordinaria: $(x-2)^2+(y-4)^2=25$", "General: $x^2+y^2-4x-8y-5=0$"] },
+      { "enunciado": "Los extremos de un diámetro son (−5, −2) y (1, 6).",
+        "lineas": ["Centro: ( ____ , ____ )        $r^2=$ ________", "Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "Gráfica con compás en hoja aparte.", "@proc"],
+        "clave": ["Centro: (−2, 2)   $r^2=3^2+4^2=25$", "Ordinaria: $(x+2)^2+(y-2)^2=25$", "General: $x^2+y^2+4x-4y-17=0$"] },
+      { "enunciado": "Centro (0, −3) y radio 4.",
+        "lineas": ["Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["Ordinaria: $x^2+(y+3)^2=16$", "General: $x^2+y^2+6y-7=0$   (no aparece el término en x: D = 0)"] },
+      { "enunciado": "Centro (5, 0) y radio 2.",
+        "lineas": ["Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["Ordinaria: $(x-5)^2+y^2=4$", "General: $x^2+y^2-10x+21=0$   (no aparece el término en y: E = 0)"] },
+      { "enunciado": "$(x+2)^2+(y-3)^2=36$",
+        "lineas": ["Centro: ( ____ , ____ )        Radio: ________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["Centro (−2, 3) y radio 6", "General: $x^2+y^2+4x-6y-23=0$   (D = 4, E = −6, F = 4 + 9 − 36 = −23)"] }
+    ]
+  },
+  "serie11circhk": {
+    "titulo": "Serie 11. Circunferencia con centro en (h,k)",
+    "claveTitulo": "Serie 11 · Clave de respuestas (sólo para la profesora)",
+    "ejercicios": [
+      { "enunciado": "Centro (−2, −3) y radio 4.",
+        "lineas": ["Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["Ordinaria: $(x+2)^2+(y+3)^2=16$", "General: $x^2+y^2+4x+6y-3=0$   (D = 4, E = 6, F = 4 + 9 − 16 = −3)"] },
+      { "enunciado": "Centro (4, −1) y radio 7.",
+        "lineas": ["Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["Ordinaria: $(x-4)^2+(y+1)^2=49$", "General: $x^2+y^2-8x+2y-32=0$   (D = −8, E = 2, F = 16 + 1 − 49 = −32)"] },
+      { "enunciado": "Centro (−6, 2) y radio 8.",
+        "lineas": ["Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "Gráfica con compás en hoja aparte.", "@proc"],
+        "clave": ["Ordinaria: $(x+6)^2+(y-2)^2=64$", "General: $x^2+y^2+12x-4y-24=0$   (D = 12, E = −4, F = 36 + 4 − 64 = −24)"] },
+      { "enunciado": "Centro (−1, 3); la circunferencia pasa por el punto (4, 15).",
+        "lineas": ["$r^2=$ ________", "Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["$r^2=(4-(-1))^2+(15-3)^2=25+144=169$ (radio 13)", "Ordinaria: $(x+1)^2+(y-3)^2=169$", "General: $x^2+y^2+2x-6y-159=0$"] },
+      { "enunciado": "Centro (2, 2); la circunferencia pasa por el punto (−4, −6).",
+        "lineas": ["$r^2=$ ________", "Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "Gráfica con compás en hoja aparte.", "@proc"],
+        "clave": ["$r^2=(-4-2)^2+(-6-2)^2=36+64=100$ (radio 10)", "Ordinaria: $(x-2)^2+(y-2)^2=100$", "General: $x^2+y^2-4x-4y-92=0$"] },
+      { "enunciado": "Los extremos de un diámetro son (−3, −1) y (5, 5).",
+        "lineas": ["Centro: ( ____ , ____ )        $r^2=$ ________", "Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["Centro: (1, 2)   (punto medio)   $r^2=4^2+3^2=25$", "Ordinaria: $(x-1)^2+(y-2)^2=25$", "General: $x^2+y^2-2x-4y-20=0$"] },
+      { "enunciado": "Los extremos de un diámetro son (−1, −3) y (7, 3).",
+        "lineas": ["Centro: ( ____ , ____ )        $r^2=$ ________", "Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "Gráfica con compás en hoja aparte.", "@proc"],
+        "clave": ["Centro: (3, 0)   $r^2=4^2+3^2=25$", "Ordinaria: $(x-3)^2+y^2=25$", "General: $x^2+y^2-6x-16=0$   (E = 0)"] },
+      { "enunciado": "Centro (0, 5) y radio 3.",
+        "lineas": ["Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["Ordinaria: $x^2+(y-5)^2=9$", "General: $x^2+y^2-10y+16=0$   (D = 0)"] },
+      { "enunciado": "Centro (−4, 0) y radio 6.",
+        "lineas": ["Ecuación ordinaria: ________________________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["Ordinaria: $(x+4)^2+y^2=36$", "General: $x^2+y^2+8x-20=0$   (E = 0)"] },
+      { "enunciado": "$(x-6)^2+(y+1)^2=25$",
+        "lineas": ["Centro: ( ____ , ____ )        Radio: ________", "Ecuación general: ________________________ = 0", "@proc"],
+        "clave": ["Centro (6, −1) y radio 5", "General: $x^2+y^2-12x+2y+12=0$   (D = −12, E = 2, F = 36 + 1 − 25 = 12)"] }
+    ]
+  },
   "actividades": [
     {
       "id": "signos",
@@ -2500,6 +2597,75 @@
           "n3": "Valida con ejemplos: sustituye el centro que encontró en la ecuación original o desarrolla su ecuación ordinaria para comprobar que regresa a la general, y da ejemplos de ecuaciones que sí y que no son circunferencias.",
           "n4": "Explica la estructura del argumento: al sumar lo mismo a los dos lados la ecuación no cambia (hipótesis), así que la ecuación ordinaria es equivalente a la general y de ella se lee el centro y el radio (conclusión). Distingue los tres casos de r² (positivo, cero y negativo) y los justifica.",
           "n5": "Elabora una cadena de argumentos que generaliza: completa cuadrados con letras en x² + y² + Dx + Ey + F = 0, deduce que r² = h² + k² − F y las condiciones para que sea circunferencia, un punto o ningún punto, y distingue convencerse con ejemplos de demostrar para todos los valores."
+        }
+      ]
+    },
+    {
+      "id": "serie10circhk",
+      "titulo": "Matemáticas 3 · Tema 7 · Series 10 y 11: circunferencia con centro en (h,k) (Word)",
+      "file": "",
+      "ocurrencia": 0,
+      "evidencia": [
+        "Las 10 respuestas de la hoja: la ecuación ordinaria con los signos contrarios a los del centro, la ecuación general igualada a cero y, cuando se pide, el centro y r², con el procedimiento escrito.",
+        "El desarrollo de los binomios al cuadrado, r² pasado a la izquierda y los números juntados en cada ejercicio, y el cálculo del punto medio y de r² en los ejercicios de los extremos de un diámetro.",
+        "Las tres gráficas hechas con compás en hoja aparte (ejercicios 3, 5 y 7): centro correcto, radio correcto y centro y radio marcados."
+      ],
+      "errores": [
+        "Escribe (x − h)² con el signo de h: para el centro (−2, 5) pone (x − 2)², o para h = 3 pone (x + 3)².",
+        "Desarrolla (x − 3)² como x² − 9 o x² + 9 (olvida el doble producto −6x).",
+        "Se equivoca en el signo del doble producto cuando la coordenada es negativa: escribe (y + 2)² = y² − 4y + 4.",
+        "Al pasar r² al lado izquierdo no le cambia el signo: obtiene F = 9 + 4 + 16 en lugar de 9 + 4 − 16.",
+        "Calcula el centro restando las coordenadas de los extremos en lugar de sumarlas y dividir entre 2, o usa r en lugar de r² al calcular F.",
+        "Cuando una coordenada del centro es 0 (por ejemplo k = 0) escribe un término en y distinto de cero en la ecuación general."
+      ],
+      "rows": [
+        {
+          "id": "COM",
+          "observar": [
+            "Escribe la ecuación ordinaria y el desarrollo paso a paso (binomios al cuadrado, r² pasado a la izquierda, números juntados) antes de dar D, E y F.",
+            "Escribe con notación correcta los paréntesis, los exponentes y los signos, tanto en la ecuación ordinaria como en x² + y² + Dx + Ey + F = 0.",
+            "Usa el vocabulario adecuado (centro, radio, punto medio, diámetro, ecuación ordinaria, ecuación general)."
+          ],
+          "n1": "Escribe sólo D, E y F (o la ecuación final) sin la ecuación ordinaria ni el desarrollo, y casi no usa vocabulario matemático. No usa ningún apoyo, como las fórmulas de D, E y F.",
+          "n23": "Escribe el desarrollo pero omite pasos (por ejemplo, no muestra cómo se desarrolla el binomio o salta el paso de pasar r² a la izquierda) y usa el vocabulario de manera limitada; hay omisiones de signos o de paréntesis.",
+          "n4": "Escribe la ecuación ordinaria y el desarrollo completo con notación correcta en casi todos los ejercicios y explica con claridad cómo obtuvo el centro y el radio cuando no se los dan; puede tener una omisión menor.",
+          "n5": "Expresa su trabajo por diferentes medios (ecuación ordinaria, desarrollo, fórmulas D = −2h, E = −2k, F = h² + k² − r²) con notación correcta, y explica de manera oral o escrita cómo obtendría la ecuación general con datos nuevos."
+        },
+        {
+          "id": "REP_ALG",
+          "observar": [
+            "Escribe (x − h)² y (y − k)² con el signo contrario al de la coordenada del centro, también con coordenadas negativas o iguales a 0.",
+            "Desarrolla correctamente los binomios al cuadrado, con el doble producto y su signo.",
+            "Pasa r² al lado izquierdo con el signo cambiado, junta los números y obtiene D, E y F."
+          ],
+          "n1": "Aún no usa correctamente las expresiones algebraicas: escribe (x − h)² con el signo de h sin cambiarlo o desarrolla (x − 3)² como x² − 9 (olvida el doble producto).",
+          "n23": "Hace uso de la sintaxis y la semántica del lenguaje algebraico: desarrolla bien los binomios cuando h y k son positivos, pero se equivoca con las coordenadas negativas, con el signo del doble producto o al pasar r² al otro lado.",
+          "n4": "Comprende y maneja las propiedades del lenguaje algebraico: obtiene correctamente la ecuación general en casi todos los casos, incluso con coordenadas negativas o iguales a 0, y pasa de la ecuación ordinaria al centro y al radio.",
+          "n5": "Dota de significado y generaliza las propiedades: desarrolla con letras y deduce D = −2h, E = −2k y F = h² + k² − r², los usa para comprobar sus resultados y explica qué significa que falte el término en x o en y (h = 0 o k = 0)."
+        },
+        {
+          "id": "MOD",
+          "observar": [
+            "Identifica los datos (centro y radio, centro y un punto, o los extremos de un diámetro) y qué necesita para escribir la ecuación: h, k y r².",
+            "Obtiene el centro como punto medio y r² como el cuadrado de la distancia (sin sacar la raíz), y plantea la ecuación ordinaria.",
+            "Revisa si su resultado es razonable: comprueba con D = −2h, E = −2k y F = h² + k² − r², o sustituye el punto dado en la ecuación."
+          ],
+          "n1": "Usa los datos aleatoriamente: suma las coordenadas del punto en lugar de restar las del centro, no identifica que necesita r² y no revisa su resultado.",
+          "n23": "Identifica h, k y r² en los casos directos (centro y radio dados) y usa algún método para los demás, pero se equivoca al calcular el punto medio o la distancia (por ejemplo, olvida elevar al cuadrado); revisa poco.",
+          "n45": "Identifica los datos, calcula el centro (punto medio) y r² (distancia al cuadrado), plantea la ecuación ordinaria y llega a la general. Revisa que su resultado sea razonable (el punto dado cumple la ecuación, D = −2h…), detecta y corrige errores y resuelve una situación nueva con el mismo método."
+        },
+        {
+          "id": "ARG",
+          "observar": [
+            "Justifica por qué el centro de un diámetro es su punto medio y por qué r² se calcula con la distancia al centro.",
+            "Comprueba que el punto dado cumple su ecuación general (sustituye y verifica que se obtiene 0).",
+            "Explica por qué en la ecuación general A = C = 1 y por qué D y E tienen el signo contrario al doble de h y de k."
+          ],
+          "n1": "Defiende su resultado con frases como «así se hace» o «me salió», sin sustituir ni verificar.",
+          "n2": "Explica con sus palabras («el centro está justo en medio de los dos extremos») por qué hizo cada paso, con pocos términos matemáticos.",
+          "n3": "Valida con ejemplos: sustituye un punto de la circunferencia en su ecuación general y comprueba que da 0, y compara dos circunferencias con el mismo radio y distinto centro para ver cómo cambian D y E.",
+          "n4": "Explica la estructura del argumento: la circunferencia son los puntos a distancia r del centro (hipótesis); de ahí la ecuación ordinaria, su desarrollo y la ecuación general (conclusión). Distingue entre lo que supone y lo que comprueba al sustituir el punto.",
+          "n5": "Elabora una cadena de argumentos que generaliza: desarrolla con letras y deduce D, E y F para cualquier centro y radio, relaciona el resultado con el caso h = 0 y k = 0 y distingue convencerse con un ejemplo de demostrar para todos los valores."
         }
       ]
     }

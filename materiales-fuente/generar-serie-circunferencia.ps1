@@ -9,13 +9,14 @@
 # "@proc" = renglones de Procedimiento; "@por" = renglones de Porque; "@sdf" = casillas Sobre / Dentro / Fuera.
 # Una serie nueva (p. ej. serie9circorigen, con -Serie serie9circorigen) solo trae titulo, claveTitulo y ejercicios:
 # lo demas (propositos, instrucciones, partes, rubrica, nota de la clave) se toma de serie8circorigen.
-param([string]$Root, [string]$Base, [string]$Out, [string]$OutClave = '', [string]$Serie = 'serie8circorigen', [string]$Rubrica = 'serie8circorigen')
+# -Plantilla: bloque del que se toma lo que falta (por defecto serie8circorigen; para las series de centro (h,k): serie10circhk).
+param([string]$Root, [string]$Base, [string]$Out, [string]$OutClave = '', [string]$Serie = 'serie8circorigen', [string]$Rubrica = 'serie8circorigen', [string]$Plantilla = 'serie8circorigen')
 $ErrorActionPreference = 'Stop'
 $utf8 = New-Object System.Text.UTF8Encoding($false)
 $matriz = [IO.File]::ReadAllText((Join-Path $Root 'materiales-fuente\matriz-niveles-evaluacion.json'), $utf8) | ConvertFrom-Json
 $act = [IO.File]::ReadAllText((Join-Path $Root 'materiales-fuente\rubricas-por-actividad.json'), $utf8) | ConvertFrom-Json
 $s = $act.$Serie
-foreach ($p in $act.serie8circorigen.PSObject.Properties) { if (-not $s.PSObject.Properties[$p.Name]) { $s | Add-Member -NotePropertyName $p.Name -NotePropertyValue $p.Value } }
+foreach ($p in $act.$Plantilla.PSObject.Properties) { if (-not $s.PSObject.Properties[$p.Name]) { $s | Add-Member -NotePropertyName $p.Name -NotePropertyValue $p.Value } }
 $ru = $act.actividades | Where-Object { $_.id -eq $Rubrica }
 $et = $act.etiquetas
 $bul = [string][char]0x2022
